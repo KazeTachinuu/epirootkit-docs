@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Tux Fan Club Docs for Tea drinker</title>
+    <link>//localhost:1313/docs/</link>
+    <description>Recent content in Docs on Tux Fan Club Docs for Tea drinker</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 05 May 2025 15:26:46 +0200</lastBuildDate>
+    <atom:link href="//localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Example Page</title>
+      <link>//localhost:1313/docs/example-page/</link>
+      <pubDate>Mon, 05 May 2025 15:26:46 +0200</pubDate>
+      <guid>//localhost:1313/docs/example-page/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
