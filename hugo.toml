@@ -44,7 +44,7 @@ title = "Tux Fan Club Docs for coffee drinker"
         version = true # includes git commit info
 
     [params.social]
-        github = "KazeTachinuu"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
+        github = "KazeTachinuu/epirootkit-docs"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
 
     [params.docs] # Parameters for the /docs 'template'
         title           = "Tux Fan Club Docs"           # default html title for documentation pages/sections
