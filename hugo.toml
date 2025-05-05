@@ -4,17 +4,10 @@ contentDir = "content"
 enableEmoji = true
 enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
 
-defaultContentLanguage = 'en'
-[languages]
-  [languages.en]
-    title = "Tux Fan Club Docs for Tea drinker"
-    languageName = "English"
-    weight = 10
-  [languages.fr]
-    title = "Tux Fan Club Docs for coffee drinker"
-    languageName = "Français"
-    contentDir = "content/fr"
-    weight = 20
+
+title = "Tux Fan Club Docs for coffee drinker"
+
+
 
 [module]
   [module.hugoVersion]
@@ -34,6 +27,8 @@ defaultContentLanguage = 'en'
       startLevel = 1
 
 [params]
+  # Add a parameter to include custom CSS files
+  custom_css = ["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"]
 
   google_fonts = [
     ["Inter", "300, 400, 600, 700"],
@@ -49,27 +44,24 @@ defaultContentLanguage = 'en'
         version = true # includes git commit info
 
     [params.social]
-        github = ""        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
-        twitter = ""       # YOUR_TWITTER_ID
-        # instagram = "colinwilson"     # YOUR_INSTAGRAM_ID
-        # rss = true                    # show rss icon with link
+        github = "KazeTachinuu"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
 
     [params.docs] # Parameters for the /docs 'template'
-        title           = "Lotus Docs Example Site"           # default html title for documentation pages/sections
+        title           = "Tux Fan Club Docs"           # default html title for documentation pages/sections
 
         # pathName        = "docs"                            # path name for documentation site | default "docs"
 
-        # themeColor      = "cyan"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
+        themeColor      = "green"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
 
         darkMode        = true                                # enable dark mode option? default false
 
         prism           = true                                # enable syntax highlighting via Prism
 
-        prismTheme      = "solarized-light"                           # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario
+        prismTheme      = "lotusdocs"                           # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario
 
         # gitinfo
-        repoURL         = "https://github.com/colinwilson/lotusdocs.dev"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
-        repoBranch      = "release"
+        repoURL         = "https://github.com/kazetachinuu/epirootkit-docs"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
+        repoBranch      = "master"
         editPage        = true                                # enable 'Edit this page' feature - default false
         lastMod         = true                                # enable 'Last modified' date on pages - default false
         lastModRelative = true                                # format 'Last modified' time as relative - default true
@@ -104,3 +96,9 @@ defaultContentLanguage = 'en'
     url = "docs/"
     identifier = "docs"
     weight = 10
+
+[[menu.primary]]
+    name = "Writeups"
+    url = "writeups/"
+    identifier = "writeups"
+    weight = 11

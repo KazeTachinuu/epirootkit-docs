@@ -14,19 +14,19 @@
   src: local("Material Symbols Outlined"), local("Material Icons"), local("MaterialIcons-Outlined"), url("../fonts/material-symbols-outlined.woff2") format("woff2"); }
 
 :root {
-  --primary: var(--blue);
-  --primary-50: var(--blue-50);
-  --primary-100: var(--blue-100);
-  --primary-200: var(--blue-200);
-  --primary-300: var(--blue-300);
-  --primary-400: var(--blue-400);
-  --primary-800: var(--blue-800);
-  --primary-hsl: var(--blue-500-hsl);
-  --primary-50-hsl: var(--blue-50-hsl);
-  --primary-100-hsl: var(--blue-100-hsl);
-  --primary-200-hsl: var(--blue-200-hsl);
-  --primary-300-hsl: var(--blue-300-hsl);
-  --primary-800-hsl: var(--blue-800-hsl); }
+  --primary: var(--green);
+  --primary-50: var(--green-50);
+  --primary-100: var(--green-100);
+  --primary-200: var(--green-200);
+  --primary-300: var(--green-300);
+  --primary-400: var(--green-400);
+  --primary-800: var(--green-800);
+  --primary-hsl: var(--green-500-hsl);
+  --primary-50-hsl: var(--green-50-hsl);
+  --primary-100-hsl: var(--green-100-hsl);
+  --primary-200-hsl: var(--green-200-hsl);
+  --primary-300-hsl: var(--green-300-hsl);
+  --primary-800-hsl: var(--green-800-hsl); }
 
 /*!
    * Bootstrap  v5.3.3 (https://getbootstrap.com/)
@@ -11256,69 +11256,27 @@ h4:hover a,
   visibility: visible;
   text-decoration: none; }
 
-/* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism-solarizedlight&languages=markup+css+clike+javascript */
-/*
- Solarized Color Schemes originally by Ethan Schoonover
- http://ethanschoonover.com/solarized
-
- Ported for PrismJS by Hector Matos
- Website: https://krakendev.io
- Twitter Handle: https://twitter.com/allonsykraken
-
- Adapted for Lotus Docs by Colin Wilson
- Website: https://colinwilson.uk
- Twitter Handle: https://twitter.com/colinwilsonuk
-*/
-/*
-SOLARIZED HEX
---------- -------
-base03    #002b36
-base02    #073642
-base01    #586e75
-base00    #657b83
-base0     #839496
-base1     #93a1a1
-base2     #eee8d5
-base3     #fdf6e3
-yellow    #b58900
-orange    #cb4b16
-red       #dc322f
-magenta   #d33682
-violet    #6c71c4
-blue      #268bd2
-cyan      #2aa198
-green     #859900
-*/
+/**
+ * Lotus Docs theme
+ *
+ * Adapted from a theme based on:
+ * https://github.com/chriskempson/tomorrow-theme
+ *
+ * @author Colin Wilson <github.com/colinwilson>
+ * @version 1.0
+ */
 :root {
-  --prism-code-color: #657b83;
-  --prism-code-bg: #fdf6e3;
-  --prism-code-scrollbar-thumb-color: var(--gray-400);
-  --prism-line-highlight-bg-color: #e9967a;
-  --prism-copy-btn-bg-hover-color: var(--gray-700); }
+  --prism-code-bg: #212d63;
+  --prism-code-scrollbar-thumb-color: var(--gray-400); }
 
 [data-dark-mode] {
-  --prism-code-color: #dee2e6;
   --prism-code-bg: var(--gray-900);
-  --prism-code-scrollbar-thumb-color: var(--gray-600);
-  --prism-line-highlight-bg-color: var(--gray-600);
-  --prism-copy-btn-bg-hover-color: var(--white); }
+  --prism-code-scrollbar-thumb-color: var(--gray-600); }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: var(--prism-code-color);
-  /* base00 */
+  color: #f5fbff !important;
   background: var(--prism-code-bg) !important; }
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  background: #073642;
-  /* base02 */ }
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  background: #073642;
-  /* base02 */ }
 
 /* Code blocks */
 pre[class*="language-"] {
@@ -11327,8 +11285,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background-color: #fdf6e3;
-  /* base3 */ }
+  background: #32325d; }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
@@ -11338,73 +11295,71 @@ pre[class*="language-"] {
 
 .line-highlight:before,
 .line-highlight[data-end]:after {
-  background-color: var(--prism-line-highlight-bg-color); }
+  background-color: var(--blue-400); }
 
 [data-copy-state="copy"] span:empty::before {
-  background-color: var(--gray-500); }
+  background-color: var(--gray-400); }
 
 [data-copy-state="copy"] span:empty:hover::before {
-  background-color: var(--prism-copy-btn-bg-hover-color); }
+  background-color: var(--white); }
 
 [data-copy-state="copy-success"] span:empty::before {
-  background-color: var(--emerald-400); }
+  background-color: var(--emerald-200); }
 
 .token.comment,
+.token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #93a1a1;
-  /* base1 */ }
+  color: #999; }
 
 .token.punctuation {
-  color: #586e75;
-  /* base01 */ }
+  color: #ccc; }
 
-.token.namespace {
-  opacity: .7; }
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #7fd3ed; }
+
+.token.function-name {
+  color: #6196cc; }
+
+.token.boolean,
+.token.function {
+  color: #fda3f3; }
+
+.token.number {
+  color: var(--cardinal-200); }
 
 .token.property,
-.token.tag,
-.token.boolean,
-.token.number,
+.token.class-name,
 .token.constant,
-.token.symbol,
-.token.deleted {
-  color: #268bd2;
-  /* blue */ }
+.token.symbol {
+  color: #ffffff;
+  font-weight: 700; }
 
 .token.selector,
-.token.attr-name,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #a4cdfe;
+  font-weight: 700; }
+
 .token.string,
 .token.char,
-.token.builtin,
-.token.url,
-.token.inserted {
-  color: #2aa198;
-  /* cyan */ }
-
-.token.entity {
-  color: #657b83;
-  /* base00 */
-  background: #eee8d5;
-  /* base2 */ }
-
-.token.atrule,
 .token.attr-value,
-.token.keyword {
-  color: #859900;
-  /* green */ }
+.token.regex {
+  color: #7ec699; }
 
-.token.function,
-.token.class-name {
-  color: #b58900;
-  /* yellow */ }
-
-.token.regex,
-.token.important,
 .token.variable {
-  color: #cb4b16;
-  /* orange */ }
+  color: var(--yellow-100); }
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc; }
 
 .token.important,
 .token.bold {
@@ -11415,6 +11370,9 @@ pre[class*="language-"] {
 
 .token.entity {
   cursor: help; }
+
+.token.inserted {
+  color: green; }
 
 /* PrismJS 1.29.0 */
 code {
