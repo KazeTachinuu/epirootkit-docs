@@ -1,11 +1,10 @@
 baseURL = "/"
-languageCode = "en-GB"
 contentDir = "content"
 enableEmoji = true
 enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
 
 
-title = "Tux Fan Club Docs for coffee drinker"
+title = "Tux Fan Club Docs"
 
 
 
@@ -96,9 +95,3 @@ title = "Tux Fan Club Docs for coffee drinker"
     url = "docs/"
     identifier = "docs"
     weight = 10
-
-[[menu.primary]]
-    name = "Writeups"
-    url = "writeups/"
-    identifier = "writeups"
-    weight = 11
