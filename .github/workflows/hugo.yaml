@@ -53,6 +53,15 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Debug Hugo output
+        run: |
+          ls -la ./public
+      - name: Ensure public directory exists
+        run: |
+          if [ ! -d "./public" ]; then
+            echo "Error: ./public directory does not exist. Hugo build might have failed."
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
