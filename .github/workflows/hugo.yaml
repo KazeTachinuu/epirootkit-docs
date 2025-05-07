@@ -39,6 +39,8 @@ jobs:
           extended: true
       - name: Build site
         run: hugo --gc --minify
+      - name: Copy CNAME to public directory
+        run: cp CNAME public/CNAME
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
