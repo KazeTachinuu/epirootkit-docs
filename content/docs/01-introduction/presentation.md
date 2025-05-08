@@ -15,7 +15,7 @@ weight: 11
 
 Nous sommes Tux Fan Club 🐧
 
-C'est Léa qui a choisi le nom car c'est la seule personne du groupe un peu créative 👀
+C'est Léa qui a choisi le nom car c'est la seule personne du groupe un peu créative 👀 (Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)
 
 Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP 
 
