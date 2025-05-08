@@ -21,4 +21,4 @@ C'est Léa qui a choisi le nom car c'est la seule personne du groupe un peu cré
 
 Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP 
 
-{{< figure src="/images/alltuxes.png" alt="Tux le manchot" >}}
+{{< figure src="/images/introduction/alltuxes.png" alt="Tux le manchot" >}}
