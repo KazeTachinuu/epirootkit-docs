@@ -26,7 +26,7 @@ givenfiles/
 
 Sauf que les fichiers n'étaient pas ignorés. C'est là que nous découvrons un mystérieux fichier `.README` :
 
-{{< figure src="/images/givenfilestree.png" alt="Arborescence révélant le fichier caché" >}}
+{{< figure src="/images/ctf/givenfilestree.png" alt="Arborescence révélant le fichier caché" >}}
 *Arborescence révélant le fichier caché*
 
 ### Tentative de lecture du parchemin
@@ -53,7 +53,7 @@ Le reste du parchemin était du langage codé. Grâce à notre expérience en pr
 
 Avec la commande `base64 -d .README > image.jpg` nous avons pu obtenir l'image (il fallait évidemment garder que la partie en base64 du `README`).
 
-{{< figure src="/images/SOT.jpg" alt="Image déchiffrée" class="img-fluid" >}}
+{{< figure src="/images/ctf/SOT.jpg" alt="Image déchiffrée" class="img-fluid" >}}
 *Image déchiffrée*
 
 Voici la magnifique illustration... Mais nous savons que le capitaine René avait plus d'un tour dans son sac. Donc nous décidions d'examiner l'image en détail.
@@ -62,7 +62,7 @@ Voici la magnifique illustration... Mais nous savons que le capitaine René avai
 
 En utilisant le site [https://georgeom.net/StegOnline/upload](https://georgeom.net/StegOnline/upload) pour extraire les valeurs RGB de l'image et le texte caché, on remarque une chaîne de caractères insolite...
 
-{{< figure src="/images/extract.png" alt="Extraction de données cachées" >}}
+{{< figure src="/images/ctf/extract.png" alt="Extraction de données cachées" >}}
 *Extraction de données cachées*
 
 > I am captain Jack Sparrow - Remix high bass quality - SAVAGE MIX.wavUT
@@ -86,10 +86,15 @@ Grâce à notre expérience en CTF, nous avons tout de suite l'idée d'examiner 
 
 Rien d'anormal sauf sur les dernières secondes du fichier. Et là... nous trouvons le flag !
 
-{{< figure src="/images/flag.png" alt="Le trésor caché dans le spectrogramme" >}}
+{{< figure src="/images/ctf/flag.png" alt="Le trésor caché dans le spectrogramme" >}}
 *Le trésor caché dans le spectrogramme*
 
 Il ne nous reste qu'à transmettre le mot de passe au capitaine et à nous le trésor...
+
+### Trésor
+
+{{< figure src="/images/ctf/treasure.jpeg" alt="Récompense du Capitaine" >}}
+*Grrr des canards*
 
 ## Conclusion
 
