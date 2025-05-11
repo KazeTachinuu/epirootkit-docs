@@ -62,8 +62,8 @@ title = "Tux Fan Club Docs"
         repoURL         = "https://github.com/kazetachinuu/epirootkit-docs"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
         repoBranch      = "master"
         editPage        = true                                # enable 'Edit this page' feature - default false
-        lastMod         = true                                # enable 'Last modified' date on pages - default false
-        lastModRelative = true                                # format 'Last modified' time as relative - default true
+        lastMod         = false                                # enable 'Last modified' date on pages - default false
+        lastModRelative = false                               # format 'Last modified' time as relative - default true
 
         sidebarIcons    = true                                # enable sidebar icons? default false
         breadcrumbs     = true                                # default is true
