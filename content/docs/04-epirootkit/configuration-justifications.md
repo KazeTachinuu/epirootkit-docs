@@ -20,11 +20,11 @@ weight: 43
 
 ## Why Ubuntu 20.04 LTS?
 
-{{< alert context="success" icon="task_alt" text="LTS release--five years of security updates and readily available VM images (ISO/QCOW2)." />}}
+{{< alert context="success" icon="check" text="Perfect balance between realism and convinience." />}}
 
 - Widely deployed on servers and desktops  
 - Official cloud and container images simplify automation  
-- Predictable package versions and a large user community  
+- Already uses interesting kernel version (5.4.x) so no need to compile.
 
 ---
 
@@ -37,19 +37,22 @@ weight: 43
    - 5.4.x includes every hook we need.  
 
 2. **Exported `kallsyms_lookup_name()`**  
-   - Up through 5.6 the symbol remains exported.  
+   - Up through 5.6 the symbol remains exported.
    - Allows us to resolve `sys_call_table` at runtime--no kernel recompilation.  
 
 3. **Unsigned module loading**  
    - Kernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown.  
-   - Ubuntu 20.04’s 5.4.x ships without these restrictions by default.  
+   - Ubuntu 20.04’s 5.4.x ships without these restrictions by default.
+
+4. **Already compiled in Ubuntu 20.04 LTS** 
+   - As mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy.
 
 ---
 
 ## Alternative Options
 
 - **Kernel 5.6**  
-  - Technically compatible, but lacks LTS support.  
+  - Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS. 
 - **Debian 11 (5.10.x)**  
   - Still exports our symbols--requires disabling module signature checks.  
 
