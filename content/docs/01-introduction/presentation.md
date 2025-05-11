@@ -13,8 +13,9 @@ weight: 11
 
 ## Equipage
 
-Capitaine: Hugo Sibony
-Responsable Sabordage et mutinerie: Léa Bonet
+**Capitaine**: Hugo Sibony
+
+**Responsable Sabordage et mutinerie**: Léa Bonet
 
 ## Nom de l'équipe
 
