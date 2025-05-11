@@ -28,6 +28,9 @@ Bref merci :)
 Canard-ment,
 
 -- 
+
 Hugo Sibony
+
 APPING Cyber 2027
+
 "J'écris ce message a 10000m d'altitude dans un avion qui tremble plus que moi dans l'attente de ma note de JS."
