@@ -42,12 +42,12 @@ For each target syscall:
    ```
 3. Our trampoline copies registers, calls `hook_fn()`, then jumps back to the original.
 
-{{< tip >}}
+
 Always unregister your ftrace functions in `cleanup_module()`:
 ```c
 unregister_ftrace_function(&ops);
 ```
-{{< /tip >}}
+
 
 ---
 
