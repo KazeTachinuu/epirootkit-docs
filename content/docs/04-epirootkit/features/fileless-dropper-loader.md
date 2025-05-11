@@ -30,9 +30,8 @@ weight: 10
      execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH);
      ```
 
-{{< tip >}}
+
 `execveat(..., AT_EMPTY_PATH)` lets us execute a program by FD without any filename on disk.
-{{< /tip >}}
 
 ---
 
