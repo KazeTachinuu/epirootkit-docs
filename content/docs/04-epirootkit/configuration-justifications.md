@@ -1,6 +1,6 @@
 ---
 title: "Configuration Justifications"
-description: "Rationale for Ubuntu 20.04 LTS / Linux 5.4.x"
+description: "Justification for Ubuntu 20.04 LTS / Linux 5.4.x"
 icon: "code"
 date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-07T00:44:31+01:00"
@@ -20,7 +20,7 @@ weight: 43
 
 ## Why Ubuntu 20.04 LTS?
 
-{{< alert context="success" icon="check_circle" text="LTS release--five years of security updates and readily available VM images (ISO/QCOW2)." />}}
+{{< alert context="success" icon="task_alt" text="LTS release--five years of security updates and readily available VM images (ISO/QCOW2)." />}}
 
 - Widely deployed on servers and desktops  
 - Official cloud and container images simplify automation  
@@ -53,5 +53,5 @@ weight: 43
 - **Debian 11 (5.10.x)**  
   - Still exports our symbols--requires disabling module signature checks.  
 
-{{< alert context="warning" icon="warning" text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
+{{< alert context="warning" icon=" " text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
 
