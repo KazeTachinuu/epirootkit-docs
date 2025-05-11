@@ -53,5 +53,5 @@ weight: 43
 - **Debian 11 (5.10.x)**  
   - Still exports our symbols--requires disabling module signature checks.  
 
-{{< alert context="warning" icon=" " text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
+{{< alert context="warning" icon="" text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
 
