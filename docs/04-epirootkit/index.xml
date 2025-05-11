@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 08 May 2025 22:39:27 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;p>Technical explanations for the chosen victim distribution, kernel version, and any security setting modifications.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 16:37:13 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ ⚙️
+ &lt;/div>
+ 
+ &lt;div class="w-100">This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.&lt;/div>
+ &lt;/div>
+&lt;h2 id="environment">Environment &lt;a href="#environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
+&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.x (LTS)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;div class="alert alert-success d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ check_circle
+ &lt;/div>
+ 
+ &lt;div class="w-100">LTS release&amp;ndash;five years of security updates and readily available VM images (ISO/QCOW2).&lt;/div>
+ &lt;/div>
+&lt;ul>
+&lt;li>Widely deployed on servers and desktops&lt;/li>
+&lt;li>Official cloud and container images simplify automation&lt;/li>
+&lt;li>Predictable package versions and a large user community&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="why-kernel-54x">Why Kernel 5.4.x? &lt;a href="#why-kernel-54x" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;div class="alert alert-primary d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ 🔧
+ &lt;/div>
+ 
+ &lt;div class="w-100">Balances modern hooking APIs with exported symbols and no mandatory module signing.&lt;/div>
+ &lt;/div>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item></channel></rss>
