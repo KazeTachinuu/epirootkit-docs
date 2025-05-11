@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 16:54:28 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 20:22:17 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  ⚙️
@@ -15,15 +15,15 @@
 &lt;div class="alert alert-success d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- task_alt
+ check
  &lt;/div>
  
- &lt;div class="w-100">LTS release&amp;ndash;five years of security updates and readily available VM images (ISO/QCOW2).&lt;/div>
+ &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
  &lt;/div>
 &lt;ul>
 &lt;li>Widely deployed on servers and desktops&lt;/li>
 &lt;li>Official cloud and container images simplify automation&lt;/li>
-&lt;li>Predictable package versions and a large user community&lt;/li>
+&lt;li>Already uses interesting kernel version (5.4.x) so no need to compile.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="why-kernel-54x">Why Kernel 5.4.x? &lt;a href="#why-kernel-54x" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>

