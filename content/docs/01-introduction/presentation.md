@@ -1,6 +1,6 @@
 ---
 title: "Presentation"
-description: ""
+description: "whoami"
 icon: "code"
 date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-07T00:44:31+01:00"
@@ -10,6 +10,11 @@ weight: 11
 ---
 
 # Présentation 
+
+## Equipage
+
+Capitaine: Hugo Sibony
+Responsable Sabordage et mutinerie: Léa Bonet
 
 ## Nom de l'équipe
 
