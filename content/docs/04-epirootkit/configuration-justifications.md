@@ -9,7 +9,7 @@ toc: true
 weight: 43
 ---
 
-{{< alert context="info" icon="⚙️" text="This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing." />}}
+{{< alert context="info" text="This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing." />}}
 
 ## Environment
 
@@ -30,7 +30,7 @@ weight: 43
 
 ## Why Kernel 5.4.x?
 
-{{< alert context="primary" icon="🔧" text="Balances modern hooking APIs with exported symbols and no mandatory module signing." />}}
+{{< alert context="primary" text="Balances modern hooking APIs with exported symbols and no mandatory module signing." />}}
 
 1. **Full ftrace support**  
    - Kernel 4.1+ stabilized the ftrace API (`ftrace_set_filter_ip()`, `register_ftrace_function()`).  
@@ -56,5 +56,5 @@ weight: 43
 - **Debian 11 (5.10.x)**  
   - Still exports our symbols--requires disabling module signature checks.  
 
-{{< alert context="warning" icon="" text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
+{{< alert context="warning" text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
 

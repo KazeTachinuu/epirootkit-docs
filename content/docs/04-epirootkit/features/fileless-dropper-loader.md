@@ -11,7 +11,7 @@ weight: 10
 
 # Stage 1: Fileless Memfd Dropper
 
-{{< alert context="info" icon="⚙️" text="We stage both loader and cron stub entirely in memory--no on-disk binaries." />}}
+{{< alert context="info" text="We stage both loader and cron stub entirely in memory--no on-disk binaries." />}}
 
 1. We call  
    ```c
@@ -37,7 +37,7 @@ weight: 10
 
 # Stage 2: Environment-Aware Loader
 
-{{< alert context="warning" icon="🔍" text="We verify Secure Boot is off, extract the kernel image, resolve symbols, and then insert our LKM." />}}
+{{< alert context="warning" text="We verify Secure Boot is off, extract the kernel image, resolve symbols, and then insert our LKM." />}}
 
 1. We rename our process to "sshd" via  
    ```c

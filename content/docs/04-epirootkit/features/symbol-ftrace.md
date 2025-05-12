@@ -6,7 +6,7 @@ date: "2025-05-11T18:20:00+01:00"
 lastmod: "2025-05-11T18:20:00+01:00"
 draft: false
 toc: true
-weight: 20
+weight: 41
 ---
 
 # Symbol Resolution
@@ -25,7 +25,7 @@ weight: 20
 
 # Ftrace-Based Hooking
 
-{{< alert context="info" icon="🔧" text="We use ftrace to hook without writing to kernel memory directly." />}}
+{{< alert context="info" text="We use ftrace to hook without writing to kernel memory directly." />}}
 
 For each target syscall:
 
