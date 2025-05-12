@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 20:40:08 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 01:19:55 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
 &lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- ⚙️
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">We stage both loader and cron stub entirely in memory&amp;ndash;no on-disk binaries.&lt;/div>
  &lt;/div>
@@ -83,8 +84,16 @@ to get two anonymous file descriptors.&lt;/li>
 &lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
 &lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
 &lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p>
-&lt;p>Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
-&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
+&lt;p>Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP&lt;/p></description></item><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Operating System&lt;/p>
+&lt;ul>
+&lt;li>Ubuntu 24.10 (amd64)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Install virtualization and helper tools&lt;/p>
 
 
 
@@ -100,12 +109,14 @@ to get two anonymous file descriptors.&lt;/li>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="301615e" class="language-c ">
- &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
+ &lt;pre id="7b029c1" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;/li>
-&lt;li>At init, we call:
+&lt;li>
+&lt;p>Enable and start the libvirt service&lt;/p>
 
 
 
@@ -121,25 +132,107 @@ to get two anonymous file descriptors.&lt;/li>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="20e28ad" class="language-c ">
- &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
+ &lt;pre id="c2c5800" class="language-bash ">
+ &lt;code>sudo systemctl enable --now libvirtd&lt;/code>
  &lt;/pre>
  &lt;/div>
-This gives us the address of the syscall table.&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
-&lt;div class="alert alert-info d-flex" role="alert">
+&lt;/li>
+&lt;li>
+&lt;p>Add your user to the &lt;code>libvirt&lt;/code> group (re-login or &lt;code>newgrp libvirt&lt;/code> afterward)&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="2c827a4" class="language-bash ">
+ &lt;code>sudo usermod -aG libvirt $USER&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>Verify that KVM modules are loaded&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- 🔧
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
- &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
+ &lt;div class="w-100">Run &lt;code>./scripts/check_vms.sh&lt;/code> at any time to verify VM disks and ISO, and see download URLs for missing items.&lt;/div>
  &lt;/div>
-&lt;p>For each target syscall:&lt;/p>
-&lt;ol>
-&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
+
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="ecfabdTab" data-bs-toggle="tab" data-bs-target="#ecfabd"
+		 type="button" role="tab" aria-controls="ecfabd" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="aecdbfTab" data-bs-toggle="tab" data-bs-target="#aecdbf"
+		 type="button" role="tab" aria-controls="aecdbf" aria-selected="true">Build Disks Yourself&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="ecfabd" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;p>Download and place both QCOW2 images into the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>VM Disk&lt;/th>
+ &lt;th>Path&lt;/th>
+ &lt;th>Download URL&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Attacker VM&lt;/td>
+ &lt;td>&lt;code>vm/attacker.qcow2&lt;/code>&lt;/td>
+ &lt;td>&lt;a href="https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC" rel="external" target="_blank">https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Victim VM&lt;/td>
+ &lt;td>&lt;code>vm/victim.qcow2&lt;/code>&lt;/td>
+ &lt;td>&lt;a href="https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E" rel="external" target="_blank">https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>Once downloaded, launch both VMs:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
+&lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>Ensure the &lt;code>attacker.qcow2&lt;/code> disk is in the &lt;code>vm/&lt;/code> directory (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/li>
+&lt;li>Launch the attacking VM with:
 
 
 
@@ -155,14 +248,11 @@ This gives us the address of the syscall table.&lt;/li>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="f3796aa" class="language-c ">
- &lt;code>.func = hook_trampoline,
-.flags = FTRACE_OPS_FL_SAVE_REGS |
- FTRACE_OPS_FL_IPMODIFY&lt;/code>
+ &lt;pre id="b9b360f" class="language-bash ">
+ &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>Apply the filter:
+Or both VMs with:
 
 
 
@@ -178,15 +268,76 @@ This gives us the address of the syscall table.&lt;/li>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="c83d517" class="language-c ">
- &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
-register_ftrace_function(&amp;amp;ops);&lt;/code>
+ &lt;pre id="fc8077c" class="language-bash ">
+ &lt;code>sudo ./scripts/run_vms.sh&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;/li>
-&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
+&lt;li>On the attacking VM:
+&lt;ul>
+&lt;li>Auto-login is enabled for user &lt;code>attacker&lt;/code> (no password prompt).&lt;/li>
+&lt;li>The static IP is &lt;strong>192.168.200.11&lt;/strong>.&lt;/li>
+&lt;li>The password is &lt;code>jules&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ol>
-&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Host Environment</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>Details about the required host environment (EPITA Laptop, Ubuntu 24.10).&lt;/p></description></item><item><title>Virtualization Software</title><link>/docs/02-setup/virtualization/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/virtualization/</guid><description>&lt;p>Guidance on choosing and installing virtualization software (VirtualBox, QEMU/KVM, etc.).&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Step-by-step guide to create and configure the Attacking Virtual Machine.&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;p>Step-by-step guide to create and configure the Victim Virtual Machine.&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+&lt;p>For more details on the network configuration and helper scripts, see &lt;a href="/docs/02-setup/environment/#how-it-works">Initial Setup &amp;amp; Installation&lt;/a>.&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Place the &lt;code>victim.qcow2&lt;/code> disk in the &lt;code>vm/&lt;/code> directory at the project root (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Launch the victim VM with:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="39be92f" class="language-bash ">
+ &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Or both VMs with:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="fc8077c" class="language-bash ">
+ &lt;code>sudo ./scripts/run_vms.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>On the victim VM:&lt;/p>
+&lt;ul>
+&lt;li>The VM has auto-login enabled for the &lt;code>victim&lt;/code> user (no password prompt).&lt;/li>
+&lt;li>Its static IP is &lt;strong>192.168.200.10&lt;/strong>.&lt;/li>
+&lt;li>The password is &lt;code>jules&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
 &lt;ol>
@@ -263,11 +414,116 @@ Our &lt;code>installer.sh&lt;/code>:&lt;/p>
 &lt;/ol>
 &lt;hr>
 &lt;h1 id="3-password-protection">3. Password Protection &lt;a href="#3-password-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
+&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="301615e" class="language-c ">
+ &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>At init, we call:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="20e28ad" class="language-c ">
+ &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+This gives us the address of the syscall table.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- ⚙️
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
  &lt;/div>
+&lt;p>For each target syscall:&lt;/p>
+&lt;ol>
+&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f3796aa" class="language-c ">
+ &lt;code>.func = hook_trampoline,
+.flags = FTRACE_OPS_FL_SAVE_REGS |
+ FTRACE_OPS_FL_IPMODIFY&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Apply the filter:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c83d517" class="language-c ">
+ &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
+register_ftrace_function(&amp;amp;ops);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
+&lt;/ol>
+&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.&lt;/div>
  &lt;/div>
@@ -295,8 +551,9 @@ Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></descrip
 &lt;div class="alert alert-primary d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- 🔧
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">Balances modern hooking APIs with exported symbols and no mandatory module signing.&lt;/div>
  &lt;/div>

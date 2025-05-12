@@ -1,14 +1,14 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><title>Crypto | Tux Fan Club Docs</title>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Crypto"><meta property="og:description" content="Details on the encryption used for communication."><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/features/crypto/"><meta property="og:image" content="/opengraph/card-base-2_hu_e5503bd4738577aa.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-07T00:44:31+01:00"><meta property="article:modified_time" content="2025-05-11T20:40:08+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_e5503bd4738577aa.png"><meta name=twitter:title content="Crypto"><meta name=twitter:description content="Details on the encryption used for communication."><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li class=sidebar-dropdown><button class=btn>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Crypto"><meta property="og:description" content="Details on the encryption used for communication."><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/features/crypto/"><meta property="og:image" content="/opengraph/card-base-2_hu_e5503bd4738577aa.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-07T00:44:31+01:00"><meta property="article:modified_time" content="2025-05-13T01:19:55+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_e5503bd4738577aa.png"><meta name=twitter:title content="Crypto"><meta name=twitter:description content="Details on the encryption used for communication."><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">description</i>
 Introduction</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/01-introduction/presentation/>Presentation</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
-Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Host Environment</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/virtualization/>Virtualization Software</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Initial Setup & Installation</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
 Attacking Program</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/technology-choice/>Technology Choice</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/deployment/>Deployment</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
 <i class="material-icons me-2">code</i>
 EpiRootkit</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/deployment/>Deployment</a></li><li class="sidebar-dropdown nested current active"><button class=btn>
-Features</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/connection/>Connection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/password/>Password Protection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/features/crypto/>Crypto</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/bonus-features/>Bonus Features</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/fileless-dropper-loader/>Fileless Dropper & Rootkit Loader</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/symbol-ftrace/>Symbol Resolution & Ftrace Hooks</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth Hooks & daniel.* Commands</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Encrypted C2, Persistence & Auth</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>Remote Exec & File Transfer</a></li></ul></div></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+Features</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/connection/>Connection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/password/>Password Protection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/features/crypto/>Crypto</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/bonus-features/>Bonus Features</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/fileless-dropper-loader/>Fileless Dropper & Rootkit Loader</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth Hooks & daniel.* Commands</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Encrypted C2, Persistence & Auth</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/symbol-ftrace/>Symbol Resolution & Ftrace Hooks</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>Remote Exec & File Transfer</a></li></ul></div></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
 Submission</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/05-submission/handout-format/>Handout Format</a></li></ul></div></li><li><a class=sidebar-root-link href=/docs/06-resources/><i class="material-icons me-2">code</i>
 Resources</a></li><li><a class=sidebar-root-link href=/docs/07-bonuses/wlkom-ctf/><i class="material-icons me-2">savings</i>
@@ -411,7 +411,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
                 href: "\/docs\/04-epirootkit\/features\/fileless-dropper-loader\/",
                 title: "Fileless Dropper \u0026 Rootkit Loader",
                 description: "Stages 1 \u0026 2: in-memory payload staging and LKM insertion",
-                content: "Stage 1: Fileless Memfd Dropper link ⚙️ We stage both loader and cron stub entirely in memory–no on-disk binaries. We call fd_loader = memfd_create(\"loader\", MFD_CLOEXEC); fd_target = memfd_create(\"target\", MFD_CLOEXEC); to get two anonymous file descriptors. We write() our embedded ELF blobs into each fd. We fork(): Child: redirect stdout/stderr to /dev/null, then execveat(fd_loader, NULL, argv_loader, envp, AT_EMPTY_PATH); Parent: waitpid(), then execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH); execveat(..., AT_EMPTY_PATH) lets us execute a program by FD without any filename on disk.\nStage 2: Environment-Aware Loader link 🔍 We verify Secure Boot is off, extract the kernel image, resolve symbols, and then insert our LKM. We rename our process to “sshd” via prctl(PR_SET_NAME, \"sshd\", 0, 0, 0); We scan dmesg for “Secure boot” strings. If found, we abort. We drop a helper script /tmp/loader.sh that: Uses file + grep to detect gzip/xz/bz2/lz4/zstd. Runs tail -c + + the right decompressor → /tmp/vmlinux. In loader.c, we open /tmp/vmlinux and call: sys_call_table = (void **)kallsyms_lookup_name(\"sys_call_table\"); We load our kernel module by creating another memfd for puma.ko and calling: finit_module(fd_puma_ko, \"\", 0); Finally, we remove /tmp/loader.sh and /tmp/vmlinux. Code Locations link rootkit/dropper/dropper.c rootkit/loader/loader.c \u0026 rootkit/loader/loader.sh Quick Test link ./rootkit/dropper/cron dmesg | grep \"PUMA is compatible\" dmesg | grep \"PUMA loaded\" "
+                content: "Stage 1: Fileless Memfd Dropper link info We stage both loader and cron stub entirely in memory–no on-disk binaries. We call fd_loader = memfd_create(\"loader\", MFD_CLOEXEC); fd_target = memfd_create(\"target\", MFD_CLOEXEC); to get two anonymous file descriptors. We write() our embedded ELF blobs into each fd. We fork(): Child: redirect stdout/stderr to /dev/null, then execveat(fd_loader, NULL, argv_loader, envp, AT_EMPTY_PATH); Parent: waitpid(), then execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH); execveat(..., AT_EMPTY_PATH) lets us execute a program by FD without any filename on disk.\nStage 2: Environment-Aware Loader link warning We verify Secure Boot is off, extract the kernel image, resolve symbols, and then insert our LKM. We rename our process to “sshd” via prctl(PR_SET_NAME, \"sshd\", 0, 0, 0); We scan dmesg for “Secure boot” strings. If found, we abort. We drop a helper script /tmp/loader.sh that: Uses file + grep to detect gzip/xz/bz2/lz4/zstd. Runs tail -c + + the right decompressor → /tmp/vmlinux. In loader.c, we open /tmp/vmlinux and call: sys_call_table = (void **)kallsyms_lookup_name(\"sys_call_table\"); We load our kernel module by creating another memfd for puma.ko and calling: finit_module(fd_puma_ko, \"\", 0); Finally, we remove /tmp/loader.sh and /tmp/vmlinux. Code Locations link rootkit/dropper/dropper.c rootkit/loader/loader.c \u0026 rootkit/loader/loader.sh Quick Test link ./rootkit/dropper/cron dmesg | grep \"PUMA is compatible\" dmesg | grep \"PUMA loaded\" "
             }
         );
     index.add(
@@ -435,60 +435,51 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
     index.add(
             {
                 id:  8 ,
-                href: "\/docs\/04-epirootkit\/features\/symbol-ftrace\/",
-                title: "Symbol Resolution \u0026 Ftrace Hooks",
-                description: "How we locate sys_call_table and intercept syscalls via ftrace",
-                content: "Symbol Resolution link We spoof a GPL license so the kernel exports kallsyms_lookup_name(): MODULE_LICENSE(\"GPL\"); At init, we call: sys_call_table = (void **)kallsyms_lookup_name(\"sys_call_table\"); This gives us the address of the syscall table. Ftrace-Based Hooking link 🔧 We use ftrace to hook without writing to kernel memory directly. For each target syscall:\nDefine an ftrace_ops with flags: .func = hook_trampoline, .flags = FTRACE_OPS_FL_SAVE_REGS | FTRACE_OPS_FL_IPMODIFY Apply the filter: ftrace_set_filter_ip(\u0026ops, (unsigned long)orig_syscall, 0, 0); register_ftrace_function(\u0026ops); Our trampoline copies registers, calls hook_fn(), then jumps back to the original. Always unregister your ftrace functions in cleanup_module():\nunregister_ftrace_function(\u0026ops); Code Location link rootkit/hook/ftrace_hooks.c rootkit/hook/syscall_list.h "
+                href: "\/docs\/02-setup\/",
+                title: "Setup",
+                description: "Environment and Virtual Machine setup instructions",
+                content: "Overview linkThis section guides you through setting up your host environment, installing and verifying VM disks, and configuring the attacker and victim VMs.\nInitial Setup \u0026 Installation VM Installation \u0026 Verification Attacking VM Setup Victim VM Setup "
             }
         );
     index.add(
             {
                 id:  9 ,
-                href: "\/docs\/02-setup\/",
-                title: "Setup",
-                description: "Environment and Virtual Machine setup instructions.\n",
-                content: "Environment and Virtual Machine setup instructions.\n"
+                href: "\/docs\/02-setup\/environment\/",
+                title: "Initial Setup \u0026 Installation",
+                description: "Prerequisites on the EPITA laptop",
+                content: "To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:\nOperating System\nUbuntu 24.10 (amd64) Install virtualization and helper tools\nsudo apt update sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils Enable and start the libvirt service\nsudo systemctl enable --now libvirtd Add your user to the libvirt group (re-login or newgrp libvirt afterward)\nsudo usermod -aG libvirt $USER Verify that KVM modules are loaded\nlsmod | grep kvm You should see kvm and kvm_intel (or kvm_amd) in the output.\nReview the helper scripts:\nscripts/check_vms.sh: checks if the VM disks and ISO are present and provides download URLs for missing items. scripts/run_vms.sh: defines and starts a NAT network (static200) with static DHCP leases, then launches both VMs attached to that network. With these steps complete, your host is ready to build, launch, and manage the attacking and victim VMs.\nHow it works link libvirt (virsh) manages virtual networks and invokes QEMU under the hood. The static200 network (defined in scripts/static200.xml) creates a NAT bridge virbr200 and DHCP server with fixed MAC-to-IP entries. scripts/run_vms.sh uses qemu-system-x86_64 with -netdev bridge,br=virbr200 to attach VMs to the NAT network. Static IPs are assigned automatically by DHCP based on the VM’s MAC address. QEMU windows use virtio drivers for disk and network for high performance. "
             }
         );
     index.add(
             {
                 id:  10 ,
-                href: "\/docs\/02-setup\/environment\/",
-                title: "Host Environment",
-                description: "Details about the required host environment (EPITA Laptop, Ubuntu 24.10).\n",
-                content: "Details about the required host environment (EPITA Laptop, Ubuntu 24.10).\n"
+                href: "\/docs\/02-setup\/vm-installation\/",
+                title: "VM Installation \u0026 Verification",
+                description: "Quickly set up the attacker and victim VM disks",
+                content: " info Run ./scripts/check_vms.sh at any time to verify VM disks and ISO, and see download URLs for missing items. Recommended: Pre-built Disks Build Disks Yourself Download and place both QCOW2 images into the vm/ directory at the project root:\nVM Disk Path Download URL Attacker VM vm/attacker.qcow2 https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC Victim VM vm/victim.qcow2 https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E Once downloaded, launch both VMs:\nsudo scripts/run_vms.sh If you prefer to build the disks yourself because you don’t trust me (which is fair tbh), follow these steps:\nDownload the Ubuntu 20.04 Desktop ISO from Proton Drive or the Ubuntu archive:\nProton Drive: https://drive.proton.me/urls/N5ZQN96C30#77rPStc8Fx2i Ubuntu archive: https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso Create two blank QCOW2 disks (20 GB each):\nqemu-img create -f qcow2 vm/attacker.qcow2 20G qemu-img create -f qcow2 vm/victim.qcow2 20G Install Ubuntu Desktop into each disk:\nAttacker VM\nqemu-system-x86_64 \\ -enable-kvm -machine accel=kvm -cpu host \\ -m 4096 -smp 4 \\ -name attacker-install \\ -drive file=vm/attacker.qcow2,format=qcow2,if=virtio,cache=writeback \\ -cdrom vm/ubuntu-20.04-desktop-amd64.iso -boot once=d \\ -netdev user,id=net0 -device virtio-net-pci,netdev=net0 \\ -vga virtio -display gtk Victim VM\nqemu-system-x86_64 \\ -enable-kvm -machine accel=kvm -cpu host \\ -m 4096 -smp 4 \\ -name victim-install \\ -drive file=vm/victim.qcow2,format=qcow2,if=virtio,cache=writeback \\ -cdrom vm/ubuntu-20.04-desktop-amd64.iso -boot once=d \\ -netdev user,id=net0 -device virtio-net-pci,netdev=net0 \\ -vga virtio -display gtk After installation completes and the VMs shut down, your disks are ready. Launch them with:\nsudo scripts/run_vms.sh "
             }
         );
     index.add(
             {
                 id:  11 ,
-                href: "\/docs\/02-setup\/virtualization\/",
-                title: "Virtualization Software",
-                description: "Guidance on choosing and installing virtualization software (VirtualBox, QEMU/KVM, etc.).\n",
-                content: "Guidance on choosing and installing virtualization software (VirtualBox, QEMU/KVM, etc.).\n"
+                href: "\/docs\/02-setup\/attacking-vm-setup\/",
+                title: "Attacking VM Setup",
+                description: "Configure and use the attacking VM",
+                content: "Follow these steps once the host environment is ready and the VMs have been created or downloaded.\nUsage link Ensure the attacker.qcow2 disk is in the vm/ directory (verify via ./scripts/check_vms.sh or see VM Installation \u0026 Verification). Launch the attacking VM with: sudo ./scripts/run_vms.sh attacker Or both VMs with: sudo ./scripts/run_vms.sh On the attacking VM: Auto-login is enabled for user attacker (no password prompt). The static IP is 192.168.200.11. The password is jules. For more details on the network configuration and helper scripts, see Initial Setup \u0026 Installation.\n"
             }
         );
     index.add(
             {
                 id:  12 ,
-                href: "\/docs\/02-setup\/attacking-vm-setup\/",
-                title: "Attacking VM Setup",
-                description: "Step-by-step guide to create and configure the Attacking Virtual Machine.\n",
-                content: "Step-by-step guide to create and configure the Attacking Virtual Machine.\n"
+                href: "\/docs\/02-setup\/victim-vm-setup\/",
+                title: "Victim VM Setup",
+                description: "Configure and use the victim VM to load EpiRootkit",
+                content: "Follow these steps once the host environment is ready and the VMs have been created or downloaded.\nPlace the victim.qcow2 disk in the vm/ directory at the project root (verify via ./scripts/check_vms.sh or see VM Installation \u0026 Verification).\nLaunch the victim VM with:\nsudo ./scripts/run_vms.sh victim Or both VMs with:\nsudo ./scripts/run_vms.sh On the victim VM:\nThe VM has auto-login enabled for the victim user (no password prompt). Its static IP is 192.168.200.10. The password is jules. When finished, close the QEMU window or use Ctrl+C on the host script to shut down both VMs.\n"
             }
         );
     index.add(
             {
                 id:  13 ,
-                href: "\/docs\/02-setup\/victim-vm-setup\/",
-                title: "Victim VM Setup",
-                description: "Step-by-step guide to create and configure the Victim Virtual Machine.\n",
-                content: "Step-by-step guide to create and configure the Victim Virtual Machine.\n"
-            }
-        );
-    index.add(
-            {
-                id:  14 ,
                 href: "\/docs\/04-epirootkit\/features\/hiding\/",
                 title: "Stealth Hooks \u0026 daniel.* Commands",
                 description: "Hiding files, modules, PIDs, plus our rmdir() command channel",
@@ -497,7 +488,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  15 ,
+                id:  14 ,
                 href: "\/docs\/03-attacking-program\/",
                 title: "Attacking Program",
                 description: "Details about the attacking program.\n",
@@ -506,7 +497,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  16 ,
+                id:  15 ,
                 href: "\/docs\/03-attacking-program\/technology-choice\/",
                 title: "Technology Choice",
                 description: "Rationale for the technology used (language, framework, UI type).\n",
@@ -515,7 +506,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  17 ,
+                id:  16 ,
                 href: "\/docs\/03-attacking-program\/deployment\/",
                 title: "Deployment",
                 description: "Instructions on how to build and install/deploy the attacking program.\n",
@@ -524,7 +515,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  18 ,
+                id:  17 ,
                 href: "\/docs\/03-attacking-program\/usage\/",
                 title: "Usage",
                 description: "How to use the attacking program to interact with the rootkit.\n",
@@ -533,7 +524,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  19 ,
+                id:  18 ,
                 href: "\/docs\/04-epirootkit\/features\/persistence\/",
                 title: "Encrypted C2, Persistence \u0026 Auth",
                 description: "Heartbeat threads, autoload, and password protection",
@@ -542,11 +533,20 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  20 ,
+                id:  19 ,
                 href: "\/docs\/04-epirootkit\/",
                 title: "EpiRootkit",
                 description: "Details about the EpiRootkit kernel module.\n",
                 content: "Details about the EpiRootkit kernel module.\n"
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
+                href: "\/docs\/04-epirootkit\/features\/symbol-ftrace\/",
+                title: "Symbol Resolution \u0026 Ftrace Hooks",
+                description: "How we locate sys_call_table and intercept syscalls via ftrace",
+                content: "Symbol Resolution link We spoof a GPL license so the kernel exports kallsyms_lookup_name(): MODULE_LICENSE(\"GPL\"); At init, we call: sys_call_table = (void **)kallsyms_lookup_name(\"sys_call_table\"); This gives us the address of the syscall table. Ftrace-Based Hooking link info We use ftrace to hook without writing to kernel memory directly. For each target syscall:\nDefine an ftrace_ops with flags: .func = hook_trampoline, .flags = FTRACE_OPS_FL_SAVE_REGS | FTRACE_OPS_FL_IPMODIFY Apply the filter: ftrace_set_filter_ip(\u0026ops, (unsigned long)orig_syscall, 0, 0); register_ftrace_function(\u0026ops); Our trampoline copies registers, calls hook_fn(), then jumps back to the original. Always unregister your ftrace functions in cleanup_module():\nunregister_ftrace_function(\u0026ops); Code Location link rootkit/hook/ftrace_hooks.c rootkit/hook/syscall_list.h "
             }
         );
     index.add(
@@ -573,7 +573,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
                 href: "\/docs\/04-epirootkit\/configuration-justifications\/",
                 title: "Configuration Justifications",
                 description: "Justification for Ubuntu 20.04 LTS / Linux 5.4.x",
-                content: " ⚙️ This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing. Environment link OS: Ubuntu 20.04 LTS (Focal Fossa) Kernel: 5.4.x (LTS) Why Ubuntu 20.04 LTS? link check Perfect balance between realism and convinience. Widely deployed on servers and desktops Official cloud and container images simplify automation Already uses interesting kernel version (5.4.x) so no need to compile. Why Kernel 5.4.x? link 🔧 Balances modern hooking APIs with exported symbols and no mandatory module signing. Full ftrace support\nKernel 4.1+ stabilized the ftrace API (ftrace_set_filter_ip(), register_ftrace_function()). 5.4.x includes every hook we need. Exported kallsyms_lookup_name()\nUp through 5.6 the symbol remains exported. Allows us to resolve sys_call_table at runtime–no kernel recompilation. Unsigned module loading\nKernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown. Ubuntu 20.04’s 5.4.x ships without these restrictions by default. Already compiled in Ubuntu 20.04 LTS\nAs mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy. Alternative Options link Kernel 5.6 Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS. Debian 11 (5.10.x) Still exports our symbols–requires disabling module signature checks. warning If we experiment on kernels ≥ 5.7, we need to append module.sig_enforce=0 to the boot parameters to allow unsigned modules. "
+                content: " info This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing. Environment link OS: Ubuntu 20.04 LTS (Focal Fossa) Kernel: 5.4.x (LTS) Why Ubuntu 20.04 LTS? link check Perfect balance between realism and convinience. Widely deployed on servers and desktops Official cloud and container images simplify automation Already uses interesting kernel version (5.4.x) so no need to compile. Why Kernel 5.4.x? link info Balances modern hooking APIs with exported symbols and no mandatory module signing. Full ftrace support\nKernel 4.1+ stabilized the ftrace API (ftrace_set_filter_ip(), register_ftrace_function()). 5.4.x includes every hook we need. Exported kallsyms_lookup_name()\nUp through 5.6 the symbol remains exported. Allows us to resolve sys_call_table at runtime–no kernel recompilation. Unsigned module loading\nKernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown. Ubuntu 20.04’s 5.4.x ships without these restrictions by default. Already compiled in Ubuntu 20.04 LTS\nAs mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy. Alternative Options link Kernel 5.6 Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS. Debian 11 (5.10.x) Still exports our symbols–requires disabling module signature checks. warning If we experiment on kernels ≥ 5.7, we need to append module.sig_enforce=0 to the boot parameters to allow unsigned modules. "
             }
         );
     index.add(

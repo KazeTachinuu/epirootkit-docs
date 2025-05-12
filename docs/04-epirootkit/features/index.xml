@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 20:40:08 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 01:19:55 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
 &lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- ⚙️
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">We stage both loader and cron stub entirely in memory&amp;ndash;no on-disk binaries.&lt;/div>
  &lt;/div>
@@ -78,110 +79,7 @@ to get two anonymous file descriptors.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol>
-&lt;p>&lt;code>execveat(..., AT_EMPTY_PATH)&lt;/code> lets us execute a program by FD without any filename on disk.&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
-&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="301615e" class="language-c ">
- &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>At init, we call:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="20e28ad" class="language-c ">
- &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
- &lt;/pre>
- &lt;/div>
-This gives us the address of the syscall table.&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
-&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- 🔧
- &lt;/div>
- 
- &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
- &lt;/div>
-&lt;p>For each target syscall:&lt;/p>
-&lt;ol>
-&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="f3796aa" class="language-c ">
- &lt;code>.func = hook_trampoline,
-.flags = FTRACE_OPS_FL_SAVE_REGS |
- FTRACE_OPS_FL_IPMODIFY&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Apply the filter:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="c83d517" class="language-c ">
- &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
-register_ftrace_function(&amp;amp;ops);&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
-&lt;/ol>
-&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+&lt;p>&lt;code>execveat(..., AT_EMPTY_PATH)&lt;/code> lets us execute a program by FD without any filename on disk.&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
 &lt;ol>
@@ -258,7 +156,111 @@ Our &lt;code>installer.sh&lt;/code>:&lt;/p>
 &lt;/ol>
 &lt;hr>
 &lt;h1 id="3-password-protection">3. Password Protection &lt;a href="#3-password-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
+&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="301615e" class="language-c ">
+ &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>At init, we call:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="20e28ad" class="language-c ">
+ &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+This gives us the address of the syscall table.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
+ &lt;/div>
+&lt;p>For each target syscall:&lt;/p>
+&lt;ol>
+&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f3796aa" class="language-c ">
+ &lt;code>.func = hook_trampoline,
+.flags = FTRACE_OPS_FL_SAVE_REGS |
+ FTRACE_OPS_FL_IPMODIFY&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Apply the filter:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c83d517" class="language-c ">
+ &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
+register_ftrace_function(&amp;amp;ops);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
+&lt;/ol>
+&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 Allow arbitrary program execution via C2.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
 &lt;ul>

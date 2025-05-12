@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 20:40:08 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 01:19:55 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- ⚙️
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.&lt;/div>
  &lt;/div>
@@ -30,8 +31,9 @@
 &lt;div class="alert alert-primary d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- 🔧
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">Balances modern hooking APIs with exported symbols and no mandatory module signing.&lt;/div>
  &lt;/div>
