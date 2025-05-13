@@ -25,5 +25,3 @@ To run the Attacking Program (C2 Server):
 3.  Review Critical Configuration: Before first use, ensure you have reviewed and appropriately set the `ENCRYPTION_KEY`, `PASSWORD_HASH`, and `C2_PORT`. Refer to the [Configuration](./configuration) page for detailed information on these settings and how to generate necessary values. It is crucial to change the default security keys and hashes.
 
 Required directories (`uploads/`, `downloads/`, `logs/`) are created automatically.
-
-Next: [Usage & CLI Commands](./usage). 
