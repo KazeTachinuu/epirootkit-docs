@@ -52,16 +52,17 @@ Allow dynamic hiding of arbitrary PIDs.
 **What we did**  
 Use `rmdir()` as our stealth control channel.
 
-<table>
-  <tr><th>Command</th><th>Action</th></tr>
-  <tr><td>`daniel.0`</td><td>Privilege escalation</td></tr>
-  <tr><td>`daniel.c`</td><td>Dump in-kernel config</td></tr>
-  <tr><td>`daniel.v`</td><td>Report version</td></tr>
-  <tr><td>`daniel.k.<pid>`</td><td>Hide PID `<pid>`</td></tr>
-</table>
+{{< table >}}
+| Command | Action |
+|---------|--------|
+| `daniel.0` | Privilege escalation |
+| `daniel.c` | Dump in-kernel config |
+| `daniel.v` | Report version |
+| `daniel.k.<pid>` | Hide PID `<pid>` |
+{{< /table >}}
+
 
 **How it works**  
 - Hook `rmdir(const char __user *path,…)`.
 - Copy `path` into kernel space.
 - If it matches `^daniel\.` we run the command and return `-ENOENT`.
-```
