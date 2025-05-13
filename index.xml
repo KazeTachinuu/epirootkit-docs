@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 13:22:21 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 14 May 2025 01:10:47 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
 &lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
@@ -181,14 +181,14 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 		
 
 		&lt;a class="nav-link active"
-		 id="bfdcaeTab" data-bs-toggle="tab" data-bs-target="#bfdcae"
-		 type="button" role="tab" aria-controls="bfdcae" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="faebdcTab" data-bs-toggle="tab" data-bs-target="#faebdc"
+		 type="button" role="tab" aria-controls="faebdc" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dcefbaTab" data-bs-toggle="tab" data-bs-target="#dcefba"
-		 type="button" role="tab" aria-controls="dcefba" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="abefdcTab" data-bs-toggle="tab" data-bs-target="#abefdc"
+		 type="button" role="tab" aria-controls="abefdc" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -205,7 +205,7 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 
 
 
-&lt;div class="tab-pane fade show active" id="bfdcae" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="faebdc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>Download and place both QCOW2 images into the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p>
 &lt;table>
@@ -373,7 +373,195 @@ we drop that entry by &lt;code>memmove()&lt;/code>.&lt;/li>
 &lt;h1 id="2-module-hiding">2. Module Hiding &lt;a href="#2-module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 We hide our LKM from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
-We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Technology Choice</title><link>/docs/03-attacking-program/technology-choice/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/technology-choice/</guid><description>&lt;p>Rationale for the technology used (language, framework, UI type).&lt;/p></description></item><item><title>Deployment</title><link>/docs/03-attacking-program/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/deployment/</guid><description>&lt;p>Instructions on how to build and install/deploy the attacking program.&lt;/p></description></item><item><title>Usage</title><link>/docs/03-attacking-program/usage/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>How to use the attacking program to interact with the rootkit.&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p>
+&lt;p>Key functions include:&lt;/p>
+&lt;ul>
+&lt;li>Listening for client connections from EpiRootkit instances.&lt;/li>
+&lt;li>Securing communication using AES-256-GCM encryption.&lt;/li>
+&lt;li>Authenticating clients based on a SHA512 hashed password.&lt;/li>
+&lt;li>Managing connected clients (listing, identifying).&lt;/li>
+&lt;li>Providing an interactive CLI for sending commands to EpiRootkit instances.&lt;/li>
+&lt;/ul></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;p>To run the Attacking Program (C2 Server):&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Node.js &amp;amp; npm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and npm are installed.
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="685c214" class="language-bash ">
+ &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt install nodejs npm&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="setup">Setup &lt;a href="#setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Navigate to the &lt;code>attacking_program&lt;/code> directory within the project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install Dependencies:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="e3453dc" class="language-bash ">
+ &lt;code>npm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>Review Critical Configuration: Before first use, ensure you have reviewed and appropriately set the &lt;code>ENCRYPTION_KEY&lt;/code>, &lt;code>PASSWORD_HASH&lt;/code>, and &lt;code>C2_PORT&lt;/code>. Refer to the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="721ccab" class="language-bash ">
+ &lt;code>npm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.&lt;/p>
+&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+
+
+
+
+&lt;table class="table %!s(&lt;nil>)">
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Command&lt;/th>
+ &lt;th>Aliases&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>server start&lt;/code>&lt;/td>
+ &lt;td>&lt;code>start&lt;/code>&lt;/td>
+ &lt;td>Starts TCP server (Note: auto-starts with &lt;code>npm start&lt;/code>).&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>server stop&lt;/code>&lt;/td>
+ &lt;td>&lt;code>stop&lt;/code>&lt;/td>
+ &lt;td>Stops TCP server.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>clients list&lt;/code>&lt;/td>
+ &lt;td>&lt;code>ls&lt;/code>, &lt;code>list&lt;/code>&lt;/td>
+ &lt;td>Lists connected clients (alias, ID, auth status, last ping).&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>send &amp;lt;clientAlias&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>Sends &lt;code>&amp;lt;command...&amp;gt;&lt;/code> to specified &lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>exit&lt;/code>&lt;/td>
+ &lt;td>&lt;code>quit&lt;/code>&lt;/td>
+ &lt;td>Stops server and exits application.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>: Target client alias (e.g., &lt;code>Client-1&lt;/code> from &lt;code>clients list&lt;/code>).&lt;/li>
+&lt;li>&lt;code>&amp;lt;command...&amp;gt;&lt;/code>: Command string for the victim machine.&lt;/li>
+&lt;/ul>
+&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;p>The C2 server is configured via &lt;code>src/config/index.js&lt;/code> or environment variables.&lt;/p>
+&lt;h2 id="critical-settings">Critical Settings &lt;a href="#critical-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>&lt;code>C2_PORT&lt;/code> (Default: &lt;code>4444&lt;/code> | Env: &lt;code>C2_PORT&lt;/code>)&lt;/p>
+&lt;ul>
+&lt;li>TCP port for EpiRootkit connections.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ENCRYPTION_KEY&lt;/code> (Default: &lt;code>mysecretkey...&lt;/code> (32 bytes) | Env: &lt;code>ENCRYPTION_KEY&lt;/code>)&lt;/p>
+&lt;ul>
+&lt;li>Must be a 32-byte string for AES-256-GCM.&lt;/li>
+&lt;li>Crucial for security: Change the default to a strong, random key.&lt;/li>
+&lt;li>Must match the key on EpiRootkit clients.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>PASSWORD_HASH&lt;/code> (Default: SHA512 hash of &lt;code>&amp;quot;password&amp;quot;&lt;/code> | Env: &lt;code>PASSWORD_HASH&lt;/code>)&lt;/p>
+&lt;ul>
+&lt;li>Must be a 128-char lowercase SHA512 hex string.&lt;/li>
+&lt;li>Crucial for security: Change the default. Use a strong password and hash it:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6a74c81" class="language-bash ">
+ &lt;code># Example to generate hash for a new password:
+echo -n &amp;#34;your_new_strong_password&amp;#34; | sha512sum | awk &amp;#39;{print $1}&amp;#39;&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="other-settings">Other Settings &lt;a href="#other-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;code>WEB_PORT&lt;/code>: For a potential future web UI (Default: &lt;code>3000&lt;/code>).&lt;/li>
+&lt;li>&lt;code>UPLOAD_DIR&lt;/code>, &lt;code>DOWNLOAD_DIR&lt;/code>, &lt;code>LOG_DIR&lt;/code>: Default paths for server-side file operations and logs.&lt;/li>
+&lt;/ul>
+&lt;p>Configuration validation ensures key formats (e.g., key lengths) are correct on startup.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
+&lt;h2 id="1-message-encryption-aes-256-gcm">1. Message Encryption: AES-256-GCM &lt;a href="#1-message-encryption-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>Purpose: Encrypts all TCP C2 traffic for confidentiality, integrity, and authenticity.&lt;/li>
+&lt;li>Key: Uses a 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> (must be changed from default and kept secret).&lt;/li>
+&lt;li>Format: Encrypted messages are transmitted as a colon-separated string: &lt;code>iv_hex:authtag_hex:ciphertext_hex&lt;/code>.&lt;/li>
+&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p>&lt;strong>Configuration&lt;/strong>&lt;br>Key C2 server configuration settings.&lt;/a>" data-bs-toggle="tooltip" href="/docs/03-attacking-program/configuration/">Configuration&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-client-authentication-sha512-hashing">2. Client Authentication: SHA512 Hashing &lt;a href="#2-client-authentication-sha512-hashing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>Purpose: Verifies EpiRootkit clients before allowing interaction.&lt;/li>
+&lt;li>Method: Client sends a password; server hashes it with SHA512 and compares against a stored &lt;code>PASSWORD_HASH&lt;/code>.&lt;/li>
+&lt;li>Hash: The &lt;code>PASSWORD_HASH&lt;/code> (must be changed from default) is a 128-char lowercase SHA512 hex string.&lt;/li>
+&lt;li>Details: See &lt;code>src/handlers/messageHandlers.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 Spawn a kernel thread to poll our C2 server.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
 &lt;ol>
@@ -522,7 +710,60 @@ register_ftrace_function(&amp;amp;ops);&lt;/code>
 &lt;/li>
 &lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
 &lt;/ol>
-&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;p>For the EpiRootkit to be controlled, it must first establish a connection to the Attacking Program (C2 Server) and then authenticate itself.&lt;/p>
+&lt;h2 id="connection-to-c2-server">Connection to C2 Server &lt;a href="#connection-to-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Target&lt;/strong>: The EpiRootkit needs to know the IP address and port of the C2 server.&lt;/p>
+&lt;ul>
+&lt;li>This information might be hardcoded during compilation, passed as a module parameter during loading, or discovered through other means.&lt;/li>
+&lt;li>The C2 server, by default, listens on port &lt;code>4444&lt;/code> (configurable, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;p>Once authenticated, the EpiRootkit can receive commands from the C2 server, execute them on the victim machine, and return the results.&lt;/p>
+&lt;h2 id="receiving-commands">Receiving Commands &lt;a href="#receiving-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Command Message (&lt;code>COMMAND&lt;/code>)&lt;/strong>:
+&lt;ul>
+&lt;li>The C2 server sends commands to an authenticated EpiRootkit client using a &lt;code>COMMAND&lt;/code> message.&lt;/li>
+&lt;li>&lt;strong>Format&lt;/strong>: A JSON object, encrypted using AES-256-GCM.
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="025e6d1" class="language-json ">
+ &lt;code>{
+ &amp;#34;type&amp;#34;: &amp;#34;COMMAND&amp;#34;,
+ &amp;#34;id&amp;#34;: &amp;#34;unique_command_id_string&amp;#34;, // e.g., a timestamp
+ &amp;#34;data&amp;#34;: &amp;#34;command_string_to_execute&amp;#34; // e.g., &amp;#34;ls -la /tmp&amp;#34; or &amp;#34;whoami&amp;#34;
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>The &lt;code>id&lt;/code> is a unique identifier generated by the C2 server for tracking the command.&lt;/li>
+&lt;li>The &lt;code>data&lt;/code> field contains the raw command string that the EpiRootkit should execute.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="executing-commands">Executing Commands &lt;a href="#executing-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>The EpiRootkit is responsible for parsing the &lt;code>data&lt;/code> field and executing the command on the victim system.&lt;/li>
+&lt;li>It needs to capture:
+&lt;ul>
+&lt;li>Standard Output (stdout) of the command.&lt;/li>
+&lt;li>Standard Error (stderr) of the command.&lt;/li>
+&lt;li>The exit status (or exit code) of the command.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="returning-results">Returning Results &lt;a href="#returning-results" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Command Result Message (&lt;code>COMMAND_RESULT&lt;/code>)&lt;/strong>:&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  &lt;span class="material-icons size-20 me-2">
@@ -563,7 +804,10 @@ register_ftrace_function(&amp;amp;ops);&lt;/code>
  &lt;/div>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;p>To maintain a secure channel and controlled access, the EpiRootkit must adhere to the security protocols established by the Attacking Program (C2 Server).&lt;/p>
+&lt;h2 id="1-encrypted-communication-aes-256-gcm">1. Encrypted Communication (AES-256-GCM) &lt;a href="#1-encrypted-communication-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Requirement&lt;/strong>: All TCP communication with the C2 server &lt;strong>must&lt;/strong> be encrypted using AES-256-GCM.&lt;/li>
+&lt;li>&lt;strong>Shared Secret&lt;/strong>: The EpiRootkit must be compiled or configured with the exact same 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> that the C2 server is using (see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/security/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 Allow arbitrary program execution via C2.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
 &lt;ul>

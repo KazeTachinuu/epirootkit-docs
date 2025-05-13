@@ -1,14 +1,14 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><title>Configuration Justifications | Tux Fan Club Docs</title>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Justification for Ubuntu 20.04 LTS / Linux 5.4.x"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Configuration Justifications"><meta property="og:description" content="Justification for Ubuntu 20.04 LTS / Linux 5.4.x"><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/configuration-justifications/"><meta property="og:image" content="/opengraph/card-base-2_hu_b44b3b503888accf.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-07T00:44:31+01:00"><meta property="article:modified_time" content="2025-05-13T13:22:21+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_b44b3b503888accf.png"><meta name=twitter:title content="Configuration Justifications"><meta name=twitter:description content="Justification for Ubuntu 20.04 LTS / Linux 5.4.x"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li class=sidebar-dropdown><button class=btn>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Justification for Ubuntu 20.04 LTS / Linux 5.4.x"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Configuration Justifications"><meta property="og:description" content="Justification for Ubuntu 20.04 LTS / Linux 5.4.x"><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/configuration-justifications/"><meta property="og:image" content="/opengraph/card-base-2_hu_b44b3b503888accf.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-07T00:44:31+01:00"><meta property="article:modified_time" content="2025-05-14T01:10:47+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_b44b3b503888accf.png"><meta name=twitter:title content="Configuration Justifications"><meta name=twitter:description content="Justification for Ubuntu 20.04 LTS / Linux 5.4.x"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">description</i>
 Introduction</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/01-introduction/presentation/>Presentation</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
 Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Initial Setup & Installation</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
-<i class="material-icons me-2">code</i>
-Attacking Program</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/technology-choice/>Technology Choice</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/deployment/>Deployment</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
-<i class="material-icons me-2">code</i>
-EpiRootkit</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/deployment/>Deployment</a></li><li class="sidebar-dropdown nested"><button class=btn>
-Features</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/connection/>Connection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/password/>Password Protection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/crypto/>Crypto</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/bonus-features/>Bonus Features</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/fileless-dropper-loader/>Fileless Dropper & Rootkit Loader</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth Hooks & daniel.* Commands</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Encrypted C2, Persistence & Auth</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/symbol-ftrace/>Symbol Resolution & Ftrace Hooks</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>Remote Exec & File Transfer</a></li></ul></div></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+<i class="material-icons me-2">notes</i>
+Attacking Program (C2 Server)</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/overview/>Overview</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/installation/>Installation</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage & CLI Commands</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/configuration/>Configuration</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/security/>Security Features</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
+<i class="material-icons me-2">notes</i>
+EpiRootkit</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/deployment/>Deployment</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/connection-authentication/>Connection & Authentication</a></li><li class="sidebar-dropdown nested"><button class=btn>
+Features</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/connection/>Connection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/password/>Password Protection</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/crypto/>Crypto</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/bonus-features/>Bonus Features</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/fileless-dropper-loader/>Fileless Dropper & Rootkit Loader</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth Hooks & daniel.* Commands</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Encrypted C2, Persistence & Auth</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/symbol-ftrace/>Symbol Resolution & Ftrace Hooks</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>Remote Exec & File Transfer</a></li></ul></div></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/command-execution/>Command Execution</a></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/security-interaction/>Security Interaction with C2</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
 Submission</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/05-submission/handout-format/>Handout Format</a></li></ul></div></li><li><a class=sidebar-root-link href=/docs/06-resources/><i class="material-icons me-2">code</i>
 Resources</a></li><li><a class=sidebar-root-link href=/docs/07-bonuses/wlkom-ctf/><i class="material-icons me-2">savings</i>
@@ -32,7 +32,7 @@ cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div><
 </a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Configuration Justifications</span>
 <meta itemprop=position content='3'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><ul><li><a href=#environment>Environment</a></li><li><a href=#why-ubuntu-2004-lts>Why Ubuntu 20.04 LTS?</a></li><li><a href=#why-kernel-54x>Why Kernel 5.4.x?</a></li><li><a href=#alternative-options>Alternative Options</a></li></ul></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
 Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li><a href=#environment>Environment</a></li><li><a href=#why-ubuntu-2004-lts>Why Ubuntu 20.04 LTS?</a></li><li><a href=#why-kernel-54x>Why Kernel 5.4.x?</a></li><li><a href=#alternative-options>Alternative Options</a></li></ul></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">code</i><h1 class="content-title mb-0">Configuration Justifications</h1></div><p class="lead mb-3">Justification for Ubuntu 20.04 LTS / Linux 5.4.x</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><div class="alert alert-info d-flex" role=alert><div class="flex-shrink-1 alert-icon"><span class="material-icons size-20 me-2">info</span></div><div class=w-100>This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.</div></div><h2 id=environment>Environment <a href=#environment class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><ul><li><strong>OS</strong>: Ubuntu 20.04 LTS (Focal Fossa)</li><li><strong>Kernel</strong>: 5.4.x (LTS)</li></ul><hr><h2 id=why-ubuntu-2004-lts>Why Ubuntu 20.04 LTS? <a href=#why-ubuntu-2004-lts class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><div class="alert alert-success d-flex" role=alert><div class="flex-shrink-1 alert-icon">check</div><div class=w-100>Perfect balance between realism and convinience.</div></div><ul><li>Widely deployed on servers and desktops</li><li>Official cloud and container images simplify automation</li><li>Already uses interesting kernel version (5.4.x) so no need to compile.</li></ul><hr><h2 id=why-kernel-54x>Why Kernel 5.4.x? <a href=#why-kernel-54x class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><div class="alert alert-primary d-flex" role=alert><div class="flex-shrink-1 alert-icon"><span class="material-icons size-20 me-2">info</span></div><div class=w-100>Balances modern hooking APIs with exported symbols and no mandatory module signing.</div></div><ol><li><p><strong>Full ftrace support</strong></p><ul><li>Kernel 4.1+ stabilized the ftrace API (<code>ftrace_set_filter_ip()</code>, <code>register_ftrace_function()</code>).</li><li>5.4.x includes every hook we need.</li></ul></li><li><p><strong>Exported <code>kallsyms_lookup_name()</code></strong></p><ul><li>Up through 5.6 the symbol remains exported.</li><li>Allows us to resolve <code>sys_call_table</code> at runtime&ndash;no kernel recompilation.</li></ul></li><li><p><strong>Unsigned module loading</strong></p><ul><li>Kernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown.</li><li>Ubuntu 20.04’s 5.4.x ships without these restrictions by default.</li></ul></li><li><p><strong>Already compiled in Ubuntu 20.04 LTS</strong></p><ul><li>As mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy.</li></ul></li></ol><hr><h2 id=alternative-options>Alternative Options <a href=#alternative-options class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><ul><li><strong>Kernel 5.6</strong><ul><li>Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS.</li></ul></li><li><strong>Debian 11 (5.10.x)</strong><ul><li>Still exports our symbols&ndash;requires disabling module signature checks.</li></ul></li></ul><div class="alert alert-warning d-flex" role=alert><div class="flex-shrink-1 alert-icon"><span class="material-icons size-20 me-2">warning</span></div><div class=w-100>If we experiment on kernels ≥ 5.7, we need to append <code>module.sig_enforce=0</code> to the boot parameters to allow unsigned modules.</div></div></div><div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3"><div id=edit-this-page class=mt-1><a href=https://github.com/kazetachinuu/epirootkit-docs/blob/master/content/docs/04-epirootkit/configuration-justifications.md alt="Configuration Justifications" rel="noopener noreferrer" target=_blank><span class="me-1 align-text-bottom"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentcolor"><path d="M16 .396c-8.839.0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772.0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907.0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235.0.0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297.0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959.0 2.14-.02 3.864-.02 4.385.0.416.28.916 1.104.755 6.4-2.093 10.979-8.093 10.979-15.156.0-8.833-7.161-16-16-16z"/></svg>
-</span>Edit this page</a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/04-epirootkit/deployment/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Deployment</p><p class="card-text ms-2"></p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/04-epirootkit/features/file-transfer/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Remote Exec & File Transfer <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">Run commands, upload & …</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
+</span>Edit this page</a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/04-epirootkit/command-execution/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Command Execution</p><p class="card-text ms-2">How EpiRootkit receives and …</p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/04-epirootkit/security-interaction/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Security Interaction with C2 <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">Security protocols EpiRootkit …</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
 <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.c7927bdd82eceb076739257add3f4b0e11379da037c07d5c7110daeb6de0e3edcb2de867604550f88815157e4ec4ddb7.js integrity=sha384-x5J73YLs6wdnOSV63T9LDhE3naA3wH1ccRDa623g4+3LLehnYEVQ+IgVFX5OxN23 defer></script><script type=text/javascript src=/docs/js/bundle.min.4f60111ba6134ba40ed4d3ca8b6f30e10963c0482cd9829b9dc4a2a347bc6eaec2c1cf424c2ce632fb6d2218139f34f0.js integrity=sha384-T2ARG6YTS6QO1NPKi28w4QljwEgs2YKbncSio0e8bq7Cwc9CTCzmMvttIhgTnzTw crossorigin=anonymous defer></script><script type=module>
     var suggestions = document.getElementById('suggestions');
     var search = document.getElementById('flexsearch');
@@ -134,6 +134,41 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
     
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -482,48 +517,66 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
                 href: "\/docs\/04-epirootkit\/features\/hiding\/",
                 title: "Stealth Hooks \u0026 daniel.* Commands",
                 description: "Hiding files, modules, PIDs, plus our rmdir() command channel",
-                content: "1. File \u0026 Directory Hiding linkWhat we did\nWe hook getdents()/getdents64().\nHow it works\nCall the original syscall to fill a dirent buffer. Traverse entries; if d_name starts with any prefix in hide_prefixes[] = { \"jules_est_bo_\", \"memfd:\" }; we drop that entry by memmove(). Return the new byte count. 2. Module Hiding linkWhat we did\nWe hide our LKM from /proc/modules and lsmod.\nHow it works\nWe hook the procfs iterate method for /proc/modules and /sys/modules, filtering out \"epirootkit\" entries.\n3. PID Hiding linkWhat we did\nAllow dynamic hiding of arbitrary PIDs.\nHow it works\nMaintain a hidden_pids list in the kernel. In our getdents() hook on /proc, skip entries matching that list. Add to the list via rmdir(\"daniel.k.\"). 4. C2 \u0026 Commands via rmdir() linkWhat we did\nUse rmdir() as our stealth control channel.\nHow it works\nHook rmdir(const char __user *path,…). Copy path into kernel space. If it matches ^daniel\\. we run the command and return -ENOENT. "
+                content: "1. File \u0026 Directory Hiding linkWhat we did\nWe hook getdents()/getdents64().\nHow it works\nCall the original syscall to fill a dirent buffer. Traverse entries; if d_name starts with any prefix in hide_prefixes[] = { \"jules_est_bo_\", \"memfd:\" }; we drop that entry by memmove(). Return the new byte count. 2. Module Hiding linkWhat we did\nWe hide our LKM from /proc/modules and lsmod.\nHow it works\nWe hook the procfs iterate method for /proc/modules and /sys/modules, filtering out \"epirootkit\" entries.\n3. PID Hiding linkWhat we did\nAllow dynamic hiding of arbitrary PIDs.\nHow it works\nMaintain a hidden_pids list in the kernel. In our getdents() hook on /proc, skip entries matching that list. Add to the list via rmdir(\"daniel.k.\"). 4. C2 \u0026 Commands via rmdir() linkWhat we did\nUse rmdir() as our stealth control channel.\nCommand Action daniel.0 Privilege escalation daniel.c Dump in-kernel config daniel.v Report version daniel.k. Hide PID How it works\nHook rmdir(const char __user *path,…). Copy path into kernel space. If it matches ^daniel\\. we run the command and return -ENOENT. "
             }
         );
     index.add(
             {
                 id:  14 ,
                 href: "\/docs\/03-attacking-program\/",
-                title: "Attacking Program",
-                description: "Details about the attacking program.\n",
-                content: "Details about the attacking program.\n"
+                title: "Attacking Program (C2 Server)",
+                description: "The C2 server for EpiRootkit. This section details its overview, installation, usage, configuration, and security aspects.",
+                content: "The Attacking Program is the command and control (C2) server for EpiRootkit. It provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.\nKey functions include listening for client connections, secure communication (AES-GCM encryption, SHA512 password hashing), client management, and remote command execution via an interactive CLI.\nThis section covers its installation, usage, configuration, and security.\n"
             }
         );
     index.add(
             {
                 id:  15 ,
-                href: "\/docs\/03-attacking-program\/technology-choice\/",
-                title: "Technology Choice",
-                description: "Rationale for the technology used (language, framework, UI type).\n",
-                content: "Rationale for the technology used (language, framework, UI type).\n"
+                href: "\/docs\/03-attacking-program\/overview\/",
+                title: "Overview",
+                description: "A detailed overview of the Attacking Program (C2 Server), its purpose, and key functionalities.",
+                content: "The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.\nKey functions include:\nListening for client connections from EpiRootkit instances. Securing communication using AES-256-GCM encryption. Authenticating clients based on a SHA512 hashed password. Managing connected clients (listing, identifying). Providing an interactive CLI for sending commands to EpiRootkit instances. "
             }
         );
     index.add(
             {
                 id:  16 ,
-                href: "\/docs\/03-attacking-program\/deployment\/",
-                title: "Deployment",
-                description: "Instructions on how to build and install/deploy the attacking program.\n",
-                content: "Instructions on how to build and install/deploy the attacking program.\n"
+                href: "\/docs\/03-attacking-program\/installation\/",
+                title: "Installation",
+                description: "Essential setup for the C2 server.",
+                content: "To run the Attacking Program (C2 Server):\nPrerequisites link Node.js \u0026 npm: Ensure Node.js (e.g., LTS v18.x+) and npm are installed. sudo apt update \u0026\u0026 sudo apt install nodejs npm Setup link Navigate to the attacking_program directory within the project.\nInstall Dependencies:\nnpm install Review Critical Configuration: Before first use, ensure you have reviewed and appropriately set the ENCRYPTION_KEY, PASSWORD_HASH, and C2_PORT. Refer to the "
             }
         );
     index.add(
             {
                 id:  17 ,
                 href: "\/docs\/03-attacking-program\/usage\/",
-                title: "Usage",
-                description: "How to use the attacking program to interact with the rootkit.\n",
-                content: "How to use the attacking program to interact with the rootkit.\n"
+                title: "Usage \u0026 CLI Commands",
+                description: "Running the C2 server and its CLI.",
+                content: "Running the Server linkIn the attacking_program directory, run:\nnpm start The server starts automatically and presents the c2-server$ prompt. Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.\nCLI Commands link Command Aliases Description server start start Starts TCP server (Note: auto-starts with npm start). server stop stop Stops TCP server. clients list ls, list Lists connected clients (alias, ID, auth status, last ping). send Sends to specified . exit quit Stops server and exits application. : Target client alias (e.g., Client-1 from clients list). : Command string for the victim machine. Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.\n"
             }
         );
     index.add(
             {
                 id:  18 ,
+                href: "\/docs\/03-attacking-program\/configuration\/",
+                title: "Configuration",
+                description: "Key C2 server configuration settings.",
+                content: "The C2 server is configured via src/config/index.js or environment variables.\nCritical Settings link C2_PORT (Default: 4444 | Env: C2_PORT)\nTCP port for EpiRootkit connections. ENCRYPTION_KEY (Default: mysecretkey... (32 bytes) | Env: ENCRYPTION_KEY)\nMust be a 32-byte string for AES-256-GCM. Crucial for security: Change the default to a strong, random key. Must match the key on EpiRootkit clients. PASSWORD_HASH (Default: SHA512 hash of \"password\" | Env: PASSWORD_HASH)\nMust be a 128-char lowercase SHA512 hex string. Crucial for security: Change the default. Use a strong password and hash it: # Example to generate hash for a new password: echo -n \"your_new_strong_password\" | sha512sum | awk '{print $1}' Other Settings link WEB_PORT: For a potential future web UI (Default: 3000). UPLOAD_DIR, DOWNLOAD_DIR, LOG_DIR: Default paths for server-side file operations and logs. Configuration validation ensures key formats (e.g., key lengths) are correct on startup.\n"
+            }
+        );
+    index.add(
+            {
+                id:  19 ,
+                href: "\/docs\/03-attacking-program\/security\/",
+                title: "Security Features",
+                description: "Overview of C2 server security: AES-GCM and SHA512.",
+                content: "The C2 server employs two main security mechanisms:\n1. Message Encryption: AES-256-GCM link Purpose: Encrypts all TCP C2 traffic for confidentiality, integrity, and authenticity. Key: Uses a 32-byte ENCRYPTION_KEY (must be changed from default and kept secret). Format: Encrypted messages are transmitted as a colon-separated string: iv_hex:authtag_hex:ciphertext_hex. Details: See src/utils/encryption.js and "
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
                 href: "\/docs\/04-epirootkit\/features\/persistence\/",
                 title: "Encrypted C2, Persistence \u0026 Auth",
                 description: "Heartbeat threads, autoload, and password protection",
@@ -532,16 +585,16 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  19 ,
+                id:  21 ,
                 href: "\/docs\/04-epirootkit\/",
                 title: "EpiRootkit",
-                description: "Details about the EpiRootkit kernel module.\n",
-                content: "Details about the EpiRootkit kernel module.\n"
+                description: "Overview of the EpiRootkit kernel module and its interaction with the C2 server.",
+                content: "The EpiRootkit is a Linux kernel module designed for pedagogical purposes, demonstrating various rootkit functionalities as outlined in the project subject. It communicates with the "
             }
         );
     index.add(
             {
-                id:  20 ,
+                id:  22 ,
                 href: "\/docs\/04-epirootkit\/features\/symbol-ftrace\/",
                 title: "Symbol Resolution \u0026 Ftrace Hooks",
                 description: "How we locate sys_call_table and intercept syscalls via ftrace",
@@ -550,7 +603,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  21 ,
+                id:  23 ,
                 href: "\/docs\/04-epirootkit\/deployment\/",
                 title: "Deployment",
                 description: "Instructions on how to compile the module (Makefile) and load it into the kernel (insmod/modprobe).\n",
@@ -559,7 +612,16 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  22 ,
+                id:  24 ,
+                href: "\/docs\/04-epirootkit\/connection-authentication\/",
+                title: "Connection \u0026 Authentication",
+                description: "How EpiRootkit connects and authenticates with the C2 server.",
+                content: "For the EpiRootkit to be controlled, it must first establish a connection to the Attacking Program (C2 Server) and then authenticate itself.\nConnection to C2 Server link Target: The EpiRootkit needs to know the IP address and port of the C2 server.\nThis information might be hardcoded during compilation, passed as a module parameter during loading, or discovered through other means. The C2 server, by default, listens on port 4444 (configurable, see "
+            }
+        );
+    index.add(
+            {
+                id:  25 ,
                 href: "\/docs\/04-epirootkit\/features\/",
                 title: "Features",
                 description: "Overview of the implemented rootkit features.\n",
@@ -568,7 +630,16 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  23 ,
+                id:  26 ,
+                href: "\/docs\/04-epirootkit\/command-execution\/",
+                title: "Command Execution",
+                description: "How EpiRootkit receives and processes commands from the C2 server.",
+                content: "Once authenticated, the EpiRootkit can receive commands from the C2 server, execute them on the victim machine, and return the results.\nReceiving Commands link Command Message (COMMAND): The C2 server sends commands to an authenticated EpiRootkit client using a COMMAND message. Format: A JSON object, encrypted using AES-256-GCM. { \"type\": \"COMMAND\", \"id\": \"unique_command_id_string\", // e.g., a timestamp \"data\": \"command_string_to_execute\" // e.g., \"ls -la /tmp\" or \"whoami\" } The id is a unique identifier generated by the C2 server for tracking the command. The data field contains the raw command string that the EpiRootkit should execute. Executing Commands link The EpiRootkit is responsible for parsing the data field and executing the command on the victim system. It needs to capture: Standard Output (stdout) of the command. Standard Error (stderr) of the command. The exit status (or exit code) of the command. Returning Results link Command Result Message (COMMAND_RESULT):\nAfter executing the command, the EpiRootkit must send the results back to the C2 server using a COMMAND_RESULT message. Format: A JSON object, encrypted using AES-256-GCM. { \"type\": \"COMMAND_RESULT\", \"commandId\": \"unique_command_id_string\", // Must match the id from the received COMMAND message \"status\": \"success\" or \"error\", // Indicates overall success or failure of execution \"output\": \"combined_stdout_and_stderr_or_error_message\", // Optional: separate stdout/stderr if desired, but C2 currently expects a single 'output' field. // \"stdout\": \"standard_output_string\", // \"stderr\": \"standard_error_string\", \"exitCode\": 0 // The integer exit code of the command } commandId: Crucially, this must be the same id that was received in the original COMMAND message from the C2 server. This allows the C2 to correlate results with sent commands. status: A string indicating if the command execution was generally successful or encountered an error (e.g., command not found). output: A string containing the output from the command. As per subject.md requirements, this should include both stdout and stderr. The C2 server currently processes this as a single string but can be adapted if the rootkit sends separate stdout/stderr fields. exitCode: The numerical exit status of the executed command. C2 Server Processing:\nThe C2 server receives the COMMAND_RESULT message. It decrypts and parses the message. It emits a command:result_received event, which is logged to the C2 CLI, displaying the commandId, status, and output associated with the client’s alias. Properly formatting and returning the COMMAND_RESULT is essential for the operator to see the outcome of their remotely executed commands.\n"
+            }
+        );
+    index.add(
+            {
+                id:  27 ,
                 href: "\/docs\/04-epirootkit\/configuration-justifications\/",
                 title: "Configuration Justifications",
                 description: "Justification for Ubuntu 20.04 LTS / Linux 5.4.x",
@@ -577,7 +648,16 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  24 ,
+                id:  28 ,
+                href: "\/docs\/04-epirootkit\/security-interaction\/",
+                title: "Security Interaction with C2",
+                description: "Security protocols EpiRootkit must follow when interacting with the C2 server.",
+                content: "To maintain a secure channel and controlled access, the EpiRootkit must adhere to the security protocols established by the Attacking Program (C2 Server).\n1. Encrypted Communication (AES-256-GCM) link Requirement: All TCP communication with the C2 server must be encrypted using AES-256-GCM. Shared Secret: The EpiRootkit must be compiled or configured with the exact same 32-byte ENCRYPTION_KEY that the C2 server is using (see "
+            }
+        );
+    index.add(
+            {
+                id:  29 ,
                 href: "\/docs\/04-epirootkit\/features\/file-transfer\/",
                 title: "Remote Exec \u0026 File Transfer",
                 description: "Run commands, upload \u0026 download files over our encrypted channel",
@@ -586,7 +666,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  25 ,
+                id:  30 ,
                 href: "\/docs\/05-submission\/",
                 title: "Submission",
                 description: "Guidelines for submitting the project.\n",
@@ -595,7 +675,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  26 ,
+                id:  31 ,
                 href: "\/docs\/05-submission\/handout-format\/",
                 title: "Handout Format",
                 description: "Details on the required file structure, AUTHORS, README, and TODO files.\n",
@@ -604,7 +684,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  27 ,
+                id:  32 ,
                 href: "\/docs\/06-resources\/",
                 title: "Resources",
                 description: "Links to useful documentation, books, and other resources (Section 7 from subject.md).\n",
@@ -613,7 +693,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  28 ,
+                id:  33 ,
                 href: "\/docs\/07-bonuses\/wlkom-ctf\/",
                 title: "Tux Fan Club: Chasse au Trésor Pirate",
                 description: "Treasure Hunt 🪙 linkDécouverte d’un mystérieux fichier… linkNous avons décidé d’accepter une quête secondaire durant le projet Rootkit.\nEn effet, comme tout bon pirate, nous avons téléchargé légalement les fichiers fournis (given files) et nous souhaitions les ignorer avec un fichier .gitignore.\nLe .gitignore ressemblait à :\n.gitignore givenfiles/ Sauf que les fichiers n’étaient pas ignorés. C’est là que nous découvrons un mystérieux fichier .README :\nArborescence révélant le fichier caché\n",
@@ -622,7 +702,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  29 ,
+                id:  34 ,
                 href: "\/docs\/08-remerciements\/thankyou\/",
                 title: "Un dernier mot",
                 description: "Hugo linkBonjour,\nMerci beaucoup Jules pour ce projet!\nIl m’a permis d’expérimenter plein de sujets différents, j’ai profité de l’excuse de “c’est pour le travail d’EPITA” pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j’ai pu mettre en pratique directement ce que j’ai pu apprendre dans mon travail, notamment j’avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j’ai pu m’en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n’ont qu’à bien se tenir). J’ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d’alternance on fait un projet aussi cool alors qu’ils se tapent de l’Active Directory depuis 2 mois.\n",
@@ -631,7 +711,7 @@ Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li
         );
     index.add(
             {
-                id:  30 ,
+                id:  35 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",
