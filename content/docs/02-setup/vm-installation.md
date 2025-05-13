@@ -25,7 +25,7 @@ Download and place both QCOW2 images into the `vm/` directory at the project roo
 | Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC   | 5.6 Go    |
 | Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E   | 5.6 Go    |
 
-{{< alert context="info" text="To be honest, these qcow2 images are almost identical. The only difference is that the rootkit files are pre-loaded on the 'attacker' disk. If you prefer, you can simply download the 'attacker' image and copy it into `vm/victim.qcow2` if needed." />}}
+> To be honest, these qcow2 images are almost identical. The only difference is that the rootkit files are pre-loaded on the 'attacker' disk. If you prefer, you can simply download the 'attacker' image and copy it into `vm/victim.qcow2` if needed.
 
 Once downloaded, launch both VMs:
 ```bash
