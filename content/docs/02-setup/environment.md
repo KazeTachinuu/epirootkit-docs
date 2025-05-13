@@ -36,6 +36,13 @@ To develop and test the rootkit, you need to prepare your host (EPITA laptop) wi
    ```
    You should see `kvm` and `kvm_intel` (or `kvm_amd`) in the output.
 
+   If not then you probably didn't enable Hardware assisted virtualization in BIOS, check with
+   ```bash
+   egrep -c '(vmx|svm)' /proc/cpuinfo
+   # output == 0 -> not activated
+   # output >= 1 -> activated
+   ```
+   
 
 6. Review the helper scripts:
    - `scripts/check_vms.sh`: checks if the VM disks and ISO are present and provides download URLs for missing items.
