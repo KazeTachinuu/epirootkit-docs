@@ -75,3 +75,22 @@ sudo scripts/run_vms.sh
 {{% /tab %}}
 
 {{< /tabs >}}
+
+## Understanding the `run_vms.sh` Script
+
+The `run_vms.sh` helper automates setting up a private NAT network and launching two QEMU VMs (attacker & victim) on it. Here’s what happens and why:
+
+1. **Libvirt network setup**  
+   - Defines a network (`static200`) with a preconfigured XML (`static200.xml`).  
+   - Destroys any existing definition, then recreates and starts it, enabling DHCP with static leases.
+
+2. **VM image verification**  
+   - Checks that `vm/attacker.qcow2` and `vm/victim.qcow2` exist before proceeding.
+
+3. **Launching VMs**  
+   - `launch_vm` function configures each VM with:
+     • KVM acceleration and host CPU model for performance  
+     • Memory and CPU count from `MEMORY`/`CPUS` env vars (defaults: 2048 MB, 2 CPUs)  
+     • A bridged network interface on `virbr200` with a fixed MAC and IP  
+     • GTK display.
+   - By default, both VMs start; you can specify `attacker` or `victim` as arguments to launch individually.
