@@ -18,10 +18,10 @@ weight: 22
 Download and place both QCOW2 images into the `vm/` directory at the project root:
 
 
-| VM Disk          | Path               | Download URL                                           |
-|------------------|--------------------|--------------------------------------------------------|
-| Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC    |
-| Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E    |
+| VM Disk          | Path               | Download URL                                           | Size      |
+|------------------|--------------------|--------------------------------------------------------|-----------|
+| Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC    | 5.6 Go
+| Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E    | 5.6 Go
 
 
 Once downloaded, launch both VMs:
@@ -37,10 +37,10 @@ If you prefer to build the disks yourself because you don't trust me (which is f
    - Proton Drive: https://drive.proton.me/urls/N5ZQN96C30#77rPStc8Fx2i
    - Ubuntu archive: https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso
 
-2. Create two blank QCOW2 disks (20 GB each):
+2. Create two blank QCOW2 disks (10 GB each):
    ```bash
-   qemu-img create -f qcow2 vm/attacker.qcow2 20G
-   qemu-img create -f qcow2 vm/victim.qcow2   20G
+   qemu-img create -f qcow2 vm/attacker.qcow2 10G
+   qemu-img create -f qcow2 vm/victim.qcow2   10G
    ```
 3. Install Ubuntu Desktop into each disk:
 
