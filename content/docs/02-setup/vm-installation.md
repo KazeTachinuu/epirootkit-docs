@@ -34,8 +34,8 @@ sudo scripts/run_vms.sh
 If you prefer to build the disks yourself because you don't trust me (which is fair tbh), follow these steps:
 
 1. Download the Ubuntu 20.04 Desktop ISO from Proton Drive or the Ubuntu archive:
-   - Proton Drive: https://drive.proton.me/urls/N5ZQN96C30#77rPStc8Fx2i
-   - Ubuntu archive: https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso
+   - Proton Drive: https://drive.proton.me/urls/N5ZQN96C30#77rPStc8Fx2i   **2.5 Go**
+   - Ubuntu archive: https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso  **2.5 Go**
 
 2. Create two blank QCOW2 disks (10 GB each):
    ```bash
