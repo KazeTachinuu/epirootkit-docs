@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 12:24:07 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 13:07:38 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Operating System&lt;/p>
@@ -95,14 +95,14 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 		
 
 		&lt;a class="nav-link active"
-		 id="dcabfeTab" data-bs-toggle="tab" data-bs-target="#dcabfe"
-		 type="button" role="tab" aria-controls="dcabfe" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="adebfcTab" data-bs-toggle="tab" data-bs-target="#adebfc"
+		 type="button" role="tab" aria-controls="adebfc" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dfceabTab" data-bs-toggle="tab" data-bs-target="#dfceab"
-		 type="button" role="tab" aria-controls="dfceab" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="becadfTab" data-bs-toggle="tab" data-bs-target="#becadf"
+		 type="button" role="tab" aria-controls="becadf" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -119,7 +119,7 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 
 
 
-&lt;div class="tab-pane fade show active" id="dcabfe" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="adebfc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>Download and place both QCOW2 images into the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p>
 &lt;table>
@@ -146,6 +146,9 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
 &lt;p>Once downloaded, launch both VMs:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>Ensure the &lt;code>attacker.qcow2&lt;/code> disk is in the &lt;code>vm/&lt;/code> directory (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/li>
