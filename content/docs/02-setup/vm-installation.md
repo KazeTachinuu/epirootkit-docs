@@ -20,9 +20,9 @@ Download and place both QCOW2 images into the `vm/` directory at the project roo
 
 | VM Disk          | Path               | Download URL                                           | Size      |
 |------------------|--------------------|--------------------------------------------------------|-----------|
-| Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC    | 5.6 Go
-| Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E    | 5.6 Go
-
+| Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC   | 5.6 Go    |
+| Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E   | 5.6 Go    |
+  
 
 Once downloaded, launch both VMs:
 ```bash
