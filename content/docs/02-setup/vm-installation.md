@@ -11,6 +11,8 @@ weight: 22
 
 {{< alert context="info" text="Run `./scripts/check_vms.sh` at any time to verify VM disks and ISO, and see download URLs for missing items." />}}
 
+## VM Installation
+
 {{< tabs tabTotal="2" >}}
 
 {{% tab tabName="Recommended: Pre-built Disks" %}}
