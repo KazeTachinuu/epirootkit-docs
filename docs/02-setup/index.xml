@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 10:38:31 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 13 May 2025 10:39:00 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Operating System&lt;/p>
@@ -95,14 +95,14 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 		
 
 		&lt;a class="nav-link active"
-		 id="febcdaTab" data-bs-toggle="tab" data-bs-target="#febcda"
-		 type="button" role="tab" aria-controls="febcda" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="faedcbTab" data-bs-toggle="tab" data-bs-target="#faedcb"
+		 type="button" role="tab" aria-controls="faedcb" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ebcdfaTab" data-bs-toggle="tab" data-bs-target="#ebcdfa"
-		 type="button" role="tab" aria-controls="ebcdfa" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="fcdbeaTab" data-bs-toggle="tab" data-bs-target="#fcdbea"
+		 type="button" role="tab" aria-controls="fcdbea" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -119,7 +119,7 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 
 
 
-&lt;div class="tab-pane fade show active" id="febcda" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="faedcb" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>Download and place both QCOW2 images into the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p>
 &lt;table>
