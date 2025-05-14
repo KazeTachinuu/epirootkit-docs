@@ -13,9 +13,8 @@ weight: 11
 
 ## Equipage
 
-**Capitaine**: Hugo Sibony
+{{< crew >}}
 
-**Responsable Sabordage et mutinerie**: Léa Bonet
 
 ## Nom de l'équipe
 
@@ -28,3 +27,5 @@ C'est Léa qui a choisi le nom car c'est la seule personne du groupe un peu cré
 Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP 
 
 {{< figure src="/images/introduction/alltuxes.png" alt="Tux le manchot" >}}
+
+Vu qu'il est mignon et que je l'aime (Tux pas Hugo 👀) je me suis dis que Tux Fan Club était un nom convenable
