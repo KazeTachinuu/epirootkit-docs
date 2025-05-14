@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Tux Fan Club Docs</title><link>/docs/01-introduction/</link><description>Recent content in Introduction on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 14 May 2025 18:54:05 +0200</lastBuildDate><atom:link href="/docs/01-introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Capitaine&lt;/strong>: Hugo Sibony&lt;/p>
-&lt;p>&lt;strong>Responsable Sabordage et mutinerie&lt;/strong>: Léa Bonet&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Tux Fan Club Docs</title><link>/docs/01-introduction/</link><description>Recent content in Introduction on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 14 May 2025 19:05:47 +0200</lastBuildDate><atom:link href="/docs/01-introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+ &lt;div style="flex: 1; min-width: 250px; text-align: center;">
+ &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
+ &lt;br>
+ &lt;img src="/images/HS/hugo.png" alt="Hugo" style="width: 50%;">
+ &lt;/div>
+ &lt;div style="flex: 1; min-width: 250px; text-align: center;">
+ &lt;strong>Responsable Sabordage et mutinerie&lt;/strong>: Léa Bonet 
+ &lt;br>
+ &lt;img src="/images/HS/lea.png" alt="Lea" style="width: 50%;">
+ &lt;/div>
+ &lt;/div>
+ 
 &lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
 &lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
-&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p>
-&lt;p>Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP&lt;/p></description></item></channel></rss>
+&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item></channel></rss>
