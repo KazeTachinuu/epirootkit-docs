@@ -34,3 +34,17 @@ Hugo Sibony
 APPING Cyber 2027
 
 "J'écris ce message a 10000m d'altitude dans un avion qui tremble plus que moi dans l'attente de ma note de JS."
+
+# Léa
+
+Bonjour,
+
+C'est Léa
+
+Coin-Coin-ment,
+
+-- 
+Léa Bonet
+Déléguée APPING Cyb 2027
+
+"Au moins Hugo ne s'est pas fait arrêté à la sortie de l'avion 👀"
