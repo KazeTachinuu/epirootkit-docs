@@ -1,6 +1,6 @@
 ---
 title: "Security Interaction with C2"
-weight: 43
+weight: 44
 description: "Security protocols EpiRootkit must follow when interacting with the C2 server."
 ---
 

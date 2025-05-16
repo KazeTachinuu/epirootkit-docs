@@ -1,6 +1,6 @@
 ---
 title: "Command Execution"
-weight: 42
+weight: 45
 description: "How EpiRootkit receives and processes commands from the C2 server."
 ---
 

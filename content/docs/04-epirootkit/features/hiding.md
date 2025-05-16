@@ -6,7 +6,7 @@ date: "2025-05-11T18:25:00+01:00"
 lastmod: "2025-05-11T18:25:00+01:00"
 draft: false
 toc: true
-weight: 30
+weight: 56
 ---
 
 # 1. File & Directory Hiding

@@ -6,7 +6,7 @@ date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-07T00:44:31+01:00"
 draft: false
 toc: true
-weight: 43
+weight: 41
 ---
 
 {{< alert context="info" text="This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing." />}}

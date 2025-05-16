@@ -1,6 +1,6 @@
 ---
 title: "Connection & Authentication"
-weight: 41
+weight: 42
 description: "How EpiRootkit connects and authenticates with the C2 server."
 ---
 
