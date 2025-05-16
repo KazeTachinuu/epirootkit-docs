@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 14 May 2025 19:05:47 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 16 May 2025 23:11:40 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Allow arbitrary program execution via C2.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Receive a packet:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="265fa6f" class="language- ">
+ &lt;code>EXEC &amp;lt;len&amp;gt;\n&amp;lt;payload&amp;gt;&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Use &lt;code>call_usermodehelper(argv, envp, UMH_WAIT_PROC)&lt;/code> to spawn the process.&lt;/li>
+&lt;li>Capture its &lt;code>stdout&lt;/code>/&lt;code>stderr&lt;/code> via kernel pipes and send back encrypted.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="2-file-upload">2. File Upload &lt;a href="#2-file-upload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Accept files from the attacker.&lt;/p>
+&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Receive &lt;code>UPLOAD &amp;lt;path&amp;gt; &amp;lt;len&amp;gt;\n&amp;lt;data&amp;gt;&lt;/code>.&lt;/li>
+&lt;li>&lt;code>filp_open(&amp;quot;/usr/share/epirootkit/&amp;lt;path&amp;gt;&amp;quot;, O_CREAT|O_WRONLY, 0600)&lt;/code>.&lt;/li>
+&lt;li>&lt;code>kernel_write()&lt;/code> the data.&lt;/li>
+&lt;li>Our &lt;code>getdents()&lt;/code> hook keeps &lt;code>/usr/share/epirootkit&lt;/code> hidden.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="3-file-download">3. File Download &lt;a href="#3-file-download" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+Send files to the attacker.&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
 &lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
@@ -111,7 +151,7 @@ we drop that entry by &lt;code>memmove()&lt;/code>.&lt;/li>
 &lt;h1 id="2-module-hiding">2. Module Hiding &lt;a href="#2-module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 We hide our LKM from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
-We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 Spawn a kernel thread to poll our C2 server.&lt;/p>
 &lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
 &lt;ol>
@@ -260,44 +300,4 @@ register_ftrace_function(&amp;amp;ops);&lt;/code>
 &lt;/li>
 &lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
 &lt;/ol>
-&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Allow arbitrary program execution via C2.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Receive a packet:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="265fa6f" class="language- ">
- &lt;code>EXEC &amp;lt;len&amp;gt;\n&amp;lt;payload&amp;gt;&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Use &lt;code>call_usermodehelper(argv, envp, UMH_WAIT_PROC)&lt;/code> to spawn the process.&lt;/li>
-&lt;li>Capture its &lt;code>stdout&lt;/code>/&lt;code>stderr&lt;/code> via kernel pipes and send back encrypted.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="2-file-upload">2. File Upload &lt;a href="#2-file-upload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Accept files from the attacker.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Receive &lt;code>UPLOAD &amp;lt;path&amp;gt; &amp;lt;len&amp;gt;\n&amp;lt;data&amp;gt;&lt;/code>.&lt;/li>
-&lt;li>&lt;code>filp_open(&amp;quot;/usr/share/epirootkit/&amp;lt;path&amp;gt;&amp;quot;, O_CREAT|O_WRONLY, 0600)&lt;/code>.&lt;/li>
-&lt;li>&lt;code>kernel_write()&lt;/code> the data.&lt;/li>
-&lt;li>Our &lt;code>getdents()&lt;/code> hook keeps &lt;code>/usr/share/epirootkit&lt;/code> hidden.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="3-file-download">3. File Download &lt;a href="#3-file-download" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Send files to the attacker.&lt;/p></description></item></channel></rss>
+&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item></channel></rss>

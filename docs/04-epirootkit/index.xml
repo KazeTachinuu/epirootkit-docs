@@ -1,10 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;p>For the EpiRootkit to be controlled, it must first establish a connection to the Attacking Program (C2 Server) and then authenticate itself.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.&lt;/div>
+ &lt;/div>
+&lt;h2 id="environment">Environment &lt;a href="#environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
+&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.x (LTS)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;div class="alert alert-success d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ check
+ &lt;/div>
+ 
+ &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
+ &lt;/div>
+&lt;ul>
+&lt;li>Widely deployed on servers and desktops&lt;/li>
+&lt;li>Official cloud and container images simplify automation&lt;/li>
+&lt;li>Already uses interesting kernel version (5.4.x) so no need to compile.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="why-kernel-54x">Why Kernel 5.4.x? &lt;a href="#why-kernel-54x" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;div class="alert alert-primary d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Balances modern hooking APIs with exported symbols and no mandatory module signing.&lt;/div>
+ &lt;/div>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;p>For the EpiRootkit to be controlled, it must first establish a connection to the Attacking Program (C2 Server) and then authenticate itself.&lt;/p>
 &lt;h2 id="connection-to-c2-server">Connection to C2 Server &lt;a href="#connection-to-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Target&lt;/strong>: The EpiRootkit needs to know the IP address and port of the C2 server.&lt;/p>
 &lt;ul>
 &lt;li>This information might be hardcoded during compilation, passed as a module parameter during loading, or discovered through other means.&lt;/li>
-&lt;li>The C2 server, by default, listens on port &lt;code>4444&lt;/code> (configurable, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;p>Once authenticated, the EpiRootkit can receive commands from the C2 server, execute them on the victim machine, and return the results.&lt;/p>
+&lt;li>The C2 server, by default, listens on port &lt;code>4444&lt;/code> (configurable, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;p>To maintain a secure channel and controlled access, the EpiRootkit must adhere to the security protocols established by the Attacking Program (C2 Server).&lt;/p>
+&lt;h2 id="1-encrypted-communication-aes-256-gcm">1. Encrypted Communication (AES-256-GCM) &lt;a href="#1-encrypted-communication-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Requirement&lt;/strong>: All TCP communication with the C2 server &lt;strong>must&lt;/strong> be encrypted using AES-256-GCM.&lt;/li>
+&lt;li>&lt;strong>Shared Secret&lt;/strong>: The EpiRootkit must be compiled or configured with the exact same 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> that the C2 server is using (see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/security/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;p>Once authenticated, the EpiRootkit can receive commands from the C2 server, execute them on the victim machine, and return the results.&lt;/p>
 &lt;h2 id="receiving-commands">Receiving Commands &lt;a href="#receiving-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>&lt;strong>Command Message (&lt;code>COMMAND&lt;/code>)&lt;/strong>:
 &lt;ul>
@@ -51,48 +95,4 @@
 &lt;/ul>
 &lt;h2 id="returning-results">Returning Results &lt;a href="#returning-results" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Command Result Message (&lt;code>COMMAND_RESULT&lt;/code>)&lt;/strong>:&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.&lt;/div>
- &lt;/div>
-&lt;h2 id="environment">Environment &lt;a href="#environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
-&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.x (LTS)&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;div class="alert alert-success d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- check
- &lt;/div>
- 
- &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
- &lt;/div>
-&lt;ul>
-&lt;li>Widely deployed on servers and desktops&lt;/li>
-&lt;li>Official cloud and container images simplify automation&lt;/li>
-&lt;li>Already uses interesting kernel version (5.4.x) so no need to compile.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="why-kernel-54x">Why Kernel 5.4.x? &lt;a href="#why-kernel-54x" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;div class="alert alert-primary d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">Balances modern hooking APIs with exported symbols and no mandatory module signing.&lt;/div>
- &lt;/div>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;p>To maintain a secure channel and controlled access, the EpiRootkit must adhere to the security protocols established by the Attacking Program (C2 Server).&lt;/p>
-&lt;h2 id="1-encrypted-communication-aes-256-gcm">1. Encrypted Communication (AES-256-GCM) &lt;a href="#1-encrypted-communication-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Requirement&lt;/strong>: All TCP communication with the C2 server &lt;strong>must&lt;/strong> be encrypted using AES-256-GCM.&lt;/li>
-&lt;li>&lt;strong>Shared Secret&lt;/strong>: The EpiRootkit must be compiled or configured with the exact same 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> that the C2 server is using (see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/security/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item></channel></rss>
+&lt;p>&lt;strong>Command Result Message (&lt;code>COMMAND_RESULT&lt;/code>)&lt;/strong>:&lt;/p></description></item></channel></rss>
