@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:40:59 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 13:31:32 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="ebdafcTab" data-bs-toggle="tab" data-bs-target="#ebdafc"
-		 type="button" role="tab" aria-controls="ebdafc" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="ecdfabTab" data-bs-toggle="tab" data-bs-target="#ecdfab"
+		 type="button" role="tab" aria-controls="ecdfab" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cdfbaeTab" data-bs-toggle="tab" data-bs-target="#cdfbae"
-		 type="button" role="tab" aria-controls="cdfbae" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="defbacTab" data-bs-toggle="tab" data-bs-target="#defbac"
+		 type="button" role="tab" aria-controls="defbac" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="ebdafc" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="ecdfab" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -229,14 +229,14 @@ Or both VMs with:
 		
 
 		&lt;a class="nav-link active"
-		 id="efdbacTab" data-bs-toggle="tab" data-bs-target="#efdbac"
-		 type="button" role="tab" aria-controls="efdbac" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
+		 id="bdcaefTab" data-bs-toggle="tab" data-bs-target="#bdcaef"
+		 type="button" role="tab" aria-controls="bdcaef" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdeacbTab" data-bs-toggle="tab" data-bs-target="#fdeacb"
-		 type="button" role="tab" aria-controls="fdeacb" aria-selected="true">Manual Setup (Advanced)&lt;/a>
+		 id="bfcaedTab" data-bs-toggle="tab" data-bs-target="#bfcaed"
+		 type="button" role="tab" aria-controls="bfcaed" aria-selected="true">Manual Setup (Advanced)&lt;/a>
 
 		
 
@@ -252,7 +252,7 @@ Or both VMs with:
 
 
 
-&lt;div class="tab-pane fade show active" id="efdbac" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="bdcaef" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
@@ -397,8 +397,9 @@ npm start&lt;/code>
 &lt;div class="alert alert-success d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- check
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ check_circle
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
  &lt;/div>

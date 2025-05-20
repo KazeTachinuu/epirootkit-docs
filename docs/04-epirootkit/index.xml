@@ -16,8 +16,9 @@
 &lt;div class="alert alert-success d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
- check
- &lt;/div>
+ &lt;span class="material-icons size-20 me-2">
+ check_circle
+ &lt;/span>&lt;/div>
  
  &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
  &lt;/div>

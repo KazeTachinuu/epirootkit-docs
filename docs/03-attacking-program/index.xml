@@ -22,14 +22,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="efdbacTab" data-bs-toggle="tab" data-bs-target="#efdbac"
-		 type="button" role="tab" aria-controls="efdbac" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
+		 id="bdcaefTab" data-bs-toggle="tab" data-bs-target="#bdcaef"
+		 type="button" role="tab" aria-controls="bdcaef" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdeacbTab" data-bs-toggle="tab" data-bs-target="#fdeacb"
-		 type="button" role="tab" aria-controls="fdeacb" aria-selected="true">Manual Setup (Advanced)&lt;/a>
+		 id="bfcaedTab" data-bs-toggle="tab" data-bs-target="#bfcaed"
+		 type="button" role="tab" aria-controls="bfcaed" aria-selected="true">Manual Setup (Advanced)&lt;/a>
 
 		
 
@@ -45,7 +45,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="efdbac" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="bdcaef" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
