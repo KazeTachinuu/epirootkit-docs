@@ -8,5 +8,3 @@ draft: false
 toc: true
 weight: 50
 ---
-
-Overview of the implemented rootkit features. 

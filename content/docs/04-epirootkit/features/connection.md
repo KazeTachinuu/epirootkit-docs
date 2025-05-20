@@ -9,4 +9,11 @@ toc: true
 weight: 52
 ---
 
-Details about the connection mechanism (how it connects back, retries). 
+## TODO: Implement Connection Features
+
+- [ ] Establish and maintain TCP connection to C2
+- [ ] Implement reconnection and keepalive logic
+- [ ] Handle connection errors and timeouts
+- [ ] Document connection protocol and troubleshooting
+
+_This section will be updated with documentation once features are implemented and tested._ 

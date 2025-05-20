@@ -9,50 +9,10 @@ toc: true
 weight: 59
 ---
 
-# Symbol Resolution
+## TODO: Implement Symbol Resolution & Ftrace Hooks
 
-1. We spoof a GPL license so the kernel exports `kallsyms_lookup_name()`:
-   ```c
-   MODULE_LICENSE("GPL");
-   ```
-2. At init, we call:
-   ```c
-   sys_call_table = (void **)kallsyms_lookup_name("sys_call_table");
-   ```
-   This gives us the address of the syscall table.
+- [ ] Implement dynamic symbol resolution (e.g., `kallsyms_lookup_name`)
+- [ ] Add ftrace-based syscall hooking
+- [ ] Ensure safe registration/unregistration of hooks
+- [ ] Document implementation and kernel compatibility
 
----
-
-# Ftrace-Based Hooking
-
-{{< alert context="info" text="We use ftrace to hook without writing to kernel memory directly." />}}
-
-For each target syscall:
-
-1. Define an `ftrace_ops` with flags:
-   ```c
-   .func  = hook_trampoline,
-   .flags = FTRACE_OPS_FL_SAVE_REGS |
-            FTRACE_OPS_FL_IPMODIFY
-   ```
-2. Apply the filter:
-   ```c
-   ftrace_set_filter_ip(&ops, (unsigned long)orig_syscall, 0, 0);
-   register_ftrace_function(&ops);
-   ```
-3. Our trampoline copies registers, calls `hook_fn()`, then jumps back to the original.
-
-
-Always unregister your ftrace functions in `cleanup_module()`:
-```c
-unregister_ftrace_function(&ops);
-```
-
-
----
-
-## Code Location
-
-- `rootkit/hook/ftrace_hooks.c`  
-- `rootkit/hook/syscall_list.h`
-```

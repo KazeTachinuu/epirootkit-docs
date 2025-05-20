@@ -9,4 +9,12 @@ toc: true
 weight: 51
 ---
 
-How commands are executed on the victim and results returned. 
+## TODO: Implement Command Execution Features
+
+- [ ] Parse and validate incoming command messages
+- [ ] Execute commands securely in kernel/user space
+- [ ] Capture and return stdout, stderr, and exit code
+- [ ] Handle command errors and edge cases
+- [ ] Test command execution end-to-end
+
+_This section will be updated with documentation once features are implemented and tested._ 

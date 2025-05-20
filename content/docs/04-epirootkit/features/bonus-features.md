@@ -9,4 +9,12 @@ toc: true
 weight: 59
 ---
 
-Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.). 
+## TODO: Implement Bonus Features
+
+- [ ] Add rootkit upgrade mechanism
+- [ ] Implement packet hiding and keylogging
+- [ ] Add network traffic redirection
+- [ ] Implement NGL clone with the backdoor
+- [ ] Document and test all bonus features
+
+_This section will be updated with documentation once features are implemented and tested._ 
