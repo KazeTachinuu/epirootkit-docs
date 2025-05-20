@@ -1,43 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:27:40 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/04-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:40:59 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;h2 id="todo-implement-connection-features">TODO: Implement Connection Features &lt;a href="#todo-implement-connection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Establish and maintain TCP connection to C2&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement reconnection and keepalive logic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Establish and maintain TCP connection to C2&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement reconnection and keepalive logic&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle connection errors and timeouts&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and troubleshooting&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;h2 id="todo-implement-crypto-features">TODO: Implement Crypto Features &lt;a href="#todo-implement-crypto-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add AES-256-GCM encryption for all communications&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add AES-256-GCM encryption for all communications&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Securely manage and store encryption keys&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement message authentication and integrity checks&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement message authentication and integrity checks&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document crypto implementation and security considerations&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h2 id="todo-implement-file-transfer-features">TODO: Implement File Transfer Features &lt;a href="#todo-implement-file-transfer-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Design and implement secure file upload from C2 to rootkit
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Define protocol for file upload (message format, chunking, etc.)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement file write in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_write&lt;/code>)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Define protocol for file upload/download (C2 and web UI stubbed)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement file write/read in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_write&lt;/code>, &lt;code>kernel_read&lt;/code>) (WIP)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add CLI/Web UI commands for upload/download (UI present, backend partial)&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle errors and edge cases (permissions, disk space, etc.)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Design and implement secure file download from rootkit to C2
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Define protocol for file download (request, chunking, etc.)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement file read in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_read&lt;/code>)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Stream file data securely to C2&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Integrate file transfer with C2 server and client
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add CLI/Web UI commands for upload/download&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Display transfer status and errors in UI&lt;/li>
-&lt;/ul>
-&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test file transfer end-to-end (various file sizes, error cases)&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h2 id="todo-implement-fileless-dropper--loader">TODO: Implement Fileless Dropper &amp;amp; Loader &lt;a href="#todo-implement-fileless-dropper--loader" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
@@ -59,15 +43,15 @@
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
 &lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;h2 id="todo-implement-password-protection-features">TODO: Implement Password Protection Features &lt;a href="#todo-implement-password-protection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add password-based authentication for rootkit commands&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Store password hashes securely&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add password-based authentication for rootkit commands&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Store password hashes securely&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Implement password change and reset mechanisms&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document password protection and security best practices&lt;/li>
 &lt;/ul></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h2 id="todo-implement-persistence--auth-features">TODO: Implement Persistence &amp;amp; Auth Features &lt;a href="#todo-implement-persistence--auth-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted C2 heartbeat and reconnection logic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement encrypted C2 heartbeat and reconnection logic&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add autoload on boot (persistence) via module config&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement password protection for sensitive commands&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Store and verify password hashes securely&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement password protection for sensitive commands&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Store and verify password hashes securely&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test persistence and authentication on supported systems&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h2 id="todo-implement-symbol-resolution--ftrace-hooks">TODO: Implement Symbol Resolution &amp;amp; Ftrace Hooks &lt;a href="#todo-implement-symbol-resolution--ftrace-hooks" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="todo-implement-additional-c2-server-features">TODO: Implement Additional C2 Server Features &lt;a href="#todo-implement-additional-c2-server-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (aliasing, grouping)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted web UI integration&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Basic client management (listing, alias, status)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Encrypted web UI integration (React, real-time event log, terminal, upload/download panels)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Command execution (CLI and web UI)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (grouping, advanced aliasing)&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add audit logging and event history&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Implement advanced command scheduling&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add more robust error handling and reporting&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
-&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-deployment">1. Deployment &lt;a href="#1-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
@@ -21,14 +22,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="fbdceaTab" data-bs-toggle="tab" data-bs-target="#fbdcea"
-		 type="button" role="tab" aria-controls="fbdcea" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
+		 id="efdbacTab" data-bs-toggle="tab" data-bs-target="#efdbac"
+		 type="button" role="tab" aria-controls="efdbac" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fbedacTab" data-bs-toggle="tab" data-bs-target="#fbedac"
-		 type="button" role="tab" aria-controls="fbedac" aria-selected="true">Manual Setup (Advanced)&lt;/a>
+		 id="fdeacbTab" data-bs-toggle="tab" data-bs-target="#fdeacb"
+		 type="button" role="tab" aria-controls="fdeacb" aria-selected="true">Manual Setup (Advanced)&lt;/a>
 
 		
 
@@ -44,7 +45,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="fbdcea" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="efdbac" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
@@ -158,7 +159,8 @@ npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;p>Paste this value into your &lt;code>.env&lt;/code> as &lt;code>ENCRYPTION_KEY&lt;/code>.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;h2 id="todo-implement-security-features">TODO: Implement Security Features &lt;a href="#todo-implement-security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic (AES-256-GCM)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Password authentication (SHA512, configurable)&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add configurable password policies&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Implement multi-factor authentication for operators&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add rate limiting and brute-force protection&lt;/li>

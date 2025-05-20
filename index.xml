@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:27:40 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:40:59 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="abcfedTab" data-bs-toggle="tab" data-bs-target="#abcfed"
-		 type="button" role="tab" aria-controls="abcfed" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="ebdafcTab" data-bs-toggle="tab" data-bs-target="#ebdafc"
+		 type="button" role="tab" aria-controls="ebdafc" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ecbafdTab" data-bs-toggle="tab" data-bs-target="#ecbafd"
-		 type="button" role="tab" aria-controls="ecbafd" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="cdfbaeTab" data-bs-toggle="tab" data-bs-target="#cdfbae"
+		 type="button" role="tab" aria-controls="cdfbae" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="abcfed" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="ebdafc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -206,14 +206,15 @@ Or both VMs with:
 &lt;/li>
 &lt;li>
 &lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="todo-implement-additional-c2-server-features">TODO: Implement Additional C2 Server Features &lt;a href="#todo-implement-additional-c2-server-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (aliasing, grouping)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted web UI integration&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Basic client management (listing, alias, status)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Encrypted web UI integration (React, real-time event log, terminal, upload/download panels)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Command execution (CLI and web UI)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (grouping, advanced aliasing)&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add audit logging and event history&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Implement advanced command scheduling&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add more robust error handling and reporting&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
-&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-deployment">1. Deployment &lt;a href="#1-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
@@ -228,14 +229,14 @@ Or both VMs with:
 		
 
 		&lt;a class="nav-link active"
-		 id="fbdceaTab" data-bs-toggle="tab" data-bs-target="#fbdcea"
-		 type="button" role="tab" aria-controls="fbdcea" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
+		 id="efdbacTab" data-bs-toggle="tab" data-bs-target="#efdbac"
+		 type="button" role="tab" aria-controls="efdbac" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fbedacTab" data-bs-toggle="tab" data-bs-target="#fbedac"
-		 type="button" role="tab" aria-controls="fbedac" aria-selected="true">Manual Setup (Advanced)&lt;/a>
+		 id="fdeacbTab" data-bs-toggle="tab" data-bs-target="#fdeacb"
+		 type="button" role="tab" aria-controls="fdeacb" aria-selected="true">Manual Setup (Advanced)&lt;/a>
 
 		
 
@@ -251,7 +252,7 @@ Or both VMs with:
 
 
 
-&lt;div class="tab-pane fade show active" id="fbdcea" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="efdbac" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
@@ -365,7 +366,8 @@ npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;p>Paste this value into your &lt;code>.env&lt;/code> as &lt;code>ENCRYPTION_KEY&lt;/code>.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;h2 id="todo-implement-security-features">TODO: Implement Security Features &lt;a href="#todo-implement-security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic (AES-256-GCM)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Password authentication (SHA512, configurable)&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add configurable password policies&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Implement multi-factor authentication for operators&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add rate limiting and brute-force protection&lt;/li>
@@ -419,9 +421,9 @@ npm start&lt;/code>
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;h2 id="todo-implement-connection--authentication-features">TODO: Implement Connection &amp;amp; Authentication Features &lt;a href="#todo-implement-connection--authentication-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Establish TCP connection to C2 server&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement persistent reconnection logic&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add secure authentication handshake&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Establish TCP connection to C2 server&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement persistent reconnection logic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add secure authentication handshake&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle authentication failures and retries&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and error handling&lt;/li>
 &lt;/ul>
@@ -461,58 +463,42 @@ sudo apt install -y build-essential linux-headers-$(uname -r) git&lt;/code>
  &lt;/div>
 &lt;/blockquote>
 &lt;h2 id="2-clone-or-copy-the-project">2. Clone or Copy the Project &lt;a href="#2-clone-or-copy-the-project" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already present, copy the &lt;code>rootkit/&lt;/code> directory into your VM, or clone your repository.&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;h2 id="todo-implement-security-interaction-features">TODO: Implement Security Interaction Features &lt;a href="#todo-implement-security-interaction-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Enforce encrypted communication for all C2 interactions&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement strict authentication and authorization checks&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce encrypted communication for all C2 interactions&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement strict authentication and authorization checks&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add protocol validation and error handling&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document all security protocols and best practices&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;h2 id="todo-implement-connection-features">TODO: Implement Connection Features &lt;a href="#todo-implement-connection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Establish and maintain TCP connection to C2&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement reconnection and keepalive logic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Establish and maintain TCP connection to C2&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement reconnection and keepalive logic&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle connection errors and timeouts&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and troubleshooting&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;h2 id="todo-implement-crypto-features">TODO: Implement Crypto Features &lt;a href="#todo-implement-crypto-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add AES-256-GCM encryption for all communications&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add AES-256-GCM encryption for all communications&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Securely manage and store encryption keys&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement message authentication and integrity checks&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement message authentication and integrity checks&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document crypto implementation and security considerations&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h2 id="todo-implement-file-transfer-features">TODO: Implement File Transfer Features &lt;a href="#todo-implement-file-transfer-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Design and implement secure file upload from C2 to rootkit
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Define protocol for file upload (message format, chunking, etc.)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement file write in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_write&lt;/code>)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Define protocol for file upload/download (C2 and web UI stubbed)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement file write/read in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_write&lt;/code>, &lt;code>kernel_read&lt;/code>) (WIP)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add CLI/Web UI commands for upload/download (UI present, backend partial)&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Handle errors and edge cases (permissions, disk space, etc.)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Design and implement secure file download from rootkit to C2
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Define protocol for file download (request, chunking, etc.)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement file read in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_read&lt;/code>)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Stream file data securely to C2&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Integrate file transfer with C2 server and client
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add CLI/Web UI commands for upload/download&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Display transfer status and errors in UI&lt;/li>
-&lt;/ul>
-&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test file transfer end-to-end (various file sizes, error cases)&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h2 id="todo-implement-fileless-dropper--loader">TODO: Implement Fileless Dropper &amp;amp; Loader &lt;a href="#todo-implement-fileless-dropper--loader" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
@@ -534,15 +520,15 @@ sudo apt install -y build-essential linux-headers-$(uname -r) git&lt;/code>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
 &lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
 We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;h2 id="todo-implement-password-protection-features">TODO: Implement Password Protection Features &lt;a href="#todo-implement-password-protection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add password-based authentication for rootkit commands&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Store password hashes securely&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add password-based authentication for rootkit commands&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Store password hashes securely&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Implement password change and reset mechanisms&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Document password protection and security best practices&lt;/li>
 &lt;/ul></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h2 id="todo-implement-persistence--auth-features">TODO: Implement Persistence &amp;amp; Auth Features &lt;a href="#todo-implement-persistence--auth-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted C2 heartbeat and reconnection logic&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement encrypted C2 heartbeat and reconnection logic&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Add autoload on boot (persistence) via module config&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement password protection for sensitive commands&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Store and verify password hashes securely&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement password protection for sensitive commands&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Store and verify password hashes securely&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> Test persistence and authentication on supported systems&lt;/li>
 &lt;/ul>
 &lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h2 id="todo-implement-symbol-resolution--ftrace-hooks">TODO: Implement Symbol Resolution &amp;amp; Ftrace Hooks &lt;a href="#todo-implement-symbol-resolution--ftrace-hooks" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
