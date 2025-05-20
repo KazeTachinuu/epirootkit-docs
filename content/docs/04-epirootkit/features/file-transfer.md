@@ -9,41 +9,20 @@ toc: true
 weight: 54
 ---
 
-# 1. Remote Command Execution
+## TODO: Implement File Transfer Features
 
-**What we did**  
-Allow arbitrary program execution via C2.
+- [ ] Design and implement secure file upload from C2 to rootkit
+    - [ ] Define protocol for file upload (message format, chunking, etc.)
+    - [ ] Implement file write in kernel (e.g., using `filp_open`, `kernel_write`)
+    - [ ] Handle errors and edge cases (permissions, disk space, etc.)
+- [ ] Design and implement secure file download from rootkit to C2
+    - [ ] Define protocol for file download (request, chunking, etc.)
+    - [ ] Implement file read in kernel (e.g., using `filp_open`, `kernel_read`)
+    - [ ] Stream file data securely to C2
+- [ ] Integrate file transfer with C2 server and client
+    - [ ] Add CLI/Web UI commands for upload/download
+    - [ ] Display transfer status and errors in UI
+- [ ] Test file transfer end-to-end (various file sizes, error cases)
 
-**How it works**  
-- Receive a packet:  
-  ```
-  EXEC <len>\n<payload>
-  ```
-- Use `call_usermodehelper(argv, envp, UMH_WAIT_PROC)` to spawn the process.
-- Capture its `stdout`/`stderr` via kernel pipes and send back encrypted.
+_This section will be updated with documentation once features are implemented and tested._
 
----
-
-# 2. File Upload
-
-**What we did**  
-Accept files from the attacker.
-
-**How it works**  
-- Receive `UPLOAD <path> <len>\n<data>`.
-- `filp_open("/usr/share/epirootkit/<path>", O_CREAT|O_WRONLY, 0600)`.
-- `kernel_write()` the data.
-- Our `getdents()` hook keeps `/usr/share/epirootkit` hidden.
-
----
-
-# 3. File Download
-
-**What we did**  
-Send files to the attacker.
-
-**How it works**  
-- Receive `DOWNLOAD <path>`.
-- `filp_open()` + `kernel_read()` in chunks.
-- Stream each chunk over the encrypted C2 link.
-```

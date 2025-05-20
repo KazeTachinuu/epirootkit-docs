@@ -4,24 +4,64 @@ weight: 32
 description: "Essential setup for the C2 server."
 ---
 
-To run the Attacking Program (C2 Server):
+# Attacking Program (C2 Server) Installation
 
-## Prerequisites
+> **Assumption:** You are starting from a fresh Ubuntu system. Complete [Host Environment Setup](../02-setup/environment.md) and [VM Installation](../02-setup/vm-installation.md) first.
 
-*   **Node.js & npm**: Ensure Node.js (e.g., LTS v18.x+) and npm are installed.
-    ```bash
-    sudo apt update && sudo apt install nodejs npm
-    ```
+## 1. Install Node.js, npm, and pnpm
 
-## Setup
+If not already installed, run:
+```bash
+sudo apt update
+sudo apt install -y nodejs npm
+sudo npm install -g pnpm
+```
 
-1.  Navigate to the `attacking_program` directory within the project.
+> {{< alert context="info" text="Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use `node -v` and `pnpm -v` to verify." />}}
 
-2.  Install Dependencies:
-    ```bash
-    npm install
-    ```
+## 2. Navigate to the Attacking Program Directory
+```bash
+cd attacking_program
+```
 
-3.  Review Critical Configuration: Before first use, ensure you have reviewed and appropriately set the `ENCRYPTION_KEY`, `PASSWORD_HASH`, and `C2_PORT`. Refer to the [Configuration](./configuration) page for detailed information on these settings and how to generate necessary values. It is crucial to change the default security keys and hashes.
+## 3. Install Dependencies
+```bash
+pnpm install
+# Or, if you prefer npm:
+npm install
+```
 
-Required directories (`uploads/`, `downloads/`, `logs/`) are created automatically.
+## 4. Prepare Configuration
+
+The C2 server is configured via a `.env` file. **You must set strong, secure values!**
+
+1. Copy the example file:
+   ```bash
+   cp .env.example .env
+   ```
+2. Edit `.env` and set:
+   - `C2_PORT` (default: 4444)
+   - `ENCRYPTION_KEY` (must be a 32-byte random string)
+   - `PASSWORD_HASH` (must be a 128-char SHA512 hex string)
+
+> {{< alert context="warning" text="Never use the default ENCRYPTION_KEY or PASSWORD_HASH in production! See [Configuration](./configuration.md) for how to generate secure values." />}}
+
+
+## 5. Start the C2 Server
+```bash
+pnpm start
+# Or
+npm start
+```
+
+You should see the C2 CLI prompt and log messages. If you see errors about missing config or directories, check the steps above.
+
+## 7. Troubleshooting
+- If you see `Error: ENCRYPTION_KEY must be 32 bytes`, check your `.env` file.
+- If you see `Error: PASSWORD_HASH must be 128 hex chars`, regenerate your hash (see [Configuration](./configuration.md)).
+- If you see `EADDRINUSE`, another process is using the port. Change `C2_PORT` or stop the other process.
+- For permission errors, ensure you are not running as root unless necessary.
+
+## 8. Next Steps
+- See [Configuration](./configuration.md) for secure setup.
+- See [Usage](./usage.md) for CLI commands and workflow.

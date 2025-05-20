@@ -4,29 +4,62 @@ weight: 34
 description: "Key C2 server configuration settings."
 ---
 
-The C2 server is configured via `src/config/index.js` or environment variables.
+# C2 Server Configuration
 
-## Critical Settings
+> **You must configure the C2 server before first use.**
 
-*   `C2_PORT` (Default: `4444` | Env: `C2_PORT`)
-    *   TCP port for EpiRootkit connections.
+## 1. Configuration File: `.env`
 
-*   `ENCRYPTION_KEY` (Default: `mysecretkey...` (32 bytes) | Env: `ENCRYPTION_KEY`)
-    *   Must be a 32-byte string for AES-256-GCM.
-    *   Crucial for security: Change the default to a strong, random key.
-    *   Must match the key on EpiRootkit clients.
+All critical settings are loaded from a `.env` file in the `attacking_program/` directory. If you haven't already, copy the example:
+```bash
+cp .env.example .env
+```
 
-*   `PASSWORD_HASH` (Default: SHA512 hash of `"password"` | Env: `PASSWORD_HASH`)
-    *   Must be a 128-char lowercase SHA512 hex string.
-    *   Crucial for security: Change the default. Use a strong password and hash it:
+Open `.env` in your editor and set the following:
+
+### Required Settings
+
+- `C2_PORT` — TCP port for EpiRootkit connections (default: 4444)
+- `ENCRYPTION_KEY` — **Must be a 32-byte (256-bit) random string**
+- `PASSWORD_HASH` — **Must be a 128-character lowercase SHA512 hex string**
+
+### How to Generate Secure Values
+
+#### Generate a 32-byte ENCRYPTION_KEY
+```bash
+head -c 32 /dev/urandom | base64 | head -c 32
+```
+Paste this value into your `.env` as `ENCRYPTION_KEY`.
+
+#### Generate a SHA512 PASSWORD_HASH
+Choose a strong password, then:
         ```bash
-        # Example to generate hash for a new password:
-        echo -n "your_new_strong_password" | sha512sum | awk '{print $1}'
+echo -n "your_strong_password" | sha512sum | awk '{print $1}'
         ```
+Paste the resulting 128-character hex string into `.env` as `PASSWORD_HASH`.
 
-## Other Settings
+> {{< alert context="warning" text="Never use the default ENCRYPTION_KEY or PASSWORD_HASH! Anyone with these values can control your rootkit." />}}
 
-*   `WEB_PORT`: For a potential future web UI (Default: `3000`).
-*   `UPLOAD_DIR`, `DOWNLOAD_DIR`, `LOG_DIR`: Default paths for server-side file operations and logs.
+### Example `.env`
+```
+C2_PORT=4444
+ENCRYPTION_KEY=your32bytelongrandomstringhere!!
+PASSWORD_HASH=your128characterlongsha512hexstring...
+```
 
-Configuration validation ensures key formats (e.g., key lengths) are correct on startup. 
+## 2. Optional Settings
+- `WEB_PORT` — Port for future web UI (default: 3000)
+- `UPLOAD_DIR`, `DOWNLOAD_DIR`, `LOG_DIR` — Paths for file operations and logs
+
+## 3. Validation
+- The server will refuse to start if `ENCRYPTION_KEY` is not exactly 32 bytes or `PASSWORD_HASH` is not 128 hex chars.
+- If you see errors, double-check your `.env` file.
+
+## 4. Troubleshooting
+- If you see `Error: ENCRYPTION_KEY must be 32 bytes`, regenerate your key.
+- If you see `Error: PASSWORD_HASH must be 128 hex chars`, regenerate your hash.
+- If you see port conflicts, change `C2_PORT`.
+
+## 5. Next Steps
+- [Installation](./installation.md): How to install and run the C2 server
+- [Usage](./usage.md): CLI commands and workflow 

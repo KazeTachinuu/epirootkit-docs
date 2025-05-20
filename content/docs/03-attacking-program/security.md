@@ -4,6 +4,16 @@ weight: 35
 description: "Overview of C2 server security: AES-GCM and SHA512."
 ---
 
+## TODO: Implement Security Features
+
+- [ ] Enforce end-to-end encryption for all C2 traffic
+- [ ] Add configurable password policies
+- [ ] Implement multi-factor authentication for operators
+- [ ] Add rate limiting and brute-force protection
+- [ ] Document all security mechanisms in detail
+
+_This section will be updated with documentation once features are implemented and tested._
+
 The C2 server employs two main security mechanisms:
 
 ## 1. Message Encryption: AES-256-GCM

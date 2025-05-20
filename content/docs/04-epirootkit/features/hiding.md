@@ -9,6 +9,17 @@ toc: true
 weight: 56
 ---
 
+## TODO: Implement Stealth & Hiding Features
+
+- [ ] Hook `getdents()`/`getdents64()` to hide files and directories
+- [ ] Hide kernel module from `/proc/modules` and `lsmod`
+- [ ] Implement PID hiding via dynamic list
+- [ ] Implement stealth command channel via `rmdir()`
+- [ ] Add privilege escalation and config dump commands
+- [ ] Test all hiding features and document limitations
+
+_This section will be updated with documentation once features are implemented and tested._
+
 # 1. File & Directory Hiding
 
 **What we did**  
