@@ -11,7 +11,7 @@ weight: 57
 
 ## TODO: Implement Password Protection Features
 
-- [ ] Add password-based authentication for rootkit commands
-- [ ] Store password hashes securely
+- [x] Add password-based authentication for rootkit commands
+- [x] Store password hashes securely
 - [ ] Implement password change and reset mechanisms
 - [ ] Document password protection and security best practices

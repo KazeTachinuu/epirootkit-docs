@@ -6,7 +6,8 @@ description: "Overview of C2 server security: AES-GCM and SHA512."
 
 ## TODO: Implement Security Features
 
-- [ ] Enforce end-to-end encryption for all C2 traffic
+- [x] Enforce end-to-end encryption for all C2 traffic (AES-256-GCM)
+- [x] Password authentication (SHA512, configurable)
 - [ ] Add configurable password policies
 - [ ] Implement multi-factor authentication for operators
 - [ ] Add rate limiting and brute-force protection

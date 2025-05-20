@@ -11,8 +11,8 @@ weight: 52
 
 ## TODO: Implement Connection Features
 
-- [ ] Establish and maintain TCP connection to C2
-- [ ] Implement reconnection and keepalive logic
+- [x] Establish and maintain TCP connection to C2
+- [x] Implement reconnection and keepalive logic
 - [ ] Handle connection errors and timeouts
 - [ ] Document connection protocol and troubleshooting
 

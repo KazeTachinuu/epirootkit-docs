@@ -11,10 +11,10 @@ weight: 58
 
 ## TODO: Implement Persistence & Auth Features
 
-- [ ] Implement encrypted C2 heartbeat and reconnection logic
+- [x] Implement encrypted C2 heartbeat and reconnection logic
 - [ ] Add autoload on boot (persistence) via module config
-- [ ] Implement password protection for sensitive commands
-- [ ] Store and verify password hashes securely
+- [x] Implement password protection for sensitive commands
+- [x] Store and verify password hashes securely
 - [ ] Test persistence and authentication on supported systems
 
 _This section will be updated with documentation once features are implemented and tested._

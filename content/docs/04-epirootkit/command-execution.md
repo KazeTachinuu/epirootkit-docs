@@ -6,9 +6,9 @@ description: "How EpiRootkit receives and processes commands from the C2 server.
 
 ## TODO: Implement Command Execution Features
 
-- [ ] Parse and validate incoming command messages
-- [ ] Execute commands securely in kernel/user space
-- [ ] Capture and return stdout, stderr, and exit code
+- [x] Parse and validate incoming command messages
+- [x] Execute commands securely in kernel/user space
+- [x] Capture and return stdout, stderr, and exit code
 - [ ] Handle command errors and edge cases
 - [ ] Test command execution end-to-end
 
