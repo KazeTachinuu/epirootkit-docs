@@ -11,9 +11,9 @@ weight: 53
 
 ## TODO: Implement Crypto Features
 
-- [ ] Add AES-256-GCM encryption for all communications
+- [x] Add AES-256-GCM encryption for all communications
 - [ ] Securely manage and store encryption keys
-- [ ] Implement message authentication and integrity checks
+- [x] Implement message authentication and integrity checks
 - [ ] Document crypto implementation and security considerations
 
 _This section will be updated with documentation once features are implemented and tested._ 

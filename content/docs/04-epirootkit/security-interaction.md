@@ -6,8 +6,8 @@ description: "Security protocols EpiRootkit must follow when interacting with th
 
 ## TODO: Implement Security Interaction Features
 
-- [ ] Enforce encrypted communication for all C2 interactions
-- [ ] Implement strict authentication and authorization checks
+- [x] Enforce encrypted communication for all C2 interactions
+- [x] Implement strict authentication and authorization checks
 - [ ] Add protocol validation and error handling
 - [ ] Document all security protocols and best practices
 

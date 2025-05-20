@@ -11,9 +11,9 @@ weight: 51
 
 ## TODO: Implement Command Execution Features
 
-- [ ] Parse and validate incoming command messages
+- [x] Parse and validate incoming command messages
 - [ ] Execute commands securely in kernel/user space
-- [ ] Capture and return stdout, stderr, and exit code
+- [x] Capture and return stdout, stderr, and exit code
 - [ ] Handle command errors and edge cases
 - [ ] Test command execution end-to-end
 

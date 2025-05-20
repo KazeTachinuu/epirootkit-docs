@@ -7,8 +7,10 @@ description: "A detailed overview of the Attacking Program (C2 Server), its purp
 
 ## TODO: Implement Additional C2 Server Features
 
-- [ ] Add advanced client management (aliasing, grouping)
-- [ ] Implement encrypted web UI integration
+- [x] Basic client management (listing, alias, status)
+- [x] Encrypted web UI integration (React, real-time event log, terminal, upload/download panels)
+- [x] Command execution (CLI and web UI)
+- [ ] Add advanced client management (grouping, advanced aliasing)
 - [ ] Add audit logging and event history
 - [ ] Implement advanced command scheduling
 - [ ] Add more robust error handling and reporting
@@ -22,4 +24,4 @@ Key functions include:
 *   Securing communication using AES-256-GCM encryption.
 *   Authenticating clients based on a SHA512 hashed password.
 *   Managing connected clients (listing, identifying).
-*   Providing an interactive CLI for sending commands to EpiRootkit instances. 
+*   Providing an interactive CLI and web UI for sending commands to EpiRootkit instances. 
