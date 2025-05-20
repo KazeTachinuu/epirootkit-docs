@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/06-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 17 May 2025 01:31:21 +0200</lastBuildDate><atom:link href="/docs/06-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/06-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/06-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 02:00:08 +0200</lastBuildDate><atom:link href="/docs/06-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/06-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
  alt="Web UI">
 &lt;/figure>
 
@@ -18,12 +18,10 @@
 &lt;li>Global keyboard shortcuts for all major actions&lt;/li>
 &lt;li>Drag-and-drop panel reordering&lt;/li>
 &lt;/ul>
-&lt;p>This section covers the rationale, features, and usage of the Web UI. See the following pages for details on setup, features, and development notes.&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Node.js (LTS recommended)&lt;/li>
-&lt;li>npm&lt;/li>
-&lt;/ul>
-&lt;h2 id="setup-steps">Setup Steps &lt;a href="#setup-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>Navigate to the &lt;code>webui/&lt;/code> directory:
+&lt;p>This section covers the rationale, features, and usage of the Web UI. See the following pages for details on setup, features, and development notes.&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation--setup">Web UI Installation &amp;amp; Setup &lt;a href="#web-ui-installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> first.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-install-nodejs-npm-and-pnpm">1. Install Node.js, npm, and pnpm &lt;a href="#1-install-nodejs-npm-and-pnpm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already installed, run:&lt;/p>
 
 
 
@@ -39,34 +37,44 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="0f2bd22" class="language-bash ">
+ &lt;pre id="3f389ed" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y nodejs npm
+sudo npm install -g pnpm&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;blockquote>
+
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use &lt;code>node -v&lt;/code> and &lt;code>pnpm -v&lt;/code> to verify.&lt;/div>
+ &lt;/div>
+&lt;/blockquote>
+&lt;h2 id="2-navigate-to-the-web-ui-directory">2. Navigate to the Web UI Directory &lt;a href="#2-navigate-to-the-web-ui-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="db8fc69" class="language-bash ">
  &lt;code>cd webui&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>Install dependencies:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="07c96a9" class="language-bash ">
- &lt;code>pnpm install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>Start the development server:
-
+&lt;h2 id="3-install-dependencies">3. Install Dependencies &lt;a href="#3-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -81,15 +89,34 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="eea9952" class="language-bash ">
- &lt;code>pnpm run dev&lt;/code>
+ &lt;pre id="b879665" class="language-bash ">
+ &lt;code>pnpm install
+# Or, if you prefer npm:
+npm install&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>Open your browser and go to &lt;a href="http://localhost:5173" rel="external" target="_blank">http://localhost:5173&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> (or the port shown in your terminal).&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> The Web UI is currently frontend-only. Backend integration is planned for future releases.&lt;/p></description></item><item><title>i3 like interface</title><link>/docs/06-web-ui/i3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/i3/</guid><description>&lt;h2 id="i3-like-interface">i3 like interface &lt;a href="#i3-like-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Yes, you read that right. I really tried to make this part of the Web UI feel like i3-wm.&lt;/p>
+&lt;h2 id="4-start-the-development-server">4. Start the Development Server &lt;a href="#4-start-the-development-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b881346" class="language-bash ">
+ &lt;code>pnpm run dev
+# Or
+npm run dev&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Open your browser and go to &lt;a href="http://localhost:5173" rel="external" target="_blank">http://localhost:5173&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> (or the port shown in your terminal).&lt;/p></description></item><item><title>i3 like interface</title><link>/docs/06-web-ui/i3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/i3/</guid><description>&lt;h2 id="i3-like-interface">i3 like interface &lt;a href="#i3-like-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Yes, you read that right. I really tried to make this part of the Web UI feel like i3-wm.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/i3.png"
  alt="i3 like interface">
 &lt;/figure>

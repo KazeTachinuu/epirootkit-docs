@@ -1,41 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p>
-&lt;p>Key functions include:&lt;/p>
-&lt;ul>
-&lt;li>Listening for client connections from EpiRootkit instances.&lt;/li>
-&lt;li>Securing communication using AES-256-GCM encryption.&lt;/li>
-&lt;li>Authenticating clients based on a SHA512 hashed password.&lt;/li>
-&lt;li>Managing connected clients (listing, identifying).&lt;/li>
-&lt;li>Providing an interactive CLI for sending commands to EpiRootkit instances.&lt;/li>
-&lt;/ul></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;p>To run the Attacking Program (C2 Server):&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Node.js &amp;amp; npm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and npm are installed.
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="685c214" class="language-bash ">
- &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt install nodejs npm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="todo-implement-additional-c2-server-features">TODO: Implement Additional C2 Server Features &lt;a href="#todo-implement-additional-c2-server-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (aliasing, grouping)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement encrypted web UI integration&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add audit logging and event history&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement advanced command scheduling&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add more robust error handling and reporting&lt;/li>
 &lt;/ul>
-&lt;h2 id="setup">Setup &lt;a href="#setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>
-&lt;p>Navigate to the &lt;code>attacking_program&lt;/code> directory within the project.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Install Dependencies:&lt;/p>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
+&lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-install-nodejs-npm-and-pnpm">1. Install Node.js, npm, and pnpm &lt;a href="#1-install-nodejs-npm-and-pnpm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already installed, run:&lt;/p>
 
 
 
@@ -51,13 +25,65 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="e3453dc" class="language-bash ">
- &lt;code>npm install&lt;/code>
+ &lt;pre id="3f389ed" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y nodejs npm
+sudo npm install -g pnpm&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>Review Critical Configuration: Before first use, ensure you have reviewed and appropriately set the &lt;code>ENCRYPTION_KEY&lt;/code>, &lt;code>PASSWORD_HASH&lt;/code>, and &lt;code>C2_PORT&lt;/code>. Refer to the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
+&lt;blockquote>
+
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use &lt;code>node -v&lt;/code> and &lt;code>pnpm -v&lt;/code> to verify.&lt;/div>
+ &lt;/div>
+&lt;/blockquote>
+&lt;h2 id="2-navigate-to-the-attacking-program-directory">2. Navigate to the Attacking Program Directory &lt;a href="#2-navigate-to-the-attacking-program-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1998761" class="language-bash ">
+ &lt;code>cd attacking_program&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="3-install-dependencies">3. Install Dependencies &lt;a href="#3-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b879665" class="language-bash ">
+ &lt;code>pnpm install
+# Or, if you prefer npm:
+npm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="4-prepare-configuration">4. Prepare Configuration &lt;a href="#4-prepare-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The C2 server is configured via a &lt;code>.env&lt;/code> file. &lt;strong>You must set strong, secure values!&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
 
 
@@ -73,19 +99,14 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="721ccab" class="language-bash ">
- &lt;code>npm start&lt;/code>
+ &lt;pre id="ef539d5" class="language-bash ">
+ &lt;code>pnpm start
+# Or
+npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.&lt;/p>
-&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
-
-
-
-
-&lt;table class="table %!s(&lt;nil>)">
+&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console.&lt;/p>
+&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>Command&lt;/th>
@@ -97,7 +118,7 @@
  &lt;tr>
  &lt;td>&lt;code>server start&lt;/code>&lt;/td>
  &lt;td>&lt;code>start&lt;/code>&lt;/td>
- &lt;td>Starts TCP server (Note: auto-starts with &lt;code>npm start&lt;/code>).&lt;/td>
+ &lt;td>Starts TCP server (auto-starts with &lt;code>pnpm start&lt;/code>).&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>server stop&lt;/code>&lt;/td>
@@ -121,32 +142,14 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-
 &lt;ul>
 &lt;li>&lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>: Target client alias (e.g., &lt;code>Client-1&lt;/code> from &lt;code>clients list&lt;/code>).&lt;/li>
 &lt;li>&lt;code>&amp;lt;command...&amp;gt;&lt;/code>: Command string for the victim machine.&lt;/li>
 &lt;/ul>
-&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;p>The C2 server is configured via &lt;code>src/config/index.js&lt;/code> or environment variables.&lt;/p>
-&lt;h2 id="critical-settings">Critical Settings &lt;a href="#critical-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>
-&lt;p>&lt;code>C2_PORT&lt;/code> (Default: &lt;code>4444&lt;/code> | Env: &lt;code>C2_PORT&lt;/code>)&lt;/p>
-&lt;ul>
-&lt;li>TCP port for EpiRootkit connections.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>ENCRYPTION_KEY&lt;/code> (Default: &lt;code>mysecretkey...&lt;/code> (32 bytes) | Env: &lt;code>ENCRYPTION_KEY&lt;/code>)&lt;/p>
-&lt;ul>
-&lt;li>Must be a 32-byte string for AES-256-GCM.&lt;/li>
-&lt;li>Crucial for security: Change the default to a strong, random key.&lt;/li>
-&lt;li>Must match the key on EpiRootkit clients.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>PASSWORD_HASH&lt;/code> (Default: SHA512 hash of &lt;code>&amp;quot;password&amp;quot;&lt;/code> | Env: &lt;code>PASSWORD_HASH&lt;/code>)&lt;/p>
-&lt;ul>
-&lt;li>Must be a 128-char lowercase SHA512 hex string.&lt;/li>
-&lt;li>Crucial for security: Change the default. Use a strong password and hash it:
+&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;h1 id="c2-server-configuration">C2 Server Configuration &lt;a href="#c2-server-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>You must configure the C2 server before first use.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-configuration-file-env">1. Configuration File: &lt;code>.env&lt;/code> &lt;a href="#1-configuration-file-env" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>All critical settings are loaded from a &lt;code>.env&lt;/code> file in the &lt;code>attacking_program/&lt;/code> directory. If you haven&amp;rsquo;t already, copy the example:&lt;/p>
 
 
 
@@ -162,28 +165,46 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="6a74c81" class="language-bash ">
- &lt;code># Example to generate hash for a new password:
-echo -n &amp;#34;your_new_strong_password&amp;#34; | sha512sum | awk &amp;#39;{print $1}&amp;#39;&lt;/code>
+ &lt;pre id="90df811" class="language-bash ">
+ &lt;code>cp .env.example .env&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;/li>
+&lt;p>Open &lt;code>.env&lt;/code> in your editor and set the following:&lt;/p>
+&lt;h3 id="required-settings">Required Settings &lt;a href="#required-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;code>C2_PORT&lt;/code> — TCP port for EpiRootkit connections (default: 4444)&lt;/li>
+&lt;li>&lt;code>ENCRYPTION_KEY&lt;/code> — &lt;strong>Must be a 32-byte (256-bit) random string&lt;/strong>&lt;/li>
+&lt;li>&lt;code>PASSWORD_HASH&lt;/code> — &lt;strong>Must be a 128-character lowercase SHA512 hex string&lt;/strong>&lt;/li>
 &lt;/ul>
-&lt;/li>
+&lt;h3 id="how-to-generate-secure-values">How to Generate Secure Values &lt;a href="#how-to-generate-secure-values" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;h4 id="generate-a-32-byte-encryption_key">Generate a 32-byte ENCRYPTION_KEY &lt;a href="#generate-a-32-byte-encryption_key" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c1c24f1" class="language-bash ">
+ &lt;code>head -c 32 /dev/urandom | base64 | head -c 32&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Paste this value into your &lt;code>.env&lt;/code> as &lt;code>ENCRYPTION_KEY&lt;/code>.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;h2 id="todo-implement-security-features">TODO: Implement Security Features &lt;a href="#todo-implement-security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add configurable password policies&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Implement multi-factor authentication for operators&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Add rate limiting and brute-force protection&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Document all security mechanisms in detail&lt;/li>
 &lt;/ul>
-&lt;h2 id="other-settings">Other Settings &lt;a href="#other-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;code>WEB_PORT&lt;/code>: For a potential future web UI (Default: &lt;code>3000&lt;/code>).&lt;/li>
-&lt;li>&lt;code>UPLOAD_DIR&lt;/code>, &lt;code>DOWNLOAD_DIR&lt;/code>, &lt;code>LOG_DIR&lt;/code>: Default paths for server-side file operations and logs.&lt;/li>
-&lt;/ul>
-&lt;p>Configuration validation ensures key formats (e.g., key lengths) are correct on startup.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
+&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
+&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
 &lt;h2 id="1-message-encryption-aes-256-gcm">1. Message Encryption: AES-256-GCM &lt;a href="#1-message-encryption-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>Purpose: Encrypts all TCP C2 traffic for confidentiality, integrity, and authenticity.&lt;/li>
 &lt;li>Key: Uses a 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> (must be changed from default and kept secret).&lt;/li>
 &lt;li>Format: Encrypted messages are transmitted as a colon-separated string: &lt;code>iv_hex:authtag_hex:ciphertext_hex&lt;/code>.&lt;/li>
-&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p>&lt;strong>Configuration&lt;/strong>&lt;br>Key C2 server configuration settings.&lt;/a>" data-bs-toggle="tooltip" href="/docs/03-attacking-program/configuration/">Configuration&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;h2 id="2-client-authentication-sha512-hashing">2. Client Authentication: SHA512 Hashing &lt;a href="#2-client-authentication-sha512-hashing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Purpose: Verifies EpiRootkit clients before allowing interaction.&lt;/li>
-&lt;li>Method: Client sends a password; server hashes it with SHA512 and compares against a stored &lt;code>PASSWORD_HASH&lt;/code>.&lt;/li>
-&lt;li>Hash: The &lt;code>PASSWORD_HASH&lt;/code> (must be changed from default) is a 128-char lowercase SHA512 hex string.&lt;/li>
-&lt;li>Details: See &lt;code>src/handlers/messageHandlers.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item></channel></rss>
+&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item></channel></rss>
