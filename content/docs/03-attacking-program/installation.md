@@ -8,30 +8,51 @@ description: "Essential setup for the C2 server."
 
 > **Assumption:** You are starting from a fresh Ubuntu system. Complete [Host Environment Setup](../02-setup/environment.md) and [VM Installation](../02-setup/vm-installation.md) first.
 
-## 1. Install Node.js, npm, and pnpm
+## 1. Deployment
 
-If not already installed, run:
+{{<tabs tabTotal="2">}}
+{{% tab tabName="Deploy the Full Stack (Recommended)" %}}
+
+The simplest way to build and launch both the frontend and backend is with the provided script:
+
 ```bash
-sudo apt update
-sudo apt install -y nodejs npm
-sudo npm install -g pnpm
+./deploy.sh
 ```
 
-> {{< alert context="info" text="Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use `node -v` and `pnpm -v` to verify." />}}
+This will:
+- Build the frontend (webui)
+- Copy the frontend build to the backend's `public/` directory
+- Install backend dependencies
+- Start the backend server with `pnpm start`
 
-## 2. Navigate to the Attacking Program Directory
+{{% /tab %}}
+{{% tab tabName="Manual Setup (Advanced)" %}}
+
+If you want to run the backend and frontend separately, follow these steps:
+
+### Backend
 ```bash
 cd attacking_program
+pnpm install --prod
+pnpm start
 ```
 
-## 3. Install Dependencies
+### Frontend (Web UI)
 ```bash
+cd webui
 pnpm install
-# Or, if you prefer npm:
-npm install
+pnpm build
 ```
 
-## 4. Prepare Configuration
+Then copy the build to the backend if needed:
+```bash
+cp -r webui/dist/* attacking_program/public/
+```
+
+{{% /tab %}}
+{{% /tabs %}}
+
+## 2. Prepare Configuration
 
 The C2 server is configured via a `.env` file. **You must set strong, secure values!**
 
@@ -46,22 +67,12 @@ The C2 server is configured via a `.env` file. **You must set strong, secure val
 
 > {{< alert context="warning" text="Never use the default ENCRYPTION_KEY or PASSWORD_HASH in production! See [Configuration](./configuration.md) for how to generate secure values." />}}
 
-
-## 5. Start the C2 Server
-```bash
-pnpm start
-# Or
-npm start
-```
-
-You should see the C2 CLI prompt and log messages. If you see errors about missing config or directories, check the steps above.
-
-## 7. Troubleshooting
+## 3. Troubleshooting
 - If you see `Error: ENCRYPTION_KEY must be 32 bytes`, check your `.env` file.
 - If you see `Error: PASSWORD_HASH must be 128 hex chars`, regenerate your hash (see [Configuration](./configuration.md)).
 - If you see `EADDRINUSE`, another process is using the port. Change `C2_PORT` or stop the other process.
 - For permission errors, ensure you are not running as root unless necessary.
 
-## 8. Next Steps
+## 4. Next Steps
 - See [Configuration](./configuration.md) for secure setup.
 - See [Usage](./usage.md) for CLI commands and workflow.
