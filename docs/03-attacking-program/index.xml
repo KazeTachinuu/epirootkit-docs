@@ -9,81 +9,44 @@
 &lt;p>The Attacking Program is the command and control (C2) server for EpiRootkit. It is designed to run on a Linux-based attacking virtual machine and provides a command-line interface (CLI) to manage and interact with EpiRootkit instances on victim machines.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="1-install-nodejs-npm-and-pnpm">1. Install Node.js, npm, and pnpm &lt;a href="#1-install-nodejs-npm-and-pnpm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already installed, run:&lt;/p>
+&lt;h2 id="1-deployment">1. Deployment &lt;a href="#1-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="fbdceaTab" data-bs-toggle="tab" data-bs-target="#fbdcea"
+		 type="button" role="tab" aria-controls="fbdcea" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="fbedacTab" data-bs-toggle="tab" data-bs-target="#fbedac"
+		 type="button" role="tab" aria-controls="fbedac" aria-selected="true">Manual Setup (Advanced)&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
 
 
 
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="3f389ed" class="language-bash ">
- &lt;code>sudo apt update
-sudo apt install -y nodejs npm
-sudo npm install -g pnpm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;blockquote>
-
-&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use &lt;code>node -v&lt;/code> and &lt;code>pnpm -v&lt;/code> to verify.&lt;/div>
- &lt;/div>
-&lt;/blockquote>
-&lt;h2 id="2-navigate-to-the-attacking-program-directory">2. Navigate to the Attacking Program Directory &lt;a href="#2-navigate-to-the-attacking-program-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
- 
- 
- 
 
- 
- 
- 
- 
+&lt;div class="tab-pane fade show active" id="fbdcea" role="tabpanel" aria-labelledby="nav-1">
 
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="1998761" class="language-bash ">
- &lt;code>cd attacking_program&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="3-install-dependencies">3. Install Dependencies &lt;a href="#3-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="b879665" class="language-bash ">
- &lt;code>pnpm install
-# Or, if you prefer npm:
-npm install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="4-prepare-configuration">4. Prepare Configuration &lt;a href="#4-prepare-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The C2 server is configured via a &lt;code>.env&lt;/code> file. &lt;strong>You must set strong, secure values!&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
+	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
 
 
 
