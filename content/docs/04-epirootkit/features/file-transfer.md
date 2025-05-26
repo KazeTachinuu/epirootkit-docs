@@ -1,7 +1,7 @@
 ---
 title: "File Transfer"
 description: "Upload and download files between C2 server and victim system"
-icon: "file-transfer"
+icon: "download"
 date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T00:00:00+01:00"
 draft: false
