@@ -121,8 +121,9 @@ When the module loads, it automatically:
 ## Module Management
 
 ### Unload Module
+Must unhide the module from kernel.
 ```bash
-sudo rmmod epirootkit
+sudo make remove # Or simply sudo rmmod epirootkit
 ```
 
 ### Remove Persistence
@@ -136,56 +137,6 @@ sudo rm -f /etc/profile.d/epirootkit.sh
 ### Clean Build
 ```bash
 make clean
-```
-
-## Troubleshooting
-
-### Build Errors
-
-**Missing headers:**
-```bash
-sudo apt install linux-headers-$(uname -r)
-```
-
-**Wrong kernel version:**
-```bash
-uname -r  # Must be 5.4.0-*
-```
-
-### Loading Errors
-
-**Check detailed errors:**
-```bash
-dmesg | grep -i error
-```
-
-**Module info:**
-```bash
-modinfo epirootkit.ko
-```
-
-### Connection Issues
-
-**Check C2 server:**
-```bash
-netstat -tulpn | grep 4444
-```
-
-**Verify IP configuration:**
-```bash
-grep C2_SERVER_IP rootkit/core/config.h
-```
-
-## File Structure
-
-After building, you'll have:
-```
-rootkit/
-├── epirootkit.ko          # Main kernel module
-├── Module.symvers         # Symbol versions
-├── modules.order          # Module order
-├── *.o                    # Object files
-└── .*.cmd                 # Build commands
 ```
 
 ## Next Steps
