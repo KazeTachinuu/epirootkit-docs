@@ -146,22 +146,6 @@ c2-server$ exec Client-1 cat /tmp/epirootkit_test
 
 ## Dynamic Control
 
-### Available Commands
-```bash
-# Hide module
-c2-server$ hide_module Client-1
-# SUCCESS: Module hidden
-
-# Unhide module  
-c2-server$ unhide_module Client-1
-# SUCCESS: Module visible
-
-# Check status
-c2-server$ status Client-1
-# Module Hidden: YES/NO
-# File Hiding: ENABLED (always on)
-```
-
 ### Interactive Configuration
 ```bash
 c2-server$ config Client-1
@@ -188,75 +172,7 @@ c2-server$ config Client-1
 - **List operations**: Standard kernel `list_del()` and `list_add()`
 - **State tracking**: Maintains hiding state in global structure
 
-### Performance Impact
-- **Module hiding**: One-time operation (minimal impact)
-- **File hiding**: Per-directory-listing overhead (~1-2%)
-- **Memory usage**: Temporary buffers for directory filtering
 
-## Security Considerations
-
-### Detection Methods
-- **Direct memory scanning**: May detect module signatures in memory
-- **Syscall hooking detection**: Can identify kretprobe modifications
-- **Behavioral analysis**: Monitor for suspicious kernel behavior
-- **Alternative listing methods**: Direct `/proc/modules` access
-
-### Limitations
-- **File hiding scope**: Only affects `getdents64` syscall
-- **Module hiding scope**: Only affects standard module listing
-- **Memory footprint**: Module still present in kernel memory
-- **Advanced detection**: Sophisticated tools may still detect
-
-## Configuration
-
-### Enable/Disable Features
-```c
-// rootkit/core/config.h
-#define ENABLE_FILE_HIDING 1    // Currently enabled
-```
 
 ### Customize Hidden Prefixes
 Edit the `hide_prefixes` array in `stealth.c` to change which files are hidden.
-
-## Troubleshooting
-
-### Module Still Visible
-```bash
-# Check if hiding was successful
-c2-server$ status Client-1
-# Module Hidden: YES/NO
-
-# Try hiding again
-c2-server$ hide_module Client-1
-```
-
-### File Hiding Not Working
-```bash
-# Check if stealth module loaded
-dmesg | grep -i stealth
-
-# File hiding is automatic - no manual control
-# Only affects files with configured prefixes
-```
-
-### Performance Issues
-```bash
-# Monitor system performance
-c2-server$ exec Client-1 top
-c2-server$ exec Client-1 iostat
-
-# File hiding adds minimal overhead
-# Module hiding is one-time operation
-```
-
-## Current Status
-
-- **Module Hiding**: ✅ Fully implemented and working
-- **File Hiding**: ✅ Fully implemented and working
-- **Dynamic Control**: ✅ Can toggle module hiding via C2
-- **Automatic Activation**: ✅ File hiding enabled on module load
-
----
-
-Comprehensive hiding capabilities using modern kernel hooking techniques while maintaining system stability.
-
