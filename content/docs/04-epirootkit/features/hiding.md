@@ -1,7 +1,7 @@
 ---
 title: "Stealth & Hiding"
 description: "Module hiding and file hiding capabilities"
-icon: "eye-slash"
+icon: "visibility_off"
 date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T16:00:00+01:00"
 draft: false
