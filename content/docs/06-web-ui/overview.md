@@ -1,7 +1,12 @@
 ---
-title: "Overview"
-weight: 61
+title: "README"
 description: "A modern, user-friendly frontend for the C2 server."
+icon: "monitor"
+date: "2025-05-25T16:00:00+01:00"
+lastmod: "2025-05-25T16:00:00+01:00"
+draft: false
+toc: true
+weight: 60
 ---
 
 {{< figure src="/images/webui/main-dashboard.png" alt="Web UI" class="img-fluid" >}}
