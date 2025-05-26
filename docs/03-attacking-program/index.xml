@@ -1,54 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="todo-implement-additional-c2-server-features">TODO: Implement Additional C2 Server Features &lt;a href="#todo-implement-additional-c2-server-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Basic client management (listing, alias, status)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Encrypted web UI integration (React, real-time event log, terminal, upload/download panels)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Command execution (CLI and web UI)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (grouping, advanced aliasing)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add audit logging and event history&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement advanced command scheduling&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add more robust error handling and reporting&lt;/li>
-&lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="1-deployment">1. Deployment &lt;a href="#1-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;nav>
-	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-		
-		
-		
-		
-
-		
-
-		&lt;a class="nav-link active"
-		 id="bdcaefTab" data-bs-toggle="tab" data-bs-target="#bdcaef"
-		 type="button" role="tab" aria-controls="bdcaef" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
-
-		
-
-		&lt;a class="nav-link "
-		 id="bfcaedTab" data-bs-toggle="tab" data-bs-target="#bfcaed"
-		 type="button" role="tab" aria-controls="bfcaed" aria-selected="true">Manual Setup (Advanced)&lt;/a>
-
-		
-
-	&lt;/div>
-&lt;/nav>
-
-&lt;div class="tab-content" id="nav-tab-content">
-
-	
-
-
-
-
-
-
-&lt;div class="tab-pane fade show active" id="bdcaef" role="tabpanel" aria-labelledby="nav-1">
-
-	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>README</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="attacking-program-overview">Attacking Program Overview &lt;a href="#attacking-program-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional C2 (Command &amp;amp; Control) server built with Node.js providing CLI interface for managing EpiRootkit connections.&lt;/p>
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -63,113 +14,154 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="ef539d5" class="language-bash ">
- &lt;code>pnpm start
-# Or
-npm start&lt;/code>
+ &lt;pre id="e92f0d9" class="language-bash ">
+ &lt;code># Install and start
+cd attacking_program &amp;amp;&amp;amp; pnpm install &amp;amp;&amp;amp; pnpm start
+# Server started on port 4444
+# Web interface: http://localhost:3000
+
+# Basic usage
+c2-server$ ls
+# • Client-1 - UNAUTHENTICATED - Last seen: 6:13:09 PM
+
+c2-server$ auth Client-1 password
+# ✓ Authentication successful&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console.&lt;/p>
-&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>CLI Interface&lt;/strong>: Vorpal.js-based interactive commands&lt;/li>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: Node.js TCP server for rootkit communication&lt;/li>
+&lt;li>&lt;strong>Web Interface&lt;/strong>: Basic REST API and Socket.IO dashboard&lt;/li>
+&lt;/ul>
+&lt;h3 id="technology-stack">Technology Stack &lt;a href="#technology-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm package manager&lt;/li>
+&lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for interactive command interface&lt;/li>
+&lt;li>&lt;strong>Server&lt;/strong>: Express.js with Socket.IO for real-time updates&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: Optional XOR cipher for traffic obfuscation (currently disabled on rootkit side)&lt;/li>
+&lt;/ul>
+&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="780d04c" class="language-bash ">
+ &lt;code>ls # List connected clients
+auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt; # Authenticate with client using dynamic password
+status &amp;lt;client&amp;gt; # Get client status information
+config &amp;lt;client&amp;gt; # Interactive configuration menu&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="operations">Operations &lt;a href="#operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ae92741" class="language-bash ">
+ &lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command&amp;gt; # Execute shell command
+upload &amp;lt;client&amp;gt; &amp;lt;local&amp;gt; &amp;lt;remote&amp;gt; # Upload file to victim
+download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; &amp;lt;local&amp;gt; # Download file from victim&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="interactive-configuration">Interactive Configuration &lt;a href="#interactive-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a1f1a2b" class="language-bash ">
+ &lt;code>c2-server$ config Client-1
+# ┌─ Rootkit Configuration - Client-1
+# • [X] Module Hiding: ENABLED
+# • [X] Persistence: ENABLED
+# 
+# ? Select option: Toggle Module Hiding
+# ✓ Module hiding disabled&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Available options:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
+&lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>Command&lt;/th>
- &lt;th>Aliases&lt;/th>
  &lt;th>Description&lt;/th>
+ &lt;th>Authentication Required&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;code>server start&lt;/code>&lt;/td>
- &lt;td>&lt;code>start&lt;/code>&lt;/td>
- &lt;td>Starts TCP server (auto-starts with &lt;code>pnpm start&lt;/code>).&lt;/td>
+ &lt;td>&lt;code>clients, ls&lt;/code>&lt;/td>
+ &lt;td>List connected rootkit clients&lt;/td>
+ &lt;td>No&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>server stop&lt;/code>&lt;/td>
- &lt;td>&lt;code>stop&lt;/code>&lt;/td>
- &lt;td>Stops TCP server.&lt;/td>
+ &lt;td>&lt;code>auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Authenticate with a rootkit client&lt;/td>
+ &lt;td>No&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>clients list&lt;/code>&lt;/td>
- &lt;td>&lt;code>ls&lt;/code>, &lt;code>list&lt;/code>&lt;/td>
- &lt;td>Lists connected clients (alias, ID, auth status, last ping).&lt;/td>
+ &lt;td>&lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Execute shell commands on target system&lt;/td>
+ &lt;td>Yes&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>send &amp;lt;clientAlias&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>Sends &lt;code>&amp;lt;command...&amp;gt;&lt;/code> to specified &lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>.&lt;/td>
+ &lt;td>&lt;code>upload &amp;lt;client&amp;gt; &amp;lt;localFile&amp;gt; [remoteFile]&lt;/code>&lt;/td>
+ &lt;td>Upload files from attacking machine to victim system&lt;/td>
+ &lt;td>Yes&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>exit&lt;/code>&lt;/td>
- &lt;td>&lt;code>quit&lt;/code>&lt;/td>
- &lt;td>Stops server and exits application.&lt;/td>
+ &lt;td>&lt;code>download &amp;lt;client&amp;gt; &amp;lt;remoteFile&amp;gt; [localFile]&lt;/code>&lt;/td>
+ &lt;td>Download files from victim system to attacking machine&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>status &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Get comprehensive rootkit status&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>keepalive &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Get detailed keepalive status&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>persist &amp;lt;client&amp;gt; [action]&lt;/code>&lt;/td>
+ &lt;td>Manage persistence mechanisms&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>config &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Interactive configuration interface&lt;/td>
+ &lt;td>Yes&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;ul>
-&lt;li>&lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>: Target client alias (e.g., &lt;code>Client-1&lt;/code> from &lt;code>clients list&lt;/code>).&lt;/li>
-&lt;li>&lt;code>&amp;lt;command...&amp;gt;&lt;/code>: Command string for the victim machine.&lt;/li>
-&lt;/ul>
-&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;h1 id="c2-server-configuration">C2 Server Configuration &lt;a href="#c2-server-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>You must configure the C2 server before first use.&lt;/strong>&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="1-configuration-file-env">1. Configuration File: &lt;code>.env&lt;/code> &lt;a href="#1-configuration-file-env" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>All critical settings are loaded from a &lt;code>.env&lt;/code> file in the &lt;code>attacking_program/&lt;/code> directory. If you haven&amp;rsquo;t already, copy the example:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="90df811" class="language-bash ">
- &lt;code>cp .env.example .env&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>Open &lt;code>.env&lt;/code> in your editor and set the following:&lt;/p>
-&lt;h3 id="required-settings">Required Settings &lt;a href="#required-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;code>C2_PORT&lt;/code> — TCP port for EpiRootkit connections (default: 4444)&lt;/li>
-&lt;li>&lt;code>ENCRYPTION_KEY&lt;/code> — &lt;strong>Must be a 32-byte (256-bit) random string&lt;/strong>&lt;/li>
-&lt;li>&lt;code>PASSWORD_HASH&lt;/code> — &lt;strong>Must be a 128-character lowercase SHA512 hex string&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;h3 id="how-to-generate-secure-values">How to Generate Secure Values &lt;a href="#how-to-generate-secure-values" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;h4 id="generate-a-32-byte-encryption_key">Generate a 32-byte ENCRYPTION_KEY &lt;a href="#generate-a-32-byte-encryption_key" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="c1c24f1" class="language-bash ">
- &lt;code>head -c 32 /dev/urandom | base64 | head -c 32&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>Paste this value into your &lt;code>.env&lt;/code> as &lt;code>ENCRYPTION_KEY&lt;/code>.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;h2 id="todo-implement-security-features">TODO: Implement Security Features &lt;a href="#todo-implement-security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic (AES-256-GCM)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Password authentication (SHA512, configurable)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add configurable password policies&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement multi-factor authentication for operators&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add rate limiting and brute-force protection&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document all security mechanisms in detail&lt;/li>
-&lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
-&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
-&lt;h2 id="1-message-encryption-aes-256-gcm">1. Message Encryption: AES-256-GCM &lt;a href="#1-message-encryption-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Purpose: Encrypts all TCP C2 traffic for confidentiality, integrity, and authenticity.&lt;/li>
-&lt;li>Key: Uses a 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> (must be changed from default and kept secret).&lt;/li>
-&lt;li>Format: Encrypted messages are transmitted as a colon-separated string: &lt;code>iv_hex:authtag_hex:ciphertext_hex&lt;/code>.&lt;/li>
-&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item></channel></rss>
+&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item></channel></rss>

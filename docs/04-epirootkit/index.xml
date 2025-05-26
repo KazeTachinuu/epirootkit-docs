@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/04-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 May 2025 02:07:50 +0200</lastBuildDate><atom:link href="/docs/04-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>EpiRootkit Overview</title><link>/docs/04-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
+&lt;h2 id="what-we-built">What We Built &lt;a href="#what-we-built" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a kernel module that provides:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection to command &amp;amp; control server&lt;/li>
+&lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
+&lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: Hide module from &lt;code>lsmod&lt;/code> and hide files from directory listings&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: Multiple mechanisms to survive reboots&lt;/li>
+&lt;/ul>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5ca7107" class="language- ">
+ &lt;code>C2 Server (Node.js) ←→ EpiRootkit (Kernel Module) ←→ Target System
+Port 4444 Network &amp;#43; Commands Linux Kernel 5.4.0&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="quick-demo">Quick Demo &lt;a href="#quick-demo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="4c298e8" class="language-bash ">
+ &lt;code># 1. Build and load rootkit
+cd rootkit &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo insmod epirootkit.ko
+
+# 2. Start C2 server 
+cd attacking_program &amp;amp;&amp;amp; pnpm start
+
+# 3. Use the rootkit
+c2-server$ auth Client-1 password
+c2-server$ exec Client-1 whoami
+c2-server$ status Client-1&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="network-layer">Network Layer &lt;a href="#network-layer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Connection Management&lt;/strong>: Persistent TCP connection with auto-reconnect&lt;/li>
+&lt;li>&lt;strong>Keepalive System&lt;/strong>: 60-second ping/pong to detect disconnections&lt;/li>
+&lt;li>&lt;strong>Socket Handling&lt;/strong>: Low-level network operations&lt;/li>
+&lt;/ul>
+&lt;h3 id="command-system">Command System &lt;a href="#command-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Authentication&lt;/strong>: &lt;code>auth&lt;/code> - SHA-512 password verification&lt;/li>
+&lt;li>&lt;strong>Execution&lt;/strong>: &lt;code>exec&lt;/code> - Run shell commands with output capture&lt;/li>
+&lt;li>&lt;strong>File Operations&lt;/strong>: &lt;code>upload&lt;/code>/&lt;code>download&lt;/code> - Transfer files&lt;/li>
+&lt;li>&lt;strong>Status&lt;/strong>: &lt;code>status&lt;/code> - Get rootkit information&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: &lt;code>persist_*&lt;/code> - Install/remove boot persistence&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: &lt;code>hide_module&lt;/code>/&lt;code>unhide_module&lt;/code> - Toggle visibility&lt;/li>
+&lt;/ul>
+&lt;h3 id="stealth-features">Stealth Features &lt;a href="#stealth-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Module Hiding&lt;/strong>: Remove from kernel module list (&lt;code>lsmod&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>File Hiding&lt;/strong>: Hide files with specific prefixes from directory listings&lt;/li>
+&lt;li>&lt;strong>Syscall Hooking&lt;/strong>: Uses kretprobe on &lt;code>getdents64&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="persistence-mechanisms">Persistence Mechanisms &lt;a href="#persistence-mechanisms" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>modules-load.d&lt;/strong>: Systemd automatic module loading&lt;/li>
+&lt;li>&lt;strong>Cron Jobs&lt;/strong>: Scheduled module loading&lt;/li>
+&lt;li>&lt;strong>Shell Profiles&lt;/strong>: Load via user login scripts&lt;/li>
+&lt;/ul>
+&lt;h2 id="technical-details">Technical Details &lt;a href="#technical-details" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS with kernel 5.4.0&lt;/li>
+&lt;li>&lt;strong>Language&lt;/strong>: C (kernel module) + Node.js (C2 server)&lt;/li>
+&lt;li>&lt;strong>APIs Used&lt;/strong>: ftrace, kretprobe, VFS, crypto API&lt;/li>
+&lt;li>&lt;strong>Network&lt;/strong>: TCP on port 4444 (configurable)&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 with rate limiting (5 attempts/60s)&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Key settings in &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Configuration Justifications</title><link>/docs/04-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  &lt;span class="material-icons size-20 me-2">
@@ -40,17 +128,15 @@
  &lt;/div>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;h2 id="todo-implement-connection--authentication-features">TODO: Implement Connection &amp;amp; Authentication Features &lt;a href="#todo-implement-connection--authentication-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Establish TCP connection to C2 server&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement persistent reconnection logic&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add secure authentication handshake&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle authentication failures and retries&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document connection protocol and error handling&lt;/li>
-&lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;h1 id="epirootkit-deployment">EpiRootkit Deployment &lt;a href="#epirootkit-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 20.04 VM. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p>&lt;strong>VM Installation &amp; Verification&lt;/strong>&lt;br>Set up and verify the attacker and victim VMs from scratch.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/vm-installation/">VM Installation&lt;/a> first.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="1-install-build-tools-and-kernel-headers">1. Install Build Tools and Kernel Headers &lt;a href="#1-install-build-tools-and-kernel-headers" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/04-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication.&lt;/p>
+&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-connection">Automatic Connection &lt;a href="#automatic-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
+&lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
+&lt;li>&lt;strong>Handles reconnection&lt;/strong> with exponential backoff&lt;/li>
+&lt;/ol>
+&lt;h3 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -65,34 +151,156 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="69caee5" class="language-bash ">
- &lt;code>sudo apt update
-sudo apt install -y build-essential linux-headers-$(uname -r) git&lt;/code>
+ &lt;pre id="60de145" class="language-c ">
+ &lt;code>// rootkit/core/config.h
+#define C2_SERVER_IP &amp;#34;192.168.64.1&amp;#34;
+#define C2_SERVER_PORT 4444
+#define KEEPALIVE_INTERVAL_MS 60000
+#define RECONNECT_DELAY_MS 5000&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;blockquote>
+&lt;h2 id="network-architecture">Network Architecture &lt;a href="#network-architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="three-layer-system">Three-Layer System &lt;a href="#three-layer-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Connection Management&lt;/strong> (&lt;code>connection.c&lt;/code>) - High-level coordination&lt;/li>
+&lt;li>&lt;strong>Keepalive System&lt;/strong> (&lt;code>keepalive.c&lt;/code>) - Health monitoring&lt;/li>
+&lt;li>&lt;strong>Socket Management&lt;/strong> (&lt;code>socket.c&lt;/code>) - Low-level network operations&lt;/li>
+&lt;/ol>
+&lt;h3 id="connection-states">Connection States &lt;a href="#connection-states" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;code>0&lt;/code> = DISCONNECTED&lt;/li>
+&lt;li>&lt;code>1&lt;/code> = CONNECTED&lt;/li>
+&lt;li>&lt;code>2&lt;/code> = CONNECTING&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>C2 sends command&lt;/strong>: &lt;code>auth Client-1 password&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Rootkit receives&lt;/strong>: Plain text password&lt;/li>
+&lt;li>&lt;strong>Rootkit hashes&lt;/strong>: Using SHA-512 kernel crypto API&lt;/li>
+&lt;li>&lt;strong>Compares hash&lt;/strong>: Against stored hash in config&lt;/li>
+&lt;li>&lt;strong>Returns result&lt;/strong>: SUCCESS or ERROR&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
-&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
+
  
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
  
- &lt;div class="w-100">Check your kernel version with &lt;code>uname -r&lt;/code>. The headers must match exactly!&lt;/div>
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="063008f" class="language-c ">
+ &lt;code>// Default password is &amp;#34;password&amp;#34; (SHA-512 hash stored in config)
+#define PASSWORD_HASH &amp;#34;b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86&amp;#34;&lt;/code>
+ &lt;/pre>
  &lt;/div>
-&lt;/blockquote>
-&lt;h2 id="2-clone-or-copy-the-project">2. Clone or Copy the Project &lt;a href="#2-clone-or-copy-the-project" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already present, copy the &lt;code>rootkit/&lt;/code> directory into your VM, or clone your repository.&lt;/p></description></item><item><title>Security Interaction with C2</title><link>/docs/04-epirootkit/security-interaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/security-interaction/</guid><description>&lt;h2 id="todo-implement-security-interaction-features">TODO: Implement Security Interaction Features &lt;a href="#todo-implement-security-interaction-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Enforce encrypted communication for all C2 interactions&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Implement strict authentication and authorization checks&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Add protocol validation and error handling&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Document all security protocols and best practices&lt;/li>
+&lt;h3 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Rate limiting&lt;/strong>: 5 attempts per 60 seconds&lt;/li>
+&lt;li>&lt;strong>Session timeout&lt;/strong>: 1 hour automatic expiry&lt;/li>
+&lt;li>&lt;strong>Secure hashing&lt;/strong>: SHA-512 using kernel crypto API&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/04-epirootkit/command-execution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-epirootkit/command-execution/</guid><description>&lt;h2 id="todo-implement-command-execution-features">TODO: Implement Command Execution Features &lt;a href="#todo-implement-command-execution-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Parse and validate incoming command messages&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Execute commands securely in kernel/user space&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Capture and return stdout, stderr, and exit code&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Handle command errors and edge cases&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Test command execution end-to-end&lt;/li>
+&lt;h2 id="live-demo">Live Demo &lt;a href="#live-demo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="44e0d15" class="language-bash ">
+ &lt;code>cd attacking_program &amp;amp;&amp;amp; pnpm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-load-rootkit">2. Load Rootkit &lt;a href="#2-load-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="69c6f95" class="language-bash ">
+ &lt;code>sudo insmod epirootkit.ko&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>C2 server shows:&lt;/strong>&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/04-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/04-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
+&lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
+&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Architecture&lt;/strong>: x86_64&lt;/li>
 &lt;/ul>
-&lt;p>&lt;em>This section will be updated with documentation once features are implemented and tested.&lt;/em>&lt;/p></description></item></channel></rss>
+&lt;h3 id="dependencies">Dependencies &lt;a href="#dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f1f2f46" class="language-bash ">
+ &lt;code>sudo apt update
+sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="build-process">Build Process &lt;a href="#build-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-navigate-to-rootkit-directory">1. Navigate to Rootkit Directory &lt;a href="#1-navigate-to-rootkit-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="4cc85a3" class="language-bash ">
+ &lt;code>cd rootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-build-the-module">2. Build the Module &lt;a href="#2-build-the-module" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7e536ba" class="language-bash ">
+ &lt;code>make clean &amp;amp;&amp;amp; make&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Expected output:&lt;/strong>&lt;/p></description></item></channel></rss>
