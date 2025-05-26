@@ -103,9 +103,9 @@ c2-server$ exec Client-1 cat /etc/passwd
 **Features:**
 - Root privileges execution
 - Stdout/stderr capture with exit codes
-- Max command length: 1024 bytes
-- Max output: 64KB with dynamic allocation
-- Temporary file cleanup
+- Command parsing with flag support
+- Real-time output display
+- Error handling and validation
 
 ## File Operations
 
@@ -144,10 +144,10 @@ c2-server$ download Client-1 /var/log/auth.log ./auth.log
 ```
 
 **Features:**
+- Base64 encoding for file transfer
 - Path validation and security checks
-- Size limits (10MB maximum)
 - Automatic path resolution
-- Text file support (binary files may be corrupted)
+- Binary and text file support
 
 ## System Information
 
