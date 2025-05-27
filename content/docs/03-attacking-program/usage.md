@@ -4,15 +4,17 @@ weight: 33
 description: "Running the C2 server and its CLI."
 ---
 
-## Running the Server
+## Running the Server & Web UI
 
 In the `attacking_program` directory, run:
 
 ```bash
-npm start
+pnpm start
 ```
 
-The server starts automatically and presents the `c2-server$ ` prompt. Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.
+This command starts both the C2 server and the Web UI. The CLI prompt (`c2-server$ `) will appear for server management, and the Web UI will be available at [http://localhost:3000](http://localhost:3000) by default.
+
+Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.
 
 ## CLI Commands
 
