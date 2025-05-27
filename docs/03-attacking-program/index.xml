@@ -159,7 +159,10 @@ persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete setup instructions for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Node.js &amp;amp; pnpm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed.
+
 
 
  
@@ -174,79 +177,86 @@ persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="db59196" class="language-bash ">
+ &lt;pre id="f4ac0b2" class="language-bash ">
+ &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt install nodejs npm
+npm install -g pnpm&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;p>=======&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="815b6c9" class="language-bash ">
  &lt;code># Check Node.js version
 node --version
 
 # Check pnpm installation
 pnpm --version
 
+&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
+2. Install Dependencies:
+ ```bash
+ pnpm install
+ ```
+=======
 # Install pnpm if not available
 npm install -g pnpm&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-navigate-to-project-directory">1. Navigate to Project Directory &lt;a href="#1-navigate-to-project-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="1998761" class="language-bash ">
- &lt;code>cd attacking_program&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="2-install-dependencies">2. Install Dependencies &lt;a href="#2-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="d8f3194" class="language-bash ">
- &lt;code># Using pnpm (recommended)
-pnpm install
-
-# Or using npm
-npm install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-review-configuration-file">1. Review Configuration File &lt;a href="#1-review-configuration-file" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="3845e8d" class="language-bash ">
- &lt;code>cat config.env&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>&lt;strong>Default Configuration:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
+&lt;h2 id="running-the-server--web-ui">Running the Server &amp;amp; Web UI &lt;a href="#running-the-server--web-ui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>=======&lt;/p>
+&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;blockquote>
+&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="getting-started">Getting Started &lt;a href="#getting-started" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-the-c2-server">1. Start the C2 Server &lt;a href="#1-start-the-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
@@ -262,56 +272,9 @@ npm install&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="12b556f" class="language-bash ">
- &lt;code>cd attacking_program
+ &lt;pre id="d63fd27" class="language-bash ">
+ &lt;code>&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
 pnpm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="2-wait-for-rootkit-connection">2. Wait for Rootkit Connection &lt;a href="#2-wait-for-rootkit-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="5912d77" class="language-bash ">
- &lt;code># On victim machine
-sudo insmod epirootkit.ko
-
-# C2 server will show:
-┌─ Client-1
- ✓ [2025-05-25 16:13:29] Connected
-└─&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="3-authenticate">3. Authenticate &lt;a href="#3-authenticate" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="9e3bffe" class="language-bash ">
- &lt;code>c2-server$ auth Client-1 &amp;lt;password&amp;gt; (default: password)
-┌─ Client-1
- ✓ [2025-05-25 16:13:30] Authenticated
-└─&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h4 id="brute-force-protection">Brute Force Protection &lt;a href="#brute-force-protection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>&lt;p>Rate limit to 5 attempts per 60 seconds.&lt;/p></description></item></channel></rss>
+&lt;p>This command starts both the C2 server and the Web UI. The CLI prompt (&lt;code>c2-server$ &lt;/code>) will appear for server management, and the Web UI will be available at &lt;a href="http://localhost:3000" rel="external" target="_blank">http://localhost:3000&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> by default.&lt;/p></description></item></channel></rss>

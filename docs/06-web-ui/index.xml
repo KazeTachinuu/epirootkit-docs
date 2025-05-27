@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/06-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 May 2025 12:12:30 +0200</lastBuildDate><atom:link href="/docs/06-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>README</title><link>/docs/06-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/06-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 27 May 2025 15:24:59 +0200</lastBuildDate><atom:link href="/docs/06-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>README</title><link>/docs/06-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/06-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/main-dashboard.png"
  alt="Web UI">
 &lt;/figure>
 
@@ -43,7 +43,76 @@ sudo apt install -y nodejs npm
 sudo npm install -g pnpm&lt;/code>
  &lt;/pre>
  &lt;/div>
+&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
+&lt;ol>
+&lt;li>Navigate to the &lt;code>attacking_program/&lt;/code> directory:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1998761" class="language-bash ">
+ &lt;code>cd attacking_program&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Install dependencies:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a18eb10" class="language-bash ">
+ &lt;code>pnpm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Start the C2 server and Web UI:
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="094896f" class="language-bash ">
+ &lt;code>pnpm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;/li>
+&lt;li>Open your browser and go to &lt;a href="http://localhost:3000" rel="external" target="_blank">http://localhost:3000&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> (or the port shown in your terminal).&lt;/li>
+&lt;/ol>
 &lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The Web UI is now integrated and starts automatically with the C2 server. No separate process is required.
+=======
 
 &lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
@@ -53,70 +122,7 @@ sudo npm install -g pnpm&lt;/code>
  &lt;/span>&lt;/div>
  
  &lt;div class="w-100">Check your versions: Node.js v18+ and pnpm v8+ are recommended. Use &lt;code>node -v&lt;/code> and &lt;code>pnpm -v&lt;/code> to verify.&lt;/div>
- &lt;/div>
-&lt;/blockquote>
-&lt;h2 id="2-navigate-to-the-web-ui-directory">2. Navigate to the Web UI Directory &lt;a href="#2-navigate-to-the-web-ui-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="db8fc69" class="language-bash ">
- &lt;code>cd webui&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="3-install-dependencies">3. Install Dependencies &lt;a href="#3-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="b879665" class="language-bash ">
- &lt;code>pnpm install
-# Or, if you prefer npm:
-npm install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="4-start-the-development-server">4. Start the Development Server &lt;a href="#4-start-the-development-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="b881346" class="language-bash ">
- &lt;code>pnpm run dev
-# Or
-npm run dev&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>Open your browser and go to &lt;a href="http://localhost:5173" rel="external" target="_blank">http://localhost:5173&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a> (or the port shown in your terminal).&lt;/p></description></item><item><title>i3 like interface</title><link>/docs/06-web-ui/i3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/i3/</guid><description>&lt;h2 id="i3-like-interface">i3 like interface &lt;a href="#i3-like-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Yes, you read that right. I really tried to make this part of the Web UI feel like i3-wm.&lt;/p>
+ &lt;/div>&lt;/p></description></item><item><title>i3 like interface</title><link>/docs/06-web-ui/i3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/i3/</guid><description>&lt;h2 id="i3-like-interface">i3 like interface &lt;a href="#i3-like-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Yes, you read that right. I really tried to make this part of the Web UI feel like i3-wm.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/i3.png"
  alt="i3 like interface">
 &lt;/figure>
