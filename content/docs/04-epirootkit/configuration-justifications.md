@@ -20,7 +20,7 @@ weight: 41
 
 ## Why Ubuntu 20.04 LTS?
 
-{{< alert context="success" icon="check" text="Perfect balance between realism and convinience." />}}
+{{< alert context="success" text="Perfect balance between realism and convinience." />}}
 
 - Widely deployed on servers and desktops  
 - Official cloud and container images simplify automation  
