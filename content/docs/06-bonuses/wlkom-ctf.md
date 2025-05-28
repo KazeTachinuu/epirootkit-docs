@@ -24,7 +24,7 @@ Le `.gitignore` ressemblait à :
 givenfiles/
 ```
 
-Sauf que les fichiers n'étaient pas ignorés. C'est là que nous découvrons un mystérieux fichier `.README` :
+Sauf que les fichiers n'étaient pas ignorés. _(Vu que Léa ne sait pas écrire)_ C'est là que nous découvrons un mystérieux fichier `.README` :
 
 {{< figure src="/images/ctf/givenfilestree.png" alt="Arborescence révélant le fichier caché" >}}
 *Arborescence révélant le fichier caché*
