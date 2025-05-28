@@ -6,7 +6,7 @@ date: "2025-05-25T16:00:00+01:00"
 lastmod: "2025-05-25T16:00:00+01:00"
 draft: false
 toc: true
-weight: 40
+weight: 501
 ---
 
 # EpiRootkit
@@ -23,9 +23,21 @@ EpiRootkit is a kernel module that provides:
 - **Authentication**: SHA-512 password verification with rate limiting
 - **Stealth**: Hide module from `lsmod` and hide files from directory listings
 - **Persistence**: Multiple mechanisms to survive reboots
+- **Proper Deployment**: Two-stage architecture following Linux best practices
 
 ## Architecture
 
+### Deployment Architecture
+```
+Deployment Script  ←→  EpiRootkit (Kernel Module)  ←→  Target System
+Stage 1: Loader       Stage 2: Runtime            Linux Kernel 5.4.0
+```
+
+**Two-Stage Deployment:**
+- **Stage 1 (Loader)**: `scripts/deploy_rootkit.sh` handles proper module deployment
+- **Stage 2 (Runtime)**: Rootkit focuses on functionality, not self-deployment
+
+### Communication Architecture
 ```
 C2 Server (Node.js)  ←→  EpiRootkit (Kernel Module)  ←→  Target System
 Port 4444                Network + Commands              Linux Kernel 5.4.0

