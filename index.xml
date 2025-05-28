@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 09:46:09 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 16:57:00 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="acefdbTab" data-bs-toggle="tab" data-bs-target="#acefdb"
-		 type="button" role="tab" aria-controls="acefdb" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="abecdfTab" data-bs-toggle="tab" data-bs-target="#abecdf"
+		 type="button" role="tab" aria-controls="abecdf" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdaecbTab" data-bs-toggle="tab" data-bs-target="#fdaecb"
-		 type="button" role="tab" aria-controls="fdaecb" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="bcefdaTab" data-bs-toggle="tab" data-bs-target="#bcefda"
+		 type="button" role="tab" aria-controls="bcefda" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="acefdb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="abecdf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -1378,11 +1378,6 @@ c2-server$ status Client-1
 givenfiles/&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Sauf que les fichiers n&amp;rsquo;étaient pas ignorés. C&amp;rsquo;est là que nous découvrons un mystérieux fichier &lt;code>.README&lt;/code> :&lt;/p>
-&lt;p>&lt;figure>&lt;img src="/images/ctf/givenfilestree.png"
- alt="Arborescence révélant le fichier caché">
-&lt;/figure>
-
-&lt;em>Arborescence révélant le fichier caché&lt;/em>&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
+&lt;p>Sauf que les fichiers n&amp;rsquo;étaient pas ignorés. &lt;em>(Vu que Léa ne sait pas écrire)&lt;/em> C&amp;rsquo;est là que nous découvrons un mystérieux fichier &lt;code>.README&lt;/code> :&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
 &lt;p>Merci beaucoup Jules pour ce projet!&lt;/p>
 &lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item><item><title/><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description/></item></channel></rss>
