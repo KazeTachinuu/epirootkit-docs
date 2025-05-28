@@ -1,6 +1,6 @@
 ---
 title: "Un dernier mot"
-description: ""
+description: "Merci <3"
 icon: "favorite"
 date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-07T00:44:31+01:00"
