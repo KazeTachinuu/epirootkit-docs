@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/04-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 03:08:38 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 server management.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
+ alt="C2 Dashboard Main">
+&lt;/figure>
+
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b292da4" class="language-bash ">
+ &lt;code># Start C2 server with Web UI
+./deploy_c2.sh
+
+# Access Web UI at http://localhost:3000
+# Default password is secret123&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Technology stack and integration.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Frontend&lt;/strong>: React 18 + Vite&lt;/li>
+&lt;li>&lt;strong>Backend&lt;/strong>: Express.js + Socket.IO&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: JWT with session management&lt;/li>
+&lt;li>&lt;strong>Real-time&lt;/strong>: WebSocket connections&lt;/li>
+&lt;/ul></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h1 id="installation--setup">Installation &amp;amp; Setup &lt;a href="#installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>System requirements for running the Web UI.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Node.js&lt;/strong>: v18+&lt;/li>
+&lt;li>&lt;strong>pnpm&lt;/strong>: v8+ (recommended) or npm&lt;/li>
+&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04+ or similar Linux distribution&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Quick setup process.&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="52acaba" class="language-bash ">
+ &lt;code># On the root of the project
+./deploy_c2.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div></description></item></channel></rss>

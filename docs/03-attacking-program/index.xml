@@ -101,64 +101,7 @@ download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; [local] # Download files 
 persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>SHA-512 Password Authentication:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
-&lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>Command&lt;/th>
- &lt;th>Description&lt;/th>
- &lt;th>Authentication Required&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>clients, ls&lt;/code>&lt;/td>
- &lt;td>List connected rootkit clients&lt;/td>
- &lt;td>No&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Authenticate with a rootkit client&lt;/td>
- &lt;td>No&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Execute shell commands on target system&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>upload &amp;lt;client&amp;gt; &amp;lt;localFile&amp;gt; [remoteFile]&lt;/code>&lt;/td>
- &lt;td>Upload files from attacking machine to victim system&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>download &amp;lt;client&amp;gt; &amp;lt;remoteFile&amp;gt; [localFile]&lt;/code>&lt;/td>
- &lt;td>Download files from victim system to attacking machine&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>status &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Get comprehensive rootkit status&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>keepalive &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Get detailed keepalive status&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>persist &amp;lt;client&amp;gt; [action]&lt;/code>&lt;/td>
- &lt;td>Manage persistence mechanisms&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>config &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Interactive configuration interface&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete setup instructions for the EpiRootkit C2 server.&lt;/p>
+&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>SHA-512 Password Authentication:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete setup instructions for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Node.js &amp;amp; pnpm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed.
@@ -239,7 +182,64 @@ npm install -g pnpm&lt;/code>
 &lt;blockquote>
 &lt;blockquote>
 &lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
+&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
+&lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Command&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;th>Authentication Required&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>clients, ls&lt;/code>&lt;/td>
+ &lt;td>List connected rootkit clients&lt;/td>
+ &lt;td>No&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Authenticate with a rootkit client&lt;/td>
+ &lt;td>No&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command...&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Execute shell commands on target system&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>upload &amp;lt;client&amp;gt; &amp;lt;localFile&amp;gt; [remoteFile]&lt;/code>&lt;/td>
+ &lt;td>Upload files from attacking machine to victim system&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>download &amp;lt;client&amp;gt; &amp;lt;remoteFile&amp;gt; [localFile]&lt;/code>&lt;/td>
+ &lt;td>Download files from victim system to attacking machine&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>status &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Get comprehensive rootkit status&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>keepalive &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Get detailed keepalive status&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>persist &amp;lt;client&amp;gt; [action]&lt;/code>&lt;/td>
+ &lt;td>Manage persistence mechanisms&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>config &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>Interactive configuration interface&lt;/td>
+ &lt;td>Yes&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
 &lt;h2 id="running-the-server--web-ui">Running the Server &amp;amp; Web UI &lt;a href="#running-the-server--web-ui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>=======&lt;/p>
 &lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;blockquote>

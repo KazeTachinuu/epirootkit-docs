@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 03:08:38 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
+ alt="Terminal Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Command History&lt;/strong>: Navigate with ↑/↓ arrow keys&lt;/li>
+&lt;li>&lt;strong>Real-time Output&lt;/strong>: Live command execution streaming&lt;/li>
+&lt;li>&lt;strong>Quick Commands&lt;/strong>: One-click shortcuts for common operations&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual execution and connection status&lt;/li>
+&lt;li>&lt;strong>Clean Display&lt;/strong>: Parsed output without C2 metadata&lt;/li>
+&lt;/ul></description></item><item><title>Persistence Panel</title><link>/docs/04-web-ui/features/panels/persistence-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/persistence-panel/</guid><description>&lt;h1 id="persistence-panel">Persistence Panel &lt;a href="#persistence-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure rootkit boot survival with multiple persistence methods and one-click setup.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/persistence-panel.png"
+ alt="Persistence Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Module System Boot&lt;/strong>: systemd modules-load.d (recommended)&lt;/li>
+&lt;li>&lt;strong>Cron Scheduled Task&lt;/strong>: Periodic 5-minute checks&lt;/li>
+&lt;li>&lt;strong>Profile Login Trigger&lt;/strong>: Shell profile modification&lt;/li>
+&lt;li>&lt;strong>Quick Setup&lt;/strong>: One-click recommended installation&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual active/inactive states&lt;/li>
+&lt;/ul></description></item><item><title>Event Log Panel</title><link>/docs/04-web-ui/features/panels/event-log-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/event-log-panel/</guid><description>&lt;h1 id="event-log-panel">Event Log Panel &lt;a href="#event-log-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Real-time activity monitoring with filtering, search, and export capabilities.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/event-log-panel.png"
+ alt="Event Log Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Real-time Events&lt;/strong>: Connection, authentication, and command events&lt;/li>
+&lt;li>&lt;strong>Event Filtering&lt;/strong>: Filter by type, category, and time period&lt;/li>
+&lt;li>&lt;strong>Search Functionality&lt;/strong>: Text search with regex support&lt;/li>
+&lt;li>&lt;strong>Export Logs&lt;/strong>: Download events as JSON for analysis&lt;/li>
+&lt;li>&lt;strong>Color Coding&lt;/strong>: Visual event type identification&lt;/li>
+&lt;/ul></description></item><item><title>Upload/Download Panel</title><link>/docs/04-web-ui/features/panels/upload-download-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/upload-download-panel/</guid><description>&lt;h1 id="uploaddownload-panel">Upload/Download Panel &lt;a href="#uploaddownload-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>File transfer interface with drag-and-drop upload and remote file browser.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/upload-download-panel.png"
+ alt="Upload/Download Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Drag-and-Drop Upload&lt;/strong>: Large drop zone for easy file uploads&lt;/li>
+&lt;li>&lt;strong>Remote File Browser&lt;/strong>: Navigate and download from target filesystem&lt;/li>
+&lt;li>&lt;strong>Progress Tracking&lt;/strong>: Real-time transfer progress bars&lt;/li>
+&lt;li>&lt;strong>Transfer History&lt;/strong>: Track all upload/download operations&lt;/li>
+&lt;li>&lt;strong>Error Handling&lt;/strong>: Clear error messages and retry options&lt;/li>
+&lt;/ul></description></item><item><title>Overview Panel</title><link>/docs/04-web-ui/features/panels/overview-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/overview-panel/</guid><description>&lt;h1 id="overview-panel">Overview Panel &lt;a href="#overview-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Client status dashboard with connection monitoring and quick action buttons.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/overview-panel.png"
+ alt="Overview Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Connection Status&lt;/strong>: Real-time health and connection indicators&lt;/li>
+&lt;li>&lt;strong>Authentication Status&lt;/strong>: Session state and security level&lt;/li>
+&lt;li>&lt;strong>System Information&lt;/strong>: Client ID, IP address, and OS details&lt;/li>
+&lt;li>&lt;strong>Quick Actions&lt;/strong>: One-click authentication and management&lt;/li>
+&lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status with progress animations&lt;/li>
+&lt;/ul></description></item><item><title>Configuration Panel</title><link>/docs/04-web-ui/features/panels/configuration-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/configuration-panel/</guid><description>&lt;h1 id="configuration-panel">Configuration Panel &lt;a href="#configuration-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Manage rootkit stealth and security settings with toggle switches and real-time updates.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/configuration-panel.png"
+ alt="Configuration Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Module Hiding&lt;/strong>: Toggle rootkit visibility in system&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: Configure boot survival mechanisms&lt;/li>
+&lt;li>&lt;strong>Communication Encryption&lt;/strong>: Secure C2 communication&lt;/li>
+&lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
+&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure client authentication with session management and security monitoring.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/authentication-panel.png"
+ alt="Authentication Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Secure Login&lt;/strong>: Password-based client authentication&lt;/li>
+&lt;li>&lt;strong>Session Management&lt;/strong>: Monitor and control authentication sessions&lt;/li>
+&lt;li>&lt;strong>Security Monitoring&lt;/strong>: Track authentication attempts and failures&lt;/li>
+&lt;li>&lt;strong>Access Control&lt;/strong>: Manage client permissions and access levels&lt;/li>
+&lt;li>&lt;strong>Visual Feedback&lt;/strong>: Real-time authentication status indicators&lt;/li>
+&lt;/ul></description></item></channel></rss>
