@@ -9,7 +9,11 @@ toc: true
 weight: 304
 ---
 
+<<<<<<< HEAD
+## Running the Server & Web UI
+=======
 # Usage Guide
+>>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 Complete workflows and usage scenarios for the EpiRootkit C2 server.
 
@@ -17,6 +21,14 @@ Complete workflows and usage scenarios for the EpiRootkit C2 server.
 
 ### 1. Start the C2 Server
 ```bash
+<<<<<<< HEAD
+pnpm start
+```
+
+This command starts both the C2 server and the Web UI. The CLI prompt (`c2-server$ `) will appear for server management, and the Web UI will be available at [http://localhost:3000](http://localhost:3000) by default.
+
+Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.
+=======
 cd attacking_program
 pnpm start
 ```
@@ -25,6 +37,7 @@ pnpm start
 ```bash
 # On victim machine
 sudo insmod epirootkit.ko
+>>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 # C2 server will show:
 ┌─ Client-1
