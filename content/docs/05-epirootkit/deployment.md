@@ -6,12 +6,20 @@ date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-25T00:00:00+01:00"
 draft: false
 toc: true
-weight: 43
+weight: 502
 ---
 
 # Build & Deployment
 
 How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.
+
+## Deployment Architecture
+
+EpiRootkit follows a **two-stage deployment** approach:
+- **Stage 1 (Loader)**: `scripts/deploy_rootkit.sh` handles proper module deployment
+- **Stage 2 (Runtime)**: Rootkit focuses on functionality, not self-deployment
+
+This separation follows Linux kernel module best practices and eliminates unusual self-copying behavior.
 
 ## Requirements
 
@@ -54,7 +62,8 @@ make -C /lib/modules/5.4.0-74-generic/build M=/path/to/rootkit modules
   CC [M]  /path/to/rootkit/stealth/stealth.o
   CC [M]  /path/to/rootkit/persistence/persistence.o
   CC [M]  /path/to/rootkit/security/auth.o
-  CC [M]  /path/to/rootkit/utils/utils.o
+  CC [M]  /path/to/rootkit/security/crypto.o
+  CC [M]  /path/to/rootkit/utils/sysfs.o
   LD [M]  /path/to/rootkit/epirootkit.ko
 ```
 
@@ -83,9 +92,30 @@ Edit `rootkit/core/config.h` before building:
 #define ENABLE_FILE_HIDING 1     // Hide files with prefixes
 ```
 
-## Loading the Module
+## Deployment Methods
 
-### Load Rootkit
+### Method 1: Deployment Script (Recommended)
+Uses the proper loader stage for deployment:
+
+```bash
+# Deploy using the deployment script
+sudo ./scripts/deploy_rootkit.sh
+
+# Or specify custom module path
+sudo ./scripts/deploy_rootkit.sh /path/to/epirootkit.ko
+```
+
+**What the deployment script does:**
+1. **Validates** module and root privileges
+2. **Deploys module** to `/lib/modules/$(uname -r)/extra/`
+3. **Sets up autoload** via `/etc/modules-load.d/epirootkit.conf`
+4. **Updates dependencies** with `depmod -a`
+5. **Loads module** immediately
+6. **Verifies** deployment
+
+### Method 2: Manual Loading (Basic)
+For development and testing:
+
 ```bash
 sudo insmod epirootkit.ko
 ```
@@ -94,6 +124,9 @@ sudo insmod epirootkit.ko
 ```bash
 # Check if loaded (may be hidden if stealth enabled)
 lsmod | grep epirootkit
+
+# Alternative check if module is hidden
+ls -la /sys/module/epirootkit
 
 # Check kernel messages
 dmesg | tail -10
@@ -109,35 +142,63 @@ dmesg | tail -10
 [  123.461] EpiRootkit: Attempting connection to 192.168.64.1:4444
 ```
 
+## Deployment Management
+
+### Check Status
+```bash
+sudo ./scripts/deploy_rootkit.sh status
+```
+
+### Complete Removal
+```bash
+sudo ./scripts/deploy_rootkit.sh uninstall
+```
+
 ## Automatic Features
 
 When the module loads, it automatically:
 
 1. **Connects to C2 server** (if running)
-2. **Installs persistence** (modules-load.d, cron, shell profiles)
+2. **Installs runtime persistence** (cron, shell profiles)
 3. **Enables file hiding** (hides files with specific prefixes)
 4. **Starts keepalive system** (60-second ping/pong)
+
+**Note**: Module deployment persistence is handled by the deployment script, not the runtime module.
 
 ## Module Management
 
 ### Unload Module
-Must unhide the module from kernel.
 ```bash
-sudo make remove # Or simply sudo rmmod epirootkit
+sudo rmmod epirootkit
+# Or use Makefile target
+sudo make remove
 ```
 
-### Remove Persistence
+### Manual Persistence Cleanup
 ```bash
-# Remove all persistence mechanisms
+# Remove runtime persistence mechanisms only
+sudo rm -f /etc/cron.d/system-update
+sudo rm -f /etc/profile.d/system-env.sh
+
+# Module deployment persistence (handled by deployment script)
 sudo rm -f /etc/modules-load.d/epirootkit.conf
-sudo rm -f /etc/cron.d/epirootkit
-sudo rm -f /etc/profile.d/epirootkit.sh
+sudo rm -f /lib/modules/$(uname -r)/extra/epirootkit.ko
 ```
 
 ### Clean Build
 ```bash
 make clean
 ```
+
+## File Locations
+
+### Deployment Files (by deploy script)
+- **Module**: `/lib/modules/$(uname -r)/extra/epirootkit.ko`
+- **Autoload**: `/etc/modules-load.d/epirootkit.conf`
+
+### Runtime Files (by rootkit)
+- **Cron**: `/etc/cron.d/system-update`
+- **Profile**: `/etc/profile.d/system-env.sh`
 
 ## Next Steps
 
