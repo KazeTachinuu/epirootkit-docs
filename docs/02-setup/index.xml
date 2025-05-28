@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 09:42:02 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup-from-a-blank-system">Host Environment Setup (from a Blank System) &lt;a href="#host-environment-setup-from-a-blank-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 09:46:09 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup-from-a-blank-system">Host Environment Setup (from a Blank System) &lt;a href="#host-environment-setup-from-a-blank-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 24.10 (amd64) install with no extra packages.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
@@ -56,14 +56,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="adbcfeTab" data-bs-toggle="tab" data-bs-target="#adbcfe"
-		 type="button" role="tab" aria-controls="adbcfe" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="acefdbTab" data-bs-toggle="tab" data-bs-target="#acefdb"
+		 type="button" role="tab" aria-controls="acefdb" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdecbaTab" data-bs-toggle="tab" data-bs-target="#fdecba"
-		 type="button" role="tab" aria-controls="fdecba" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="fdaecbTab" data-bs-toggle="tab" data-bs-target="#fdaecb"
+		 type="button" role="tab" aria-controls="fdaecb" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -80,7 +80,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="adbcfe" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="acefdb" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
