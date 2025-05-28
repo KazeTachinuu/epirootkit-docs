@@ -15,6 +15,14 @@ Complete setup instructions for the EpiRootkit C2 server.
 
 ## Prerequisites
 
+<<<<<<< HEAD
+*   **Node.js & pnpm**: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed.
+    ```bash
+    sudo apt update && sudo apt install nodejs npm
+    npm install -g pnpm
+    ```
+=======
+>>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 ### Verify Prerequisites
 ```bash
@@ -24,12 +32,28 @@ node --version
 # Check pnpm installation
 pnpm --version
 
+<<<<<<< HEAD
+2.  Install Dependencies:
+    ```bash
+    pnpm install
+    ```
+=======
 # Install pnpm if not available
 npm install -g pnpm
 ```
+>>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 ## Installation Steps
 
+<<<<<<< HEAD
+Required directories (`uploads/`, `downloads/`, `logs/`) are created automatically.
+
+4.  **Start the C2 server and Web UI:**
+    ```bash
+    pnpm start
+    ```
+    This will launch both the C2 server and the Web UI. By default, the Web UI is available at [http://localhost:3000](http://localhost:3000).
+=======
 ### 1. Navigate to Project Directory
 ```bash
 cd attacking_program
@@ -110,3 +134,4 @@ c2-server$ ls
 2. **Authenticate**: Use `auth Client-1 password` to establish secure connection
 3. **Execute Commands**: Start with `exec Client-1 whoami` to test functionality
 4. **Explore Features**: Try file operations, persistence management, and configuration
+>>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
