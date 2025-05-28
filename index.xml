@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 03:08:38 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Installation &amp; Setup</title><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation--setup">Web UI Installation &amp;amp; Setup &lt;a href="#web-ui-installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 03:10:52 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Installation &amp; Setup</title><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation--setup">Web UI Installation &amp;amp; Setup &lt;a href="#web-ui-installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu system. Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> first.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-install-nodejs-npm-and-pnpm">1. Install Node.js, npm, and pnpm &lt;a href="#1-install-nodejs-npm-and-pnpm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If not already installed, run:&lt;/p>
@@ -175,14 +175,14 @@ sudo npm install -g pnpm&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="fcedbaTab" data-bs-toggle="tab" data-bs-target="#fcedba"
-		 type="button" role="tab" aria-controls="fcedba" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="abdecfTab" data-bs-toggle="tab" data-bs-target="#abdecf"
+		 type="button" role="tab" aria-controls="abdecf" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="debafcTab" data-bs-toggle="tab" data-bs-target="#debafc"
-		 type="button" role="tab" aria-controls="debafc" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="edcbafTab" data-bs-toggle="tab" data-bs-target="#edcbaf"
+		 type="button" role="tab" aria-controls="edcbaf" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -199,7 +199,7 @@ sudo npm install -g pnpm&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="fcedba" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="abdecf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
