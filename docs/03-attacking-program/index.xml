@@ -102,10 +102,7 @@ persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code
  &lt;/pre>
  &lt;/div>
 &lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>SHA-512 Password Authentication:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete setup instructions for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Node.js &amp;amp; pnpm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed.
-
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -120,69 +117,79 @@ persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="f4ac0b2" class="language-bash ">
- &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt install nodejs npm
-npm install -g pnpm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;/ul>
-&lt;p>=======&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="815b6c9" class="language-bash ">
+ &lt;pre id="db59196" class="language-bash ">
  &lt;code># Check Node.js version
 node --version
 
 # Check pnpm installation
 pnpm --version
 
-&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
-2. Install Dependencies:
- ```bash
- pnpm install
- ```
-=======
 # Install pnpm if not available
 npm install -g pnpm&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
+&lt;h2 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-navigate-to-project-directory">1. Navigate to Project Directory &lt;a href="#1-navigate-to-project-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1998761" class="language-bash ">
+ &lt;code>cd attacking_program&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-install-dependencies">2. Install Dependencies &lt;a href="#2-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d8f3194" class="language-bash ">
+ &lt;code># Using pnpm (recommended)
+pnpm install
+
+# Or using npm
+npm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-review-configuration-file">1. Review Configuration File &lt;a href="#1-review-configuration-file" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3845e8d" class="language-bash ">
+ &lt;code>cat config.env&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Default Configuration:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
 &lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -239,24 +246,7 @@ npm install -g pnpm&lt;/code>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
-&lt;h2 id="running-the-server--web-ui">Running the Server &amp;amp; Web UI &lt;a href="#running-the-server--web-ui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>=======&lt;/p>
-&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
+&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="getting-started">Getting Started &lt;a href="#getting-started" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-the-c2-server">1. Start the C2 Server &lt;a href="#1-start-the-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
@@ -272,8 +262,8 @@ npm install -g pnpm&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="d63fd27" class="language-bash ">
- &lt;code>&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
+ &lt;pre id="12b556f" class="language-bash ">
+ &lt;code>cd attacking_program
 pnpm start&lt;/code>
  &lt;/pre>
  &lt;/div>

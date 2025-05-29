@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 16:57:00 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 29 May 2025 02:46:04 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
  alt="Terminal Panel">
 &lt;/figure>
@@ -64,15 +64,31 @@
 &lt;li>&lt;strong>Communication Encryption&lt;/strong>: Secure C2 communication&lt;/li>
 &lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
-&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure client authentication with session management and security monitoring.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/authentication-panel.png"
+&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure two-layer authentication system for rootkit client access and control.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel.png"
  alt="Authentication Panel">
 &lt;/figure>
 
-&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Secure Login&lt;/strong>: Password-based client authentication&lt;/li>
-&lt;li>&lt;strong>Session Management&lt;/strong>: Monitor and control authentication sessions&lt;/li>
-&lt;li>&lt;strong>Security Monitoring&lt;/strong>: Track authentication attempts and failures&lt;/li>
-&lt;li>&lt;strong>Access Control&lt;/strong>: Manage client permissions and access levels&lt;/li>
-&lt;li>&lt;strong>Visual Feedback&lt;/strong>: Real-time authentication status indicators&lt;/li>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The authentication system has two layers:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Web UI Login&lt;/strong>: JWT authentication to access the C2 interface&lt;/li>
+&lt;li>&lt;strong>Client Authentication&lt;/strong>: Per-client password authentication for rootkit control&lt;/li>
+&lt;/ol>
+&lt;h3 id="client-authentication-process">Client Authentication Process &lt;a href="#client-authentication-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel-login.png"
+ alt="Authentication Panel Login">
+&lt;/figure>
+
+&lt;p>When you click &amp;ldquo;Authenticate&amp;rdquo; on a client card:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Modal opens&lt;/strong>: Password input dialog appears&lt;/li>
+&lt;li>&lt;strong>Credential submission&lt;/strong>: Password sent to rootkit client via C2 server&lt;/li>
+&lt;li>&lt;strong>Rootkit verification&lt;/strong>: Client validates password against stored hash&lt;/li>
+&lt;li>&lt;strong>Session establishment&lt;/strong>: Authenticated session created for client operations&lt;/li>
+&lt;/ol>
+&lt;h2 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Password hashing&lt;/strong>: SHA-512 verification on client side&lt;/li>
+&lt;li>&lt;strong>Session timeout&lt;/strong>: Authentication expires after inactivity&lt;/li>
+&lt;li>&lt;strong>Per-client auth&lt;/strong>: Each client requires individual authentication&lt;/li>
+&lt;li>&lt;strong>Failed attempt tracking&lt;/strong>: Monitor and log authentication failures&lt;/li>
+&lt;li>&lt;strong>Secure transmission&lt;/strong>: Encrypted credential transfer via C2 channel&lt;/li>
 &lt;/ul></description></item></channel></rss>

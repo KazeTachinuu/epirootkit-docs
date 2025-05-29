@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 28 May 2025 16:57:00 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 29 May 2025 02:46:04 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="abecdfTab" data-bs-toggle="tab" data-bs-target="#abecdf"
-		 type="button" role="tab" aria-controls="abecdf" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="abdfecTab" data-bs-toggle="tab" data-bs-target="#abdfec"
+		 type="button" role="tab" aria-controls="abdfec" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="bcefdaTab" data-bs-toggle="tab" data-bs-target="#bcefda"
-		 type="button" role="tab" aria-controls="bcefda" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="fcbaedTab" data-bs-toggle="tab" data-bs-target="#fcbaed"
+		 type="button" role="tab" aria-controls="fcbaed" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="abecdf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="abdfec" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -309,10 +309,7 @@ persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code
  &lt;/pre>
  &lt;/div>
 &lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>SHA-512 Password Authentication:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete setup instructions for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Node.js &amp;amp; pnpm&lt;/strong>: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed.
-
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -327,69 +324,79 @@ persist &amp;lt;client&amp;gt; [action] # Manage persistence mechanisms&lt;/code
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="f4ac0b2" class="language-bash ">
- &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt install nodejs npm
-npm install -g pnpm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;/ul>
-&lt;p>=======&lt;/p>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;h3 id="verify-prerequisites">Verify Prerequisites &lt;a href="#verify-prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="815b6c9" class="language-bash ">
+ &lt;pre id="db59196" class="language-bash ">
  &lt;code># Check Node.js version
 node --version
 
 # Check pnpm installation
 pnpm --version
 
-&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
-2. Install Dependencies:
- ```bash
- pnpm install
- ```
-=======
 # Install pnpm if not available
 npm install -g pnpm&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
+&lt;h2 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-navigate-to-project-directory">1. Navigate to Project Directory &lt;a href="#1-navigate-to-project-directory" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1998761" class="language-bash ">
+ &lt;code>cd attacking_program&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-install-dependencies">2. Install Dependencies &lt;a href="#2-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d8f3194" class="language-bash ">
+ &lt;code># Using pnpm (recommended)
+pnpm install
+
+# Or using npm
+npm install&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-review-configuration-file">1. Review Configuration File &lt;a href="#1-review-configuration-file" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3845e8d" class="language-bash ">
+ &lt;code>cat config.env&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Default Configuration:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands with real examples.&lt;/p>
 &lt;h2 id="core-commands">Core Commands &lt;a href="#core-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -446,24 +453,7 @@ npm install -g pnpm&lt;/code>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;p>&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p>
-&lt;h2 id="running-the-server--web-ui">Running the Server &amp;amp; Web UI &lt;a href="#running-the-server--web-ui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>=======&lt;/p>
-&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>d8205ef9e1984d8455d84e1cada77692ef2857c0&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
+&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="ls--clients">&lt;code>ls&lt;/code> / &lt;code>clients&lt;/code> &lt;a href="#ls--clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>List connected rootkit clients with authentication status and last seen time.&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows and usage scenarios for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="getting-started">Getting Started &lt;a href="#getting-started" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-the-c2-server">1. Start the C2 Server &lt;a href="#1-start-the-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
@@ -479,8 +469,8 @@ npm install -g pnpm&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="d63fd27" class="language-bash ">
- &lt;code>&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
+ &lt;pre id="12b556f" class="language-bash ">
+ &lt;code>cd attacking_program
 pnpm start&lt;/code>
  &lt;/pre>
  &lt;/div>
@@ -643,17 +633,33 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Communication Encryption&lt;/strong>: Secure C2 communication&lt;/li>
 &lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
-&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure client authentication with session management and security monitoring.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/authentication-panel.png"
+&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure two-layer authentication system for rootkit client access and control.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel.png"
  alt="Authentication Panel">
 &lt;/figure>
 
-&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Secure Login&lt;/strong>: Password-based client authentication&lt;/li>
-&lt;li>&lt;strong>Session Management&lt;/strong>: Monitor and control authentication sessions&lt;/li>
-&lt;li>&lt;strong>Security Monitoring&lt;/strong>: Track authentication attempts and failures&lt;/li>
-&lt;li>&lt;strong>Access Control&lt;/strong>: Manage client permissions and access levels&lt;/li>
-&lt;li>&lt;strong>Visual Feedback&lt;/strong>: Real-time authentication status indicators&lt;/li>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The authentication system has two layers:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Web UI Login&lt;/strong>: JWT authentication to access the C2 interface&lt;/li>
+&lt;li>&lt;strong>Client Authentication&lt;/strong>: Per-client password authentication for rootkit control&lt;/li>
+&lt;/ol>
+&lt;h3 id="client-authentication-process">Client Authentication Process &lt;a href="#client-authentication-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel-login.png"
+ alt="Authentication Panel Login">
+&lt;/figure>
+
+&lt;p>When you click &amp;ldquo;Authenticate&amp;rdquo; on a client card:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Modal opens&lt;/strong>: Password input dialog appears&lt;/li>
+&lt;li>&lt;strong>Credential submission&lt;/strong>: Password sent to rootkit client via C2 server&lt;/li>
+&lt;li>&lt;strong>Rootkit verification&lt;/strong>: Client validates password against stored hash&lt;/li>
+&lt;li>&lt;strong>Session establishment&lt;/strong>: Authenticated session created for client operations&lt;/li>
+&lt;/ol>
+&lt;h2 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Password hashing&lt;/strong>: SHA-512 verification on client side&lt;/li>
+&lt;li>&lt;strong>Session timeout&lt;/strong>: Authentication expires after inactivity&lt;/li>
+&lt;li>&lt;strong>Per-client auth&lt;/strong>: Each client requires individual authentication&lt;/li>
+&lt;li>&lt;strong>Failed attempt tracking&lt;/strong>: Monitor and log authentication failures&lt;/li>
+&lt;li>&lt;strong>Secure transmission&lt;/strong>: Encrypted credential transfer via C2 channel&lt;/li>
 &lt;/ul></description></item><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
@@ -1380,4 +1386,4 @@ givenfiles/&lt;/code>
  &lt;/div>
 &lt;p>Sauf que les fichiers n&amp;rsquo;étaient pas ignorés. &lt;em>(Vu que Léa ne sait pas écrire)&lt;/em> C&amp;rsquo;est là que nous découvrons un mystérieux fichier &lt;code>.README&lt;/code> :&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
 &lt;p>Merci beaucoup Jules pour ce projet!&lt;/p>
-&lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item><item><title/><link>/docs/06-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/06-web-ui/installation/</guid><description/></item></channel></rss>
+&lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item></channel></rss>
