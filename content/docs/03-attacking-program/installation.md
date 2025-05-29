@@ -15,15 +15,6 @@ Complete setup instructions for the EpiRootkit C2 server.
 
 ## Prerequisites
 
-<<<<<<< HEAD
-*   **Node.js & pnpm**: Ensure Node.js (e.g., LTS v18.x+) and pnpm are installed.
-    ```bash
-    sudo apt update && sudo apt install nodejs npm
-    npm install -g pnpm
-    ```
-=======
->>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
-
 ### Verify Prerequisites
 ```bash
 # Check Node.js version
@@ -32,28 +23,12 @@ node --version
 # Check pnpm installation
 pnpm --version
 
-<<<<<<< HEAD
-2.  Install Dependencies:
-    ```bash
-    pnpm install
-    ```
-=======
 # Install pnpm if not available
 npm install -g pnpm
 ```
->>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 ## Installation Steps
 
-<<<<<<< HEAD
-Required directories (`uploads/`, `downloads/`, `logs/`) are created automatically.
-
-4.  **Start the C2 server and Web UI:**
-    ```bash
-    pnpm start
-    ```
-    This will launch both the C2 server and the Web UI. By default, the Web UI is available at [http://localhost:3000](http://localhost:3000).
-=======
 ### 1. Navigate to Project Directory
 ```bash
 cd attacking_program
@@ -67,7 +42,6 @@ pnpm install
 # Or using npm
 npm install
 ```
-
 
 ## Configuration
 
@@ -89,7 +63,6 @@ PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980
 ENCRYPTION_KEY=0123456789abcdef0123456789abcdef
 ENABLE_ENCRYPTION=true
 ```
-
 
 ## First Run
 
@@ -116,6 +89,11 @@ pnpm start
 c2-server$ 
 ```
 
+### 2. Access Web Interface
+Open your browser and navigate to:
+```
+http://localhost:3000
+```
 
 ### 3. Test CLI Interface
 ```bash
@@ -127,11 +105,9 @@ c2-server$ ls
 # No clients connected
 ```
 
-
 ## Next Steps
 
 1. **Connect a Rootkit**: Load the EpiRootkit module on a victim machine
 2. **Authenticate**: Use `auth Client-1 password` to establish secure connection
 3. **Execute Commands**: Start with `exec Client-1 whoami` to test functionality
 4. **Explore Features**: Try file operations, persistence management, and configuration
->>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
