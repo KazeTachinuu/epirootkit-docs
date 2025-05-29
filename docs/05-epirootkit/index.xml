@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 29 May 2025 03:34:24 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 29 May 2025 19:11:41 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
  &lt;div class="flex-shrink-1 alert-icon">
  
  &lt;span class="material-icons size-20 me-2">
@@ -43,7 +43,8 @@
 &lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
 &lt;h2 id="what-we-built">What We Built &lt;a href="#what-we-built" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a kernel module that provides:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection to command &amp;amp; control server&lt;/li>
+&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection to command &amp;amp; control server with &lt;strong>domain support&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space DNS resolver for domain-based C2 servers&lt;/li>
 &lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
 &lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
@@ -141,15 +142,16 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  &lt;code>make clean &amp;amp;&amp;amp; make&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Expected output:&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication.&lt;/p>
+&lt;p>&lt;strong>Expected output:&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong>.&lt;/p>
 &lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-connection">Automatic Connection &lt;a href="#automatic-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) using kernel DNS&lt;/li>
 &lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
 &lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
 &lt;li>&lt;strong>Handles reconnection&lt;/strong> with exponential backoff&lt;/li>
 &lt;/ol>
-&lt;h3 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="configuration-with-domain-support--bonus-feature">Configuration with Domain Support (🆕 Bonus Feature) &lt;a href="#configuration-with-domain-support--bonus-feature" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -164,92 +166,16 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="60de145" class="language-c ">
- &lt;code>// rootkit/core/config.h
-#define C2_SERVER_IP &amp;#34;192.168.64.1&amp;#34;
+ &lt;pre id="50c73ea" class="language-c ">
+ &lt;code>// rootkit/core/config.h - Domain examples
+#define C2_SERVER_ADDRESS &amp;#34;jules-c2.example.com&amp;#34; // Domain name
 #define C2_SERVER_PORT 4444
 #define KEEPALIVE_INTERVAL_MS 60000
-#define RECONNECT_DELAY_MS 5000&lt;/code>
+#define RECONNECT_DELAY_MS 5000
+
+// Or traditional IP
+#define C2_SERVER_ADDRESS &amp;#34;192.168.64.1&amp;#34; // IP address
+#define C2_SERVER_PORT 4444&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="network-architecture">Network Architecture &lt;a href="#network-architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="three-layer-system">Three-Layer System &lt;a href="#three-layer-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>&lt;strong>Connection Management&lt;/strong> (&lt;code>connection.c&lt;/code>) - High-level coordination&lt;/li>
-&lt;li>&lt;strong>Keepalive System&lt;/strong> (&lt;code>keepalive.c&lt;/code>) - Health monitoring&lt;/li>
-&lt;li>&lt;strong>Socket Management&lt;/strong> (&lt;code>socket.c&lt;/code>) - Low-level network operations&lt;/li>
-&lt;/ol>
-&lt;h3 id="connection-states">Connection States &lt;a href="#connection-states" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;code>0&lt;/code> = DISCONNECTED&lt;/li>
-&lt;li>&lt;code>1&lt;/code> = CONNECTED&lt;/li>
-&lt;li>&lt;code>2&lt;/code> = CONNECTING&lt;/li>
-&lt;/ul>
-&lt;h2 id="authentication-system">Authentication System &lt;a href="#authentication-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>&lt;strong>C2 sends command&lt;/strong>: &lt;code>auth Client-1 password&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Rootkit receives&lt;/strong>: Plain text password&lt;/li>
-&lt;li>&lt;strong>Rootkit hashes&lt;/strong>: Using SHA-512 kernel crypto API&lt;/li>
-&lt;li>&lt;strong>Compares hash&lt;/strong>: Against stored hash in config&lt;/li>
-&lt;li>&lt;strong>Returns result&lt;/strong>: SUCCESS or ERROR&lt;/li>
-&lt;/ol>
-&lt;h3 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="063008f" class="language-c ">
- &lt;code>// Default password is &amp;#34;password&amp;#34; (SHA-512 hash stored in config)
-#define PASSWORD_HASH &amp;#34;b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86&amp;#34;&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Rate limiting&lt;/strong>: 5 attempts per 60 seconds&lt;/li>
-&lt;li>&lt;strong>Session timeout&lt;/strong>: 1 hour automatic expiry&lt;/li>
-&lt;li>&lt;strong>Secure hashing&lt;/strong>: SHA-512 using kernel crypto API&lt;/li>
-&lt;/ul>
-&lt;h2 id="live-demo">Live Demo &lt;a href="#live-demo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="44e0d15" class="language-bash ">
- &lt;code>cd attacking_program &amp;amp;&amp;amp; pnpm start&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="2-load-rootkit">2. Load Rootkit &lt;a href="#2-load-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="69c6f95" class="language-bash ">
- &lt;code>sudo insmod epirootkit.ko&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>&lt;strong>C2 server shows:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;h3 id="runtime-parameters">Runtime Parameters &lt;a href="#runtime-parameters" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Override config.h settings during deployment:&lt;/p></description></item></channel></rss>
