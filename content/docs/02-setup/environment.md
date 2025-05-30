@@ -24,8 +24,6 @@ Install all required tools for virtualization, development, and Node.js:
 sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils build-essential linux-headers-$(uname -r) curl git nodejs npm
 ```
 
-> **Tip:** If you get an error about missing kernel headers, ensure your kernel version matches the installed headers. Use `uname -r` and `apt search linux-headers` to check.
-
 ## 3. (Optional but Recommended) Install pnpm
 `pnpm` is used for the Web UI. Install it globally:
 ```bash
@@ -57,7 +55,7 @@ egrep -c '(vmx|svm)' /proc/cpuinfo
 # output == 0 -> not activated
 # output >= 1 -> activated
 ```
-{{< alert context="warning" text="If virtualization is not enabled, reboot and enable it in your BIOS/UEFI settings." />}}
+{{< alert context="warning" text="If virtualization is not enabled, reboot and [enable it in your BIOS/UEFI settings.](https://www.ninjaone.com/blog/how-to-enable-cpu-virtualization-in-your-computer-bios)" />}}
 
 ## 7. Verify Node.js, npm, and pnpm
 ```bash

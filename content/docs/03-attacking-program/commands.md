@@ -185,8 +185,3 @@ hide_files Client-1       # Enable file hiding
 unhide_files Client-1     # Disable file hiding
 # SUCCESS: File hiding disabled
 ```
-
-## Error Handling
-
-### Authentication Errors
-- `

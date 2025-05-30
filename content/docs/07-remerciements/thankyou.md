@@ -47,4 +47,4 @@ Coin-Coin-ment,
 Léa Bonet
 Déléguée APPING Cyb 2027
 
-"Au moins Hugo ne s'est pas fait arrêté à la sortie de l'avion 👀"
+"Au moins Hugo ne s'est pas fait arrêter à la sortie de l'avion 👀"
