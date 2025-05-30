@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/04-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:14:32 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 server management.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/04-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 management.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="C2 Dashboard Main">
 &lt;/figure>
@@ -18,28 +18,71 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b292da4" class="language-bash ">
- &lt;code># Start C2 server with Web UI
+ &lt;pre id="8734805" class="language-bash ">
+ &lt;code># Start system (includes Web UI)
 ./deploy_c2.sh
 
-# Access Web UI at http://localhost:3000
-# Default password is secret123&lt;/code>
+# Access Web UI
+# URL: http://localhost:3000
+# Password: password&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Technology stack and integration.&lt;/p>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Frontend Technology Stack:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Frontend&lt;/strong>: React 18 + Vite&lt;/li>
-&lt;li>&lt;strong>Backend&lt;/strong>: Express.js + Socket.IO&lt;/li>
-&lt;li>&lt;strong>Authentication&lt;/strong>: JWT with session management&lt;/li>
-&lt;li>&lt;strong>Real-time&lt;/strong>: WebSocket connections&lt;/li>
-&lt;/ul></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h1 id="installation--setup">Installation &amp;amp; Setup &lt;a href="#installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>System requirements for running the Web UI.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Node.js&lt;/strong>: v18+&lt;/li>
-&lt;li>&lt;strong>pnpm&lt;/strong>: v8+ (recommended) or npm&lt;/li>
-&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04+ or similar Linux distribution&lt;/li>
+&lt;li>&lt;strong>Framework&lt;/strong>: React 18 + Vite&lt;/li>
+&lt;li>&lt;strong>Styling&lt;/strong>: Tailwind CSS + shadcn/ui components&lt;/li>
+&lt;li>&lt;strong>State&lt;/strong>: React Context + hooks&lt;/li>
+&lt;li>&lt;strong>Real-time&lt;/strong>: WebSocket connections via Socket.IO&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: JWT tokens with session management&lt;/li>
 &lt;/ul>
-&lt;h2 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Quick setup process.&lt;/p>
+&lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Dashboard&lt;/strong>: Real-time client monitoring and statistics&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: Secure login with JWT tokens&lt;/li>
+&lt;li>&lt;strong>Client Management&lt;/strong>: Visual client cards with status indicators&lt;/li>
+&lt;li>&lt;strong>Interactive Panels&lt;/strong>: Terminal, file transfer, configuration, logs&lt;/li>
+&lt;li>&lt;strong>Real-time Updates&lt;/strong>: Live WebSocket synchronization&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-interface">User Interface &lt;a href="#user-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="main-components">Main Components &lt;a href="#main-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Login Screen&lt;/strong>: JWT authentication&lt;/li>
+&lt;li>&lt;strong>Dashboard&lt;/strong>: Client overview with search and filtering&lt;/li>
+&lt;li>&lt;strong>Client Cards&lt;/strong>: Visual representation of connected rootkits&lt;/li>
+&lt;li>&lt;strong>Panel System&lt;/strong>: Tabbed interface for different operations&lt;/li>
+&lt;/ul>
+&lt;h3 id="panel-types">Panel Types &lt;a href="#panel-types" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Terminal Panel&lt;/strong>: Command execution interface&lt;/li>
+&lt;li>&lt;strong>Upload/Download Panel&lt;/strong>: File transfer with drag-drop&lt;/li>
+&lt;li>&lt;strong>Configuration Panel&lt;/strong>: Toggle rootkit settings&lt;/li>
+&lt;li>&lt;strong>Authentication Panel&lt;/strong>: Client authentication management&lt;/li>
+&lt;li>&lt;strong>Event Log Panel&lt;/strong>: Real-time activity monitoring&lt;/li>
+&lt;/ul>
+&lt;h2 id="integration">Integration &lt;a href="#integration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The Web UI integrates with the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/overview/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation">Web UI Installation &lt;a href="#web-ui-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
+&lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ebfea24" class="language-bash ">
+ &lt;code># From project root
+./deploy_c2.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>This starts both the C2 server and Web UI simultaneously.&lt;/p>
+&lt;h2 id="access">Access &lt;a href="#access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>URL&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Default Password&lt;/strong>: &lt;code>password&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Features&lt;/strong>: All C2 functionality via web interface&lt;/li>
+&lt;/ul>
+&lt;h2 id="manual-installation">Manual Installation &lt;a href="#manual-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If you need to install dependencies manually:&lt;/p>
 
 
 
@@ -55,8 +98,10 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="52acaba" class="language-bash ">
- &lt;code># On the root of the project
-./deploy_c2.sh&lt;/code>
+ &lt;pre id="388e366" class="language-bash ">
+ &lt;code>cd attacking_program
+pnpm install
+pnpm start&lt;/code>
  &lt;/pre>
- &lt;/div></description></item></channel></rss>
+ &lt;/div>
+&lt;p>For detailed configuration options, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/installation/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item></channel></rss>

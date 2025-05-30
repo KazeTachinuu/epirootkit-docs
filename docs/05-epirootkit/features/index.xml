@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:14:32 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute shell commands remotely through the rootkit with full output capture.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute shell commands remotely through the rootkit with full output capture.&lt;/p>
 &lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>&lt;strong>C2 sends command&lt;/strong> via network&lt;/li>
 &lt;li>&lt;strong>Rootkit executes&lt;/strong> using &lt;code>call_usermodehelper()&lt;/code> with &lt;code>/bin/sh -c&lt;/code>&lt;/li>
@@ -189,4 +189,85 @@ upload Client-1 ./script.sh&lt;/code>
  &lt;code>int kernel_dns_resolve(const char *hostname, u32 *ip_addr);&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Parameters:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;strong>Parameters:&lt;/strong>&lt;/p></description></item><item><title>XOR Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h1 id="xor-encryption">XOR Encryption &lt;a href="#xor-encryption" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>EpiRootkit uses XOR encryption for secure C2 communication with a bulletproof, dependency-free implementation.&lt;/p>
+&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The XOR encryption system provides:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Simple Implementation&lt;/strong>: No complex crypto API dependencies&lt;/li>
+&lt;li>&lt;strong>Bulletproof Reliability&lt;/strong>: Cannot fail due to timing or key derivation issues&lt;/li>
+&lt;li>&lt;strong>Perfect Synchronization&lt;/strong>: Server and kernel use identical keys&lt;/li>
+&lt;li>&lt;strong>High Performance&lt;/strong>: Minimal computational overhead&lt;/li>
+&lt;/ul>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="server-side-attacking_programsrcutilsencryptionjs">Server Side (&lt;code>attacking_program/src/utils/encryption.js&lt;/code>) &lt;a href="#server-side-attacking_programsrcutilsencryptionjs" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="9d4c973" class="language-javascript ">
+ &lt;code>// 32-byte hardcoded XOR key
+const XOR_KEY = Buffer.from(&amp;#39;0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&amp;#39;, &amp;#39;hex&amp;#39;);
+
+function xorCrypt(data) {
+ const input = Buffer.isBuffer(data) ? data : Buffer.from(data, &amp;#39;utf8&amp;#39;);
+ const result = Buffer.alloc(input.length);
+ 
+ for (let i = 0; i &amp;lt; input.length; i&amp;#43;&amp;#43;) {
+ result[i] = input[i] ^ XOR_KEY[i % XOR_KEY.length];
+ }
+ 
+ return result;
+}
+
+const encryption = {
+ encrypt(text) { return xorCrypt(text); },
+ decrypt(data) { return xorCrypt(data).toString(&amp;#39;utf8&amp;#39;); }
+};&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="kernel-side-rootkitsecuritycryptoc">Kernel Side (&lt;code>rootkit/security/crypto.c&lt;/code>) &lt;a href="#kernel-side-rootkitsecuritycryptoc" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f22c02c" class="language-c ">
+ &lt;code>// Matching XOR key (32 bytes)
+static const u8 XOR_KEY[] = {
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef
+};
+
+static void xor_crypt(const u8 *input, u8 *output, size_t length)
+{
+ size_t i;
+ 
+ for (i = 0; i &amp;lt; length; i&amp;#43;&amp;#43;) {
+ output[i] = input[i] ^ XOR_KEY[i % XOR_KEY_SIZE];
+ }
+}
+
+int encrypt_message(const char *plaintext, char **ciphertext, size_t *outlen);
+int decrypt_message(const char *ciphertext, size_t cipherlen, char **plaintext);&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="key-features">Key Features &lt;a href="#key-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-hardcoded-key-synchronization">1. Hardcoded Key Synchronization &lt;a href="#1-hardcoded-key-synchronization" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Both server and kernel use the &lt;strong>exact same 32-byte key&lt;/strong>:&lt;/p></description></item></channel></rss>

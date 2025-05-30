@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="attacking-program-overview">Attacking Program Overview &lt;a href="#attacking-program-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional C2 (Command &amp;amp; Control) server for managing EpiRootkit connections.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -25,18 +25,18 @@ pnpm start&lt;/code>
 &lt;li>C2 Server: &lt;code>4444&lt;/code>&lt;/li>
 &lt;li>Web Interface: &lt;code>3000&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="components">Components &lt;a href="#components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>CLI Interface&lt;/strong>: Vorpal.js interactive command system&lt;/li>
-&lt;li>&lt;strong>C2 Server&lt;/strong>: TCP server for rootkit connections (port 4444)&lt;/li>
-&lt;li>&lt;strong>Web Interface&lt;/strong>: Express.js + Socket.IO REST API (port 3000)&lt;/li>
+&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>CLI Interface&lt;/strong>: Interactive command system&lt;/li>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: TCP server for rootkit connections&lt;/li>
+&lt;li>&lt;strong>Web Interface&lt;/strong>: REST API with Socket.IO&lt;/li>
 &lt;li>&lt;strong>Client Manager&lt;/strong>: Connection lifecycle and authentication&lt;/li>
-&lt;li>&lt;strong>Event System&lt;/strong>: Real-time logging and notifications&lt;/li>
+&lt;li>&lt;strong>Event System&lt;/strong>: Real-time logging&lt;/li>
 &lt;/ul>
 &lt;h3 id="technology-stack">Technology Stack &lt;a href="#technology-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm&lt;/li>
 &lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for commands&lt;/li>
 &lt;li>&lt;strong>Web&lt;/strong>: Express.js + Socket.IO&lt;/li>
-&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher (optional)&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key (simple and reliable)&lt;/li>
 &lt;/ul>
 &lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -250,12 +250,10 @@ pnpm install
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="db1898e" class="language-bash ">
+ &lt;pre id="e43335c" class="language-bash ">
  &lt;code>ls # List all connected clients
 # • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM
-# • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM
-
-clients # Same as ls&lt;/code>
+# • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;h3 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
@@ -282,7 +280,7 @@ auth Client-1 wrongpass # Wrong password
 # ERROR: Authentication failed&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Features:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
+&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 

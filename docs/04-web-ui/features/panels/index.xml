@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:14:32 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
  alt="Terminal Panel">
 &lt;/figure>
@@ -32,10 +32,6 @@
 &lt;li>&lt;strong>Export Logs&lt;/strong>: Download events as JSON for analysis&lt;/li>
 &lt;li>&lt;strong>Color Coding&lt;/strong>: Visual event type identification&lt;/li>
 &lt;/ul></description></item><item><title>Upload/Download Panel</title><link>/docs/04-web-ui/features/panels/upload-download-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/upload-download-panel/</guid><description>&lt;h1 id="uploaddownload-panel">Upload/Download Panel &lt;a href="#uploaddownload-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>File transfer interface with drag-and-drop upload and remote file browser.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/upload-download-panel.png"
- alt="Upload/Download Panel">
-&lt;/figure>
-
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Drag-and-Drop Upload&lt;/strong>: Large drop zone for easy file uploads&lt;/li>
 &lt;li>&lt;strong>Remote File Browser&lt;/strong>: Navigate and download from target filesystem&lt;/li>
@@ -61,7 +57,7 @@
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Module Hiding&lt;/strong>: Toggle rootkit visibility in system&lt;/li>
 &lt;li>&lt;strong>Persistence&lt;/strong>: Configure boot survival mechanisms&lt;/li>
-&lt;li>&lt;strong>Communication Encryption&lt;/strong>: Secure C2 communication&lt;/li>
+&lt;li>&lt;strong>XOR Encryption&lt;/strong>: Simple 32-byte key encryption for C2 communication&lt;/li>
 &lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
 &lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure two-layer authentication system for rootkit client access and control.&lt;/p>
