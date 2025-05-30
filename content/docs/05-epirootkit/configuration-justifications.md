@@ -1,6 +1,6 @@
 ---
 title: "Configuration Justifications"
-description: "Justification for Ubuntu 20.04 LTS / Linux 5.4.x"
+description: "Why Ubuntu 20.04 LTS with kernel 5.4.0-26-generic"
 icon: "code"
 date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-07T00:44:31+01:00"
@@ -9,52 +9,86 @@ toc: true
 weight: 500
 ---
 
-{{< alert context="info" text="This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing." />}}
+# Configuration Justifications
 
-## Environment
+Why we specifically chose Ubuntu 20.04 LTS with kernel 5.4.0-26-generic for EpiRootkit development.
 
-- **OS**: Ubuntu 20.04 LTS (Focal Fossa)  
-- **Kernel**: 5.4.x (LTS)
+## Target Environment
 
----
+- **OS**: Ubuntu 20.04 LTS (Focal Fossa)
+- **Kernel**: 5.4.0-26-generic
+- **Architecture**: x86_64
 
-## Why Ubuntu 20.04 LTS?
+## The Perfect Kernel Window
 
-{{< alert context="success" text="Perfect balance between realism and convinience." />}}
+### Why Ubuntu 20.04 LTS?
 
-- Widely deployed on servers and desktops  
-- Official cloud and container images simplify automation  
-- Already uses interesting kernel version (5.4.x) so no need to compile.
+**Primary Reason**: Ubuntu 20.04 ships with kernel 5.4.0-26-generic pre-compiled and ready to use.
 
----
+**Additional Benefits**:
+- Widespread enterprise deployment
+- 5-year LTS support lifecycle (until 31 May 2025... I'm so sad)
 
-## Why Kernel 5.4.x?
+### Why Kernel 5.4.0 Specifically?
 
-{{< alert context="primary" text="Balances modern hooking APIs with exported symbols and no mandatory module signing." />}}
+Kernel 5.4.0 sits in a **unique security window** that makes rootkit development straightforward:
 
-1. **Full ftrace support**  
-   - Kernel 4.1+ stabilized the ftrace API (`ftrace_set_filter_ip()`, `register_ftrace_function()`).  
-   - 5.4.x includes every hook we need.  
+#### The Security Timeline
+```
+5.3.x  ←  No lockdown mode
+5.4.0  ←  Lockdown introduced but disabled by default  ← WE ARE HERE
+5.7.x  ←  kallsyms_lookup_name() unexported
+5.8.x  ←  UEFI Secure Boot enables lockdown automatically
+```
 
-2. **Exported `kallsyms_lookup_name()`**  
-   - Up through 5.6 the symbol remains exported.
-   - Allows us to resolve `sys_call_table` at runtime--no kernel recompilation.  
+**Result**: 5.4.0 provides modern kernel features without the security restrictions that complicate rootkit development.
 
-3. **Unsigned module loading**  
-   - Kernels ≥ 5.7 often enforce module signatures or Secure Boot lockdown.  
-   - Ubuntu 20.04’s 5.4.x ships without these restrictions by default.
+## Technical Implementation
 
-4. **Already compiled in Ubuntu 20.04 LTS** 
-   - As mentionned before Ubuntu 20.04 LTS comes already packing with kernel version 5.4.x making it very easy for us to use and deploy.
+### Our kretprobe Approach
+```c
+static struct kretprobe getdents_probe = {
+    .kp.symbol_name = "ksys_getdents64",
+    .handler = hide_files_ret_handler,
+    .maxactive = 20,
+};
 
----
+register_kretprobe(&getdents_probe);  // Works cleanly on 5.4.0
+```
 
-## Alternative Options
+**Why this works perfectly on 5.4.0**:
+- Lockdown mode inactive by default
+- kretprobe infrastructure mature and stable
+- `ksys_getdents64` symbol readily available
+- No module signature enforcement required
 
-- **Kernel 5.6**  
-  - Technically we could go until kernel version 5.6 but for practical reasons mentionned above, we went with 5.4.x. Wich in my opinion is still relevant because in LTS. 
-- **Debian 11 (5.10.x)**  
-  - Still exports our symbols--requires disabling module signature checks.  
+## What Changes in Newer Kernels?
 
-{{< alert context="warning" text="If we experiment on kernels ≥ 5.7, we need to append `module.sig_enforce=0` to the boot parameters to allow unsigned modules." />}}
+### Kernel 5.7+ Restrictions
+```c
+// This symbol becomes unexported in 5.7+
+kallsyms_lookup_name("symbol_name");  // No longer available
+```
 
+### Kernel 5.8+ Lockdown
+```bash
+# Automatic lockdown with UEFI Secure Boot
+cat /sys/kernel/security/lockdown
+none [integrity] confidentiality
+
+# Blocks kretprobe registration
+register_kretprobe(&probe);  // Returns -EPERM
+```
+
+### Why Not Higher Kernel Versions?
+
+While our implementation is technically compatible with kernel 5.6+, it would require:
+
+```bash
+# Boot parameter modification required
+module.sig_enforce=0
+```
+
+**Our Philosophy**: We chose Ubuntu 20.04 LTS with kernel 5.4.0 because it provides a practical deployment environment without requiring boot parameter modifications or security bypasses.
+
+And to be honest I was happy that we could do a rootkit on a LTS version of Ubuntu. So I stick to that. (Even though starting May 2025, Ubuntu 20.04 LTS is no longer supported.... I'm so sad)
