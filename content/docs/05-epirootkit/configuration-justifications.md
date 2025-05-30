@@ -9,17 +9,13 @@ toc: true
 weight: 500
 ---
 
-# Configuration Justifications
-
-Why we specifically chose Ubuntu 20.04 LTS with kernel 5.4.0-26-generic for EpiRootkit development.
 
 ## Target Environment
 
 - **OS**: Ubuntu 20.04 LTS (Focal Fossa)
 - **Kernel**: 5.4.0-26-generic
-- **Architecture**: x86_64
 
-## The Perfect Kernel Window
+
 
 ### Why Ubuntu 20.04 LTS?
 
@@ -91,4 +87,4 @@ module.sig_enforce=0
 
 **Our Philosophy**: We chose Ubuntu 20.04 LTS with kernel 5.4.0 because it provides a practical deployment environment without requiring boot parameter modifications or security bypasses.
 
-And to be honest I was happy that we could do a rootkit on a LTS version of Ubuntu. So I stick to that. (Even though starting May 2025, Ubuntu 20.04 LTS is no longer supported.... I'm so sad)
+{{< alert context="info" text="And to be honest I was happy that we could do a rootkit on a LTS version of Ubuntu. So I stick to that. (Even though starting May 2025, Ubuntu 20.04 LTS is no longer supported...)" />}}
