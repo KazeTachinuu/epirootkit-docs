@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:05:30 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:14:32 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -71,14 +71,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cbfadeTab" data-bs-toggle="tab" data-bs-target="#cbfade"
-		 type="button" role="tab" aria-controls="cbfade" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="acebfdTab" data-bs-toggle="tab" data-bs-target="#acebfd"
+		 type="button" role="tab" aria-controls="acebfd" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ecbdfaTab" data-bs-toggle="tab" data-bs-target="#ecbdfa"
-		 type="button" role="tab" aria-controls="ecbdfa" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="efabcdTab" data-bs-toggle="tab" data-bs-target="#efabcd"
+		 type="button" role="tab" aria-controls="efabcd" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,7 +95,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cbfade" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="acebfd" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
 &lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -1129,19 +1129,40 @@ download Client-1 /huge/file.bin
 &lt;li>&lt;strong>Per-client auth&lt;/strong>: Each client requires individual authentication&lt;/li>
 &lt;li>&lt;strong>Failed attempt tracking&lt;/strong>: Monitor and log authentication failures&lt;/li>
 &lt;li>&lt;strong>Secure transmission&lt;/strong>: Encrypted credential transfer via C2 channel&lt;/li>
-&lt;/ul></description></item><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h1 id="configuration-justifications">Configuration Justifications &lt;a href="#configuration-justifications" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Why we specifically chose Ubuntu 20.04 LTS with kernel 5.4.0-26-generic for EpiRootkit development.&lt;/p>
-&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;/ul></description></item><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
-&lt;li>&lt;strong>Architecture&lt;/strong>: x86_64&lt;/li>
 &lt;/ul>
-&lt;h2 id="the-perfect-kernel-window">The Perfect Kernel Window &lt;a href="#the-perfect-kernel-window" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>Primary Reason&lt;/strong>: Ubuntu 20.04 ships with kernel 5.4.0-26-generic pre-compiled and ready to use.&lt;/p>
+&lt;h3 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>Primary Reason&lt;/strong>: Ubuntu 20.04 ships with kernel 5.4.0-26-generic pre-compiled and ready to use.&lt;/p>
 &lt;p>&lt;strong>Additional Benefits&lt;/strong>:&lt;/p>
 &lt;ul>
 &lt;li>Widespread enterprise deployment&lt;/li>
 &lt;li>5-year LTS support lifecycle (until 31 May 2025&amp;hellip; I&amp;rsquo;m so sad)&lt;/li>
 &lt;/ul>
-&lt;h3 id="why-kernel-540-specifically">Why Kernel 5.4.0 Specifically? &lt;a href="#why-kernel-540-specifically" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Kernel 5.4.0 sits in a &lt;strong>unique security window&lt;/strong> that makes rootkit development straightforward:&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
+&lt;h3 id="why-kernel-540-specifically">Why Kernel 5.4.0 Specifically? &lt;a href="#why-kernel-540-specifically" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Kernel 5.4.0 sits in a &lt;strong>unique security window&lt;/strong> that makes rootkit development straightforward:&lt;/p>
+&lt;h4 id="the-security-timeline">The Security Timeline &lt;a href="#the-security-timeline" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h4>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="867e920" class="language- ">
+ &lt;code>5.3.x ← No lockdown mode
+5.4.0 ← Lockdown introduced but disabled by default ← WE ARE HERE
+5.7.x ← kallsyms_lookup_name() unexported
+5.8.x ← UEFI Secure Boot enables lockdown automatically&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Result&lt;/strong>: 5.4.0 provides modern kernel features without the security restrictions that complicate rootkit development.&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support&lt;/li>
 &lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space domain name resolution&lt;/li>
