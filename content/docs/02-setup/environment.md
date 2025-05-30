@@ -82,7 +82,3 @@ All should print a version number. If not, check your installation steps above.
 - `scripts/run_vms.sh` uses `qemu-system-x86_64` with `-netdev bridge,br=virbr200` to attach VMs to the NAT network.
 - Static IPs are assigned automatically by DHCP based on the VM's MAC address.
 - QEMU windows use virtio drivers for disk and network for high performance.
-
-> **Troubleshooting:**
-> - If you get permission errors with QEMU or libvirt, ensure your user is in the `libvirt` and `kvm` groups.
-> - If you see `Could not open '/dev/kvm': Permission denied`, try `sudo chown $USER /dev/kvm` or reboot after group changes.

