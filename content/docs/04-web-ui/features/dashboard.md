@@ -13,7 +13,7 @@ weight: 411
 
 Main interface for monitoring connected rootkit clients with real-time statistics.
 
-{{< figure src="/images/webui/dashboard-overview.png" alt="Dashboard Overview" class="img-fluid" >}}
+{{< figure src="/images/webui/dashboard.png" alt="Dashboard Overview" class="img-fluid" >}}
 
 ## Features
 

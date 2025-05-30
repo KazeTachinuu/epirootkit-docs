@@ -13,8 +13,6 @@ weight: 412
 
 Monitor and interact with connected rootkit clients in real-time.
 
-{{< figure src="/images/webui/client-management.png" alt="Client Management" class="img-fluid" >}}
-
 ## Features
 
 - **Connection Status**: Visual indicators (Green/Yellow/Red) for client state

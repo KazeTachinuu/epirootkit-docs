@@ -9,23 +9,33 @@ toc: true
 weight: 402
 ---
 
-# Installation & Setup
+# Web UI Installation
 
 The Web UI is integrated with the C2 server and launches automatically.
 
-## Prerequisites
-
-System requirements for running the Web UI.
-
-- **Node.js**: v18+ 
-- **pnpm**: v8+ (recommended) or npm
-- **OS**: Ubuntu 20.04+ or similar Linux distribution
-
-## Installation
-
-Quick setup process.
+## Quick Setup
 
 ```bash
-# On the root of the project
+# From project root
 ./deploy_c2.sh
 ```
+
+This starts both the C2 server and Web UI simultaneously.
+
+## Access
+
+- **URL**: `http://localhost:3000`
+- **Default Password**: `password`
+- **Features**: All C2 functionality via web interface
+
+## Manual Installation
+
+If you need to install dependencies manually:
+
+```bash
+cd attacking_program
+pnpm install
+pnpm start
+```
+
+For detailed configuration options, see [C2 Server Installation](../03-attacking-program/installation.md).

