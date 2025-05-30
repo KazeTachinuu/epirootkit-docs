@@ -1,46 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 11:50:04 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;div class="alert alert-info d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">This page explains why we chose Ubuntu 20.04 LTS with the 5.4.x kernel for our rootkit development and testing.&lt;/div>
- &lt;/div>
-&lt;h2 id="environment">Environment &lt;a href="#environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 14:05:30 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h1 id="configuration-justifications">Configuration Justifications &lt;a href="#configuration-justifications" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Why we specifically chose Ubuntu 20.04 LTS with kernel 5.4.0-26-generic for EpiRootkit development.&lt;/p>
+&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
-&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.x (LTS)&lt;/li>
+&lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
+&lt;li>&lt;strong>Architecture&lt;/strong>: x86_64&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h2 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;div class="alert alert-success d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- check_circle
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">Perfect balance between realism and convinience.&lt;/div>
- &lt;/div>
+&lt;h2 id="the-perfect-kernel-window">The Perfect Kernel Window &lt;a href="#the-perfect-kernel-window" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>Primary Reason&lt;/strong>: Ubuntu 20.04 ships with kernel 5.4.0-26-generic pre-compiled and ready to use.&lt;/p>
+&lt;p>&lt;strong>Additional Benefits&lt;/strong>:&lt;/p>
 &lt;ul>
-&lt;li>Widely deployed on servers and desktops&lt;/li>
-&lt;li>Official cloud and container images simplify automation&lt;/li>
-&lt;li>Already uses interesting kernel version (5.4.x) so no need to compile.&lt;/li>
+&lt;li>Widespread enterprise deployment&lt;/li>
+&lt;li>5-year LTS support lifecycle (until 31 May 2025&amp;hellip; I&amp;rsquo;m so sad)&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h2 id="why-kernel-54x">Why Kernel 5.4.x? &lt;a href="#why-kernel-54x" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;div class="alert alert-primary d-flex" role="alert">
- &lt;div class="flex-shrink-1 alert-icon">
- 
- &lt;span class="material-icons size-20 me-2">
- info
- &lt;/span>&lt;/div>
- 
- &lt;div class="w-100">Balances modern hooking APIs with exported symbols and no mandatory module signing.&lt;/div>
- &lt;/div>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>Full ftrace support&lt;/strong>&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
+&lt;h3 id="why-kernel-540-specifically">Why Kernel 5.4.0 Specifically? &lt;a href="#why-kernel-540-specifically" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Kernel 5.4.0 sits in a &lt;strong>unique security window&lt;/strong> that makes rootkit development straightforward:&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support&lt;/li>
 &lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space domain name resolution&lt;/li>
