@@ -13,8 +13,6 @@ weight: 423
 
 File transfer interface with drag-and-drop upload and remote file browser.
 
-{{< figure src="/images/webui/upload-download-panel.png" alt="Upload/Download Panel" class="img-fluid" >}}
-
 ## Features
 
 - **Drag-and-Drop Upload**: Large drop zone for easy file uploads

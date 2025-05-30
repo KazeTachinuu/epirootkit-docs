@@ -9,9 +9,9 @@ toc: true
 weight: 301
 ---
 
-# Attacking Program Overview
+# C2 Server Overview
 
-Professional C2 (Command & Control) server for managing EpiRootkit connections.
+Professional Command & Control server for managing EpiRootkit connections.
 
 ## Quick Start
 
@@ -27,18 +27,17 @@ pnpm start
 
 ## Architecture
 
-### Components
-- **CLI Interface**: Vorpal.js interactive command system
-- **C2 Server**: TCP server for rootkit connections (port 4444)
-- **Web Interface**: Express.js + Socket.IO REST API (port 3000)
+- **CLI Interface**: Interactive command system
+- **C2 Server**: TCP server for rootkit connections
+- **Web Interface**: REST API with Socket.IO
 - **Client Manager**: Connection lifecycle and authentication
-- **Event System**: Real-time logging and notifications
+- **Event System**: Real-time logging
 
 ### Technology Stack
 - **Runtime**: Node.js 18+ with pnpm
 - **CLI**: Vorpal.js for commands
 - **Web**: Express.js + Socket.IO
-- **Encryption**: XOR cipher (optional)
+- **Encryption**: XOR cipher with 32-byte hardcoded key (simple and reliable)
 
 ## Core Features
 
@@ -89,7 +88,7 @@ PASSWORD_HASH=hash         # SHA-512 password hash
 ## Security Features
 
 - **Authentication**: SHA-512 with brute force protection
-- **Encryption**: Optional XOR cipher for traffic obfuscation  
+- **XOR Encryption**: Simple 32-byte key cipher for reliable traffic obfuscation  
 - **Session Management**: Automatic timeout and cleanup
 - **Access Control**: Commands require authentication
 - **Health Monitoring**: Automatic stale client detection
@@ -113,19 +112,3 @@ PASSWORD_HASH=hash         # SHA-512 password hash
   "data": "root"
 }
 ```
-
-## Web Interface
-
-### Features
-- **Dashboard**: Client overview and status
-- **Terminal**: Interactive command execution
-- **File Transfer**: Upload/download with drag-drop
-- **Configuration**: Toggle rootkit settings
-- **Logs**: Real-time event monitoring
-
-### API Endpoints
-- `GET /api/clients` - List clients
-- `POST /api/auth` - Authenticate client
-- `POST /api/command` - Execute command
-- `POST /api/upload` - Upload file
-- `GET /api/download` - Download file

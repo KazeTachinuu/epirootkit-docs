@@ -19,6 +19,6 @@ Manage rootkit stealth and security settings with toggle switches and real-time 
 
 - **Module Hiding**: Toggle rootkit visibility in system
 - **Persistence**: Configure boot survival mechanisms  
-- **Communication Encryption**: Secure C2 communication
+- **XOR Encryption**: Simple 32-byte key encryption for C2 communication
 - **Real-time Updates**: Changes applied immediately
 - **Status Indicators**: Visual feedback for all settings 
