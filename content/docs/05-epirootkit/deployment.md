@@ -103,43 +103,23 @@ lsmod | grep epirootkit
 # Alternative check if module is hidden
 ls -la /sys/module/epirootkit
 
-# Check kernel messages
-dmesg | tail -10
 ```
 
-### Expected Output (Domain)
-```bash
-dmesg | tail -10
-# [  123.456] EpiRootkit: Starting initialization (v1.0.0)
-# [  123.457] EpiRootkit: Module parameters: address=c2.example.com port=443
-# [  123.462] EpiRootkit: Attempting connection to c2.example.com:443
-# [  123.463] EpiRootkit: Resolving domain: c2.example.com
-# [  123.464] EpiRootkit: Resolved c2.example.com to 203.0.113.42
-# [  123.465] EpiRootkit: Connected to C2 server c2.example.com:443
-```
+### Module Status
+Since verbose logging has been removed for stealth operation, the rootkit operates silently. 
 
-### Expected Output (IP)
-```bash
-dmesg | tail -10
-# [  123.456] EpiRootkit: Starting initialization (v1.0.0)
-# [  123.457] EpiRootkit: Module parameters: address=192.168.64.1 port=4444
-# [  123.462] EpiRootkit: Attempting connection to 192.168.64.1:4444
-# [  123.463] EpiRootkit: Connected to C2 server 192.168.64.1:4444
-```
+**Successful loading indicators:**
+- Module appears in `/sys/module/epirootkit/` (unless hidden)
+- No critical errors in `dmesg`
+- C2 server receives connection from new client
 
-## DNS Resolution Feature
+**Note:** Operational logs have been removed to maintain stealth - the rootkit operates silently with minimal traces.
 
-### How It Works
-1. **Parameter parsing**: Detects if address is domain or IP
-2. **IP validation**: Uses `in4_pton()` to check IP format
-3. **DNS resolution**: Uses kernel-space DNS resolver via 8.8.8.8
-4. **Connection**: Establishes TCP to resolved IP
+## Domain Support
 
-### Domain Support Benefits
-- **Dynamic infrastructure**: Easy C2 server changes
-- **Load balancing**: DNS can rotate between servers
-- **Stealth**: Less suspicious than hardcoded IPs
-- **Resilience**: Backup domains in case of takedowns
+The rootkit supports both domain names and IP addresses for C2 connectivity.
+
+For complete DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).
 
 ## Management Commands
 

