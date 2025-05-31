@@ -27,9 +27,16 @@ Download both QCOW2 images and place them in the `vm/` directory at the project 
 | Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC   | 5.6 GB    |
 | Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E   | 5.6 GB    |
 
-> **Tip:** The images are nearly identical. You can copy `attacker.qcow2` to `victim.qcow2` if that's more convenient.
+### What are Pre-built Images?
 
+These are simply fresh Ubuntu VMs with setup already completed:
 
+- **Attacker VM**: Fresh Ubuntu + project files + dependencies installed (`setup_attacker.sh` + `deploy_to_attacker.sh` already run)
+- **Victim VM**: Clean Ubuntu 20.04 LTS with kernel 5.4.0 (target system)
+
+You get the **exact same result** as building from scratch, just faster setup.
+
+> **Tip:** The images are nearly identical base Ubuntu installs. You can copy `attacker.qcow2` to `victim.qcow2` if needed.
 
 ### Launch the VMs
 ```bash
@@ -94,13 +101,5 @@ sudo scripts/run_vms.sh
 - Run `./scripts/check_vms.sh` to verify the presence of disks and ISO files.
 - If you see errors, check file paths and permissions.
 
-## 3. Copying Files Into VMs
-To transfer files (e.g., your project) into a VM, use one of:
-- `scp` (requires SSH server in the VM)
-- Shared folders (with QEMU/virtio)
-- Cloud storage (e.g., upload to Google Drive, download in VM)
-
-
-
-## 5. Next Steps
+## 3. Next Steps
 - Continue to [Attacking VM Setup](./attacking-vm-setup.md) and [Victim VM Setup](./victim-vm-setup.md) for per-VM configuration and usage.
