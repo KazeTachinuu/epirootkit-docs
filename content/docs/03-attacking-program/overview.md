@@ -11,7 +11,7 @@ weight: 301
 
 # C2 Server Overview
 
-Professional Command & Control server for managing EpiRootkit connections.
+Command & Control server for managing EpiRootkit connections.
 
 ## Quick Start
 
@@ -37,7 +37,7 @@ pnpm start
 - **Runtime**: Node.js 18+ with pnpm
 - **CLI**: Vorpal.js for commands
 - **Web**: Express.js + Socket.IO
-- **Encryption**: XOR cipher with 32-byte hardcoded key (simple and reliable)
+- **Encryption**: XOR cipher with 32-byte hardcoded key
 
 ## Core Features
 
@@ -88,7 +88,7 @@ PASSWORD_HASH=hash         # SHA-512 password hash
 ## Security Features
 
 - **Authentication**: SHA-512 with brute force protection
-- **XOR Encryption**: Simple 32-byte key cipher for reliable traffic obfuscation  
+- **XOR Encryption**: 32-byte key cipher for traffic obfuscation
 - **Session Management**: Automatic timeout and cleanup
 - **Access Control**: Commands require authentication
 - **Health Monitoring**: Automatic stale client detection

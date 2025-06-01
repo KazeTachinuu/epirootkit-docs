@@ -17,7 +17,8 @@ Core functionality and capabilities of the EpiRootkit system.
 
 - **[Command Execution](./command-execution.md)**: Execute shell commands remotely with full output capture
 - **[File Transfer](./file-transfer.md)**: Upload and download files between C2 server and victim system
-- **[XOR Encryption](./encryption.md)**: Simple, reliable encryption for C2 communication
+- **[XOR Encryption](./encryption.md)**: XOR encryption for C2 communication
 - **[DNS Resolution](./dns-resolution.md)**: Kernel-space domain name resolution for flexible C2 connectivity
 - **[Stealth & Hiding](./hiding.md)**: Module hiding and file hiding capabilities
+- **[Line Hiding](./line-hiding.md)**: Hide rootkit lines from file contents using syscall interception
 - **[Persistence](./persistence.md)**: Multiple boot persistence mechanisms for rootkit survival

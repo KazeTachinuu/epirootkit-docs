@@ -22,7 +22,7 @@ weight: 500
 **Primary Reason**: Ubuntu 20.04 ships with kernel 5.4.0-26-generic pre-compiled and ready to use.
 
 **Additional Benefits**:
-- Widespread enterprise deployment
+- Widespread deployment
 - 5-year LTS support lifecycle (until 31 May 2025... I'm so sad)
 
 ### Why Kernel 5.4.0 Specifically?
@@ -49,10 +49,10 @@ static struct kretprobe getdents_probe = {
     .maxactive = 20,
 };
 
-register_kretprobe(&getdents_probe);  // Works cleanly on 5.4.0
+register_kretprobe(&getdents_probe);  // Works on 5.4.0
 ```
 
-**Why this works perfectly on 5.4.0**:
+**Why this works well on 5.4.0**:
 - Lockdown mode inactive by default
 - kretprobe infrastructure mature and stable
 - `ksys_getdents64` symbol readily available

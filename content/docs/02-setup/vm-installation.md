@@ -32,7 +32,7 @@ Download both QCOW2 images and place them in the `vm/` directory at the project 
 These are simply fresh Ubuntu VMs with setup already completed:
 
 - **Attacker VM**: Fresh Ubuntu + project files + dependencies installed (`setup_attacker.sh` + `deploy_to_attacker.sh` already run)
-- **Victim VM**: Clean Ubuntu 20.04 LTS with kernel 5.4.0 (target system)
+- **Victim VM**: Ubuntu 20.04 LTS with kernel 5.4.0 (target system)
 
 You get the **exact same result** as building from scratch, just faster setup.
 

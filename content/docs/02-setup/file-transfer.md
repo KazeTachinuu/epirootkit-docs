@@ -1,6 +1,6 @@
 ---
 title: "Host to VM File Transfer"
-description: "Best practices for transferring files from host to QEMU VMs"
+description: "Methods for transferring files from host to QEMU VMs"
 icon: "folder"
 date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T00:00:00+01:00"
@@ -59,7 +59,7 @@ sudo systemctl enable --now ssh
 ```bash
 # From host to VM
 scp -r /path/to/epirootkit attacker@192.168.200.11:~/
-scp -r /path/to/epirootkit victim@192.168.200.10:~/
+
 
 # Transfer specific files
 scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/
