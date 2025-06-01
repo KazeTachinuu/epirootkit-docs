@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Professional Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -36,7 +36,7 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm&lt;/li>
 &lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for commands&lt;/li>
 &lt;li>&lt;strong>Web&lt;/strong>: Express.js + Socket.IO&lt;/li>
-&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key (simple and reliable)&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key&lt;/li>
 &lt;/ul>
 &lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -107,17 +107,14 @@ persist Client-1 install # Manage persistence&lt;/code>
 &lt;li>Session established (1-hour timeout)&lt;/li>
 &lt;li>Rate limiting: 5 attempts/60 seconds&lt;/li>
 &lt;/ol>
-&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="c2-server-installation">C2 Server Installation &lt;a href="#c2-server-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The C2 server runs inside the &lt;strong>attacker VM&lt;/strong> (192.168.200.11), not on the host system.&lt;/p>
-&lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Complete attacker VM setup with C2 server:&lt;/strong>
-👉 &lt;strong>&lt;a href="../../02-setup/attacking-vm-setup.md">Attacker VM Setup Guide&lt;/a>&lt;/strong>&lt;/p>
-&lt;p>This covers everything: Node.js installation, project transfer, dependencies, and C2 server launch.&lt;/p>
-&lt;h2 id="vm-only-installation">VM-Only Installation &lt;a href="#vm-only-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If you already have the attacker VM configured and just need to install the C2 server:&lt;/p>
-&lt;h3 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Attacker VM running&lt;/strong>: Ubuntu with Node.js 12+&lt;/li>
-&lt;li>&lt;strong>Project files&lt;/strong>: Available in VM (via git, scp, or shared folder)&lt;/li>
-&lt;li>&lt;strong>Network&lt;/strong>: VM can reach port 4444 (victim connections)&lt;/li>
+&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before installing the attacking program, ensure you have:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Node.js 14+&lt;/strong> and &lt;strong>npm&lt;/strong> (installed via setup script)&lt;/li>
+&lt;li>&lt;strong>Linux environment&lt;/strong> (Ubuntu recommended)&lt;/li>
+&lt;li>&lt;strong>Network access&lt;/strong> between attacker and victim machines&lt;/li>
 &lt;/ul>
-&lt;h3 id="installation-steps">Installation Steps &lt;a href="#installation-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-automatic-setup-recommended">1. Automatic Setup (Recommended) &lt;a href="#1-automatic-setup-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>If you&amp;rsquo;re using the pre-built attacker VM or have run the setup script:&lt;/p>
+
 
 
  
@@ -132,94 +129,18 @@ persist Client-1 install # Manage persistence&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="5f5ffd2" class="language-bash ">
- &lt;code># Inside attacker VM (192.168.200.11)
+ &lt;pre id="23f9c97" class="language-bash ">
+ &lt;code># Navigate to attacking program directory
 cd attacking_program
 
 # Install dependencies
-pnpm install
-# ✓ Dependencies installed
+npm install
 
-# Verify configuration
-cat config.env
-# C2_PORT=4444
-# WEB_PORT=3000
-# PASSWORD_HASH=b109f3bbbc...
-
-# Start server
-pnpm start
-# ✓ C2 server started on port 4444
-# ✓ Web interface started on port 3000&lt;/code>
+# Start the C2 server
+npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="configuration-options">Configuration Options &lt;a href="#configuration-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="environment-settings">Environment Settings &lt;a href="#environment-settings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="3b87d42" class="language-bash ">
- &lt;code># Edit config.env in attacker VM
-C2_PORT=4444 # Port for victim connections
-WEB_PORT=3000 # Web interface port
-ENCRYPTION_KEY=secret32hex # XOR encryption key (32 hex chars)
-ENABLE_ENCRYPTION=true # Enable XOR encryption
-PASSWORD_HASH=hash # SHA-512 authentication hash&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="change-default-password">Change Default Password &lt;a href="#change-default-password" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="03435fe" class="language-bash ">
- &lt;code># Generate new SHA-512 hash
-echo -n &amp;#34;newpassword&amp;#34; | sha512sum
-# Copy hash to config.env as PASSWORD_HASH&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="access-points">Access Points &lt;a href="#access-points" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="cli-interface">CLI Interface &lt;a href="#cli-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="600aa1d" class="language-bash ">
- &lt;code># Direct access in attacker VM
-pnpm start
-# c2-server$ help
-# c2-server$ ls&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="web-interface">Web Interface &lt;a href="#web-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>&lt;strong>From any device on the network:&lt;/strong>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
+&lt;p>The server will start on:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
 &lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -321,7 +242,7 @@ auth Client-1 wrongpass # Wrong password
 # ERROR: Authentication failed&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage Guide</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
+&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; Workflows</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 

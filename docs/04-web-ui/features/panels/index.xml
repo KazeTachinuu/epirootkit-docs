@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 31 May 2025 18:51:21 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 01 Jun 2025 02:02:11 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
  alt="Terminal Panel">
 &lt;/figure>
@@ -8,7 +8,7 @@
 &lt;li>&lt;strong>Real-time Output&lt;/strong>: Live command execution streaming&lt;/li>
 &lt;li>&lt;strong>Quick Commands&lt;/strong>: One-click shortcuts for common operations&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual execution and connection status&lt;/li>
-&lt;li>&lt;strong>Clean Display&lt;/strong>: Parsed output without C2 metadata&lt;/li>
+&lt;li>&lt;strong>Parsed Display&lt;/strong>: Output without C2 metadata&lt;/li>
 &lt;/ul></description></item><item><title>Persistence Panel</title><link>/docs/04-web-ui/features/panels/persistence-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/persistence-panel/</guid><description>&lt;h1 id="persistence-panel">Persistence Panel &lt;a href="#persistence-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure rootkit boot survival with multiple persistence methods and one-click setup.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/persistence-panel.png"
  alt="Persistence Panel">
@@ -37,8 +37,8 @@
 &lt;li>&lt;strong>Remote File Browser&lt;/strong>: Navigate and download from target filesystem&lt;/li>
 &lt;li>&lt;strong>Progress Tracking&lt;/strong>: Real-time transfer progress bars&lt;/li>
 &lt;li>&lt;strong>Transfer History&lt;/strong>: Track all upload/download operations&lt;/li>
-&lt;li>&lt;strong>Error Handling&lt;/strong>: Clear error messages and retry options&lt;/li>
-&lt;/ul></description></item><item><title>Overview Panel</title><link>/docs/04-web-ui/features/panels/overview-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/overview-panel/</guid><description>&lt;h1 id="overview-panel">Overview Panel &lt;a href="#overview-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Client status dashboard with connection monitoring and quick action buttons.&lt;/p>
+&lt;li>&lt;strong>Error Handling&lt;/strong>: Error messages and retry options&lt;/li>
+&lt;/ul></description></item><item><title>Overview Panel</title><link>/docs/04-web-ui/features/panels/overview-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/overview-panel/</guid><description>&lt;h1 id="overview-panel">Overview Panel &lt;a href="#overview-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Client status dashboard with connection monitoring, stealth feature status, and quick action buttons.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/overview-panel.png"
  alt="Overview Panel">
 &lt;/figure>
@@ -46,20 +46,28 @@
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Connection Status&lt;/strong>: Real-time health and connection indicators&lt;/li>
 &lt;li>&lt;strong>Authentication Status&lt;/strong>: Session state and security level&lt;/li>
+&lt;li>&lt;strong>Stealth Status&lt;/strong>: Module hiding, file hiding, and line hiding indicators&lt;/li>
 &lt;li>&lt;strong>System Information&lt;/strong>: Client ID, IP address, and OS details&lt;/li>
 &lt;li>&lt;strong>Quick Actions&lt;/strong>: One-click authentication and management&lt;/li>
 &lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status with progress animations&lt;/li>
-&lt;/ul></description></item><item><title>Configuration Panel</title><link>/docs/04-web-ui/features/panels/configuration-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/configuration-panel/</guid><description>&lt;h1 id="configuration-panel">Configuration Panel &lt;a href="#configuration-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Manage rootkit stealth and security settings with toggle switches and real-time updates.&lt;/p>
+&lt;/ul></description></item><item><title>Configuration Panel</title><link>/docs/04-web-ui/features/panels/configuration-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/configuration-panel/</guid><description>&lt;h1 id="configuration-panel">Configuration Panel &lt;a href="#configuration-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Manage rootkit stealth settings with toggle switches and real-time updates.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/configuration-panel.png"
  alt="Configuration Panel">
 &lt;/figure>
 
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Module Hiding&lt;/strong>: Toggle rootkit visibility in system&lt;/li>
-&lt;li>&lt;strong>Persistence&lt;/strong>: Configure boot survival mechanisms&lt;/li>
-&lt;li>&lt;strong>XOR Encryption&lt;/strong>: Simple 32-byte key encryption for C2 communication&lt;/li>
+&lt;li>&lt;strong>File Hiding&lt;/strong>: Toggle rootkit file hiding from filesystem listing&lt;/li>
+&lt;li>&lt;strong>Line Hiding&lt;/strong>: Toggle rootkit line hiding from file contents&lt;/li>
 &lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
+&lt;/ul>
+&lt;h2 id="controls">Controls &lt;a href="#controls" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Each configuration option provides:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Toggle Button&lt;/strong>: Enable/Disable functionality&lt;/li>
+&lt;li>&lt;strong>Status Display&lt;/strong>: Current state (Enabled/Disabled/Unknown)&lt;/li>
+&lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status icons&lt;/li>
+&lt;li>&lt;strong>Loading States&lt;/strong>: Progress feedback during changes&lt;/li>
 &lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure two-layer authentication system for rootkit client access and control.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel.png"
  alt="Authentication Panel">
