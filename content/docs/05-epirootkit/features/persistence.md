@@ -77,10 +77,12 @@ int persistence_install_shell_profile(void)
 ## Usage
 
 ### WebUI Control
-Access via Persistence panel:
-- **Install All**: Enable all three mechanisms
-- **Remove All**: Disable all mechanisms  
-- **Individual Control**: Toggle each mechanism separately
+**[Persistence Panel](../../04-web-ui/features/panels/persistence-panel.md)** provides:
+- **Install All**: Enable all three persistence mechanisms
+- **Remove All**: Disable all persistence mechanisms  
+- **Individual Control**: Toggle each mechanism separately (modules-load.d, cron, shell profile)
+- **Real-time Status**: View current state of each persistence method
+- **Visual Indicators**: Color-coded status for active/inactive mechanisms
 
 ### C2 Commands
 ```bash

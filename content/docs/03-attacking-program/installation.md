@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-description: "C2 server installation in attacker VM environment"
+description: "Install and configure the C2 attacking program"
 icon: "download"
 date: "2025-05-25T00:00:00+01:00"
 lastmod: "2025-05-25T16:00:00+01:00"
@@ -9,106 +9,104 @@ toc: true
 weight: 302
 ---
 
-# C2 Server Installation
+# Installation
 
-The C2 server runs inside the **attacker VM** (192.168.200.11), not on the host system.
+## Prerequisites
 
-## Quick Setup
+Before installing the attacking program, ensure you have:
 
-**Complete attacker VM setup with C2 server:**
-👉 **[Attacker VM Setup Guide](../../02-setup/attacking-vm-setup.md)**
+- **Node.js 14+** and **npm** (installed via setup script)
+- **Linux environment** (Ubuntu recommended)
+- **Network access** between attacker and victim machines
 
-This covers everything: Node.js installation, project transfer, dependencies, and C2 server launch.
+## Quick Start
 
-## VM-Only Installation
+### 1. Automatic Setup (Recommended)
 
-If you already have the attacker VM configured and just need to install the C2 server:
-
-### Prerequisites
-- **Attacker VM running**: Ubuntu with Node.js 12+
-- **Project files**: Available in VM (via git, scp, or shared folder)
-- **Network**: VM can reach port 4444 (victim connections)
-
-### Installation Steps
+If you're using the pre-built attacker VM or have run the setup script:
 
 ```bash
-# Inside attacker VM (192.168.200.11)
+# Navigate to attacking program directory
 cd attacking_program
 
 # Install dependencies
-pnpm install
-# ✓ Dependencies installed
+npm install
 
-# Verify configuration
-cat config.env
-# C2_PORT=4444
-# WEB_PORT=3000
-# PASSWORD_HASH=b109f3bbbc...
-
-# Start server
-pnpm start
-# ✓ C2 server started on port 4444
-# ✓ Web interface started on port 3000
+# Start the C2 server
+npm start
 ```
 
-## Configuration Options
+The server will start on:
+- **C2 Server**: `localhost:4444` (for client connections)
+- **Web Interface**: `localhost:3000` (for operator access)
 
-### Environment Settings
+### 2. Manual Installation
+
+For fresh systems or custom setups:
+
 ```bash
-# Edit config.env in attacker VM
-C2_PORT=4444               # Port for victim connections
-WEB_PORT=3000              # Web interface port
-ENCRYPTION_KEY=secret32hex  # XOR encryption key (32 hex chars)
-ENABLE_ENCRYPTION=true     # Enable XOR encryption
-PASSWORD_HASH=hash         # SHA-512 authentication hash
+# Install system dependencies
+sudo apt update
+sudo apt install -y nodejs npm gcc make linux-headers-$(uname -r)
+
+# Navigate to project directory
+cd attacking_program
+
+# Install Node.js dependencies
+npm install
+
+# Start the server
+npm start
 ```
 
-### Change Default Password
+## Configuration
+
+### Environment Variables
+
+Create a `.env` file in the `attacking_program` directory:
+
+```env
+# Server Configuration
+C2_PORT=4444
+WEB_PORT=3000
+AUTH_PASSWORD=password
+
+# Security Settings
+ENCRYPTION_KEY=your-32-character-encryption-key
+JWT_SECRET=your-jwt-secret-key
+
+# Upload Settings
+UPLOAD_DIR=./uploads
+MAX_FILE_SIZE=50MB
+```
+
+### Custom Configuration
+
+Edit `src/config/index.js` for custom settings:
+
+```javascript
+module.exports = {
+  C2_PORT: process.env.C2_PORT || 4444,
+  WEB_PORT: process.env.WEB_PORT || 3000,
+  AUTH_PASSWORD: process.env.AUTH_PASSWORD || 'password',
+  // ... other settings
+};
+```
+
+
+## Production Deployment
+
 ```bash
-# Generate new SHA-512 hash
-echo -n "newpassword" | sha512sum
-# Copy hash to config.env as PASSWORD_HASH
+# Install only production dependencies
+npm install --production
+
+# Start the server
+cd attacking_program && npm start
 ```
 
+## Next Steps
 
-## Access Points
-
-### CLI Interface
-```bash
-# Direct access in attacker VM
-pnpm start
-# c2-server$ help
-# c2-server$ ls
-```
-
-### Web Interface
-**From any device on the network:**
-- **URL**: `http://192.168.200.11:3000`
-- **Login**: `password` (or your custom password)
-- **Features**: Full CLI functionality via web
-
-### Remote Access
-```bash
-# From host or other VMs
-ssh attacker@192.168.200.11
-cd attacking_program && pnpm start
-```
-
-## Verification
-
-### Test CLI
-```bash
-c2-server$ help
-# Shows available commands
-
-c2-server$ ls  
-# No clients connected (initially)
-```
-
-### Test Web Interface
-1. **Open browser**: `http://192.168.200.11:3000`
-2. **Login**: Enter password `password`
-3. **Dashboard**: Should show "No clients connected"
-
-
-For complete VM setup including Node.js installation, see **[Attacker VM Setup](../../02-setup/attacking-vm-setup.md)**.
+Once installed:
+1. [Learn how to use the attacking program](../usage)
+2. [Set up the rootkit](../../05-epirootkit/overview)
+3. [Access the web interface](../../04-web-ui/overview)

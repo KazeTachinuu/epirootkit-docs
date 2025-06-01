@@ -21,4 +21,4 @@ Full terminal emulator for remote command execution with history and real-time o
 - **Real-time Output**: Live command execution streaming
 - **Quick Commands**: One-click shortcuts for common operations
 - **Status Indicators**: Visual execution and connection status
-- **Clean Display**: Parsed output without C2 metadata 
+- **Parsed Display**: Output without C2 metadata 

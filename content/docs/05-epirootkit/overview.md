@@ -20,7 +20,7 @@ Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).
 - **Remote Commands**: Execute shell commands with output capture
 - **File Transfer**: Upload/download files between C2 and victim
 - **Authentication**: SHA-512 password verification with rate limiting
-- **XOR Encryption**: Simple, reliable 32-byte key encryption for all C2 traffic
+- **XOR Encryption**: 32-byte key encryption for all C2 traffic
 - **Stealth**: Hide module from `lsmod` and files from directory listings
 - **Persistence**: Multiple mechanisms to survive reboots
 
@@ -66,7 +66,7 @@ C2 Server  ←→  Network/DNS  ←→  EpiRootkit  ←→  Linux Kernel
 - **Language**: C (kernel module) + Node.js (C2 server)
 - **APIs**: ftrace, kretprobe, VFS, UDP sockets
 - **Network**: TCP (C2) + UDP (DNS resolution)
-- **Encryption**: XOR cipher with 32-byte hardcoded key (bulletproof reliability)
+- **Encryption**: XOR cipher with 32-byte hardcoded key
 - **Authentication**: SHA-512 with rate limiting (5 attempts/60s)
 
 ## Configuration
@@ -84,7 +84,7 @@ Edit `rootkit/core/config.h`:
 
 - **[Deployment](./deployment.md)**: Build and load with domain support
 - **[Connection](./connection-authentication.md)**: Network communication and XOR encryption
-- **[XOR Encryption](./features/encryption.md)**: Simple, reliable encryption implementation
+- **[XOR Encryption](./features/encryption.md)**: XOR encryption implementation
 - **[DNS Resolution](./features/dns-resolution.md)**: Domain name resolution
 - **[Commands](./features/command-execution.md)**: Remote command execution
 - **[File Transfer](./features/file-transfer.md)**: Upload/download files

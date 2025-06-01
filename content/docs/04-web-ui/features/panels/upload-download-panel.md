@@ -19,4 +19,4 @@ File transfer interface with drag-and-drop upload and remote file browser.
 - **Remote File Browser**: Navigate and download from target filesystem
 - **Progress Tracking**: Real-time transfer progress bars
 - **Transfer History**: Track all upload/download operations
-- **Error Handling**: Clear error messages and retry options 
+- **Error Handling**: Error messages and retry options 

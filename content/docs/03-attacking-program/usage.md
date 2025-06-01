@@ -1,12 +1,12 @@
 ---
-title: "Usage Guide"
-description: "Comprehensive usage scenarios and workflows"
-icon: "menu_book"
+title: "Usage & Workflows"
+description: "Usage scenarios and workflows"
+icon: "play_arrow"
 date: "2025-05-25T00:00:00+01:00"
-lastmod: "2025-05-25T16:00:00+01:00"
+lastmod: "2025-05-25T00:00:00+01:00"
 draft: false
 toc: true
-weight: 304
+weight: 303
 ---
 
 # Usage Guide

