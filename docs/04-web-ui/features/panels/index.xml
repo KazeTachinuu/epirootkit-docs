@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 01 Jun 2025 02:02:11 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 21:01:05 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
  alt="Terminal Panel">
 &lt;/figure>
@@ -15,11 +15,32 @@
 &lt;/figure>
 
 &lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Module System Boot&lt;/strong>: systemd modules-load.d (recommended)&lt;/li>
-&lt;li>&lt;strong>Cron Scheduled Task&lt;/strong>: Periodic 5-minute checks&lt;/li>
-&lt;li>&lt;strong>Profile Login Trigger&lt;/strong>: Shell profile modification&lt;/li>
+&lt;li>&lt;strong>Module System Boot&lt;/strong>: systemd modules-load.d + modprobe.d (recommended, standards-compliant)&lt;/li>
+&lt;li>&lt;strong>Profile Login Trigger&lt;/strong>: Shell profile modification (backup method)&lt;/li>
 &lt;li>&lt;strong>Quick Setup&lt;/strong>: One-click recommended installation&lt;/li>
-&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual active/inactive states&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual active/inactive states with file validation&lt;/li>
+&lt;li>&lt;strong>File Validation&lt;/strong>: Ensures both configuration files exist for modules-load.d method&lt;/li>
+&lt;/ul>
+&lt;h2 id="persistence-methods">Persistence Methods &lt;a href="#persistence-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="module-system-boot-recommended">Module System Boot (Recommended) &lt;a href="#module-system-boot-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Reliability&lt;/strong>: High&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: Medium&lt;/li>
+&lt;li>&lt;strong>Files Created&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code> - Module name&lt;/li>
+&lt;li>&lt;code>/etc/modprobe.d/jules_est_bo_modprobe.conf&lt;/code> - Module parameters&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Behavior&lt;/strong>: Loads automatically on systemd boot, follows Linux conventions&lt;/li>
+&lt;/ul>
+&lt;h3 id="profile-login-trigger">Profile Login Trigger &lt;a href="#profile-login-trigger" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Reliability&lt;/strong>: Medium&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: High&lt;/li>
+&lt;li>&lt;strong>Files Created&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>/etc/profile.d/jules_est_bo_env.sh&lt;/code> - Smart loading script&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Behavior&lt;/strong>: Activates on root login, includes duplicate detection&lt;/li>
 &lt;/ul></description></item><item><title>Event Log Panel</title><link>/docs/04-web-ui/features/panels/event-log-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/event-log-panel/</guid><description>&lt;h1 id="event-log-panel">Event Log Panel &lt;a href="#event-log-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Real-time activity monitoring with filtering, search, and export capabilities.&lt;/p>
 &lt;figure class="img-fluid">&lt;img src="/images/webui/event-log-panel.png"
  alt="Event Log Panel">

