@@ -21,6 +21,7 @@ Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).
 - **File Transfer**: Upload/download files between C2 and victim
 - **Authentication**: SHA-512 password verification with rate limiting
 - **XOR Encryption**: 32-byte key encryption for all C2 traffic
+- **Sysfs Interface**: Linux-native configuration using octal permission system
 - **Stealth**: Hide module from `lsmod` and files from directory listings
 - **Persistence**: Multiple mechanisms to survive reboots
 
@@ -44,6 +45,10 @@ exec Client-1 whoami
 
 status Client-1
 # EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR
+
+# 4. Configure via sysfs (octal permissions style)
+sudo sh -c 'echo 7 > /sys/kernel/epirootkit/hide'  # Enable all hiding
+cat /sys/kernel/epirootkit/hide                     # Check: 7
 ```
 
 ## Architecture

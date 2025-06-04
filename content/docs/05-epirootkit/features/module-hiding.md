@@ -31,7 +31,7 @@ int hide_module(void)
 
 Removes the module from kernel's linked list using `list_del()` while saving the previous entry for restoration.
 
-{{< alert context="warning" text="The [Line Hiding](./line-hiding.md) also hides the module from `/proc/modules` so to test module visibility with lsmod, you must disable line hiding." >}}
+{{< alert context="warning" text="The [Line Hiding](./line-hiding.md) also hides the module from `/proc/modules` so to test module visibility with lsmod, you must disable line hiding." />}}
 
 ## Testing
 
