@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 22:00:39 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup">Host Environment Setup &lt;a href="#host-environment-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 23:33:31 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup">Host Environment Setup &lt;a href="#host-environment-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
 &lt;p>&lt;strong>Purpose:&lt;/strong> Configure Ubuntu 24.10 host to run attacker and victim VMs. The actual EpiRootkit components run INSIDE the VMs.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
@@ -13,14 +13,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cdbafeTab" data-bs-toggle="tab" data-bs-target="#cdbafe"
-		 type="button" role="tab" aria-controls="cdbafe" aria-selected="true">Automated Setup (Recommended)&lt;/a>
+		 id="afbcedTab" data-bs-toggle="tab" data-bs-target="#afbced"
+		 type="button" role="tab" aria-controls="afbced" aria-selected="true">Automated Setup (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="efbdacTab" data-bs-toggle="tab" data-bs-target="#efbdac"
-		 type="button" role="tab" aria-controls="efbdac" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="bcaedfTab" data-bs-toggle="tab" data-bs-target="#bcaedf"
+		 type="button" role="tab" aria-controls="bcaedf" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -37,7 +37,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cdbafe" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="afbced" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Run the automated setup script to install all dependencies:&lt;/p>
 
@@ -76,7 +76,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="efbdac" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="bcaedf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -184,14 +184,14 @@ sudo apt install -y hugo&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="abcdefTab" data-bs-toggle="tab" data-bs-target="#abcdef"
-		 type="button" role="tab" aria-controls="abcdef" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="dbeacfTab" data-bs-toggle="tab" data-bs-target="#dbeacf"
+		 type="button" role="tab" aria-controls="dbeacf" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="defbcaTab" data-bs-toggle="tab" data-bs-target="#defbca"
-		 type="button" role="tab" aria-controls="defbca" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="fedcabTab" data-bs-toggle="tab" data-bs-target="#fedcab"
+		 type="button" role="tab" aria-controls="fedcab" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -208,7 +208,7 @@ sudo apt install -y hugo&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="abcdef" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="dbeacf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h1 id="attacker-vm-setup">Attacker VM Setup &lt;a href="#attacker-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure the attacking VM with Node.js C2 server and React web interface.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -235,14 +235,14 @@ sudo apt install -y hugo&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="fbeacdTab" data-bs-toggle="tab" data-bs-target="#fbeacd"
-		 type="button" role="tab" aria-controls="fbeacd" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
+		 id="cefbadTab" data-bs-toggle="tab" data-bs-target="#cefbad"
+		 type="button" role="tab" aria-controls="cefbad" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dfbeacTab" data-bs-toggle="tab" data-bs-target="#dfbeac"
-		 type="button" role="tab" aria-controls="dfbeac" aria-selected="true">Self-build from Scratch&lt;/a>
+		 id="decafbTab" data-bs-toggle="tab" data-bs-target="#decafb"
+		 type="button" role="tab" aria-controls="decafb" aria-selected="true">Self-build from Scratch&lt;/a>
 
 		
 
@@ -259,7 +259,7 @@ sudo apt install -y hugo&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="fbeacd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cefbad" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is already set up, so you can immediately build and run:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h1 id="victim-vm-setup">Victim VM Setup &lt;a href="#victim-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Deploy the EpiRootkit kernel module on the victim system.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -340,26 +340,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="dbfeacTab" data-bs-toggle="tab" data-bs-target="#dbfeac"
-		 type="button" role="tab" aria-controls="dbfeac" aria-selected="true">Automated Script (Recommended)&lt;/a>
+		 id="fdecabTab" data-bs-toggle="tab" data-bs-target="#fdecab"
+		 type="button" role="tab" aria-controls="fdecab" aria-selected="true">Automated Script (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cbfadeTab" data-bs-toggle="tab" data-bs-target="#cbfade"
-		 type="button" role="tab" aria-controls="cbfade" aria-selected="true">Manual SCP/SSH&lt;/a>
+		 id="dacebfTab" data-bs-toggle="tab" data-bs-target="#dacebf"
+		 type="button" role="tab" aria-controls="dacebf" aria-selected="true">Manual SCP/SSH&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="caefbdTab" data-bs-toggle="tab" data-bs-target="#caefbd"
-		 type="button" role="tab" aria-controls="caefbd" aria-selected="true">HTTP Server&lt;/a>
+		 id="adcbfeTab" data-bs-toggle="tab" data-bs-target="#adcbfe"
+		 type="button" role="tab" aria-controls="adcbfe" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="eabdcfTab" data-bs-toggle="tab" data-bs-target="#eabdcf"
-		 type="button" role="tab" aria-controls="eabdcf" aria-selected="true">Other Methods&lt;/a>
+		 id="fedcabTab" data-bs-toggle="tab" data-bs-target="#fedcab"
+		 type="button" role="tab" aria-controls="fedcab" aria-selected="true">Other Methods&lt;/a>
 
 		
 
@@ -376,7 +376,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="dbfeac" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="fdecab" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup, use the automated deployment script:&lt;/p>
 
@@ -425,7 +425,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade" id="cbfade" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="dacebf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="enable-ssh-in-vm">Enable SSH in VM &lt;a href="#enable-ssh-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -482,7 +482,7 @@ scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/&lt;/code>
 
 
 
-&lt;div class="tab-pane fade" id="caefbd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="adcbfe" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="setup-server-on-host">Setup Server on Host &lt;a href="#setup-server-on-host" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -538,6 +538,6 @@ wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/&lt;/code>
 
 
 
-&lt;div class="tab-pane fade" id="eabdcf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="fedcab" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="shared-folders-development">Shared Folders (Development) &lt;a href="#shared-folders-development" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Add to QEMU launch:&lt;/p></description></item></channel></rss>

