@@ -35,29 +35,43 @@ And of course there is a password to access the C2 web interface. And anyway.. I
 Wait, we properly secured the server access before deployment, right? RIGHT ???? ABSOLUTELY NOT IT WAS WIDE OPEN LOL.
 {{< /alert >}}
 
+## VPN Access
+
+I set up a zero trust VPN access (Twingate) to restrict access to the C2 server UI.
+
+
+While connected to the VPN you can access the web interface with : `http://c2.epirootkit.com:3000`
+
+{{< figure src="/images/bots/c2-twingate.png" alt="Twingate VPN setup" >}}
+
+In addition with iptables rules, this should be enough to block the bots : 
+
 ```bash
-ubuntu@sys2:~/epirootkit$ sudo iptables -nvL
-Chain INPUT (policy DROP 10 packets, 528 bytes)
+ubuntu@sys2:~/epirootkit$ sudo iptables -nvL                      LABEL_DEPLOYED_BY="linux" bash
+Chain INPUT (policy DROP 959 packets, 177K bytes)
  pkts bytes target     prot opt in     out     source               destination
-  465 44214 ACCEPT     0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
-    0     0 ACCEPT     0    --  lo     *       0.0.0.0/0            0.0.0.0/0
-    0     0 ACCEPT     6    --  *      *       90.16.24.187         0.0.0.0/0            tcp dpt:22
-    1    60 ACCEPT     6    --  *      *       163.5.3.68           0.0.0.0/0            tcp dpt:22
-    0     0 ACCEPT     6    --  *      *       90.16.24.187         0.0.0.0/0            tcp dpt:3000
-    0     0 ACCEPT     17   --  *      *       90.16.24.187         0.0.0.0/0            udp dpt:3000
-    0     0 ACCEPT     6    --  *      *       163.5.3.68           0.0.0.0/0            tcp dpt:3000
-    0     0 ACCEPT     17   --  *      *       163.5.3.68           0.0.0.0/0            udp dpt:3000
+10778 1690K ACCEPT     0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+   24  1516 ACCEPT     0    --  lo     *       0.0.0.0/0            0.0.0.0/0
+    0     0 ACCEPT     6    --  *      *       REDACTED             0.0.0.0/0            tcp dpt:22
+    0     0 ACCEPT     6    --  *      *       163.5.3.68           0.0.0.0/0            tcp dpt:22
     0     0 ACCEPT     6    --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:4444
     0     0 ACCEPT     17   --  *      *       0.0.0.0/0            0.0.0.0/0            udp dpt:4444
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
 
-Chain OUTPUT (policy ACCEPT 462 packets, 48283 bytes)
+Chain OUTPUT (policy ACCEPT 11067 packets, 2343K bytes)
  pkts bytes target     prot opt in     out     source               destination
  ```
 
-I quickly implemented these iptables rules to restrict access to critical services. Port 3000 (the C2 web interface) is now limited to only two trusted IP addresses - my home network and EPITA's infrastructure. This ensures that only authorized users can access the rootkit control panel (There is a password to access it but I rather just block everything for my peace of mind).
+ {{<table>}}
+ | Port | Service | Allowed Source IPs | Access Rule |
+ |------|---------|-------------------|-------------|
+ | 22 | SSH | REDACTED, 163.5.3.68 | ACCEPT (trusted IPs only) |
+ | 4444 | Rootkit Client | 0.0.0.0/0 | ACCEPT (rootkit client connections) |
+ | * | All other services | * | DROP (all other traffic blocked) |
+ {{< /table >}}
+
 
 
 {{< alert context="info" >}}
@@ -65,7 +79,5 @@ I still have around 2-3 connections every hour on port 4444. That gets cleans up
 {{< /alert >}}
 
 I'm considering putting a honeypot on the server to catch and analyse them.
-
-
 
 
