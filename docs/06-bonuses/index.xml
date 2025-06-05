@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bonus on Tux Fan Club Docs</title><link>/docs/06-bonuses/</link><description>Recent content in Bonus on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 05 Jun 2025 13:24:43 +0200</lastBuildDate><atom:link href="/docs/06-bonuses/index.xml" rel="self" type="application/rss+xml"/><item><title>Unwelcome Guests</title><link>/docs/06-bonuses/bots/</link><pubDate>Thu, 05 Jun 2025 00:44:31 +0100</pubDate><guid>/docs/06-bonuses/bots/</guid><description>&lt;h2 id="the-c2-server-setup">The C2 Server Setup &lt;a href="#the-c2-server-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>To create a realistic Command &amp;amp; Control infrastructure for our rootkit project, we deployed a C2 server on a Scaleway VPS (51.159.97.114).&lt;/p>
+&lt;p>The server was configured to run both the C2 backend and web interface, with DNS records pointing the domain &lt;code>epirootkit.com&lt;/code> to it. We set up a specific subdomain &lt;code>jules_chef_de_majeur.epirootkit.com&lt;/code> for rootkit client communications.&lt;/p>
+
+&lt;div class="alert alert-warning d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ warning
+ &lt;/span>&lt;/div>
+ 
+ 
+ &lt;div class="w-100">
+ 
+After a good night's sleep, I discovered something concerning in the logs - multiple rootkit connections attempts. Those are basically socket connections on port 4444.
+
+ &lt;/div>
+ &lt;/div>
+&lt;figure>&lt;img src="/images/bots/c2-logs.png"
+ alt="Server logs showing unauthorized connection attempts">
+&lt;/figure>
+
+&lt;p>Upon investigation, these connections originated from US-based VPN IP addresses &lt;code>65.49.1.*&lt;/code>, likely automated bots scanning for open ports.&lt;/p></description></item><item><title>Tux Fan Club: Chasse au Trésor Pirate</title><link>/docs/06-bonuses/wlkom-ctf/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/06-bonuses/wlkom-ctf/</guid><description>&lt;h2 id="treasure-hunt-">Treasure Hunt 🪙 &lt;a href="#treasure-hunt-" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="découverte-dun-mystérieux-fichier">Découverte d&amp;rsquo;un mystérieux fichier&amp;hellip; &lt;a href="#d%c3%a9couverte-dun-myst%c3%a9rieux-fichier" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Nous avons décidé d&amp;rsquo;accepter une &lt;em>quête secondaire&lt;/em> durant le projet &lt;code>Rootkit&lt;/code>.&lt;/p>
+&lt;p>En effet, comme tout bon pirate, nous avons téléchargé &lt;em>légalement&lt;/em> les fichiers fournis (&lt;code>given files&lt;/code>) et nous souhaitions les ignorer avec un fichier &lt;code>.gitignore&lt;/code>.&lt;/p>
+&lt;p>Le &lt;code>.gitignore&lt;/code> ressemblait à :&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="00cf8f5" class="language-bash ">
+ &lt;code>.gitignore
+givenfiles/&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Sauf que les fichiers n&amp;rsquo;étaient pas ignorés. &lt;em>(Vu que Léa ne sait pas écrire)&lt;/em> C&amp;rsquo;est là que nous découvrons un mystérieux fichier &lt;code>.README&lt;/code> :&lt;/p></description></item></channel></rss>
