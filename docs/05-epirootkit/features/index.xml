@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 05 Jun 2025 16:36:26 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute system commands in kernel space using &lt;code>call_usermodehelper&lt;/code> with output capture.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 20:03:36 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -39,8 +38,7 @@
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Uses shell execution with output redirection to temporary files for result capture.&lt;/p></description></item><item><title>DNS Resolution</title><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description>&lt;h1 id="dns-resolution">DNS Resolution &lt;a href="#dns-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Kernel-space DNS client for resolving domain names to IP addresses, enabling domain-based C2 communication.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Uses shell execution with output redirection to temporary files for result capture.&lt;/p></description></item><item><title>DNS Resolution</title><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -78,8 +76,7 @@ int kernel_dns_resolve(const char *hostname, u32 *ip_addr)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Builds standard DNS queries and parses A record responses using Google DNS (8.8.8.8).&lt;/p></description></item><item><title>Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h1 id="encryption">Encryption &lt;a href="#encryption" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>XOR-based encryption for C2 communication using a hardcoded 32-byte key.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Builds standard DNS queries and parses A record responses using Google DNS (8.8.8.8).&lt;/p></description></item><item><title>Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -196,8 +193,7 @@ static void update_hide_state(int mode)
  warning
  &lt;/span>&lt;/div>
  
- &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;h1 id="file-hiding">File Hiding &lt;a href="#file-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide files and directories with specific prefixes from directory listings by intercepting &lt;code>getdents64&lt;/code> syscall.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+ &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -256,8 +252,8 @@ ls /tmp/
 # Output: normal_file.txt&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h1 id="persistence">Persistence &lt;a href="#persistence" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Two mechanisms for automatic module loading: &lt;strong>modules-load.d&lt;/strong> (boot) and &lt;strong>shell profile&lt;/strong> (login).&lt;/p>
-&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Creates two files:&lt;/p>
+&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Modules are&lt;/p>
+&lt;p>Creates two files:&lt;/p>
 &lt;p>&lt;strong>&lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code>&lt;/strong>:&lt;/p>
 
 
@@ -411,8 +407,7 @@ lsmod | grep epirootkit&lt;/code>
 &lt;li>&lt;strong>modprobe.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth consistency&lt;/li>
 &lt;li>&lt;strong>profile.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>Reliable, standards-compliant persistence with consistent stealth naming.&lt;/strong>&lt;/p></description></item><item><title>Line Hiding</title><link>/docs/05-epirootkit/features/line-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/line-hiding/</guid><description>&lt;h1 id="line-hiding">Line Hiding &lt;a href="#line-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide lines containing rootkit patterns from file contents by intercepting read syscalls.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;strong>Reliable, standards-compliant persistence with consistent stealth naming.&lt;/strong>&lt;/p></description></item><item><title>Line Hiding</title><link>/docs/05-epirootkit/features/line-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/line-hiding/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -445,7 +440,35 @@ lsmod | grep epirootkit&lt;/code>
  &lt;/div>
 &lt;p>Hooks &lt;code>ksys_read&lt;/code> syscall and filters lines containing rootkit patterns from target files.&lt;/p>
 &lt;h2 id="module-hiding-complement">Module Hiding Complement &lt;a href="#module-hiding-complement" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Module Hiding&lt;/strong>: Removes module from kernel list (affects &lt;code>lsmod&lt;/code>)&lt;br>
-&lt;strong>Line Hiding&lt;/strong>: Filters &lt;code>/proc/modules&lt;/code> content when read&lt;/p></description></item><item><title>File Transfer</title><link>/docs/05-epirootkit/features/file-transfer/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bidirectional file transfer between C2 server and infected systems using base64 encoding.&lt;/p>
+&lt;strong>Line Hiding&lt;/strong>: Filters &lt;code>/proc/modules&lt;/code> content when read&lt;/p>
+&lt;p>Combined, they provide comprehensive module stealth.&lt;/p>
+&lt;h2 id="testing">Testing &lt;a href="#testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="258fb2b" class="language-bash ">
+ &lt;code># Test with provided file
+sudo cp test_line_hiding_epirootkit.txt /etc/cron.d/test_epirootkit
+cat /etc/cron.d/test_epirootkit
+# Result: 24 lines → ~9 lines (rootkit patterns filtered)
+
+# Test module information
+cat /proc/modules | grep epirootkit
+# Output: (nothing when line hiding active)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>File Transfer</title><link>/docs/05-epirootkit/features/file-transfer/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bidirectional file transfer between C2 server and infected systems using base64 encoding.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="upload-to-target">Upload to Target &lt;a href="#upload-to-target" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
-&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Server) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Server) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -107,7 +106,7 @@ persist Client-1 install # Manage persistence&lt;/code>
 &lt;li>Session established (1-hour timeout)&lt;/li>
 &lt;li>Rate limiting: 5 attempts/60 seconds&lt;/li>
 &lt;/ol>
-&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before installing the attacking program, ensure you have:&lt;/p>
+&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before installing the attacking program, ensure you have:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Node.js 14+&lt;/strong> and &lt;strong>npm&lt;/strong> (installed via setup script)&lt;/li>
 &lt;li>&lt;strong>Linux environment&lt;/strong> (Ubuntu recommended)&lt;/li>
@@ -140,8 +139,7 @@ npm install
 npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server will start on:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
-&lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+&lt;p>The server will start on:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>Command&lt;/th>
@@ -242,8 +240,7 @@ auth Client-1 wrongpass # Wrong password
 # ERROR: Authentication failed&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; Workflows</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; Workflows</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  

