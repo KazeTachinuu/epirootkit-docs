@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 21:56:13 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 23:51:56 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -108,7 +108,7 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Simple two-step interface using file permissions to control rootkit features.&lt;/p>
+&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Simple two-step interface using group file permissions to control rootkit features.&lt;/p>
 &lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Like git, changes require two steps:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Stage change&lt;/strong> (&lt;code>chmod&lt;/code>) - like &lt;code>git commit&lt;/code>&lt;/li>
@@ -129,16 +129,16 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="0503f93" class="language-bash ">
- &lt;code>chmod 607 /sys/kernel/epirootkit/control # Stage features (1&amp;#43;2&amp;#43;4=7)
+ &lt;pre id="91e93ba" class="language-bash ">
+ &lt;code>chmod 670 /sys/kernel/epirootkit/control # Stage features (group rwx)
 cat /sys/kernel/epirootkit/control # Apply changes&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="permission-mapping">Permission Mapping &lt;a href="#permission-mapping" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Last 3 permission bits control features:&lt;/p>
+&lt;h2 id="permission-mapping">Permission Mapping &lt;a href="#permission-mapping" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Group permission bits control features:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Bit 1&lt;/strong> (execute): Module hiding&lt;/li>
-&lt;li>&lt;strong>Bit 2&lt;/strong> (write): File hiding&lt;/li>
-&lt;li>&lt;strong>Bit 4&lt;/strong> (read): Line hiding&lt;/li>
+&lt;li>&lt;strong>Bit 1&lt;/strong> (group execute): Module hiding&lt;/li>
+&lt;li>&lt;strong>Bit 2&lt;/strong> (group write): File hiding&lt;/li>
+&lt;li>&lt;strong>Bit 4&lt;/strong> (group read): Line hiding&lt;/li>
 &lt;/ul>
 &lt;h2 id="usage-examples">Usage Examples &lt;a href="#usage-examples" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
@@ -155,17 +155,17 @@ cat /sys/kernel/epirootkit/control # Apply changes&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="7de5cb2" class="language-bash ">
+ &lt;pre id="19f1622" class="language-bash ">
  &lt;code># Enable all features
-chmod 607 /sys/kernel/epirootkit/control # Stage: all (7)
+chmod 670 /sys/kernel/epirootkit/control # Stage: group rwx (7)
 cat /sys/kernel/epirootkit/control # Apply
 
 # Enable only module hiding 
-chmod 601 /sys/kernel/epirootkit/control # Stage: module (1)
+chmod 610 /sys/kernel/epirootkit/control # Stage: group --x (1)
 echo &amp;#34;apply&amp;#34; &amp;gt; /sys/kernel/epirootkit/control # Apply
 
 # Disable everything
-chmod 600 /sys/kernel/epirootkit/control # Stage: none (0)
+chmod 600 /sys/kernel/epirootkit/control # Stage: group --- (0)
 cat /sys/kernel/epirootkit/control # Apply&lt;/code>
  &lt;/pre>
  &lt;/div>
@@ -173,73 +173,73 @@ cat /sys/kernel/epirootkit/control # Apply&lt;/code>
  &lt;thead>
  &lt;tr>
  &lt;th style="text-align: center">chmod&lt;/th>
- &lt;th style="text-align: center">Bits&lt;/th>
- &lt;th style="text-align: center">Lines&lt;/th>
- &lt;th style="text-align: center">Files&lt;/th>
+ &lt;th style="text-align: center">Group&lt;/th>
  &lt;th style="text-align: center">Module&lt;/th>
+ &lt;th style="text-align: center">Files&lt;/th>
+ &lt;th style="text-align: center">Lines&lt;/th>
  &lt;th style="text-align: left">Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td style="text-align: center">600&lt;/td>
  &lt;td style="text-align: center">&amp;mdash;&lt;/td>
- &lt;td style="text-align: center">0&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: left">All disabled&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">610&lt;/td>
  &lt;td style="text-align: center">&amp;ndash;x&lt;/td>
- &lt;td style="text-align: center">1&lt;/td>
- &lt;td style="text-align: center">❌&lt;/td>
- &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: left">Module only&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">620&lt;/td>
  &lt;td style="text-align: center">-w-&lt;/td>
- &lt;td style="text-align: center">2&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: left">Files only&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">630&lt;/td>
  &lt;td style="text-align: center">-wx&lt;/td>
- &lt;td style="text-align: center">3&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
- &lt;td style="text-align: center">✅&lt;/td>
- &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: left">Module + files&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">640&lt;/td>
  &lt;td style="text-align: center">r&amp;ndash;&lt;/td>
- &lt;td style="text-align: center">4&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
- &lt;td style="text-align: center">❌&lt;/td>
- &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: left">Lines only&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">650&lt;/td>
  &lt;td style="text-align: center">r-x&lt;/td>
- &lt;td style="text-align: center">5&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: left">Module + lines&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">660&lt;/td>
  &lt;td style="text-align: center">rw-&lt;/td>
- &lt;td style="text-align: center">6&lt;/td>
- &lt;td style="text-align: center">✅&lt;/td>
- &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: left">Files + lines&lt;/td>
  &lt;/tr>
  &lt;tr>
+ &lt;td style="text-align: center">670&lt;/td>
  &lt;td style="text-align: center">rwx&lt;/td>
- &lt;td style="text-align: center">7&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
  &lt;td style="text-align: center">✅&lt;/td>
