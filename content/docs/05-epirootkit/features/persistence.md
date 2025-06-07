@@ -9,11 +9,11 @@ toc: true
 weight: 515
 ---
 
-# Persistence
 
-Two mechanisms for automatic module loading: **modules-load.d** (boot) and **shell profile** (login).
 
 ## modules-load.d Method
+
+Modules are
 
 Creates two files:
 

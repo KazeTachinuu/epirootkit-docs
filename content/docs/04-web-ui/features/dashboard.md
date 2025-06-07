@@ -9,9 +9,7 @@ toc: true
 weight: 411
 ---
 
-# Dashboard
 
-Main interface for monitoring connected rootkit clients with real-time statistics.
 
 {{< figure src="/images/webui/dashboard.png" alt="Dashboard Overview" class="img-fluid" >}}
 

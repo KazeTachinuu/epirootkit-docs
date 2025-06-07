@@ -9,9 +9,7 @@ toc: true
 weight: 301
 ---
 
-# C2 Server Overview
 
-Command & Control server for managing EpiRootkit connections.
 
 ## Quick Start
 

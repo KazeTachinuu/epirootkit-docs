@@ -9,57 +9,44 @@ toc: true
 weight: 201
 ---
 
-# Host Environment Setup
 
-> **Purpose:** Configure Ubuntu 24.10 host to run attacker and victim VMs. The actual EpiRootkit components run INSIDE the VMs.
 
 ## Setup Method
 
 {{< tabs tabTotal="2" >}}
 
-{{% tab tabName="Automated Setup (Recommended)" %}}
+{{% tab tabName="Automated (Recommended)" %}}
 
 ### One-Command Installation
-
-Run the automated setup script to install all dependencies:
 
 ```bash
 ./scripts/install_dependencies.sh
 ```
 
-**What it installs:**
-- **QEMU/KVM**: Virtual machine hypervisor
-- **libvirt**: VM management daemon and tools
-- **Bridge utils**: Network bridge configuration
-- **User permissions**: Adds you to libvirt group
+**Installs:**
+- QEMU/KVM: Virtual machine hypervisor
+- libvirt: VM management daemon and tools  
+- Bridge utils: Network bridge configuration
+- User permissions: Adds you to libvirt group
 
 {{% /tab %}}
 
 {{% tab tabName="Manual Step-by-Step" %}}
 
-### 1. Update System
+### Install Dependencies
 ```bash
 sudo apt update && sudo apt upgrade -y
-```
-
-### 2. Install VM Management Tools
-```bash
 sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 ```
 
-### 3. Configure Libvirt
+### Configure Libvirt
 ```bash
-# Enable and start libvirt daemon
 sudo systemctl enable --now libvirtd
-
-# Add current user to libvirt group
 sudo usermod -aG libvirt $USER
-
-# Activate group membership (required before using VMs)
 newgrp libvirt
 ```
 
-### 4. Optional: Documentation Tools
+### Optional: Documentation Tools
 ```bash
 # Only if you want to build docs locally
 sudo apt install -y hugo
@@ -71,49 +58,38 @@ sudo apt install -y hugo
 
 ## Verification
 
-After completing either setup method, verify your installation:
-
 ```bash
-# Check VM management tools
+# Check VM tools
 virsh list --all
 qemu-system-x86_64 --version
 
 # Verify KVM support
 lsmod | grep kvm
-# Should show: kvm_intel (or kvm_amd) and kvm
-
-# Check hardware virtualization
-egrep -c '(vmx|svm)' /proc/cpuinfo
-# Should be >= 1 (if 0, enable in BIOS)
-
-# Verify KVM device access
-ls -la /dev/kvm
-# Should be accessible by libvirt group
+egrep -c '(vmx|svm)' /proc/cpuinfo  # Should be >= 1
+ls -la /dev/kvm                     # Should be accessible
 ```
 
 ## Next Steps
 
-1. **VM Setup**: [VM Installation & Verification](./vm-installation.md)
-2. **Launch VMs**: Use `sudo ./scripts/run_vms.sh` 
-3. **Inside VMs**: Install project components
+1. **VM Setup**: [VM Installation](./vm-installation.md)
+2. **Launch VMs**: `sudo ./scripts/run_vms.sh`
+3. **Configure**: Follow VM-specific setup guides
 
-## Architecture Overview
+## Architecture
 
 ```
 HOST (Ubuntu 24.10)
-├── QEMU/KVM: VM hypervisor
-├── libvirt: VM management
-└── Bridge network: VM communication
+├── QEMU/KVM → VM hypervisor
+├── libvirt → VM management
+└── Bridge network → VM communication
 
 ATTACKER VM (192.168.200.11)
-├── Node.js: C2 server runtime  
-├── attacking_program: C2 server
-└── webui: React interface
+├── C2 server → attacking_program
+└── Web UI → React interface
 
 VICTIM VM (192.168.200.10)
-├── Development tools: gcc, headers
-├── rootkit: Kernel module
-└── Ubuntu 20.04: Target system
+├── Target system → Ubuntu 20.04
+└── Rootkit → epirootkit.ko
 ```
 
 ## Helper Scripts

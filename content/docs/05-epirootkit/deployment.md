@@ -9,9 +9,7 @@ toc: true
 weight: 502
 ---
 
-# Build & Deployment
 
-How to build and deploy EpiRootkit on Ubuntu 20.04 with kernel 5.4.0.
 
 ## Requirements
 

@@ -9,7 +9,7 @@ toc: true
 weight: 100
 ---
 
-# Présentation 
+ 
 
 ## Equipage
 

@@ -9,9 +9,7 @@ toc: true
 weight: 425
 ---
 
-# Configuration Panel
 
-Manage rootkit stealth settings with toggle switches and real-time updates.
 
 {{< figure src="/images/webui/configuration-panel.png" alt="Configuration Panel" class="img-fluid" >}}
 

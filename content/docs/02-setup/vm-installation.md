@@ -1,6 +1,6 @@
 ---
 title: "VM Installation & Verification"
-description: "Set up and verify the attacker and victim VMs from scratch."
+description: "Set up and verify the attacker and victim VMs"
 icon: "code"
 date: "2025-05-07T00:44:31+01:00"
 lastmod: "2025-05-12T00:00:00+01:00"
@@ -9,36 +9,49 @@ toc: true
 weight: 202
 ---
 
-# Virtual Machine Installation & Verification
+> Complete [Host Environment Setup](./environment.md) before proceeding.
 
-> **You must have completed [Initial Setup & Installation](./environment.md) before proceeding.**
+Throughout this documentation, you will see two options:
 
-## 1. Choose Your VM Setup Method
+1. **Pre-built Disks**: Ready-to-use VM images with everything pre-configured and pre-installed.
+2. **Fresh Installation**: Manual setup process to create your own VM images.
+
+The pre-built disks were created using the exact steps described in the manual installation sections.
+
+So while we recommend using the pre-built disks, you can also create your own VMs by following the manual installation steps.
+
+## Choose Setup Method
 
 {{< tabs tabTotal="2" >}}
 
-{{% tab tabName="Recommended: Pre-built Disks" %}}
+{{% tab tabName="Pre-built Disks (Recommended)" %}}
 
-### Download Pre-built Images
-Download both QCOW2 images and place them in the `vm/` directory at the project root:
+### Download Images
+Download both QCOW2 images and place them in `/var/lib/libvirt/images/`:
 
 | VM Disk          | Path               | Download URL                                           | Size      |
 |------------------|--------------------|--------------------------------------------------------|-----------|
 | Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC   | 5.6 GB    |
 | Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E   | 5.6 GB    |
 
-### What are Pre-built Images?
+```bash
+# After downloading
+cd ~/Downloads
+sudo mv {attacker.qcow2,victim.qcow2} /var/lib/libvirt/images/
+```
 
-These are simply fresh Ubuntu VMs with setup already completed:
+**What You Get:**
+- **Attacker VM**: Ubuntu + project files + dependencies installed (tbh it's the same Ubuntu 20.04 LTS with kernel 5.4.0 from the victim because I'm lazy)
+- **Victim VM**: Ubuntu 20.04 LTS with kernel 5.4.0 (Fresh install with only autologin user `victim` and password `jules`)
 
-- **Attacker VM**: Fresh Ubuntu + project files + dependencies installed (`setup_attacker.sh` + `deploy_to_attacker.sh` already run)
-- **Victim VM**: Ubuntu 20.04 LTS with kernel 5.4.0 (target system)
+### Check VMs
 
-You get the **exact same result** as building from scratch, just faster setup.
+```bash
+./scripts/check_vms.sh
+```
 
-> **Tip:** The images are nearly identical base Ubuntu installs. You can copy `attacker.qcow2` to `victim.qcow2` if needed.
 
-### Launch the VMs
+### Launch VMs
 ```bash
 sudo scripts/run_vms.sh
 ```
@@ -52,43 +65,46 @@ If you prefer to build the disks yourself because you don't trust me (which is f
 - Proton Drive: https://drive.proton.me/urls/N5ZQN96C30#77rPStc8Fx2i   (2.5 GB)
 - Ubuntu archive: https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso  (2.5 GB)
 
-### Create Blank QCOW2 Disks
+### Create Disks
 ```bash
-qemu-img create -f qcow2 vm/attacker.qcow2 10G
-qemu-img create -f qcow2 vm/victim.qcow2   10G
+sudo qemu-img create -f qcow2 /var/lib/libvirt/images/attacker.qcow2 10G
+sudo qemu-img create -f qcow2 /var/lib/libvirt/images/victim.qcow2 10G
 ```
 
-### Install Ubuntu Desktop into Each Disk
-#### Attacker VM
+### Install Ubuntu (Attacker)
 ```bash
-qemu-system-x86_64 \
+sudo qemu-system-x86_64 \
   -enable-kvm -machine accel=kvm -cpu host \
   -m 4096 -smp 4 \
   -name attacker-install \
-  -drive file=vm/attacker.qcow2,format=qcow2,if=virtio,cache=writeback \
+  -drive file=/var/lib/libvirt/images/attacker.qcow2,format=qcow2,if=virtio,cache=writeback \
   -cdrom vm/ubuntu-20.04-desktop-amd64.iso -boot once=d \
   -netdev user,id=net0 -device virtio-net-pci,netdev=net0 \
-  -vga virtio -display gtk
+  -graphics vnc
 ```
-#### Victim VM
+
+### Install Ubuntu (Victim)
 ```bash
-qemu-system-x86_64 \
+sudo qemu-system-x86_64 \
   -enable-kvm -machine accel=kvm -cpu host \
   -m 4096 -smp 4 \
   -name victim-install \
-  -drive file=vm/victim.qcow2,format=qcow2,if=virtio,cache=writeback \
+  -drive file=/var/lib/libvirt/images/victim.qcow2,format=qcow2,if=virtio,cache=writeback \
   -cdrom vm/ubuntu-20.04-desktop-amd64.iso -boot once=d \
   -netdev user,id=net0 -device virtio-net-pci,netdev=net0 \
-  -vga virtio -display gtk
+  -graphics vnc
 ```
 
-> **Tip:** During installation, set up a user named `attacker` (for the attacker VM) and `victim` (for the victim VM) with password `jules` for consistency with the rest of the docs.
 
-### After Installation
-- Shut down the VM when done.
-- The disks are now ready for use.
+> **Setup**: Create user `attacker`/`victim` with password `jules` for consistency.
 
-### Launch the VMs
+## Verification
+
+```bash
+./scripts/check_vms.sh  # Verify disks and files
+```
+
+### Launch VMs
 ```bash
 sudo scripts/run_vms.sh
 ```
@@ -97,9 +113,10 @@ sudo scripts/run_vms.sh
 
 {{< /tabs >}}
 
-## 2. Verifying Your VMs
-- Run `./scripts/check_vms.sh` to verify the presence of disks and ISO files.
-- If you see errors, check file paths and permissions.
 
-## 3. Next Steps
-- Continue to [Attacking VM Setup](./attacking-vm-setup.md) and [Victim VM Setup](./victim-vm-setup.md) for per-VM configuration and usage.
+
+## Next Steps
+
+Configure individual VMs:
+- [Attacker VM Setup](./attacking-vm-setup.md)
+- [Victim VM Setup](./victim-vm-setup.md)

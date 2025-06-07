@@ -9,8 +9,6 @@ toc: true
 weight: 402
 ---
 
-# Web UI Installation
-
 The Web UI is integrated with the C2 server and launches automatically.
 
 ## Quick Setup
