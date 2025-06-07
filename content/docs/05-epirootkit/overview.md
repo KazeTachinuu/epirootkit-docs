@@ -45,8 +45,8 @@ status Client-1
 # EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR
 
 # 4. Configure via permission bits (feature toggles)
-sudo chmod 607 /sys/kernel/epirootkit/control      # rwx = all features enabled
-cat /sys/kernel/epirootkit/control                  # Check status
+sudo chmod 670 /sys/kernel/epirootkit/control      # group rwx = all features enabled
+sudo cat /sys/kernel/epirootkit/control                  # Check status
 ```
 
 ## Architecture
