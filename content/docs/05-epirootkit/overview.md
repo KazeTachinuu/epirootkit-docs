@@ -44,9 +44,9 @@ exec Client-1 whoami
 status Client-1
 # EpiRootkit Status: Version 1.0.0, Module Hidden: YES, Encryption: XOR
 
-# 4. Configure via sysfs (octal permissions style)
-sudo sh -c 'echo 7 > /sys/kernel/epirootkit/hide'  # Enable all hiding
-cat /sys/kernel/epirootkit/hide                     # Check: 7
+# 4. Configure via permission bits (feature toggles)
+sudo chmod 607 /sys/kernel/epirootkit/control      # rwx = all features enabled
+cat /sys/kernel/epirootkit/control                  # Check status
 ```
 
 ## Architecture

