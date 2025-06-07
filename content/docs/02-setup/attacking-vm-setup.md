@@ -37,12 +37,9 @@ Everything is pre-configured. Build and run immediately:
 # Inside attacker VM (auto-logged in)
 cd epirootkit
 
-# Build rootkit
-cd rootkit && make clean && make
-ls -la epirootkit.ko  # ✅ Ready
-
-# Start C2 server + Web UI
+# Build rootkit + Start C2 server + Web UI
 cd .. && ./deploy_c2.sh
+# ✅ Builds rootkit automatically
 # ✅ C2 server: port 4444
 # ✅ Web interface: port 3000
 ```
