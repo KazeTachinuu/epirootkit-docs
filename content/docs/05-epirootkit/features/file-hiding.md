@@ -9,9 +9,7 @@ toc: true
 weight: 515
 ---
 
-# File Hiding
 
-Hide files and directories with specific prefixes from directory listings by intercepting `getdents64` syscall.
 
 ## Implementation
 

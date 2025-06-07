@@ -9,9 +9,7 @@ toc: true
 weight: 516
 ---
 
-# Line Hiding
 
-Hide lines containing rootkit patterns from file contents by intercepting read syscalls.
 
 ## Implementation
 

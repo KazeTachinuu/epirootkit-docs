@@ -9,9 +9,7 @@ toc: true
 weight: 421
 ---
 
-# Persistence Panel
 
-Configure rootkit boot survival with multiple persistence methods and one-click setup.
 
 {{< figure src="/images/webui/persistence-panel.png" alt="Persistence Panel" class="img-fluid" >}}
 

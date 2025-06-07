@@ -9,9 +9,7 @@ toc: true
 weight: 426
 ---
 
-# Authentication Panel
 
-Secure two-layer authentication system for rootkit client access and control.
 
 {{< figure src="/images/webui/auth-panel.png" alt="Authentication Panel" class="img-fluid" >}}
 

@@ -9,9 +9,7 @@ toc: true
 weight: 412
 ---
 
-# Client Management
 
-Monitor and interact with connected rootkit clients in real-time.
 
 ## Features
 
