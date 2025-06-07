@@ -11,10 +11,13 @@ weight: 200
 
 ## Overview
 
-This section guides you through setting up your host environment, installing and verifying VM disks, and configuring the attacker and victim VMs.
+Set up your host environment and configure attacker/victim VMs for EpiRootkit deployment.
 
-- [Initial Setup & Installation]({{< relref "environment.md" >}})
-- [VM Installation & Verification]({{< relref "vm-installation.md" >}})
-- [Attacking VM Setup]({{< relref "attacking-vm-setup.md" >}})
-- [Victim VM Setup]({{< relref "victim-vm-setup.md" >}})
+### Setup Guide
+
+1. **[Host Environment]({{< relref "environment.md" >}})** - Install QEMU/KVM and libvirt
+2. **[VM Installation]({{< relref "vm-installation.md" >}})** - Download or build VM disks  
+3. **[Attacker VM]({{< relref "attacking-vm-setup.md" >}})** - Configure C2 server and web interface
+4. **[Victim VM]({{< relref "victim-vm-setup.md" >}})** - Deploy and test rootkit
+5. **[File Transfer]({{< relref "file-transfer.md" >}})** - Methods for host-to-VM file transfer
 

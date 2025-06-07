@@ -9,9 +9,7 @@ toc: true
 weight: 303
 ---
 
-# Command Reference
 
-Complete reference for all C2 server commands.
 
 ## Command List
 

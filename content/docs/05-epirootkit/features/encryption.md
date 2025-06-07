@@ -9,9 +9,7 @@ toc: true
 weight: 513
 ---
 
-# Encryption
 
-XOR-based encryption for C2 communication using a hardcoded 32-byte key.
 
 ## Implementation
 

@@ -9,9 +9,7 @@ toc: true
 weight: 424
 ---
 
-# Overview Panel
 
-Client status dashboard with connection monitoring, stealth feature status, and quick action buttons.
 
 {{< figure src="/images/webui/overview-panel.png" alt="Overview Panel" class="img-fluid" >}}
 

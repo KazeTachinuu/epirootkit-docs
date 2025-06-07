@@ -9,9 +9,7 @@ toc: true
 weight: 423
 ---
 
-# Upload/Download Panel
 
-File transfer interface with drag-and-drop upload and remote file browser.
 
 ## Features
 

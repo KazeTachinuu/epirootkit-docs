@@ -9,9 +9,7 @@ toc: true
 weight: 420
 ---
 
-# Terminal Panel
 
-Full terminal emulator for remote command execution with history and real-time output.
 
 {{< figure src="/images/webui/terminal-panel.png" alt="Terminal Panel" class="img-fluid" >}}
 

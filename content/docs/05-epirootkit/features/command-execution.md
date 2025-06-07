@@ -9,9 +9,7 @@ toc: true
 weight: 511
 ---
 
-# Command Execution
 
-Execute system commands in kernel space using `call_usermodehelper` with output capture.
 
 ## Implementation
 
