@@ -9,9 +9,7 @@ toc: true
 weight: 422
 ---
 
-# Event Log Panel
 
-Real-time activity monitoring with filtering, search, and export capabilities.
 
 {{< figure src="/images/webui/event-log-panel.png" alt="Event Log Panel" class="img-fluid" >}}
 

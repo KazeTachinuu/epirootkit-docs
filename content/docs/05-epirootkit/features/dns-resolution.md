@@ -9,9 +9,7 @@ toc: true
 weight: 512
 ---
 
-# DNS Resolution
 
-Kernel-space DNS client for resolving domain names to IP addresses, enabling domain-based C2 communication.
 
 ## Implementation
 

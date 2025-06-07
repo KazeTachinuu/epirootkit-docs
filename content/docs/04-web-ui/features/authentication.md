@@ -9,9 +9,7 @@ toc: true
 weight: 410
 ---
 
-# Authentication
 
-Secure login with JWT tokens and automatic session management.
 
 {{< figure src="/images/webui/login.png" alt="Login Screen" class="img-fluid" >}}
 

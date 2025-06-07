@@ -9,9 +9,7 @@ toc: true
 weight: 401
 ---
 
-# Web UI Overview
 
-Modern React-based web interface for EpiRootkit C2 management.
 
 {{< figure src="/images/webui/dashboard.png" alt="C2 Dashboard Main" class="img-fluid" >}}
 

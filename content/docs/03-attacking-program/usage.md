@@ -9,9 +9,7 @@ toc: true
 weight: 303
 ---
 
-# Usage Guide
 
-Complete workflows for the EpiRootkit C2 server.
 
 ## Quick Start
 

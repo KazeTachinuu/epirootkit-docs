@@ -9,59 +9,50 @@ toc: true
 weight: 205
 ---
 
-# Host to VM File Transfer
 
-Guide for transferring files from the host system to QEMU virtual machines.
 
 ## Transfer Methods
 
 {{< tabs tabTotal="4" >}}
 
-{{% tab tabName="Automated Script (Recommended)" %}}
+{{% tab tabName="Automated (Recommended)" %}}
 
 ### One-Command Transfer
 
-For attacker VM setup, use the automated deployment script:
+For attacker VM setup:
 
 ```bash
 # From host project directory
-./scripts/deploy_to_attacker.sh
+./scripts/deploy_project.sh
 
 # ✅ Transfers entire project via SSH/SCP
 # ✅ Runs setup script remotely
-# ✅ Installs all dependencies
+# ✅ Installs dependencies
 # 🎉 Ready to build and start
 ```
 
-### What It Does
-1. **Checks connectivity**: VM reachable via SSH
-2. **Transfers files**: Complete project to `~/epirootkit`
-3. **Runs setup**: Executes dependency installation
-4. **Verifies**: All components ready
-
-### Requirements
+**Requirements:**
 - VM running with SSH enabled
-- Network connectivity between host and VM
+- Network connectivity
 - VM credentials: `attacker@192.168.200.11` (password: `jules`)
 
 {{% /tab %}}
 
-{{% tab tabName="Manual SCP/SSH" %}}
+{{% tab tabName="SSH/SCP" %}}
 
-### Enable SSH in VM
+### Enable SSH
 ```bash
-# Inside the VM
+# Inside VM
 sudo apt update && sudo apt install -y openssh-server
 sudo systemctl enable --now ssh
 ```
 
 ### Transfer Files
 ```bash
-# From host to VM
+# Project transfer
 scp -r /path/to/epirootkit attacker@192.168.200.11:~/
 
-
-# Transfer specific files
+# Specific files
 scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/
 ```
 
@@ -69,40 +60,38 @@ scp deploy_rootkit.sh epirootkit.ko victim@192.168.200.10:~/
 
 {{% tab tabName="HTTP Server" %}}
 
-### Setup Server on Host
+### Host Server
 ```bash
 # From project directory
 cd /path/to/epirootkit
 python3 -m http.server 8080
 ```
 
-### Download in VM
+### VM Download
 ```bash
-# Inside VM
+# Single file
 wget http://192.168.200.1:8080/filename
 
-# Download entire project
-wget -r -np -nH --cut-dirs=1 http://192.168.200.1:8080/
+# Multiple files
+wget http://192.168.200.1:8080/{file1,file2,file3}
 ```
-
 
 {{% /tab %}}
 
-{{% tab tabName="Other Methods" %}}
+{{% tab tabName="Shared Folders" %}}
 
-### Shared Folders (Development)
-Add to QEMU launch:
+### QEMU Setup
 ```bash
--virtfs local,path=/path/to/host/folder,mount_tag=shared,security_model=passthrough
+# Add to VM launch
+-virtfs local,path=/host/folder,mount_tag=shared,security_model=passthrough
 ```
 
-Mount in VM:
+### VM Mount
 ```bash
 sudo mkdir -p /mnt/shared
 sudo mount -t 9p -o trans=virtio shared /mnt/shared
 cp -r /mnt/shared/epirootkit ~/
 ```
-
 
 {{% /tab %}}
 

@@ -9,9 +9,7 @@ toc: true
 weight: 503
 ---
 
-# Connection & Authentication
 
-How EpiRootkit connects to the C2 server and handles authentication with **domain support** and **XOR encryption**.
 
 ## Connection Process
 
