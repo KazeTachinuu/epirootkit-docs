@@ -11,7 +11,7 @@ weight: 513
 
 # Sysfs Interface
 
-Simple two-step interface using group file permissions to control rootkit features.
+Two-step interface using group file permissions to control rootkit features.
 
 ## How It Works
 

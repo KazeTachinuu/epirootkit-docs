@@ -30,7 +30,7 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }
 ```
 
-Simple XOR cipher with key rotation - same operation for encryption and decryption.
+XOR cipher with key rotation - same operation for encryption and decryption.
 
 ## Functions
 
