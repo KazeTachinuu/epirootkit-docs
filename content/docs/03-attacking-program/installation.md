@@ -77,7 +77,7 @@ JWT_SECRET=your-jwt-secret-key
 
 # Upload Settings
 UPLOAD_DIR=./uploads
-MAX_FILE_SIZE=50MB
+MAX_FILE_SIZE=10MB
 ```
 
 ### Custom Configuration
