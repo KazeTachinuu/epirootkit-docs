@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 07 Jun 2025 23:51:56 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 09 Jun 2025 03:51:03 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -25,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="dacfbeTab" data-bs-toggle="tab" data-bs-target="#dacfbe"
-		 type="button" role="tab" aria-controls="dacfbe" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="cebfdaTab" data-bs-toggle="tab" data-bs-target="#cebfda"
+		 type="button" role="tab" aria-controls="cebfda" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ceabfdTab" data-bs-toggle="tab" data-bs-target="#ceabfd"
-		 type="button" role="tab" aria-controls="ceabfd" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="ebdacfTab" data-bs-toggle="tab" data-bs-target="#ebdacf"
+		 type="button" role="tab" aria-controls="ebdacf" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -49,7 +49,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="dacfbe" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cebfda" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -87,7 +87,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="ceabfd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="ebdacf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -214,14 +214,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="dfbaecTab" data-bs-toggle="tab" data-bs-target="#dfbaec"
-		 type="button" role="tab" aria-controls="dfbaec" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="bacedfTab" data-bs-toggle="tab" data-bs-target="#bacedf"
+		 type="button" role="tab" aria-controls="bacedf" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdebacTab" data-bs-toggle="tab" data-bs-target="#fdebac"
-		 type="button" role="tab" aria-controls="fdebac" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="dfcbaeTab" data-bs-toggle="tab" data-bs-target="#dfcbae"
+		 type="button" role="tab" aria-controls="dfcbae" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -238,7 +238,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="dfbaec" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="bacedf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -344,26 +344,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="aedcbfTab" data-bs-toggle="tab" data-bs-target="#aedcbf"
-		 type="button" role="tab" aria-controls="aedcbf" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="aedfcbTab" data-bs-toggle="tab" data-bs-target="#aedfcb"
+		 type="button" role="tab" aria-controls="aedfcb" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cadbfeTab" data-bs-toggle="tab" data-bs-target="#cadbfe"
-		 type="button" role="tab" aria-controls="cadbfe" aria-selected="true">SSH/SCP&lt;/a>
+		 id="aecdbfTab" data-bs-toggle="tab" data-bs-target="#aecdbf"
+		 type="button" role="tab" aria-controls="aecdbf" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="daecfbTab" data-bs-toggle="tab" data-bs-target="#daecfb"
-		 type="button" role="tab" aria-controls="daecfb" aria-selected="true">HTTP Server&lt;/a>
+		 id="cdbafeTab" data-bs-toggle="tab" data-bs-target="#cdbafe"
+		 type="button" role="tab" aria-controls="cdbafe" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdaecbTab" data-bs-toggle="tab" data-bs-target="#fdaecb"
-		 type="button" role="tab" aria-controls="fdaecb" aria-selected="true">Shared Folders&lt;/a>
+		 id="adcbefTab" data-bs-toggle="tab" data-bs-target="#adcbef"
+		 type="button" role="tab" aria-controls="adcbef" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -380,7 +380,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="aedcbf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="aedfcb" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
@@ -1577,7 +1577,7 @@ static void xor_crypt(const u8 *input, u8 *output, size_t length)
 }&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Simple XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Simple two-step interface using group file permissions to control rootkit features.&lt;/p>
+&lt;p>XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Two-step interface using group file permissions to control rootkit features.&lt;/p>
 &lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Like git, changes require two steps:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Stage change&lt;/strong> (&lt;code>chmod&lt;/code>) - like &lt;code>git commit&lt;/code>&lt;/li>
