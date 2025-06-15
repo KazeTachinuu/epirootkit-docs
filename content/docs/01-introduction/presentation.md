@@ -10,8 +10,7 @@ weight: 100
 ---
 
  
-
-## Equipage
+ ## Equipage
 
 {{< crew >}}
 
