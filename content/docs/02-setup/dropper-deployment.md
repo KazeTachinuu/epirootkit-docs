@@ -38,18 +38,18 @@ Interface elements:
 
 ## Process
 
-```
-User clicks "Register Location"
-     ↓
-Downloads rootkit from C2 server
-     ↓
-Executes deploy_rootkit.sh
-     ↓
-Installs kernel module
-     ↓
-Establishes C2 connection
-     ↓
-Shows "Registration successful"
-```
+ ```mermaid 
+flowchart TB
+    A["User clicks 'Register Location'"]
+    B["Downloads rootkit from C2 server"]
+    C["Executes deploy_rootkit.sh"]
+    D["Installs kernel module"]
+    E["Establishes C2 connection"]
+    F["Shows 'Registration successful'"]
+    
+    A --> B --> C --> D --> E --> F
+
+ ```
+
 
 The interface appears as a legitimate geo-location service to avoid suspicion.

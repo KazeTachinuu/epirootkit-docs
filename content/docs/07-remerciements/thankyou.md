@@ -39,12 +39,16 @@ APPING Cyber 2027
 
 Bonjour,
 
-C'est Léa
+Comme l'a dit Hugo, merci beaucoup pour ce projet :). J'ai beaucoup aimé rédiger la documentation et essayer de keep up avec les idées parfois folles de Hugo 👀!
+
+
 
 Coin-Coin-ment,
 
 -- 
+
 Léa Bonet
+
 Déléguée APPING Cyb 2027
 
 "Au moins Hugo ne s'est pas fait arrêté à la sortie de l'avion 👀"

