@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 15 Jun 2025 17:37:58 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 15 Jun 2025 18:00:22 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
 	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -10,14 +10,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cadebfTab" data-bs-toggle="tab" data-bs-target="#cadebf"
-		 type="button" role="tab" aria-controls="cadebf" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="efbadcTab" data-bs-toggle="tab" data-bs-target="#efbadc"
+		 type="button" role="tab" aria-controls="efbadc" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="badcefTab" data-bs-toggle="tab" data-bs-target="#badcef"
-		 type="button" role="tab" aria-controls="badcef" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="efcbdaTab" data-bs-toggle="tab" data-bs-target="#efcbda"
+		 type="button" role="tab" aria-controls="efcbda" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -34,7 +34,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cadebf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="efbadc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -72,7 +72,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="badcef" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="efcbda" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -199,14 +199,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="ceabfdTab" data-bs-toggle="tab" data-bs-target="#ceabfd"
-		 type="button" role="tab" aria-controls="ceabfd" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="abdefcTab" data-bs-toggle="tab" data-bs-target="#abdefc"
+		 type="button" role="tab" aria-controls="abdefc" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fdcebaTab" data-bs-toggle="tab" data-bs-target="#fdceba"
-		 type="button" role="tab" aria-controls="fdceba" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="ecbafdTab" data-bs-toggle="tab" data-bs-target="#ecbafd"
+		 type="button" role="tab" aria-controls="ecbafd" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -223,7 +223,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="ceabfd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="abdefc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -329,26 +329,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="ebfdacTab" data-bs-toggle="tab" data-bs-target="#ebfdac"
-		 type="button" role="tab" aria-controls="ebfdac" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="beacfdTab" data-bs-toggle="tab" data-bs-target="#beacfd"
+		 type="button" role="tab" aria-controls="beacfd" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="edfcbaTab" data-bs-toggle="tab" data-bs-target="#edfcba"
-		 type="button" role="tab" aria-controls="edfcba" aria-selected="true">SSH/SCP&lt;/a>
+		 id="fbedacTab" data-bs-toggle="tab" data-bs-target="#fbedac"
+		 type="button" role="tab" aria-controls="fbedac" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="edacbfTab" data-bs-toggle="tab" data-bs-target="#edacbf"
-		 type="button" role="tab" aria-controls="edacbf" aria-selected="true">HTTP Server&lt;/a>
+		 id="dbecfaTab" data-bs-toggle="tab" data-bs-target="#dbecfa"
+		 type="button" role="tab" aria-controls="dbecfa" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fbecadTab" data-bs-toggle="tab" data-bs-target="#fbecad"
-		 type="button" role="tab" aria-controls="fbecad" aria-selected="true">Shared Folders&lt;/a>
+		 id="adebfcTab" data-bs-toggle="tab" data-bs-target="#adebfc"
+		 type="button" role="tab" aria-controls="adebfc" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -365,7 +365,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="ebfdac" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="beacfd" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
