@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 09 Jun 2025 03:51:03 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 15 Jun 2025 17:27:07 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -25,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cebfdaTab" data-bs-toggle="tab" data-bs-target="#cebfda"
-		 type="button" role="tab" aria-controls="cebfda" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="fdbaecTab" data-bs-toggle="tab" data-bs-target="#fdbaec"
+		 type="button" role="tab" aria-controls="fdbaec" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ebdacfTab" data-bs-toggle="tab" data-bs-target="#ebdacf"
-		 type="button" role="tab" aria-controls="ebdacf" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="cbfeadTab" data-bs-toggle="tab" data-bs-target="#cbfead"
+		 type="button" role="tab" aria-controls="cbfead" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -49,7 +49,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cebfda" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="fdbaec" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -87,7 +87,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="ebdacf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="cbfead" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -214,14 +214,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="bacedfTab" data-bs-toggle="tab" data-bs-target="#bacedf"
-		 type="button" role="tab" aria-controls="bacedf" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="bcfeadTab" data-bs-toggle="tab" data-bs-target="#bcfead"
+		 type="button" role="tab" aria-controls="bcfead" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dfcbaeTab" data-bs-toggle="tab" data-bs-target="#dfcbae"
-		 type="button" role="tab" aria-controls="dfcbae" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="bcfeadTab" data-bs-toggle="tab" data-bs-target="#bcfead"
+		 type="button" role="tab" aria-controls="bcfead" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -238,7 +238,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="bacedf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="bcfead" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -344,26 +344,26 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="aedfcbTab" data-bs-toggle="tab" data-bs-target="#aedfcb"
-		 type="button" role="tab" aria-controls="aedfcb" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="bdcfeaTab" data-bs-toggle="tab" data-bs-target="#bdcfea"
+		 type="button" role="tab" aria-controls="bdcfea" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="aecdbfTab" data-bs-toggle="tab" data-bs-target="#aecdbf"
-		 type="button" role="tab" aria-controls="aecdbf" aria-selected="true">SSH/SCP&lt;/a>
+		 id="dbacfeTab" data-bs-toggle="tab" data-bs-target="#dbacfe"
+		 type="button" role="tab" aria-controls="dbacfe" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cdbafeTab" data-bs-toggle="tab" data-bs-target="#cdbafe"
-		 type="button" role="tab" aria-controls="cdbafe" aria-selected="true">HTTP Server&lt;/a>
+		 id="cfbdeaTab" data-bs-toggle="tab" data-bs-target="#cfbdea"
+		 type="button" role="tab" aria-controls="cfbdea" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="adcbefTab" data-bs-toggle="tab" data-bs-target="#adcbef"
-		 type="button" role="tab" aria-controls="adcbef" aria-selected="true">Shared Folders&lt;/a>
+		 id="dbaecfTab" data-bs-toggle="tab" data-bs-target="#dbaecf"
+		 type="button" role="tab" aria-controls="dbaecf" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -380,7 +380,7 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="aedfcb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="bdcfea" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
@@ -408,7 +408,23 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 # 🎉 Ready to build and start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Requirements:&lt;/strong>&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;strong>Requirements:&lt;/strong>&lt;/p></description></item><item><title>Dropper Deployment</title><link>/docs/02-setup/dropper-deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/dropper-deployment/</guid><description>&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper is a social engineering tool disguised as &amp;ldquo;NeoGeoLoc - Location Registration System&amp;rdquo;. It downloads and installs the rootkit automatically on target systems.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: &lt;a href="/docs/02-setup/attacking-vm-setup/">Attacker VM Setup&lt;/a> - Must be running&lt;/li>
+&lt;li>&lt;strong>Build&lt;/strong>: &lt;code>./deploy_c2.sh&lt;/code> builds the dropper binary&lt;/li>
+&lt;/ol>
+&lt;h2 id="landing-page">Landing Page &lt;a href="#landing-page" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://192.168.200.11:8080&lt;/code>&lt;/p>
+&lt;p>Download interface for the dropper binary.&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/dropper/landing.png"
+ alt="Landing Page NGL">
+&lt;/figure>
+
+&lt;h2 id="application-interface">Application Interface &lt;a href="#application-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper presents itself as a location registration system:&lt;/p>
+&lt;figure class="img-fluid">&lt;img src="/images/dropper/application.png"
+ alt="NeoGeoLoc Application Interface">
+&lt;/figure>
+
+&lt;p>Interface elements:&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
