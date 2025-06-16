@@ -56,7 +56,7 @@ sudo mv {attacker.qcow2,victim.qcow2} /var/lib/libvirt/images/
 # run this command before running the vm
 newgrp libvirt
 # then this command to launch the vm
-sudo scripts/run_vms.sh
+sudo ./scripts/run_vms.sh
 ```
 
 {{% /tab %}}
