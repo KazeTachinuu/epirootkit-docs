@@ -31,7 +31,7 @@ Download both QCOW2 images and place them in `/var/lib/libvirt/images/`:
 
 | VM Disk          | Path               | Download URL                                           | Size      |
 |------------------|--------------------|--------------------------------------------------------|-----------|
-| Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/J20W6CD998#rB7b5oM6idQC   | 5.6 GB    |
+| Attacker VM      | `vm/attacker.qcow2`| https://drive.proton.me/urls/2E04NSP328#AcZRfzvBje6U   | 5.6 GB    |
 | Victim VM        | `vm/victim.qcow2`  | https://drive.proton.me/urls/EGVVVF6YXW#THevlby2e62E   | 5.6 GB    |
 
 ```bash
