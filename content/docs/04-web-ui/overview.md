@@ -1,14 +1,9 @@
 ---
 title: "Overview"
-description: "Modern web interface for EpiRootkit C2 server"
+description: "Web interface for EpiRootkit C2"
 icon: "monitor"
-date: "2025-05-25T16:00:00+01:00"
-lastmod: "2025-05-25T16:00:00+01:00"
-draft: false
-toc: true
 weight: 401
 ---
-
 
 
 {{< figure src="/images/webui/dashboard.png" alt="C2 Dashboard Main" class="img-fluid" >}}
@@ -16,52 +11,26 @@ weight: 401
 ## Quick Start
 
 ```bash
-# Start system (includes Web UI)
-./deploy_c2.sh
-
-# Access Web UI
-# URL: http://localhost:3000
-# Password: password
+./deploy_c2.sh --c2     # Start C2 + Web UI
 ```
 
-## Architecture
+**Access**: `http://localhost:3000`  
+**Default Password**: `secret123` (hash configured in `config.env`)
 
-**Frontend Technology Stack:**
+## Features
 
-- **Framework**: React 18 + Vite
-- **Styling**: Tailwind CSS + shadcn/ui components
-- **State**: React Context + hooks
-- **Real-time**: WebSocket connections via Socket.IO
-- **Authentication**: JWT tokens with session management
+- **[Authentication]({{< relref "features/authentication.md" >}})**: Secure login for web interface  
+- **[Dashboard]({{< relref "features/dashboard.md" >}})**: Real-time client monitoring with stats
+- **[Client Management]({{< relref "features/client-management.md" >}})**: Individual client control
 
-## Core Features
+### Client Panels
 
-- **Dashboard**: Real-time client monitoring and statistics
-- **Authentication**: Secure login with JWT tokens
-- **Client Management**: Visual client cards with status indicators
-- **Interactive Panels**: Terminal, file transfer, configuration, logs
-- **Real-time Updates**: Live WebSocket synchronization
+When managing individual clients (`/clients/:id`), the following panels are available:
 
-## User Interface
-
-### Main Components
-
-- **Login Screen**: JWT authentication
-- **Dashboard**: Client overview with search and filtering
-- **Client Cards**: Visual representation of connected rootkits
-- **Panel System**: Tabbed interface for different operations
-
-### Panel Types
-
-- **Terminal Panel**: Command execution interface
-- **Upload/Download Panel**: File transfer with drag-drop
-- **Configuration Panel**: Toggle rootkit settings
-- **Authentication Panel**: Client authentication management
-- **Event Log Panel**: Real-time activity monitoring
-
-## Integration
-
-The Web UI integrates with the [C2 Server](../03-attacking-program/overview.md) via:
-- REST API endpoints
-- WebSocket for real-time updates
-- JSON message protocol 
+- **[Overview Panel]({{< relref "features/panels/overview-panel.md" >}})**: Client status and information
+- **[Authentication Panel]({{< relref "features/panels/authentication-panel.md" >}})**: Client authentication management  
+- **[Terminal Panel]({{< relref "features/panels/terminal-panel.md" >}})**: Execute commands on clients
+- **[Upload/Download Panel]({{< relref "features/panels/upload-download-panel.md" >}})**: File transfer with drag-drop
+- **[Persistence Panel]({{< relref "features/panels/persistence-panel.md" >}})**: Manage rootkit persistence
+- **[Configuration Panel]({{< relref "features/panels/configuration-panel.md" >}})**: Toggle rootkit settings
+- **[Event Log Panel]({{< relref "features/panels/event-log-panel.md" >}})**: Real-time activity monitoring

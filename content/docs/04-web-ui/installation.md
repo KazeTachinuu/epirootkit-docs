@@ -1,39 +1,38 @@
 ---
-title: "Installation & Setup"
-description: "How to install and launch the Web UI"
+title: "Installation"
+description: "Install and start the Web UI"
 icon: "download"
-date: "2025-05-25T16:00:00+01:00"
-lastmod: "2025-05-25T16:00:00+01:00"
-draft: false
-toc: true
 weight: 402
 ---
 
-The Web UI is integrated with the C2 server and launches automatically.
-
-## Quick Setup
+## Quick Start
 
 ```bash
-# From project root
-./deploy_c2.sh
+./deploy_c2.sh # Builds and starts everything
 ```
 
-This starts both the C2 server and Web UI simultaneously.
+**Access**: `http://localhost:3000`
 
-## Access
-
-- **URL**: `http://localhost:3000`
-- **Default Password**: `password`
-- **Features**: All C2 functionality via web interface
-
-## Manual Installation
-
-If you need to install dependencies manually:
+## Manual Build
 
 ```bash
-cd attacking_program
-pnpm install
-pnpm start
+# Build frontend
+cd webui && npm install && npm run build && cd ..
+
+# Deploy to backend
+mkdir -p attacking_program/public
+cp -r webui/dist/* attacking_program/public/
+
+# Start server
+cd attacking_program && npm install && npm start
 ```
 
-For detailed configuration options, see [C2 Server Installation](../03-attacking-program/installation.md).
+## Configuration
+
+Password hash configured in `attacking_program/config.env`:
+
+```env
+C2_WEBUI_PASSWORD_HASH=348735696e74c45e7fbf9c6839d87f891486d19e5059db7e397d5086e486dc0051a533752805dc9288463673f0a6fcbf2a655548738a85305b2d571bae44a71e
+```
+
+Default password is `secret123`. Generate custom hash: `echo -n "yourpassword" | sha512sum`

