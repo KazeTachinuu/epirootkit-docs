@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 17 Jun 2025 23:32:06 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 17 Jun 2025 23:52:07 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -25,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="bafdecTab" data-bs-toggle="tab" data-bs-target="#bafdec"
-		 type="button" role="tab" aria-controls="bafdec" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="cfdabeTab" data-bs-toggle="tab" data-bs-target="#cfdabe"
+		 type="button" role="tab" aria-controls="cfdabe" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cafdebTab" data-bs-toggle="tab" data-bs-target="#cafdeb"
-		 type="button" role="tab" aria-controls="cafdeb" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="dcbefaTab" data-bs-toggle="tab" data-bs-target="#dcbefa"
+		 type="button" role="tab" aria-controls="dcbefa" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -49,7 +49,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="bafdec" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cfdabe" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -87,7 +87,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="cafdeb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="dcbefa" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -214,14 +214,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="eadcfbTab" data-bs-toggle="tab" data-bs-target="#eadcfb"
-		 type="button" role="tab" aria-controls="eadcfb" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="debafcTab" data-bs-toggle="tab" data-bs-target="#debafc"
+		 type="button" role="tab" aria-controls="debafc" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="bfacdeTab" data-bs-toggle="tab" data-bs-target="#bfacde"
-		 type="button" role="tab" aria-controls="bfacde" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="afbdceTab" data-bs-toggle="tab" data-bs-target="#afbdce"
+		 type="button" role="tab" aria-controls="afbdce" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -238,7 +238,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="eadcfb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="debafc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -289,14 +289,14 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 		
 
 		&lt;a class="nav-link active"
-		 id="baefdcTab" data-bs-toggle="tab" data-bs-target="#baefdc"
-		 type="button" role="tab" aria-controls="baefdc" aria-selected="true">Dropper (Social Engineering)&lt;/a>
+		 id="acfedbTab" data-bs-toggle="tab" data-bs-target="#acfedb"
+		 type="button" role="tab" aria-controls="acfedb" aria-selected="true">Dropper (Social Engineering)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dbaecfTab" data-bs-toggle="tab" data-bs-target="#dbaecf"
-		 type="button" role="tab" aria-controls="dbaecf" aria-selected="true">Manual Deployment&lt;/a>
+		 id="daefcbTab" data-bs-toggle="tab" data-bs-target="#daefcb"
+		 type="button" role="tab" aria-controls="daefcb" aria-selected="true">Manual Deployment&lt;/a>
 
 		
 
@@ -313,7 +313,7 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 
 
 
-&lt;div class="tab-pane fade show active" id="baefdc" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="acfedb" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="automated-deployment">Automated Deployment &lt;a href="#automated-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Use the social engineering dropper for realistic attack simulation:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
@@ -327,26 +327,26 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 		
 
 		&lt;a class="nav-link active"
-		 id="beafcdTab" data-bs-toggle="tab" data-bs-target="#beafcd"
-		 type="button" role="tab" aria-controls="beafcd" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="bafcedTab" data-bs-toggle="tab" data-bs-target="#bafced"
+		 type="button" role="tab" aria-controls="bafced" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ecabdfTab" data-bs-toggle="tab" data-bs-target="#ecabdf"
-		 type="button" role="tab" aria-controls="ecabdf" aria-selected="true">SSH/SCP&lt;/a>
+		 id="bcfdaeTab" data-bs-toggle="tab" data-bs-target="#bcfdae"
+		 type="button" role="tab" aria-controls="bcfdae" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="fabdecTab" data-bs-toggle="tab" data-bs-target="#fabdec"
-		 type="button" role="tab" aria-controls="fabdec" aria-selected="true">HTTP Server&lt;/a>
+		 id="dbacfeTab" data-bs-toggle="tab" data-bs-target="#dbacfe"
+		 type="button" role="tab" aria-controls="dbacfe" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="cdafebTab" data-bs-toggle="tab" data-bs-target="#cdafeb"
-		 type="button" role="tab" aria-controls="cdafeb" aria-selected="true">Shared Folders&lt;/a>
+		 id="afebcdTab" data-bs-toggle="tab" data-bs-target="#afebcd"
+		 type="button" role="tab" aria-controls="afebcd" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -363,7 +363,7 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 
 
 
-&lt;div class="tab-pane fade show active" id="beafcd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="bafced" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
