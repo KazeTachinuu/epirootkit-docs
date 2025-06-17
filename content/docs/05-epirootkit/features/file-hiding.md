@@ -8,8 +8,7 @@ draft: false
 toc: true
 weight: 515
 ---
-
-
+{{< alert context="warning" text="It's Tuesday 17/06 21:26, two hours before deadline, and I'm realizing just now that even with file hiding enabled, the directory `/sys/module/epirootkit` is still visible in the victim's system. This occurs because we only hook getdents while `/sys/module/epirootkit` uses sysfs." />}}
 
 ## Implementation
 
