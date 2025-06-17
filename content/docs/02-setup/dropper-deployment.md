@@ -13,6 +13,8 @@ weight: 205
 
 The dropper is a social engineering tool disguised as "NeoGeoLoc - Location Registration System". It provides a realistic attack simulation where the victim downloads and runs what appears to be a legitimate location registration application.
 
+{{<alert context="info" text="This page is available in the real C2 at `http://jules_chef_de_majeur.epirootkit.com:8080`"/>}}
+
 ## Prerequisites
 
 1. **C2 Server**: [Attacker VM Setup]({{< relref "attacking-vm-setup.md" >}}) - Must be running

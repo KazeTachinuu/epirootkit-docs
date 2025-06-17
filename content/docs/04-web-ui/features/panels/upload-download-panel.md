@@ -9,6 +9,9 @@ toc: true
 weight: 423
 ---
 
+{{<figure src="/images/webui/upload-download-panel.png" alt="Upload/Download Panel" class="img-fluid" >}}
+
+{{<figure src="/images/webui/browse-panel.png" alt="Browse Panel" class="img-fluid" >}}
 
 
 ## Features
