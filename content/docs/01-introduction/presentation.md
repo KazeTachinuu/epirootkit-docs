@@ -1,6 +1,6 @@
 ---
-title: "Project README"
-description: "Concise overview of EpiRootkit and its documentation"
+title: "README"
+description: "Concise overview of EpiRootkit"
 icon: "info"
 date: "2025-05-25T16:00:00+01:00"
 lastmod: "2025-05-25T16:00:00+01:00"
@@ -9,9 +9,15 @@ toc: false
 weight: 100
 ---
 
-## EpiRootkit in short
+## TL; DR
 
-EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a Command-and-Control (C2) backend and a Web UI. This documentation site explains how to set up, use, and understand the system.
+EpiRootkit is a Linux kernel rootkit developed for Ubuntu 20.04 (kernel 5.4), featuring a Command-and-Control (C2) backend and a web-based user interface.
+Lots of cool design features was integrated.
+It was created during my first year of engineering studies under the guidance of Jules Aubert, a goated professor of Advanced Linux Systems at EPITA.
+
+## Overview
+
+This documentation site explains how to set up, use, and understand the system.
 
 - **Kernel Module (EpiRootkit)**: remote command execution, file transfer, authentication, XOR-encrypted C2 traffic, DNS resolution, stealth features (module and file hiding), and persistence.
 - **C2 Backend**: manages connected clients and command routing.
