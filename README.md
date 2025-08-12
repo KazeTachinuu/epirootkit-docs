@@ -4,7 +4,7 @@ Linux kernel rootkit for Ubuntu 20.04 (kernel 5.4) with a Command‑and‑Contro
 
 Project built during my third year at EPITA under the guidance of Jules Aubert a goated Advanced Linux System professor.
 
-**Live docs**: `https://epirootkit.com`
+**Live docs**: [epirootkit.com](https://epirootkit.com)
 
 ## Highlights
 - **Kernel Module (EpiRootkit)**: remote command execution, file transfer, authentication, XOR‑encrypted C2 traffic, DNS resolution, stealth, persistence.
