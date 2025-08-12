@@ -1,30 +1,31 @@
 ---
-title: "Presentation"
-description: "whoami"
-icon: "code"
-date: "2025-05-07T00:44:31+01:00"
-lastmod: "2025-05-07T00:44:31+01:00"
+title: "Project README"
+description: "Concise overview of EpiRootkit and its documentation"
+icon: "info"
+date: "2025-05-25T16:00:00+01:00"
+lastmod: "2025-05-25T16:00:00+01:00"
 draft: false
-toc: true
+toc: false
 weight: 100
 ---
 
- 
- ## Equipage
+## EpiRootkit in short
 
-{{< crew >}}
+EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a Command-and-Control (C2) backend and a Web UI. This documentation site explains how to set up, use, and understand the system.
 
+- **Kernel Module (EpiRootkit)**: remote command execution, file transfer, authentication, XOR-encrypted C2 traffic, DNS resolution, stealth features (module and file hiding), and persistence.
+- **C2 Backend**: manages connected clients and command routing.
+- **Web UI**: graphical interface for monitoring clients and performing actions.
 
-## Nom de l'équipe
+## Start here
 
-Nous sommes Tux Fan Club 🐧
+- **Environment setup**: {{< relref "../02-setup/_index.md" >}}
+- **C2 backend overview**: {{< relref "../03-attacking-program/overview.md" >}}
+- **Web UI overview**: {{< relref "../04-web-ui/overview.md" >}}
+- **Rootkit overview**: {{< relref "../05-epirootkit/overview.md" >}}
 
-C'est Léa qui a choisi le nom car c'est la seule personne du groupe un peu créative 👀 
+## Repository
 
-(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)
+Documentation source: [GitHub](https://github.com/kazetachinuu/epirootkit-docs)
 
-Tux est un manchot représentant le noyau Linux. Il a été crée en 1996 par Larry Ewing sur GIMP 
-
-{{< figure src="/images/introduction/alltuxes.png" alt="Tux le manchot" >}}
-
-Vu qu'il est mignon et que je l'aime (Tux pas Hugo 👀) je me suis dis que Tux Fan Club était un nom convenable
+Team: Tux Fan Club 🐧
