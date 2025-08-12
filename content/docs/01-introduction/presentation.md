@@ -30,8 +30,7 @@ EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a 
 - **Web UI features**: {{< relref "../04-web-ui/features" >}}
 - **Web UI panels**: {{< relref "../04-web-ui/features/panels" >}}
 
-## Repository
-
-Documentation source: [GitHub](https://github.com/kazetachinuu/epirootkit-docs)
 
 Team: Tux Fan Club 🐧
+
+{{< crew >}}
