@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Tux Fan Club Docs</title><link>/docs/</link><description>Recent content in Docs on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 12 Aug 2025 14:22:56 +0200</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Project README</title><link>/docs/01-introduction/presentation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="epirootkit-in-short">EpiRootkit in short &lt;a href="#epirootkit-in-short" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a Command-and-Control (C2) backend and a Web UI. This documentation site explains how to set up, use, and understand the system.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Tux Fan Club Docs</title><link>/docs/</link><description>Recent content in Docs on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 12 Aug 2025 14:33:04 +0200</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Project README</title><link>/docs/01-introduction/presentation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="epirootkit-in-short">EpiRootkit in short &lt;a href="#epirootkit-in-short" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a Command-and-Control (C2) backend and a Web UI. This documentation site explains how to set up, use, and understand the system.&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Kernel Module (EpiRootkit)&lt;/strong>: remote command execution, file transfer, authentication, XOR-encrypted C2 traffic, DNS resolution, stealth features (module and file hiding), and persistence.&lt;/li>
 &lt;li>&lt;strong>C2 Backend&lt;/strong>: manages connected clients and command routing.&lt;/li>
 &lt;li>&lt;strong>Web UI&lt;/strong>: graphical interface for monitoring clients and performing actions.&lt;/li>
 &lt;/ul>
 &lt;h2 id="start-here">Start here &lt;a href="#start-here" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Environment setup&lt;/strong>: /docs/02-setup/&lt;/li>
-&lt;li>&lt;strong>C2 backend&lt;/strong>: /docs/03-attacking-program/&lt;/li>
-&lt;li>&lt;strong>Web UI&lt;/strong>: /docs/04-web-ui/&lt;/li>
-&lt;li>&lt;strong>Rootkit&lt;/strong>: /docs/05-epirootkit/&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/02-setup/">Environment setup&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/03-attacking-program/">C2 backend&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/">Web UI&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/05-epirootkit/">Rootkit&lt;/a>&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;h2 id="key-sections">Key sections &lt;a href="#key-sections" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Rootkit features&lt;/strong>: /docs/05-epirootkit/features/&lt;/li>
-&lt;li>&lt;strong>Web UI features&lt;/strong>: /docs/04-web-ui/features/&lt;/li>
-&lt;li>&lt;strong>Web UI panels&lt;/strong>: /docs/04-web-ui/features/panels/&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/05-epirootkit/features/">Rootkit features&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/">Web UI features&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/">Web UI panels&lt;/a>&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;p>Team: Tux Fan Club 🐧&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
 &lt;p>Merci beaucoup Jules pour ce projet!&lt;/p>
