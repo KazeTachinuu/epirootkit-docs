@@ -19,10 +19,16 @@ EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a 
 
 ## Start here
 
-- **Environment setup**: {{< relref "../02-setup/_index.md" >}}
-- **C2 backend overview**: {{< relref "../03-attacking-program/overview.md" >}}
-- **Web UI overview**: {{< relref "../04-web-ui/overview.md" >}}
-- **Rootkit overview**: {{< relref "../05-epirootkit/overview.md" >}}
+- **Environment setup**: {{< relref "../02-setup" >}}
+- **C2 backend**: {{< relref "../03-attacking-program" >}}
+- **Web UI**: {{< relref "../04-web-ui" >}}
+- **Rootkit**: {{< relref "../05-epirootkit" >}}
+
+## Key sections
+
+- **Rootkit features**: {{< relref "../05-epirootkit/features" >}}
+- **Web UI features**: {{< relref "../04-web-ui/features" >}}
+- **Web UI panels**: {{< relref "../04-web-ui/features/panels" >}}
 
 ## Repository
 
