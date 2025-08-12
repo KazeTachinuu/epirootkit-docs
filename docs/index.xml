@@ -1,18 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Tux Fan Club Docs</title><link>/docs/</link><description>Recent content in Docs on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 17 Jun 2025 23:52:07 +0200</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Presentation</title><link>/docs/01-introduction/presentation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="equipage">Equipage &lt;a href="#equipage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
- &lt;div style="flex: 1; min-width: 250px; text-align: center;">
- &lt;strong>Capitaine&lt;/strong>: Hugo Sibony 
- &lt;br>
- &lt;img src="/images/HS/hugo.png" alt="Hugo" style="width: 50%;">
- &lt;/div>
- &lt;div style="flex: 1; min-width: 250px; text-align: center;">
- &lt;strong>Responsable Sabordage et mutinerie&lt;/strong>: Léa Bonet 
- &lt;br>
- &lt;img src="/images/HS/lea.png" alt="Lea" style="width: 50%;">
- &lt;/div>
- &lt;/div>
- 
-&lt;h2 id="nom-de-léquipe">Nom de l&amp;rsquo;équipe &lt;a href="#nom-de-l%c3%a9quipe" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Nous sommes Tux Fan Club 🐧&lt;/p>
-&lt;p>C&amp;rsquo;est Léa qui a choisi le nom car c&amp;rsquo;est la seule personne du groupe un peu créative 👀&lt;/p>
-&lt;p>(Et par ce que Hugo est gentleman et a laissé le choix a la seule femme du groupe)&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Tux Fan Club Docs</title><link>/docs/</link><description>Recent content in Docs on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 12 Aug 2025 14:21:35 +0200</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Project README</title><link>/docs/01-introduction/presentation/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/01-introduction/presentation/</guid><description>&lt;h2 id="epirootkit-in-short">EpiRootkit in short &lt;a href="#epirootkit-in-short" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>EpiRootkit is a Linux kernel rootkit targeting Ubuntu 20.04 (kernel 5.4) with a Command-and-Control (C2) backend and a Web UI. This documentation site explains how to set up, use, and understand the system.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Kernel Module (EpiRootkit)&lt;/strong>: remote command execution, file transfer, authentication, XOR-encrypted C2 traffic, DNS resolution, stealth features (module and file hiding), and persistence.&lt;/li>
+&lt;li>&lt;strong>C2 Backend&lt;/strong>: manages connected clients and command routing.&lt;/li>
+&lt;li>&lt;strong>Web UI&lt;/strong>: graphical interface for monitoring clients and performing actions.&lt;/li>
+&lt;/ul>
+&lt;h2 id="start-here">Start here &lt;a href="#start-here" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Environment setup&lt;/strong>: /docs/02-setup/&lt;/li>
+&lt;li>&lt;strong>C2 backend&lt;/strong>: /docs/03-attacking-program/&lt;/li>
+&lt;li>&lt;strong>Web UI&lt;/strong>: /docs/04-web-ui/&lt;/li>
+&lt;li>&lt;strong>Rootkit&lt;/strong>: /docs/05-epirootkit/&lt;/li>
+&lt;/ul>
+&lt;h2 id="key-sections">Key sections &lt;a href="#key-sections" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Rootkit features&lt;/strong>: /docs/05-epirootkit/features/&lt;/li>
+&lt;li>&lt;strong>Web UI features&lt;/strong>: /docs/04-web-ui/features/&lt;/li>
+&lt;li>&lt;strong>Web UI panels&lt;/strong>: /docs/04-web-ui/features/panels/&lt;/li>
+&lt;/ul>
+&lt;h2 id="repository">Repository &lt;a href="#repository" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Documentation source: &lt;a href="https://github.com/kazetachinuu/epirootkit-docs" rel="external" target="_blank">GitHub&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/p></description></item><item><title>Un dernier mot</title><link>/docs/07-remerciements/thankyou/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/07-remerciements/thankyou/</guid><description>&lt;h1 id="hugo">Hugo &lt;a href="#hugo" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bonjour,&lt;/p>
 &lt;p>Merci beaucoup Jules pour ce projet!&lt;/p>
 &lt;p>Il m&amp;rsquo;a permis d’expérimenter plein de sujets différents, j&amp;rsquo;ai profité de l&amp;rsquo;excuse de &amp;ldquo;c&amp;rsquo;est pour le travail d&amp;rsquo;EPITA&amp;rdquo; pour tester le Lotus Docs (le framework de la documentation sur lequel ces mots sont écrits), j&amp;rsquo;ai pu mettre en pratique directement ce que j&amp;rsquo;ai pu apprendre dans mon travail, notamment j&amp;rsquo;avais dû faire une présentation sur un rootkit (PUMAKIT) à ma boîte, et j&amp;rsquo;ai pu m&amp;rsquo;en inspirer et recréer le rootkit en améliorant certaines fonctionnalités (car franchement il était assez mal foutu, les Chinois n&amp;rsquo;ont qu’à bien se tenir). J&amp;rsquo;ai eu l’occasion de discuter avec certains SRS pour avoir des avis sur certaines implémentations. Spoiler, ils étaient tous jaloux du fait que en première année d&amp;rsquo;alternance on fait un projet aussi cool alors qu&amp;rsquo;ils se tapent de l’Active Directory depuis 2 mois.&lt;/p></description></item></channel></rss>
