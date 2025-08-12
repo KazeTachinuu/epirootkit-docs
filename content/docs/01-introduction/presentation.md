@@ -12,7 +12,7 @@ weight: 100
 ## TL; DR
 
 EpiRootkit is a Linux kernel rootkit developed for Ubuntu 20.04 (kernel 5.4), featuring a Command-and-Control (C2) backend and a web-based user interface.
-Lots of cool design features was integrated.
+
 It was created during my first year of engineering studies under the guidance of Jules Aubert, a goated professor of Advanced Linux Systems at EPITA.
 
 ## Overview
