@@ -29,14 +29,14 @@
 		
 
 		&lt;a class="nav-link active"
-		 id="bdaecfTab" data-bs-toggle="tab" data-bs-target="#bdaecf"
-		 type="button" role="tab" aria-controls="bdaecf" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="cedbfaTab" data-bs-toggle="tab" data-bs-target="#cedbfa"
+		 type="button" role="tab" aria-controls="cedbfa" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="acedfbTab" data-bs-toggle="tab" data-bs-target="#acedfb"
-		 type="button" role="tab" aria-controls="acedfb" aria-selected="true">Manual Step-by-Step&lt;/a>
+		 id="cbdfeaTab" data-bs-toggle="tab" data-bs-target="#cbdfea"
+		 type="button" role="tab" aria-controls="cbdfea" aria-selected="true">Manual Step-by-Step&lt;/a>
 
 		
 
@@ -53,7 +53,7 @@
 
 
 
-&lt;div class="tab-pane fade show active" id="bdaecf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cedbfa" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -91,7 +91,7 @@
 
 
 
-&lt;div class="tab-pane fade" id="acedfb" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade" id="cbdfea" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
 
@@ -218,14 +218,14 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 		
 
 		&lt;a class="nav-link active"
-		 id="deacbfTab" data-bs-toggle="tab" data-bs-target="#deacbf"
-		 type="button" role="tab" aria-controls="deacbf" aria-selected="true">Pre-built (Recommended)&lt;/a>
+		 id="cafbedTab" data-bs-toggle="tab" data-bs-target="#cafbed"
+		 type="button" role="tab" aria-controls="cafbed" aria-selected="true">Pre-built (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="ebcdafTab" data-bs-toggle="tab" data-bs-target="#ebcdaf"
-		 type="button" role="tab" aria-controls="ebcdaf" aria-selected="true">Fresh VM Setup&lt;/a>
+		 id="ceabdfTab" data-bs-toggle="tab" data-bs-target="#ceabdf"
+		 type="button" role="tab" aria-controls="ceabdf" aria-selected="true">Fresh VM Setup&lt;/a>
 
 		
 
@@ -242,7 +242,7 @@ ls -la /dev/kvm # Should be accessible&lt;/code>
 
 
 
-&lt;div class="tab-pane fade show active" id="deacbf" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="cafbed" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
 
@@ -293,14 +293,14 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 		
 
 		&lt;a class="nav-link active"
-		 id="aefcbdTab" data-bs-toggle="tab" data-bs-target="#aefcbd"
-		 type="button" role="tab" aria-controls="aefcbd" aria-selected="true">Dropper (Social Engineering)&lt;/a>
+		 id="ebafdcTab" data-bs-toggle="tab" data-bs-target="#ebafdc"
+		 type="button" role="tab" aria-controls="ebafdc" aria-selected="true">Dropper (Social Engineering)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="badecfTab" data-bs-toggle="tab" data-bs-target="#badecf"
-		 type="button" role="tab" aria-controls="badecf" aria-selected="true">Manual Deployment&lt;/a>
+		 id="ebfcdaTab" data-bs-toggle="tab" data-bs-target="#ebfcda"
+		 type="button" role="tab" aria-controls="ebfcda" aria-selected="true">Manual Deployment&lt;/a>
 
 		
 
@@ -317,7 +317,7 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 
 
 
-&lt;div class="tab-pane fade show active" id="aefcbd" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="ebafdc" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="automated-deployment">Automated Deployment &lt;a href="#automated-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Use the social engineering dropper for realistic attack simulation:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 &lt;nav>
@@ -331,26 +331,26 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 		
 
 		&lt;a class="nav-link active"
-		 id="fadbecTab" data-bs-toggle="tab" data-bs-target="#fadbec"
-		 type="button" role="tab" aria-controls="fadbec" aria-selected="true">Automated (Recommended)&lt;/a>
+		 id="fcdabeTab" data-bs-toggle="tab" data-bs-target="#fcdabe"
+		 type="button" role="tab" aria-controls="fcdabe" aria-selected="true">Automated (Recommended)&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="bacfedTab" data-bs-toggle="tab" data-bs-target="#bacfed"
-		 type="button" role="tab" aria-controls="bacfed" aria-selected="true">SSH/SCP&lt;/a>
+		 id="ebcdfaTab" data-bs-toggle="tab" data-bs-target="#ebcdfa"
+		 type="button" role="tab" aria-controls="ebcdfa" aria-selected="true">SSH/SCP&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="edbfcaTab" data-bs-toggle="tab" data-bs-target="#edbfca"
-		 type="button" role="tab" aria-controls="edbfca" aria-selected="true">HTTP Server&lt;/a>
+		 id="fecabdTab" data-bs-toggle="tab" data-bs-target="#fecabd"
+		 type="button" role="tab" aria-controls="fecabd" aria-selected="true">HTTP Server&lt;/a>
 
 		
 
 		&lt;a class="nav-link "
-		 id="caedfbTab" data-bs-toggle="tab" data-bs-target="#caedfb"
-		 type="button" role="tab" aria-controls="caedfb" aria-selected="true">Shared Folders&lt;/a>
+		 id="dbafecTab" data-bs-toggle="tab" data-bs-target="#dbafec"
+		 type="button" role="tab" aria-controls="dbafec" aria-selected="true">Shared Folders&lt;/a>
 
 		
 
@@ -367,7 +367,7 @@ cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
 
 
 
-&lt;div class="tab-pane fade show active" id="fadbec" role="tabpanel" aria-labelledby="nav-1">
+&lt;div class="tab-pane fade show active" id="fcdabe" role="tabpanel" aria-labelledby="nav-1">
 
 	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
 
