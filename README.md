@@ -2,7 +2,7 @@
 
 Linux kernel rootkit for Ubuntu 20.04 (kernel 5.4) with a Command‑and‑Control backend and a web‑based UI.
 
-Project built during my third year at EPITA under the guidance of Jules Aubert a goated Advanced Linux System professor.
+Project built during ING1 (my third year at EPITA) under the guidance of Jules Aubert a goated Advanced Linux System professor.
 
 **Live docs**: [epirootkit.com](https://epirootkit.com)
 
