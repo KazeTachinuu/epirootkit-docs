@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web UI (C2 Frontend) on Tux Fan Club Docs</title><link>/docs/04-web-ui/</link><description>Recent content in Web UI (C2 Frontend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/04-web-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/04-web-ui/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-web-ui/overview/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/dashboard.png"
+ alt="C2 Dashboard Main">
+&lt;/figure>
+
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="fda96a2" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Start C2 &amp;#43; Web UI&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;br>
+&lt;strong>Default Password&lt;/strong>: &lt;code>secret123&lt;/code> (hash configured in &lt;code>config.env&lt;/code>)&lt;/p>
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/authentication/">Authentication&lt;/a>&lt;/strong>: Secure login for web interface&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/dashboard/">Dashboard&lt;/a>&lt;/strong>: Real-time client monitoring with stats&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/client-management/">Client Management&lt;/a>&lt;/strong>: Individual client control&lt;/li>
+&lt;/ul>
+&lt;h3 id="client-panels">Client Panels &lt;a href="#client-panels" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>When managing individual clients (&lt;code>/clients/:id&lt;/code>), the following panels are available:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/overview-panel/">Overview Panel&lt;/a>&lt;/strong>: Client status and information&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/authentication-panel/">Authentication Panel&lt;/a>&lt;/strong>: Client authentication management&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/terminal-panel/">Terminal Panel&lt;/a>&lt;/strong>: Execute commands on clients&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/upload-download-panel/">Upload/Download Panel&lt;/a>&lt;/strong>: File transfer with drag-drop&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/persistence-panel/">Persistence Panel&lt;/a>&lt;/strong>: Manage rootkit persistence&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/configuration-panel/">Configuration Panel&lt;/a>&lt;/strong>: Toggle rootkit settings&lt;/li>
+&lt;li>&lt;strong>&lt;a href="/docs/04-web-ui/features/panels/event-log-panel/">Event Log Panel&lt;/a>&lt;/strong>: Real-time activity monitoring&lt;/li>
+&lt;/ul></description></item><item><title>Installation</title><link>/docs/04-web-ui/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/04-web-ui/installation/</guid><description>&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="9ac9fe8" class="language-bash ">
+ &lt;code>./deploy_c2.sh # Builds and starts everything&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Access&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/p>
+&lt;h2 id="manual-build">Manual Build &lt;a href="#manual-build" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="40d9a46" class="language-bash ">
+ &lt;code># Build frontend
+cd webui &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; cd ..
+
+# Deploy to backend
+mkdir -p attacking_program/public
+cp -r webui/dist/* attacking_program/public/
+
+# Start server
+cd attacking_program &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Password hash configured in &lt;code>attacking_program/config.env&lt;/code>:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="65d6b1a" class="language-env ">
+ &lt;code>C2_WEBUI_PASSWORD_HASH=348735696e74c45e7fbf9c6839d87f891486d19e5059db7e397d5086e486dc0051a533752805dc9288463673f0a6fcbf2a655548738a85305b2d571bae44a71e&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Default password is &lt;code>secret123&lt;/code>. Generate custom hash: &lt;code>echo -n &amp;quot;yourpassword&amp;quot; | sha512sum&lt;/code>&lt;/p></description></item></channel></rss>

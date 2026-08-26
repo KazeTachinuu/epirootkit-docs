@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Tux Fan Club Docs</title><link>/docs/02-setup/</link><description>Recent content in Setup on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2026 11:34:54 +0200</lastBuildDate><atom:link href="/docs/02-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Host Environment Setup</title><link>/docs/02-setup/environment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/environment/</guid><description>&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="abdfecTab" data-bs-toggle="tab" data-bs-target="#abdfec"
+		 type="button" role="tab" aria-controls="abdfec" aria-selected="true">Automated (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="ebdfcaTab" data-bs-toggle="tab" data-bs-target="#ebdfca"
+		 type="button" role="tab" aria-controls="ebdfca" aria-selected="true">Manual Step-by-Step&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="abdfec" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="one-command-installation">One-Command Installation &lt;a href="#one-command-installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6debccf" class="language-bash ">
+ &lt;code>./scripts/install_dependencies.sh&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Installs:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>QEMU/KVM: Virtual machine hypervisor&lt;/li>
+&lt;li>libvirt: VM management daemon and tools&lt;/li>
+&lt;li>Bridge utils: Network bridge configuration&lt;/li>
+&lt;li>User permissions: Adds you to libvirt group&lt;/li>
+&lt;/ul>
+
+
+&lt;/div>
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade" id="ebdfca" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="install-dependencies">Install Dependencies &lt;a href="#install-dependencies" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7e3bdd3" class="language-bash ">
+ &lt;code>sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="configure-libvirt">Configure Libvirt &lt;a href="#configure-libvirt" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="89a045c" class="language-bash ">
+ &lt;code>sudo systemctl enable --now libvirtd
+sudo usermod -aG libvirt $USER
+newgrp libvirt&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="optional-documentation-tools">Optional: Documentation Tools &lt;a href="#optional-documentation-tools" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="2aea3ca" class="language-bash ">
+ &lt;code># Only if you want to build docs locally
+sudo apt install -y hugo&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+
+
+&lt;/div>
+
+
+
+&lt;/div>
+&lt;h2 id="verification">Verification &lt;a href="#verification" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a4d6f43" class="language-bash ">
+ &lt;code># Check VM tools
+virsh list --all
+qemu-system-x86_64 --version
+
+# Verify KVM support
+lsmod | grep kvm
+egrep -c &amp;#39;(vmx|svm)&amp;#39; /proc/cpuinfo # Should be &amp;gt;= 1
+ls -la /dev/kvm # Should be accessible&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="next-steps">Next Steps &lt;a href="#next-steps" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>VM Setup&lt;/strong>: &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/vm-installation/'>&lt;p>SETUP&lt;/p></description></item><item><title>VM Installation &amp; Verification</title><link>/docs/02-setup/vm-installation/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/vm-installation/</guid><description>&lt;blockquote>
+&lt;p>Complete &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/02-setup/environment/'>&lt;p>SETUP&lt;/p>&lt;strong>Host Environment Setup&lt;/strong>&lt;br>Prepare your host system for running EpiRootkit VMs&lt;/a>" data-bs-toggle="tooltip" href="/docs/02-setup/environment/">Host Environment Setup&lt;/a> before proceeding.&lt;/p>
+&lt;/blockquote>
+&lt;p>Throughout this documentation, you will see two options:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Pre-built Disks&lt;/strong>: Ready-to-use VM images with everything pre-configured and pre-installed.&lt;/li>
+&lt;li>&lt;strong>Fresh Installation&lt;/strong>: Manual setup process to create your own VM images.&lt;/li>
+&lt;/ol>
+&lt;p>The pre-built disks were created using the exact steps described in the manual installation sections.&lt;/p>
+&lt;p>So while we recommend using the pre-built disks, you can also create your own VMs by following the manual installation steps.&lt;/p></description></item><item><title>Attacker VM Setup</title><link>/docs/02-setup/attacking-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/attacking-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM disk&lt;/strong>: &lt;code>attacker.qcow2&lt;/code> in &lt;code>/var/lib/libvirt/images/&lt;/code>&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>IP&lt;/strong>: 192.168.200.11 (static)&lt;/li>
+&lt;li>&lt;strong>Credentials&lt;/strong>: &lt;code>attacker&lt;/code> / &lt;code>jules&lt;/code> (auto-login)&lt;/li>
+&lt;/ul>
+&lt;h2 id="setup-method">Setup Method &lt;a href="#setup-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="cdbafeTab" data-bs-toggle="tab" data-bs-target="#cdbafe"
+		 type="button" role="tab" aria-controls="cdbafe" aria-selected="true">Pre-built (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="edbfcaTab" data-bs-toggle="tab" data-bs-target="#edbfca"
+		 type="button" role="tab" aria-controls="edbfca" aria-selected="true">Fresh VM Setup&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="cdbafe" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Everything is pre-configured. Build and run immediately:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="5236ee5" class="language-bash ">
+ &lt;code># Inside attacker VM (auto-logged in)
+cd epirootkit &amp;amp;&amp;amp; ./deploy_c2.sh
+# ✅ Builds rootkit automatically
+# ✅ Builds dropper app
+# ✅ C2 server: port 4444
+# ✅ Web interface: port 3000
+# ✅ Landing page dropper: port 8080&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="deploy-script-options">Deploy Script Options &lt;a href="#deploy-script-options" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>The &lt;code>deploy_c2.sh&lt;/code> script supports selective component building:&lt;/p></description></item><item><title>Victim VM Setup</title><link>/docs/02-setup/victim-vm-setup/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/victim-vm-setup/</guid><description>&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Host setup&lt;/strong>: &lt;a href="/docs/02-setup/environment/">Host Environment Setup&lt;/a>&lt;/li>
+&lt;li>&lt;strong>VM disk&lt;/strong>: &lt;code>victim.qcow2&lt;/code> in &lt;code>/var/lib/libvirt/images/&lt;/code>&lt;/li>
+&lt;li>&lt;strong>VM launched&lt;/strong>: &lt;code>sudo ./scripts/run_vms.sh&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="vm-access">VM Access &lt;a href="#vm-access" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>IP&lt;/strong>: 192.168.200.10 (static)&lt;/li>
+&lt;li>&lt;strong>Credentials&lt;/strong>: &lt;code>victim&lt;/code> / &lt;code>jules&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Target&lt;/strong>: Ubuntu 20.04 LTS (kernel 5.4.0)&lt;/li>
+&lt;/ul>
+&lt;h2 id="deploy-rootkit">Deploy Rootkit &lt;a href="#deploy-rootkit" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Choose your deployment method:&lt;/p>
+
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="acbfedTab" data-bs-toggle="tab" data-bs-target="#acbfed"
+		 type="button" role="tab" aria-controls="acbfed" aria-selected="true">Dropper (Social Engineering)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="edfcbaTab" data-bs-toggle="tab" data-bs-target="#edfcba"
+		 type="button" role="tab" aria-controls="edfcba" aria-selected="true">Manual Deployment&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="acbfed" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="automated-deployment">Automated Deployment &lt;a href="#automated-deployment" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Use the social engineering dropper for realistic attack simulation:&lt;/p></description></item><item><title>Host to VM File Transfer</title><link>/docs/02-setup/file-transfer/</link><pubDate>Sun, 25 May 2025 00:00:00 +0100</pubDate><guid>/docs/02-setup/file-transfer/</guid><description>&lt;h2 id="transfer-methods">Transfer Methods &lt;a href="#transfer-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+&lt;nav>
+	&lt;div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		&lt;a class="nav-link active"
+		 id="fdebacTab" data-bs-toggle="tab" data-bs-target="#fdebac"
+		 type="button" role="tab" aria-controls="fdebac" aria-selected="true">Automated (Recommended)&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="bcdfeaTab" data-bs-toggle="tab" data-bs-target="#bcdfea"
+		 type="button" role="tab" aria-controls="bcdfea" aria-selected="true">SSH/SCP&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="dfacbeTab" data-bs-toggle="tab" data-bs-target="#dfacbe"
+		 type="button" role="tab" aria-controls="dfacbe" aria-selected="true">HTTP Server&lt;/a>
+
+		
+
+		&lt;a class="nav-link "
+		 id="bdacfeTab" data-bs-toggle="tab" data-bs-target="#bdacfe"
+		 type="button" role="tab" aria-controls="bdacfe" aria-selected="true">Shared Folders&lt;/a>
+
+		
+
+	&lt;/div>
+&lt;/nav>
+
+&lt;div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+
+&lt;div class="tab-pane fade show active" id="fdebac" role="tabpanel" aria-labelledby="nav-1">
+
+	&lt;h3 id="one-command-transfer">One-Command Transfer &lt;a href="#one-command-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>For attacker VM setup:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="bcc4b5c" class="language-bash ">
+ &lt;code># From host project directory
+./scripts/deploy_project.sh
+
+# ✅ Transfers entire project via SSH/SCP
+# ✅ Runs setup script remotely
+# ✅ Installs dependencies
+# 🎉 Ready to build and start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Requirements:&lt;/strong>&lt;/p></description></item><item><title>Dropper Deployment</title><link>/docs/02-setup/dropper-deployment/</link><pubDate>Wed, 07 May 2025 00:44:31 +0100</pubDate><guid>/docs/02-setup/dropper-deployment/</guid><description>&lt;h2 id="overview">Overview &lt;a href="#overview" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper is a social engineering tool disguised as &amp;ldquo;NeoGeoLoc - Location Registration System&amp;rdquo;. It provides a realistic attack simulation where the victim downloads and runs what appears to be a legitimate location registration application.&lt;/p>
+
+&lt;div class="alert alert-info d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ info
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">This page is available in the real C2 at &lt;code>http://jules_chef_de_majeur.epirootkit.com:8080&lt;/code>&lt;/div>
+ &lt;/div>
+&lt;h2 id="prerequisites">Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>C2 Server&lt;/strong>: &lt;a href="/docs/02-setup/attacking-vm-setup/">Attacker VM Setup&lt;/a> - Must be running&lt;/li>
+&lt;li>&lt;strong>Dropper Built&lt;/strong>: Run &lt;code>./deploy_c2.sh -d&lt;/code> to build the dropper and start landing page&lt;/li>
+&lt;/ol>
+&lt;h2 id="build-process">Build Process &lt;a href="#build-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The dropper is built from Node.js source code and packaged as a standalone executable:&lt;/p></description></item></channel></rss>

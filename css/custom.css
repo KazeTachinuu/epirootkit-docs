@@ -1,0 +1,11 @@
+/* Custom CSS overrides */
+
+/* Attempt to force images within figure shortcodes to use full container width */
+figure img {
+    width: 100%;
+    max-width: 100%; /* Ensure it doesn't exceed container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent potential inline spacing issues */
+    margin-left: auto; /* Center if needed */
+    margin-right: auto; /* Center if needed */
+} 

